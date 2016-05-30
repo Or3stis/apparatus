@@ -1,0 +1,59 @@
+body {
+  background: #14171a;
+  font-family: sans-serif;
+  color: #8fa1b2;
+}
+.graph {
+  background: #14171a;
+  width: 1000px;
+  height: 700px;
+  margin: 0;
+  padding: 0;
+}
+.sidebar {
+  bottom: 0;
+  right: 0;
+  width: 11em;
+  height: 100%;
+  position: absolute;
+  /*background-color: #252c33;*/
+}
+.actionBar {
+  bottom: 0;
+  left: 0;
+  position: absolute;;
+  width: 8em;
+  height: 100%;
+  background-color: #252c33;
+}
+.components {
+  height: 6em;
+  /*background-color: white;*/
+}
+.filters {
+  height: 12em;
+  background-color: black;
+}
+.analysis {
+  height: 3em;
+  /*background-color: pink;*/
+}
+.save {
+  height: 3em;
+  background-color: black;
+}
+.button {
+  background-color: #1a4666;
+  margin: 1px;
+  color: #8fa1b2;
+  border-radius: 20px;
+  border-style: none;
+  font-family: sans-serif;
+  font-size: 16px;
+  padding: 6px 10px 6px 10px;
+  cursor: pointer;
+}
+.button:hover {
+  background-color: #46AFE3;
+  color: #14171a;
+}

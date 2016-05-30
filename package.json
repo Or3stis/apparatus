@@ -1,0 +1,28 @@
+{
+  "name": "apparatus",
+  "version": "0.2.0",
+  "description": "network security analyser",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron main.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/"
+  },
+  "keywords": [
+    "Electron",
+    "network",
+    "security"
+  ],
+  "author": "or3stis",
+  "license": "CC0-1.0",
+  "bugs": {
+    "url": "https://github.com//issues"
+  },
+  "homepage": "https://github.com/#readme",
+  "devDependencies": {
+    "devtron": "^1.1.2",
+    "electron-prebuilt": "^1.2.0"
+  }
+}

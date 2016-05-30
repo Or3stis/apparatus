@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>apparatus</title>
+  <meta charset="UTF-8" />
+  <link href="app.css" rel="StyleSheet" />
+</head>
+
+<body>
+  <div class="window">
+    <div class="graph" id="graph-container"></div>
+    <div class="sidebar" id="sidebar">
+      <h3>Info bar</h3>
+      <div id="infoForNodes"></div>
+    </div>
+    <div class="actionBar" id="actionBarId">
+      <div class="components" id="componentsId">
+        <button class="button" id="addNode">add node</button>
+        <button class="button" id="addEdge">add edge</button>
+      </div>
+      <div class="filters" id="filtersId">
+        <button class="button" id="iotButton">devices</button>
+        <button class="button" id="threatButton">threats</button>
+        <button class="button" id="vulnButton">vulnerabilities</button>
+        <button class="button" id="assetButton">assets</button>
+        <button class="button" id="mechanismButton">mechanisms</button>
+        <button class="button" id="constraintButton">constraints</button>
+      </div>
+      <div class="analysis" id="analysisId">
+        <button class="button" id="validateButton">validate</button>
+      </div>
+      <div class="save" id="saveId">
+        <button class="button" id="saveButton">save</button>
+      </div>
+    </div>
+  </div>
+</body>
+
+<script src="build/sigma.min.js"></script>
+<script src="build/sigma.parsers.json.min.js"></script>
+<script src="build/sigma.renderers.edgeLabels.min.js"></script>
+<!-- uncomment to make node draggable -->
+<script src="build/sigma.plugins.dragNodes.min.js"></script>
+<!-- plugging to highlight the connections of the nodes -->
+<script type="text/javascript" src="src/sigmaNeighbor.js"></script>
+<!-- basic script of the app -->
+<script type="text/javascript" src="src/app.js"></script>
+
+</html>
