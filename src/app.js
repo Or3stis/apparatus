@@ -75,8 +75,14 @@ sigma.parsers.json(fileToLoad, {
   let buttonMechanism = document.getElementById('mechanismButton')
   let buttonConstraint = document.getElementById('constraintButton')
   let buttonValidate = document.getElementById('validateButton')
-  let buttonAdd = document.getElementById('addNode')
+  let buttonAddThreat = document.getElementById('addThreat')
+  let buttonAddMechanism = document.getElementById('addMechanism')
   let buttonEdge = document.getElementById('addEdge')
+
+  // has the right click functionality
+  // document.getElementById('addNode').oncontextmenu = function () {
+  //   console.log('it works')
+  // }
 
   buttonSave.addEventListener('click', function save () {
     const fileToSave = 'json/test.json'
@@ -112,17 +118,40 @@ sigma.parsers.json(fileToLoad, {
   })
   buttonValidate.addEventListener('click', () => {
     validation(s)
-  })
-  buttonAdd.addEventListener('click', () => {
+  })// TODO: add a function that finds the last node id
+  // then add it to the created node
+  buttonAddThreat.addEventListener('click', () => {
     // s.graph.addNode({
     //   id: 'n50',
-    //   label: 'n2',
-    //   x: 0.4,
-    //   y: 0.3,
+    //   label: 'n50 Threat',
+    //   x: 0,
+    //   y: 0,
     //   size: 3,
-    //   color: '#8fa1b2',
+    //   color: '#eb5368',
     //   info: {
-    //     aspect: 'application'
+    //     type: 'threat'
+    //   }
+    // })
+    // // needed to for the selection functions
+    // s.graph.nodes().forEach((n) => {
+    //   n.originalColor = n.color
+    // })
+    // s.graph.edges().forEach((e) => {
+    //   e.originalColor = e.color
+    // })
+    // s.refresh()
+    window.alert('uncomment')
+  })
+  buttonAddMechanism.addEventListener('click', () => {
+    // s.graph.addNode({
+    //   id: 'n51',
+    //   label: 'n51 mechanism',
+    //   x: 0,
+    //   y: 0,
+    //   size: 3,
+    //   color: '#70bf53',
+    //   info: {
+    //     type: 'security mechanism'
     //   }
     // })
     // // needed to for the selection functions

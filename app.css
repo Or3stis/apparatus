@@ -57,3 +57,24 @@ body {
   background-color: #46AFE3;
   color: #14171a;
 }
+.addNode {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 5px;
+  border-radius: 50%;
+  border-style: none;
+}
+.addNode .buttonLabel {
+  visibility: hidden
+}
+.addNode:hover .buttonLabel {
+  visibility: visible;
+  color: #8fa1b2;
+}
+.threat {
+  background-color: #eb5368;
+}
+.mechanism {
+  background-color: #70bf53
+}
