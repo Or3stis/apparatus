@@ -9,7 +9,7 @@ const validation = require('./src/validation.js')
 const buttonSelection = require('./src/buttonSelection.js')
 
 // important, location of the json file
-const fileToLoad = 'json/test.json'
+const fileToLoad = 'json/hueBulbs.json'
 
 // create the graph from the json file
 sigma.parsers.json(fileToLoad, {
@@ -76,7 +76,10 @@ sigma.parsers.json(fileToLoad, {
   let buttonConstraint = document.getElementById('constraintButton')
   let buttonValidate = document.getElementById('validateButton')
   let buttonAddThreat = document.getElementById('addThreat')
+  let buttonAddConstraint = document.getElementById('addConstraint')
+  let buttonAddVuln = document.getElementById('addVuln')
   let buttonAddMechanism = document.getElementById('addMechanism')
+  let buttonAddDevice = document.getElementById('addDevice')
   let buttonEdge = document.getElementById('addEdge')
 
   // has the right click functionality
@@ -121,25 +124,31 @@ sigma.parsers.json(fileToLoad, {
   })// TODO: add a function that finds the last node id
   // then add it to the created node
   buttonAddThreat.addEventListener('click', () => {
-    // s.graph.addNode({
-    //   id: 'n50',
-    //   label: 'n50 Threat',
-    //   x: 0,
-    //   y: 0,
-    //   size: 3,
-    //   color: '#eb5368',
-    //   info: {
-    //     type: 'threat'
-    //   }
-    // })
-    // // needed to for the selection functions
-    // s.graph.nodes().forEach((n) => {
-    //   n.originalColor = n.color
-    // })
-    // s.graph.edges().forEach((e) => {
-    //   e.originalColor = e.color
-    // })
-    // s.refresh()
+    s.graph.addNode({
+      id: 'n50',
+      label: 'n50 Threat',
+      x: 0,
+      y: 0,
+      size: 3,
+      color: '#eb5368',
+      info: {
+        type: 'threat'
+      }
+    })
+    // needed to for the selection functions
+    s.graph.nodes().forEach((n) => {
+      n.originalColor = n.color
+    })
+    s.graph.edges().forEach((e) => {
+      e.originalColor = e.color
+    })
+    s.refresh()
+    // window.alert('uncomment')
+  })
+  buttonAddConstraint.addEventListener('click', () => {
+    window.alert('uncomment')
+  })
+  buttonAddVuln.addEventListener('click', () => {
     window.alert('uncomment')
   })
   buttonAddMechanism.addEventListener('click', () => {
@@ -164,20 +173,15 @@ sigma.parsers.json(fileToLoad, {
     // s.refresh()
     window.alert('uncomment')
   })
-  buttonEdge.addEventListener('click', () => {
-    // s.graph.addEdge({
-    //   id: 'e50',
-    //   target: 'n50',
-    //   source: 'n1'
-    // })
-    // s.graph.nodes().forEach((n) => {
-    //   n.originalColor = n.color
-    // })
-    // s.graph.edges().forEach((e) => {
-    //   e.originalColor = e.color
-    // })
-    // s.refresh()
+  buttonAddDevice.addEventListener('click', () => {
     window.alert('uncomment')
+  })
+  buttonEdge.addEventListener('click', (e) => {
+    s.graph.addEdge({
+      id: 'e50',
+      target: 'n50',
+      source: 'n1'
+    })
   })
 
   // last stage refresh
@@ -219,4 +223,14 @@ sigma.parsers.json(fileToLoad, {
       e.color = e.originalColor
     }
   }
+
+  // test functions to check double and right click
+  s.bind('doubleClickNode', (n) => {
+    window.alert('double click works')
+    s.refresh()
+  })
+  s.bind('rightClickNode', (n) => {
+    window.alert('right click works')
+    s.refresh()
+  })
 })

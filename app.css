@@ -71,10 +71,22 @@ body {
 .addNode:hover .buttonLabel {
   visibility: visible;
   color: #8fa1b2;
+  cursor: pointer;
+  height: 20px;
+  position: relative;
+}
+.vulnerability {
+  background-color: #eb5368;
 }
 .threat {
   background-color: #eb5368;
 }
+.constraint {
+  background-color: #70bf53;
+}
 .mechanism {
-  background-color: #70bf53
+  background-color: #70bf53;
+}
+.device {
+  background-color: #46afe3;
 }
