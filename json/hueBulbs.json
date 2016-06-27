@@ -4,10 +4,11 @@
     "label": "n0: server",
     "x": 0.2,
     "y": 0.1,
-    "size": 3,
+    "size": 4,
     "color": "#46afe3",
+    "type": "equilateral",
     "info": {
-      "type": "iotNode",
+      "type": "device",
       "id": "02",
       "aspect": "physical",
       "layer": "application",
@@ -22,10 +23,11 @@
     "label": "n1: router",
     "x": 0.25,
     "y": 0.35,
-    "size": 3,
+    "size": 4,
     "color": "#46afe3",
+    "type": "equilateral",
     "info": {
-      "type": "iotNode",
+      "type": "device",
       "id": "01",
       "aspect": "physical",
       "layer": "gateway",
@@ -40,10 +42,11 @@
     "label": "n2: smart bulb",
     "x": 0.1,
     "y": 0.6,
-    "size": 3,
+    "size": 4,
     "color": "#46afe3",
+    "type": "equilateral",
     "info": {
-      "type": "iotNode",
+      "type": "device",
       "id": "01",
       "aspect": "physical",
       "layer": "perception",
@@ -58,10 +61,11 @@
     "label": "n3: smart phone",
     "x": 0.4,
     "y": 0.6,
-    "size": 3,
+    "size": 4,
     "color": "#46afe3",
+    "type": "equilateral",
     "info": {
-      "type": "iotNode",
+      "type": "device",
       "id": "01",
       "aspect": "physical",
       "layer": "perception",
@@ -73,13 +77,14 @@
     }
   }, {
     "id": "n4",
-    "label": "n4: microworld",
+    "label": "n4: microcorld",
     "x": 0.5,
     "y": 0.27,
-    "size": 6,
+    "size": 7,
     "color": "#46afe3",
+    "type": "equilateral",
     "info": {
-      "type": "iotNode",
+      "type": "device",
       "state": "static"
     }
   }, {
@@ -87,7 +92,7 @@
     "label": "n5: unkown World",
     "x": 0.6,
     "y": 0.34,
-    "size": 6,
+    "size": 7,
     "color": "#46afe3",
     "info": {
       "type": "unkown world"
@@ -97,8 +102,9 @@
     "label": "n6: credential leakage",
     "x": 0.09,
     "y": 0.5,
-    "size": 3,
+    "size": 4,
     "color": "#eb5368",
+    "type": "diamond",
     "info": {
       "type": "threat",
       "class": "spoofing"
@@ -108,7 +114,7 @@
     "label": "n7: no encryption",
     "x": 0.02,
     "y": 0.46,
-    "size": 3,
+    "size": 4,
     "color": "#eb5368",
     "info": {
       "type": "vulnerability"
@@ -118,8 +124,13 @@
     "label": "n8: credentials must be protected",
     "x": 0.04,
     "y": 0.7,
-    "size": 3,
+    "size": 5,
     "color": "#70bf53",
+    "type": "equilateral",
+    "equilateral": {
+      "numPoints": 8,
+      "rotate": 25
+    },
     "info": {
       "type": "constraint"
     }
@@ -128,18 +139,19 @@
     "label": "n9: encryption during authentication",
     "x": 0.001,
     "y": 0.64,
-    "size": 3,
+    "size": 4,
     "color": "#70bf53",
     "info": {
       "type": "mechanism"
     }
   }, {
     "id": "n10",
-    "label": "n10: secure microworld",
+    "label": "n10: secure microcorld",
     "x": 0.55,
     "y": 0.4,
-    "size": 6,
+    "size": 7,
     "color": "#70bf53",
+    "type": "cross",
     "info": {
       "type": "security",
       "state": "static"
@@ -149,8 +161,9 @@
     "label": "n11: system is not auditable",
     "x": 0.5,
     "y": 0.1,
-    "size": 3,
+    "size": 4,
     "color": "#eb5368",
+    "type": "diamond",
     "info": {
       "type": "threat",
       "class": "repudiation"
@@ -160,7 +173,7 @@
     "label": "n12: no activity logs",
     "x": 0.47,
     "y": 0.15,
-    "size": 3,
+    "size": 4,
     "color": "#eb5368",
     "info": {
       "type": "vulnerability"
@@ -170,8 +183,13 @@
     "label": "n13: cronological activity records",
     "x": 0.6,
     "y": 0.2,
-    "size": 3,
+    "size": 4,
     "color": "#70bf53",
+    "type": "equilateral",
+    "equilateral": {
+      "numPoints": 8,
+      "rotate": 25
+    },
     "info": {
       "type": "constraint"
     }
@@ -180,7 +198,7 @@
     "label": "n14: log files",
     "x": 0.53,
     "y": 0.23,
-    "size": 3,
+    "size": 4,
     "color": "#70bf53",
     "info": {
       "type": "mechanism"
@@ -190,8 +208,9 @@
     "label": "n15: auditing",
     "x": 0.7,
     "y": 0.13,
-    "size": 3,
+    "size": 4,
     "color": "#70bf53",
+    "type": "cross",
     "info": {
       "type": "property"
     }
@@ -200,8 +219,9 @@
     "label": "n16: authentication",
     "x": 0.1,
     "y": 0.75,
-    "size": 3,
+    "size": 4,
     "color": "#70bf53",
+    "type": "cross",
     "info": {
       "type": "property"
     }
@@ -210,7 +230,7 @@
     "label": "n17: network connection",
     "x": 0.22,
     "y": 0.2,
-    "size": 3,
+    "size": 4,
     "color": "#46afe3",
     "info": {
       "type": "wireless"
@@ -220,7 +240,7 @@
     "label": "n18: network connection",
     "x": 0.38,
     "y": 0.52,
-    "size": 3,
+    "size": 4,
     "color": "#46afe3",
     "info": {
       "type": "wireless"
@@ -230,42 +250,42 @@
     "label": "n19: network connection",
     "x": 0.15,
     "y": 0.54,
-    "size": 3,
+    "size": 4,
     "color": "#46afe3",
     "info": {
       "type": "wireless"
     }
   }, {
     "id": "n20",
-    "label": "n20: asset",
+    "label": "n20: flowing data",
     "x": 0.1,
     "y": 0.42,
-    "size": 3,
-    "color": "#df80ff",
+    "size": 4,
+    "color": "#D08B0F",
     "info": {
-      "type": "asset",
+      "type": "soft asset",
       "property": "flowing data"
     }
   }, {
     "id": "n21",
-    "label": "n21: asset",
+    "label": "n21: device",
     "x": 0.38,
     "y": 0.13,
-    "size": 3,
-    "color": "#df80ff",
+    "size": 4,
+    "color": "#D08B0F",
     "info": {
-      "type": "asset",
+      "type": "hard asset",
       "property": "device"
     }
   }, {
     "id": "n22",
-    "label": "n22: asset",
+    "label": "n22: data flow",
     "x": 0.3,
     "y": 0.67,
-    "size": 3,
-    "color": "#df80ff",
+    "size": 4,
+    "color": "#D08B0F",
     "info": {
-      "type": "asset",
+      "type": "soft asset",
       "property": "data traffic"
     }
   }, {
@@ -273,8 +293,9 @@
     "label": "n23: data tampering",
     "x": 0.5,
     "y": 0.65,
-    "size": 3,
+    "size": 4,
     "color": "#eb5368",
+    "type": "diamond",
     "info": {
       "type": "threat",
       "class": "tampering"
@@ -284,7 +305,7 @@
     "label": "n24: weak authentication token",
     "x": 0.47,
     "y": 0.7,
-    "size": 3,
+    "size": 4,
     "color": "#eb5368",
     "info": {
       "type": "vulnerability"
@@ -294,8 +315,13 @@
     "label": "n25: only authenticated devices",
     "x": 0.6,
     "y": 0.67,
-    "size": 3,
+    "size": 5,
     "color": "#70bf53",
+    "type": "equilateral",
+    "equilateral": {
+      "numPoints": 8,
+      "rotate": 25
+    },
     "info": {
       "type": "constraint"
     }
@@ -304,7 +330,7 @@
     "label": "n26: hashed tokens",
     "x": 0.53,
     "y": 0.7,
-    "size": 3,
+    "size": 4,
     "color": "#70bf53",
     "info": {
       "type": "mechanism"
@@ -314,8 +340,9 @@
     "label": "n27: authentication",
     "x": 0.7,
     "y": 0.7,
-    "size": 3,
+    "size": 4,
     "color": "#70bf53",
+    "type": "cross",
     "info": {
       "type": "property"
     }

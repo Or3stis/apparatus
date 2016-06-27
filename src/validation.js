@@ -20,7 +20,7 @@ module.exports = function validation (s) {
         if (neighborNodes[i].info.type === 'constraint') {
           // console.log(neighborNodes[i].id) // constraints
           arrMitigated.push(n.id)
-          result = `${result} Threat ${n.id} is mitigated by constraint
+          result = `${result} > Threat ${n.id} is mitigated by constraint
           ${neighborNodes[i].id} <br/>`
         }
       }
@@ -29,12 +29,12 @@ module.exports = function validation (s) {
   // checks the arrays to see which threat is not mitigated
   for (let i of arrThreat.values()) {
     if (arrMitigated[i] !== arrThreat[i]) {
-      result = `${result} Threat ${arrThreat[i]} is not mitigated <br/>`
+      result = `${result} > Threat ${arrThreat[i]} is not mitigated <br/>`
     }
   }
 
   // result will be displayed at infoForNodes div
-  result = `${result} Threats total: ${arrThreat.length} <br/>`
-  result = `${result} Mitigated total: ${arrMitigated.length} <br/>`
+  result = `${result} > Threats total: ${arrThreat.length} <br/>`
+  result = `${result} > Mitigated total: ${arrMitigated.length} <br/>`
   document.getElementById('infoForNodes').innerHTML = result
 }

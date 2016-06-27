@@ -6,7 +6,7 @@ module.exports = function nodeInfo (n) {
   for (let i in n.data.node.info) {
     // adds the keys of the object to the string
     if (n.data.node.info.hasOwnProperty(i)) {
-      nodeInfo = `${nodeInfo} ${i}: `
+      nodeInfo = `${nodeInfo} > ${i}: `
     }
     // adds the values of the object to the string
     nodeInfo = `${nodeInfo} ${n.data.node.info[i]} <br/>`

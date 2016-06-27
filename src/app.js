@@ -1,4 +1,4 @@
-/* global sigma */
+/* global sigma CustomShapes*/
 
 // here is where it begins
 'use strict'
@@ -102,7 +102,7 @@ sigma.parsers.json(fileToLoad, {
   })
 
   buttonIoT.addEventListener('click', () => {
-    buttonSelection('iotNode', s)
+    buttonSelection('device', s)
   })
   buttonThreat.addEventListener('click', () => {
     buttonSelection('threat', s)
@@ -111,7 +111,8 @@ sigma.parsers.json(fileToLoad, {
     buttonSelection('vulnerability', s)
   })
   buttonAsset.addEventListener('click', () => {
-    buttonSelection('asset', s)
+    // TODO only shows soft assets
+    buttonSelection('soft asset' || 'hard asset', s)
   })
   buttonMechanism.addEventListener('click', () => {
     buttonSelection('mechanism', s)
@@ -185,6 +186,7 @@ sigma.parsers.json(fileToLoad, {
   })
 
   // last stage refresh
+  CustomShapes.init(s) // required for the shapes
   s.refresh()
 
   // beginning of the functions
@@ -202,14 +204,14 @@ sigma.parsers.json(fileToLoad, {
       if (toKeep[n.id]) {
         n.color = n.originalColor
       } else {
-        n.color = '#2c2e3f'
+        n.color = '#666666'
       }
     }
     for (let e of s.graph.edges().values()) {
       if (toKeep[e.target]) {
         e.color = e.originalColor
       } else {
-        e.color = '#2c2e3f'
+        e.color = '#666666'
       }
     }
   }

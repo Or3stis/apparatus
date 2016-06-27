@@ -1,10 +1,10 @@
 body {
-  background: #14171a;
+  background: #272D36;
   font-family: sans-serif;
   color: #8fa1b2;
 }
 .graph {
-  background: #14171a;
+  background: #272D36;
   width: 1000px;
   height: 700px;
   margin: 0;
@@ -24,7 +24,7 @@ body {
   position: absolute;;
   width: 8em;
   height: 100%;
-  background-color: #252c33;
+  background-color: #272D36;
 }
 .components {
   height: 6em;
