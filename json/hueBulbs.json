@@ -77,14 +77,14 @@
     }
   }, {
     "id": "n4",
-    "label": "n4: microcorld",
+    "label": "n4: microcosm",
     "x": 0.5,
     "y": 0.27,
     "size": 7,
     "color": "#46afe3",
     "type": "equilateral",
     "info": {
-      "type": "device",
+      "type": "microcosm",
       "state": "static"
     }
   }, {
@@ -146,14 +146,14 @@
     }
   }, {
     "id": "n10",
-    "label": "n10: secure microcorld",
+    "label": "n10: secure microcosm",
     "x": 0.55,
     "y": 0.4,
     "size": 7,
     "color": "#70bf53",
     "type": "cross",
     "info": {
-      "type": "security",
+      "type": "secure microcosm",
       "state": "static"
     }
   }, {
@@ -233,7 +233,8 @@
     "size": 4,
     "color": "#46afe3",
     "info": {
-      "type": "wireless"
+      "type": "network connection",
+      "style": "wireless"
     }
   }, {
     "id": "n18",
@@ -243,7 +244,8 @@
     "size": 4,
     "color": "#46afe3",
     "info": {
-      "type": "wireless"
+      "type": "network connection",
+      "style": "wireless"
     }
   }, {
     "id": "n19",
@@ -253,7 +255,8 @@
     "size": 4,
     "color": "#46afe3",
     "info": {
-      "type": "wireless"
+      "type": "network connection",
+      "style": "wireless"
     }
   }, {
     "id": "n20",

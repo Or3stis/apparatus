@@ -1,0 +1,74 @@
+{
+  "nodes": [{
+    "id": "n0",
+    "label": "n0",
+    "x": 0.1,
+    "y": 0.1,
+    "size": 3,
+    "color": "#46afe3",
+    "type": "equilateral",
+    "equilateral": {
+      "numPoints": 8,
+      "rotate": 25
+    },
+    "info": {
+      "aspect": "physical",
+      "layer": "application"
+    }
+  }, {
+    "id": "n1",
+    "label": "n1",
+    "x": 0.4,
+    "y": 0.1,
+    "size": 3,
+    "color": "#eb5368",
+    "type": "cross",
+    "equilateral": {
+      "rotate": 25
+    },
+    "info": {
+      "aspect": "application"
+    }
+  }, {
+    "id": "n2",
+    "label": "n2",
+    "x": 0.4,
+    "y": 0.3,
+    "size": 3,
+    "color": "#70bf53",
+    "type": "diamond",
+    "info": {
+      "aspect": "application"
+    }
+  }, {
+    "id": "n3",
+    "label": "n3",
+    "x": 0.4,
+    "y": 0.5,
+    "size": 3,
+    "color": "#8fa1b2",
+    "type": "pacman",
+    "info": {
+      "aspect": "application"
+    }
+  }],
+  "edges": [{
+    "id": "e0",
+    "source": "n0",
+    "target": "n1",
+    "label": "hello",
+    "labelColor": "#000"
+  }, {
+    "id": "e2",
+    "source": "n0",
+    "target": "n2"
+  }, {
+    "id": "e3",
+    "source": "n0",
+    "target": "n3"
+  }, {
+    "id": "e4",
+    "source": "n2",
+    "target": "n3"
+  }]
+}

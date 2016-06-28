@@ -6,7 +6,7 @@ module.exports = function buttonSelection (classification, s) {
   for (let n of s.graph.nodes().values()) {
     if (n.info.type === classification) {
       n.color = n.originalColor
-      nodes = `${nodes} ${n.label} <br/>`
+      nodes = `${nodes} > ${n.label} <br/>`
     } else {
       n.color = '#666666'
     }

@@ -6,6 +6,7 @@
 const jsonfile = require('jsonfile')
 const nodeInfo = require('./src/nodeInfo.js')
 const validation = require('./src/validation.js')
+const moduleValidation = require('./src/moduleValidation.js')
 const buttonSelection = require('./src/buttonSelection.js')
 
 // important, location of the json file
@@ -68,13 +69,8 @@ sigma.parsers.json(fileToLoad, {
 
   // decleration of the buttons of the buttons
   let buttonSave = document.getElementById('saveButton')
-  let buttonIoT = document.getElementById('iotButton')
-  let buttonThreat = document.getElementById('threatButton')
-  let buttonVuln = document.getElementById('vulnButton')
-  let buttonAsset = document.getElementById('assetButton')
-  let buttonMechanism = document.getElementById('mechanismButton')
-  let buttonConstraint = document.getElementById('constraintButton')
   let buttonValidate = document.getElementById('validateButton')
+  let buttonModuleValidate = document.getElementById('moduleValidateButton')
   let buttonAddThreat = document.getElementById('addThreat')
   let buttonAddConstraint = document.getElementById('addConstraint')
   let buttonAddVuln = document.getElementById('addVuln')
@@ -101,28 +97,14 @@ sigma.parsers.json(fileToLoad, {
     })
   })
 
-  buttonIoT.addEventListener('click', () => {
-    buttonSelection('device', s)
-  })
-  buttonThreat.addEventListener('click', () => {
-    buttonSelection('threat', s)
-  })
-  buttonVuln.addEventListener('click', () => {
-    buttonSelection('vulnerability', s)
-  })
-  buttonAsset.addEventListener('click', () => {
-    // TODO only shows soft assets
-    buttonSelection('soft asset' || 'hard asset', s)
-  })
-  buttonMechanism.addEventListener('click', () => {
-    buttonSelection('mechanism', s)
-  })
-  buttonConstraint.addEventListener('click', () => {
-    buttonSelection('constraint', s)
-  })
   buttonValidate.addEventListener('click', () => {
     validation(s)
-  })// TODO: add a function that finds the last node id
+  })
+  buttonModuleValidate.addEventListener('click', () => {
+    moduleValidation(s)
+  })
+
+  // TODO: add a function that finds the last node id
   // then add it to the created node
   buttonAddThreat.addEventListener('click', () => {
     s.graph.addNode({
@@ -235,4 +217,18 @@ sigma.parsers.json(fileToLoad, {
     window.alert('right click works')
     s.refresh()
   })
+
+  // for the search function
+  window.onkeyup = keyup
+
+  let input
+
+  function keyup (e) {
+    input = e.target.value
+
+    if (e.keyCode === 13) {
+      // console.log(input)
+      buttonSelection(input, s)
+    }
+  }
 })

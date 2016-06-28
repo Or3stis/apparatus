@@ -31,16 +31,16 @@ body {
   /*background-color: white;*/
 }
 .filters {
-  height: 12em;
-  background-color: black;
+  height: 15em;
+  /*background-color: black;*/
 }
 .analysis {
-  height: 3em;
+  height: 6em;
   /*background-color: pink;*/
 }
 .save {
   height: 3em;
-  background-color: black;
+  /*background-color: black;*/
 }
 .button {
   background-color: #1a4666;
