@@ -90,3 +90,13 @@ body {
 .device {
   background-color: #46afe3;
 }
+
+select:required:invalid {
+  color: gray;
+}
+option[value=""][disabled] {
+  display: none;
+}
+option {
+  color: black;
+}

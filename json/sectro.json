@@ -36,7 +36,7 @@
     "y": 0.3,
     "size": 3,
     "color": "#70bf53",
-    "type": "diamond",
+    "type": "star",
     "info": {
       "aspect": "application"
     }
@@ -47,7 +47,7 @@
     "y": 0.5,
     "size": 3,
     "color": "#8fa1b2",
-    "type": "pacman",
+    "type": "new",
     "info": {
       "aspect": "application"
     }

@@ -10,7 +10,7 @@ const moduleValidation = require('./src/moduleValidation.js')
 const buttonSelection = require('./src/buttonSelection.js')
 
 // important, location of the json file
-const fileToLoad = 'json/hueBulbs.json'
+const fileToLoad = 'json/sectro.json'
 
 // create the graph from the json file
 sigma.parsers.json(fileToLoad, {
@@ -77,11 +77,6 @@ sigma.parsers.json(fileToLoad, {
   let buttonAddMechanism = document.getElementById('addMechanism')
   let buttonAddDevice = document.getElementById('addDevice')
   let buttonEdge = document.getElementById('addEdge')
-
-  // has the right click functionality
-  // document.getElementById('addNode').oncontextmenu = function () {
-  //   console.log('it works')
-  // }
 
   buttonSave.addEventListener('click', function save () {
     const fileToSave = 'json/test.json'
@@ -171,6 +166,16 @@ sigma.parsers.json(fileToLoad, {
   CustomShapes.init(s) // required for the shapes
   s.refresh()
 
+  // TODO test for the atlas
+  let buttonStopAtlas = document.getElementById('stopAtlas')
+  buttonStopAtlas.addEventListener('click', () => {
+    s.killForceAtlas2()
+  })
+  let buttonStartAtlas = document.getElementById('startAtlas')
+  buttonStartAtlas.addEventListener('click', () => {
+    s.startForceAtlas2()
+  })
+
   // beginning of the functions
 
   // when a node is clicked the neighbors is checked
@@ -186,14 +191,14 @@ sigma.parsers.json(fileToLoad, {
       if (toKeep[n.id]) {
         n.color = n.originalColor
       } else {
-        n.color = '#666666'
+        n.color = '#424A57'
       }
     }
     for (let e of s.graph.edges().values()) {
       if (toKeep[e.target]) {
         e.color = e.originalColor
       } else {
-        e.color = '#666666'
+        e.color = '#424A57'
       }
     }
   }
@@ -219,16 +224,10 @@ sigma.parsers.json(fileToLoad, {
   })
 
   // for the search function
-  window.onkeyup = keyup
+  // add filter options with arrow down
+  let select = document.getElementById('selection')
 
-  let input
-
-  function keyup (e) {
-    input = e.target.value
-
-    if (e.keyCode === 13) {
-      // console.log(input)
-      buttonSelection(input, s)
-    }
-  }
+  select.addEventListener('change', (e) => {
+    buttonSelection(e.target.value, s)
+  })
 })

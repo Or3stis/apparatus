@@ -8,11 +8,11 @@ module.exports = function buttonSelection (classification, s) {
       n.color = n.originalColor
       nodes = `${nodes} > ${n.label} <br/>`
     } else {
-      n.color = '#666666'
+      n.color = '#424A57'
     }
   }
   for (let e of s.graph.edges().values()) {
-    e.color = '#666666'
+    e.color = '#424A57'
   }
   document.getElementById('infoForNodes').innerHTML = nodes
   s.refresh()
