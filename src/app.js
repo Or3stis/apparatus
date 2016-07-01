@@ -10,7 +10,7 @@ const moduleValidation = require('./src/moduleValidation.js')
 const buttonSelection = require('./src/buttonSelection.js')
 
 // important, location of the json file
-const fileToLoad = 'json/sectro.json'
+const fileToLoad = 'json/hueBulbs.json'
 
 // create the graph from the json file
 sigma.parsers.json(fileToLoad, {

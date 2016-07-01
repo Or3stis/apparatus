@@ -23,6 +23,7 @@
   "homepage": "https://github.com/#readme",
   "devDependencies": {
     "devtron": "^1.1.2",
-    "electron-prebuilt": "^1.2.0"
+    "electron-prebuilt": "^1.2.0",
+    "jsonfile": "^2.3.1"
   }
 }
