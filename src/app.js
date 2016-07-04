@@ -3,11 +3,12 @@
 // here is where it begins
 'use strict'
 
-const jsonfile = require('jsonfile')
 const nodeInfo = require('./src/nodeInfo.js')
+const showNeighbor = require('./src/showNeighbor.js')
 const validation = require('./src/validation.js')
 const moduleValidation = require('./src/moduleValidation.js')
 const buttonSelection = require('./src/buttonSelection.js')
+const save = require('./src/save.js')
 
 // important, location of the json file
 const fileToLoad = 'json/hueBulbs.json'
@@ -57,7 +58,7 @@ sigma.parsers.json(fileToLoad, {
 
   // functions when individual nodes are clicked
   s.bind('clickNode', (n) => {
-    showNeighbor(n)
+    showNeighbor(n, s)
     nodeInfo(n)
     footerSourceTargetNode(n)
     s.refresh()
@@ -102,7 +103,7 @@ sigma.parsers.json(fileToLoad, {
   // })
 
   buttonSave.addEventListener('click', () => {
-    save()
+    save(s)
   })
 
   buttonValidate.addEventListener('click', () => {
@@ -135,7 +136,6 @@ sigma.parsers.json(fileToLoad, {
       e.originalColor = e.color
     })
     s.refresh()
-    // window.alert('uncomment')
   })
   buttonAddConstraint.addEventListener('click', () => {
     window.alert('uncomment')
@@ -174,31 +174,6 @@ sigma.parsers.json(fileToLoad, {
 
   // beginning of the functions
 
-  // when a node is clicked the neighbors is checked
-  // if neighbor true, the original color is kept
-  // needs the sigmaNeighbor.js to work
-  function showNeighbor (e) {
-    let nodeId = e.data.node.id
-    let toKeep = s.graph.neighbors(nodeId)
-
-    toKeep[nodeId] = e.data.node
-
-    for (let n of s.graph.nodes().values()) {
-      if (toKeep[n.id]) {
-        n.color = n.originalColor
-      } else {
-        n.color = '#424A57'
-      }
-    }
-    for (let e of s.graph.edges().values()) {
-      if (toKeep[e.target]) {
-        e.color = e.originalColor
-      } else {
-        e.color = '#424A57'
-      }
-    }
-  }
-
   // returns color to stage when clicked
   function returnColorNeighbor () {
     for (let n of s.graph.nodes().values()) {
@@ -220,20 +195,6 @@ sigma.parsers.json(fileToLoad, {
     // message displayed in the footer bar
     let selectedNodes = `source node: ${sourceNode} targetNode: ${targetNode}`
     document.getElementById('footerId').innerHTML = selectedNodes
-  }
-
-  function save () {
-    const fileToSave = 'json/test.json'
-    // parses graph and stores it as an object
-    const fullgraph = {
-      nodes: s.graph.nodes(),
-      edges: s.graph.edges()
-    }
-    jsonfile.writeFile(fileToSave, fullgraph, (err) => {
-      if (err) {
-        throw err
-      }
-    })
   }
 
   // for the filter function

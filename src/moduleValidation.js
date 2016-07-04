@@ -8,9 +8,10 @@ module.exports = function moduleValidation (s) {
   deviceValidation(s)
 }
 
+let result = '' // posted on the nodeInfo div
+
 function deviceValidation (s) {
   let arrCorrect = [] // array with mitigated threats
-  let result = '' // posted on the nodeInfo div
 
   for (let n of s.graph.nodes().values()) {
     // checks if node is a device

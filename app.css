@@ -1,6 +1,6 @@
 body {
   background: #272D36;
-  font-family: sans-serif;
+  font-family: Menlo, monospace;
   color: #8fa1b2;
 }
 .graph {
@@ -15,6 +15,7 @@ body {
   /*background: gray;*/
   bottom: 0;
   right: 0;
+  margin: 2px;
   width: 11em;
   height: 100%;
   position: absolute;
@@ -37,19 +38,22 @@ body {
 }
 .components {
   height: 6em;
+  margin: 5px;
   /*background-color: white;*/
 }
 .filters {
-  height: 15em;
-  margin: 2px;
+  height: 8em;
+  margin: 5px;
   /*background-color: black;*/
 }
 .analysis {
   height: 6em;
+  margin: 5px;
   /*background-color: pink;*/
 }
 .save {
   height: 3em;
+  margin: 5px;
   /*background-color: black;*/
 }
 .button {
@@ -58,7 +62,6 @@ body {
   color: #8fa1b2;
   border-radius: 20px;
   border-style: none;
-  font-family: sans-serif;
   font-size: 16px;
   padding: 6px 10px 6px 10px;
   cursor: pointer;
