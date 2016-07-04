@@ -29,10 +29,14 @@ function deviceValidation (s) {
         arrCorrect.push(neighborNodes[i].info.type)
         if (neighborNodes[i].info.type === 'secure microcosm' ||
             neighborNodes[i].info.type === 'microcosm' ||
+            neighborNodes[i].info.type === 'vulnerability' ||
             neighborNodes[i].info.type === 'network connection') {
           arrCorrect.pop(neighborNodes[i].info.type)
         }
         result = `${arrCorrect}`
+        if (result === '') {
+          result = 'module is valid'
+        }
       }
     }
   }

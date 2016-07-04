@@ -12,6 +12,24 @@ const buttonSelection = require('./src/buttonSelection.js')
 // important, location of the json file
 const fileToLoad = 'json/hueBulbs.json'
 
+// global variables
+// captures the id of last two selected nodes
+let sourceNode = ''
+let targetNode = ''
+
+// decleration of the buttons
+let buttonSave = document.getElementById('saveButton')
+let buttonValidate = document.getElementById('validateButton')
+let buttonModuleValidate = document.getElementById('moduleValidateButton')
+let buttonAddThreat = document.getElementById('addThreat')
+let buttonAddConstraint = document.getElementById('addConstraint')
+let buttonAddVuln = document.getElementById('addVuln')
+let buttonAddMechanism = document.getElementById('addMechanism')
+let buttonAddDevice = document.getElementById('addDevice')
+let buttonEdge = document.getElementById('addEdge')
+let buttonStopAtlas = document.getElementById('stopAtlas')
+let buttonStartAtlas = document.getElementById('startAtlas')
+
 // create the graph from the json file
 sigma.parsers.json(fileToLoad, {
   renderer: {
@@ -41,12 +59,23 @@ sigma.parsers.json(fileToLoad, {
   s.bind('clickNode', (n) => {
     showNeighbor(n)
     nodeInfo(n)
+    footerSourceTargetNode(n)
     s.refresh()
   })
 
   // functions when the stage is clicked
-  s.bind('clickStage', (e) => {
-    returnColorNeighbor(e)
+  s.bind('clickStage', () => {
+    returnColorNeighbor()
+    s.refresh()
+  })
+
+  // test functions to check double and right click
+  s.bind('doubleClickNode', (n) => {
+    window.alert('double click works')
+    s.refresh()
+  })
+  s.bind('rightClickNode', (n) => {
+    window.alert('right click works')
     s.refresh()
   })
 
@@ -62,34 +91,18 @@ sigma.parsers.json(fileToLoad, {
   // })
   // dragListener.bind('drop', (event) => {
   //   // console.log(event)
+  //   returnColorNeighbor()
+  //   console.log(event)
+  //   s.refresh()
   // })
-  // dragListener.bind('dragend', (event) => {
-  //   // console.log(event)
+  // dragListener.bind('dragend', (event, e) => {
+  //   returnColorNeighbor()
+  //   console.log(event)
+  //   s.refresh()
   // })
 
-  // decleration of the buttons of the buttons
-  let buttonSave = document.getElementById('saveButton')
-  let buttonValidate = document.getElementById('validateButton')
-  let buttonModuleValidate = document.getElementById('moduleValidateButton')
-  let buttonAddThreat = document.getElementById('addThreat')
-  let buttonAddConstraint = document.getElementById('addConstraint')
-  let buttonAddVuln = document.getElementById('addVuln')
-  let buttonAddMechanism = document.getElementById('addMechanism')
-  let buttonAddDevice = document.getElementById('addDevice')
-  let buttonEdge = document.getElementById('addEdge')
-
-  buttonSave.addEventListener('click', function save () {
-    const fileToSave = 'json/test.json'
-    // parses graph and stores it as an object
-    const fullgraph = {
-      nodes: s.graph.nodes(),
-      edges: s.graph.edges()
-    }
-    jsonfile.writeFile(fileToSave, fullgraph, (err) => {
-      if (err) {
-        throw err
-      }
-    })
+  buttonSave.addEventListener('click', () => {
+    save()
   })
 
   buttonValidate.addEventListener('click', () => {
@@ -99,12 +112,13 @@ sigma.parsers.json(fileToLoad, {
     moduleValidation(s)
   })
 
-  // TODO: add a function that finds the last node id
-  // then add it to the created node
   buttonAddThreat.addEventListener('click', () => {
+    // finds the id of the last node
+    let lastNode = s.graph.nodes().length
+
     s.graph.addNode({
-      id: 'n50',
-      label: 'n50 Threat',
+      id: lastNode,
+      label: `n${lastNode} Threat`,
       x: 0,
       y: 0,
       size: 3,
@@ -130,51 +144,33 @@ sigma.parsers.json(fileToLoad, {
     window.alert('uncomment')
   })
   buttonAddMechanism.addEventListener('click', () => {
-    // s.graph.addNode({
-    //   id: 'n51',
-    //   label: 'n51 mechanism',
-    //   x: 0,
-    //   y: 0,
-    //   size: 3,
-    //   color: '#70bf53',
-    //   info: {
-    //     type: 'security mechanism'
-    //   }
-    // })
-    // // needed to for the selection functions
-    // s.graph.nodes().forEach((n) => {
-    //   n.originalColor = n.color
-    // })
-    // s.graph.edges().forEach((e) => {
-    //   e.originalColor = e.color
-    // })
-    // s.refresh()
     window.alert('uncomment')
   })
   buttonAddDevice.addEventListener('click', () => {
     window.alert('uncomment')
   })
   buttonEdge.addEventListener('click', (e) => {
+    // finds the id of the last edge
+    let lastEdge = s.graph.edges().length
+
     s.graph.addEdge({
-      id: 'e50',
-      target: 'n50',
-      source: 'n1'
+      id: lastEdge,
+      target: sourceNode,
+      source: targetNode
     })
+    s.refresh()
+  })
+
+  buttonStopAtlas.addEventListener('click', () => {
+    s.killForceAtlas2()
+  })
+  buttonStartAtlas.addEventListener('click', () => {
+    s.startForceAtlas2()
   })
 
   // last stage refresh
   CustomShapes.init(s) // required for the shapes
   s.refresh()
-
-  // TODO test for the atlas
-  let buttonStopAtlas = document.getElementById('stopAtlas')
-  buttonStopAtlas.addEventListener('click', () => {
-    s.killForceAtlas2()
-  })
-  let buttonStartAtlas = document.getElementById('startAtlas')
-  buttonStartAtlas.addEventListener('click', () => {
-    s.startForceAtlas2()
-  })
 
   // beginning of the functions
 
@@ -204,7 +200,7 @@ sigma.parsers.json(fileToLoad, {
   }
 
   // returns color to stage when clicked
-  function returnColorNeighbor (e) {
+  function returnColorNeighbor () {
     for (let n of s.graph.nodes().values()) {
       n.color = n.originalColor
     }
@@ -213,17 +209,34 @@ sigma.parsers.json(fileToLoad, {
     }
   }
 
-  // test functions to check double and right click
-  s.bind('doubleClickNode', (n) => {
-    window.alert('double click works')
-    s.refresh()
-  })
-  s.bind('rightClickNode', (n) => {
-    window.alert('right click works')
-    s.refresh()
-  })
+  function footerSourceTargetNode (n) {
+    // store the id of the selected node to be used for
+    // addEdge function
+    let nodeId = n.data.node.id
 
-  // for the search function
+    targetNode = sourceNode // second selection
+    sourceNode = nodeId // first selection
+
+    // message displayed in the footer bar
+    let selectedNodes = `source node: ${sourceNode} targetNode: ${targetNode}`
+    document.getElementById('footerId').innerHTML = selectedNodes
+  }
+
+  function save () {
+    const fileToSave = 'json/test.json'
+    // parses graph and stores it as an object
+    const fullgraph = {
+      nodes: s.graph.nodes(),
+      edges: s.graph.edges()
+    }
+    jsonfile.writeFile(fileToSave, fullgraph, (err) => {
+      if (err) {
+        throw err
+      }
+    })
+  }
+
+  // for the filter function
   // add filter options with arrow down
   let select = document.getElementById('selection')
 
