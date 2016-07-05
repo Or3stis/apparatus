@@ -193,7 +193,8 @@ sigma.parsers.json(fileToLoad, {
     sourceNode = nodeId // first selection
 
     // message displayed in the footer bar
-    let selectedNodes = `source node: ${sourceNode} targetNode: ${targetNode}`
+    let selectedNodes = `source node: ${sourceNode} <br/>
+      targetNode: ${targetNode}`
     document.getElementById('footerId').innerHTML = selectedNodes
   }
 
