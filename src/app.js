@@ -27,7 +27,8 @@ let buttonAddConstraint = document.getElementById('addConstraint')
 let buttonAddVuln = document.getElementById('addVuln')
 let buttonAddMechanism = document.getElementById('addMechanism')
 let buttonAddDevice = document.getElementById('addDevice')
-let buttonEdge = document.getElementById('addEdge')
+let buttonAddEdge = document.getElementById('addEdge')
+let buttonDeleteNode = document.getElementById('deleteNode')
 let buttonStopAtlas = document.getElementById('stopAtlas')
 let buttonStartAtlas = document.getElementById('startAtlas')
 
@@ -44,8 +45,8 @@ sigma.parsers.json(fileToLoad, {
     defaultLabelColor: '#8fa1b2',
     defaultEdgeLabelColor: '#8fa1b2'
   // must enable canvas in type for edge hovering
-  // enableEdgeHovering: true,
-  // edgeHoverSizeRatio: '2'
+    // enableEdgeHovering: true,
+    // edgeHoverSizeRatio: '2'
   }
 }, (s) => {
   // store the initial colors of the nodes and edges
@@ -58,8 +59,8 @@ sigma.parsers.json(fileToLoad, {
 
   // functions when individual nodes are clicked
   s.bind('clickNode', (n) => {
-    showNeighbor(n, s)
-    nodeInfo(n)
+    showNeighbor(n, s) // module
+    nodeInfo(n) // module
     footerSourceTargetNode(n)
     s.refresh()
   })
@@ -69,6 +70,11 @@ sigma.parsers.json(fileToLoad, {
     returnColorNeighbor()
     s.refresh()
   })
+
+  // s.bind('overEdge', (n) => {
+  //   window.alert('it works')
+  //   s.refresh()
+  // })
 
   // test functions to check double and right click
   s.bind('doubleClickNode', (n) => {
@@ -103,14 +109,14 @@ sigma.parsers.json(fileToLoad, {
   // })
 
   buttonSave.addEventListener('click', () => {
-    save(s)
+    save(s) // module
   })
 
   buttonValidate.addEventListener('click', () => {
-    validation(s)
+    validation(s) // module
   })
   buttonModuleValidate.addEventListener('click', () => {
-    moduleValidation(s)
+    moduleValidation(s) // module
   })
 
   buttonAddThreat.addEventListener('click', () => {
@@ -149,7 +155,7 @@ sigma.parsers.json(fileToLoad, {
   buttonAddDevice.addEventListener('click', () => {
     window.alert('uncomment')
   })
-  buttonEdge.addEventListener('click', (e) => {
+  buttonAddEdge.addEventListener('click', () => {
     // finds the id of the last edge
     let lastEdge = s.graph.edges().length
 
@@ -158,6 +164,11 @@ sigma.parsers.json(fileToLoad, {
       target: sourceNode,
       source: targetNode
     })
+    s.refresh()
+  })
+  // TODO add backspace event listener
+  buttonDeleteNode.addEventListener('click', () => {
+    s.graph.dropNode(sourceNode)
     s.refresh()
   })
 

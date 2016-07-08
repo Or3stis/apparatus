@@ -445,7 +445,8 @@
   }, {
     "id": "e23",
     "source": "n6",
-    "target": "n5"
+    "target": "n5",
+    "label": "hello"
   }, {
     "id": "e24",
     "source": "n11",
