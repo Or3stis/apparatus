@@ -20,8 +20,8 @@
       "read_cam0:size": 5,
       "read_cam0:x": -118.52499999999996,
       "read_cam0:y": -233.56542968749997,
-      "renderer1:x": 430.475,
-      "renderer1:y": 135.43457031250003,
+      "renderer1:x": 381.475,
+      "renderer1:y": 116.43457031250003,
       "renderer1:size": 5,
       "originalColor": "#46afe3",
       "id": "n0"
@@ -46,8 +46,8 @@
       "read_cam0:size": 5,
       "read_cam0:x": -83.52499999999996,
       "read_cam0:y": -58.56542968749996,
-      "renderer1:x": 465.475,
-      "renderer1:y": 310.43457031250006,
+      "renderer1:x": 416.475,
+      "renderer1:y": 291.43457031250006,
       "renderer1:size": 5,
       "originalColor": "#46afe3",
       "id": "n1"
@@ -72,8 +72,8 @@
       "read_cam0:size": 5,
       "read_cam0:x": -188.52499999999995,
       "read_cam0:y": 116.43457031250004,
-      "renderer1:x": 360.475,
-      "renderer1:y": 485.43457031250006,
+      "renderer1:x": 311.475,
+      "renderer1:y": 466.43457031250006,
       "renderer1:size": 5,
       "originalColor": "#46afe3",
       "id": "n2"
@@ -98,8 +98,8 @@
       "read_cam0:size": 5,
       "read_cam0:x": 21.47500000000005,
       "read_cam0:y": 116.43457031250004,
-      "renderer1:x": 570.475,
-      "renderer1:y": 485.43457031250006,
+      "renderer1:x": 521.475,
+      "renderer1:y": 466.43457031250006,
       "renderer1:size": 5,
       "originalColor": "#46afe3",
       "id": "n3"
@@ -118,8 +118,8 @@
       "read_cam0:size": 8,
       "read_cam0:x": 91.47500000000004,
       "read_cam0:y": -114.56542968749993,
-      "renderer1:x": 640.475,
-      "renderer1:y": 254.43457031250006,
+      "renderer1:x": 591.475,
+      "renderer1:y": 235.43457031250006,
       "renderer1:size": 8,
       "originalColor": "#46afe3",
       "id": "n4"
@@ -137,8 +137,8 @@
       "read_cam0:size": 8,
       "read_cam0:x": 161.47500000000002,
       "read_cam0:y": -65.56542968749993,
-      "renderer1:x": 710.475,
-      "renderer1:y": 303.43457031250006,
+      "renderer1:x": 661.475,
+      "renderer1:y": 284.43457031250006,
       "renderer1:size": 8,
       "originalColor": "#aaaaaa",
       "id": "n5"
@@ -157,8 +157,8 @@
       "read_cam0:size": 5,
       "read_cam0:x": -195.52499999999995,
       "read_cam0:y": 46.43457031250006,
-      "renderer1:x": 353.475,
-      "renderer1:y": 415.43457031250006,
+      "renderer1:x": 304.475,
+      "renderer1:y": 396.43457031250006,
       "renderer1:size": 5,
       "originalColor": "#eb5368",
       "id": "n6"
@@ -175,8 +175,8 @@
       "read_cam0:size": 5,
       "read_cam0:x": -244.52499999999995,
       "read_cam0:y": 18.43457031250007,
-      "renderer1:x": 304.475,
-      "renderer1:y": 387.43457031250006,
+      "renderer1:x": 255.47500000000005,
+      "renderer1:y": 368.43457031250006,
       "renderer1:size": 5,
       "originalColor": "#eb5368",
       "id": "n7"
@@ -198,8 +198,8 @@
       "read_cam0:size": 6,
       "read_cam0:x": -230.52499999999998,
       "read_cam0:y": 186.43457031250003,
-      "renderer1:x": 318.475,
-      "renderer1:y": 555.4345703125,
+      "renderer1:x": 269.475,
+      "renderer1:y": 536.4345703125,
       "renderer1:size": 6,
       "originalColor": "#70bf53",
       "id": "n8"
@@ -216,8 +216,8 @@
       "read_cam0:size": 5,
       "read_cam0:x": -257.825,
       "read_cam0:y": 144.43457031250006,
-      "renderer1:x": 291.175,
-      "renderer1:y": 513.4345703125,
+      "renderer1:x": 242.175,
+      "renderer1:y": 494.43457031250006,
       "renderer1:size": 5,
       "originalColor": "#70bf53",
       "id": "n9"
@@ -236,8 +236,8 @@
       "read_cam0:size": 8,
       "read_cam0:x": 126.47500000000007,
       "read_cam0:y": -23.56542968749993,
-      "renderer1:x": 675.475,
-      "renderer1:y": 345.43457031250006,
+      "renderer1:x": 626.475,
+      "renderer1:y": 326.43457031250006,
       "renderer1:size": 8,
       "originalColor": "#70bf53",
       "id": "n10"
@@ -256,8 +256,8 @@
       "read_cam0:size": 5,
       "read_cam0:x": 91.47500000000004,
       "read_cam0:y": -233.56542968749997,
-      "renderer1:x": 640.475,
-      "renderer1:y": 135.43457031250003,
+      "renderer1:x": 591.475,
+      "renderer1:y": 116.43457031250003,
       "renderer1:size": 5,
       "originalColor": "#eb5368",
       "id": "n11"
@@ -274,8 +274,8 @@
       "read_cam0:size": 5,
       "read_cam0:x": 70.47500000000001,
       "read_cam0:y": -198.56542968749991,
-      "renderer1:x": 619.475,
-      "renderer1:y": 170.43457031250009,
+      "renderer1:x": 570.475,
+      "renderer1:y": 151.43457031250009,
       "renderer1:size": 5,
       "originalColor": "#eb5368",
       "id": "n12"
@@ -297,8 +297,8 @@
       "read_cam0:size": 5,
       "read_cam0:x": 161.47500000000002,
       "read_cam0:y": -163.56542968749994,
-      "renderer1:x": 710.475,
-      "renderer1:y": 205.43457031250006,
+      "renderer1:x": 661.475,
+      "renderer1:y": 186.43457031250006,
       "renderer1:size": 5,
       "originalColor": "#70bf53",
       "id": "n13"
@@ -315,8 +315,8 @@
       "read_cam0:size": 5,
       "read_cam0:x": 112.47500000000005,
       "read_cam0:y": -142.56542968749994,
-      "renderer1:x": 661.475,
-      "renderer1:y": 226.43457031250006,
+      "renderer1:x": 612.475,
+      "renderer1:y": 207.43457031250006,
       "renderer1:size": 5,
       "originalColor": "#70bf53",
       "id": "n14"
@@ -334,8 +334,8 @@
       "read_cam0:size": 5,
       "read_cam0:x": 231.475,
       "read_cam0:y": -212.56542968749994,
-      "renderer1:x": 780.475,
-      "renderer1:y": 156.43457031250006,
+      "renderer1:x": 731.475,
+      "renderer1:y": 137.43457031250006,
       "renderer1:size": 5,
       "originalColor": "#70bf53",
       "id": "n15"
@@ -353,8 +353,8 @@
       "read_cam0:size": 5,
       "read_cam0:x": -188.52499999999995,
       "read_cam0:y": 221.43457031250006,
-      "renderer1:x": 360.475,
-      "renderer1:y": 590.4345703125,
+      "renderer1:x": 311.475,
+      "renderer1:y": 571.4345703125,
       "renderer1:size": 5,
       "originalColor": "#70bf53",
       "id": "n16"
@@ -373,8 +373,8 @@
       "read_cam0:size": 5,
       "read_cam0:x": -104.52499999999996,
       "read_cam0:y": -163.56542968749994,
-      "renderer1:x": 444.475,
-      "renderer1:y": 205.43457031250006,
+      "renderer1:x": 395.475,
+      "renderer1:y": 186.43457031250006,
       "renderer1:size": 5,
       "originalColor": "#46afe3",
       "id": "n17"
@@ -393,8 +393,8 @@
       "read_cam0:size": 5,
       "read_cam0:x": 7.475000000000037,
       "read_cam0:y": 60.43457031250007,
-      "renderer1:x": 556.475,
-      "renderer1:y": 429.43457031250006,
+      "renderer1:x": 507.475,
+      "renderer1:y": 410.43457031250006,
       "renderer1:size": 5,
       "originalColor": "#46afe3",
       "id": "n18"
@@ -413,8 +413,8 @@
       "read_cam0:size": 5,
       "read_cam0:x": -153.52499999999998,
       "read_cam0:y": 74.43457031250009,
-      "renderer1:x": 395.475,
-      "renderer1:y": 443.4345703125001,
+      "renderer1:x": 346.475,
+      "renderer1:y": 424.4345703125001,
       "renderer1:size": 5,
       "originalColor": "#46afe3",
       "id": "n19"
@@ -433,8 +433,8 @@
       "read_cam0:size": 5,
       "read_cam0:x": -188.52499999999995,
       "read_cam0:y": -9.565429687499954,
-      "renderer1:x": 360.475,
-      "renderer1:y": 359.43457031250006,
+      "renderer1:x": 311.475,
+      "renderer1:y": 340.43457031250006,
       "renderer1:size": 5,
       "originalColor": "#D08B0F",
       "id": "n20"
@@ -453,8 +453,8 @@
       "read_cam0:size": 5,
       "read_cam0:x": 7.475000000000037,
       "read_cam0:y": -212.56542968749994,
-      "renderer1:x": 556.475,
-      "renderer1:y": 156.43457031250006,
+      "renderer1:x": 507.475,
+      "renderer1:y": 137.43457031250006,
       "renderer1:size": 5,
       "originalColor": "#D08B0F",
       "id": "n21"
@@ -473,8 +473,8 @@
       "read_cam0:size": 5,
       "read_cam0:x": -48.52499999999998,
       "read_cam0:y": 165.43457031250009,
-      "renderer1:x": 500.475,
-      "renderer1:y": 534.4345703125001,
+      "renderer1:x": 451.475,
+      "renderer1:y": 515.4345703125001,
       "renderer1:size": 5,
       "originalColor": "#D08B0F",
       "id": "n22"
@@ -493,8 +493,8 @@
       "read_cam0:size": 5,
       "read_cam0:x": 91.47500000000004,
       "read_cam0:y": 151.43457031250009,
-      "renderer1:x": 640.475,
-      "renderer1:y": 520.4345703125001,
+      "renderer1:x": 591.475,
+      "renderer1:y": 501.4345703125001,
       "renderer1:size": 5,
       "originalColor": "#eb5368",
       "id": "n23"
@@ -511,8 +511,8 @@
       "read_cam0:size": 5,
       "read_cam0:x": 70.47500000000001,
       "read_cam0:y": 186.43457031250003,
-      "renderer1:x": 619.475,
-      "renderer1:y": 555.4345703125,
+      "renderer1:x": 570.475,
+      "renderer1:y": 536.4345703125,
       "renderer1:size": 5,
       "originalColor": "#eb5368",
       "id": "n24"
@@ -534,8 +534,8 @@
       "read_cam0:size": 6,
       "read_cam0:x": 161.47500000000002,
       "read_cam0:y": 165.43457031250009,
-      "renderer1:x": 710.475,
-      "renderer1:y": 534.4345703125001,
+      "renderer1:x": 661.475,
+      "renderer1:y": 515.4345703125001,
       "renderer1:size": 6,
       "originalColor": "#70bf53",
       "id": "n25"
@@ -552,8 +552,8 @@
       "read_cam0:size": 5,
       "read_cam0:x": 112.47500000000005,
       "read_cam0:y": 186.43457031250003,
-      "renderer1:x": 661.475,
-      "renderer1:y": 555.4345703125,
+      "renderer1:x": 612.475,
+      "renderer1:y": 536.4345703125,
       "renderer1:size": 5,
       "originalColor": "#70bf53",
       "id": "n26"
@@ -571,8 +571,8 @@
       "read_cam0:size": 5,
       "read_cam0:x": 231.475,
       "read_cam0:y": 186.43457031250003,
-      "renderer1:x": 780.475,
-      "renderer1:y": 555.4345703125,
+      "renderer1:x": 731.475,
+      "renderer1:y": 536.4345703125,
       "renderer1:size": 5,
       "originalColor": "#70bf53",
       "id": "n27"
@@ -590,8 +590,8 @@
       "read_cam0:size": 5,
       "read_cam0:x": -43.49999999999998,
       "read_cam0:y": 90.93457031250009,
-      "renderer1:x": 505.5,
-      "renderer1:y": 459.9345703125001,
+      "renderer1:x": 456.5,
+      "renderer1:y": 440.9345703125001,
       "renderer1:size": 5,
       "originalColor": "#46afe3",
       "id": "n28"
@@ -609,8 +609,8 @@
       "read_cam0:size": 5,
       "read_cam0:x": -36.17499999999995,
       "read_cam0:y": 205.43457031250003,
-      "renderer1:x": 512.825,
-      "renderer1:y": 574.4345703125,
+      "renderer1:x": 463.82500000000005,
+      "renderer1:y": 555.4345703125,
       "renderer1:size": 5,
       "originalColor": "#46afe3",
       "id": "n29"
@@ -628,10 +628,11 @@
       "read_cam0:size": 5,
       "read_cam0:x": -111.99999999999999,
       "read_cam0:y": 233.56542968749997,
-      "renderer1:x": 437,
-      "renderer1:y": 602.5654296875,
+      "renderer1:x": 388,
+      "renderer1:y": 583.5654296875,
       "renderer1:size": 5,
-      "id": "n30"
+      "id": "n30",
+      "originalColor": "#ffff1a"
     },
     {
       "label": "n31: malicious actor",
@@ -646,10 +647,11 @@
       "read_cam0:size": 5,
       "read_cam0:x": 247.99999999999991,
       "read_cam0:y": 16.934570312500053,
-      "renderer1:x": 796.9999999999999,
-      "renderer1:y": 385.93457031250006,
+      "renderer1:x": 747.9999999999999,
+      "renderer1:y": 366.93457031250006,
       "renderer1:size": 5,
-      "id": "n31"
+      "id": "n31",
+      "originalColor": "#ff0000"
     },
     {
       "label": "n32: unkown node",
@@ -663,11 +665,30 @@
       "read_cam0:size": 5,
       "read_cam0:x": 257.825,
       "read_cam0:y": -68.56542968749993,
-      "renderer1:x": 806.825,
-      "renderer1:y": 300.43457031250006,
+      "renderer1:x": 757.825,
+      "renderer1:y": 281.43457031250006,
       "renderer1:size": 5,
       "originalColor": "#aaaaaa",
       "id": "n32"
+    },
+    {
+      "label": "n33: data",
+      "x": 0.15932142857142856,
+      "y": 0.3965220424107142,
+      "size": 4,
+      "color": "#46afe3",
+      "type": "square",
+      "info": {
+        "type": "data"
+      },
+      "read_cam0:size": 5,
+      "read_cam0:x": -146.99999999999997,
+      "read_cam0:y": -26,
+      "renderer1:x": 353,
+      "renderer1:y": 324,
+      "renderer1:size": 5,
+      "originalColor": "#46afe3",
+      "id": "n33"
     }
   ],
   "edges": [
@@ -886,14 +907,14 @@
       "renderer1:size": 0,
       "id": "e29",
       "source": "n20",
-      "target": "n19"
+      "target": "n33"
     },
     {
       "read_cam0:size": null,
       "renderer1:size": 0,
       "id": "e30",
       "source": "n21",
-      "target": "n4"
+      "target": "n0"
     },
     {
       "read_cam0:size": null,
@@ -915,15 +936,15 @@
       "read_cam0:size": null,
       "renderer1:size": 0,
       "id": "e33",
-      "source": "n6",
-      "target": "n31"
+      "source": "n31",
+      "target": "n6"
     },
     {
       "read_cam0:size": null,
       "renderer1:size": 0,
       "id": "e34",
-      "source": "n23",
-      "target": "n31"
+      "source": "n31",
+      "target": "n23"
     },
     {
       "read_cam0:size": null,
@@ -985,8 +1006,8 @@
       "read_cam0:size": null,
       "renderer1:size": 0,
       "id": 44,
-      "source": "n28",
-      "target": "n18"
+      "source": "n18",
+      "target": "n28"
     },
     {
       "read_cam0:size": null,
@@ -1006,8 +1027,8 @@
       "read_cam0:size": null,
       "renderer1:size": 0,
       "id": 47,
-      "source": "n32",
-      "target": "n31"
+      "source": "n31",
+      "target": "n32"
     },
     {
       "read_cam0:size": null,
@@ -1015,8 +1036,8 @@
       "type": "curvedArrow",
       "label": "owns",
       "id": 48,
-      "source": "n3",
-      "target": "n30"
+      "source": "n30",
+      "target": "n3"
     },
     {
       "read_cam0:size": null,
@@ -1031,8 +1052,8 @@
       "type": "curvedArrow",
       "label": "owns",
       "id": 50,
-      "source": "n29",
-      "target": "n30"
+      "source": "n30",
+      "target": "n29"
     },
     {
       "read_cam0:size": null,
@@ -1040,8 +1061,8 @@
       "type": "curvedArrow",
       "label": "owns",
       "id": 51,
-      "source": "n28",
-      "target": "n30"
+      "source": "n30",
+      "target": "n28"
     },
     {
       "read_cam0:size": null,
@@ -1049,8 +1070,15 @@
       "type": "curvedArrow",
       "label": "owns",
       "id": 52,
-      "source": "n2",
-      "target": "n30"
+      "source": "n30",
+      "target": "n2"
+    },
+    {
+      "id": 53,
+      "source": "n33",
+      "target": "n19",
+      "read_cam0:size": null,
+      "renderer1:size": 0
     }
   ]
 }
