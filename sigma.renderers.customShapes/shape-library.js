@@ -119,7 +119,7 @@
    * fill, and skip the border renderer which is irrelevant for this shape
    * ----------
    */
-  var drawPacman = function (node, x, y, size, color, context) {
+  var drawActor = function (node, x, y, size, color, context) {
     context.fillStyle = 'yellow'
     context.beginPath()
     context.arc(x, y, size, 1.25 * Math.PI, 0, false)
@@ -142,7 +142,32 @@
     context.closePath()
     context.fill()
   }
-  register('pacman', drawPacman, null)
+  register('actor', drawActor, null)
+
+  var drawMaliciousActor = function (node, x, y, size, color, context) {
+    context.fillStyle = 'red'
+    context.beginPath()
+    context.arc(x, y, size, 1.25 * Math.PI, 0, false)
+    context.arc(x, y, size, 0, 0.75 * Math.PI, false)
+    context.lineTo(x, y)
+    context.closePath()
+    context.fill()
+
+    context.fillStyle = 'white'
+    context.strokeStyle = 'black'
+    context.beginPath()
+    context.arc(x + size / 3, y - size / 3, size / 4, 0, 2 * Math.PI, false)
+    context.closePath()
+    context.fill()
+    context.stroke()
+
+    context.fillStyle = 'black'
+    context.beginPath()
+    context.arc(x + 4 * size / 9, y - size / 3, size / 8, 0, 2 * Math.PI, false)
+    context.closePath()
+    context.fill()
+  }
+  register('maliciousActor', drawMaliciousActor, null)
 
   var drawTriangle = function (node, x, y, size, context) {
     context.moveTo(x - size, y)
@@ -151,8 +176,17 @@
   }
   register('triangle', genericDrawShape(drawTriangle), genericDrawBorder(drawTriangle))
 
+  var drawHourglass = function (node, x, y, size, context) {
+    var rotate = Math.PI * 45 / 180
+    context.moveTo(x + size * Math.sin(rotate), y - size * Math.cos(rotate))
+    for (var i = 1; i < 4; i++) {
+      context.lineTo(x + Math.sin(rotate + 2 * Math.PI * i / 2) * size, y - Math.cos(rotate + 2 * Math.PI * i / 4) * size)
+    }
+  }
+  register('hourglass', genericDrawShape(drawHourglass), genericDrawBorder(drawHourglass))
+
   var drawNew = function (node, x, y, size, color, context) {
-    context.fillStyle = 'yellow'
+    // context.fillStyle = 'yellow'
     context.beginPath()
     context.arc(x, y, size, Math.PI * 2, 0, true)
     context.moveTo(x, y + size)
@@ -164,8 +198,8 @@
     context.stroke()
     // context.fill()
 
-    context.fillStyle = 'white'
-    context.strokeStyle = 'black'
+    // context.fillStyle = 'white'
+    // context.strokeStyle = 'black'
     context.beginPath()
     context.arc(x + size / 3, y - size / 3, size / 4, 0, 2 * Math.PI, false)
     context.closePath()

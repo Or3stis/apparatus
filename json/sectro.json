@@ -22,9 +22,9 @@
     "y": 0.1,
     "size": 3,
     "color": "#eb5368",
-    "type": "cross",
+    "type": "triangle",
     "equilateral": {
-      "rotate": 25
+      "rotate": 45
     },
     "info": {
       "aspect": "application"
@@ -36,7 +36,7 @@
     "y": 0.3,
     "size": 3,
     "color": "#70bf53",
-    "type": "star",
+    "type": "hourglass",
     "info": {
       "aspect": "application"
     }
@@ -47,7 +47,7 @@
     "y": 0.5,
     "size": 3,
     "color": "#8fa1b2",
-    "type": "new",
+    "type": "actor",
     "info": {
       "aspect": "application"
     }

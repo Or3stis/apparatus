@@ -8,17 +8,20 @@ const showNeighbor = require('./src/showNeighbor.js')
 const validation = require('./src/validation.js')
 const moduleValidation = require('./src/moduleValidation.js')
 const buttonSelection = require('./src/buttonSelection.js')
+const moduleSelection = require('./src/moduleSelection.js')
 const save = require('./src/save.js')
 
 // important, location of the json file
-const fileToLoad = 'json/hueBulbs.json'
+const fileToLoad = 'json/large.json'
 
 // global variables
 // captures the id of last two selected nodes
 let sourceNode = ''
 let targetNode = ''
 
-// decleration of the buttons
+// test button, remove at some point
+let buttonTest = document.getElementById('testButton')
+  // decleration of the buttons
 let buttonSave = document.getElementById('saveButton')
 let buttonValidate = document.getElementById('validateButton')
 let buttonModuleValidate = document.getElementById('moduleValidateButton')
@@ -44,9 +47,9 @@ sigma.parsers.json(fileToLoad, {
     edgeLabelSize: 'fixed',
     defaultLabelColor: '#8fa1b2',
     defaultEdgeLabelColor: '#8fa1b2'
-  // must enable canvas in type for edge hovering
-    // enableEdgeHovering: true,
-    // edgeHoverSizeRatio: '2'
+      // must enable canvas in type for edge hovering
+      // enableEdgeHovering: true,
+      // edgeHoverSizeRatio: '2'
   }
 }, (s) => {
   // store the initial colors of the nodes and edges
@@ -88,25 +91,25 @@ sigma.parsers.json(fileToLoad, {
 
   // drag nodes plugin
   sigma.plugins.dragNodes(s, s.renderers[0])
-  // the rest of the node is to make dragable events to fire up
-  // const dragListener = sigma.plugins.dragNodes(s, s.renderers[0])
-  // dragListener.bind('startdrag', (event) => {
-  //   // console.log(event)
-  // })
-  // dragListener.bind('drag', (event) => {
-  //   // console.log(event)
-  // })
-  // dragListener.bind('drop', (event) => {
-  //   // console.log(event)
-  //   returnColorNeighbor()
-  //   console.log(event)
-  //   s.refresh()
-  // })
-  // dragListener.bind('dragend', (event, e) => {
-  //   returnColorNeighbor()
-  //   console.log(event)
-  //   s.refresh()
-  // })
+    // the rest of the node is to make dragable events to fire up
+    // const dragListener = sigma.plugins.dragNodes(s, s.renderers[0])
+    // dragListener.bind('startdrag', (event) => {
+    //   // console.log(event)
+    // })
+    // dragListener.bind('drag', (event) => {
+    //   // console.log(event)
+    // })
+    // dragListener.bind('drop', (event) => {
+    //   // console.log(event)
+    //   returnColorNeighbor()
+    //   console.log(event)
+    //   s.refresh()
+    // })
+    // dragListener.bind('dragend', (event, e) => {
+    //   returnColorNeighbor()
+    //   console.log(event)
+    //   s.refresh()
+    // })
 
   buttonSave.addEventListener('click', () => {
     save(s) // module
@@ -134,7 +137,7 @@ sigma.parsers.json(fileToLoad, {
         type: 'threat'
       }
     })
-    // needed to for the selection functions
+      // needed to for the selection functions
     s.graph.nodes().forEach((n) => {
       n.originalColor = n.color
     })
@@ -166,7 +169,7 @@ sigma.parsers.json(fileToLoad, {
     })
     s.refresh()
   })
-  // TODO add backspace event listener
+    // TODO add backspace event listener
   buttonDeleteNode.addEventListener('click', () => {
     s.graph.dropNode(sourceNode)
     s.refresh()
@@ -215,5 +218,11 @@ sigma.parsers.json(fileToLoad, {
 
   select.addEventListener('change', (e) => {
     buttonSelection(e.target.value, s)
+  })
+
+  // grouping of the modules
+  let moduleGroup = document.getElementById('moduleGroup')
+  moduleGroup.addEventListener('change', (input) => {
+    moduleSelection(input, s)
   })
 })

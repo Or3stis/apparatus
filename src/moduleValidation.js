@@ -9,6 +9,10 @@ module.exports = function moduleValidation (s) {
 }
 
 let result = '' // posted on the nodeInfo div
+  // valid device connections
+let deviceArray = ['secure microcosm', 'microcosm', 'vulnerability',
+  'network connection'
+]
 
 function deviceValidation (s) {
   let arrCorrect = [] // array with mitigated threats
@@ -16,8 +20,6 @@ function deviceValidation (s) {
   for (let n of s.graph.nodes().values()) {
     // checks if node is a device
     if (n.info.type === 'device') {
-      // console.log(n.info.type)
-
       // stores the neigborring nodes of the threats
       let neighborNodes = s.graph.neighbors(n.id)
 
@@ -28,10 +30,7 @@ function deviceValidation (s) {
       // if not, the values in the array will indicate the mistakes
       for (let i of Object.keys(neighborNodes)) {
         arrCorrect.push(neighborNodes[i].info.type)
-        if (neighborNodes[i].info.type === 'secure microcosm' ||
-            neighborNodes[i].info.type === 'microcosm' ||
-            neighborNodes[i].info.type === 'vulnerability' ||
-            neighborNodes[i].info.type === 'network connection') {
+        if (deviceArray.indexOf(neighborNodes[i].info.type) !== -1) {
           arrCorrect.pop(neighborNodes[i].info.type)
         }
         result = `${arrCorrect}`
@@ -41,9 +40,5 @@ function deviceValidation (s) {
       }
     }
   }
-
-  // result will be displayed at infoForNodes div
-  // result = `${result} > Threats total: ${arrNodes.length} <br/>`
-  // result = `${result} > Mitigated total: ${arrCorrect.length} <br/>`
   document.getElementById('infoForNodes').innerHTML = result
 }

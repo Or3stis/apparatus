@@ -1,0 +1,529 @@
+{
+  "nodes": [{
+    "id": "n0",
+    "label": "n0: server",
+    "x": 0.2,
+    "y": 0.1,
+    "size": 4,
+    "color": "#46afe3",
+    "info": {
+      "type": "device",
+      "id": "02",
+      "aspect": "physical",
+      "layer": "application",
+      "nodeType": "server",
+      "trust": "3",
+      "attribute": "process",
+      "input": "dataDigital",
+      "output": "dataDigital"
+    }
+  }, {
+    "id": "n1",
+    "label": "n1: router",
+    "x": 0.25,
+    "y": 0.35,
+    "size": 4,
+    "color": "#46afe3",
+    "info": {
+      "type": "device",
+      "id": "01",
+      "aspect": "physical",
+      "layer": "gateway",
+      "nodeType": "router",
+      "trust": "3",
+      "attribute": "relay",
+      "input": "dataDigital",
+      "output": "dataDigital"
+    }
+  }, {
+    "id": "n2",
+    "label": "n2: smart bulb",
+    "x": 0.1,
+    "y": 0.6,
+    "size": 4,
+    "color": "#46afe3",
+    "info": {
+      "type": "device",
+      "id": "01",
+      "aspect": "physical",
+      "layer": "perception",
+      "nodeType": "actuator",
+      "trust": "3",
+      "attribute": "listener",
+      "input": "command",
+      "output": "physicalAction"
+    }
+  }, {
+    "id": "n3",
+    "label": "n3: smart phone",
+    "x": 0.4,
+    "y": 0.6,
+    "size": 4,
+    "color": "#46afe3",
+    "info": {
+      "type": "device",
+      "id": "01",
+      "aspect": "physical",
+      "layer": "perception",
+      "nodeType": "mobilePhone",
+      "trust": "3",
+      "attribute": "bipolar",
+      "input": "dataDigital",
+      "output": "dataDigital"
+    }
+  }, {
+    "id": "n4",
+    "label": "n4: microcosm",
+    "x": 0.5,
+    "y": 0.27,
+    "size": 7,
+    "color": "#46afe3",
+    "type": "triangle",
+    "info": {
+      "type": "microcosm",
+      "state": "static"
+    }
+  }, {
+    "id": "n5",
+    "label": "n5: unkown world",
+    "x": 0.6,
+    "y": 0.34,
+    "size": 7,
+    "color": "#aaaaaa",
+    "type": "triangle",
+    "info": {
+      "type": "unkown world"
+    }
+  }, {
+    "id": "n6",
+    "label": "n6: credential leakage",
+    "x": 0.09,
+    "y": 0.5,
+    "size": 4,
+    "color": "#eb5368",
+    "type": "diamond",
+    "info": {
+      "type": "threat",
+      "class": "spoofing"
+    }
+  }, {
+    "id": "n7",
+    "label": "n7: no encryption",
+    "x": 0.02,
+    "y": 0.46,
+    "size": 4,
+    "color": "#eb5368",
+    "info": {
+      "type": "vulnerability"
+    }
+  }, {
+    "id": "n8",
+    "label": "n8: credentials must be protected",
+    "x": 0.04,
+    "y": 0.7,
+    "size": 5,
+    "color": "#70bf53",
+    "type": "equilateral",
+    "equilateral": {
+      "numPoints": 8,
+      "rotate": 25
+    },
+    "info": {
+      "type": "constraint"
+    }
+  }, {
+    "id": "n9",
+    "label": "n9: encryption during authentication",
+    "x": 0.001,
+    "y": 0.64,
+    "size": 4,
+    "color": "#70bf53",
+    "info": {
+      "type": "mechanism"
+    }
+  }, {
+    "id": "n10",
+    "label": "n10: secure microcosm",
+    "x": 0.55,
+    "y": 0.4,
+    "size": 7,
+    "color": "#70bf53",
+    "type": "triangle",
+    "info": {
+      "type": "secure microcosm",
+      "state": "static"
+    }
+  }, {
+    "id": "n11",
+    "label": "n11: system is not auditable",
+    "x": 0.5,
+    "y": 0.1,
+    "size": 4,
+    "color": "#eb5368",
+    "type": "diamond",
+    "info": {
+      "type": "threat",
+      "class": "repudiation"
+    }
+  }, {
+    "id": "n12",
+    "label": "n12: no activity logs",
+    "x": 0.47,
+    "y": 0.15,
+    "size": 4,
+    "color": "#eb5368",
+    "info": {
+      "type": "vulnerability"
+    }
+  }, {
+    "id": "n13",
+    "label": "n13: cronological activity records",
+    "x": 0.6,
+    "y": 0.2,
+    "size": 4,
+    "color": "#70bf53",
+    "type": "equilateral",
+    "equilateral": {
+      "numPoints": 8,
+      "rotate": 25
+    },
+    "info": {
+      "type": "constraint"
+    }
+  }, {
+    "id": "n14",
+    "label": "n14: log files",
+    "x": 0.53,
+    "y": 0.23,
+    "size": 4,
+    "color": "#70bf53",
+    "info": {
+      "type": "mechanism"
+    }
+  }, {
+    "id": "n15",
+    "label": "n15: auditing",
+    "x": 0.7,
+    "y": 0.13,
+    "size": 4,
+    "color": "#70bf53",
+    "type": "cross",
+    "info": {
+      "type": "property"
+    }
+  }, {
+    "id": "n16",
+    "label": "n16: authentication",
+    "x": 0.1,
+    "y": 0.75,
+    "size": 4,
+    "color": "#70bf53",
+    "type": "cross",
+    "info": {
+      "type": "property"
+    }
+  }, {
+    "id": "n17",
+    "label": "n17: network connection",
+    "x": 0.22,
+    "y": 0.2,
+    "size": 4,
+    "color": "#46afe3",
+    "type": "diamond",
+    "info": {
+      "type": "network connection",
+      "style": "wireless"
+    }
+  }, {
+    "id": "n18",
+    "label": "n18: network connection",
+    "x": 0.38,
+    "y": 0.52,
+    "size": 4,
+    "color": "#46afe3",
+    "type": "diamond",
+    "info": {
+      "type": "network connection",
+      "style": "wireless"
+    }
+  }, {
+    "id": "n19",
+    "label": "n19: network connection",
+    "x": 0.15,
+    "y": 0.54,
+    "size": 4,
+    "color": "#46afe3",
+    "type": "diamond",
+    "info": {
+      "type": "network connection",
+      "style": "wireless"
+    }
+  }, {
+    "id": "n20",
+    "label": "n20: flowing data",
+    "x": 0.1,
+    "y": 0.42,
+    "size": 4,
+    "color": "#D08B0F",
+    "type": "hourglass",
+    "info": {
+      "type": "asset",
+      "property": "flowing data"
+    }
+  }, {
+    "id": "n21",
+    "label": "n21: device",
+    "x": 0.38,
+    "y": 0.13,
+    "size": 4,
+    "color": "#D08B0F",
+    "type": "hourglass",
+    "info": {
+      "type": "asset",
+      "property": "device"
+    }
+  }, {
+    "id": "n22",
+    "label": "n22: data flow",
+    "x": 0.3,
+    "y": 0.67,
+    "size": 4,
+    "color": "#D08B0F",
+    "type": "hourglass",
+    "info": {
+      "type": "asset",
+      "property": "data traffic"
+    }
+  }, {
+    "id": "n23",
+    "label": "n23: data tampering",
+    "x": 0.5,
+    "y": 0.65,
+    "size": 4,
+    "color": "#eb5368",
+    "type": "diamond",
+    "info": {
+      "type": "threat",
+      "class": "tampering"
+    }
+  }, {
+    "id": "n24",
+    "label": "n24: weak authentication token",
+    "x": 0.47,
+    "y": 0.7,
+    "size": 4,
+    "color": "#eb5368",
+    "info": {
+      "type": "vulnerability"
+    }
+  }, {
+    "id": "n25",
+    "label": "n25: only authenticated devices",
+    "x": 0.6,
+    "y": 0.67,
+    "size": 5,
+    "color": "#70bf53",
+    "type": "equilateral",
+    "equilateral": {
+      "numPoints": 8,
+      "rotate": 25
+    },
+    "info": {
+      "type": "constraint"
+    }
+  }, {
+    "id": "n26",
+    "label": "n26: hashed tokens",
+    "x": 0.53,
+    "y": 0.7,
+    "size": 4,
+    "color": "#70bf53",
+    "info": {
+      "type": "mechanism"
+    }
+  }, {
+    "id": "n27",
+    "label": "n27: authentication",
+    "x": 0.7,
+    "y": 0.7,
+    "size": 4,
+    "color": "#70bf53",
+    "type": "cross",
+    "info": {
+      "type": "property"
+    }
+  }],
+  "edges": [{
+    "id": "e0",
+    "source": "n0",
+    "target": "n17"
+  }, {
+    "id": "e1",
+    "source": "n3",
+    "target": "n18"
+  }, {
+    "id": "e2",
+    "source": "n2",
+    "target": "n19"
+  }, {
+    "id": "e3",
+    "source": "n0",
+    "target": "n4"
+  }, {
+    "id": "e4",
+    "source": "n1",
+    "target": "n4"
+  }, {
+    "id": "e5",
+    "source": "n2",
+    "target": "n4"
+  }, {
+    "id": "e6",
+    "source": "n3",
+    "target": "n4"
+  }, {
+    "id": "e7",
+    "source": "n5",
+    "target": "n4"
+  }, {
+    "id": "e8",
+    "source": "n10",
+    "target": "n2"
+  }, {
+    "id": "e9",
+    "source": "n10",
+    "target": "n3"
+  }, {
+    "id": "e10",
+    "source": "n10",
+    "target": "n1"
+  }, {
+    "id": "e11",
+    "source": "n6",
+    "target": "n7"
+  }, {
+    "id": "e12",
+    "source": "n7",
+    "target": "n2"
+  }, {
+    "id": "e13",
+    "source": "n9",
+    "target": "n7"
+  }, {
+    "id": "e14",
+    "source": "n9",
+    "target": "n8"
+  }, {
+    "id": "e15",
+    "source": "n8",
+    "target": "n6"
+  }, {
+    "id": "e16",
+    "source": "n8",
+    "target": "n16"
+  }, {
+    "id": "e17",
+    "source": "n12",
+    "target": "n4"
+  }, {
+    "id": "e18",
+    "source": "n11",
+    "target": "n12"
+  }, {
+    "id": "e19",
+    "source": "n13",
+    "target": "n11"
+  }, {
+    "id": "e20",
+    "source": "n14",
+    "target": "n13"
+  }, {
+    "id": "e21",
+    "source": "n14",
+    "target": "n12"
+  }, {
+    "id": "e22",
+    "source": "n13",
+    "target": "n15"
+  }, {
+    "id": "e23",
+    "source": "n6",
+    "target": "n5"
+  }, {
+    "id": "e24",
+    "source": "n11",
+    "target": "n5"
+  }, {
+    "id": "e25",
+    "source": "n1",
+    "target": "n19"
+  }, {
+    "id": "e26",
+    "source": "n1",
+    "target": "n18"
+  }, {
+    "id": "e27",
+    "source": "n1",
+    "target": "n17"
+  }, {
+    "id": "e28",
+    "source": "n6",
+    "target": "n20"
+  }, {
+    "id": "e29",
+    "source": "n20",
+    "target": "n19"
+  }, {
+    "id": "e30",
+    "source": "n21",
+    "target": "n4"
+  }, {
+    "id": "e31",
+    "source": "n11",
+    "target": "n21"
+  }, {
+    "id": "e32",
+    "source": "n20",
+    "target": "n10"
+  }, {
+    "id": "e33",
+    "source": "n21",
+    "target": "n10"
+  }, {
+    "id": "e34",
+    "source": "n22",
+    "target": "n10"
+  }, {
+    "id": "e35",
+    "source": "n22",
+    "target": "n18"
+  }, {
+    "id": "e36",
+    "source": "n23",
+    "target": "n24"
+  }, {
+    "id": "e37",
+    "source": "n23",
+    "target": "n22"
+  }, {
+    "id": "e38",
+    "source": "n24",
+    "target": "n3"
+  }, {
+    "id": "e39",
+    "source": "n26",
+    "target": "n25"
+  }, {
+    "id": "e40",
+    "source": "n26",
+    "target": "n24"
+  }, {
+    "id": "e41",
+    "source": "n25",
+    "target": "n27"
+  }, {
+    "id": "e42",
+    "source": "n25",
+    "target": "n10"
+  }]
+}
