@@ -12,7 +12,7 @@ const moduleSelection = require('./src/moduleSelection.js')
 const save = require('./src/save.js')
 
 // important, location of the json file
-const fileToLoad = 'json/large.json'
+const fileToLoad = 'json/savedFile.json'
 
 // global variables
 // captures the id of last two selected nodes
@@ -35,6 +35,9 @@ let buttonDeleteNode = document.getElementById('deleteNode')
 let buttonStopAtlas = document.getElementById('stopAtlas')
 let buttonStartAtlas = document.getElementById('startAtlas')
 
+let select = document.getElementById('selection')
+let moduleGroup = document.getElementById('moduleGroup')
+
 // create the graph from the json file
 sigma.parsers.json(fileToLoad, {
   renderer: {
@@ -47,9 +50,9 @@ sigma.parsers.json(fileToLoad, {
     edgeLabelSize: 'fixed',
     defaultLabelColor: '#8fa1b2',
     defaultEdgeLabelColor: '#8fa1b2'
-      // must enable canvas in type for edge hovering
-      // enableEdgeHovering: true,
-      // edgeHoverSizeRatio: '2'
+    // must enable canvas in type for edge hovering
+    // enableEdgeHovering: 'true',
+    // edgeHoverSizeRatio: '2'
   }
 }, (s) => {
   // store the initial colors of the nodes and edges
@@ -181,6 +184,14 @@ sigma.parsers.json(fileToLoad, {
   buttonStartAtlas.addEventListener('click', () => {
     s.startForceAtlas2()
   })
+  // for the filter selection
+  select.addEventListener('change', (e) => {
+    buttonSelection(e.target.value, s)
+  })
+  // grouping of the modules
+  moduleGroup.addEventListener('change', (input) => {
+    moduleSelection(input, s)
+  })
 
   // last stage refresh
   CustomShapes.init(s) // required for the shapes
@@ -211,18 +222,4 @@ sigma.parsers.json(fileToLoad, {
       targetNode: ${targetNode}`
     document.getElementById('footerId').innerHTML = selectedNodes
   }
-
-  // for the filter function
-  // add filter options with arrow down
-  let select = document.getElementById('selection')
-
-  select.addEventListener('change', (e) => {
-    buttonSelection(e.target.value, s)
-  })
-
-  // grouping of the modules
-  let moduleGroup = document.getElementById('moduleGroup')
-  moduleGroup.addEventListener('change', (input) => {
-    moduleSelection(input, s)
-  })
 })

@@ -4,7 +4,7 @@ const jsonfile = require('jsonfile')
 
 // shows info of node in the div 'infoForNodes'
 module.exports = function save (s) {
-  const fileToSave = 'json/test.json'
+  const fileToSave = 'json/savedFile.json'
   // parses graph and stores it as an object
   const fullgraph = {
     nodes: s.graph.nodes(),
