@@ -1,4 +1,4 @@
-# Graphical security analysis tool
+# Graphical network security analysis tool
 
 [![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](http://standardjs.com/)
 

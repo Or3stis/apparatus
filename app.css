@@ -1,7 +1,11 @@
 body {
-  background: #272D36;
+  background: #1f2029;
   font-family: Menlo, monospace;
-  color: #8fa1b2;
+  color: #e7e8ec;
+}
+h3 {
+  color: #56c255;
+  text-align: center;
 }
 .graph {
   /*background: white;*/
@@ -11,7 +15,7 @@ body {
   padding: 0;
 }
 .sidebar {
-  /*background: gray;*/
+  background: #181d20;
   bottom: 0;
   right: 0;
   margin: 2px;
@@ -20,47 +24,48 @@ body {
   position: absolute;
 }
 .footer {
+  background: #181d20;
   bottom: 0;
   position: absolute;
   width: 100%;
   height: 3em;
 }
 .actionBar {
-  /*background: gray;*/
+  background: #181d20;
   bottom: 0;
   left: 0;
   position: absolute;;
-  width: 8em;
+  width: 9em;
   height: 100%;
 }
 .components {
-  height: 6em;
+  height: 7em;
   margin: 5px;
   /*background-color: white;*/
 }
 .filters {
   height: 8em;
   margin: 5px;
-  /*background-color: black;*/
+  /*background-color: gray;*/
 }
 .analysis {
-  height: 6em;
-  margin: 5px;
+  height: 8em;
+  margin: 8px;
   /*background-color: pink;*/
 }
 .save {
-  height: 3em;
-  margin: 5px;
-  /*background-color: black;*/
+  height: 6em;
+  margin: 8px;
+  /*background-color: gray;*/
 }
 .button {
   background-color: #1a4666;
-  margin: 2px;
-  color: #8fa1b2;
+  margin: 4px;
+  color: #e7e8ec;
   /*border-radius: 20px;*/
   border-style: none;
   font-size: 16px;
-  padding: 6px 10px 6px 10px;
+  padding: 8px 10px 8px 12px;
   cursor: pointer;
 }
 .button:hover {

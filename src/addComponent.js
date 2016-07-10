@@ -53,7 +53,7 @@ module.exports = function addComponent (component, s) {
   }
 
   s.graph.addNode({
-    id: lastNode,
+    id: `n${lastNode}`,
     label: `n${lastNode} ${component}`,
     x: 0,
     y: 0,

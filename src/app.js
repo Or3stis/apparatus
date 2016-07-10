@@ -45,8 +45,8 @@ sigma.parsers.json(fileToLoad, {
     labelSize: 'fixed',
     labelThreshold: '9',
     edgeLabelSize: 'fixed',
-    defaultLabelColor: '#8fa1b2',
-    defaultEdgeLabelColor: '#8fa1b2'
+    defaultLabelColor: '#e7e8ec',
+    defaultEdgeLabelColor: '#e7e8ec'
     // must enable canvas in type for edge hovering
     // enableEdgeHovering: 'true',
     // edgeHoverSizeRatio: '2'
@@ -153,6 +153,9 @@ sigma.parsers.json(fileToLoad, {
   moduleGroup.addEventListener('change', (input) => {
     moduleSelection(input, s)
   })
+  addStuff.addEventListener('change', (e) => {
+    addComponent(e.target.value, s)
+  })
 
   // last stage refresh
   CustomShapes.init(s) // required for the custom shapes
@@ -183,10 +186,4 @@ sigma.parsers.json(fileToLoad, {
       targetNode: ${targetNode}`
     document.getElementById('footerId').innerHTML = selectedNodes
   }
-
-  // TODO finish the function
-  addStuff.addEventListener('change', (e) => {
-    console.log(e.target.value)
-    addComponent(e.target.value, s)
-  })
 })
