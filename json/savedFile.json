@@ -1,1 +1,1236 @@
-{"nodes":[{"label":"n0: server","x":0.2,"y":0.1,"size":5,"color":"#46afe3","info":{"type":"device","id":"02","aspect":"physical","layer":"application","nodeType":"server","trust":"3","attribute":"process","input":"dataDigital","output":"dataDigital"},"read_cam0:size":6,"read_cam0:x":-111.90129352874857,"read_cam0:y":-210.3662817478178,"renderer1:x":388.09870647125143,"renderer1:y":139.6337182521822,"renderer1:size":6,"originalColor":"#46afe3","id":"n0"},{"label":"n1: router","x":0.25,"y":0.35,"size":5,"color":"#46afe3","info":{"type":"device","id":"01","aspect":"physical","layer":"gateway","nodeType":"router","trust":"3","attribute":"relay","input":"dataDigital","output":"dataDigital"},"read_cam0:size":6,"read_cam0:x":-76.90129352874857,"read_cam0:y":-35.36628174781779,"renderer1:x":423.09870647125143,"renderer1:y":314.63371825218223,"renderer1:size":6,"originalColor":"#46afe3","id":"n1"},{"label":"n2: smart bulb","x":0.1,"y":0.6,"size":5,"color":"#46afe3","info":{"type":"device","id":"01","aspect":"physical","layer":"perception","nodeType":"actuator","trust":"3","attribute":"listener","input":"command","output":"physicalAction"},"read_cam0:size":6,"read_cam0:x":-181.9012935287486,"read_cam0:y":139.6337182521822,"renderer1:x":318.0987064712514,"renderer1:y":489.63371825218223,"renderer1:size":6,"originalColor":"#46afe3","id":"n2"},{"label":"n3: smart phone","x":0.4,"y":0.6,"size":5,"color":"#46afe3","info":{"type":"device","id":"01","aspect":"physical","layer":"perception","nodeType":"mobilePhone","trust":"3","attribute":"bipolar","input":"dataDigital","output":"dataDigital"},"read_cam0:size":6,"read_cam0:x":28.098706471251443,"read_cam0:y":139.6337182521822,"renderer1:x":528.0987064712515,"renderer1:y":489.63371825218223,"renderer1:size":6,"originalColor":"#46afe3","id":"n3"},{"label":"n4: microcosm","x":0.5,"y":0.27,"size":7,"color":"#46afe3","type":"triangle","info":{"type":"microcosm","state":"static"},"read_cam0:size":8,"read_cam0:x":98.09870647125143,"read_cam0:y":-91.36628174781775,"renderer1:x":598.0987064712515,"renderer1:y":258.63371825218223,"renderer1:size":8,"originalColor":"#46afe3","id":"n4"},{"label":"n5: unkown world","x":0.6,"y":0.34,"size":7,"color":"#aaaaaa","type":"triangle","info":{"type":"unkown world"},"read_cam0:size":8,"read_cam0:x":168.0987064712514,"read_cam0:y":-42.36628174781775,"renderer1:x":668.0987064712514,"renderer1:y":307.63371825218223,"renderer1:size":8,"originalColor":"#aaaaaa","id":"n5"},{"label":"n6: credential leakage","x":0.09,"y":0.5,"size":5,"color":"#eb5368","type":"diamond","info":{"type":"threat","class":"spoofing"},"read_cam0:size":6,"read_cam0:x":-188.9012935287486,"read_cam0:y":69.63371825218223,"renderer1:x":311.0987064712514,"renderer1:y":419.63371825218223,"renderer1:size":6,"originalColor":"#eb5368","id":"n6"},{"label":"n7: no encryption","x":0.02,"y":0.46,"size":5,"color":"#eb5368","info":{"type":"vulnerability"},"read_cam0:size":6,"read_cam0:x":-237.90129352874857,"read_cam0:y":41.63371825218224,"renderer1:x":262.09870647125143,"renderer1:y":391.63371825218223,"renderer1:size":6,"originalColor":"#eb5368","id":"n7"},{"label":"n8: credentials must be protected","x":0.04,"y":0.7,"size":5,"color":"#70bf53","type":"equilateral","equilateral":{"numPoints":8,"rotate":25},"info":{"type":"constraint"},"read_cam0:size":6,"read_cam0:x":-223.9012935287486,"read_cam0:y":209.6337182521822,"renderer1:x":276.0987064712514,"renderer1:y":559.6337182521822,"renderer1:size":6,"originalColor":"#70bf53","id":"n8"},{"label":"n9: encryption during authentication","x":0.001,"y":0.64,"size":5,"color":"#70bf53","info":{"type":"mechanism"},"read_cam0:size":6,"read_cam0:x":-251.20129352874858,"read_cam0:y":167.63371825218223,"renderer1:x":248.79870647125142,"renderer1:y":517.6337182521822,"renderer1:size":6,"originalColor":"#70bf53","id":"n9"},{"label":"n10: secure microcosm","x":0.55,"y":0.4,"size":7,"color":"#70bf53","type":"triangle","info":{"type":"secure microcosm","state":"static"},"read_cam0:size":8,"read_cam0:x":133.09870647125146,"read_cam0:y":-0.3662817478177538,"renderer1:x":633.0987064712515,"renderer1:y":349.63371825218223,"renderer1:size":8,"originalColor":"#70bf53","id":"n10"},{"label":"n11: system is not auditable","x":0.5,"y":0.1,"size":5,"color":"#eb5368","type":"diamond","info":{"type":"threat","class":"repudiation"},"read_cam0:size":6,"read_cam0:x":98.09870647125143,"read_cam0:y":-210.3662817478178,"renderer1:x":598.0987064712515,"renderer1:y":139.6337182521822,"renderer1:size":6,"originalColor":"#eb5368","id":"n11"},{"label":"n12: no activity logs","x":0.47,"y":0.15,"size":5,"color":"#eb5368","info":{"type":"vulnerability"},"read_cam0:size":6,"read_cam0:x":77.0987064712514,"read_cam0:y":-175.36628174781777,"renderer1:x":577.0987064712514,"renderer1:y":174.63371825218223,"renderer1:size":6,"originalColor":"#eb5368","id":"n12"},{"label":"n13: cronological activity records","x":0.6,"y":0.2,"size":5,"color":"#70bf53","type":"equilateral","equilateral":{"numPoints":8,"rotate":25},"info":{"type":"constraint"},"read_cam0:size":6,"read_cam0:x":168.0987064712514,"read_cam0:y":-140.36628174781777,"renderer1:x":668.0987064712514,"renderer1:y":209.63371825218223,"renderer1:size":6,"originalColor":"#70bf53","id":"n13"},{"label":"n14: log files","x":0.53,"y":0.23,"size":5,"color":"#70bf53","info":{"type":"mechanism"},"read_cam0:size":6,"read_cam0:x":119.09870647125145,"read_cam0:y":-119.36628174781777,"renderer1:x":619.0987064712515,"renderer1:y":230.63371825218223,"renderer1:size":6,"originalColor":"#70bf53","id":"n14"},{"label":"n15: auditing","x":0.7,"y":0.13,"size":5,"color":"#70bf53","type":"cross","info":{"type":"property"},"read_cam0:size":6,"read_cam0:x":238.0987064712514,"read_cam0:y":-189.36628174781777,"renderer1:x":738.0987064712514,"renderer1:y":160.63371825218223,"renderer1:size":6,"originalColor":"#70bf53","id":"n15"},{"label":"n16: authentication","x":0.1,"y":0.75,"size":5,"color":"#70bf53","type":"cross","info":{"type":"property"},"read_cam0:size":6,"read_cam0:x":-181.9012935287486,"read_cam0:y":244.63371825218223,"renderer1:x":318.0987064712514,"renderer1:y":594.6337182521822,"renderer1:size":6,"originalColor":"#70bf53","id":"n16"},{"label":"n17: network connection","x":0.22,"y":0.2,"size":5,"color":"#46afe3","type":"diamond","info":{"type":"network connection","style":"wireless"},"read_cam0:size":6,"read_cam0:x":-97.90129352874857,"read_cam0:y":-140.36628174781777,"renderer1:x":402.09870647125143,"renderer1:y":209.63371825218223,"renderer1:size":6,"originalColor":"#46afe3","id":"n17"},{"label":"n18: network connection","x":0.38,"y":0.52,"size":5,"color":"#46afe3","type":"diamond","info":{"type":"network connection","style":"wireless"},"read_cam0:size":6,"read_cam0:x":14.098706471251433,"read_cam0:y":83.63371825218225,"renderer1:x":514.0987064712515,"renderer1:y":433.63371825218223,"renderer1:size":6,"originalColor":"#46afe3","id":"n18"},{"label":"n19: network connection","x":0.15,"y":0.54,"size":5,"color":"#46afe3","type":"diamond","info":{"type":"network connection","style":"wireless"},"read_cam0:size":6,"read_cam0:x":-146.90129352874857,"read_cam0:y":97.63371825218226,"renderer1:x":353.09870647125143,"renderer1:y":447.63371825218223,"renderer1:size":6,"originalColor":"#46afe3","id":"n19"},{"label":"n20: flowing data","x":0.1,"y":0.42,"size":5,"color":"#D08B0F","type":"hourglass","info":{"type":"asset","property":"flowing data"},"read_cam0:size":6,"read_cam0:x":-181.9012935287486,"read_cam0:y":13.63371825218222,"renderer1:x":318.0987064712514,"renderer1:y":363.63371825218223,"renderer1:size":6,"originalColor":"#D08B0F","id":"n20"},{"label":"n21: device","x":0.38,"y":0.13,"size":5,"color":"#D08B0F","type":"hourglass","info":{"type":"asset","property":"device"},"read_cam0:size":6,"read_cam0:x":14.098706471251433,"read_cam0:y":-189.36628174781777,"renderer1:x":514.0987064712515,"renderer1:y":160.63371825218223,"renderer1:size":6,"originalColor":"#D08B0F","id":"n21"},{"label":"n22: data flow","x":0.3,"y":0.67,"size":5,"color":"#D08B0F","type":"hourglass","info":{"type":"asset","property":"data traffic"},"read_cam0:size":6,"read_cam0:x":-41.90129352874858,"read_cam0:y":188.63371825218226,"renderer1:x":458.09870647125143,"renderer1:y":538.6337182521822,"renderer1:size":6,"originalColor":"#D08B0F","id":"n22"},{"label":"n23: data tampering","x":0.5,"y":0.65,"size":5,"color":"#eb5368","type":"diamond","info":{"type":"threat","class":"tampering"},"read_cam0:size":6,"read_cam0:x":98.09870647125143,"read_cam0:y":174.63371825218223,"renderer1:x":598.0987064712515,"renderer1:y":524.6337182521822,"renderer1:size":6,"originalColor":"#eb5368","id":"n23"},{"label":"n24: weak authentication token","x":0.47,"y":0.7,"size":5,"color":"#eb5368","info":{"type":"vulnerability"},"read_cam0:size":6,"read_cam0:x":77.0987064712514,"read_cam0:y":209.6337182521822,"renderer1:x":577.0987064712514,"renderer1:y":559.6337182521822,"renderer1:size":6,"originalColor":"#eb5368","id":"n24"},{"label":"n25: only authenticated devices","x":0.6,"y":0.67,"size":5,"color":"#70bf53","type":"equilateral","equilateral":{"numPoints":8,"rotate":25},"info":{"type":"constraint"},"read_cam0:size":6,"read_cam0:x":168.0987064712514,"read_cam0:y":188.63371825218226,"renderer1:x":668.0987064712514,"renderer1:y":538.6337182521822,"renderer1:size":6,"originalColor":"#70bf53","id":"n25"},{"label":"n26: hashed tokens","x":0.53,"y":0.7,"size":5,"color":"#70bf53","info":{"type":"mechanism"},"read_cam0:size":6,"read_cam0:x":119.09870647125145,"read_cam0:y":209.6337182521822,"renderer1:x":619.0987064712515,"renderer1:y":559.6337182521822,"renderer1:size":6,"originalColor":"#70bf53","id":"n26"},{"label":"n27: authentication","x":0.7,"y":0.7,"size":5,"color":"#70bf53","type":"cross","info":{"type":"property"},"read_cam0:size":6,"read_cam0:x":238.0987064712514,"read_cam0:y":209.6337182521822,"renderer1:x":738.0987064712514,"renderer1:y":559.6337182521822,"renderer1:size":6,"originalColor":"#70bf53","id":"n27"},{"label":"n28: data","x":0.3071785714285714,"y":0.5635714285714286,"size":5,"color":"#46afe3","type":"square","info":{"type":"data"},"read_cam0:size":6,"read_cam0:x":-36.87629352874858,"read_cam0:y":114.13371825218226,"renderer1:x":463.1237064712514,"renderer1:y":464.13371825218223,"renderer1:size":6,"originalColor":"#46afe3","id":"n28"},{"label":"n29: data","x":0.31764285714285717,"y":0.7271428571428571,"size":5,"color":"#46afe3","type":"square","info":{"type":"data"},"read_cam0:size":6,"read_cam0:x":-29.551293528748552,"read_cam0:y":228.6337182521822,"renderer1:x":470.44870647125146,"renderer1:y":578.6337182521822,"renderer1:size":6,"originalColor":"#46afe3","id":"n29"},{"label":"n30: user","x":0.23074999999999998,"y":0.7566852678571425,"size":5,"color":"#ffff1a","type":"actor","info":{"type":"actor"},"read_cam0:size":6,"read_cam0:x":-90.37629352874858,"read_cam0:y":249.313405752182,"renderer1:x":409.6237064712514,"renderer1:y":599.313405752182,"renderer1:size":6,"originalColor":"#ffff1a","id":"n30"},{"label":"n31: malicious actor","x":0.7236071428571427,"y":0.45785714285714285,"size":5,"type":"actor","color":"#ff0000","info":{"type":"malicious actor"},"read_cam0:size":6,"read_cam0:x":254.6237064712513,"read_cam0:y":40.13371825218223,"renderer1:x":754.6237064712514,"renderer1:y":390.13371825218223,"renderer1:size":6,"originalColor":"#ff0000","id":"n31"},{"label":"n32: unkown node","x":0.737642857142857,"y":0.33571428571428574,"size":5,"color":"#aaaaaa","info":{"type":"unkown node"},"read_cam0:size":6,"read_cam0:x":264.44870647125134,"read_cam0:y":-45.36628174781775,"renderer1:x":764.4487064712514,"renderer1:y":304.63371825218223,"renderer1:size":6,"originalColor":"#aaaaaa","id":"n32"},{"label":"n33: data","x":0.15932142857142856,"y":0.3965220424107142,"size":5,"color":"#46afe3","type":"square","info":{"type":"data"},"read_cam0:size":6,"read_cam0:x":-140.3762935287486,"read_cam0:y":-2.8008520603178266,"renderer1:x":359.6237064712514,"renderer1:y":347.1991479396822,"renderer1:size":6,"originalColor":"#46afe3","id":"n33"},{"label":"n34 service provider","x":0.29128756218392654,"y":0.044361251422336795,"size":5,"color":"#ffff1a","originalColor":"#ffff1a","type":"actor","info":{"type":"actor"},"read_cam0:size":6,"read_cam0:x":-47.99999999999999,"read_cam0:y":-249.313405752182,"renderer1:x":452,"renderer1:y":100.686594247818,"renderer1:size":6,"id":"n34"},{"label":"n35 network connection","x":0.11789285714285713,"y":0.334056919642857,"size":5,"color":"#46afe3","originalColor":"#46afe3","type":"diamond","info":{"type":"network connection"},"read_cam0:size":6,"read_cam0:x":-169.3762935287486,"read_cam0:y":-46.52643799781787,"renderer1:x":330.6237064712514,"renderer1:y":303.4735620021821,"renderer1:size":6,"id":"n35"},{"label":"n36 mobile phone","x":0.04075000000000001,"y":0.30262834821428564,"size":5,"color":"#46afe3","originalColor":"#46afe3","type":"circle","info":{"type":"device"},"read_cam0:size":6,"read_cam0:x":-223.37629352874856,"read_cam0:y":-68.52643799781782,"renderer1:x":276.62370647125147,"renderer1:y":281.4735620021822,"renderer1:size":6,"id":"n36"},{"label":"n37 user2","x":-0.017924875632146925,"y":0.20834263392857133,"size":5,"color":"#ffff1a","originalColor":"#ffff1a","type":"actor","info":{"type":"actor"},"read_cam0:size":6,"read_cam0:x":-264.44870647125146,"read_cam0:y":-134.52643799781785,"renderer1:x":235.55129352874854,"renderer1:y":215.47356200218215,"renderer1:size":6,"id":"n37"},{"label":"n38 network provider","x":0.08557327646964084,"y":0.15195183106831112,"size":5,"color":"#ffff1a","originalColor":"#ffff1a","type":"actor","info":{"type":"actor"},"read_cam0:size":6,"read_cam0:x":-191.99999999999997,"read_cam0:y":-174,"renderer1:x":308,"renderer1:y":176,"renderer1:size":6,"id":"n38"}],"edges":[{"read_cam0:size":null,"renderer1:size":0,"id":"e0","source":"n0","target":"n17"},{"read_cam0:size":null,"renderer1:size":0,"id":"e1","source":"n3","target":"n18"},{"read_cam0:size":null,"renderer1:size":0,"id":"e2","source":"n2","target":"n19"},{"read_cam0:size":null,"renderer1:size":0,"id":"e3","source":"n0","target":"n4"},{"read_cam0:size":null,"renderer1:size":0,"id":"e4","source":"n1","target":"n4"},{"read_cam0:size":null,"renderer1:size":0,"id":"e5","source":"n2","target":"n4"},{"read_cam0:size":null,"renderer1:size":0,"id":"e6","source":"n3","target":"n4"},{"read_cam0:size":null,"renderer1:size":0,"id":"e7","source":"n5","target":"n4"},{"read_cam0:size":null,"renderer1:size":0,"id":"e8","source":"n10","target":"n2"},{"read_cam0:size":null,"renderer1:size":0,"id":"e9","source":"n10","target":"n3"},{"read_cam0:size":null,"renderer1:size":0,"id":"e10","source":"n10","target":"n1"},{"read_cam0:size":null,"renderer1:size":0,"id":"e11","source":"n6","target":"n7"},{"read_cam0:size":null,"renderer1:size":0,"id":"e12","source":"n7","target":"n2"},{"read_cam0:size":null,"renderer1:size":0,"id":"e13","source":"n9","target":"n7"},{"read_cam0:size":null,"renderer1:size":0,"id":"e14","source":"n9","target":"n8"},{"read_cam0:size":null,"renderer1:size":0,"id":"e15","source":"n8","target":"n6"},{"read_cam0:size":null,"renderer1:size":0,"id":"e16","source":"n8","target":"n16"},{"read_cam0:size":null,"renderer1:size":0,"id":"e17","source":"n12","target":"n4"},{"read_cam0:size":null,"renderer1:size":0,"id":"e50","source":"n12","target":"n4"},{"read_cam0:size":null,"renderer1:size":0,"id":"e18","source":"n11","target":"n12"},{"read_cam0:size":null,"renderer1:size":0,"id":"e19","source":"n13","target":"n11"},{"read_cam0:size":null,"renderer1:size":0,"id":"e20","source":"n14","target":"n13"},{"read_cam0:size":null,"renderer1:size":0,"id":"e21","source":"n14","target":"n12"},{"read_cam0:size":null,"renderer1:size":0,"id":"e22","source":"n13","target":"n15"},{"read_cam0:size":null,"renderer1:size":0,"id":"e23","source":"n6","target":"n5"},{"read_cam0:size":null,"renderer1:size":0,"id":"e24","source":"n11","target":"n5"},{"read_cam0:size":null,"renderer1:size":0,"id":"e25","source":"n1","target":"n19"},{"read_cam0:size":null,"renderer1:size":0,"id":"e26","source":"n1","target":"n18"},{"read_cam0:size":null,"renderer1:size":0,"id":"e27","source":"n1","target":"n17"},{"read_cam0:size":null,"renderer1:size":0,"id":"e28","source":"n6","target":"n20"},{"read_cam0:size":null,"renderer1:size":0,"id":"e29","source":"n20","target":"n33"},{"read_cam0:size":null,"renderer1:size":0,"id":"e30","source":"n21","target":"n0"},{"read_cam0:size":null,"renderer1:size":0,"id":"e31","source":"n11","target":"n21"},{"read_cam0:size":null,"renderer1:size":0,"type":"curvedArrow","label":"owns","id":"e32","source":"n30","target":"n1"},{"read_cam0:size":null,"renderer1:size":0,"id":"e33","source":"n31","target":"n6"},{"read_cam0:size":null,"renderer1:size":0,"id":"e34","source":"n31","target":"n23"},{"read_cam0:size":null,"renderer1:size":0,"id":"e35","source":"n22","target":"n28"},{"read_cam0:size":null,"renderer1:size":0,"id":"e36","source":"n23","target":"n24"},{"read_cam0:size":null,"renderer1:size":0,"id":"e37","source":"n23","target":"n22"},{"read_cam0:size":null,"renderer1:size":0,"id":"e38","source":"n24","target":"n3"},{"read_cam0:size":null,"renderer1:size":0,"id":"e39","source":"n26","target":"n25"},{"read_cam0:size":null,"renderer1:size":0,"id":"e40","source":"n26","target":"n24"},{"read_cam0:size":null,"renderer1:size":0,"id":"e41","source":"n25","target":"n27"},{"read_cam0:size":null,"renderer1:size":0,"id":"e42","source":"n25","target":"n10"},{"read_cam0:size":null,"renderer1:size":0,"id":44,"source":"n18","target":"n28"},{"read_cam0:size":null,"renderer1:size":0,"id":45,"source":"n29","target":"n3"},{"read_cam0:size":null,"renderer1:size":0,"id":46,"source":"n32","target":"n5"},{"read_cam0:size":null,"renderer1:size":0,"id":47,"source":"n31","target":"n32"},{"read_cam0:size":null,"renderer1:size":0,"type":"curvedArrow","label":"owns","id":48,"source":"n30","target":"n3"},{"read_cam0:size":null,"renderer1:size":0,"id":49,"source":"n3","target":"n30"},{"read_cam0:size":null,"renderer1:size":0,"type":"curvedArrow","label":"owns","id":50,"source":"n30","target":"n29"},{"read_cam0:size":null,"renderer1:size":0,"type":"curvedArrow","label":"owns","id":51,"source":"n30","target":"n28"},{"read_cam0:size":null,"renderer1:size":0,"type":"curvedArrow","label":"owns","id":52,"source":"n30","target":"n2"},{"read_cam0:size":null,"renderer1:size":0,"id":53,"source":"n33","target":"n19"},{"type":"curvedArrow","label":"owns","read_cam0:size":null,"renderer1:size":0,"id":54,"source":"n34","target":"n0"},{"read_cam0:size":null,"renderer1:size":0,"id":55,"source":"n35","target":"n1"},{"read_cam0:size":null,"renderer1:size":0,"id":56,"source":"n36","target":"n35"},{"label":"owns","type":"curvedArrow","read_cam0:size":null,"renderer1:size":0,"id":57,"source":"n37","target":"n36"},{"read_cam0:size":null,"renderer1:size":0,"id":58,"source":"n7","target":"n36"},{"label":"owns","type":"curvedArrow","read_cam0:size":null,"renderer1:size":0,"id":59,"source":"n38","target":"n35"},{"label":"owns","type":"curvedArrow","read_cam0:size":null,"renderer1:size":0,"id":60,"source":"n38","target":"n17"}]}
+{
+  "nodes": [
+    {
+      "label": "n0: server",
+      "x": 0.2,
+      "y": 0.1,
+      "size": 5,
+      "color": "#46afe3",
+      "info": {
+        "type": "device",
+        "id": "02",
+        "aspect": "physical",
+        "layer": "application",
+        "nodeType": "server",
+        "trust": "3",
+        "attribute": "process",
+        "input": "dataDigital",
+        "output": "dataDigital"
+      },
+      "read_cam0:size": 6,
+      "read_cam0:x": -111.90129352874857,
+      "read_cam0:y": -210.3662817478178,
+      "renderer1:x": 388.09870647125143,
+      "renderer1:y": 139.6337182521822,
+      "renderer1:size": 6,
+      "originalColor": "#46afe3",
+      "id": "n0"
+    },
+    {
+      "label": "n1: router",
+      "x": 0.25,
+      "y": 0.35,
+      "size": 5,
+      "color": "#46afe3",
+      "info": {
+        "type": "device",
+        "id": "01",
+        "aspect": "physical",
+        "layer": "gateway",
+        "nodeType": "router",
+        "trust": "3",
+        "attribute": "relay",
+        "input": "dataDigital",
+        "output": "dataDigital"
+      },
+      "read_cam0:size": 6,
+      "read_cam0:x": -76.90129352874857,
+      "read_cam0:y": -35.36628174781779,
+      "renderer1:x": 423.09870647125143,
+      "renderer1:y": 314.63371825218223,
+      "renderer1:size": 6,
+      "originalColor": "#46afe3",
+      "id": "n1"
+    },
+    {
+      "label": "n2: smart bulb",
+      "x": 0.1,
+      "y": 0.6,
+      "size": 5,
+      "color": "#46afe3",
+      "info": {
+        "type": "device",
+        "id": "01",
+        "aspect": "physical",
+        "layer": "perception",
+        "nodeType": "actuator",
+        "trust": "3",
+        "attribute": "listener",
+        "input": "command",
+        "output": "physicalAction"
+      },
+      "read_cam0:size": 6,
+      "read_cam0:x": -181.9012935287486,
+      "read_cam0:y": 139.6337182521822,
+      "renderer1:x": 318.0987064712514,
+      "renderer1:y": 489.63371825218223,
+      "renderer1:size": 6,
+      "originalColor": "#46afe3",
+      "id": "n2"
+    },
+    {
+      "label": "n3: smart phone",
+      "x": 0.4,
+      "y": 0.6,
+      "size": 5,
+      "color": "#46afe3",
+      "info": {
+        "type": "device",
+        "id": "01",
+        "aspect": "physical",
+        "layer": "perception",
+        "nodeType": "mobilePhone",
+        "trust": "3",
+        "attribute": "bipolar",
+        "input": "dataDigital",
+        "output": "dataDigital"
+      },
+      "read_cam0:size": 6,
+      "read_cam0:x": 28.098706471251443,
+      "read_cam0:y": 139.6337182521822,
+      "renderer1:x": 528.0987064712515,
+      "renderer1:y": 489.63371825218223,
+      "renderer1:size": 6,
+      "originalColor": "#46afe3",
+      "id": "n3"
+    },
+    {
+      "label": "n4: microcosm",
+      "x": 0.5,
+      "y": 0.27,
+      "size": 7,
+      "color": "#46afe3",
+      "type": "triangle",
+      "info": {
+        "type": "microcosm",
+        "state": "static"
+      },
+      "read_cam0:size": 8,
+      "read_cam0:x": 98.09870647125143,
+      "read_cam0:y": -91.36628174781775,
+      "renderer1:x": 598.0987064712515,
+      "renderer1:y": 258.63371825218223,
+      "renderer1:size": 8,
+      "originalColor": "#46afe3",
+      "id": "n4"
+    },
+    {
+      "label": "n5: unkown world",
+      "x": 0.6,
+      "y": 0.34,
+      "size": 7,
+      "color": "#aaaaaa",
+      "type": "triangle",
+      "info": {
+        "type": "unkown world"
+      },
+      "read_cam0:size": 8,
+      "read_cam0:x": 168.0987064712514,
+      "read_cam0:y": -42.36628174781775,
+      "renderer1:x": 668.0987064712514,
+      "renderer1:y": 307.63371825218223,
+      "renderer1:size": 8,
+      "originalColor": "#aaaaaa",
+      "id": "n5"
+    },
+    {
+      "label": "n6: credential leakage",
+      "x": 0.09,
+      "y": 0.5,
+      "size": 5,
+      "color": "#eb5368",
+      "type": "diamond",
+      "info": {
+        "type": "threat",
+        "class": "spoofing"
+      },
+      "read_cam0:size": 6,
+      "read_cam0:x": -188.9012935287486,
+      "read_cam0:y": 69.63371825218223,
+      "renderer1:x": 311.0987064712514,
+      "renderer1:y": 419.63371825218223,
+      "renderer1:size": 6,
+      "originalColor": "#eb5368",
+      "id": "n6"
+    },
+    {
+      "label": "n7: no encryption",
+      "x": 0.02,
+      "y": 0.46,
+      "size": 5,
+      "color": "#eb5368",
+      "info": {
+        "type": "vulnerability"
+      },
+      "read_cam0:size": 6,
+      "read_cam0:x": -237.90129352874857,
+      "read_cam0:y": 41.63371825218224,
+      "renderer1:x": 262.09870647125143,
+      "renderer1:y": 391.63371825218223,
+      "renderer1:size": 6,
+      "originalColor": "#eb5368",
+      "id": "n7"
+    },
+    {
+      "label": "n8: credentials must be protected",
+      "x": 0.04,
+      "y": 0.7,
+      "size": 5,
+      "color": "#70bf53",
+      "type": "equilateral",
+      "equilateral": {
+        "numPoints": 8,
+        "rotate": 25
+      },
+      "info": {
+        "type": "constraint"
+      },
+      "read_cam0:size": 6,
+      "read_cam0:x": -223.9012935287486,
+      "read_cam0:y": 209.6337182521822,
+      "renderer1:x": 276.0987064712514,
+      "renderer1:y": 559.6337182521822,
+      "renderer1:size": 6,
+      "originalColor": "#70bf53",
+      "id": "n8"
+    },
+    {
+      "label": "n9: encryption during authentication",
+      "x": 0.001,
+      "y": 0.64,
+      "size": 5,
+      "color": "#70bf53",
+      "info": {
+        "type": "mechanism"
+      },
+      "read_cam0:size": 6,
+      "read_cam0:x": -251.20129352874858,
+      "read_cam0:y": 167.63371825218223,
+      "renderer1:x": 248.79870647125142,
+      "renderer1:y": 517.6337182521822,
+      "renderer1:size": 6,
+      "originalColor": "#70bf53",
+      "id": "n9"
+    },
+    {
+      "label": "n10: secure microcosm",
+      "x": 0.55,
+      "y": 0.4,
+      "size": 7,
+      "color": "#70bf53",
+      "type": "triangle",
+      "info": {
+        "type": "secure microcosm",
+        "state": "static"
+      },
+      "read_cam0:size": 8,
+      "read_cam0:x": 133.09870647125146,
+      "read_cam0:y": -0.3662817478177538,
+      "renderer1:x": 633.0987064712515,
+      "renderer1:y": 349.63371825218223,
+      "renderer1:size": 8,
+      "originalColor": "#70bf53",
+      "id": "n10"
+    },
+    {
+      "label": "n11: system is not auditable",
+      "x": 0.5,
+      "y": 0.1,
+      "size": 5,
+      "color": "#eb5368",
+      "type": "diamond",
+      "info": {
+        "type": "threat",
+        "class": "repudiation"
+      },
+      "read_cam0:size": 6,
+      "read_cam0:x": 98.09870647125143,
+      "read_cam0:y": -210.3662817478178,
+      "renderer1:x": 598.0987064712515,
+      "renderer1:y": 139.6337182521822,
+      "renderer1:size": 6,
+      "originalColor": "#eb5368",
+      "id": "n11"
+    },
+    {
+      "label": "n12: no activity logs",
+      "x": 0.47,
+      "y": 0.15,
+      "size": 5,
+      "color": "#eb5368",
+      "info": {
+        "type": "vulnerability"
+      },
+      "read_cam0:size": 6,
+      "read_cam0:x": 77.0987064712514,
+      "read_cam0:y": -175.36628174781777,
+      "renderer1:x": 577.0987064712514,
+      "renderer1:y": 174.63371825218223,
+      "renderer1:size": 6,
+      "originalColor": "#eb5368",
+      "id": "n12"
+    },
+    {
+      "label": "n13: cronological activity records",
+      "x": 0.6,
+      "y": 0.2,
+      "size": 5,
+      "color": "#70bf53",
+      "type": "equilateral",
+      "equilateral": {
+        "numPoints": 8,
+        "rotate": 25
+      },
+      "info": {
+        "type": "constraint"
+      },
+      "read_cam0:size": 6,
+      "read_cam0:x": 168.0987064712514,
+      "read_cam0:y": -140.36628174781777,
+      "renderer1:x": 668.0987064712514,
+      "renderer1:y": 209.63371825218223,
+      "renderer1:size": 6,
+      "originalColor": "#70bf53",
+      "id": "n13"
+    },
+    {
+      "label": "n14: log files",
+      "x": 0.53,
+      "y": 0.23,
+      "size": 5,
+      "color": "#70bf53",
+      "info": {
+        "type": "mechanism"
+      },
+      "read_cam0:size": 6,
+      "read_cam0:x": 119.09870647125145,
+      "read_cam0:y": -119.36628174781777,
+      "renderer1:x": 619.0987064712515,
+      "renderer1:y": 230.63371825218223,
+      "renderer1:size": 6,
+      "originalColor": "#70bf53",
+      "id": "n14"
+    },
+    {
+      "label": "n15: auditing",
+      "x": 0.7,
+      "y": 0.13,
+      "size": 5,
+      "color": "#70bf53",
+      "type": "cross",
+      "info": {
+        "type": "property"
+      },
+      "read_cam0:size": 6,
+      "read_cam0:x": 238.0987064712514,
+      "read_cam0:y": -189.36628174781777,
+      "renderer1:x": 738.0987064712514,
+      "renderer1:y": 160.63371825218223,
+      "renderer1:size": 6,
+      "originalColor": "#70bf53",
+      "id": "n15"
+    },
+    {
+      "label": "n16: authentication",
+      "x": 0.1,
+      "y": 0.75,
+      "size": 5,
+      "color": "#70bf53",
+      "type": "cross",
+      "info": {
+        "type": "property"
+      },
+      "read_cam0:size": 6,
+      "read_cam0:x": -181.9012935287486,
+      "read_cam0:y": 244.63371825218223,
+      "renderer1:x": 318.0987064712514,
+      "renderer1:y": 594.6337182521822,
+      "renderer1:size": 6,
+      "originalColor": "#70bf53",
+      "id": "n16"
+    },
+    {
+      "label": "n17: network connection",
+      "x": 0.22,
+      "y": 0.2,
+      "size": 5,
+      "color": "#46afe3",
+      "type": "diamond",
+      "info": {
+        "type": "network connection",
+        "style": "wireless"
+      },
+      "read_cam0:size": 6,
+      "read_cam0:x": -97.90129352874857,
+      "read_cam0:y": -140.36628174781777,
+      "renderer1:x": 402.09870647125143,
+      "renderer1:y": 209.63371825218223,
+      "renderer1:size": 6,
+      "originalColor": "#46afe3",
+      "id": "n17"
+    },
+    {
+      "label": "n18: network connection",
+      "x": 0.38,
+      "y": 0.52,
+      "size": 5,
+      "color": "#46afe3",
+      "type": "diamond",
+      "info": {
+        "type": "network connection",
+        "style": "wireless"
+      },
+      "read_cam0:size": 6,
+      "read_cam0:x": 14.098706471251433,
+      "read_cam0:y": 83.63371825218225,
+      "renderer1:x": 514.0987064712515,
+      "renderer1:y": 433.63371825218223,
+      "renderer1:size": 6,
+      "originalColor": "#46afe3",
+      "id": "n18"
+    },
+    {
+      "label": "n19: network connection",
+      "x": 0.15,
+      "y": 0.54,
+      "size": 5,
+      "color": "#46afe3",
+      "type": "diamond",
+      "info": {
+        "type": "network connection",
+        "style": "wireless"
+      },
+      "read_cam0:size": 6,
+      "read_cam0:x": -146.90129352874857,
+      "read_cam0:y": 97.63371825218226,
+      "renderer1:x": 353.09870647125143,
+      "renderer1:y": 447.63371825218223,
+      "renderer1:size": 6,
+      "originalColor": "#46afe3",
+      "id": "n19"
+    },
+    {
+      "label": "n20: flowing data",
+      "x": 0.1,
+      "y": 0.42,
+      "size": 5,
+      "color": "#D08B0F",
+      "type": "hourglass",
+      "info": {
+        "type": "asset",
+        "property": "flowing data"
+      },
+      "read_cam0:size": 6,
+      "read_cam0:x": -181.9012935287486,
+      "read_cam0:y": 13.63371825218222,
+      "renderer1:x": 318.0987064712514,
+      "renderer1:y": 363.63371825218223,
+      "renderer1:size": 6,
+      "originalColor": "#D08B0F",
+      "id": "n20"
+    },
+    {
+      "label": "n21: device",
+      "x": 0.38,
+      "y": 0.13,
+      "size": 5,
+      "color": "#D08B0F",
+      "type": "hourglass",
+      "info": {
+        "type": "asset",
+        "property": "device"
+      },
+      "read_cam0:size": 6,
+      "read_cam0:x": 14.098706471251433,
+      "read_cam0:y": -189.36628174781777,
+      "renderer1:x": 514.0987064712515,
+      "renderer1:y": 160.63371825218223,
+      "renderer1:size": 6,
+      "originalColor": "#D08B0F",
+      "id": "n21"
+    },
+    {
+      "label": "n22: data flow",
+      "x": 0.3,
+      "y": 0.67,
+      "size": 5,
+      "color": "#D08B0F",
+      "type": "hourglass",
+      "info": {
+        "type": "asset",
+        "property": "data traffic"
+      },
+      "read_cam0:size": 6,
+      "read_cam0:x": -41.90129352874858,
+      "read_cam0:y": 188.63371825218226,
+      "renderer1:x": 458.09870647125143,
+      "renderer1:y": 538.6337182521822,
+      "renderer1:size": 6,
+      "originalColor": "#D08B0F",
+      "id": "n22"
+    },
+    {
+      "label": "n23: data tampering",
+      "x": 0.5,
+      "y": 0.65,
+      "size": 5,
+      "color": "#eb5368",
+      "type": "diamond",
+      "info": {
+        "type": "threat",
+        "class": "tampering"
+      },
+      "read_cam0:size": 6,
+      "read_cam0:x": 98.09870647125143,
+      "read_cam0:y": 174.63371825218223,
+      "renderer1:x": 598.0987064712515,
+      "renderer1:y": 524.6337182521822,
+      "renderer1:size": 6,
+      "originalColor": "#eb5368",
+      "id": "n23"
+    },
+    {
+      "label": "n24: weak authentication token",
+      "x": 0.47,
+      "y": 0.7,
+      "size": 5,
+      "color": "#eb5368",
+      "info": {
+        "type": "vulnerability"
+      },
+      "read_cam0:size": 6,
+      "read_cam0:x": 77.0987064712514,
+      "read_cam0:y": 209.6337182521822,
+      "renderer1:x": 577.0987064712514,
+      "renderer1:y": 559.6337182521822,
+      "renderer1:size": 6,
+      "originalColor": "#eb5368",
+      "id": "n24"
+    },
+    {
+      "label": "n25: only authenticated devices",
+      "x": 0.6,
+      "y": 0.67,
+      "size": 5,
+      "color": "#70bf53",
+      "type": "equilateral",
+      "equilateral": {
+        "numPoints": 8,
+        "rotate": 25
+      },
+      "info": {
+        "type": "constraint"
+      },
+      "read_cam0:size": 6,
+      "read_cam0:x": 168.0987064712514,
+      "read_cam0:y": 188.63371825218226,
+      "renderer1:x": 668.0987064712514,
+      "renderer1:y": 538.6337182521822,
+      "renderer1:size": 6,
+      "originalColor": "#70bf53",
+      "id": "n25"
+    },
+    {
+      "label": "n26: hashed tokens",
+      "x": 0.53,
+      "y": 0.7,
+      "size": 5,
+      "color": "#70bf53",
+      "info": {
+        "type": "mechanism"
+      },
+      "read_cam0:size": 6,
+      "read_cam0:x": 119.09870647125145,
+      "read_cam0:y": 209.6337182521822,
+      "renderer1:x": 619.0987064712515,
+      "renderer1:y": 559.6337182521822,
+      "renderer1:size": 6,
+      "originalColor": "#70bf53",
+      "id": "n26"
+    },
+    {
+      "label": "n27: authentication",
+      "x": 0.7,
+      "y": 0.7,
+      "size": 5,
+      "color": "#70bf53",
+      "type": "cross",
+      "info": {
+        "type": "property"
+      },
+      "read_cam0:size": 6,
+      "read_cam0:x": 238.0987064712514,
+      "read_cam0:y": 209.6337182521822,
+      "renderer1:x": 738.0987064712514,
+      "renderer1:y": 559.6337182521822,
+      "renderer1:size": 6,
+      "originalColor": "#70bf53",
+      "id": "n27"
+    },
+    {
+      "label": "n28: data",
+      "x": 0.3071785714285714,
+      "y": 0.5635714285714286,
+      "size": 5,
+      "color": "#46afe3",
+      "type": "square",
+      "info": {
+        "type": "data"
+      },
+      "read_cam0:size": 6,
+      "read_cam0:x": -36.87629352874858,
+      "read_cam0:y": 114.13371825218226,
+      "renderer1:x": 463.1237064712514,
+      "renderer1:y": 464.13371825218223,
+      "renderer1:size": 6,
+      "originalColor": "#46afe3",
+      "id": "n28"
+    },
+    {
+      "label": "n29: data",
+      "x": 0.31764285714285717,
+      "y": 0.7271428571428571,
+      "size": 5,
+      "color": "#46afe3",
+      "type": "square",
+      "info": {
+        "type": "data"
+      },
+      "read_cam0:size": 6,
+      "read_cam0:x": -29.551293528748552,
+      "read_cam0:y": 228.6337182521822,
+      "renderer1:x": 470.44870647125146,
+      "renderer1:y": 578.6337182521822,
+      "renderer1:size": 6,
+      "originalColor": "#46afe3",
+      "id": "n29"
+    },
+    {
+      "label": "n30: user",
+      "x": 0.23074999999999998,
+      "y": 0.7566852678571425,
+      "size": 5,
+      "color": "#ffff1a",
+      "type": "actor",
+      "info": {
+        "type": "actor"
+      },
+      "read_cam0:size": 6,
+      "read_cam0:x": -90.37629352874858,
+      "read_cam0:y": 249.313405752182,
+      "renderer1:x": 409.6237064712514,
+      "renderer1:y": 599.313405752182,
+      "renderer1:size": 6,
+      "originalColor": "#ffff1a",
+      "id": "n30"
+    },
+    {
+      "label": "n31: malicious actor",
+      "x": 0.7236071428571427,
+      "y": 0.45785714285714285,
+      "size": 5,
+      "type": "actor",
+      "color": "#ff0000",
+      "info": {
+        "type": "malicious actor"
+      },
+      "read_cam0:size": 6,
+      "read_cam0:x": 254.6237064712513,
+      "read_cam0:y": 40.13371825218223,
+      "renderer1:x": 754.6237064712514,
+      "renderer1:y": 390.13371825218223,
+      "renderer1:size": 6,
+      "originalColor": "#ff0000",
+      "id": "n31"
+    },
+    {
+      "label": "n32: unkown node",
+      "x": 0.737642857142857,
+      "y": 0.33571428571428574,
+      "size": 5,
+      "color": "#aaaaaa",
+      "info": {
+        "type": "unkown node"
+      },
+      "read_cam0:size": 6,
+      "read_cam0:x": 264.44870647125134,
+      "read_cam0:y": -45.36628174781775,
+      "renderer1:x": 764.4487064712514,
+      "renderer1:y": 304.63371825218223,
+      "renderer1:size": 6,
+      "originalColor": "#aaaaaa",
+      "id": "n32"
+    },
+    {
+      "label": "n33: data",
+      "x": 0.15932142857142856,
+      "y": 0.3965220424107142,
+      "size": 5,
+      "color": "#46afe3",
+      "type": "square",
+      "info": {
+        "type": "data"
+      },
+      "read_cam0:size": 6,
+      "read_cam0:x": -140.3762935287486,
+      "read_cam0:y": -2.8008520603178266,
+      "renderer1:x": 359.6237064712514,
+      "renderer1:y": 347.1991479396822,
+      "renderer1:size": 6,
+      "originalColor": "#46afe3",
+      "id": "n33"
+    },
+    {
+      "label": "n34 service provider",
+      "x": 0.29128756218392654,
+      "y": 0.044361251422336795,
+      "size": 5,
+      "color": "#ffff1a",
+      "originalColor": "#ffff1a",
+      "type": "actor",
+      "info": {
+        "type": "actor"
+      },
+      "read_cam0:size": 6,
+      "read_cam0:x": -47.99999999999999,
+      "read_cam0:y": -249.313405752182,
+      "renderer1:x": 452,
+      "renderer1:y": 100.686594247818,
+      "renderer1:size": 6,
+      "id": "n34"
+    },
+    {
+      "label": "n35 network connection",
+      "x": 0.11789285714285713,
+      "y": 0.334056919642857,
+      "size": 5,
+      "color": "#46afe3",
+      "originalColor": "#46afe3",
+      "type": "diamond",
+      "info": {
+        "type": "network connection"
+      },
+      "read_cam0:size": 6,
+      "read_cam0:x": -169.3762935287486,
+      "read_cam0:y": -46.52643799781787,
+      "renderer1:x": 330.6237064712514,
+      "renderer1:y": 303.4735620021821,
+      "renderer1:size": 6,
+      "id": "n35"
+    },
+    {
+      "label": "n36 mobile phone",
+      "x": 0.04075000000000001,
+      "y": 0.30262834821428564,
+      "size": 5,
+      "color": "#46afe3",
+      "originalColor": "#46afe3",
+      "type": "circle",
+      "info": {
+        "type": "device"
+      },
+      "read_cam0:size": 6,
+      "read_cam0:x": -223.37629352874856,
+      "read_cam0:y": -68.52643799781782,
+      "renderer1:x": 276.62370647125147,
+      "renderer1:y": 281.4735620021822,
+      "renderer1:size": 6,
+      "id": "n36"
+    },
+    {
+      "label": "n37 user2",
+      "x": -0.017924875632146925,
+      "y": 0.20834263392857133,
+      "size": 5,
+      "color": "#ffff1a",
+      "originalColor": "#ffff1a",
+      "type": "actor",
+      "info": {
+        "type": "actor"
+      },
+      "read_cam0:size": 6,
+      "read_cam0:x": -264.44870647125146,
+      "read_cam0:y": -134.52643799781785,
+      "renderer1:x": 235.55129352874854,
+      "renderer1:y": 215.47356200218215,
+      "renderer1:size": 6,
+      "id": "n37"
+    },
+    {
+      "label": "n38 network provider",
+      "x": 0.08557327646964084,
+      "y": 0.15195183106831112,
+      "size": 5,
+      "color": "#ffff1a",
+      "originalColor": "#ffff1a",
+      "type": "actor",
+      "info": {
+        "type": "actor"
+      },
+      "read_cam0:size": 6,
+      "read_cam0:x": -191.99999999999997,
+      "read_cam0:y": -174,
+      "renderer1:x": 308,
+      "renderer1:y": 176,
+      "renderer1:size": 6,
+      "id": "n38"
+    }
+  ],
+  "edges": [
+    {
+      "read_cam0:size": null,
+      "renderer1:size": 0,
+      "id": "e0",
+      "source": "n0",
+      "target": "n17"
+    },
+    {
+      "read_cam0:size": null,
+      "renderer1:size": 0,
+      "id": "e1",
+      "source": "n3",
+      "target": "n18"
+    },
+    {
+      "read_cam0:size": null,
+      "renderer1:size": 0,
+      "id": "e2",
+      "source": "n2",
+      "target": "n19"
+    },
+    {
+      "read_cam0:size": null,
+      "renderer1:size": 0,
+      "id": "e3",
+      "source": "n0",
+      "target": "n4"
+    },
+    {
+      "read_cam0:size": null,
+      "renderer1:size": 0,
+      "id": "e4",
+      "source": "n1",
+      "target": "n4"
+    },
+    {
+      "read_cam0:size": null,
+      "renderer1:size": 0,
+      "id": "e5",
+      "source": "n2",
+      "target": "n4"
+    },
+    {
+      "read_cam0:size": null,
+      "renderer1:size": 0,
+      "id": "e6",
+      "source": "n3",
+      "target": "n4"
+    },
+    {
+      "read_cam0:size": null,
+      "renderer1:size": 0,
+      "id": "e7",
+      "source": "n5",
+      "target": "n4"
+    },
+    {
+      "read_cam0:size": null,
+      "renderer1:size": 0,
+      "id": "e8",
+      "source": "n10",
+      "target": "n2"
+    },
+    {
+      "read_cam0:size": null,
+      "renderer1:size": 0,
+      "id": "e9",
+      "source": "n10",
+      "target": "n3"
+    },
+    {
+      "read_cam0:size": null,
+      "renderer1:size": 0,
+      "id": "e10",
+      "source": "n10",
+      "target": "n1"
+    },
+    {
+      "read_cam0:size": null,
+      "renderer1:size": 0,
+      "id": "e11",
+      "source": "n6",
+      "target": "n7"
+    },
+    {
+      "read_cam0:size": null,
+      "renderer1:size": 0,
+      "id": "e12",
+      "source": "n7",
+      "target": "n2"
+    },
+    {
+      "read_cam0:size": null,
+      "renderer1:size": 0,
+      "id": "e13",
+      "source": "n9",
+      "target": "n7"
+    },
+    {
+      "read_cam0:size": null,
+      "renderer1:size": 0,
+      "id": "e14",
+      "source": "n9",
+      "target": "n8"
+    },
+    {
+      "read_cam0:size": null,
+      "renderer1:size": 0,
+      "id": "e15",
+      "source": "n8",
+      "target": "n6"
+    },
+    {
+      "read_cam0:size": null,
+      "renderer1:size": 0,
+      "id": "e16",
+      "source": "n8",
+      "target": "n16"
+    },
+    {
+      "read_cam0:size": null,
+      "renderer1:size": 0,
+      "id": "e17",
+      "source": "n12",
+      "target": "n4"
+    },
+    {
+      "read_cam0:size": null,
+      "renderer1:size": 0,
+      "id": "e50",
+      "source": "n12",
+      "target": "n4"
+    },
+    {
+      "read_cam0:size": null,
+      "renderer1:size": 0,
+      "id": "e18",
+      "source": "n11",
+      "target": "n12"
+    },
+    {
+      "read_cam0:size": null,
+      "renderer1:size": 0,
+      "id": "e19",
+      "source": "n13",
+      "target": "n11"
+    },
+    {
+      "read_cam0:size": null,
+      "renderer1:size": 0,
+      "id": "e20",
+      "source": "n14",
+      "target": "n13"
+    },
+    {
+      "read_cam0:size": null,
+      "renderer1:size": 0,
+      "id": "e21",
+      "source": "n14",
+      "target": "n12"
+    },
+    {
+      "read_cam0:size": null,
+      "renderer1:size": 0,
+      "id": "e22",
+      "source": "n13",
+      "target": "n15"
+    },
+    {
+      "read_cam0:size": null,
+      "renderer1:size": 0,
+      "id": "e23",
+      "source": "n6",
+      "target": "n5"
+    },
+    {
+      "read_cam0:size": null,
+      "renderer1:size": 0,
+      "id": "e24",
+      "source": "n11",
+      "target": "n5"
+    },
+    {
+      "read_cam0:size": null,
+      "renderer1:size": 0,
+      "id": "e25",
+      "source": "n1",
+      "target": "n19"
+    },
+    {
+      "read_cam0:size": null,
+      "renderer1:size": 0,
+      "id": "e26",
+      "source": "n1",
+      "target": "n18"
+    },
+    {
+      "read_cam0:size": null,
+      "renderer1:size": 0,
+      "id": "e27",
+      "source": "n1",
+      "target": "n17"
+    },
+    {
+      "read_cam0:size": null,
+      "renderer1:size": 0,
+      "id": "e28",
+      "source": "n6",
+      "target": "n20"
+    },
+    {
+      "read_cam0:size": null,
+      "renderer1:size": 0,
+      "id": "e29",
+      "source": "n20",
+      "target": "n33"
+    },
+    {
+      "read_cam0:size": null,
+      "renderer1:size": 0,
+      "id": "e30",
+      "source": "n21",
+      "target": "n0"
+    },
+    {
+      "read_cam0:size": null,
+      "renderer1:size": 0,
+      "id": "e31",
+      "source": "n11",
+      "target": "n21"
+    },
+    {
+      "read_cam0:size": null,
+      "renderer1:size": 0,
+      "type": "curvedArrow",
+      "label": "owns",
+      "id": "e32",
+      "source": "n30",
+      "target": "n1"
+    },
+    {
+      "read_cam0:size": null,
+      "renderer1:size": 0,
+      "id": "e33",
+      "source": "n31",
+      "target": "n6"
+    },
+    {
+      "read_cam0:size": null,
+      "renderer1:size": 0,
+      "id": "e34",
+      "source": "n31",
+      "target": "n23"
+    },
+    {
+      "read_cam0:size": null,
+      "renderer1:size": 0,
+      "id": "e35",
+      "source": "n22",
+      "target": "n28"
+    },
+    {
+      "read_cam0:size": null,
+      "renderer1:size": 0,
+      "id": "e36",
+      "source": "n23",
+      "target": "n24"
+    },
+    {
+      "read_cam0:size": null,
+      "renderer1:size": 0,
+      "id": "e37",
+      "source": "n23",
+      "target": "n22"
+    },
+    {
+      "read_cam0:size": null,
+      "renderer1:size": 0,
+      "id": "e38",
+      "source": "n24",
+      "target": "n3"
+    },
+    {
+      "read_cam0:size": null,
+      "renderer1:size": 0,
+      "id": "e39",
+      "source": "n26",
+      "target": "n25"
+    },
+    {
+      "read_cam0:size": null,
+      "renderer1:size": 0,
+      "id": "e40",
+      "source": "n26",
+      "target": "n24"
+    },
+    {
+      "read_cam0:size": null,
+      "renderer1:size": 0,
+      "id": "e41",
+      "source": "n25",
+      "target": "n27"
+    },
+    {
+      "read_cam0:size": null,
+      "renderer1:size": 0,
+      "id": "e42",
+      "source": "n25",
+      "target": "n10"
+    },
+    {
+      "read_cam0:size": null,
+      "renderer1:size": 0,
+      "id": "e44",
+      "source": "n18",
+      "target": "n28"
+    },
+    {
+      "read_cam0:size": null,
+      "renderer1:size": 0,
+      "id": "e45",
+      "source": "n29",
+      "target": "n3"
+    },
+    {
+      "read_cam0:size": null,
+      "renderer1:size": 0,
+      "id": "e46",
+      "source": "n32",
+      "target": "n5"
+    },
+    {
+      "read_cam0:size": null,
+      "renderer1:size": 0,
+      "id": "e47",
+      "source": "n31",
+      "target": "n32"
+    },
+    {
+      "read_cam0:size": null,
+      "renderer1:size": 0,
+      "type": "curvedArrow",
+      "label": "owns",
+      "id": "e48",
+      "source": "n30",
+      "target": "n3"
+    },
+    {
+      "read_cam0:size": null,
+      "renderer1:size": 0,
+      "id": "e49",
+      "source": "n3",
+      "target": "n30"
+    },
+    {
+      "read_cam0:size": null,
+      "renderer1:size": 0,
+      "type": "curvedArrow",
+      "label": "owns",
+      "id": "e50",
+      "source": "n30",
+      "target": "n29"
+    },
+    {
+      "read_cam0:size": null,
+      "renderer1:size": 0,
+      "type": "curvedArrow",
+      "label": "owns",
+      "id": "e51",
+      "source": "n30",
+      "target": "n28"
+    },
+    {
+      "read_cam0:size": null,
+      "renderer1:size": 0,
+      "type": "curvedArrow",
+      "label": "owns",
+      "id": "e52",
+      "source": "n30",
+      "target": "n2"
+    },
+    {
+      "read_cam0:size": null,
+      "renderer1:size": 0,
+      "id": "e53",
+      "source": "n33",
+      "target": "n19"
+    },
+    {
+      "type": "curvedArrow",
+      "label": "owns",
+      "read_cam0:size": null,
+      "renderer1:size": 0,
+      "id": "e54",
+      "source": "n34",
+      "target": "n0"
+    },
+    {
+      "read_cam0:size": null,
+      "renderer1:size": 0,
+      "id": "e55",
+      "source": "n35",
+      "target": "n1"
+    },
+    {
+      "read_cam0:size": null,
+      "renderer1:size": 0,
+      "id": "e56",
+      "source": "n36",
+      "target": "n35"
+    },
+    {
+      "label": "owns",
+      "type": "curvedArrow",
+      "read_cam0:size": null,
+      "renderer1:size": 0,
+      "id": "e57",
+      "source": "n37",
+      "target": "n36"
+    },
+    {
+      "read_cam0:size": null,
+      "renderer1:size": 0,
+      "id": "e58",
+      "source": "n7",
+      "target": "n36"
+    },
+    {
+      "label": "owns",
+      "type": "curvedArrow",
+      "read_cam0:size": null,
+      "renderer1:size": 0,
+      "id": "e59",
+      "source": "n38",
+      "target": "n35"
+    },
+    {
+      "label": "owns",
+      "type": "curvedArrow",
+      "read_cam0:size": null,
+      "renderer1:size": 0,
+      "id": "e60",
+      "source": "n38",
+      "target": "n17"
+    }
+  ]
+}
