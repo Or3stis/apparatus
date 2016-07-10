@@ -21,7 +21,7 @@ let sourceNode = ''
 let targetNode = ''
 
 // test button, remove at some point
-let buttonTest = document.getElementById('testButton')
+// let buttonTest = document.getElementById('testButton')
   // decleration of the buttons
 let buttonSave = document.getElementById('saveButton')
 let buttonValidate = document.getElementById('validateButton')
@@ -168,6 +168,9 @@ sigma.parsers.json(fileToLoad, {
   })
   addStuff.addEventListener('change', (e) => {
     addComponent(e.target.value, s)
+    document.getElementById('footerId').innerHTML = `${e.target.value}
+      component added`
+    document.getElementById('addStuff').selectedIndex = ''
   })
 
   // last stage refresh

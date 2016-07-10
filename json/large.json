@@ -916,13 +916,6 @@
     {
       "read_cam0:size": null,
       "renderer1:size": 0,
-      "id": "e50",
-      "source": "n12",
-      "target": "n4"
-    },
-    {
-      "read_cam0:size": null,
-      "renderer1:size": 0,
       "id": "e18",
       "source": "n11",
       "target": "n12"
@@ -1231,6 +1224,13 @@
       "id": "e60",
       "source": "n38",
       "target": "n17"
+    },
+    {
+      "read_cam0:size": null,
+      "renderer1:size": 0,
+      "id": "e61",
+      "source": "n12",
+      "target": "n4"
     }
   ]
 }
