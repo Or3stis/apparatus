@@ -10,6 +10,7 @@ const moduleValidation = require('./src/moduleValidation.js')
 const buttonSelection = require('./src/buttonSelection.js')
 const moduleSelection = require('./src/moduleSelection.js')
 const save = require('./src/save.js')
+const addComponent = require('./src/addComponent.js')
 
 // important, location of the json file
 const fileToLoad = 'json/savedFile.json'
@@ -25,11 +26,6 @@ let buttonTest = document.getElementById('testButton')
 let buttonSave = document.getElementById('saveButton')
 let buttonValidate = document.getElementById('validateButton')
 let buttonModuleValidate = document.getElementById('moduleValidateButton')
-let buttonAddThreat = document.getElementById('addThreat')
-let buttonAddConstraint = document.getElementById('addConstraint')
-let buttonAddVuln = document.getElementById('addVuln')
-let buttonAddMechanism = document.getElementById('addMechanism')
-let buttonAddDevice = document.getElementById('addDevice')
 let buttonAddEdge = document.getElementById('addEdge')
 let buttonDeleteNode = document.getElementById('deleteNode')
 let buttonStopAtlas = document.getElementById('stopAtlas')
@@ -37,6 +33,7 @@ let buttonStartAtlas = document.getElementById('startAtlas')
 
 let select = document.getElementById('selection')
 let moduleGroup = document.getElementById('moduleGroup')
+let addStuff = document.getElementById('addStuff')
 
 // create the graph from the json file
 sigma.parsers.json(fileToLoad, {
@@ -125,42 +122,6 @@ sigma.parsers.json(fileToLoad, {
     moduleValidation(s) // module
   })
 
-  buttonAddThreat.addEventListener('click', () => {
-    // finds the id of the last node
-    let lastNode = s.graph.nodes().length
-
-    s.graph.addNode({
-      id: lastNode,
-      label: `n${lastNode} Threat`,
-      x: 0,
-      y: 0,
-      size: 3,
-      color: '#eb5368',
-      info: {
-        type: 'threat'
-      }
-    })
-      // needed to for the selection functions
-    s.graph.nodes().forEach((n) => {
-      n.originalColor = n.color
-    })
-    s.graph.edges().forEach((e) => {
-      e.originalColor = e.color
-    })
-    s.refresh()
-  })
-  buttonAddConstraint.addEventListener('click', () => {
-    window.alert('uncomment')
-  })
-  buttonAddVuln.addEventListener('click', () => {
-    window.alert('uncomment')
-  })
-  buttonAddMechanism.addEventListener('click', () => {
-    window.alert('uncomment')
-  })
-  buttonAddDevice.addEventListener('click', () => {
-    window.alert('uncomment')
-  })
   buttonAddEdge.addEventListener('click', () => {
     // finds the id of the last edge
     let lastEdge = s.graph.edges().length
@@ -194,7 +155,7 @@ sigma.parsers.json(fileToLoad, {
   })
 
   // last stage refresh
-  CustomShapes.init(s) // required for the shapes
+  CustomShapes.init(s) // required for the custom shapes
   s.refresh()
 
   // beginning of the functions
@@ -222,4 +183,10 @@ sigma.parsers.json(fileToLoad, {
       targetNode: ${targetNode}`
     document.getElementById('footerId').innerHTML = selectedNodes
   }
+
+  // TODO finish the function
+  addStuff.addEventListener('change', (e) => {
+    console.log(e.target.value)
+    addComponent(e.target.value, s)
+  })
 })

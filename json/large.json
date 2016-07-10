@@ -4,7 +4,7 @@
       "label": "n0: server",
       "x": 0.2,
       "y": 0.1,
-      "size": 4,
+      "size": 5,
       "color": "#46afe3",
       "info": {
         "type": "device",
@@ -30,7 +30,7 @@
       "label": "n1: router",
       "x": 0.25,
       "y": 0.35,
-      "size": 4,
+      "size": 5,
       "color": "#46afe3",
       "info": {
         "type": "device",
@@ -56,7 +56,7 @@
       "label": "n2: smart bulb",
       "x": 0.1,
       "y": 0.6,
-      "size": 4,
+      "size": 5,
       "color": "#46afe3",
       "info": {
         "type": "device",
@@ -82,7 +82,7 @@
       "label": "n3: smart phone",
       "x": 0.4,
       "y": 0.6,
-      "size": 4,
+      "size": 5,
       "color": "#46afe3",
       "info": {
         "type": "device",
@@ -147,7 +147,7 @@
       "label": "n6: credential leakage",
       "x": 0.09,
       "y": 0.5,
-      "size": 4,
+      "size": 5,
       "color": "#eb5368",
       "type": "diamond",
       "info": {
@@ -167,7 +167,7 @@
       "label": "n7: no encryption",
       "x": 0.02,
       "y": 0.46,
-      "size": 4,
+      "size": 5,
       "color": "#eb5368",
       "info": {
         "type": "vulnerability"
@@ -208,7 +208,7 @@
       "label": "n9: encryption during authentication",
       "x": 0.001,
       "y": 0.64,
-      "size": 4,
+      "size": 5,
       "color": "#70bf53",
       "info": {
         "type": "mechanism"
@@ -246,7 +246,7 @@
       "label": "n11: system is not auditable",
       "x": 0.5,
       "y": 0.1,
-      "size": 4,
+      "size": 5,
       "color": "#eb5368",
       "type": "diamond",
       "info": {
@@ -266,7 +266,7 @@
       "label": "n12: no activity logs",
       "x": 0.47,
       "y": 0.15,
-      "size": 4,
+      "size": 5,
       "color": "#eb5368",
       "info": {
         "type": "vulnerability"
@@ -284,7 +284,7 @@
       "label": "n13: cronological activity records",
       "x": 0.6,
       "y": 0.2,
-      "size": 4,
+      "size": 5,
       "color": "#70bf53",
       "type": "equilateral",
       "equilateral": {
@@ -307,7 +307,7 @@
       "label": "n14: log files",
       "x": 0.53,
       "y": 0.23,
-      "size": 4,
+      "size": 5,
       "color": "#70bf53",
       "info": {
         "type": "mechanism"
@@ -325,7 +325,7 @@
       "label": "n15: auditing",
       "x": 0.7,
       "y": 0.13,
-      "size": 4,
+      "size": 5,
       "color": "#70bf53",
       "type": "cross",
       "info": {
@@ -344,7 +344,7 @@
       "label": "n16: authentication",
       "x": 0.1,
       "y": 0.75,
-      "size": 4,
+      "size": 5,
       "color": "#70bf53",
       "type": "cross",
       "info": {
@@ -363,7 +363,7 @@
       "label": "n17: network connection",
       "x": 0.22,
       "y": 0.2,
-      "size": 4,
+      "size": 5,
       "color": "#46afe3",
       "type": "diamond",
       "info": {
@@ -383,7 +383,7 @@
       "label": "n18: network connection",
       "x": 0.38,
       "y": 0.52,
-      "size": 4,
+      "size": 5,
       "color": "#46afe3",
       "type": "diamond",
       "info": {
@@ -403,7 +403,7 @@
       "label": "n19: network connection",
       "x": 0.15,
       "y": 0.54,
-      "size": 4,
+      "size": 5,
       "color": "#46afe3",
       "type": "diamond",
       "info": {
@@ -423,7 +423,7 @@
       "label": "n20: flowing data",
       "x": 0.1,
       "y": 0.42,
-      "size": 4,
+      "size": 5,
       "color": "#D08B0F",
       "type": "hourglass",
       "info": {
@@ -443,7 +443,7 @@
       "label": "n21: device",
       "x": 0.38,
       "y": 0.13,
-      "size": 4,
+      "size": 5,
       "color": "#D08B0F",
       "type": "hourglass",
       "info": {
@@ -463,7 +463,7 @@
       "label": "n22: data flow",
       "x": 0.3,
       "y": 0.67,
-      "size": 4,
+      "size": 5,
       "color": "#D08B0F",
       "type": "hourglass",
       "info": {
@@ -483,7 +483,7 @@
       "label": "n23: data tampering",
       "x": 0.5,
       "y": 0.65,
-      "size": 4,
+      "size": 5,
       "color": "#eb5368",
       "type": "diamond",
       "info": {
@@ -503,7 +503,7 @@
       "label": "n24: weak authentication token",
       "x": 0.47,
       "y": 0.7,
-      "size": 4,
+      "size": 5,
       "color": "#eb5368",
       "info": {
         "type": "vulnerability"
@@ -544,7 +544,7 @@
       "label": "n26: hashed tokens",
       "x": 0.53,
       "y": 0.7,
-      "size": 4,
+      "size": 5,
       "color": "#70bf53",
       "info": {
         "type": "mechanism"
@@ -562,7 +562,7 @@
       "label": "n27: authentication",
       "x": 0.7,
       "y": 0.7,
-      "size": 4,
+      "size": 5,
       "color": "#70bf53",
       "type": "cross",
       "info": {
@@ -581,7 +581,7 @@
       "label": "n28: data",
       "x": 0.3071785714285714,
       "y": 0.5635714285714286,
-      "size": 4,
+      "size": 5,
       "color": "#46afe3",
       "type": "square",
       "info": {
@@ -600,7 +600,7 @@
       "label": "n29: data",
       "x": 0.31764285714285717,
       "y": 0.7271428571428571,
-      "size": 4,
+      "size": 5,
       "color": "#46afe3",
       "type": "square",
       "info": {
@@ -619,7 +619,7 @@
       "label": "n30: actor",
       "x": 0.20932142857142855,
       "y": 0.7673297991071427,
-      "size": 4,
+      "size": 5,
       "color": "#ffff1a",
       "type": "actor",
       "info": {
@@ -638,7 +638,7 @@
       "label": "n31: malicious actor",
       "x": 0.7236071428571427,
       "y": 0.45785714285714285,
-      "size": 4,
+      "size": 5,
       "type": "actor",
       "color": "#ff0000",
       "info": {
@@ -657,7 +657,7 @@
       "label": "n32: unkown node",
       "x": 0.737642857142857,
       "y": 0.33571428571428574,
-      "size": 4,
+      "size": 5,
       "color": "#aaaaaa",
       "info": {
         "type": "unkown node"
@@ -675,7 +675,7 @@
       "label": "n33: data",
       "x": 0.15932142857142856,
       "y": 0.3965220424107142,
-      "size": 4,
+      "size": 5,
       "color": "#46afe3",
       "type": "square",
       "info": {

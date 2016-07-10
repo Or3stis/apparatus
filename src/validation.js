@@ -27,10 +27,10 @@ module.exports = function validation (s) {
     }
   }
   // checks the arrays to see which threat is not mitigated
-  for (let i of arrThreat.values()) {
-    if (arrMitigated[i] !== arrThreat[i]) {
-      result = `${result} > Threat ${arrThreat[i]} is not mitigated <br/>`
-    }
+  let setMitigated = new Set(arrMitigated)
+  let threats = new Set([...arrThreat].filter(x => !setMitigated.has(x)))
+  for (let i of threats) {
+    result = `${result} > Threat ${i} is not mitigated <br/>`
   }
 
   // result will be displayed at infoForNodes div

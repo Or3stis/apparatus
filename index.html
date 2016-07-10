@@ -16,21 +16,24 @@
     </div>
     <div class="actionBar" id="actionBarId">
       <div class="components" id="componentsId">
-        <button class="addNode threat" id="addThreat">
-          <p class="buttonLabel">threat</p>
-        </button>
-        <button class="addNode constraint" id="addConstraint">
-          <p class="buttonLabel">constraint</p>
-        </button>
-        <button class="addNode vulnerability" id="addVuln">
-          <p class="buttonLabel">vulnerability</p>
-        </button>
-        <button class="addNode mechanism" id="addMechanism">
-          <p class="buttonLabel">mechanism</p>
-        </button>
-        <button class="addNode device" id="addDevice">
-          <p class="buttonLabel">device</p>
-        </button>
+        <select required id="addStuff">
+          <option value="" disabled selected>add component</option>
+          <option value="device">device</option>
+          <option value="data">data</option>
+          <option value="microcosm">microcosm</option>
+          <option value="secure microcosm">secure microcosm</option>
+          <option value="network connection">network connection</option>
+          <option value="threat">threat</option>
+          <option value="vulnerability">vulnerability</option>
+          <option value="asset">asset</option>
+          <option value="mechanism">mechanism</option>
+          <option value="constraint">constraint</option>
+          <option value="property">property</option>
+          <option value="actor">actor</option>
+          <option value="malicious actor">malicious actor</option>
+          <option value="unkown node">unkown node</option>
+          <option value="unkown world">unkown world</option>
+        </select>
       </div>
       <div>
         <button class="button" id="addEdge">add edge</button>

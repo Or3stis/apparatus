@@ -51,7 +51,7 @@ function componentValidation (s, component, componentArray) {
   for (let n of s.graph.nodes().values()) {
     // checks if node is the desired component
     if (n.info.type === component) {
-      // stores the neighborring nodes of the component
+      // stores the neighboring nodes of the component
       let neighborNodes = s.graph.neighbors(n.id)
 
       // to make stuff smaller
@@ -61,6 +61,7 @@ function componentValidation (s, component, componentArray) {
       // if not, the values in the array will indicate the mistakes
       for (let i of Object.keys(neighborNodes)) {
         arrWrong.push(neighborNodes[i].info.type)
+        // checks occurrence
         if (componentArray.indexOf(neighborNodes[i].info.type) !== -1) {
           arrWrong.pop(neighborNodes[i].info.type)
         }
@@ -71,8 +72,5 @@ function componentValidation (s, component, componentArray) {
       }
     }
   }
-  // if (result === '') {
-  //   result = 'module is valid'
-  // }
   document.getElementById('infoForNodes').innerHTML = result
 }
