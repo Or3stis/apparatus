@@ -27,6 +27,7 @@ let buttonSave = document.getElementById('saveButton')
 let buttonValidate = document.getElementById('validateButton')
 let buttonModuleValidate = document.getElementById('moduleValidateButton')
 let buttonAddEdge = document.getElementById('addEdge')
+let buttonAddOwns = document.getElementById('addOwns')
 let buttonDeleteNode = document.getElementById('deleteNode')
 let buttonStopAtlas = document.getElementById('stopAtlas')
 let buttonStartAtlas = document.getElementById('startAtlas')
@@ -133,6 +134,18 @@ sigma.parsers.json(fileToLoad, {
     })
     s.refresh()
   })
+  buttonAddOwns.addEventListener('click', () => {
+    let lastEdge = s.graph.edges().length
+
+    s.graph.addEdge({
+      id: `e${lastEdge}`,
+      label: 'owns',
+      type: 'curvedArrow',
+      target: sourceNode,
+      source: targetNode
+    })
+    s.refresh()
+  })
     // TODO add backspace event listener
   buttonDeleteNode.addEventListener('click', () => {
     s.graph.dropNode(sourceNode)
@@ -187,3 +200,5 @@ sigma.parsers.json(fileToLoad, {
     document.getElementById('footerId').innerHTML = selectedNodes
   }
 })
+
+// TODO the selections do not permit to add the same two components in a row
