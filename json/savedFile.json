@@ -5,7 +5,7 @@
       "x": 0.2,
       "y": 0.1,
       "size": 5,
-      "color": "#46afe3",
+      "color": "#3a99d8",
       "info": {
         "type": "device",
         "id": "02",
@@ -23,7 +23,7 @@
       "renderer1:x": 388.09870647125143,
       "renderer1:y": 139.6337182521822,
       "renderer1:size": 6,
-      "originalColor": "#46afe3",
+      "originalColor": "#3a99d8",
       "id": "n0"
     },
     {
@@ -31,7 +31,7 @@
       "x": 0.25,
       "y": 0.35,
       "size": 5,
-      "color": "#46afe3",
+      "color": "#3a99d8",
       "info": {
         "type": "device",
         "id": "01",
@@ -49,7 +49,7 @@
       "renderer1:x": 423.09870647125143,
       "renderer1:y": 314.63371825218223,
       "renderer1:size": 6,
-      "originalColor": "#46afe3",
+      "originalColor": "#3a99d8",
       "id": "n1"
     },
     {
@@ -57,7 +57,7 @@
       "x": 0.1,
       "y": 0.6,
       "size": 5,
-      "color": "#46afe3",
+      "color": "#3a99d8",
       "info": {
         "type": "device",
         "id": "01",
@@ -75,7 +75,7 @@
       "renderer1:x": 318.0987064712514,
       "renderer1:y": 489.63371825218223,
       "renderer1:size": 6,
-      "originalColor": "#46afe3",
+      "originalColor": "#3a99d8",
       "id": "n2"
     },
     {
@@ -83,7 +83,7 @@
       "x": 0.4,
       "y": 0.6,
       "size": 5,
-      "color": "#46afe3",
+      "color": "#3a99d8",
       "info": {
         "type": "device",
         "id": "01",
@@ -101,7 +101,7 @@
       "renderer1:x": 528.0987064712515,
       "renderer1:y": 489.63371825218223,
       "renderer1:size": 6,
-      "originalColor": "#46afe3",
+      "originalColor": "#3a99d8",
       "id": "n3"
     },
     {
@@ -109,7 +109,7 @@
       "x": 0.5,
       "y": 0.27,
       "size": 7,
-      "color": "#46afe3",
+      "color": "#3a99d8",
       "type": "triangle",
       "info": {
         "type": "microcosm",
@@ -121,7 +121,7 @@
       "renderer1:x": 598.0987064712515,
       "renderer1:y": 258.63371825218223,
       "renderer1:size": 8,
-      "originalColor": "#46afe3",
+      "originalColor": "#3a99d8",
       "id": "n4"
     },
     {
@@ -129,7 +129,7 @@
       "x": 0.6,
       "y": 0.34,
       "size": 7,
-      "color": "#aaaaaa",
+      "color": "#94a4a5",
       "type": "triangle",
       "info": {
         "type": "unkown world"
@@ -140,7 +140,7 @@
       "renderer1:x": 668.0987064712514,
       "renderer1:y": 307.63371825218223,
       "renderer1:size": 8,
-      "originalColor": "#aaaaaa",
+      "originalColor": "#94a4a5",
       "id": "n5"
     },
     {
@@ -148,7 +148,7 @@
       "x": 0.09,
       "y": 0.5,
       "size": 5,
-      "color": "#eb5368",
+      "color": "#e54d42",
       "type": "diamond",
       "info": {
         "type": "threat",
@@ -160,7 +160,7 @@
       "renderer1:x": 311.0987064712514,
       "renderer1:y": 419.63371825218223,
       "renderer1:size": 6,
-      "originalColor": "#eb5368",
+      "originalColor": "#e54d42",
       "id": "n6"
     },
     {
@@ -168,7 +168,7 @@
       "x": 0.02,
       "y": 0.46,
       "size": 5,
-      "color": "#eb5368",
+      "color": "#e54d42",
       "info": {
         "type": "vulnerability"
       },
@@ -178,7 +178,7 @@
       "renderer1:x": 262.09870647125143,
       "renderer1:y": 391.63371825218223,
       "renderer1:size": 6,
-      "originalColor": "#eb5368",
+      "originalColor": "#e54d42",
       "id": "n7"
     },
     {
@@ -186,12 +186,8 @@
       "x": 0.04,
       "y": 0.7,
       "size": 5,
-      "color": "#70bf53",
+      "color": "#39ca74",
       "type": "equilateral",
-      "equilateral": {
-        "numPoints": 8,
-        "rotate": 25
-      },
       "info": {
         "type": "constraint"
       },
@@ -201,7 +197,7 @@
       "renderer1:x": 276.0987064712514,
       "renderer1:y": 559.6337182521822,
       "renderer1:size": 6,
-      "originalColor": "#70bf53",
+      "originalColor": "#39ca74",
       "id": "n8"
     },
     {
@@ -209,7 +205,7 @@
       "x": 0.001,
       "y": 0.64,
       "size": 5,
-      "color": "#70bf53",
+      "color": "#39ca74",
       "info": {
         "type": "mechanism"
       },
@@ -219,7 +215,7 @@
       "renderer1:x": 248.79870647125142,
       "renderer1:y": 517.6337182521822,
       "renderer1:size": 6,
-      "originalColor": "#70bf53",
+      "originalColor": "#39ca74",
       "id": "n9"
     },
     {
@@ -227,7 +223,7 @@
       "x": 0.55,
       "y": 0.4,
       "size": 7,
-      "color": "#70bf53",
+      "color": "#39ca74",
       "type": "triangle",
       "info": {
         "type": "secure microcosm",
@@ -239,7 +235,7 @@
       "renderer1:x": 633.0987064712515,
       "renderer1:y": 349.63371825218223,
       "renderer1:size": 8,
-      "originalColor": "#70bf53",
+      "originalColor": "#39ca74",
       "id": "n10"
     },
     {
@@ -247,7 +243,7 @@
       "x": 0.5,
       "y": 0.1,
       "size": 5,
-      "color": "#eb5368",
+      "color": "#e54d42",
       "type": "diamond",
       "info": {
         "type": "threat",
@@ -259,7 +255,7 @@
       "renderer1:x": 598.0987064712515,
       "renderer1:y": 139.6337182521822,
       "renderer1:size": 6,
-      "originalColor": "#eb5368",
+      "originalColor": "#e54d42",
       "id": "n11"
     },
     {
@@ -267,7 +263,7 @@
       "x": 0.47,
       "y": 0.15,
       "size": 5,
-      "color": "#eb5368",
+      "color": "#e54d42",
       "info": {
         "type": "vulnerability"
       },
@@ -277,7 +273,7 @@
       "renderer1:x": 577.0987064712514,
       "renderer1:y": 174.63371825218223,
       "renderer1:size": 6,
-      "originalColor": "#eb5368",
+      "originalColor": "#e54d42",
       "id": "n12"
     },
     {
@@ -285,12 +281,8 @@
       "x": 0.6,
       "y": 0.2,
       "size": 5,
-      "color": "#70bf53",
+      "color": "#39ca74",
       "type": "equilateral",
-      "equilateral": {
-        "numPoints": 8,
-        "rotate": 25
-      },
       "info": {
         "type": "constraint"
       },
@@ -300,7 +292,7 @@
       "renderer1:x": 668.0987064712514,
       "renderer1:y": 209.63371825218223,
       "renderer1:size": 6,
-      "originalColor": "#70bf53",
+      "originalColor": "#39ca74",
       "id": "n13"
     },
     {
@@ -308,7 +300,7 @@
       "x": 0.53,
       "y": 0.23,
       "size": 5,
-      "color": "#70bf53",
+      "color": "#39ca74",
       "info": {
         "type": "mechanism"
       },
@@ -318,7 +310,7 @@
       "renderer1:x": 619.0987064712515,
       "renderer1:y": 230.63371825218223,
       "renderer1:size": 6,
-      "originalColor": "#70bf53",
+      "originalColor": "#39ca74",
       "id": "n14"
     },
     {
@@ -326,7 +318,7 @@
       "x": 0.7,
       "y": 0.13,
       "size": 5,
-      "color": "#70bf53",
+      "color": "#39ca74",
       "type": "cross",
       "info": {
         "type": "property"
@@ -337,7 +329,7 @@
       "renderer1:x": 738.0987064712514,
       "renderer1:y": 160.63371825218223,
       "renderer1:size": 6,
-      "originalColor": "#70bf53",
+      "originalColor": "#39ca74",
       "id": "n15"
     },
     {
@@ -345,7 +337,7 @@
       "x": 0.1,
       "y": 0.75,
       "size": 5,
-      "color": "#70bf53",
+      "color": "#39ca74",
       "type": "cross",
       "info": {
         "type": "property"
@@ -356,7 +348,7 @@
       "renderer1:x": 318.0987064712514,
       "renderer1:y": 594.6337182521822,
       "renderer1:size": 6,
-      "originalColor": "#70bf53",
+      "originalColor": "#39ca74",
       "id": "n16"
     },
     {
@@ -364,11 +356,12 @@
       "x": 0.22,
       "y": 0.2,
       "size": 5,
-      "color": "#46afe3",
+      "color": "#3a99d8",
       "type": "diamond",
       "info": {
         "type": "network connection",
-        "style": "wireless"
+        "description": "wireless",
+        "protocol": "http"
       },
       "read_cam0:size": 6,
       "read_cam0:x": -97.90129352874857,
@@ -376,7 +369,7 @@
       "renderer1:x": 402.09870647125143,
       "renderer1:y": 209.63371825218223,
       "renderer1:size": 6,
-      "originalColor": "#46afe3",
+      "originalColor": "#3a99d8",
       "id": "n17"
     },
     {
@@ -384,11 +377,12 @@
       "x": 0.38,
       "y": 0.52,
       "size": 5,
-      "color": "#46afe3",
+      "color": "#3a99d8",
       "type": "diamond",
       "info": {
         "type": "network connection",
-        "style": "wireless"
+        "description": "wireless",
+        "protocol": "http"
       },
       "read_cam0:size": 6,
       "read_cam0:x": 14.098706471251433,
@@ -396,7 +390,7 @@
       "renderer1:x": 514.0987064712515,
       "renderer1:y": 433.63371825218223,
       "renderer1:size": 6,
-      "originalColor": "#46afe3",
+      "originalColor": "#3a99d8",
       "id": "n18"
     },
     {
@@ -404,11 +398,12 @@
       "x": 0.15,
       "y": 0.54,
       "size": 5,
-      "color": "#46afe3",
+      "color": "#3a99d8",
       "type": "diamond",
       "info": {
         "type": "network connection",
-        "style": "wireless"
+        "description": "wireless",
+        "protocol": "http"
       },
       "read_cam0:size": 6,
       "read_cam0:x": -146.90129352874857,
@@ -416,7 +411,7 @@
       "renderer1:x": 353.09870647125143,
       "renderer1:y": 447.63371825218223,
       "renderer1:size": 6,
-      "originalColor": "#46afe3",
+      "originalColor": "#3a99d8",
       "id": "n19"
     },
     {
@@ -424,11 +419,11 @@
       "x": 0.1,
       "y": 0.42,
       "size": 5,
-      "color": "#D08B0F",
+      "color": "#e47e30",
       "type": "hourglass",
       "info": {
         "type": "asset",
-        "property": "flowing data"
+        "description": "flowing data"
       },
       "read_cam0:size": 6,
       "read_cam0:x": -181.9012935287486,
@@ -436,7 +431,7 @@
       "renderer1:x": 318.0987064712514,
       "renderer1:y": 363.63371825218223,
       "renderer1:size": 6,
-      "originalColor": "#D08B0F",
+      "originalColor": "#e47e30",
       "id": "n20"
     },
     {
@@ -444,11 +439,11 @@
       "x": 0.38,
       "y": 0.13,
       "size": 5,
-      "color": "#D08B0F",
+      "color": "#e47e30",
       "type": "hourglass",
       "info": {
         "type": "asset",
-        "property": "device"
+        "decription": "device"
       },
       "read_cam0:size": 6,
       "read_cam0:x": 14.098706471251433,
@@ -456,7 +451,7 @@
       "renderer1:x": 514.0987064712515,
       "renderer1:y": 160.63371825218223,
       "renderer1:size": 6,
-      "originalColor": "#D08B0F",
+      "originalColor": "#e47e30",
       "id": "n21"
     },
     {
@@ -464,11 +459,11 @@
       "x": 0.3,
       "y": 0.67,
       "size": 5,
-      "color": "#D08B0F",
+      "color": "#e47e30",
       "type": "hourglass",
       "info": {
         "type": "asset",
-        "property": "data traffic"
+        "description": "data traffic"
       },
       "read_cam0:size": 6,
       "read_cam0:x": -41.90129352874858,
@@ -476,7 +471,7 @@
       "renderer1:x": 458.09870647125143,
       "renderer1:y": 538.6337182521822,
       "renderer1:size": 6,
-      "originalColor": "#D08B0F",
+      "originalColor": "#e47e30",
       "id": "n22"
     },
     {
@@ -484,7 +479,7 @@
       "x": 0.5,
       "y": 0.65,
       "size": 5,
-      "color": "#eb5368",
+      "color": "#e54d42",
       "type": "diamond",
       "info": {
         "type": "threat",
@@ -496,7 +491,7 @@
       "renderer1:x": 598.0987064712515,
       "renderer1:y": 524.6337182521822,
       "renderer1:size": 6,
-      "originalColor": "#eb5368",
+      "originalColor": "#e54d42",
       "id": "n23"
     },
     {
@@ -504,7 +499,7 @@
       "x": 0.47,
       "y": 0.7,
       "size": 5,
-      "color": "#eb5368",
+      "color": "#e54d42",
       "info": {
         "type": "vulnerability"
       },
@@ -514,7 +509,7 @@
       "renderer1:x": 577.0987064712514,
       "renderer1:y": 559.6337182521822,
       "renderer1:size": 6,
-      "originalColor": "#eb5368",
+      "originalColor": "#e54d42",
       "id": "n24"
     },
     {
@@ -522,12 +517,8 @@
       "x": 0.6,
       "y": 0.67,
       "size": 5,
-      "color": "#70bf53",
+      "color": "#39ca74",
       "type": "equilateral",
-      "equilateral": {
-        "numPoints": 8,
-        "rotate": 25
-      },
       "info": {
         "type": "constraint"
       },
@@ -537,7 +528,7 @@
       "renderer1:x": 668.0987064712514,
       "renderer1:y": 538.6337182521822,
       "renderer1:size": 6,
-      "originalColor": "#70bf53",
+      "originalColor": "#39ca74",
       "id": "n25"
     },
     {
@@ -545,7 +536,7 @@
       "x": 0.53,
       "y": 0.7,
       "size": 5,
-      "color": "#70bf53",
+      "color": "#39ca74",
       "info": {
         "type": "mechanism"
       },
@@ -555,7 +546,7 @@
       "renderer1:x": 619.0987064712515,
       "renderer1:y": 559.6337182521822,
       "renderer1:size": 6,
-      "originalColor": "#70bf53",
+      "originalColor": "#39ca74",
       "id": "n26"
     },
     {
@@ -563,7 +554,7 @@
       "x": 0.7,
       "y": 0.7,
       "size": 5,
-      "color": "#70bf53",
+      "color": "#39ca74",
       "type": "cross",
       "info": {
         "type": "property"
@@ -574,7 +565,7 @@
       "renderer1:x": 738.0987064712514,
       "renderer1:y": 559.6337182521822,
       "renderer1:size": 6,
-      "originalColor": "#70bf53",
+      "originalColor": "#39ca74",
       "id": "n27"
     },
     {
@@ -582,10 +573,11 @@
       "x": 0.3071785714285714,
       "y": 0.5635714285714286,
       "size": 5,
-      "color": "#46afe3",
+      "color": "#3a99d8",
       "type": "square",
       "info": {
-        "type": "data"
+        "type": "data",
+        "description": "user generated"
       },
       "read_cam0:size": 6,
       "read_cam0:x": -36.87629352874858,
@@ -593,7 +585,7 @@
       "renderer1:x": 463.1237064712514,
       "renderer1:y": 464.13371825218223,
       "renderer1:size": 6,
-      "originalColor": "#46afe3",
+      "originalColor": "#3a99d8",
       "id": "n28"
     },
     {
@@ -601,10 +593,11 @@
       "x": 0.31764285714285717,
       "y": 0.7271428571428571,
       "size": 5,
-      "color": "#46afe3",
+      "color": "#3a99d8",
       "type": "square",
       "info": {
-        "type": "data"
+        "type": "data",
+        "description": "user stored data"
       },
       "read_cam0:size": 6,
       "read_cam0:x": -29.551293528748552,
@@ -612,7 +605,7 @@
       "renderer1:x": 470.44870647125146,
       "renderer1:y": 578.6337182521822,
       "renderer1:size": 6,
-      "originalColor": "#46afe3",
+      "originalColor": "#3a99d8",
       "id": "n29"
     },
     {
@@ -620,7 +613,7 @@
       "x": 0.23074999999999998,
       "y": 0.7566852678571425,
       "size": 5,
-      "color": "#ffff1a",
+      "color": "#f0c330",
       "type": "actor",
       "info": {
         "type": "actor"
@@ -631,7 +624,7 @@
       "renderer1:x": 409.6237064712514,
       "renderer1:y": 599.313405752182,
       "renderer1:size": 6,
-      "originalColor": "#ffff1a",
+      "originalColor": "#f0c330",
       "id": "n30"
     },
     {
@@ -640,7 +633,7 @@
       "y": 0.45785714285714285,
       "size": 5,
       "type": "actor",
-      "color": "#ff0000",
+      "color": "#e54d42",
       "info": {
         "type": "malicious actor"
       },
@@ -650,7 +643,7 @@
       "renderer1:x": 754.6237064712514,
       "renderer1:y": 390.13371825218223,
       "renderer1:size": 6,
-      "originalColor": "#ff0000",
+      "originalColor": "#e54d42",
       "id": "n31"
     },
     {
@@ -658,7 +651,7 @@
       "x": 0.737642857142857,
       "y": 0.33571428571428574,
       "size": 5,
-      "color": "#aaaaaa",
+      "color": "#94a4a5",
       "info": {
         "type": "unkown node"
       },
@@ -668,7 +661,7 @@
       "renderer1:x": 764.4487064712514,
       "renderer1:y": 304.63371825218223,
       "renderer1:size": 6,
-      "originalColor": "#aaaaaa",
+      "originalColor": "#94a4a5",
       "id": "n32"
     },
     {
@@ -676,10 +669,11 @@
       "x": 0.15932142857142856,
       "y": 0.3965220424107142,
       "size": 5,
-      "color": "#46afe3",
+      "color": "#3a99d8",
       "type": "square",
       "info": {
-        "type": "data"
+        "type": "data",
+        "description": "device generated data"
       },
       "read_cam0:size": 6,
       "read_cam0:x": -140.3762935287486,
@@ -687,7 +681,7 @@
       "renderer1:x": 359.6237064712514,
       "renderer1:y": 347.1991479396822,
       "renderer1:size": 6,
-      "originalColor": "#46afe3",
+      "originalColor": "#3a99d8",
       "id": "n33"
     },
     {
@@ -695,8 +689,8 @@
       "x": 0.29128756218392654,
       "y": 0.044361251422336795,
       "size": 5,
-      "color": "#ffff1a",
-      "originalColor": "#ffff1a",
+      "color": "#f0c330",
+      "originalColor": "#f0c330",
       "type": "actor",
       "info": {
         "type": "actor"
@@ -714,11 +708,13 @@
       "x": 0.11789285714285713,
       "y": 0.334056919642857,
       "size": 5,
-      "color": "#46afe3",
-      "originalColor": "#46afe3",
+      "color": "#3a99d8",
+      "originalColor": "#3a99d8",
       "type": "diamond",
       "info": {
-        "type": "network connection"
+        "type": "network connection",
+        "description": "wireless",
+        "protocol": "http"
       },
       "read_cam0:size": 6,
       "read_cam0:x": -169.3762935287486,
@@ -733,11 +729,19 @@
       "x": 0.04075000000000001,
       "y": 0.30262834821428564,
       "size": 5,
-      "color": "#46afe3",
-      "originalColor": "#46afe3",
+      "color": "#3a99d8",
+      "originalColor": "#3a99d8",
       "type": "circle",
       "info": {
-        "type": "device"
+        "type": "device",
+        "id": "03",
+        "aspect": "physical",
+        "layer": "perception",
+        "nodeType": "mobilePhone",
+        "trust": "3",
+        "attribute": "bipolar",
+        "input": "dataDigital",
+        "output": "dataDigital"
       },
       "read_cam0:size": 6,
       "read_cam0:x": -223.37629352874856,
@@ -752,8 +756,8 @@
       "x": -0.017924875632146925,
       "y": 0.20834263392857133,
       "size": 5,
-      "color": "#ffff1a",
-      "originalColor": "#ffff1a",
+      "color": "#f0c330",
+      "originalColor": "#f0c330",
       "type": "actor",
       "info": {
         "type": "actor"
@@ -771,8 +775,8 @@
       "x": 0.08557327646964084,
       "y": 0.15195183106831112,
       "size": 5,
-      "color": "#ffff1a",
-      "originalColor": "#ffff1a",
+      "color": "#f0c330",
+      "originalColor": "#f0c330",
       "type": "actor",
       "info": {
         "type": "actor"

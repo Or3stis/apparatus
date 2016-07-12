@@ -5,28 +5,28 @@ module.exports = function addComponent (component, s) {
   let lastNode = s.graph.nodes().length
 
   if (component === 'device') {
-    color = '#46afe3'
+    color = '#6a9fb5'
     type = 'circle'
   } else if (component === 'network connection') {
-    color = '#46afe3'
+    color = '#6a9fb5'
     type = 'diamond'
   } else if (component === 'microcosm') {
-    color = '#46afe3'
+    color = '#6a9fb5'
     type = 'triangle'
   } else if (component === 'data') {
-    color = '#46afe3'
+    color = '#6a9fb5'
     type = 'square'
   } else if (component === 'unkown world') {
-    color = '#aaaaaa'
+    color = '#b0b0b0'
     type = 'triangle'
   } else if (component === 'unkown node') {
-    color = '#aaaaaa'
+    color = '#b0b0b0'
     type = 'circle'
   } else if (component === 'actor') {
-    color = '#ffff1a'
+    color = '#f4bf75'
     type = 'actor'
   } else if (component === 'malicious actor') {
-    color = '#ff0000'
+    color = '#ac4142'
     type = 'actor'
   } else if (component === 'secure microcosm') {
     color = '#70bf53'
@@ -35,20 +35,20 @@ module.exports = function addComponent (component, s) {
     color = '#D08B0F'
     type = 'hourglass'
   } else if (component === 'constraint') {
-    color = '#70bf53'
+    color = '#90a959'
     type = 'equilateral'
     // TODO fix it
   } else if (component === 'mechanism') {
-    color = '#70bf53'
+    color = '#90a959'
     type = 'circle'
   } else if (component === 'threat') {
-    color = '#eb5368'
+    color = '#ac4142'
     type = 'diamond'
   } else if (component === 'vulnerability') {
-    color = '#eb5368'
+    color = '#ac4142'
     type = 'circle'
   } else if (component === 'property') {
-    color = '#70bf53'
+    color = '#90a959'
     type = 'cross'
   }
 

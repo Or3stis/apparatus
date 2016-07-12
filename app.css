@@ -1,67 +1,70 @@
 body {
-  background: #1f2029;
+  background: #35495d;
   font-family: Menlo, monospace;
-  color: #e7e8ec;
+  color: #e0e0e0;
 }
 h3 {
-  color: #56c255;
+  color: #39ca74;
   text-align: center;
 }
-.graph {
-  /*background: white;*/
-  width: 1000px;
-  height: 700px;
-  margin: 0;
-  padding: 0;
+.actionBar {
+  /*background: red;*/
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  width: 9em;
+  height: 100%;
 }
 .sidebar {
-  background: #181d20;
+  /*background: #181d20;*/
   bottom: 0;
   right: 0;
-  margin: 2px;
   width: 13em;
   height: 100%;
   position: absolute;
 }
+.graph {
+  background: #2d3e4f;
+  left: 9em;
+  width: 52em;
+  height: 43em;
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
 .footer {
-  background: #181d20;
+  /*background: #181d20;*/
   bottom: 0;
   position: absolute;
   width: 100%;
   height: 3em;
 }
-.actionBar {
-  background: #181d20;
-  bottom: 0;
-  left: 0;
-  position: absolute;;
-  width: 9em;
-  height: 100%;
-}
+
 .components {
   height: 9em;
-  margin: 5px;
+  margin: 0.5em;
   /*background-color: white;*/
 }
 .filters {
   height: 8em;
-  margin: 5px;
+  margin: 0.5em;
   /*background-color: gray;*/
 }
 .analysis {
   height: 8em;
-  margin: 8px;
+  margin: 0.5em;
   /*background-color: pink;*/
 }
 .save {
   height: 6em;
-  margin: 8px;
+  margin: 1em;
   /*background-color: gray;*/
 }
 .button {
-  background-color: #1a4666;
-  margin: 4px;
-  color: #e7e8ec;
+  background-color: #2d3e4f;
+  margin: 0.2em;
+  color: #94a4a5;
+  /*color: #e0e0e0;*/
   /*border-radius: 20px;*/
   border-style: none;
   font-size: 16px;
@@ -69,8 +72,8 @@ h3 {
   cursor: pointer;
 }
 .button:hover {
-  background-color: #46AFE3;
-  color: #14171a;
+  background-color: #3a99d8;
+  color: #2d3e4f;
 }
 
 select:required:invalid {

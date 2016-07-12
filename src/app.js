@@ -21,7 +21,7 @@ let sourceNode = ''
 let targetNode = ''
 
 // test button, remove at some point
-// let buttonTest = document.getElementById('testButton')
+let buttonTest = document.getElementById('testButton')
   // decleration of the buttons
 let buttonSave = document.getElementById('saveButton')
 let buttonValidate = document.getElementById('validateButton')
@@ -46,8 +46,8 @@ sigma.parsers.json(fileToLoad, {
     labelSize: 'fixed',
     labelThreshold: '9',
     edgeLabelSize: 'fixed',
-    defaultLabelColor: '#e7e8ec',
-    defaultEdgeLabelColor: '#e7e8ec'
+    defaultLabelColor: '#94a4a5',
+    defaultEdgeLabelColor: '#94a4a5'
     // must enable canvas in type for edge hovering
     // enableEdgeHovering: 'true',
     // edgeHoverSizeRatio: '2'
@@ -201,6 +201,15 @@ sigma.parsers.json(fileToLoad, {
     let selectedNodes = `source node: ${sourceNode} <br/>
       targetNode: ${targetNode}`
     document.getElementById('footerId').innerHTML = selectedNodes
+  }
+
+  buttonTest.addEventListener('click', () => {
+    switchLightTheme()
+  })
+  function switchLightTheme () {
+    document.getElementsByTagName('body')[0].style.background = '#f5f5f5'
+    document.getElementsByTagName('body')[0].style.color = '#7f8c8d'
+    document.getElementsByClassName('graph')[0].style.background = '#ecf0f1'
   }
 })
 
