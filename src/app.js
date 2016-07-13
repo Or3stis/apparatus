@@ -125,10 +125,22 @@ sigma.parsers.json(fileToLoad, {
 
   buttonAddEdge.addEventListener('click', () => {
     // finds the id of the last edge
+    // console.log(s.graph.edges())
     let lastEdge = s.graph.edges().length
 
+    for (let e of s.graph.edges().values()) {
+      if (e.type !== 'curvedArrow') {
+        if (sourceNode === e.source && targetNode === e.target) {
+          document.getElementById('infoForNodes').innerHTML = 'edge exists'
+          return
+        } else if (sourceNode === e.target && targetNode === e.source) {
+          document.getElementById('infoForNodes').innerHTML = 'edge exists'
+          return
+        }
+      }
+    }
     s.graph.addEdge({
-      id: lastEdge,
+      id: `e${lastEdge}`,
       target: sourceNode,
       source: targetNode
     })
@@ -136,6 +148,21 @@ sigma.parsers.json(fileToLoad, {
   })
   buttonAddOwns.addEventListener('click', () => {
     let lastEdge = s.graph.edges().length
+
+    for (let e of s.graph.edges().values()) {
+      if (e.type === 'curvedArrow') {
+        // console.log('check valid')
+        if (sourceNode === e.source && targetNode === e.target) {
+          document.getElementById('infoForNodes').innerHTML = 'edge exists'
+          // console.log('node exists 1')
+          return
+        } else if (sourceNode === e.target && targetNode === e.source) {
+          document.getElementById('infoForNodes').innerHTML = 'edge exists'
+          // console.log('node exists 2')
+          return
+        }
+      }
+    }
 
     s.graph.addEdge({
       id: `e${lastEdge}`,
@@ -145,6 +172,7 @@ sigma.parsers.json(fileToLoad, {
       source: targetNode
     })
     s.refresh()
+    console.log(s.graph.edges().length)
   })
     // TODO add backspace event listener
   buttonDeleteNode.addEventListener('click', () => {
