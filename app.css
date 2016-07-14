@@ -64,7 +64,7 @@ h3 {
 .button {
   background-color: #2d3e4f;
   margin: 0.2em;
-  color: #94a4a5;
+  color: #7f8c8d;
   /*color: #e0e0e0;*/
   /*border-radius: 20px;*/
   border-style: none;
@@ -75,6 +75,9 @@ h3 {
 .button:hover {
   background-color: #3a99d8;
   color: #2d3e4f;
+}
+.selection {
+  width: 12em;
 }
 
 select:required:invalid {

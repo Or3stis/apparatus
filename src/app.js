@@ -44,13 +44,17 @@ sigma.parsers.json(fileToLoad, {
   },
   settings: {
     labelSize: 'fixed',
-    labelThreshold: '9',
+    labelThreshold: 9,
     edgeLabelSize: 'fixed',
     defaultLabelColor: '#94a4a5',
-    defaultEdgeLabelColor: '#94a4a5'
+    defaultEdgeLabelColor: '#94a4a5',
+    // doubleClickEnabled: false, does not work
+    mouseWheelEnabled: false,
     // must enable canvas in type for edge hovering
-    // enableEdgeHovering: 'true',
-    // edgeHoverSizeRatio: '2'
+    // enableEdgeHovering: true,
+    // edgeHoverPrecision: 7,
+    // edgeHoverSizeRatio: 9,
+    enableCamera: false // does not move the graph in the container
   }
 }, (s) => {
   // store the initial colors of the nodes and edges
@@ -85,6 +89,10 @@ sigma.parsers.json(fileToLoad, {
     window.alert('double click works')
     s.refresh()
   })
+  // s.bind('doubleClickStage', () => {
+  //   window.alert('double click works')
+  //   s.refresh()
+  // })
   s.bind('rightClickNode', (n) => {
     window.alert('right click works')
     s.refresh()
