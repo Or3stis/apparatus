@@ -11,7 +11,6 @@ module.exports = function nodeInfo (n) {
     // adds the values of the object to the string
     nodeInfo = `${nodeInfo} ${n.data.node.info[i]} <br/>`
   }
-
   // appends info to the div
   document.getElementById('infoForNodes').innerHTML = nodeInfo
 }

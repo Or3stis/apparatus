@@ -237,5 +237,3 @@ sigma.parsers.json(fileToLoad, {
     document.getElementsByClassName('graph')[0].style.background = '#ecf0f1'
   }
 })
-
-// TODO the selections do not permit to add the same two components in a row

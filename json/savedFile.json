@@ -319,7 +319,7 @@
       "y": 0.13,
       "size": 5,
       "color": "#39ca74",
-      "type": "cross",
+      "type": "square",
       "info": {
         "type": "property"
       },
@@ -338,7 +338,7 @@
       "y": 0.75,
       "size": 5,
       "color": "#39ca74",
-      "type": "cross",
+      "type": "square",
       "info": {
         "type": "property"
       },
@@ -555,7 +555,7 @@
       "y": 0.7,
       "size": 5,
       "color": "#39ca74",
-      "type": "cross",
+      "type": "square",
       "info": {
         "type": "property"
       },
