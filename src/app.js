@@ -67,17 +67,16 @@ sigma.parsers.json(fileToLoad, {
 
   // functions when individual nodes are clicked
   s.bind('clickNode', (n) => {
-    showNeighbor(n, s) // module
     nodeInfo(n) // module
     footerSourceTargetNode(n)
     s.refresh()
   })
 
   // functions when the stage is clicked
-  s.bind('clickStage', () => {
-    returnColorNeighbor()
-    s.refresh()
-  })
+  // s.bind('clickStage', () => {
+  //
+  //   s.refresh()
+  // })
 
   // s.bind('overEdge', (n) => {
   //   window.alert('it works')
@@ -86,13 +85,13 @@ sigma.parsers.json(fileToLoad, {
 
   // test functions to check double and right click
   s.bind('doubleClickNode', (n) => {
-    window.alert('double click works')
+    showNeighbor(n, s) // module
     s.refresh()
   })
-  // s.bind('doubleClickStage', () => {
-  //   window.alert('double click works')
-  //   s.refresh()
-  // })
+  s.bind('doubleClickStage', () => {
+    returnColorNeighbor()
+    s.refresh()
+  })
   s.bind('rightClickNode', (n) => {
     window.alert('right click works')
     s.refresh()
