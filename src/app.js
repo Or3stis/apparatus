@@ -11,6 +11,8 @@ const buttonSelection = require('./src/buttonSelection.js')
 const moduleSelection = require('./src/moduleSelection.js')
 const save = require('./src/save.js')
 const addComponent = require('./src/addComponent.js')
+const addEdge = require('./src/addEdge.js')
+const addOwn = require('./src/addOwn.js')
 
 // important, location of the json file
 const fileToLoad = 'json/savedFile.json'
@@ -129,53 +131,12 @@ sigma.parsers.json(fileToLoad, {
   })
 
   buttonAddEdge.addEventListener('click', () => {
-    // finds the id of the last edge
-    let lastEdge = s.graph.edges().length
-
-    for (let e of s.graph.edges().values()) {
-      // checks if the existing edge is a curved
-      if (e.type !== 'curvedArrow') {
-        if (sourceNode === e.source && targetNode === e.target) {
-          document.getElementById('infoForNodes').innerHTML = 'edge exists'
-          return
-        } else if (sourceNode === e.target && targetNode === e.source) {
-          document.getElementById('infoForNodes').innerHTML = 'edge exists'
-          return
-        }
-      }
-    }
-    s.graph.addEdge({
-      id: `e${lastEdge}`,
-      target: sourceNode,
-      source: targetNode
-    })
-    s.refresh()
+    addEdge(s, sourceNode, targetNode)
   })
   buttonAddOwns.addEventListener('click', () => {
-    let lastEdge = s.graph.edges().length
-
-    for (let e of s.graph.edges().values()) {
-      // checks if the existing edge is a curved
-      if (e.type === 'curvedArrow') {
-        if (sourceNode === e.source && targetNode === e.target) {
-          document.getElementById('infoForNodes').innerHTML = 'edge exists'
-          return
-        } else if (sourceNode === e.target && targetNode === e.source) {
-          document.getElementById('infoForNodes').innerHTML = 'edge exists'
-          return
-        }
-      }
-    }
-    s.graph.addEdge({
-      id: `e${lastEdge}`,
-      label: 'owns',
-      type: 'curvedArrow',
-      target: sourceNode,
-      source: targetNode
-    })
-    s.refresh()
+    addOwn(s, sourceNode, targetNode)
   })
-    // TODO add backspace event listener
+  // TODO add backspace event listener
   buttonDeleteNode.addEventListener('click', () => {
     s.graph.dropNode(sourceNode)
     s.refresh()
@@ -219,6 +180,7 @@ sigma.parsers.json(fileToLoad, {
     }
   }
 
+  // it generates values used in addEdge/addOwn modules
   function footerSourceTargetNode (n) {
     // store the id of the selected node to be used for
     // addEdge function
