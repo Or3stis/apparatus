@@ -41,7 +41,7 @@ let addStuff = document.getElementById('addStuff')
 // create the graph from the json file
 sigma.parsers.json(fileToLoad, {
   renderer: {
-    container: 'graph-container',
+    container: document.getElementById('graph-container'),
     type: 'canvas'
   },
   settings: {
@@ -50,10 +50,13 @@ sigma.parsers.json(fileToLoad, {
     edgeLabelSize: 'fixed',
     defaultLabelColor: '#94a4a5',
     defaultEdgeLabelColor: '#94a4a5',
-    doubleClickEnabled: false, // does not work
     mouseWheelEnabled: false,
     // must enable canvas in type for edge hovering
-    // enableEdgeHovering: true,
+    minEdgeSize: 0.1,
+    maxEdgeSize: 2,
+    enableEdgeHovering: true,
+    edgeHoverSizeRatio: 2,
+    doubleClickEnabled: false,
     // edgeHoverPrecision: 7,
     // edgeHoverSizeRatio: 9,
     enableCamera: false // does not move the graph in the container

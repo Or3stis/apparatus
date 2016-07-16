@@ -40,9 +40,9 @@ let actorArray = ['asset', 'network connection', 'device', 'unkown node',
 let maliciousActorArray = actorArray.concat('threat')
 let secureMicrcosmArray = microcosmArray.concat('constraint')
 let assetArray = ['data', 'threat', 'actor', 'device']
-let constraintArray = ['secure microcosm', 'threat', 'objective', 'mechanism']
-let objectiveArray = ['mechanism']
-let mechanismArray = ['constraint', 'vulnerability']
+let constraintArray = ['secure microcosm', 'threat', 'objective']
+let objectiveArray = ['mechanism', 'constraint']
+let mechanismArray = ['objective', 'vulnerability']
 let threatArray = ['asset', 'malicious actor', 'vulnerability', 'constraint',
   'unkown world']
 let vulnerabilityArray = ['threat', 'microcosm', 'mechanism', 'device']
