@@ -55,7 +55,7 @@ sigma.parsers.json(fileToLoad, {
     mouseWheelEnabled: false,
     // must enable canvas in type for edge hovering
     enableEdgeHovering: true,
-    edgeHoverSizeRatio: 3,
+    edgeHoverSizeRatio: 2,
     doubleClickEnabled: false,
     // edgeHoverPrecision: 7,
     // edgeHoverSizeRatio: 9,
@@ -93,6 +93,9 @@ sigma.parsers.json(fileToLoad, {
   })
   s.bind('doubleClickStage', () => {
     returnColorNeighbor()
+    // reset the component choice for the filters
+    document.getElementById('selection').selectedIndex = ''
+    document.getElementById('moduleGroup').selectedIndex = ''
     s.refresh()
   })
   s.bind('rightClickNode', (n) => {

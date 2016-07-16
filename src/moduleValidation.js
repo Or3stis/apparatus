@@ -27,7 +27,7 @@ let arrWrong = [] // stores wrong connection of nodes
 
 // valid component connections
 let deviceArray = ['secure microcosm', 'microcosm', 'vulnerability',
-  'network connection', 'data', 'actor', 'asset'
+  'network connection', 'data', 'actor', 'asset', 'unkown world'
 ]
 let networkArray = ['device', 'actor', 'data']
 let microcosmArray = ['device', 'unkown world', 'vulnerability',
