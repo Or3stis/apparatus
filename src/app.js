@@ -238,7 +238,12 @@ sigma.parsers.json(fileToLoad, {
   })
   function switchLightTheme () {
     document.getElementsByTagName('body')[0].style.background = '#f5f5f5'
-    document.getElementsByTagName('body')[0].style.color = '#7f8c8d'
+    document.getElementsByTagName('body')[0].style.color = '#35495d'
     document.getElementsByClassName('graph')[0].style.background = '#ecf0f1'
+    let but = document.getElementsByClassName('button')
+    console.log(but)
+    for (let i of Object.keys(but)) {
+      but[i].style.color = '#35495d'
+    }
   }
 })

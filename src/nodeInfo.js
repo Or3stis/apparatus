@@ -3,7 +3,7 @@
 // shows info of node in the div 'infoForNodes'
 module.exports = function nodeInfo (n) {
   let nodeInfo = ''
-  for (let i in n.data.node.info) {
+  for (let i of Object.keys(n.data.node.info)) {
     // adds the keys of the object to the string
     if (n.data.node.info.hasOwnProperty(i)) {
       nodeInfo = `${nodeInfo} > ${i}: `

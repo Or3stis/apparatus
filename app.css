@@ -62,19 +62,18 @@ h3 {
   /*background-color: gray;*/
 }
 .button {
-  background-color: #2d3e4f;
+  background-color: #35495d;
+  background-color: rgba(53, 73, 93, 0.1);
   margin: 0.2em;
-  color: #7f8c8d;
-  /*color: #e0e0e0;*/
+  color: #e0e0e0;
   /*border-radius: 20px;*/
-  border-style: none;
+  border: 1px solid;
   font-size: 16px;
   padding: 8px 10px 8px 12px;
   cursor: pointer;
 }
 .button:hover {
   background-color: #3a99d8;
-  color: #2d3e4f;
 }
 .selection {
   width: 12em;
