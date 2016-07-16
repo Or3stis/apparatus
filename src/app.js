@@ -13,6 +13,7 @@ const save = require('./src/save.js')
 const addComponent = require('./src/addComponent.js')
 const addEdge = require('./src/addEdge.js')
 const addOwnership = require('./src/addOwnership.js')
+const switchTheme = require('./src/switchTheme.js')
 
 // important, location of the json file
 const fileToLoad = 'json/savedFile.json'
@@ -21,12 +22,16 @@ const fileToLoad = 'json/savedFile.json'
 // captures the id of last two selected nodes
 let sourceNode = ''
 let targetNode = ''
+// stores the last selected edge
 let selectedEdge = ''
+// theme switcher
+let toggleTheme = false
 
 // test button, remove at some point
-let buttonTest = document.getElementById('testButton')
-  // decleration of the buttons
+// let buttonTest = document.getElementById('testButton')
+// decleration of the buttons
 let buttonSave = document.getElementById('saveButton')
+let buttonTheme = document.getElementById('themeButton')
 let buttonValidate = document.getElementById('validateButton')
 let buttonModuleValidate = document.getElementById('moduleValidateButton')
 let buttonAddEdge = document.getElementById('addEdge')
@@ -205,17 +210,13 @@ sigma.parsers.json(fileToLoad, {
     document.getElementById('footerId').innerHTML = selectedNodes
   }
 
-  buttonTest.addEventListener('click', () => {
-    switchLightTheme()
-  })
-  function switchLightTheme () {
-    document.getElementsByTagName('body')[0].style.background = '#f5f5f5'
-    document.getElementsByTagName('body')[0].style.color = '#35495d'
-    document.getElementsByClassName('graph')[0].style.background = '#ecf0f1'
-    let but = document.getElementsByClassName('button')
-    console.log(but)
-    for (let i of Object.keys(but)) {
-      but[i].style.color = '#35495d'
+  buttonTheme.addEventListener('click', () => {
+    if (toggleTheme === false) {
+      switchTheme.switchLightTheme()
+      toggleTheme = true
+    } else {
+      switchTheme.switchThemeDark()
+      toggleTheme = false
     }
-  }
+  })
 })
