@@ -48,7 +48,7 @@ sigma.parsers.json(fileToLoad, {
     edgeLabelSize: 'fixed',
     defaultLabelColor: '#94a4a5',
     defaultEdgeLabelColor: '#94a4a5',
-    // doubleClickEnabled: false, does not work
+    doubleClickEnabled: false, // does not work
     mouseWheelEnabled: false,
     // must enable canvas in type for edge hovering
     // enableEdgeHovering: true,
@@ -74,7 +74,6 @@ sigma.parsers.json(fileToLoad, {
 
   // functions when the stage is clicked
   // s.bind('clickStage', () => {
-  //
   //   s.refresh()
   // })
 
@@ -83,7 +82,6 @@ sigma.parsers.json(fileToLoad, {
   //   s.refresh()
   // })
 
-  // test functions to check double and right click
   s.bind('doubleClickNode', (n) => {
     showNeighbor(n, s) // module
     s.refresh()

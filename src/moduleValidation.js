@@ -16,7 +16,7 @@ module.exports = function moduleValidation (s) {
   componentValidation(s, 'secure microcosm', secureMicrcosmArray)
   componentValidation(s, 'asset', assetArray)
   componentValidation(s, 'constraint', constraintArray)
-  componentValidation(s, 'property', propertyArray)
+  componentValidation(s, 'objective', objectiveArray)
   componentValidation(s, 'mechanism', mechanismArray)
   componentValidation(s, 'threat', threatArray)
   componentValidation(s, 'vulnerability', vulnerabilityArray)
@@ -40,8 +40,8 @@ let actorArray = ['asset', 'network connection', 'device', 'unkown node',
 let maliciousActorArray = actorArray.concat('threat')
 let secureMicrcosmArray = microcosmArray.concat('constraint')
 let assetArray = ['data', 'threat', 'actor', 'device']
-let constraintArray = ['secure microcosm', 'threat', 'property', 'mechanism']
-let propertyArray = ['constraint']
+let constraintArray = ['secure microcosm', 'threat', 'objective', 'mechanism']
+let objectiveArray = ['mechanism']
 let mechanismArray = ['constraint', 'vulnerability']
 let threatArray = ['asset', 'malicious actor', 'vulnerability', 'constraint',
   'unkown world']

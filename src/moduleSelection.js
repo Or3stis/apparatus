@@ -8,7 +8,7 @@ module.exports = function moduleSelection (input, s) {
   let networkArray = ['device', 'network connection', 'microcosm',
     'unkown world', 'unkown node']
   let securityArray = ['asset', 'threat', 'vulnerability', 'mechanism',
-    'constraint', 'secure microcosm'
+    'constraint', 'secure microcosm', 'property'
   ]
   let socialArray = ['actor', 'malicious actor']
 
