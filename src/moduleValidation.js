@@ -45,7 +45,8 @@ let objectiveArray = ['mechanism', 'constraint']
 let mechanismArray = ['objective', 'vulnerability']
 let threatArray = ['asset', 'malicious actor', 'vulnerability', 'constraint',
   'unkown world']
-let vulnerabilityArray = ['threat', 'microcosm', 'mechanism', 'device']
+let vulnerabilityArray = ['threat', 'microcosm', 'mechanism', 'device',
+  'network connection']
 
 function componentValidation (s, component, componentArray) {
   for (let n of s.graph.nodes().values()) {

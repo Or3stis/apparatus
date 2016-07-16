@@ -36,8 +36,9 @@
           <option value="unkown world">unkown world</option>
         </select>
         <button class="button" id="addEdge">connection</button>
-        <button class="button" id="addOwns">ownership</button>
+        <button class="button" id="addOwnership">ownership</button>
         <button class="button" id="deleteNode">delete node</button>
+        <button class="button" id="deleteEdge">delete edge</button>
       </div>
       <div class="filters" id="filtersId">
         <select class="selection" required id="selection">
@@ -87,7 +88,8 @@
 <script src="build/sigma.layout.forceAtlas2.min.js"></script>
 <script src="build/sigma.parsers.json.min.js"></script>
 <script src="build/sigma.renderers.edgeLabels.min.js"></script>
-<script src="build/sigma.renderers.customEdgeShapes.min.js"></script>
+<!-- <script src="build/sigma.renderers.customEdgeShapes.min.js"></script> -->
+<script src="build/sigma.renderers.parallelEdges.min.js"></script>
 <script src="sigma.renderers.customShapes/shape-library.js"></script>
 <script src="sigma.renderers.customShapes/sigma.renderers.customShapes.js"></script>
 

@@ -19,6 +19,7 @@ module.exports = function addEdge (s, sourceNode, targetNode) {
   s.graph.addEdge({
     id: `e${lastEdge}`,
     label: 'owns',
+    size: 0.1,
     type: 'curvedArrow',
     target: sourceNode,
     source: targetNode

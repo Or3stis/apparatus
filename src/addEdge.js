@@ -19,6 +19,7 @@ module.exports = function addEdge (s, sourceNode, targetNode) {
   }
   s.graph.addEdge({
     id: `e${lastEdge}`,
+    size: 0.1,
     target: sourceNode,
     source: targetNode
   })

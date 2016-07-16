@@ -12,7 +12,7 @@ const moduleSelection = require('./src/moduleSelection.js')
 const save = require('./src/save.js')
 const addComponent = require('./src/addComponent.js')
 const addEdge = require('./src/addEdge.js')
-const addOwn = require('./src/addOwn.js')
+const addOwnership = require('./src/addOwnership.js')
 
 // important, location of the json file
 const fileToLoad = 'json/savedFile.json'
@@ -21,6 +21,7 @@ const fileToLoad = 'json/savedFile.json'
 // captures the id of last two selected nodes
 let sourceNode = ''
 let targetNode = ''
+let selectedEdge = ''
 
 // test button, remove at some point
 let buttonTest = document.getElementById('testButton')
@@ -29,8 +30,9 @@ let buttonSave = document.getElementById('saveButton')
 let buttonValidate = document.getElementById('validateButton')
 let buttonModuleValidate = document.getElementById('moduleValidateButton')
 let buttonAddEdge = document.getElementById('addEdge')
-let buttonAddOwns = document.getElementById('addOwns')
+let buttonAddOwns = document.getElementById('addOwnership')
 let buttonDeleteNode = document.getElementById('deleteNode')
+let buttonDeleteEdge = document.getElementById('deleteEdge')
 let buttonStopAtlas = document.getElementById('stopAtlas')
 let buttonStartAtlas = document.getElementById('startAtlas')
 
@@ -52,10 +54,8 @@ sigma.parsers.json(fileToLoad, {
     defaultEdgeLabelColor: '#94a4a5',
     mouseWheelEnabled: false,
     // must enable canvas in type for edge hovering
-    minEdgeSize: 0.1,
-    maxEdgeSize: 2,
     enableEdgeHovering: true,
-    edgeHoverSizeRatio: 2,
+    edgeHoverSizeRatio: 3,
     doubleClickEnabled: false,
     // edgeHoverPrecision: 7,
     // edgeHoverSizeRatio: 9,
@@ -82,10 +82,10 @@ sigma.parsers.json(fileToLoad, {
   //   s.refresh()
   // })
 
-  // s.bind('overEdge', (n) => {
-  //   window.alert('it works')
-  //   s.refresh()
-  // })
+  s.bind('clickEdge', (edge) => {
+    selectedEdge = edge
+    s.refresh()
+  })
 
   s.bind('doubleClickNode', (n) => {
     showNeighbor(n, s) // module
@@ -137,11 +137,15 @@ sigma.parsers.json(fileToLoad, {
     addEdge(s, sourceNode, targetNode)
   })
   buttonAddOwns.addEventListener('click', () => {
-    addOwn(s, sourceNode, targetNode)
+    addOwnership(s, sourceNode, targetNode)
   })
   // TODO add backspace event listener
   buttonDeleteNode.addEventListener('click', () => {
     s.graph.dropNode(sourceNode)
+    s.refresh()
+  })
+  buttonDeleteEdge.addEventListener('click', (e) => {
+    s.graph.dropEdge(selectedEdge.data.edge.id)
     s.refresh()
   })
 

@@ -795,6 +795,7 @@
       "read_cam0:size": null,
       "renderer1:size": 0,
       "id": "e0",
+      "size": "0.1",
       "source": "n0",
       "target": "n17"
     },
@@ -802,6 +803,7 @@
       "read_cam0:size": null,
       "renderer1:size": 0,
       "id": "e1",
+      "size": "0.1",
       "source": "n3",
       "target": "n18"
     },
@@ -809,6 +811,7 @@
       "read_cam0:size": null,
       "renderer1:size": 0,
       "id": "e2",
+      "size": "0.1",
       "source": "n2",
       "target": "n19"
     },
@@ -816,6 +819,7 @@
       "read_cam0:size": null,
       "renderer1:size": 0,
       "id": "e3",
+      "size": "0.1",
       "source": "n0",
       "target": "n4"
     },
@@ -823,6 +827,7 @@
       "read_cam0:size": null,
       "renderer1:size": 0,
       "id": "e4",
+      "size": "0.1",
       "source": "n1",
       "target": "n4"
     },
@@ -830,6 +835,7 @@
       "read_cam0:size": null,
       "renderer1:size": 0,
       "id": "e5",
+      "size": "0.1",
       "source": "n2",
       "target": "n4"
     },
@@ -837,6 +843,7 @@
       "read_cam0:size": null,
       "renderer1:size": 0,
       "id": "e6",
+      "size": "0.1",
       "source": "n3",
       "target": "n4"
     },
@@ -844,6 +851,7 @@
       "read_cam0:size": null,
       "renderer1:size": 0,
       "id": "e7",
+      "size": "0.1",
       "source": "n5",
       "target": "n4"
     },
@@ -851,6 +859,7 @@
       "read_cam0:size": null,
       "renderer1:size": 0,
       "id": "e8",
+      "size": "0.1",
       "source": "n10",
       "target": "n2"
     },
@@ -858,6 +867,7 @@
       "read_cam0:size": null,
       "renderer1:size": 0,
       "id": "e9",
+      "size": "0.1",
       "source": "n10",
       "target": "n3"
     },
@@ -865,6 +875,7 @@
       "read_cam0:size": null,
       "renderer1:size": 0,
       "id": "e10",
+      "size": "0.1",
       "source": "n10",
       "target": "n1"
     },
@@ -872,6 +883,7 @@
       "read_cam0:size": null,
       "renderer1:size": 0,
       "id": "e11",
+      "size": "0.1",
       "source": "n6",
       "target": "n7"
     },
@@ -879,6 +891,7 @@
       "read_cam0:size": null,
       "renderer1:size": 0,
       "id": "e12",
+      "size": "0.1",
       "source": "n7",
       "target": "n2"
     },
@@ -886,6 +899,7 @@
       "read_cam0:size": null,
       "renderer1:size": 0,
       "id": "e13",
+      "size": "0.1",
       "source": "n9",
       "target": "n7"
     },
@@ -893,6 +907,7 @@
       "read_cam0:size": null,
       "renderer1:size": 0,
       "id": "e14",
+      "size": "0.1",
       "source": "n8",
       "target": "n16"
     },
@@ -900,6 +915,7 @@
       "read_cam0:size": null,
       "renderer1:size": 0,
       "id": "e15",
+      "size": "0.1",
       "source": "n8",
       "target": "n6"
     },
@@ -907,6 +923,7 @@
       "read_cam0:size": null,
       "renderer1:size": 0,
       "id": "e16",
+      "size": "0.1",
       "source": "n9",
       "target": "n16"
     },
@@ -914,6 +931,7 @@
       "read_cam0:size": null,
       "renderer1:size": 0,
       "id": "e17",
+      "size": "0.1",
       "source": "n12",
       "target": "n4"
     },
@@ -921,6 +939,7 @@
       "read_cam0:size": null,
       "renderer1:size": 0,
       "id": "e18",
+      "size": "0.1",
       "source": "n11",
       "target": "n12"
     },
@@ -928,6 +947,7 @@
       "read_cam0:size": null,
       "renderer1:size": 0,
       "id": "e19",
+      "size": "0.1",
       "source": "n13",
       "target": "n11"
     },
@@ -935,6 +955,7 @@
       "read_cam0:size": null,
       "renderer1:size": 0,
       "id": "e20",
+      "size": "0.1",
       "source": "n15",
       "target": "n13"
     },
@@ -942,6 +963,7 @@
       "read_cam0:size": null,
       "renderer1:size": 0,
       "id": "e21",
+      "size": "0.1",
       "source": "n14",
       "target": "n12"
     },
@@ -949,6 +971,7 @@
       "read_cam0:size": null,
       "renderer1:size": 0,
       "id": "e22",
+      "size": "0.1",
       "source": "n14",
       "target": "n15"
     },
@@ -956,6 +979,7 @@
       "read_cam0:size": null,
       "renderer1:size": 0,
       "id": "e23",
+      "size": "0.1",
       "source": "n6",
       "target": "n5"
     },
@@ -963,6 +987,7 @@
       "read_cam0:size": null,
       "renderer1:size": 0,
       "id": "e24",
+      "size": "0.1",
       "source": "n11",
       "target": "n5"
     },
@@ -970,6 +995,7 @@
       "read_cam0:size": null,
       "renderer1:size": 0,
       "id": "e25",
+      "size": "0.1",
       "source": "n1",
       "target": "n19"
     },
@@ -977,6 +1003,7 @@
       "read_cam0:size": null,
       "renderer1:size": 0,
       "id": "e26",
+      "size": "0.1",
       "source": "n1",
       "target": "n18"
     },
@@ -984,6 +1011,7 @@
       "read_cam0:size": null,
       "renderer1:size": 0,
       "id": "e27",
+      "size": "0.1",
       "source": "n1",
       "target": "n17"
     },
@@ -991,6 +1019,7 @@
       "read_cam0:size": null,
       "renderer1:size": 0,
       "id": "e28",
+      "size": "0.1",
       "source": "n6",
       "target": "n20"
     },
@@ -998,6 +1027,7 @@
       "read_cam0:size": null,
       "renderer1:size": 0,
       "id": "e29",
+      "size": "0.1",
       "source": "n20",
       "target": "n33"
     },
@@ -1005,6 +1035,7 @@
       "read_cam0:size": null,
       "renderer1:size": 0,
       "id": "e30",
+      "size": "0.1",
       "source": "n21",
       "target": "n0"
     },
@@ -1012,6 +1043,7 @@
       "read_cam0:size": null,
       "renderer1:size": 0,
       "id": "e31",
+      "size": "0.1",
       "source": "n11",
       "target": "n21"
     },
@@ -1021,6 +1053,7 @@
       "type": "curvedArrow",
       "label": "owns",
       "id": "e32",
+      "size": "0.1",
       "source": "n30",
       "target": "n1"
     },
@@ -1028,6 +1061,7 @@
       "read_cam0:size": null,
       "renderer1:size": 0,
       "id": "e33",
+      "size": "0.1",
       "source": "n31",
       "target": "n6"
     },
@@ -1035,6 +1069,7 @@
       "read_cam0:size": null,
       "renderer1:size": 0,
       "id": "e34",
+      "size": "0.1",
       "source": "n31",
       "target": "n23"
     },
@@ -1042,6 +1077,7 @@
       "read_cam0:size": null,
       "renderer1:size": 0,
       "id": "e35",
+      "size": "0.1",
       "source": "n22",
       "target": "n28"
     },
@@ -1049,6 +1085,7 @@
       "read_cam0:size": null,
       "renderer1:size": 0,
       "id": "e36",
+      "size": "0.1",
       "source": "n23",
       "target": "n24"
     },
@@ -1056,6 +1093,7 @@
       "read_cam0:size": null,
       "renderer1:size": 0,
       "id": "e37",
+      "size": "0.1",
       "source": "n23",
       "target": "n22"
     },
@@ -1063,6 +1101,7 @@
       "read_cam0:size": null,
       "renderer1:size": 0,
       "id": "e38",
+      "size": "0.1",
       "source": "n24",
       "target": "n3"
     },
@@ -1070,6 +1109,7 @@
       "read_cam0:size": null,
       "renderer1:size": 0,
       "id": "e39",
+      "size": "0.1",
       "source": "n27",
       "target": "n25"
     },
@@ -1077,6 +1117,7 @@
       "read_cam0:size": null,
       "renderer1:size": 0,
       "id": "e40",
+      "size": "0.1",
       "source": "n26",
       "target": "n24"
     },
@@ -1084,6 +1125,7 @@
       "read_cam0:size": null,
       "renderer1:size": 0,
       "id": "e41",
+      "size": "0.1",
       "source": "n26",
       "target": "n27"
     },
@@ -1091,6 +1133,7 @@
       "read_cam0:size": null,
       "renderer1:size": 0,
       "id": "e42",
+      "size": "0.1",
       "source": "n25",
       "target": "n10"
     },
@@ -1098,6 +1141,7 @@
       "read_cam0:size": null,
       "renderer1:size": 0,
       "id": "e43",
+      "size": "0.1",
       "source": "n18",
       "target": "n28"
     },
@@ -1105,6 +1149,7 @@
       "read_cam0:size": null,
       "renderer1:size": 0,
       "id": "e44",
+      "size": "0.1",
       "source": "n29",
       "target": "n3"
     },
@@ -1112,6 +1157,7 @@
       "read_cam0:size": null,
       "renderer1:size": 0,
       "id": "e45",
+      "size": "0.1",
       "source": "n32",
       "target": "n5"
     },
@@ -1119,6 +1165,7 @@
       "read_cam0:size": null,
       "renderer1:size": 0,
       "id": "e46",
+      "size": "0.1",
       "source": "n31",
       "target": "n32"
     },
@@ -1128,6 +1175,7 @@
       "type": "curvedArrow",
       "label": "owns",
       "id": "e47",
+      "size": "0.1",
       "source": "n30",
       "target": "n3"
     },
@@ -1135,6 +1183,7 @@
       "read_cam0:size": null,
       "renderer1:size": 0,
       "id": "e48",
+      "size": "0.1",
       "source": "n3",
       "target": "n30"
     },
@@ -1144,6 +1193,7 @@
       "type": "curvedArrow",
       "label": "owns",
       "id": "e49",
+      "size": "0.1",
       "source": "n30",
       "target": "n29"
     },
@@ -1153,6 +1203,7 @@
       "type": "curvedArrow",
       "label": "owns",
       "id": "e50",
+      "size": "0.1",
       "source": "n30",
       "target": "n28"
     },
@@ -1162,6 +1213,7 @@
       "type": "curvedArrow",
       "label": "owns",
       "id": "e51",
+      "size": "0.1",
       "source": "n30",
       "target": "n2"
     },
@@ -1169,6 +1221,7 @@
       "read_cam0:size": null,
       "renderer1:size": 0,
       "id": "e52",
+      "size": "0.1",
       "source": "n33",
       "target": "n19"
     },
@@ -1178,6 +1231,7 @@
       "read_cam0:size": null,
       "renderer1:size": 0,
       "id": "e53",
+      "size": "0.1",
       "source": "n34",
       "target": "n0"
     },
@@ -1185,6 +1239,7 @@
       "read_cam0:size": null,
       "renderer1:size": 0,
       "id": "e54",
+      "size": "0.1",
       "source": "n35",
       "target": "n1"
     },
@@ -1192,6 +1247,7 @@
       "read_cam0:size": null,
       "renderer1:size": 0,
       "id": "e55",
+      "size": "0.1",
       "source": "n36",
       "target": "n35"
     },
@@ -1201,6 +1257,7 @@
       "read_cam0:size": null,
       "renderer1:size": 0,
       "id": "e56",
+      "size": "0.1",
       "source": "n37",
       "target": "n36"
     },
@@ -1208,6 +1265,7 @@
       "read_cam0:size": null,
       "renderer1:size": 0,
       "id": "e57",
+      "size": "0.1",
       "source": "n7",
       "target": "n36"
     },
@@ -1217,6 +1275,7 @@
       "read_cam0:size": null,
       "renderer1:size": 0,
       "id": "e58",
+      "size": "0.1",
       "source": "n38",
       "target": "n35"
     },
@@ -1226,6 +1285,7 @@
       "read_cam0:size": null,
       "renderer1:size": 0,
       "id": "e59",
+      "size": "0.1",
       "source": "n38",
       "target": "n17"
     },
@@ -1233,6 +1293,7 @@
       "read_cam0:size": null,
       "renderer1:size": 0,
       "id": "e60",
+      "size": "0.1",
       "source": "n12",
       "target": "n4"
     }
