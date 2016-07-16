@@ -7,6 +7,7 @@
       "size": 5,
       "color": "#3a99d8",
       "info": {
+        "description": "server",
         "type": "device",
         "id": "02",
         "aspect": "physical",
@@ -33,6 +34,7 @@
       "size": 5,
       "color": "#3a99d8",
       "info": {
+        "description": "router",
         "type": "device",
         "id": "01",
         "aspect": "physical",
@@ -59,6 +61,7 @@
       "size": 5,
       "color": "#3a99d8",
       "info": {
+        "description": "smart bulb",
         "type": "device",
         "id": "01",
         "aspect": "physical",
@@ -85,6 +88,7 @@
       "size": 5,
       "color": "#3a99d8",
       "info": {
+        "description": "smart phone",
         "type": "device",
         "id": "01",
         "aspect": "physical",
@@ -112,8 +116,8 @@
       "color": "#3a99d8",
       "type": "triangle",
       "info": {
+        "description": "smart home",
         "type": "microcosm",
-        "name": "smart home",
         "state": "static"
       },
       "read_cam0:size": 8,
@@ -126,13 +130,14 @@
       "id": "n4"
     },
     {
-      "label": "n5: unkown world",
+      "label": "n5: internet of things",
       "x": 0.6,
       "y": 0.34,
       "size": 7,
       "color": "#94a4a5",
       "type": "triangle",
       "info": {
+        "description": "internet of things",
         "type": "unkown world"
       },
       "read_cam0:size": 8,
@@ -152,6 +157,7 @@
       "color": "#e54d42",
       "type": "diamond",
       "info": {
+        "description": "credential leakage",
         "type": "threat",
         "class": "spoofing"
       },
@@ -171,6 +177,7 @@
       "size": 5,
       "color": "#e54d42",
       "info": {
+        "description": "no encryption",
         "type": "vulnerability"
       },
       "read_cam0:size": 6,
@@ -190,6 +197,7 @@
       "color": "#39ca74",
       "type": "equilateral",
       "info": {
+        "description": "credentials must be protected",
         "type": "constraint"
       },
       "read_cam0:size": 6,
@@ -208,6 +216,7 @@
       "size": 5,
       "color": "#39ca74",
       "info": {
+        "description": "encryption during authentication",
         "type": "mechanism"
       },
       "read_cam0:size": 6,
@@ -227,8 +236,8 @@
       "color": "#39ca74",
       "type": "triangle",
       "info": {
+        "description": "samrt home policy",
         "type": "secure microcosm",
-        "name": "smart home policy",
         "state": "static"
       },
       "read_cam0:size": 8,
@@ -248,6 +257,7 @@
       "color": "#e54d42",
       "type": "diamond",
       "info": {
+        "description": "system is not auditable",
         "type": "threat",
         "class": "repudiation"
       },
@@ -267,6 +277,7 @@
       "size": 5,
       "color": "#e54d42",
       "info": {
+        "description": "no activity logs",
         "type": "vulnerability"
       },
       "read_cam0:size": 6,
@@ -286,6 +297,7 @@
       "color": "#39ca74",
       "type": "equilateral",
       "info": {
+        "description": "cronological activity records",
         "type": "constraint"
       },
       "read_cam0:size": 6,
@@ -304,6 +316,7 @@
       "size": 5,
       "color": "#39ca74",
       "info": {
+        "description": "log files",
         "type": "mechanism"
       },
       "read_cam0:size": 6,
@@ -323,6 +336,7 @@
       "color": "#39ca74",
       "type": "square",
       "info": {
+        "description": "auditing",
         "type": "objective"
       },
       "read_cam0:size": 6,
@@ -342,6 +356,7 @@
       "color": "#39ca74",
       "type": "square",
       "info": {
+        "description": "authentication",
         "type": "objective"
       },
       "read_cam0:size": 6,
@@ -361,8 +376,8 @@
       "color": "#3a99d8",
       "type": "diamond",
       "info": {
-        "type": "network connection",
         "description": "wireless",
+        "type": "network connection",
         "protocol": "http"
       },
       "read_cam0:size": 6,
@@ -382,8 +397,8 @@
       "color": "#3a99d8",
       "type": "diamond",
       "info": {
-        "type": "network connection",
         "description": "wireless",
+        "type": "network connection",
         "protocol": "http"
       },
       "read_cam0:size": 6,
@@ -403,8 +418,8 @@
       "color": "#3a99d8",
       "type": "diamond",
       "info": {
-        "type": "network connection",
         "description": "wireless",
+        "type": "network connection",
         "protocol": "http"
       },
       "read_cam0:size": 6,
@@ -417,13 +432,14 @@
       "id": "n19"
     },
     {
-      "label": "n20: flowing data",
+      "label": "n20: data flow",
       "x": 0.1,
       "y": 0.42,
       "size": 5,
       "color": "#e47e30",
       "type": "hourglass",
       "info": {
+        "description": "data flow",
         "type": "asset",
         "description": "flowing data"
       },
@@ -444,6 +460,7 @@
       "color": "#e47e30",
       "type": "hourglass",
       "info": {
+        "description": "device",
         "type": "asset",
         "decription": "device"
       },
@@ -464,6 +481,7 @@
       "color": "#e47e30",
       "type": "hourglass",
       "info": {
+        "description": "data flow",
         "type": "asset",
         "description": "data traffic"
       },
@@ -484,6 +502,7 @@
       "color": "#e54d42",
       "type": "diamond",
       "info": {
+        "description": "data tampering",
         "type": "threat",
         "class": "tampering"
       },
@@ -503,6 +522,7 @@
       "size": 5,
       "color": "#e54d42",
       "info": {
+        "description": "weak authentication token",
         "type": "vulnerability"
       },
       "read_cam0:size": 6,
@@ -522,6 +542,7 @@
       "color": "#39ca74",
       "type": "equilateral",
       "info": {
+        "description": "only authenticated devices",
         "type": "constraint"
       },
       "read_cam0:size": 6,
@@ -540,6 +561,7 @@
       "size": 5,
       "color": "#39ca74",
       "info": {
+        "description": "hashed token",
         "type": "mechanism"
       },
       "read_cam0:size": 6,
@@ -559,6 +581,7 @@
       "color": "#39ca74",
       "type": "square",
       "info": {
+        "description": "authentication",
         "type": "objective"
       },
       "read_cam0:size": 6,
@@ -571,15 +594,15 @@
       "id": "n27"
     },
     {
-      "label": "n28: data",
+      "label": "n28: user generated data",
       "x": 0.3071785714285714,
       "y": 0.5635714285714286,
       "size": 5,
       "color": "#3a99d8",
       "type": "square",
       "info": {
-        "type": "data",
-        "description": "user generated"
+        "description": "user generated",
+        "type": "data"
       },
       "read_cam0:size": 6,
       "read_cam0:x": -36.40216975480749,
@@ -598,8 +621,8 @@
       "color": "#3a99d8",
       "type": "square",
       "info": {
-        "type": "data",
-        "description": "user stored data"
+        "description": "user stored data",
+        "type": "data"
       },
       "read_cam0:size": 6,
       "read_cam0:x": -29.171348326236032,
@@ -618,6 +641,7 @@
       "color": "#f0c330",
       "type": "actor",
       "info": {
+        "description": "user",
         "type": "actor"
       },
       "read_cam0:size": 6,
@@ -637,6 +661,7 @@
       "type": "actor",
       "color": "#e54d42",
       "info": {
+        "description": "malicious actor",
         "type": "malicious actor"
       },
       "read_cam0:size": 6,
@@ -674,8 +699,8 @@
       "color": "#3a99d8",
       "type": "square",
       "info": {
-        "type": "data",
-        "description": "device generated data"
+        "description": "device generated data",
+        "type": "data"
       },
       "read_cam0:size": 6,
       "read_cam0:x": -138.5714554690932,
@@ -695,6 +720,7 @@
       "originalColor": "#f0c330",
       "type": "actor",
       "info": {
+        "description": "service provider",
         "type": "actor"
       },
       "read_cam0:size": 6,
@@ -714,9 +740,9 @@
       "originalColor": "#3a99d8",
       "type": "diamond",
       "info": {
-        "type": "network connection",
         "description": "wireless",
-        "protocol": "http"
+        "protocol": "http",
+        "type": "network connection"
       },
       "read_cam0:size": 6,
       "read_cam0:x": -167.19859832623607,
@@ -735,6 +761,7 @@
       "originalColor": "#3a99d8",
       "type": "circle",
       "info": {
+        "description": "mobile phone",
         "type": "device",
         "id": "03",
         "aspect": "physical",
@@ -762,6 +789,7 @@
       "originalColor": "#f0c330",
       "type": "actor",
       "info": {
+        "description": "user2",
         "type": "actor"
       },
       "read_cam0:size": 6,
@@ -781,6 +809,7 @@
       "originalColor": "#f0c330",
       "type": "actor",
       "info": {
+        "description": "network provider",
         "type": "actor"
       },
       "read_cam0:size": 6,

@@ -15,7 +15,7 @@ const addEdge = require('./src/addEdge.js')
 const addOwnership = require('./src/addOwnership.js')
 const switchTheme = require('./src/switchTheme.js')
 
-// important, location of the json file
+// important, location of the json file for save
 const fileToLoad = 'json/savedFile.json'
 
 // global variables
@@ -29,6 +29,7 @@ let toggleTheme = false
 
 // test button, remove at some point
 // let buttonTest = document.getElementById('testButton')
+
 // decleration of the buttons
 let buttonSave = document.getElementById('saveButton')
 let buttonTheme = document.getElementById('themeButton')
@@ -62,8 +63,6 @@ sigma.parsers.json(fileToLoad, {
     enableEdgeHovering: true,
     edgeHoverSizeRatio: 2,
     doubleClickEnabled: false,
-    // edgeHoverPrecision: 7,
-    // edgeHoverSizeRatio: 9,
     enableCamera: false // does not move the graph in the container
   }
 }, (s) => {
@@ -81,17 +80,10 @@ sigma.parsers.json(fileToLoad, {
     footerSourceTargetNode(n)
     s.refresh()
   })
-
-  // functions when the stage is clicked
-  // s.bind('clickStage', () => {
-  //   s.refresh()
-  // })
-
   s.bind('clickEdge', (edge) => {
     selectedEdge = edge
     s.refresh()
   })
-
   s.bind('doubleClickNode', (n) => {
     showNeighbor(n, s) // module
     s.refresh()
@@ -107,6 +99,10 @@ sigma.parsers.json(fileToLoad, {
     window.alert('right click works')
     s.refresh()
   })
+  // functions when the stage is clicked
+  // s.bind('clickStage', () => {
+  //   s.refresh()
+  // })
 
   // drag nodes plugin
   sigma.plugins.dragNodes(s, s.renderers[0])
@@ -147,6 +143,7 @@ sigma.parsers.json(fileToLoad, {
   buttonAddOwns.addEventListener('click', () => {
     addOwnership(s, sourceNode, targetNode)
   })
+
   // TODO add backspace event listener
   buttonDeleteNode.addEventListener('click', () => {
     s.graph.dropNode(sourceNode)
@@ -163,6 +160,7 @@ sigma.parsers.json(fileToLoad, {
   buttonStartAtlas.addEventListener('click', () => {
     s.startForceAtlas2()
   })
+
   // for the filter selection
   select.addEventListener('change', (e) => {
     buttonSelection(e.target.value, s)
@@ -177,6 +175,16 @@ sigma.parsers.json(fileToLoad, {
       component added`
     // reset the component choice
     document.getElementById('addStuff').selectedIndex = ''
+  })
+
+  buttonTheme.addEventListener('click', () => {
+    if (toggleTheme === false) {
+      switchTheme.switchLightTheme()
+      toggleTheme = true
+    } else {
+      switchTheme.switchThemeDark()
+      toggleTheme = false
+    }
   })
 
   // last stage refresh
@@ -209,14 +217,4 @@ sigma.parsers.json(fileToLoad, {
       targetNode: ${targetNode}`
     document.getElementById('footerId').innerHTML = selectedNodes
   }
-
-  buttonTheme.addEventListener('click', () => {
-    if (toggleTheme === false) {
-      switchTheme.switchLightTheme()
-      toggleTheme = true
-    } else {
-      switchTheme.switchThemeDark()
-      toggleTheme = false
-    }
-  })
 })

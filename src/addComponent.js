@@ -65,6 +65,7 @@ module.exports = function addComponent (component, s) {
     originalColor: color,
     type: type,
     info: {
+      description: '',
       type: `${component}`
     }
   })

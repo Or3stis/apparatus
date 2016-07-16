@@ -6,7 +6,7 @@ A graphical security analysis tool for networks based on
 [electron](http://electron.atom.io/) and
 [sigma.js](http://sigmajs.org/).
 
-The application is still in prototyping stage, which means all of
+The application is still in prototyping stage, which means a lot of
 functionality is being added with each commit, along with massive changes in
 about everything.
 
