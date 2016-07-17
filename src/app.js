@@ -167,6 +167,7 @@ sigma.parsers.json(fileToLoad, {
   })
   // grouping of the modules
   moduleGroup.addEventListener('change', (input) => {
+    returnColorNeighbor()
     moduleSelection(input, s)
   })
   addStuff.addEventListener('change', (e) => {

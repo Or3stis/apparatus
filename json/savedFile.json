@@ -117,7 +117,7 @@
       "type": "triangle",
       "info": {
         "description": "smart home",
-        "type": "microcosm",
+        "type": "micronet",
         "state": "static"
       },
       "read_cam0:size": 8,
@@ -138,7 +138,7 @@
       "type": "triangle",
       "info": {
         "description": "internet of things",
-        "type": "unkown world"
+        "type": "net"
       },
       "read_cam0:size": 8,
       "read_cam0:x": 165.93743738804966,
@@ -237,7 +237,7 @@
       "type": "triangle",
       "info": {
         "description": "samrt home policy",
-        "type": "secure microcosm",
+        "type": "secure micronet",
         "state": "static"
       },
       "read_cam0:size": 8,
@@ -674,13 +674,13 @@
       "id": "n31"
     },
     {
-      "label": "n32: unkown node",
+      "label": "n32: unidentified node",
       "x": 0.737642857142857,
       "y": 0.33571428571428574,
       "size": 5,
       "color": "#94a4a5",
       "info": {
-        "type": "unkown node"
+        "type": "unidentified node"
       },
       "read_cam0:size": 6,
       "read_cam0:x": 261.04865167376386,

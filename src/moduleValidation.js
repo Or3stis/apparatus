@@ -7,13 +7,13 @@
 module.exports = function moduleValidation (s) {
   componentValidation(s, 'device', deviceArray)
   componentValidation(s, 'network connection', networkArray)
-  componentValidation(s, 'microcosm', microcosmArray)
-  componentValidation(s, 'unkown world', unkownWorldArray)
-  componentValidation(s, 'unkown node', unkownNodeArray)
+  componentValidation(s, 'micronet', micronetArray)
+  componentValidation(s, 'net', netArray)
+  componentValidation(s, 'unidentified node', undentifiedNodeArray)
   componentValidation(s, 'data', dataArray)
   componentValidation(s, 'actor', actorArray)
   componentValidation(s, 'malicious actor', maliciousActorArray)
-  componentValidation(s, 'secure microcosm', secureMicrcosmArray)
+  componentValidation(s, 'secure micronet', secureMicronetArray)
   componentValidation(s, 'asset', assetArray)
   componentValidation(s, 'constraint', constraintArray)
   componentValidation(s, 'objective', objectiveArray)
@@ -26,26 +26,26 @@ let result = '' // posted on the nodeInfo div
 let arrWrong = [] // stores wrong connection of nodes
 
 // valid component connections
-let deviceArray = ['secure microcosm', 'microcosm', 'vulnerability',
-  'network connection', 'data', 'actor', 'asset', 'unkown world'
+let deviceArray = ['secure micronet', 'micronet', 'vulnerability',
+  'network connection', 'data', 'actor', 'asset', 'net'
 ]
 let networkArray = ['device', 'actor', 'data']
-let microcosmArray = ['device', 'unkown world', 'vulnerability',
-  'secure microcosm']
-let unkownWorldArray = ['microcosm', 'unkown node', 'threat']
-let unkownNodeArray = ['unkown world', 'actor', 'malicious actor']
+let micronetArray = ['device', 'net', 'vulnerability',
+  'secure micronet']
+let netArray = ['micronet', 'unidentified node', 'threat', 'device']
+let undentifiedNodeArray = ['net', 'actor', 'malicious actor']
 let dataArray = ['asset', 'device', 'network connection', 'actor']
-let actorArray = ['asset', 'network connection', 'device', 'unkown node',
+let actorArray = ['asset', 'network connection', 'device', 'unidentified node',
   'data']
 let maliciousActorArray = actorArray.concat('threat')
-let secureMicrcosmArray = microcosmArray.concat('constraint')
+let secureMicronetArray = micronetArray.concat('constraint')
 let assetArray = ['data', 'threat', 'actor', 'device']
-let constraintArray = ['secure microcosm', 'threat', 'objective']
+let constraintArray = ['secure micronet', 'threat', 'objective']
 let objectiveArray = ['mechanism', 'constraint']
 let mechanismArray = ['objective', 'vulnerability']
 let threatArray = ['asset', 'malicious actor', 'vulnerability', 'constraint',
-  'unkown world']
-let vulnerabilityArray = ['threat', 'microcosm', 'mechanism', 'device',
+  'net']
+let vulnerabilityArray = ['threat', 'micronet', 'mechanism', 'device',
   'network connection']
 
 function componentValidation (s, component, componentArray) {

@@ -10,18 +10,18 @@ module.exports = function addComponent (component, s) {
   } else if (component === 'network connection') {
     color = '#3a99d8'
     type = 'diamond'
-  } else if (component === 'microcosm') {
+  } else if (component === 'micronet') {
     color = '#3a99d8'
     type = 'triangle'
     size = 7
   } else if (component === 'data') {
     color = '#3a99d8'
     type = 'square'
-  } else if (component === 'unkown world') {
+  } else if (component === 'net') {
     color = '#94a4a5'
     type = 'triangle'
     size = 7
-  } else if (component === 'unkown node') {
+  } else if (component === 'unidentified node') {
     color = '#94a4a5'
     type = 'circle'
   } else if (component === 'actor') {
@@ -30,7 +30,7 @@ module.exports = function addComponent (component, s) {
   } else if (component === 'malicious actor') {
     color = '#e54d42'
     type = 'actor'
-  } else if (component === 'secure microcosm') {
+  } else if (component === 'secure micronet') {
     color = '#39ca74'
     type = 'triangle'
     size = 7
@@ -50,7 +50,7 @@ module.exports = function addComponent (component, s) {
   } else if (component === 'vulnerability') {
     color = '#e54d42'
     type = 'circle'
-  } else if (component === 'property') {
+  } else if (component === 'objective') {
     color = '#39ca74'
     type = 'square'
   }
