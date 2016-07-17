@@ -67,12 +67,12 @@ sigma.parsers.json(fileToLoad, {
   }
 }, (s) => {
   // store the initial colors of the nodes and edges
-  for (let n of s.graph.nodes().values()) {
+  s.graph.nodes().map((n) => {
     n.originalColor = n.color
-  }
-  for (let e of s.graph.edges().values()) {
+  })
+  s.graph.edges().map((e) => {
     e.originalColor = e.color
-  }
+  })
 
   // functions when individual nodes are clicked
   s.bind('clickNode', (n) => {
@@ -81,7 +81,7 @@ sigma.parsers.json(fileToLoad, {
     s.refresh()
   })
   s.bind('clickEdge', (edge) => {
-    selectedEdge = edge
+    selectedEdge = edge // global value
     s.refresh()
   })
   s.bind('doubleClickNode', (n) => {
@@ -106,25 +106,6 @@ sigma.parsers.json(fileToLoad, {
 
   // drag nodes plugin
   sigma.plugins.dragNodes(s, s.renderers[0])
-    // the rest of the node is to make dragable events to fire up
-    // const dragListener = sigma.plugins.dragNodes(s, s.renderers[0])
-    // dragListener.bind('startdrag', (event) => {
-    //   // console.log(event)
-    // })
-    // dragListener.bind('drag', (event) => {
-    //   // console.log(event)
-    // })
-    // dragListener.bind('drop', (event) => {
-    //   // console.log(event)
-    //   returnColorNeighbor()
-    //   console.log(event)
-    //   s.refresh()
-    // })
-    // dragListener.bind('dragend', (event, e) => {
-    //   returnColorNeighbor()
-    //   console.log(event)
-    //   s.refresh()
-    // })
 
   buttonSave.addEventListener('click', () => {
     save(s) // module
@@ -138,10 +119,10 @@ sigma.parsers.json(fileToLoad, {
   })
 
   buttonAddEdge.addEventListener('click', () => {
-    addEdge(s, sourceNode, targetNode)
+    addEdge(s, sourceNode, targetNode) // module
   })
   buttonAddOwns.addEventListener('click', () => {
-    addOwnership(s, sourceNode, targetNode)
+    addOwnership(s, sourceNode, targetNode) // module
   })
 
   // TODO add backspace event listener
@@ -163,12 +144,12 @@ sigma.parsers.json(fileToLoad, {
 
   // for the filter selection
   select.addEventListener('change', (e) => {
-    buttonSelection(e.target.value, s)
+    buttonSelection(e.target.value, s) // module
   })
   // grouping of the modules
   moduleGroup.addEventListener('change', (input) => {
-    returnColorNeighbor()
-    moduleSelection(input, s)
+    returnColorNeighbor() // function
+    moduleSelection(input, s) // module
   })
   addStuff.addEventListener('change', (e) => {
     addComponent(e.target.value, s)
@@ -196,12 +177,15 @@ sigma.parsers.json(fileToLoad, {
 
   // returns color to stage when clicked
   function returnColorNeighbor () {
-    for (let n of s.graph.nodes().values()) {
+    // for (let n of s.graph.nodes().values()) {
+    //   n.color = n.originalColor
+    // }
+    s.graph.nodes().map((n) => {
       n.color = n.originalColor
-    }
-    for (let e of s.graph.edges().values()) {
+    })
+    s.graph.edges().map((e) => {
       e.color = e.originalColor
-    }
+    })
   }
 
   // it generates values used in addEdge/addOwn modules
@@ -215,7 +199,7 @@ sigma.parsers.json(fileToLoad, {
 
     // message displayed in the footer bar
     let selectedNodes = `source node: ${sourceNode} <br/>
-      targetNode: ${targetNode}`
+      targetNode: ${targetNode} <br/>`
     document.getElementById('footerId').innerHTML = selectedNodes
   }
 })

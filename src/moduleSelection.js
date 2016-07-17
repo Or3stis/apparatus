@@ -26,12 +26,12 @@ module.exports = function moduleSelection (input, s) {
     groupArray = []
   }
 
-  for (let n of s.graph.nodes().values()) {
+  s.graph.nodes().map((n) => {
     if (groupArray.indexOf(n.info.type) !== -1) {
       n.color = n.originalColor
     } else {
       n.color = '#424A57'
     }
-  }
+  })
   s.refresh()
 }
