@@ -5,7 +5,7 @@ module.exports = function addEdge (s, sourceNode, targetNode) {
   // finds the id of the last edge
   let lastEdge = s.graph.edges().length
 
-  for (let e of s.graph.edges().values()) {
+  s.graph.edges().map((e) => {
     // checks if the existing edge is a curved
     if (e.type !== 'curvedArrow') {
       if (sourceNode === e.source && targetNode === e.target) {
@@ -16,7 +16,7 @@ module.exports = function addEdge (s, sourceNode, targetNode) {
         return
       }
     }
-  }
+  })
   s.graph.addEdge({
     id: `e${lastEdge}`,
     size: 0.1,
