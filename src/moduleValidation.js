@@ -26,26 +26,26 @@ let result = '' // posted on the nodeInfo div
 let arrWrong = [] // stores wrong connection of nodes
 
 // valid component connections
-let deviceArray = ['secure micronet', 'micronet', 'vulnerability',
+const deviceArray = ['secure micronet', 'micronet', 'vulnerability',
   'network connection', 'data', 'actor', 'asset', 'net'
 ]
-let networkArray = ['device', 'actor', 'data']
-let micronetArray = ['device', 'net', 'vulnerability',
+const networkArray = ['device', 'actor', 'data']
+const micronetArray = ['device', 'net', 'vulnerability',
   'secure micronet']
-let netArray = ['micronet', 'unidentified node', 'threat', 'device']
-let undentifiedNodeArray = ['net', 'actor', 'malicious actor']
-let dataArray = ['asset', 'device', 'network connection', 'actor']
-let actorArray = ['asset', 'network connection', 'device', 'unidentified node',
-  'data']
-let maliciousActorArray = actorArray.concat('threat')
-let secureMicronetArray = micronetArray.concat('constraint')
-let assetArray = ['data', 'threat', 'actor', 'device']
-let constraintArray = ['secure micronet', 'threat', 'objective']
-let objectiveArray = ['mechanism', 'constraint']
-let mechanismArray = ['objective', 'vulnerability']
-let threatArray = ['asset', 'malicious actor', 'vulnerability', 'constraint',
+const netArray = ['micronet', 'unidentified node', 'threat', 'device']
+const undentifiedNodeArray = ['net', 'actor', 'malicious actor']
+const dataArray = ['asset', 'device', 'network connection', 'actor']
+const actorArray = ['asset', 'network connection', 'device',
+  'unidentified node', 'data']
+const maliciousActorArray = actorArray.concat('threat')
+const secureMicronetArray = micronetArray.concat('constraint')
+const assetArray = ['data', 'threat', 'actor', 'device']
+const constraintArray = ['secure micronet', 'threat', 'objective']
+const objectiveArray = ['mechanism', 'constraint']
+const mechanismArray = ['objective', 'vulnerability']
+const threatArray = ['asset', 'malicious actor', 'vulnerability', 'constraint',
   'net']
-let vulnerabilityArray = ['threat', 'micronet', 'mechanism', 'device',
+const vulnerabilityArray = ['threat', 'micronet', 'mechanism', 'device',
   'network connection']
 
 function componentValidation (s, component, componentArray) {
@@ -53,13 +53,11 @@ function componentValidation (s, component, componentArray) {
     // checks if node is the desired component
     if (n.info.type === component) {
       // stores the neighboring nodes of the component
-      let neighborNodes = s.graph.neighbors(n.id)
+      const neighborNodes = s.graph.neighbors(n.id)
 
-      // to make stuff smaller
       // every neighbor node is added to the array arrWrong
       // if the neighbor is a valid connection it is removed from the array
-      // in the end if the array in empty, the module is correct
-      // if not, the values in the array will indicate the mistakes
+      // if the array in empty, the module is correct
       Object.keys(neighborNodes).map((i) => {
         arrWrong.push(neighborNodes[i].info.type)
         // checks occurrence

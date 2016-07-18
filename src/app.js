@@ -31,20 +31,20 @@ let toggleTheme = false
 // let buttonTest = document.getElementById('testButton')
 
 // decleration of the buttons
-let buttonSave = document.getElementById('saveButton')
-let buttonTheme = document.getElementById('themeButton')
-let buttonValidate = document.getElementById('validateButton')
-let buttonModuleValidate = document.getElementById('moduleValidateButton')
-let buttonAddEdge = document.getElementById('addEdge')
-let buttonAddOwns = document.getElementById('addOwnership')
-let buttonDeleteNode = document.getElementById('deleteNode')
-let buttonDeleteEdge = document.getElementById('deleteEdge')
-let buttonStopAtlas = document.getElementById('stopAtlas')
-let buttonStartAtlas = document.getElementById('startAtlas')
+const buttonSave = document.getElementById('saveButton')
+const buttonTheme = document.getElementById('themeButton')
+const buttonValidate = document.getElementById('validateButton')
+const buttonModuleValidate = document.getElementById('moduleValidateButton')
+const buttonAddEdge = document.getElementById('addEdge')
+const buttonAddOwns = document.getElementById('addOwnership')
+const buttonDeleteNode = document.getElementById('deleteNode')
+const buttonDeleteEdge = document.getElementById('deleteEdge')
+const buttonStopAtlas = document.getElementById('stopAtlas')
+const buttonStartAtlas = document.getElementById('startAtlas')
 
-let select = document.getElementById('selection')
-let moduleGroup = document.getElementById('moduleGroup')
-let addStuff = document.getElementById('addStuff')
+const select = document.getElementById('selection')
+const moduleGroup = document.getElementById('moduleGroup')
+const addStuff = document.getElementById('addStuff')
 
 // create the graph from the json file
 sigma.parsers.json(fileToLoad, {
@@ -141,11 +141,13 @@ sigma.parsers.json(fileToLoad, {
   // for the filter selection
   select.addEventListener('change', (e) => {
     buttonSelection(e.target.value, s) // module
+    document.getElementById('selection').selectedIndex = ''
   })
   // grouping of the modules
   moduleGroup.addEventListener('change', (input) => {
     returnColorNeighbor() // function
     moduleSelection(input, s) // module
+    document.getElementById('moduleGroup').selectedIndex = ''
   })
   addStuff.addEventListener('change', (e) => {
     addComponent(e.target.value, s)
@@ -172,22 +174,22 @@ sigma.parsers.json(fileToLoad, {
   // beginning of the functions
 
   // returns color to stage when clicked
-  let returnColorNeighbor = () => {
+  const returnColorNeighbor = () => {
     s.graph.nodes().map(n => n.color = n.originalColor)
     s.graph.edges().map(e => e.color = e.originalColor)
   }
 
   // it generates values used in addEdge/addOwn modules
-  let footerSourceTargetNode = (n) => {
+  const footerSourceTargetNode = (n) => {
     // store the id of the selected node to be used for
     // addEdge function
-    let nodeId = n.data.node.id
+    const nodeId = n.data.node.id
 
     targetNode = sourceNode // second selection
     sourceNode = nodeId // first selection
 
     // message displayed in the footer bar
-    let selectedNodes = `source node: ${sourceNode} <br/>
+    const selectedNodes = `source node: ${sourceNode} <br/>
       targetNode: ${targetNode} <br/>`
     document.getElementById('footerId').innerHTML = selectedNodes
   }

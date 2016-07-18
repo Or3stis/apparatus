@@ -5,12 +5,12 @@ module.exports = function moduleSelection (input, s) {
   // grouping of the modules
 
   let groupArray = []
-  let networkArray = ['device', 'network connection', 'micronet',
+  const networkArray = ['device', 'network connection', 'micronet',
     'net', 'unidentified node']
-  let securityArray = ['asset', 'threat', 'vulnerability', 'mechanism',
+  const securityArray = ['asset', 'threat', 'vulnerability', 'mechanism',
     'constraint', 'secure micronet', 'objective'
   ]
-  let socialArray = ['actor', 'malicious actor']
+  const socialArray = ['actor', 'malicious actor']
 
   if (input.target.value === 'network') {
     groupArray = networkArray

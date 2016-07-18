@@ -18,7 +18,6 @@ module.exports = function validation (s) {
       // check which threat has a constraint neighbor
       Object.keys(neighborNodes).map((i) => {
         if (neighborNodes[i].info.type === 'constraint') {
-          // console.log(neighborNodes[i].id) // constraints
           arrMitigated.push(n.id)
           result = `${result} > Threat ${n.id} is mitigated by constraint
           ${neighborNodes[i].id} <br/>`
@@ -27,8 +26,8 @@ module.exports = function validation (s) {
     }
   })
   // checks the arrays to see which threat is not mitigated
-  let setMitigated = new Set(arrMitigated)
-  let threats = new Set([...arrThreat].filter(x => !setMitigated.has(x)))
+  const setMitigated = new Set(arrMitigated)
+  const threats = new Set([...arrThreat].filter(x => !setMitigated.has(x)))
   Object.keys(threats).map((i) => {
     result = `${result} > Threat ${i} is not mitigated <br/>`
   })

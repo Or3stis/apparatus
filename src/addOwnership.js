@@ -2,7 +2,7 @@
 
 // shows info of node in the div 'infoForNodes'
 module.exports = function addEdge (s, sourceNode, targetNode) {
-  let lastEdge = s.graph.edges().length
+  const lastEdge = s.graph.edges().length
 
   s.graph.edges().map((e) => {
     // checks if the existing edge is a curved
