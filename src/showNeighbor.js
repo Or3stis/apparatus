@@ -10,17 +10,9 @@ module.exports = function showNeighbor (e, s) {
   toKeep[nodeId] = e.data.node
 
   s.graph.nodes().map((n) => {
-    if (toKeep[n.id]) {
-      n.color = n.originalColor
-    } else {
-      n.color = '#424A57'
-    }
+    toKeep[n.id] ? n.color = n.originalColor : n.color = '#424A57'
   })
   s.graph.edges().map((e) => {
-    if (toKeep[e.target]) {
-      e.color = e.originalColor
-    } else {
-      e.color = '#424A57'
-    }
+    toKeep[e.target] ? e.color = e.originalColor : e.color = '#424A57'
   })
 }

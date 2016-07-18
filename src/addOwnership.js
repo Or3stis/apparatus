@@ -13,6 +13,8 @@ module.exports = function addEdge (s, sourceNode, targetNode) {
       } else if (sourceNode === e.target && targetNode === e.source) {
         document.getElementById('infoForNodes').innerHTML = 'edge exists'
         return
+      } else {
+        return
       }
     }
   })

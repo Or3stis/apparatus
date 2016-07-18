@@ -172,13 +172,13 @@ sigma.parsers.json(fileToLoad, {
   // beginning of the functions
 
   // returns color to stage when clicked
-  function returnColorNeighbor () {
+  let returnColorNeighbor = () => {
     s.graph.nodes().map(n => n.color = n.originalColor)
     s.graph.edges().map(e => e.color = e.originalColor)
   }
 
   // it generates values used in addEdge/addOwn modules
-  function footerSourceTargetNode (n) {
+  let footerSourceTargetNode = (n) => {
     // store the id of the selected node to be used for
     // addEdge function
     let nodeId = n.data.node.id

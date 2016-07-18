@@ -11,9 +11,7 @@ module.exports = function buttonSelection (classification, s) {
       n.color = '#424A57'
     }
   })
-  s.graph.edges().map((e) => {
-    e.color = '#424A57'
-  })
+  s.graph.edges().map(e => e.color = '#424A57')
   document.getElementById('infoForNodes').innerHTML = nodes
   s.refresh()
 }

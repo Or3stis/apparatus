@@ -3,7 +3,7 @@
 // pluggin to find the neighbors of a node
 // adds the neighbors method to sigmajs
 
-(() => {
+;(() => {
   'use strict'
 
   if (typeof sigma === 'undefined') {
@@ -14,9 +14,7 @@
     const neighbors = {}
     const index = this.allNeighborsIndex[nodeId] || {}
 
-    Object.keys(index).map((i) => {
-      neighbors[i] = this.nodesIndex[i]
-    })
+    Object.keys(index).map(i => neighbors[i] = this.nodesIndex[i])
     return neighbors
   })
 }).call(window)
