@@ -67,12 +67,8 @@ sigma.parsers.json(fileToLoad, {
   }
 }, (s) => {
   // store the initial colors of the nodes and edges
-  s.graph.nodes().map((n) => {
-    n.originalColor = n.color
-  })
-  s.graph.edges().map((e) => {
-    e.originalColor = e.color
-  })
+  s.graph.nodes().map(n => n.originalColor = n.color)
+  s.graph.edges().map(e => e.originalColor = e.color)
 
   // functions when individual nodes are clicked
   s.bind('clickNode', (n) => {
@@ -177,15 +173,8 @@ sigma.parsers.json(fileToLoad, {
 
   // returns color to stage when clicked
   function returnColorNeighbor () {
-    // for (let n of s.graph.nodes().values()) {
-    //   n.color = n.originalColor
-    // }
-    s.graph.nodes().map((n) => {
-      n.color = n.originalColor
-    })
-    s.graph.edges().map((e) => {
-      e.color = e.originalColor
-    })
+    s.graph.nodes().map(n => n.color = n.originalColor)
+    s.graph.edges().map(e => e.color = e.originalColor)
   }
 
   // it generates values used in addEdge/addOwn modules

@@ -6,7 +6,7 @@ module.exports = function validation (s) {
   let arrMitigated = [] // array with mitigated threats
   let result = '' // posted on the nodeInfo div
 
-  for (let n of s.graph.nodes().values()) {
+  s.graph.nodes().map((n) => {
     // checks in node is threat and adds to arrThreat
     if (n.info.type === 'threat') {
       // console.log(e.id) // threats
@@ -16,22 +16,23 @@ module.exports = function validation (s) {
       const neighborNodes = s.graph.neighbors(n.id)
 
       // check which threat has a constraint neighbor
-      for (let i of Object.keys(neighborNodes)) {
+      Object.keys(neighborNodes).map((i) => {
         if (neighborNodes[i].info.type === 'constraint') {
           // console.log(neighborNodes[i].id) // constraints
           arrMitigated.push(n.id)
           result = `${result} > Threat ${n.id} is mitigated by constraint
           ${neighborNodes[i].id} <br/>`
         }
-      }
+      })
     }
-  }
+  })
   // checks the arrays to see which threat is not mitigated
   let setMitigated = new Set(arrMitigated)
   let threats = new Set([...arrThreat].filter(x => !setMitigated.has(x)))
-  for (let i of threats) {
+  // for (let i of threats) {
+  Object.keys(threats).map((i) => {
     result = `${result} > Threat ${i} is not mitigated <br/>`
-  }
+  })
 
   // result will be displayed at infoForNodes div
   result = `${result} > Threats total: ${arrThreat.length} <br/>`

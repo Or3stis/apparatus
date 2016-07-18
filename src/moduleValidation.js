@@ -49,7 +49,7 @@ let vulnerabilityArray = ['threat', 'micronet', 'mechanism', 'device',
   'network connection']
 
 function componentValidation (s, component, componentArray) {
-  for (let n of s.graph.nodes().values()) {
+  s.graph.nodes().map((n) => {
     // checks if node is the desired component
     if (n.info.type === component) {
       // stores the neighboring nodes of the component
@@ -60,7 +60,7 @@ function componentValidation (s, component, componentArray) {
       // if the neighbor is a valid connection it is removed from the array
       // in the end if the array in empty, the module is correct
       // if not, the values in the array will indicate the mistakes
-      for (let i of Object.keys(neighborNodes)) {
+      Object.keys(neighborNodes).map((i) => {
         arrWrong.push(neighborNodes[i].info.type)
         // checks occurrence
         if (componentArray.indexOf(neighborNodes[i].info.type) !== -1) {
@@ -70,8 +70,8 @@ function componentValidation (s, component, componentArray) {
         if (result === '') {
           result = 'module is valid'
         }
-      }
+      })
     }
-  }
+  })
   document.getElementById('infoForNodes').innerHTML = result
 }
