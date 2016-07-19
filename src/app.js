@@ -74,6 +74,7 @@ sigma.parsers.json(fileToLoad, {
   s.bind('clickNode', (n) => {
     nodeInfo(n) // module
     footerSourceTargetNode(n)
+    selectedEdge = '' // deselect edge
     s.refresh()
   })
   s.bind('clickEdge', (edge) => {
@@ -82,6 +83,7 @@ sigma.parsers.json(fileToLoad, {
   })
   s.bind('doubleClickNode', (n) => {
     showNeighbor(n, s) // module
+    selectedEdge = '' // deselect edge
     s.refresh()
   })
   s.bind('doubleClickStage', () => {
@@ -89,6 +91,7 @@ sigma.parsers.json(fileToLoad, {
     // reset the component choice for the filters
     document.getElementById('selection').selectedIndex = ''
     document.getElementById('moduleGroup').selectedIndex = ''
+    selectedEdge = '' // deselect edge
     s.refresh()
   })
   s.bind('rightClickNode', (n) => {
@@ -124,10 +127,16 @@ sigma.parsers.json(fileToLoad, {
   // TODO add backspace event listener
   buttonDeleteNode.addEventListener('click', () => {
     s.graph.dropNode(sourceNode)
+    document.getElementById('infoForNodes').innerHTML = `${sourceNode} deleted`
     s.refresh()
   })
   buttonDeleteEdge.addEventListener('click', (e) => {
+    if (selectedEdge === '') {
+      document.getElementById('infoForNodes').innerHTML = 'no edge selected'
+    }
     s.graph.dropEdge(selectedEdge.data.edge.id)
+    document.getElementById('infoForNodes').innerHTML =
+      `${selectedEdge.data.edge.id} deleted`
     s.refresh()
   })
 
