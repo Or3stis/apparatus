@@ -150,13 +150,15 @@ sigma.parsers.json(fileToLoad, {
   // for the filter selection
   select.addEventListener('change', (e) => {
     buttonSelection(e.target.value, s) // module
-    document.getElementById('selection').selectedIndex = ''
+    // reset moduleGroup selection
+    document.getElementById('moduleGroup').selectedIndex = ''
   })
   // grouping of the modules
   moduleGroup.addEventListener('change', (input) => {
     returnColorNeighbor() // function
     moduleSelection(input, s) // module
-    document.getElementById('moduleGroup').selectedIndex = ''
+    // reset selection selection
+    document.getElementById('selection').selectedIndex = ''
   })
   addStuff.addEventListener('change', (e) => {
     addComponent(e.target.value, s)
@@ -198,8 +200,8 @@ sigma.parsers.json(fileToLoad, {
     sourceNode = nodeId // first selection
 
     // message displayed in the footer bar
-    const selectedNodes = `source node: ${sourceNode} <br/>
-      targetNode: ${targetNode} <br/>`
+    const selectedNodes = `source node: ${sourceNode} <br>
+      targetNode: ${targetNode}`
     document.getElementById('footerId').innerHTML = selectedNodes
   }
 })

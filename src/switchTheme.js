@@ -10,6 +10,10 @@ module.exports = {
     Object.keys(buttonValues).map((i) => {
       buttonValues[i].style.color = '#35495d'
     })
+    let selectionValues = document.getElementsByClassName('selection')
+    Object.keys(selectionValues).map((i) => {
+      selectionValues[i].style.color = '#35495d'
+    })
   },
 
   switchThemeDark: () => {
@@ -19,6 +23,10 @@ module.exports = {
     let buttonValues = document.getElementsByClassName('button')
     Object.keys(buttonValues).map((i) => {
       buttonValues[i].style.color = '#e0e0e0'
+    })
+    let selectionValues = document.getElementsByClassName('selection')
+    Object.keys(selectionValues).map((i) => {
+      selectionValues[i].style.color = '#e0e0e0'
     })
   }
 }

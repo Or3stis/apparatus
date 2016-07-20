@@ -79,14 +79,20 @@ h3 {
 }
 .selection {
   width: 12em;
+  margin-top: 0.3em;
+  margin-bottom: 0.3em;
+  font-size: 12px;
+  background-color: #35495d;
+  background-color: rgba(53, 73, 93, 0.1);
+  color: #e0e0e0;
 }
 
-select:required:invalid {
-  color: gray;
-}
+/*select:required:invalid {
+  color: #94a4a5;
+}*/
 option[value=""][disabled] {
   display: none;
 }
-option {
-  color: black;
-}
+/*option {
+  color: #94a4a5;
+}*/
