@@ -6,6 +6,7 @@
       "y": 0.1,
       "size": 5,
       "color": "#3a99d8",
+      "type": "circle",
       "info": {
         "description": "server",
         "type": "device",
@@ -33,6 +34,7 @@
       "y": 0.35,
       "size": 5,
       "color": "#3a99d8",
+      "type": "circle",
       "info": {
         "description": "router",
         "type": "device",
@@ -60,6 +62,7 @@
       "y": 0.6,
       "size": 5,
       "color": "#3a99d8",
+      "type": "circle",
       "info": {
         "description": "smart bulb",
         "type": "device",
@@ -87,6 +90,7 @@
       "y": 0.6,
       "size": 5,
       "color": "#3a99d8",
+      "type": "circle",
       "info": {
         "description": "smart phone",
         "type": "device",
@@ -176,6 +180,7 @@
       "y": 0.46,
       "size": 5,
       "color": "#e54d42",
+      "type": "circle",
       "info": {
         "description": "no encryption",
         "type": "vulnerability"
@@ -215,6 +220,7 @@
       "y": 0.64,
       "size": 5,
       "color": "#39ca74",
+      "type": "circle",
       "info": {
         "description": "encryption during authentication",
         "type": "mechanism"
@@ -276,6 +282,7 @@
       "y": 0.15,
       "size": 5,
       "color": "#e54d42",
+      "type": "circle",
       "info": {
         "description": "no activity logs",
         "type": "vulnerability"
@@ -315,6 +322,7 @@
       "y": 0.23,
       "size": 5,
       "color": "#39ca74",
+      "type": "circle",
       "info": {
         "description": "log files",
         "type": "mechanism"
@@ -521,6 +529,7 @@
       "y": 0.7,
       "size": 5,
       "color": "#e54d42",
+      "type": "circle",
       "info": {
         "description": "weak authentication token",
         "type": "vulnerability"
@@ -560,6 +569,7 @@
       "y": 0.7,
       "size": 5,
       "color": "#39ca74",
+      "type": "circle",
       "info": {
         "description": "hashed token",
         "type": "mechanism"
