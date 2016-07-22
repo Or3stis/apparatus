@@ -1,58 +1,81 @@
 'use strict'
 
+const blue = '#3a99d8'
+const red = '#e54d42'
+const orange = '#39ca74'
+const green = '#39ca74'
+const yellow = '#e47e30'
+const gray = '#94a4a5'
+
+let color = '#ffffff'
+let type = 'circle'
+let size = 5
+
 // add components in the graph
 module.exports = function addComponent (component, s) {
   let lastNode = s.graph.nodes().length
 
   if (component === 'device') {
-    color = '#3a99d8'
+    color = blue
     type = 'circle'
+    size = 5
   } else if (component === 'network connection') {
-    color = '#3a99d8'
+    color = blue
     type = 'diamond'
+    size = 5
   } else if (component === 'micronet') {
-    color = '#3a99d8'
+    color = blue
     type = 'triangle'
     size = 7
   } else if (component === 'data') {
-    color = '#3a99d8'
+    color = blue
     type = 'square'
+    size = 5
   } else if (component === 'net') {
-    color = '#94a4a5'
+    color = gray
     type = 'triangle'
     size = 7
   } else if (component === 'unidentified node') {
-    color = '#94a4a5'
+    color = gray
     type = 'circle'
+    size = 5
   } else if (component === 'actor') {
-    color = '#f0c330'
+    color = yellow
     type = 'actor'
+    size = 5
   } else if (component === 'malicious actor') {
-    color = '#e54d42'
+    color = red
     type = 'actor'
+    size = 5
   } else if (component === 'secure micronet') {
-    color = '#39ca74'
+    color = green
     type = 'triangle'
     size = 7
   } else if (component === 'asset') {
-    color = '#e47e30'
+    color = orange
     type = 'hourglass'
+    size = 5
   } else if (component === 'constraint') {
-    color = '#39ca74'
+    color = green
     type = 'equilateral'
+    size = 5
     // TODO fix it
   } else if (component === 'mechanism') {
-    color = '#39ca74'
+    color = green
     type = 'circle'
+    size = 5
   } else if (component === 'threat') {
-    color = '#e54d42'
+    color = red
     type = 'diamond'
+    size = 5
   } else if (component === 'vulnerability') {
-    color = '#e54d42'
+    color = red
     type = 'circle'
+    size = 5
   } else if (component === 'objective') {
-    color = '#39ca74'
+    color = green
     type = 'square'
+    size = 5
   }
 
   s.graph.addNode({
@@ -71,7 +94,3 @@ module.exports = function addComponent (component, s) {
   })
   s.refresh()
 }
-
-let color = '#ffffff'
-let type = 'circle'
-let size = 5

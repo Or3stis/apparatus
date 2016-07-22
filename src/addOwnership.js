@@ -3,6 +3,7 @@
 // shows info of node in the div 'infoForNodes'
 module.exports = function addEdge (s, sourceNode, targetNode, lastEdge) {
   const addedEdge = lastEdge
+  // is true when a connection exists between two nodes
   let token = false
 
   s.graph.edges().map((e) => {

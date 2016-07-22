@@ -1,17 +1,24 @@
 'use strict'
 
+const dark = '#424A57'
+const light = '#bdc3c7'
+let shadowColor = ''
 // when buton class is clicked the corresponing nodes are highlighted
-module.exports = function buttonSelection (classification, s) {
+module.exports = function buttonSelection (classification, s, toggleTheme) {
+  // detects color theme
+  shadowColor = (toggleTheme === true) ? light : dark
+
   let nodes = ''
+
   s.graph.nodes().map((n) => {
     if (n.info.type === classification) {
       n.color = n.originalColor
       nodes = `${nodes} > ${n.label} <br/>`
     } else {
-      n.color = '#424A57'
+      n.color = shadowColor
     }
   })
-  s.graph.edges().map(e => e.color = '#424A57')
+  s.graph.edges().map(e => e.color = shadowColor)
   document.getElementById('infoForNodes').innerHTML = nodes
   s.refresh()
 }

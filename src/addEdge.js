@@ -4,6 +4,7 @@
 module.exports = function addEdge (s, sourceNode, targetNode, lastEdge) {
   // finds the id of the last edge
   const addedEdge = lastEdge
+  // is true when a connection exists between two nodes
   let token = false
 
   s.graph.edges().map((e) => {

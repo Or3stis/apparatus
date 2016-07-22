@@ -84,7 +84,7 @@ sigma.parsers.json(fileToLoad, {
     s.refresh()
   })
   s.bind('doubleClickNode', (n) => {
-    showNeighbor(n, s) // module
+    showNeighbor(n, s, toggleTheme) // module
     selectedEdge = '' // deselect edge
     s.refresh()
   })
@@ -153,14 +153,14 @@ sigma.parsers.json(fileToLoad, {
 
   // for the filter selection
   select.addEventListener('change', (e) => {
-    buttonSelection(e.target.value, s) // module
+    buttonSelection(e.target.value, s, toggleTheme) // module
     // reset moduleGroup selection
     document.getElementById('moduleGroup').selectedIndex = ''
   })
   // grouping of the modules
   moduleGroup.addEventListener('change', (input) => {
     returnColorNeighbor() // function
-    moduleSelection(input, s) // module
+    moduleSelection(input, s, toggleTheme) // module
     // reset selection selection
     document.getElementById('selection').selectedIndex = ''
   })

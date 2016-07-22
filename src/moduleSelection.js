@@ -1,9 +1,15 @@
 'use strict'
 
-// when buton class is clicked the corresponing nodes are highlighted
-module.exports = function moduleSelection (input, s) {
-  // grouping of the modules
+const dark = '#424A57'
+const light = '#bdc3c7'
+let shadowColor = ''
 
+// when buton class is clicked the corresponing nodes are highlighted
+module.exports = function moduleSelection (input, s, toggleTheme) {
+  // detects color theme
+  shadowColor = (toggleTheme === true) ? light : dark
+
+  // grouping of the modules
   let groupArray = []
   const networkArray = ['device', 'network connection', 'micronet',
     'net', 'unidentified node']
@@ -30,7 +36,7 @@ module.exports = function moduleSelection (input, s) {
     if (groupArray.indexOf(n.info.type) !== -1) {
       n.color = n.originalColor
     } else {
-      n.color = '#424A57'
+      n.color = shadowColor
     }
   })
   s.refresh()
