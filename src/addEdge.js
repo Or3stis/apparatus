@@ -1,9 +1,9 @@
 'use scrict'
 
 // shows info of node in the div 'infoForNodes'
-module.exports = function addEdge (s, sourceNode, targetNode) {
+module.exports = function addEdge (s, sourceNode, targetNode, lastEdge) {
   // finds the id of the last edge
-  const lastEdge = s.graph.edges().length
+  const addedEdge = lastEdge
 
   s.graph.edges().map((e) => {
     // checks if the existing edge is a curved
@@ -20,7 +20,7 @@ module.exports = function addEdge (s, sourceNode, targetNode) {
     }
   })
   s.graph.addEdge({
-    id: `e${lastEdge}`,
+    id: `e${addedEdge}`,
     size: 0.1,
     target: sourceNode,
     source: targetNode

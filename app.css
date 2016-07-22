@@ -2,6 +2,7 @@ body {
   background: #35495d;
   font-family: Menlo, monospace;
   color: #e0e0e0;
+  height: 100%;
 }
 h3 {
   color: #39ca74;
@@ -77,9 +78,12 @@ h3 {
 .button:hover {
   background-color: #3a99d8;
 }
+
+/*to hide the blue outline of the buttons*/
 /*.button:focus, .selection:focus {
   outline: none;
 }*/
+
 .selection {
   width: 12em;
   margin-top: 0.3em;

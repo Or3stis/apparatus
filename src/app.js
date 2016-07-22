@@ -70,6 +70,8 @@ sigma.parsers.json(fileToLoad, {
   s.graph.nodes().map(n => n.originalColor = n.color)
   s.graph.edges().map(e => e.originalColor = e.color)
 
+  let lastEdge = s.graph.edges().length
+
   // functions when individual nodes are clicked
   s.bind('clickNode', (n) => {
     nodeInfo(n) // module
@@ -118,7 +120,9 @@ sigma.parsers.json(fileToLoad, {
   })
 
   buttonAddEdge.addEventListener('click', () => {
-    addEdge(s, sourceNode, targetNode) // module
+    addEdge(s, sourceNode, targetNode, lastEdge) // module
+    document.getElementById('infoForNodes').innerHTML = `edge added`
+    lastEdge = lastEdge + 1
   })
   buttonAddOwns.addEventListener('click', () => {
     addOwnership(s, sourceNode, targetNode) // module

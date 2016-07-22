@@ -1,21 +1,26 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
   <title>apparatus</title>
   <meta charset="UTF-8" />
-  <link href="app.css" rel="StyleSheet" />
+
+  <link rel="stylesheet" href="app.css">
 </head>
 
 <body>
   <div class="window">
+
     <div class="sidebar" id="sidebar">
       <h3>Info bar</h3>
       <div id="infoForNodes"></div>
     </div>
+
     <div class="actionBar" id="actionBarId">
       <h3>Control panel</h3>
+
       <div class="components" id="componentsId">
+
         <select class="selection" required id="addStuff">
           <!-- <option value="" disabled selected>add component</option> -->
           <option value="" selected>add component</option>
@@ -35,12 +40,16 @@
           <option value="unkown node">unidentified node</option>
           <option value="unkown world">net</option>
         </select>
+
         <button class="button" id="addEdge">connection</button>
         <button class="button" id="addOwnership">ownership</button>
         <button class="button" id="deleteNode">delete node</button>
         <button class="button" id="deleteEdge">delete edge</button>
+
       </div>
+
       <div class="filters" id="filtersId">
+
         <select class="selection" required id="selection">
           <option value="" disabled selected>Select component</option>
           <option value="device">device</option>
@@ -59,6 +68,7 @@
           <option value="unidentified node">unidentified node</option>
           <option value="net">net</option>
         </select>
+
         <select class="selection" required id="moduleGroup">
           <option value="" disabled selected>Select module</option>
           <option value="network">network</option>
@@ -67,21 +77,28 @@
           <option value="network-security">network-security</option>
           <option value="network-social">network-social</option>
         </select>
+
         <button class="button" id="startAtlas">start atlas</button>
         <button class="button" id="stopAtlas">stop atlas</button>
+
       </div>
+
       <div class="analysis" id="analysisId">
         <button class="button" id="validateButton">validate security</button>
         <button class="button" id="moduleValidateButton">validate instant</button>
       </div>
+
       <div class="save" id="saveId">
         <button class="button" id="saveButton">save</button>
         <button class="button" id="themeButton">theme</button>
         <button class="button" id="testButton">test</button>
       </div>
+
     </div>
+
     <div class="graph" id="graph-container"></div>
     <div class="footer" id="footerId"></div>
+
   </div>
 </body>
 
