@@ -17,13 +17,13 @@ module.exports = function addEdge (s, sourceNode, targetNode, lastEdge) {
       } else {
         return
       }
+      s.graph.addEdge({
+        id: `e${addedEdge}`,
+        size: 0.1,
+        target: sourceNode,
+        source: targetNode
+      })
     }
-  })
-  s.graph.addEdge({
-    id: `e${addedEdge}`,
-    size: 0.1,
-    target: sourceNode,
-    source: targetNode
   })
   s.refresh()
 }

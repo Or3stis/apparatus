@@ -121,11 +121,11 @@ sigma.parsers.json(fileToLoad, {
 
   buttonAddEdge.addEventListener('click', () => {
     addEdge(s, sourceNode, targetNode, lastEdge) // module
-    document.getElementById('infoForNodes').innerHTML = `edge added`
-    lastEdge = lastEdge + 1
+    lastEdge += 1
   })
   buttonAddOwns.addEventListener('click', () => {
-    addOwnership(s, sourceNode, targetNode) // module
+    addOwnership(s, sourceNode, targetNode, lastEdge) // module
+    lastEdge += 1
   })
 
   // TODO add backspace event listener
