@@ -3,71 +3,41 @@ body {
   font-family: Menlo, monospace;
   color: #e0e0e0;
   height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
 }
 h3 {
   color: #39ca74;
   text-align: center;
+  /*align-items: stretch;*/
+}
+.window {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-flow: row;
 }
 .actionBar {
-  /*background: red;*/
-  bottom: 0;
-  left: 0;
-  position: absolute;
-  /*width: 12vw;*/
+  height: 100%;
   width: 145px;
-  height: 100%;
-}
-.sidebar {
-  /*background: #181d20;*/
-  bottom: 0;
-  right: 0;
-  /*width: 17vw;*/
-  width: 180px;
-  height: 100%;
-  position: absolute;
 }
 .graph {
   background: #2d3e4f;
-  left: 9em;
-  width: 72vw;
-  height: 92vh;
-  margin: 0;
-  padding: 0;
-  position: relative;
+  flex: 1;
 }
-.footer {
-  /*background: #181d20;*/
-  bottom: 0;
-  position: absolute;
-  width: 100%;
-  height: 50px;
-  text-align: justify;
+.sidebar {
+  width: 180px;
 }
 
 .components {
-  height: 12em;
-  margin: 0.5em;
-  /*background-color: white;*/
+  margin: 5px;
 }
-.filters {
-  height: 8em;
-  margin: 0.5em;
-  /*background-color: gray;*/
-}
-.analysis {
-  height: 8em;
-  margin: 0.5em;
-  /*background-color: pink;*/
-}
-.save {
-  height: 6em;
-  margin: 1em;
-  /*background-color: gray;*/
-}
+
 .button {
   background-color: #35495d;
   background-color: rgba(53, 73, 93, 0.1);
-  margin: 0.2em;
+  margin: 3px;
   color: #e0e0e0;
   /*border-radius: 20px;*/
   border: 1px solid;
@@ -78,16 +48,13 @@ h3 {
 .button:hover {
   background-color: #3a99d8;
 }
-
-/*to hide the blue outline of the buttons*/
 /*.button:focus, .selection:focus {
   outline: none;
 }*/
-
 .selection {
-  width: 12em;
-  margin-top: 0.3em;
-  margin-bottom: 0.3em;
+  width: 130px;
+  margin-top: 4px;
+  margin-bottom: 4px;
   font-size: 12px;
   background-color: #35495d;
   background-color: rgba(53, 73, 93, 0.1);
@@ -103,3 +70,10 @@ option[value=""][disabled] {
 /*option {
   color: #94a4a5;
 }*/
+.footer {
+  bottom: 0;
+  height: 50px;
+  position: absolute;
+  width: 100%;
+  text-align: justify;
+}
