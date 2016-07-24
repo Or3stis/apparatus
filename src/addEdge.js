@@ -28,7 +28,7 @@ const vulnerabilityArray = ['threat', 'micronet', 'mechanism', 'device',
 
 // needs refactoring
 // repetative code :(
-function validEdge (sourceNode, targetNode) {
+const validEdge = (sourceNode, targetNode) => {
   if (sourceNode.info.type === 'device') {
     if (deviceArray.indexOf(targetNode.info.type) !== -1) {
       token = false

@@ -20,7 +20,6 @@ h3 {
   flex-flow: row;
 }
 .actionBar {
-  height: 100%;
   width: 145px;
 }
 .graph {
@@ -38,7 +37,7 @@ h3 {
 .button {
   background-color: #35495d;
   background-color: rgba(53, 73, 93, 0.1);
-  margin: 3px;
+  margin: 5px;
   color: #e0e0e0;
   /*border-radius: 20px;*/
   border: 1px solid;

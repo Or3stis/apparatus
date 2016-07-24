@@ -7,7 +7,7 @@ let token = false
 const ownerArray = ['device', 'data', 'network connection', 'undentified node']
 
 // checks edge validity
-function validEdge (sourceNode, targetNode) {
+const validEdge = (sourceNode, targetNode) => {
   if (sourceNode.info.type === 'actor' ||
     sourceNode.info.type === 'malicious actor') {
     if (ownerArray.indexOf(targetNode.info.type) !== -1) {
