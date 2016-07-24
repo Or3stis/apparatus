@@ -199,8 +199,8 @@ sigma.parsers.json(fileToLoad, {
     // store the id of the selected node to be used for
     // addEdge function
 
-    targetNode = sourceNode // second selection
-    sourceNode = n.data.node // first selection
+    sourceNode = targetNode // second selection
+    targetNode = n.data.node // first selection
 
     // message displayed in the footer bar
     const selectedNodes = `source node: ${sourceNode.id} <br>
