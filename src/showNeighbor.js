@@ -1,7 +1,7 @@
 'use scrict'
 
 const dark = '#424A57'
-const light = '#bdc3c7'
+const light = '#e0e0e0'
 let shadowColor = ''
 
 // when a node is clicked the neighbors is checked

@@ -1,22 +1,23 @@
 'use strict'
 
+// values of the color themes
 const dark = '#424A57'
-const light = '#bdc3c7'
+const light = '#e0e0e0'
 let shadowColor = ''
+
+// grouping of the module components
+let groupArray = []
+const networkArray = ['device', 'network connection', 'micronet',
+  'net', 'unidentified node']
+const securityArray = ['asset', 'threat', 'vulnerability', 'mechanism',
+  'constraint', 'secure micronet', 'objective'
+]
+const socialArray = ['actor', 'malicious actor']
 
 // when buton class is clicked the corresponing nodes are highlighted
 module.exports = function moduleSelection (input, s, toggleTheme) {
   // detects color theme
   shadowColor = (toggleTheme === true) ? light : dark
-
-  // grouping of the modules
-  let groupArray = []
-  const networkArray = ['device', 'network connection', 'micronet',
-    'net', 'unidentified node']
-  const securityArray = ['asset', 'threat', 'vulnerability', 'mechanism',
-    'constraint', 'secure micronet', 'objective'
-  ]
-  const socialArray = ['actor', 'malicious actor']
 
   if (input.target.value === 'network') {
     groupArray = networkArray

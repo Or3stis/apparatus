@@ -198,14 +198,13 @@ sigma.parsers.json(fileToLoad, {
   const footerSourceTargetNode = (n) => {
     // store the id of the selected node to be used for
     // addEdge function
-    const nodeId = n.data.node.id
 
     targetNode = sourceNode // second selection
-    sourceNode = nodeId // first selection
+    sourceNode = n.data.node // first selection
 
     // message displayed in the footer bar
-    const selectedNodes = `source node: ${sourceNode} <br>
-      targetNode: ${targetNode}`
+    const selectedNodes = `source node: ${sourceNode.id} <br>
+      targetNode: ${targetNode.id}`
     document.getElementById('footerId').innerHTML = selectedNodes
   }
 })

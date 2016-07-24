@@ -1,29 +1,6 @@
 'use scrict'
 
 // checks if the instance is correct
-// will have a lot of reperative lines
-// needs refactoring once the metamodel is finished
-
-module.exports = function moduleValidation (s) {
-  componentValidation(s, 'device', deviceArray)
-  componentValidation(s, 'network connection', networkArray)
-  componentValidation(s, 'micronet', micronetArray)
-  componentValidation(s, 'net', netArray)
-  componentValidation(s, 'unidentified node', undentifiedNodeArray)
-  componentValidation(s, 'data', dataArray)
-  componentValidation(s, 'actor', actorArray)
-  componentValidation(s, 'malicious actor', maliciousActorArray)
-  componentValidation(s, 'secure micronet', secureMicronetArray)
-  componentValidation(s, 'asset', assetArray)
-  componentValidation(s, 'constraint', constraintArray)
-  componentValidation(s, 'objective', objectiveArray)
-  componentValidation(s, 'mechanism', mechanismArray)
-  componentValidation(s, 'threat', threatArray)
-  componentValidation(s, 'vulnerability', vulnerabilityArray)
-}
-
-let result = '' // posted on the nodeInfo div
-let arrWrong = [] // stores wrong connection of nodes
 
 // valid component connections
 const deviceArray = ['secure micronet', 'micronet', 'vulnerability',
@@ -47,6 +24,28 @@ const threatArray = ['asset', 'malicious actor', 'vulnerability', 'constraint',
   'net']
 const vulnerabilityArray = ['threat', 'micronet', 'mechanism', 'device',
   'network connection']
+
+// decleration of arrays
+let result = '' // posted on the nodeInfo div
+let arrWrong = [] // stores wrong connection of nodes
+
+module.exports = function moduleValidation (s) {
+  componentValidation(s, 'device', deviceArray)
+  componentValidation(s, 'network connection', networkArray)
+  componentValidation(s, 'micronet', micronetArray)
+  componentValidation(s, 'net', netArray)
+  componentValidation(s, 'unidentified node', undentifiedNodeArray)
+  componentValidation(s, 'data', dataArray)
+  componentValidation(s, 'actor', actorArray)
+  componentValidation(s, 'malicious actor', maliciousActorArray)
+  componentValidation(s, 'secure micronet', secureMicronetArray)
+  componentValidation(s, 'asset', assetArray)
+  componentValidation(s, 'constraint', constraintArray)
+  componentValidation(s, 'objective', objectiveArray)
+  componentValidation(s, 'mechanism', mechanismArray)
+  componentValidation(s, 'threat', threatArray)
+  componentValidation(s, 'vulnerability', vulnerabilityArray)
+}
 
 function componentValidation (s, component, componentArray) {
   s.graph.nodes().map((n) => {

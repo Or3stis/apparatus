@@ -1,8 +1,10 @@
 'use strict'
 
+// // values of the color themes
 const dark = '#424A57'
-const light = '#bdc3c7'
+const light = '#e0e0e0'
 let shadowColor = ''
+
 // when buton class is clicked the corresponing nodes are highlighted
 module.exports = function buttonSelection (classification, s, toggleTheme) {
   // detects color theme

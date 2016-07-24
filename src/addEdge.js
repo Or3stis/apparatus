@@ -10,26 +10,24 @@ module.exports = function addEdge (s, sourceNode, targetNode, lastEdge) {
   s.graph.edges().map((e) => {
     // checks if the existing edge is a curved
     if (e.type !== 'curvedArrow') {
-      if (sourceNode === e.source && targetNode === e.target) {
+      if (sourceNode.id === e.source && targetNode.id === e.target) {
         document.getElementById('infoForNodes').innerHTML = 'edge exists'
         token = true
-        return
-      } else if (sourceNode === e.target && targetNode === e.source) {
+      } else if (sourceNode.id === e.target && targetNode.id === e.source) {
         document.getElementById('infoForNodes').innerHTML = 'edge exists'
         token = true
-        return
       } else {
         token = false
-        return
       }
     }
   })
+  // console.log(e.source, e.target)
   if (token === false) {
     s.graph.addEdge({
       id: `e${addedEdge}`,
       size: 0.1,
-      target: sourceNode,
-      source: targetNode
+      target: sourceNode.id,
+      source: targetNode.id
     })
     s.refresh()
   }
