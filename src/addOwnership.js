@@ -4,11 +4,12 @@
 let token = false
 
 // valid component connections
-const ownerArray = ['device', 'data', 'network connection']
+const ownerArray = ['device', 'data', 'network connection', 'undentified node']
 
 // checks edge validity
 function validEdge (sourceNode, targetNode) {
-  if (sourceNode.info.type === 'actor') {
+  if (sourceNode.info.type === 'actor' ||
+    sourceNode.info.type === 'malicious actor') {
     if (ownerArray.indexOf(targetNode.info.type) !== -1) {
       token = false
     } else {
@@ -51,8 +52,8 @@ module.exports = function addEdge (s, sourceNode, targetNode, lastEdge) {
       label: 'owns',
       size: 0.1,
       type: 'curvedArrow',
-      target: sourceNode.id,
-      source: targetNode.id
+      source: sourceNode.id,
+      target: targetNode.id
     })
     s.refresh()
   }
