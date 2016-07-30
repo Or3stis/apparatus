@@ -1,3 +1,12 @@
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
 body {
   background: #35495d;
   font-family: Menlo, monospace;
@@ -7,6 +16,11 @@ body {
   margin: 0;
   padding: 0;
   font-size: 13px;
+  /*disable text selection*/
+  -webkit-user-select: none;
+  -webkit-app-region: drag;
+  /* Smoother startup */
+  animation: fadein 0.5s;
 }
 h3 {
   color: #39ca74;
@@ -16,15 +30,15 @@ h3 {
 .window {
   height: 100%;
   width: 100%;
-  display: flex;
-  flex-flow: row;
+  display: -webkit-flex;
+  -webkit-flex-direction: row;
 }
 .actionBar {
   width: 145px;
 }
 .graph {
   background: #2d3e4f;
-  flex: 1;
+  -webkit-flex: 1;
 }
 .sidebar {
   width: 170px;
