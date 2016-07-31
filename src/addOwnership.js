@@ -1,7 +1,9 @@
 'use scrict'
 
 // is true when a connection exists between two nodes
-let token = false
+let allowed = Symbol()
+let notAllowed = Symbol()
+let token = allowed
 
 // valid component connections
 const ownerArray = ['device', 'data', 'network connection', 'undentified node']
@@ -11,14 +13,14 @@ const validEdge = (sourceNode, targetNode) => {
   if (sourceNode.info.type === 'actor' ||
     sourceNode.info.type === 'malicious actor') {
     if (ownerArray.indexOf(targetNode.info.type) !== -1) {
-      token = false
+      token = notAllowed
     } else {
       document.getElementById('infoForNodes').innerHTML = 'edge not allowed'
-      token = true
+      token = allowed
     }
   } else {
     document.getElementById('infoForNodes').innerHTML = 'edge not allowed'
-    token = true
+    token = allowed
   }
 }
 
@@ -29,24 +31,24 @@ module.exports = function addEdge (s, sourceNode, targetNode, lastEdge) {
   // return token for edge validity
   validEdge(sourceNode, targetNode)
 
-  if (token === false) {
+  if (token === notAllowed) {
     s.graph.edges().map((e) => {
       // checks if the existing edge is a curved
       if (e.type === 'curvedArrow') {
         if (sourceNode.id === e.source && targetNode.id === e.target) {
           document.getElementById('infoForNodes').innerHTML = 'edge exists'
-          token = true
+          token = allowed
         } else if (sourceNode.id === e.target && targetNode.id === e.source) {
           document.getElementById('infoForNodes').innerHTML = 'edge exists'
-          token = true
+          token = allowed
         } else {
-          token = false
+          token = notAllowed
         }
       }
     })
   }
 
-  if (token === false) {
+  if (token === notAllowed) {
     s.graph.addEdge({
       id: `e${addedEdge}`,
       label: 'owns',
