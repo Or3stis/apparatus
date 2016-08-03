@@ -14,6 +14,7 @@ const addComponent = require('./src/addComponent.js')
 const addEdge = require('./src/addEdge.js')
 const addOwnership = require('./src/addOwnership.js')
 const switchTheme = require('./src/switchTheme.js')
+const keyboard = require('./src/keyboard.js')
 
 // important, location of the json file for save
 const fileToLoad = 'json/savedFile.json'
@@ -72,6 +73,9 @@ sigma.parsers.json(fileToLoad, {
 
   let lastEdge = s.graph.edges().length
 
+  // enable keyboard shortcuts
+  keyboard()
+
   // functions when individual nodes are clicked
   s.bind('clickNode', (n) => {
     nodeInfo(n) // module
@@ -107,6 +111,16 @@ sigma.parsers.json(fileToLoad, {
 
   // drag nodes plugin
   sigma.plugins.dragNodes(s, s.renderers[0])
+
+  buttonTheme.addEventListener('click', () => {
+    if (toggleTheme === false) {
+      switchTheme.switchLightTheme()
+      toggleTheme = true
+    } else {
+      switchTheme.switchThemeDark()
+      toggleTheme = false
+    }
+  })
 
   buttonSave.addEventListener('click', () => {
     save(s) // module
@@ -170,16 +184,6 @@ sigma.parsers.json(fileToLoad, {
       component added`
     // reset the component choice
     document.getElementById('addStuff').selectedIndex = ''
-  })
-
-  buttonTheme.addEventListener('click', () => {
-    if (toggleTheme === false) {
-      switchTheme.switchLightTheme()
-      toggleTheme = true
-    } else {
-      switchTheme.switchThemeDark()
-      toggleTheme = false
-    }
   })
 
   // last stage refresh

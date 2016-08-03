@@ -20,7 +20,7 @@ body {
   -webkit-user-select: none;
   -webkit-app-region: drag;
   /* Smoother startup */
-  animation: fadein 0.5s;
+  animation: fadein 0.4s;
 }
 h3 {
   color: #39ca74;
@@ -46,6 +46,10 @@ h3 {
 
 .components {
   margin: 5px;
+}
+
+.console {
+  margin: 3px;
 }
 
 .button {
