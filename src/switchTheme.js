@@ -1,36 +1,42 @@
 'use strict'
 
+const white = '#ecf0f1'
+const darkWhite = '#f5f5f5'
+const black = '#35495d'
+const deepBalck = '#2d3e4f'
+const veryLightGray = '#e0e0e0'
+
 // when buton class is clicked the corresponing nodes are highlighted
 module.exports = {
   switchLightTheme: () => {
-    document.getElementsByTagName('body')[0].style.background = '#f5f5f5'
-    document.getElementsByTagName('body')[0].style.color = '#35495d'
-    document.getElementsByClassName('graph')[0].style.background = '#ecf0f1'
+    document.getElementsByTagName('body')[0].style.background = darkWhite
+    document.getElementsByTagName('body')[0].style.color = black
+    document.getElementsByClassName('graph')[0].style.background = white
 
     let buttonValues = document.getElementsByClassName('button')
     Object.keys(buttonValues).map((i) => {
-      buttonValues[i].style.color = '#35495d'
+      buttonValues[i].style.color = black
     })
 
     let selectionValues = document.getElementsByClassName('selection')
     Object.keys(selectionValues).map((i) => {
-      selectionValues[i].style.color = '#35495d'
+      selectionValues[i].style.color = black
     })
   },
 
   switchThemeDark: () => {
-    document.getElementsByTagName('body')[0].style.background = '#35495d'
-    document.getElementsByTagName('body')[0].style.color = '#e0e0e0'
-    document.getElementsByClassName('graph')[0].style.background = '#2d3e4f'
+    document.getElementsByTagName('body')[0].style.background = black
+    document.getElementsByTagName('body')[0].style.color = veryLightGray
+    document.getElementsByClassName('graph')[0].style.background = deepBalck
 
     let buttonValues = document.getElementsByClassName('button')
     Object.keys(buttonValues).map((i) => {
-      buttonValues[i].style.color = '#e0e0e0'
+      buttonValues[i].style.color = veryLightGray
     })
 
     let selectionValues = document.getElementsByClassName('selection')
     Object.keys(selectionValues).map((i) => {
-      selectionValues[i].style.color = '#e0e0e0'
+      selectionValues[i].style.color = veryLightGray
     })
   }
 }

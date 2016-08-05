@@ -25,7 +25,6 @@ body {
 h3 {
   color: #39ca74;
   text-align: center;
-  /*align-items: stretch;*/
 }
 .window {
   height: 100%;
@@ -48,8 +47,19 @@ h3 {
   margin: 5px;
 }
 
-.console {
-  margin: 3px;
+#consoleID {
+  background-color: #35495d;
+  background-color: rgba(53, 73, 93, 0.1);
+  margin: 5px;
+  border: 1px solid;
+  color: #e0e0e0;
+}
+.legend {
+  bottom: 0;
+  height: 150px;
+  position: absolute;
+  width: 100%;
+  /*background-color: red;*/
 }
 
 .button {
