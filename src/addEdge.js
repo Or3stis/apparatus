@@ -9,12 +9,14 @@ let token = allowed
 const deviceArray = ['micronet', 'network connection', 'data', 'net']
 const networkArray = ['device', 'data']
 const micronetArray = ['device', 'net', 'vulnerability',
-  'secure micronet']
+  'secure micronet'
+]
 const netArray = ['micronet', 'unidentified node', 'threat', 'device']
 const undentifiedNodeArray = ['net', 'actor', 'malicious actor']
 const dataArray = ['asset', 'device', 'network connection', 'actor']
 const actorArray = ['asset', 'network connection', 'device',
-  'unidentified node', 'data']
+  'unidentified node', 'data'
+]
 const maliciousActorArray = actorArray.concat('threat')
 const secureMicronetArray = micronetArray.concat('constraint')
 const assetArray = ['data', 'threat', 'actor', 'device']
@@ -22,118 +24,138 @@ const constraintArray = ['secure micronet', 'threat', 'objective']
 const objectiveArray = ['mechanism', 'constraint']
 const mechanismArray = ['objective', 'vulnerability']
 const threatArray = ['asset', 'malicious actor', 'vulnerability', 'constraint',
-  'net']
+  'net'
+]
 const vulnerabilityArray = ['threat', 'micronet', 'mechanism', 'device',
-  'network connection']
+  'network connection'
+]
 
 // needs refactoring
 // repetative code :(
 const validEdge = (sourceNode, targetNode) => {
-  if (sourceNode.info.type === 'device') {
-    if (deviceArray.indexOf(targetNode.info.type) !== -1) {
-      token = notAllowed
-    } else {
-      document.getElementById('infoForNodes').innerHTML = 'edge not allowed'
-      token = allowed
-    }
-  } else if (sourceNode.info.type === 'network connection') {
-    if (networkArray.indexOf(targetNode.info.type) !== -1) {
-      token = notAllowed
-    } else {
-      document.getElementById('infoForNodes').innerHTML = 'edge not allowed'
-      token = allowed
-    }
-  } else if (sourceNode.info.type === 'micronet') {
-    if (micronetArray.indexOf(targetNode.info.type) !== -1) {
-      token = notAllowed
-    } else {
-      document.getElementById('infoForNodes').innerHTML = 'edge not allowed'
-      token = allowed
-    }
-  } else if (sourceNode.info.type === 'net') {
-    if (netArray.indexOf(targetNode.info.type) !== -1) {
-      token = notAllowed
-    } else {
-      document.getElementById('infoForNodes').innerHTML = 'edge not allowed'
-      token = allowed
-    }
-  } else if (sourceNode.info.type === 'unidentified node') {
-    if (undentifiedNodeArray.indexOf(targetNode.info.type) !== -1) {
-      token = notAllowed
-    } else {
-      document.getElementById('infoForNodes').innerHTML = 'edge not allowed'
-      token = allowed
-    }
-  } else if (sourceNode.info.type === 'data') {
-    if (dataArray.indexOf(targetNode.info.type) !== -1) {
-      token = notAllowed
-    } else {
-      document.getElementById('infoForNodes').innerHTML = 'edge not allowed'
-      token = allowed
-    }
-  } else if (sourceNode.info.type === 'actor') {
-    if (actorArray.indexOf(targetNode.info.type) !== -1) {
-      token = notAllowed
-    } else {
-      document.getElementById('infoForNodes').innerHTML = 'edge not allowed'
-      token = allowed
-    }
-  } else if (sourceNode.info.type === 'malicious actor') {
-    if (maliciousActorArray.indexOf(targetNode.info.type) !== -1) {
-      token = notAllowed
-    } else {
-      document.getElementById('infoForNodes').innerHTML = 'edge not allowed'
-      token = allowed
-    }
-  } else if (sourceNode.info.type === 'secure micronet') {
-    if (secureMicronetArray.indexOf(targetNode.info.type) !== -1) {
-      token = notAllowed
-    } else {
-      document.getElementById('infoForNodes').innerHTML = 'edge not allowed'
-      token = allowed
-    }
-  } else if (sourceNode.info.type === 'asset') {
-    if (assetArray.indexOf(targetNode.info.type) !== -1) {
-      token = notAllowed
-    } else {
-      document.getElementById('infoForNodes').innerHTML = 'edge not allowed'
-      token = allowed
-    }
-  } else if (sourceNode.info.type === 'constraint') {
-    if (constraintArray.indexOf(targetNode.info.type) !== -1) {
-      token = notAllowed
-    } else {
-      document.getElementById('infoForNodes').innerHTML = 'edge not allowed'
-      token = allowed
-    }
-  } else if (sourceNode.info.type === 'objective') {
-    if (objectiveArray.indexOf(targetNode.info.type) !== -1) {
-      token = notAllowed
-    } else {
-      document.getElementById('infoForNodes').innerHTML = 'edge not allowed'
-      token = allowed
-    }
-  } else if (sourceNode.info.type === 'mechanism') {
-    if (mechanismArray.indexOf(targetNode.info.type) !== -1) {
-      token = notAllowed
-    } else {
-      document.getElementById('infoForNodes').innerHTML = 'edge not allowed'
-      token = allowed
-    }
-  } else if (sourceNode.info.type === 'threat') {
-    if (threatArray.indexOf(targetNode.info.type) !== -1) {
-      token = notAllowed
-    } else {
-      document.getElementById('infoForNodes').innerHTML = 'edge not allowed'
-      token = allowed
-    }
-  } else if (sourceNode.info.type === 'vulnerability') {
-    if (vulnerabilityArray.indexOf(targetNode.info.type) !== -1) {
-      token = notAllowed
-    } else {
-      document.getElementById('infoForNodes').innerHTML = 'edge not allowed'
-      token = allowed
-    }
+  switch (sourceNode.info.type) {
+    case 'device':
+      if (deviceArray.indexOf(targetNode.info.type) !== -1) {
+        token = notAllowed
+      } else {
+        document.getElementById('infoForNodes').innerHTML = 'edge not allowed'
+        token = allowed
+      }
+      break
+    case 'network connection':
+      if (networkArray.indexOf(targetNode.info.type) !== -1) {
+        token = notAllowed
+      } else {
+        document.getElementById('infoForNodes').innerHTML = 'edge not allowed'
+        token = allowed
+      }
+      break
+    case 'micronet':
+      if (micronetArray.indexOf(targetNode.info.type) !== -1) {
+        token = notAllowed
+      } else {
+        document.getElementById('infoForNodes').innerHTML = 'edge not allowed'
+        token = allowed
+      }
+      break
+    case 'net':
+      if (netArray.indexOf(targetNode.info.type) !== -1) {
+        token = notAllowed
+      } else {
+        document.getElementById('infoForNodes').innerHTML = 'edge not allowed'
+        token = allowed
+      }
+      break
+    case 'unidentified node':
+      if (undentifiedNodeArray.indexOf(targetNode.info.type) !== -1) {
+        token = notAllowed
+      } else {
+        document.getElementById('infoForNodes').innerHTML = 'edge not allowed'
+        token = allowed
+      }
+      break
+    case 'data':
+      if (dataArray.indexOf(targetNode.info.type) !== -1) {
+        token = notAllowed
+      } else {
+        document.getElementById('infoForNodes').innerHTML = 'edge not allowed'
+        token = allowed
+      }
+      break
+    case 'actor':
+      if (actorArray.indexOf(targetNode.info.type) !== -1) {
+        token = notAllowed
+      } else {
+        document.getElementById('infoForNodes').innerHTML = 'edge not allowed'
+        token = allowed
+      }
+      break
+    case 'malicious actor':
+      if (maliciousActorArray.indexOf(targetNode.info.type) !== -1) {
+        token = notAllowed
+      } else {
+        document.getElementById('infoForNodes').innerHTML = 'edge not allowed'
+        token = allowed
+      }
+      break
+    case 'secure micronet':
+      if (secureMicronetArray.indexOf(targetNode.info.type) !== -1) {
+        token = notAllowed
+      } else {
+        document.getElementById('infoForNodes').innerHTML = 'edge not allowed'
+        token = allowed
+      }
+      break
+    case 'asset':
+      if (assetArray.indexOf(targetNode.info.type) !== -1) {
+        token = notAllowed
+      } else {
+        document.getElementById('infoForNodes').innerHTML = 'edge not allowed'
+        token = allowed
+      }
+      break
+    case 'constraint':
+      if (constraintArray.indexOf(targetNode.info.type) !== -1) {
+        token = notAllowed
+      } else {
+        document.getElementById('infoForNodes').innerHTML = 'edge not allowed'
+        token = allowed
+      }
+      break
+    case 'objective':
+      if (objectiveArray.indexOf(targetNode.info.type) !== -1) {
+        token = notAllowed
+      } else {
+        document.getElementById('infoForNodes').innerHTML = 'edge not allowed'
+        token = allowed
+      }
+      break
+    case 'mechanism':
+      if (mechanismArray.indexOf(targetNode.info.type) !== -1) {
+        token = notAllowed
+      } else {
+        document.getElementById('infoForNodes').innerHTML = 'edge not allowed'
+        token = allowed
+      }
+      break
+    case 'threat':
+      if (threatArray.indexOf(targetNode.info.type) !== -1) {
+        token = notAllowed
+      } else {
+        document.getElementById('infoForNodes').innerHTML = 'edge not allowed'
+        token = allowed
+      }
+      break
+    case 'vulnerability':
+      if (vulnerabilityArray.indexOf(targetNode.info.type) !== -1) {
+        token = notAllowed
+      } else {
+        document.getElementById('infoForNodes').innerHTML = 'edge not allowed'
+        token = allowed
+      }
+      break
+    default:
+      console.log('error')
   }
 }
 

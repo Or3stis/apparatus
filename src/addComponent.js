@@ -15,67 +15,85 @@ let size = 5
 module.exports = function addComponent (component, s) {
   let lastNode = s.graph.nodes().length
 
-  if (component === 'device') {
-    color = blue
-    type = 'circle'
-    size = 5
-  } else if (component === 'network connection') {
-    color = blue
-    type = 'diamond'
-    size = 5
-  } else if (component === 'micronet') {
-    color = blue
-    type = 'triangle'
-    size = 7
-  } else if (component === 'data') {
-    color = blue
-    type = 'square'
-    size = 5
-  } else if (component === 'net') {
-    color = gray
-    type = 'triangle'
-    size = 7
-  } else if (component === 'unidentified node') {
-    color = gray
-    type = 'circle'
-    size = 5
-  } else if (component === 'actor') {
-    color = yellow
-    type = 'actor'
-    size = 5
-  } else if (component === 'malicious actor') {
-    color = red
-    type = 'actor'
-    size = 5
-  } else if (component === 'secure micronet') {
-    color = green
-    type = 'triangle'
-    size = 7
-  } else if (component === 'asset') {
-    color = orange
-    type = 'hourglass'
-    size = 5
-  } else if (component === 'constraint') {
-    color = green
-    type = 'equilateral'
-    size = 5
-    // TODO fix it
-  } else if (component === 'mechanism') {
-    color = green
-    type = 'circle'
-    size = 5
-  } else if (component === 'threat') {
-    color = red
-    type = 'diamond'
-    size = 5
-  } else if (component === 'vulnerability') {
-    color = red
-    type = 'circle'
-    size = 5
-  } else if (component === 'objective') {
-    color = green
-    type = 'square'
-    size = 5
+  switch (component) {
+    case 'device':
+      color = blue
+      type = 'circle'
+      size = 5
+      break
+    case 'network connection':
+      color = blue
+      type = 'diamond'
+      size = 5
+      break
+    case 'micronet':
+      color = blue
+      type = 'triangle'
+      size = 7
+      break
+    case 'data':
+      color = blue
+      type = 'square'
+      size = 5
+      break
+    case 'net':
+      color = gray
+      type = 'triangle'
+      size = 7
+      break
+    case 'unidentified node':
+      color = gray
+      type = 'circle'
+      size = 5
+      break
+    case 'actor':
+      color = yellow
+      type = 'actor'
+      size = 5
+      break
+    case 'malicious actor':
+      color = red
+      type = 'actor'
+      size = 5
+      break
+    case 'secure micronet':
+      color = green
+      type = 'triangle'
+      size = 7
+      break
+    case 'asset':
+      color = orange
+      type = 'hourglass'
+      size = 5
+      break
+    case 'constraint':
+      color = green
+      type = 'equilateral'
+      size = 5
+      break
+      // TODO fix it
+    case 'mechanism':
+      color = green
+      type = 'circle'
+      size = 5
+      break
+    case 'threat':
+      color = red
+      type = 'diamond'
+      size = 5
+      break
+    case 'vulnerability':
+      color = red
+      type = 'circle'
+      size = 5
+      break
+    case 'objective':
+      color = green
+      type = 'square'
+      size = 5
+      break
+    default:
+      console.log('error')
   }
 
   s.graph.addNode({

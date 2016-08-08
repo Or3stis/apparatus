@@ -19,18 +19,25 @@ module.exports = function moduleSelection (input, s, toggleTheme) {
   // detects color theme
   shadowColor = (toggleTheme === true) ? light : dark
 
-  if (input.target.value === 'network') {
-    groupArray = networkArray
-  } else if (input.target.value === 'security') {
-    groupArray = securityArray
-  } else if (input.target.value === 'social') {
-    groupArray = socialArray
-  } else if (input.target.value === 'network-security') {
-    groupArray = networkArray + securityArray
-  } else if (input.target.value === 'network-social') {
-    groupArray = networkArray + socialArray
-  } else {
-    groupArray = []
+  switch (input.target.value) {
+    case 'network':
+      groupArray = networkArray
+      break
+    case 'security':
+      groupArray = securityArray
+      break
+    case 'social':
+      groupArray = socialArray
+      break
+    case 'network-security':
+      groupArray = networkArray + securityArray
+      break
+    case 'network-social':
+      groupArray = networkArray + socialArray
+      break
+    default:
+      groupArray = []
+      console.log('error')
   }
 
   s.graph.nodes().map((n) => {
