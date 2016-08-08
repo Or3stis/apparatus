@@ -14,7 +14,7 @@ const addComponent = require('./src/addComponent.js')
 const addEdge = require('./src/addEdge.js')
 const addOwnership = require('./src/addOwnership.js')
 const switchTheme = require('./src/switchTheme.js')
-const keyboard = require('./src/keyboard.js')
+// const keyboard = require('./src/keyboard.js')
 
 // important, location of the json file for save
 const fileToLoad = 'json/savedFile.json'
@@ -73,9 +73,6 @@ sigma.parsers.json(fileToLoad, {
 
   let lastEdge = s.graph.edges().length
 
-  // enable keyboard shortcuts
-  keyboard()
-
   // functions when individual nodes are clicked
   s.bind('clickNode', (n) => {
     nodeInfo(n) // module
@@ -85,6 +82,7 @@ sigma.parsers.json(fileToLoad, {
   })
   s.bind('clickEdge', (edge) => {
     selectedEdge = edge // global value
+    targetNode = '' // deselect node
     s.refresh()
   })
   s.bind('doubleClickNode', (n) => {
@@ -98,6 +96,7 @@ sigma.parsers.json(fileToLoad, {
     document.getElementById('selection').selectedIndex = ''
     document.getElementById('moduleGroup').selectedIndex = ''
     selectedEdge = '' // deselect edge
+    targetNode = '' // deselect node
     s.refresh()
   })
   s.bind('rightClickNode', (n) => {
@@ -144,8 +143,12 @@ sigma.parsers.json(fileToLoad, {
 
   // TODO add backspace event listener
   buttonDeleteNode.addEventListener('click', () => {
-    s.graph.dropNode(sourceNode)
-    document.getElementById('infoForNodes').innerHTML = `${sourceNode} deleted`
+    if (targetNode === '') {
+      document.getElementById('infoForNodes').innerHTML = 'no node selected'
+    }
+    s.graph.dropNode(targetNode.id)
+    document.getElementById('infoForNodes').innerHTML = `${targetNode.id}
+      deleted`
     s.refresh()
   })
   buttonDeleteEdge.addEventListener('click', (e) => {
@@ -211,4 +214,40 @@ sigma.parsers.json(fileToLoad, {
       targetNode: ${targetNode.id}`
     document.getElementById('footerId').innerHTML = selectedNodes
   }
+
+  // stuff for the keyboard shortcuts
+  // remove once keyboard is working
+  const helpMenu = 'no commands working now'
+
+  const keyboard = (s, toggleTheme) => {
+    document.addEventListener('keydown', (event) => {
+      // hotkey to focus on the console
+      if (event.metaKey === true && event.code === 'KeyL') {
+        document.getElementById('consoleID').focus()
+      }
+      // hot key to add edge
+      if (event.metaKey === true && event.code === 'KeyE') {
+        addEdge(s, sourceNode, targetNode, lastEdge) // module
+        lastEdge += 1
+      }
+
+      // stuff for the console
+      const input = document.getElementById('consoleID').value
+      // listens for you to press the ENTER key
+      if (event.code === 'Enter') {
+        // console.log(input)
+        document.getElementById('consoleID').value = ''
+        if (input === 'help' || input === 'options') {
+          document.getElementById('infoForNodes').innerHTML = helpMenu
+          console.log('help')
+        } else if (input === 'validate') {
+          moduleValidation(s)
+        } else {
+          document.getElementById('infoForNodes').innerHTML = 'not valid'
+        }
+      }
+    })
+  }
+  // enable keyboard shortcuts
+  keyboard(s)
 })
