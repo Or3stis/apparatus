@@ -143,22 +143,10 @@ sigma.parsers.json(fileToLoad, {
 
   // TODO add backspace event listener
   buttonDeleteNode.addEventListener('click', () => {
-    if (targetNode === '') {
-      document.getElementById('infoForNodes').innerHTML = 'no node selected'
-    }
-    s.graph.dropNode(targetNode.id)
-    document.getElementById('infoForNodes').innerHTML = `${targetNode.id}
-      deleted`
-    s.refresh()
+    deleteNode()
   })
   buttonDeleteEdge.addEventListener('click', (e) => {
-    if (selectedEdge === '') {
-      document.getElementById('infoForNodes').innerHTML = 'no edge selected'
-    }
-    s.graph.dropEdge(selectedEdge.data.edge.id)
-    document.getElementById('infoForNodes').innerHTML =
-      `${selectedEdge.data.edge.id} deleted`
-    s.refresh()
+    deleteEdge()
   })
 
   buttonStopAtlas.addEventListener('click', () => {
@@ -205,7 +193,6 @@ sigma.parsers.json(fileToLoad, {
   const footerSourceTargetNode = (n) => {
     // store the id of the selected node to be used for
     // addEdge function
-
     sourceNode = targetNode // second selection
     targetNode = n.data.node // first selection
 
@@ -215,13 +202,35 @@ sigma.parsers.json(fileToLoad, {
     document.getElementById('footerId').innerHTML = selectedNodes
   }
 
+  // function for node deletion
+  const deleteNode = () => {
+    if (targetNode === '') {
+      document.getElementById('infoForNodes').innerHTML = 'no node selected'
+    }
+    s.graph.dropNode(targetNode.id)
+    document.getElementById('infoForNodes').innerHTML = `${targetNode.id}
+    deleted`
+    s.refresh()
+  }
+  // function for edge deletion
+  const deleteEdge = () => {
+    if (selectedEdge === '') {
+      document.getElementById('infoForNodes').innerHTML = 'no edge selected'
+    }
+    s.graph.dropEdge(selectedEdge.data.edge.id)
+    document.getElementById('infoForNodes').innerHTML =
+      `${selectedEdge.data.edge.id} deleted`
+    s.refresh()
+  }
+
   // stuff for the keyboard shortcuts
   // remove once keyboard is working
   const helpMenu = 'no commands working now'
 
-  const keyboard = (s, toggleTheme) => {
+  const keyboard = (s) => {
     document.addEventListener('keydown', (event) => {
       // hotkey to focus on the console
+      // console.log(event.code)
       if (event.metaKey === true && event.code === 'KeyL') {
         document.getElementById('consoleID').focus()
       }
@@ -229,6 +238,10 @@ sigma.parsers.json(fileToLoad, {
       if (event.metaKey === true && event.code === 'KeyE') {
         addEdge(s, sourceNode, targetNode, lastEdge) // module
         lastEdge += 1
+      }
+      // Backspace deletion of nodes and edges
+      if (event.code === 'Backspace') {
+        (selectedEdge === '') ? deleteNode() : deleteEdge()
       }
 
       // stuff for the console
