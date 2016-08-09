@@ -29,7 +29,7 @@ let selectedEdge = ''
 let toggleTheme = false
 
 // test button, remove at some point
-// let buttonTest = document.getElementById('testButton')
+// const buttonTest = document.getElementById('testButton')
 
 // decleration of the buttons
 const buttonSave = document.getElementById('saveButton')
@@ -156,6 +156,10 @@ sigma.parsers.json(fileToLoad, {
     s.startForceAtlas2()
   })
 
+  // buttonTest.addEventListener('click', () => {
+  //
+  // })
+
   // for the filter selection
   select.addEventListener('change', (e) => {
     buttonSelection(e.target.value, s, toggleTheme) // module
@@ -223,6 +227,23 @@ sigma.parsers.json(fileToLoad, {
     s.refresh()
   }
 
+  // test function to toggle side divc
+  const toggleSideBars = () => {
+    const sidebarStatus = document.getElementById('sidebarId')
+    const actionBarStatus = document.getElementById('actionBarId')
+    const footerStatus = document.getElementById('footerId')
+    if (sidebarStatus.style.display === 'block') {
+      sidebarStatus.style.display = 'none'
+      actionBarStatus.style.display = 'none'
+      footerStatus.style.display = 'none'
+    } else {
+      sidebarStatus.style.display = 'block'
+      actionBarStatus.style.display = 'block'
+      footerStatus.style.display = 'block'
+    }
+    console.log(sidebarStatus.style.display)
+    s.refresh()
+  }
   // stuff for the keyboard shortcuts
   // remove once keyboard is working
   const helpMenu = 'no commands working now'
@@ -235,9 +256,11 @@ sigma.parsers.json(fileToLoad, {
         document.getElementById('consoleID').focus()
       }
       // hot key to add edge
-      if (event.metaKey === true && event.code === 'KeyE') {
+      if (event.altKey === true && event.code === 'KeyE') {
         addEdge(s, sourceNode, targetNode, lastEdge) // module
         lastEdge += 1
+      } else if (event.altKey === true && event.code === 'KeyH') {
+        toggleSideBars()
       }
       // Backspace deletion of nodes and edges
       if (event.code === 'Backspace') {
