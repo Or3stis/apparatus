@@ -64,7 +64,7 @@ function componentValidation (s, component, componentArray) {
         result = `${arrWrong}`
         // if the array in empty, the module is correct
         if (result === '') {
-          result = 'module is valid'
+          result = 'module instant is valid'
         }
       })
     }

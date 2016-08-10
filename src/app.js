@@ -67,6 +67,9 @@ sigma.parsers.json(fileToLoad, {
     enableCamera: false // does not move the graph in the container
   }
 }, (s) => {
+  // enable keyboard shortcuts
+  keyboard(s)
+
   // store the initial colors of the nodes and edges
   s.graph.nodes().map(n => n.originalColor = n.color)
   s.graph.edges().map(e => e.originalColor = e.color)
@@ -140,8 +143,6 @@ sigma.parsers.json(fileToLoad, {
     addOwnership(s, sourceNode, targetNode, lastEdge) // module
     lastEdge += 1
   })
-
-  // TODO add backspace event listener
   buttonDeleteNode.addEventListener('click', () => {
     deleteNode()
   })
@@ -155,7 +156,6 @@ sigma.parsers.json(fileToLoad, {
   buttonStartAtlas.addEventListener('click', () => {
     s.startForceAtlas2()
   })
-
   // buttonTest.addEventListener('click', () => {
   //
   // })
@@ -227,7 +227,7 @@ sigma.parsers.json(fileToLoad, {
     s.refresh()
   }
 
-  // test function to toggle side divc
+  // toggles side divs
   const toggleSideBars = () => {
     const sidebarStatus = document.getElementById('sidebarId')
     const actionBarStatus = document.getElementById('actionBarId')
@@ -250,11 +250,8 @@ sigma.parsers.json(fileToLoad, {
 
   const keyboard = (s) => {
     document.addEventListener('keydown', (event) => {
-      // hotkey to focus on the console
       // console.log(event.code)
-      if (event.metaKey === true && event.code === 'KeyL') {
-        document.getElementById('consoleID').focus()
-      }
+
       // hot key to add edge
       if (event.altKey === true && event.code === 'KeyE') {
         addEdge(s, sourceNode, targetNode, lastEdge) // module
@@ -267,6 +264,10 @@ sigma.parsers.json(fileToLoad, {
         (selectedEdge === '') ? deleteNode() : deleteEdge()
       }
 
+      // hotkey to focus on the console
+      if (event.metaKey === true && event.code === 'KeyL') {
+        document.getElementById('consoleID').focus()
+      }
       // stuff for the console
       const input = document.getElementById('consoleID').value
       // listens for you to press the ENTER key
@@ -284,6 +285,4 @@ sigma.parsers.json(fileToLoad, {
       }
     })
   }
-  // enable keyboard shortcuts
-  keyboard(s)
 })

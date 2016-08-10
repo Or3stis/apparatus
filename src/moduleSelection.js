@@ -37,7 +37,7 @@ module.exports = function moduleSelection (input, s, toggleTheme) {
       break
     default:
       groupArray = []
-      console.log('error')
+      console.error('error in moduleSelection.js')
   }
 
   s.graph.nodes().map((n) => {

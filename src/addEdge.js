@@ -155,7 +155,7 @@ const validEdge = (sourceNode, targetNode) => {
       }
       break
     default:
-      console.log('error')
+      console.error('error in addEdge.js')
   }
 }
 

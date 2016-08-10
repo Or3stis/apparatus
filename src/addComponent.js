@@ -93,7 +93,7 @@ module.exports = function addComponent (component, s) {
       size = 5
       break
     default:
-      console.log('error')
+      console.error('error in addComponent.js')
   }
 
   s.graph.addNode({
