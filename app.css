@@ -6,7 +6,6 @@
     opacity: 1;
   }
 }
-
 body {
   background: #35495d;
   font-family: Menlo, monospace;
@@ -44,11 +43,18 @@ h3 {
   width: 170px;
   display: block;
 }
-
+.footer {
+  background: #35495d;
+  bottom: 0;
+  height: 50px;
+  position: absolute;
+  width: 100%;
+  text-align: justify;
+  display: block;
+}
 .components {
   margin: 5px;
 }
-
 #consoleID {
   background-color: #2d3e4f;
   background-color: rgba(53, 73, 93, 0.1);
@@ -62,7 +68,6 @@ h3 {
   position: absolute;
   /*background-color: red;*/
 }
-
 .button {
   background-color: #35495d;
   background-color: rgba(45, 62, 79, 0.1);
@@ -77,9 +82,11 @@ h3 {
 .button:hover {
   background-color: #3a99d8;
 }
+
 /*.button:focus, .selection:focus {
   outline: none;
 }*/
+
 .selection {
   width: 130px;
   margin-top: 4px;
@@ -93,18 +100,11 @@ h3 {
 /*select:required:invalid {
   color: #94a4a5;
 }*/
+
 option[value=""][disabled] {
   display: none;
 }
+
 /*option {
   color: #94a4a5;
 }*/
-.footer {
-  background: #35495d;
-  bottom: 0;
-  height: 50px;
-  position: absolute;
-  width: 100%;
-  text-align: justify;
-  display: block;
-}

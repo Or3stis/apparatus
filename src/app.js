@@ -67,9 +67,6 @@ sigma.parsers.json(fileToLoad, {
     enableCamera: false // does not move the graph in the container
   }
 }, (s) => {
-  // enable keyboard shortcuts
-  keyboard(s)
-
   // store the initial colors of the nodes and edges
   s.graph.nodes().map(n => n.originalColor = n.color)
   s.graph.edges().map(e => e.originalColor = e.color)
@@ -285,4 +282,6 @@ sigma.parsers.json(fileToLoad, {
       }
     })
   }
+  // enable keyboard shortcuts
+  keyboard(s)
 })
