@@ -6,7 +6,7 @@ let notAllowed = Symbol()
 let token = allowed
 
 // valid component connections
-const deviceArray = ['micronet', 'network connection', 'data', 'net']
+const deviceArray = ['micronet', 'network connection', 'data', 'net', 'device']
 const networkArray = ['device', 'data']
 const micronetArray = ['device', 'net', 'vulnerability',
   'secure micronet'

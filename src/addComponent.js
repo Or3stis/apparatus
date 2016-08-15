@@ -2,7 +2,7 @@
 
 const blue = '#3a99d8'
 const red = '#e54d42'
-const orange = '#39ca74'
+const orange = '#e47e30'
 const green = '#39ca74'
 const yellow = '#e47e30'
 const gray = '#94a4a5'

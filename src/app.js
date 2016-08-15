@@ -17,7 +17,7 @@ const switchTheme = require('./src/switchTheme.js')
 // const keyboard = require('./src/keyboard.js')
 
 // important, location of the json file for save
-const fileToLoad = 'json/savedFile.json'
+const fileToLoad = 'json/small.json'
 
 // global variables
 // captures the id of last two selected nodes
@@ -55,7 +55,7 @@ sigma.parsers.json(fileToLoad, {
   },
   settings: {
     labelSize: 'fixed',
-    labelThreshold: 9,
+    labelThreshold: 4,
     edgeLabelSize: 'fixed',
     defaultLabelColor: '#94a4a5',
     defaultEdgeLabelColor: '#94a4a5',

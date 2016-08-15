@@ -4,7 +4,7 @@
 
 // valid component connections
 const deviceArray = ['secure micronet', 'micronet', 'vulnerability',
-  'network connection', 'data', 'actor', 'asset', 'net'
+  'network connection', 'data', 'actor', 'asset', 'net', 'device'
 ]
 const networkArray = ['device', 'actor', 'data']
 const micronetArray = ['device', 'net', 'vulnerability',
