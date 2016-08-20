@@ -183,7 +183,6 @@ module.exports = function addEdge (s, sourceNode, targetNode, lastEdge) {
       }
     })
   }
-  // console.log(e.source, e.target)
   if (token === notAllowed) {
     s.graph.addEdge({
       id: `e${addedEdge}`,
