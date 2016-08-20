@@ -100,38 +100,6 @@
       "state": "static"
     }
   }, {
-    "label": "n11: Threat/data theft",
-    "info": {
-      "description": "data theft",
-      "type": "threat",
-      "class": "informationDisclosure"
-    }
-  }, {
-    "label": "n12: Vulnerability/no access control",
-    "info": {
-      "description": "no activity logs",
-      "type": "vulnerability"
-    }
-  }, {
-    "label": "n13: Constraint/only authorised user access",
-    "info": {
-      "description": "only authorised user access",
-      "type": "constraint"
-    }
-  }, {
-    "label": "n14: Mechanism/authentication token",
-    "info": {
-      "description": "authentication token",
-      "type": "mechanism"
-    }
-  }, {
-    "label": "n15: Objective/authentication",
-    "info": {
-      "description": "authentication",
-      "type": "objective",
-      "property": "authentication"
-    }
-  }, {
     "label": "n16: Objective/integrity",
     "info": {
       "description": "integrity",
@@ -163,12 +131,6 @@
     "label": "n20: Asset/Sensor data",
     "info": {
       "description": "Sensor data",
-      "type": "asset"
-    }
-  }, {
-    "label": "n21: Asset/database data",
-    "info": {
-      "description": "database data",
       "type": "asset"
     }
   }, {

@@ -471,8 +471,7 @@
       "color": "#df80ff",
       "info": {
         "description": "device",
-        "type": "asset",
-        "decription": "device"
+        "type": "asset"
       },
       "read_cam0:size": 6,
       "read_cam0:x": 144.86738670714436,

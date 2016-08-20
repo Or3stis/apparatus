@@ -17,7 +17,7 @@ const switchTheme = require('./src/switchTheme.js')
 // const keyboard = require('./src/keyboard.js')
 
 // important, location of the json file for save
-const fileToLoad = 'json/small.json'
+const fileToLoad = 'json/small2.json'
 
 // global variables
 // captures the id of last two selected nodes
