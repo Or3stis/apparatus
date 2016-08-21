@@ -1,1 +1,1065 @@
-{"nodes":[{"label":"n0: Device/server","x":7.950654715279436,"y":-26.849875516469766,"size":5,"color":"#0088cc","type":"circle","info":{"description":"server","type":"device","id":"02","aspect":"physical","layer":"application","nodeType":"server","attribute":"process","input":"dataDigital","output":"dataDigital"},"read_cam0:size":6,"read_cam0:x":105.36195649161466,"read_cam0:y":-259.5,"renderer1:x":547.8619564916147,"renderer1:y":116,"renderer1:size":6,"originalColor":"#0088cc","id":"n0"},{"label":"n1: Device/router","x":12.270718931850606,"y":-14.05270415794762,"size":5,"color":"#0088cc","type":"circle","info":{"description":"router","type":"device","id":"01","aspect":"physical","layer":"gateway","nodeType":"router","attribute":"relay","input":"dataDigital","output":"dataDigital"},"read_cam0:size":6,"read_cam0:x":158.36195649161468,"read_cam0:y":-102.49999999999999,"renderer1:x":600.8619564916147,"renderer1:y":273,"renderer1:size":6,"originalColor":"#0088cc","id":"n1"},{"label":"n2: Device/sensor","x":-3.4903389754251712,"y":4.85776562025071,"size":5,"color":"#0088cc","type":"circle","info":{"description":"sensor","type":"device","id":"01","aspect":"physical","layer":"perception","nodeType":"sensor","attribute":"talker","input":"dataEnvironmental","output":"dataDigital"},"read_cam0:size":6,"read_cam0:x":-35.00000000000005,"read_cam0:y":129.50000000000003,"renderer1:x":407.49999999999994,"renderer1:y":505,"renderer1:size":6,"originalColor":"#0088cc","id":"n2"},{"label":"n3: Device/laptop","x":12.078194333350178,"y":9.748404355991653,"size":5,"color":"#0088cc","type":"circle","info":{"description":"laptop","type":"device","id":"01","aspect":"physical","layer":"perception","nodeType":"laptop","attribute":"bipolar","input":"dataDigital","output":"dataDigital"},"read_cam0:size":6,"read_cam0:x":155.99999999999994,"read_cam0:y":189.49999999999997,"renderer1:x":598.5,"renderer1:y":565,"renderer1:size":6,"originalColor":"#0088cc","id":"n3"},{"label":"n4: Micronet/temperature monitor system","x":1.961116909980774,"y":-4.0665202140808105,"size":7,"color":"#0088cc","info":{"description":"temperature monitor system","type":"micronet","state":"static"},"read_cam0:size":8,"read_cam0:x":31.88029331097213,"read_cam0:y":20.013861482600873,"renderer1:x":474.38029331097215,"renderer1:y":395.5138614826009,"renderer1:size":8,"originalColor":"#0088cc","id":"n4"},{"label":"n5: Net/cloud","x":0.5552845630590895,"y":-18.597995909919923,"size":7,"color":"#0088cc","info":{"description":"Cloud","type":"net"},"read_cam0:size":8,"read_cam0:x":14.633069507899345,"read_cam0:y":-158.2631671146163,"renderer1:x":457.13306950789934,"renderer1:y":217.2368328853837,"renderer1:size":8,"originalColor":"#0088cc","id":"n5"},{"label":"n6: Threat/input tampering","x":-17.69789695739746,"y":-5.678197860717773,"size":5,"color":"#df80ff","info":{"description":"input tampering","type":"threat","class":"tampeing"},"read_cam0:size":6,"read_cam0:x":-209.30309719844564,"read_cam0:y":0.24125834765119605,"renderer1:x":233.19690280155436,"renderer1:y":375.7412583476512,"renderer1:size":6,"originalColor":"#df80ff","id":"n6"},{"label":"n7: Vulnerability/no data sanitation","x":-26.899126600219276,"y":1.7104970273819156,"size":5,"color":"#df80ff","type":"circle","info":{"description":"no data sanitation","type":"vulnerability"},"read_cam0:size":6,"read_cam0:x":-322.1868754531623,"read_cam0:y":90.88825094724191,"renderer1:x":120.31312454683768,"renderer1:y":466.3882509472419,"renderer1:size":6,"originalColor":"#df80ff","id":"n7"},{"label":"n8: Constraint/Environmental data","x":-23.068880690536915,"y":8.590517083692333,"size":5,"color":"#df80ff","info":{"description":"Environmental data should not tamper with the system","type":"constraint"},"read_cam0:size":6,"read_cam0:x":-275.19613109467025,"read_cam0:y":175.29464971921834,"renderer1:x":167.30386890532975,"renderer1:y":550.7946497192183,"renderer1:size":6,"originalColor":"#df80ff","id":"n8"},{"label":"n9: Mechanism/data sanitation at destination","x":-27.728137819695355,"y":5.855087422749641,"size":5,"color":"#df80ff","type":"circle","info":{"description":"data sanitation at destination","type":"mechanism"},"read_cam0:size":6,"read_cam0:x":-332.3574637661077,"read_cam0:y":141.73547912313137,"renderer1:x":110.14253623389232,"renderer1:y":517.2354791231314,"renderer1:size":6,"originalColor":"#df80ff","id":"n9"},{"label":"n10: Secure micronet/smart home policy","x":-6.573410916973389,"y":14.227160021392443,"size":7,"color":"#df80ff","info":{"description":"samrt home policy","type":"secure micronet","state":"static"},"read_cam0:size":8,"read_cam0:x":-72.82416295463042,"read_cam0:y":244.44688003842805,"renderer1:x":369.6758370453696,"renderer1:y":619.946880038428,"renderer1:size":8,"originalColor":"#df80ff","id":"n10"},{"label":"n16: Objective/integrity","x":-27.473209381103516,"y":10.782598495483398,"size":5,"color":"#df80ff","info":{"description":"integrity","property":"integrity","type":"objective"},"read_cam0:size":6,"read_cam0:x":-329.22991598717874,"read_cam0:y":202.18784134800822,"renderer1:x":113.27008401282126,"renderer1:y":577.6878413480082,"renderer1:size":6,"originalColor":"#df80ff","id":"n16"},{"label":"n17: network connection","x":10.722016665532644,"y":-21.06261967917631,"size":5,"color":"#0088cc","info":{"description":"wireless","type":"network connection","protocol":"http"},"read_cam0:size":6,"read_cam0:x":139.36195649161473,"read_cam0:y":-188.5,"renderer1:x":581.8619564916147,"renderer1:y":187,"renderer1:size":6,"originalColor":"#0088cc","id":"n17"},{"label":"n18: network connection/Wi-Fi","x":22.704081568097962,"y":-1.9891286097866185,"size":5,"color":"#0088cc","info":{"description":"wireless","type":"network connection","protocol":"http"},"read_cam0:size":6,"read_cam0:x":286.3619564916147,"read_cam0:y":45.5,"renderer1:x":728.8619564916147,"renderer1:y":421,"renderer1:size":6,"originalColor":"#0088cc","id":"n18"},{"label":"n19: network connection/Wi-Fi","x":-11.978601176895427,"y":-1.936742520541678,"size":5,"color":"#0088cc","info":{"description":"wireless","type":"network connection","protocol":"http"},"read_cam0:size":6,"read_cam0:x":-139.13685401995977,"read_cam0:y":46.142690152459245,"renderer1:x":303.36314598004026,"renderer1:y":421.64269015245924,"renderer1:size":6,"originalColor":"#0088cc","id":"n19"},{"label":"n20: Asset/Sensor data","x":-24.478041424961937,"y":-15.282323593625746,"size":5,"color":"#df80ff","info":{"description":"Sensor data","type":"asset"},"read_cam0:size":6,"read_cam0:x":-292.4841886744726,"read_cam0:y":-117.58538457390473,"renderer1:x":150.0158113255274,"renderer1:y":257.9146154260953,"renderer1:size":6,"originalColor":"#df80ff","id":"n20"},{"label":"n22: Asset/device","x":10.040428193458116,"y":1.841871733210457,"size":5,"color":"#df80ff","info":{"description":"device","type":"asset","decription":"device"},"read_cam0:size":6,"read_cam0:x":130.99999999999994,"read_cam0:y":92.5,"renderer1:x":573.5,"renderer1:y":468,"renderer1:size":6,"originalColor":"#df80ff","id":"n22"},{"label":"n23: Device/database","x":12.491704901718123,"y":-31.694901559281927,"size":5,"color":"#0088cc","type":"circle","info":{"description":"database","type":"device","id":"02","aspect":"virtual","layer":"application","nodeType":"database","attribute":"process","input":"dataDigital","output":"dataDigital"},"read_cam0:size":6,"read_cam0:x":161.0730866544608,"read_cam0:y":-318.9404081504269,"renderer1:x":603.5730866544608,"renderer1:y":56.55959184957311,"renderer1:size":6,"originalColor":"#0088cc","id":"n23"},{"label":"n24: Device/formatter","x":16.590783148421867,"y":-28.64310971957478,"size":5,"color":"#0088cc","type":"circle","info":{"description":"server","type":"device","id":"02","aspect":"virtual","layer":"application","nodeType":"server","attribute":"process","input":"dataDigital","output":"dataDigital"},"read_cam0:size":6,"read_cam0:x":211.36195649161579,"read_cam0:y":-281.5,"renderer1:x":653.8619564916157,"renderer1:y":94,"renderer1:size":6,"originalColor":"#0088cc","id":"n24"},{"label":"n25: Threat/physical tampering","x":-2.8605023070864988,"y":0.0526608692348276,"size":5,"color":"#df80ff","info":{"description":"physical tampering","type":"threat","class":"tampeing"},"read_cam0:size":6,"read_cam0:x":-27.27295203300377,"read_cam0:y":70.54935967688616,"renderer1:x":415.2270479669962,"renderer1:y":446.0493596768862,"renderer1:size":6,"originalColor":"#df80ff","id":"n25"},{"label":"n26: Vulnerability/physical access","x":2.2131207212061774,"y":11.823297592079157,"size":5,"color":"#df80ff","type":"circle","info":{"description":"physical access","type":"vulnerability"},"read_cam0:size":6,"read_cam0:x":34.9719607782551,"read_cam0:y":214.95548769641212,"renderer1:x":477.4719607782551,"renderer1:y":590.4554876964121,"renderer1:size":6,"originalColor":"#df80ff","id":"n26"},{"label":"n27: Mechanism/guard devices","x":13.77117545317573,"y":17.62314498773047,"size":5,"color":"#df80ff","type":"circle","info":{"description":"guard access","type":"security mechanism"},"read_cam0:size":6,"read_cam0:x":176.77006147421832,"read_cam0:y":286.1099651670031,"renderer1:x":619.2700614742183,"renderer1:y":661.6099651670031,"renderer1:size":6,"originalColor":"#df80ff","id":"n27"},{"label":"n28: Objective/integrity","x":0.03760131730184124,"y":24.270902091627107,"size":5,"color":"#df80ff","type":"circle","info":{"description":"integrity","type":"Security Objective","property":"integrity"},"read_cam0:size":6,"read_cam0:x":8.281957429544399,"read_cam0:y":367.6668839634942,"renderer1:x":450.7819574295444,"renderer1:y":743.1668839634942,"renderer1:size":6,"originalColor":"#df80ff","id":"n28"},{"label":"n29: Data/stored data","x":26.186169092778186,"y":12.403540247430648,"size":5,"color":"#0088cc","info":{"description":"stored data","location":"device","type":"data"},"read_cam0:size":6,"read_cam0:x":329.08137674933704,"read_cam0:y":222.07409964103675,"renderer1:x":771.5813767493371,"renderer1:y":597.5740996410368,"renderer1:size":6,"originalColor":"#0088cc","id":"n29"},{"label":"n30: Actor/user","x":26.453205060542793,"y":2.2494249611888684,"size":5,"color":"#8fa1b2","info":{"description":"user","type":"actor"},"read_cam0:size":6,"read_cam0:x":332.3574637661077,"read_cam0:y":97.49999999999999,"renderer1:x":774.8574637661077,"renderer1:y":473,"renderer1:size":6,"originalColor":"#8fa1b2","id":"n30"},{"label":"n31: Malicious Actor/attacker","x":-8.994496092230726,"y":-8.650978961037389,"size":5,"color":"#df80ff","info":{"description":"attacker","type":"malicious actor"},"read_cam0:size":6,"read_cam0:x":-102.5268497333201,"read_cam0:y":-36.22981949248164,"renderer1:x":339.9731502666799,"renderer1:y":339.2701805075184,"renderer1:size":6,"originalColor":"#df80ff","id":"n31"},{"label":"n32: unidentified node","x":-7.73389622767635,"y":-24.566206079249444,"size":5,"color":"#0088cc","info":{"type":"unidentified node"},"read_cam0:size":6,"read_cam0:x":-87.06138684387945,"read_cam0:y":-231.48317568789705,"renderer1:x":355.43861315612054,"renderer1:y":144.01682431210295,"renderer1:size":6,"originalColor":"#0088cc","id":"n32"},{"label":"n33: Data/data in transit","x":-18.59272306353978,"y":-22.07945184202881,"size":5,"color":"#0088cc","info":{"description":"device generated data","location":"local","type":"data"},"read_cam0:size":6,"read_cam0:x":-220.28112466470972,"read_cam0:y":-200.9748387823634,"renderer1:x":222.21887533529028,"renderer1:y":174.5251612176366,"renderer1:size":6,"originalColor":"#0088cc","id":"n33"},{"label":"n34: Actor/service provider","x":9.746275810078288,"y":-35.66662806040745,"size":5,"color":"#8fa1b2","originalColor":"#8fa1b2","info":{"description":"service provider","type":"actor"},"read_cam0:size":6,"read_cam0:x":127.39123968126916,"read_cam0:y":-367.6668839634942,"renderer1:x":569.8912396812691,"renderer1:y":7.833116036505828,"renderer1:size":6,"id":"n34"},{"label":"n35: Constraint/physical protection","x":-7.8728131942731885,"y":20.058093710568485,"size":5,"color":"#df80ff","originalColor":"#df80ff","info":{"description":"physical protection","type":"constraint"},"read_cam0:size":6,"read_cam0:x":-88.76566688707662,"read_cam0:y":315.9827346076489,"renderer1:x":353.73433311292337,"renderer1:y":691.4827346076489,"renderer1:size":6,"id":"n35"}],"edges":[{"read_cam0:size":1,"renderer1:size":1,"size":"0.1","id":"e0","source":"n0","target":"n17"},{"read_cam0:size":1,"renderer1:size":1,"size":"0.1","id":"e1","source":"n3","target":"n18"},{"read_cam0:size":1,"renderer1:size":1,"size":"0.1","id":"e2","source":"n2","target":"n19"},{"read_cam0:size":1,"renderer1:size":1,"size":"0.1","id":"e3","source":"n22","target":"n2"},{"read_cam0:size":1,"renderer1:size":1,"size":"0.1","id":"e4","source":"n1","target":"n4"},{"read_cam0:size":1,"renderer1:size":1,"size":"0.1","id":"e5","source":"n2","target":"n4"},{"read_cam0:size":1,"renderer1:size":1,"size":"0.1","id":"e6","source":"n3","target":"n4"},{"read_cam0:size":1,"renderer1:size":1,"size":"0.1","id":"e7","source":"n5","target":"n4"},{"read_cam0:size":1,"renderer1:size":1,"size":"0.1","id":"e8","source":"n10","target":"n2"},{"read_cam0:size":1,"renderer1:size":1,"size":"0.1","id":"e9","source":"n10","target":"n3"},{"read_cam0:size":1,"renderer1:size":1,"size":"0.1","id":"e10","source":"n10","target":"n1"},{"read_cam0:size":1,"renderer1:size":1,"size":"0.1","id":"e11","source":"n6","target":"n7"},{"read_cam0:size":1,"renderer1:size":1,"size":"0.1","id":"e12","source":"n7","target":"n2"},{"read_cam0:size":1,"renderer1:size":1,"size":"0.1","id":"e13","source":"n9","target":"n7"},{"read_cam0:size":1,"renderer1:size":1,"size":"0.1","id":"e14","source":"n8","target":"n16"},{"read_cam0:size":1,"renderer1:size":1,"size":"0.1","id":"e15","source":"n8","target":"n6"},{"read_cam0:size":1,"renderer1:size":1,"size":"0.1","id":"e16","source":"n9","target":"n16"},{"read_cam0:size":1,"renderer1:size":1,"size":"0.1","id":"e23","source":"n6","target":"n5"},{"read_cam0:size":1,"renderer1:size":1,"size":"0.1","id":"e25","source":"n1","target":"n19"},{"read_cam0:size":1,"renderer1:size":1,"size":"0.1","id":"e26","source":"n1","target":"n18"},{"read_cam0:size":1,"renderer1:size":1,"size":"0.1","id":"e27","source":"n1","target":"n17"},{"read_cam0:size":1,"renderer1:size":1,"size":"0.1","id":"e28","source":"n6","target":"n20"},{"read_cam0:size":1,"renderer1:size":1,"size":"0.1","id":"e29","source":"n20","target":"n33"},{"read_cam0:size":1,"renderer1:size":1,"type":"curvedArrow","label":"owns","size":"0.1","id":"e32","source":"n30","target":"n1"},{"read_cam0:size":1,"renderer1:size":1,"size":"0.1","id":"e33","source":"n31","target":"n6"},{"read_cam0:size":1,"renderer1:size":1,"size":"0.1","id":"e34","source":"n23","target":"n0"},{"read_cam0:size":1,"renderer1:size":1,"size":"0.1","id":"e35","source":"n24","target":"n0"},{"read_cam0:size":1,"renderer1:size":1,"size":"0.1","id":"e36","source":"n22","target":"n3"},{"read_cam0:size":1,"renderer1:size":1,"size":"0.1","id":"e37","source":"n22","target":"n1"},{"read_cam0:size":1,"renderer1:size":1,"size":"0.1","id":"e38","source":"n25","target":"n22"},{"read_cam0:size":1,"renderer1:size":1,"size":"0.1","id":"e39","source":"n26","target":"n2"},{"read_cam0:size":1,"renderer1:size":1,"size":"0.1","id":"e40","source":"n26","target":"n1"},{"read_cam0:size":1,"renderer1:size":1,"size":"0.1","id":"e41","source":"n26","target":"n3"},{"read_cam0:size":1,"renderer1:size":1,"size":"0.1","id":"42","source":"n26","target":"n25"},{"read_cam0:size":1,"renderer1:size":1,"size":"0.1","id":"e43","source":"n31","target":"n25"},{"read_cam0:size":1,"renderer1:size":1,"size":"0.1","id":"e44","source":"n29","target":"n3"},{"read_cam0:size":1,"renderer1:size":1,"size":"0.1","id":"e45","source":"n32","target":"n5"},{"read_cam0:size":1,"renderer1:size":1,"size":"0.1","id":"e46","source":"n31","target":"n32"},{"read_cam0:size":1,"renderer1:size":1,"type":"curvedArrow","label":"owns","size":"0.1","id":"e47","source":"n30","target":"n3"},{"read_cam0:size":1,"renderer1:size":1,"size":"0.1","id":"e48","source":"n3","target":"n30"},{"read_cam0:size":1,"renderer1:size":1,"type":"curvedArrow","label":"owns","size":"0.1","id":"e49","source":"n30","target":"n29"},{"read_cam0:size":1,"renderer1:size":1,"size":"0.1","id":"e50","source":"n26","target":"n27"},{"read_cam0:size":1,"renderer1:size":1,"type":"curvedArrow","label":"owns","size":"0.1","id":"e51","source":"n30","target":"n2"},{"read_cam0:size":1,"renderer1:size":1,"size":"0.1","id":"e52","source":"n33","target":"n19"},{"type":"curvedArrow","label":"owns","read_cam0:size":1,"renderer1:size":1,"size":"0.1","id":"e53","source":"n34","target":"n0"},{"size":0.1,"read_cam0:size":1,"renderer1:size":1,"id":"e55","source":"n1","target":"n5"},{"size":0.1,"read_cam0:size":1,"renderer1:size":1,"id":"e56","source":"n0","target":"n5"},{"size":0.1,"read_cam0:size":1,"renderer1:size":1,"id":"e57","source":"n27","target":"n28"},{"size":0.1,"read_cam0:size":1,"renderer1:size":1,"id":"e58","source":"n28","target":"n35"},{"size":0.1,"read_cam0:size":1,"renderer1:size":1,"id":"e59","source":"n35","target":"n10"},{"size":0.1,"read_cam0:size":1,"renderer1:size":1,"id":"e60","source":"n8","target":"n10"}]}
+{
+  "nodes": [
+    {
+      "label": "n0: Device/server",
+      "x": 7.950654715279436,
+      "y": -26.849875516469766,
+      "size": 5,
+      "color": "#0088cc",
+      "type": "circle",
+      "info": {
+        "description": "server",
+        "type": "device",
+        "id": "02",
+        "aspect": "physical",
+        "layer": "application",
+        "nodeType": "server",
+        "attribute": "process",
+        "input": "dataDigital",
+        "output": "dataDigital"
+      },
+      "read_cam0:size": 6,
+      "read_cam0:x": 49.41397372563795,
+      "read_cam0:y": -121.70356937917694,
+      "renderer1:x": 212.91397372563796,
+      "renderer1:y": 253.79643062082306,
+      "renderer1:size": 6,
+      "originalColor": "#0088cc",
+      "id": "n0"
+    },
+    {
+      "label": "n1: Device/router",
+      "x": 12.270718931850606,
+      "y": -14.05270415794762,
+      "size": 5,
+      "color": "#0088cc",
+      "type": "circle",
+      "info": {
+        "description": "router",
+        "type": "device",
+        "id": "01",
+        "aspect": "physical",
+        "layer": "gateway",
+        "nodeType": "router",
+        "attribute": "relay",
+        "input": "dataDigital",
+        "output": "dataDigital"
+      },
+      "read_cam0:size": 6,
+      "read_cam0:x": 74.27057941772419,
+      "read_cam0:y": -48.07173742337431,
+      "renderer1:x": 237.7705794177242,
+      "renderer1:y": 327.4282625766257,
+      "renderer1:size": 6,
+      "originalColor": "#0088cc",
+      "id": "n1"
+    },
+    {
+      "label": "n2: Device/sensor",
+      "x": -3.4903389754251712,
+      "y": 4.85776562025071,
+      "size": 5,
+      "color": "#0088cc",
+      "type": "circle",
+      "info": {
+        "description": "sensor",
+        "type": "device",
+        "id": "01",
+        "aspect": "physical",
+        "layer": "perception",
+        "nodeType": "sensor",
+        "attribute": "talker",
+        "input": "dataEnvironmental",
+        "output": "dataDigital"
+      },
+      "read_cam0:size": 6,
+      "read_cam0:x": -16.4147396079815,
+      "read_cam0:y": 60.73453654953149,
+      "renderer1:x": 147.0852603920185,
+      "renderer1:y": 436.23453654953147,
+      "renderer1:size": 6,
+      "originalColor": "#0088cc",
+      "id": "n2"
+    },
+    {
+      "label": "n3: Device/laptop",
+      "x": 12.078194333350178,
+      "y": 9.748404355991653,
+      "size": 5,
+      "color": "#0088cc",
+      "type": "circle",
+      "info": {
+        "description": "laptop",
+        "type": "device",
+        "id": "01",
+        "aspect": "physical",
+        "layer": "perception",
+        "nodeType": "laptop",
+        "attribute": "bipolar",
+        "input": "dataDigital",
+        "output": "dataDigital"
+      },
+      "read_cam0:size": 6,
+      "read_cam0:x": 73.16283939557457,
+      "read_cam0:y": 88.87409016321399,
+      "renderer1:x": 236.66283939557457,
+      "renderer1:y": 464.37409016321396,
+      "renderer1:size": 6,
+      "originalColor": "#0088cc",
+      "id": "n3"
+    },
+    {
+      "label": "n4: Micronet/temperature monitor system",
+      "x": 1.961116909980774,
+      "y": -4.0665202140808105,
+      "size": 7,
+      "color": "#0088cc",
+      "info": {
+        "description": "temperature monitor system",
+        "type": "micronet",
+        "state": "static"
+      },
+      "read_cam0:size": 8,
+      "read_cam0:x": 14.951620380733749,
+      "read_cam0:y": 9.386352136774393,
+      "renderer1:x": 178.45162038073374,
+      "renderer1:y": 384.8863521367744,
+      "renderer1:size": 8,
+      "originalColor": "#0088cc",
+      "id": "n4"
+    },
+    {
+      "label": "n5: Net/cloud",
+      "x": 0.5552845630590895,
+      "y": -18.597995909919923,
+      "size": 7,
+      "color": "#0088cc",
+      "info": {
+        "description": "Cloud",
+        "type": "net"
+      },
+      "read_cam0:size": 8,
+      "read_cam0:x": 6.862800732504611,
+      "read_cam0:y": -74.22424793488237,
+      "renderer1:x": 170.3628007325046,
+      "renderer1:y": 301.2757520651176,
+      "renderer1:size": 8,
+      "originalColor": "#0088cc",
+      "id": "n5"
+    },
+    {
+      "label": "n6: Threat/input tampering",
+      "x": -17.69789695739746,
+      "y": -5.678197860717773,
+      "size": 5,
+      "color": "#df80ff",
+      "info": {
+        "description": "input tampering",
+        "type": "threat",
+        "class": "tampeing"
+      },
+      "read_cam0:size": 6,
+      "read_cam0:x": -98.16159541875778,
+      "read_cam0:y": 0.11314837014133174,
+      "renderer1:x": 65.33840458124222,
+      "renderer1:y": 375.61314837014135,
+      "renderer1:size": 6,
+      "originalColor": "#df80ff",
+      "id": "n6"
+    },
+    {
+      "label": "n7: Vulnerability/no data sanitation",
+      "x": -26.899126600219276,
+      "y": 1.7104970273819156,
+      "size": 5,
+      "color": "#df80ff",
+      "type": "circle",
+      "info": {
+        "description": "no data sanitation",
+        "type": "vulnerability"
+      },
+      "read_cam0:size": 6,
+      "read_cam0:x": -151.10324759065196,
+      "read_cam0:y": 42.625913506395776,
+      "renderer1:x": 12.39675240934804,
+      "renderer1:y": 418.12591350639576,
+      "renderer1:size": 6,
+      "originalColor": "#df80ff",
+      "id": "n7"
+    },
+    {
+      "label": "n8: Constraint/Environmental data",
+      "x": -23.068880690536915,
+      "y": 8.590517083692333,
+      "size": 5,
+      "color": "#df80ff",
+      "info": {
+        "description": "Environmental data should not tamper with the system",
+        "type": "constraint"
+      },
+      "read_cam0:size": 6,
+      "read_cam0:x": -129.06493808694134,
+      "read_cam0:y": 82.21188656609408,
+      "renderer1:x": 34.43506191305866,
+      "renderer1:y": 457.7118865660941,
+      "renderer1:size": 6,
+      "originalColor": "#df80ff",
+      "id": "n8"
+    },
+    {
+      "label": "n9: Mechanism/data sanitation at destination",
+      "x": -27.728137819695355,
+      "y": 5.855087422749641,
+      "size": 5,
+      "color": "#df80ff",
+      "type": "circle",
+      "info": {
+        "description": "data sanitation at destination",
+        "type": "mechanism"
+      },
+      "read_cam0:size": 6,
+      "read_cam0:x": -155.8731778425656,
+      "read_cam0:y": 66.47288522910561,
+      "renderer1:x": 7.62682215743439,
+      "renderer1:y": 441.9728852291056,
+      "renderer1:size": 6,
+      "originalColor": "#df80ff",
+      "id": "n9"
+    },
+    {
+      "label": "n10: Secure micronet/smart home policy",
+      "x": -6.573410916973389,
+      "y": 14.227160021392443,
+      "size": 7,
+      "color": "#df80ff",
+      "info": {
+        "description": "samrt home policy",
+        "type": "secure micronet",
+        "state": "static"
+      },
+      "read_cam0:size": 8,
+      "read_cam0:x": -34.153990630556265,
+      "read_cam0:y": 114.64376810897949,
+      "renderer1:x": 129.34600936944372,
+      "renderer1:y": 490.1437681089795,
+      "renderer1:size": 8,
+      "originalColor": "#df80ff",
+      "id": "n10"
+    },
+    {
+      "label": "n11: Objective/integrity",
+      "x": -27.473209381103516,
+      "y": 10.782598495483398,
+      "size": 5,
+      "color": "#df80ff",
+      "info": {
+        "description": "integrity",
+        "property": "integrity",
+        "type": "objective"
+      },
+      "read_cam0:size": 6,
+      "read_cam0:x": -154.4063812024902,
+      "read_cam0:y": 94.82459336078358,
+      "renderer1:x": 9.093618797509805,
+      "renderer1:y": 470.3245933607836,
+      "renderer1:size": 6,
+      "originalColor": "#df80ff",
+      "id": "n11"
+    },
+    {
+      "label": "n12: network connection",
+      "x": 10.722016665532644,
+      "y": -21.06261967917631,
+      "size": 5,
+      "color": "#0088cc",
+      "info": {
+        "description": "wireless",
+        "type": "network connection",
+        "protocol": "http"
+      },
+      "read_cam0:size": 6,
+      "read_cam0:x": 65.35972077339142,
+      "read_cam0:y": -88.40509760298593,
+      "renderer1:x": 228.85972077339142,
+      "renderer1:y": 287.09490239701404,
+      "renderer1:size": 6,
+      "originalColor": "#0088cc",
+      "id": "n12"
+    },
+    {
+      "label": "n13: network connection/Wi-Fi",
+      "x": 22.704081568097962,
+      "y": -1.9891286097866185,
+      "size": 5,
+      "color": "#0088cc",
+      "info": {
+        "description": "wireless",
+        "type": "network connection",
+        "protocol": "http"
+      },
+      "read_cam0:size": 6,
+      "read_cam0:x": 134.30162712691362,
+      "read_cam0:y": 21.33916149037593,
+      "renderer1:x": 297.8016271269136,
+      "renderer1:y": 396.83916149037594,
+      "renderer1:size": 6,
+      "originalColor": "#0088cc",
+      "id": "n13"
+    },
+    {
+      "label": "n14: network connection/Wi-Fi",
+      "x": -11.978601176895427,
+      "y": -1.936742520541678,
+      "size": 5,
+      "color": "#0088cc",
+      "info": {
+        "description": "wireless",
+        "type": "network connection",
+        "protocol": "http"
+      },
+      "read_cam0:size": 6,
+      "read_cam0:x": -65.2541493888963,
+      "read_cam0:y": 21.640578390411143,
+      "renderer1:x": 98.2458506111037,
+      "renderer1:y": 397.1405783904111,
+      "renderer1:size": 6,
+      "originalColor": "#0088cc",
+      "id": "n14"
+    },
+    {
+      "label": "n15: Asset/Sensor data",
+      "x": -24.478041424961937,
+      "y": -15.282323593625746,
+      "size": 5,
+      "color": "#df80ff",
+      "info": {
+        "description": "Sensor data",
+        "type": "asset"
+      },
+      "read_cam0:size": 6,
+      "read_cam0:x": -137.17290847266264,
+      "read_cam0:y": -55.14667055671451,
+      "renderer1:x": 26.32709152733736,
+      "renderer1:y": 320.3533294432855,
+      "renderer1:size": 6,
+      "originalColor": "#df80ff",
+      "id": "n15"
+    },
+    {
+      "label": "n16: Asset/device",
+      "x": 10.040428193458116,
+      "y": 1.841871733210457,
+      "size": 5,
+      "color": "#df80ff",
+      "info": {
+        "description": "device",
+        "type": "asset"
+      },
+      "read_cam0:size": 6,
+      "read_cam0:x": 61.4380253898735,
+      "read_cam0:y": 43.38181182109391,
+      "renderer1:x": 224.9380253898735,
+      "renderer1:y": 418.8818118210939,
+      "renderer1:size": 6,
+      "originalColor": "#df80ff",
+      "id": "n16"
+    },
+    {
+      "label": "n17: Device/database",
+      "x": 12.491704901718123,
+      "y": -31.694901559281927,
+      "size": 5,
+      "color": "#0088cc",
+      "type": "circle",
+      "info": {
+        "description": "database",
+        "type": "device",
+        "id": "02",
+        "aspect": "virtual",
+        "layer": "application",
+        "nodeType": "database",
+        "attribute": "process",
+        "input": "dataDigital",
+        "output": "dataDigital"
+      },
+      "read_cam0:size": 6,
+      "read_cam0:x": 75.54207929390887,
+      "read_cam0:y": -149.58067857864543,
+      "renderer1:x": 239.04207929390887,
+      "renderer1:y": 225.91932142135457,
+      "renderer1:size": 6,
+      "originalColor": "#0088cc",
+      "id": "n17"
+    },
+    {
+      "label": "n18: Device/formatter",
+      "x": 16.590783148421867,
+      "y": -28.64310971957478,
+      "size": 5,
+      "color": "#0088cc",
+      "type": "circle",
+      "info": {
+        "description": "server",
+        "type": "device",
+        "id": "02",
+        "aspect": "virtual",
+        "layer": "application",
+        "nodeType": "server",
+        "attribute": "process",
+        "input": "dataDigital",
+        "output": "dataDigital"
+      },
+      "read_cam0:size": 6,
+      "read_cam0:x": 99.12718510981095,
+      "read_cam0:y": -132.02140570419388,
+      "renderer1:x": 262.62718510981097,
+      "renderer1:y": 243.47859429580612,
+      "renderer1:size": 6,
+      "originalColor": "#0088cc",
+      "id": "n18"
+    },
+    {
+      "label": "n19: Threat/physical tampering",
+      "x": -2.8605023070864988,
+      "y": 0.0526608692348276,
+      "size": 5,
+      "color": "#df80ff",
+      "info": {
+        "description": "physical tampering",
+        "type": "threat",
+        "class": "tampeing"
+      },
+      "read_cam0:size": 6,
+      "read_cam0:x": -12.790811598935026,
+      "read_cam0:y": 33.08712481731185,
+      "renderer1:x": 150.70918840106498,
+      "renderer1:y": 408.58712481731186,
+      "renderer1:size": 6,
+      "originalColor": "#df80ff",
+      "id": "n19"
+    },
+    {
+      "label": "n20: Vulnerability/physical access",
+      "x": 2.2131207212061774,
+      "y": 11.823297592079157,
+      "size": 5,
+      "color": "#df80ff",
+      "type": "circle",
+      "info": {
+        "description": "physical access",
+        "type": "vulnerability"
+      },
+      "read_cam0:size": 6,
+      "read_cam0:x": 16.401589421588536,
+      "read_cam0:y": 100.81252450980774,
+      "renderer1:x": 179.90158942158854,
+      "renderer1:y": 476.31252450980776,
+      "renderer1:size": 6,
+      "originalColor": "#df80ff",
+      "id": "n20"
+    },
+    {
+      "label": "n21: Mechanism/guard devices",
+      "x": 13.77117545317573,
+      "y": 17.62314498773047,
+      "size": 5,
+      "color": "#df80ff",
+      "type": "circle",
+      "info": {
+        "description": "guard access",
+        "type": "security mechanism"
+      },
+      "read_cam0:size": 6,
+      "read_cam0:x": 82.90384370246207,
+      "read_cam0:y": 134.18344507042875,
+      "renderer1:x": 246.40384370246207,
+      "renderer1:y": 509.6834450704288,
+      "renderer1:size": 6,
+      "originalColor": "#df80ff",
+      "id": "n21"
+    },
+    {
+      "label": "n22: Objective/integrity",
+      "x": 0.03760131730184124,
+      "y": 24.270902091627107,
+      "size": 5,
+      "color": "#df80ff",
+      "type": "circle",
+      "info": {
+        "description": "integrity",
+        "type": "Security Objective",
+        "property": "integrity"
+      },
+      "read_cam0:size": 6,
+      "read_cam0:x": 3.8841764185816827,
+      "read_cam0:y": 172.43303322110563,
+      "renderer1:x": 167.3841764185817,
+      "renderer1:y": 547.9330332211057,
+      "renderer1:size": 6,
+      "originalColor": "#df80ff",
+      "id": "n22"
+    },
+    {
+      "label": "n23: Data/stored data",
+      "x": 26.186169092778186,
+      "y": 12.403540247430648,
+      "size": 5,
+      "color": "#0088cc",
+      "info": {
+        "description": "stored data",
+        "location": "device",
+        "type": "data"
+      },
+      "read_cam0:size": 6,
+      "read_cam0:x": 154.3367174050405,
+      "read_cam0:y": 104.15110055098717,
+      "renderer1:x": 317.83671740504053,
+      "renderer1:y": 479.65110055098717,
+      "renderer1:size": 6,
+      "originalColor": "#0088cc",
+      "id": "n23"
+    },
+    {
+      "label": "n24: Actor/user",
+      "x": 26.453205060542793,
+      "y": 2.2494249611888684,
+      "size": 5,
+      "color": "#8fa1b2",
+      "info": {
+        "description": "user",
+        "type": "actor"
+      },
+      "read_cam0:size": 6,
+      "read_cam0:x": 155.8731778425656,
+      "read_cam0:y": 45.726774622234124,
+      "renderer1:x": 319.3731778425656,
+      "renderer1:y": 421.22677462223413,
+      "renderer1:size": 6,
+      "originalColor": "#8fa1b2",
+      "id": "n24"
+    },
+    {
+      "label": "n25: Malicious Actor/attacker",
+      "x": -8.994496092230726,
+      "y": -8.650978961037389,
+      "size": 5,
+      "color": "#df80ff",
+      "info": {
+        "description": "attacker",
+        "type": "malicious actor"
+      },
+      "read_cam0:size": 6,
+      "read_cam0:x": -48.08432974854556,
+      "read_cam0:y": -16.99151580037878,
+      "renderer1:x": 115.41567025145444,
+      "renderer1:y": 358.5084841996212,
+      "renderer1:size": 6,
+      "originalColor": "#df80ff",
+      "id": "n25"
+    },
+    {
+      "label": "n26: unidentified node",
+      "x": -7.73389622767635,
+      "y": -24.566206079249444,
+      "size": 5,
+      "color": "#0088cc",
+      "info": {
+        "type": "unidentified node"
+      },
+      "read_cam0:size": 6,
+      "read_cam0:x": -40.83114271291502,
+      "read_cam0:y": -108.56388721558451,
+      "renderer1:x": 122.66885728708499,
+      "renderer1:y": 266.9361127844155,
+      "renderer1:size": 6,
+      "originalColor": "#0088cc",
+      "id": "n26"
+    },
+    {
+      "label": "n27: Data/data in transit",
+      "x": -18.59272306353978,
+      "y": -22.07945184202881,
+      "size": 5,
+      "color": "#0088cc",
+      "info": {
+        "description": "device generated data",
+        "location": "local",
+        "type": "data"
+      },
+      "read_cam0:size": 6,
+      "read_cam0:x": -103.31020862641473,
+      "read_cam0:y": -94.25570418195863,
+      "renderer1:x": 60.189791373585265,
+      "renderer1:y": 281.24429581804134,
+      "renderer1:size": 6,
+      "originalColor": "#0088cc",
+      "id": "n27"
+    },
+    {
+      "label": "n28: Actor/service provider",
+      "x": 9.746275810078288,
+      "y": -35.66662806040745,
+      "size": 5,
+      "color": "#8fa1b2",
+      "originalColor": "#8fa1b2",
+      "info": {
+        "description": "service provider",
+        "type": "actor"
+      },
+      "read_cam0:size": 6,
+      "read_cam0:x": 59.74554364874258,
+      "read_cam0:y": -172.43303322110563,
+      "renderer1:x": 223.24554364874257,
+      "renderer1:y": 203.06696677889437,
+      "renderer1:size": 6,
+      "id": "n28"
+    },
+    {
+      "label": "n29: Constraint/physical protection",
+      "x": -7.8728131942731885,
+      "y": 20.058093710568485,
+      "size": 5,
+      "color": "#df80ff",
+      "originalColor": "#df80ff",
+      "info": {
+        "description": "physical protection",
+        "type": "constraint"
+      },
+      "read_cam0:size": 6,
+      "read_cam0:x": -41.63043737371961,
+      "read_cam0:y": 148.19355169149927,
+      "renderer1:x": 121.86956262628038,
+      "renderer1:y": 523.6935516914992,
+      "renderer1:size": 6,
+      "id": "n29"
+    }
+  ],
+  "edges": [
+    {
+      "read_cam0:size": 1,
+      "renderer1:size": 1,
+      "size": "0.1",
+      "id": "e0",
+      "source": "n0",
+      "target": "n12"
+    },
+    {
+      "read_cam0:size": 1,
+      "renderer1:size": 1,
+      "size": "0.1",
+      "id": "e1",
+      "source": "n3",
+      "target": "n13"
+    },
+    {
+      "read_cam0:size": 1,
+      "renderer1:size": 1,
+      "size": "0.1",
+      "id": "e2",
+      "source": "n2",
+      "target": "n14"
+    },
+    {
+      "read_cam0:size": 1,
+      "renderer1:size": 1,
+      "size": "0.1",
+      "id": "e3",
+      "source": "n16",
+      "target": "n2"
+    },
+    {
+      "read_cam0:size": 1,
+      "renderer1:size": 1,
+      "size": "0.1",
+      "id": "e4",
+      "source": "n1",
+      "target": "n4"
+    },
+    {
+      "read_cam0:size": 1,
+      "renderer1:size": 1,
+      "size": "0.1",
+      "id": "e5",
+      "source": "n2",
+      "target": "n4"
+    },
+    {
+      "read_cam0:size": 1,
+      "renderer1:size": 1,
+      "size": "0.1",
+      "id": "e6",
+      "source": "n3",
+      "target": "n4"
+    },
+    {
+      "read_cam0:size": 1,
+      "renderer1:size": 1,
+      "size": "0.1",
+      "id": "e7",
+      "source": "n5",
+      "target": "n4"
+    },
+    {
+      "read_cam0:size": 1,
+      "renderer1:size": 1,
+      "size": "0.1",
+      "id": "e8",
+      "source": "n10",
+      "target": "n2"
+    },
+    {
+      "read_cam0:size": 1,
+      "renderer1:size": 1,
+      "size": "0.1",
+      "id": "e9",
+      "source": "n10",
+      "target": "n3"
+    },
+    {
+      "read_cam0:size": 1,
+      "renderer1:size": 1,
+      "size": "0.1",
+      "id": "e10",
+      "source": "n10",
+      "target": "n1"
+    },
+    {
+      "read_cam0:size": 1,
+      "renderer1:size": 1,
+      "size": "0.1",
+      "id": "e11",
+      "source": "n6",
+      "target": "n7"
+    },
+    {
+      "read_cam0:size": 1,
+      "renderer1:size": 1,
+      "size": "0.1",
+      "id": "e12",
+      "source": "n7",
+      "target": "n2"
+    },
+    {
+      "read_cam0:size": 1,
+      "renderer1:size": 1,
+      "size": "0.1",
+      "id": "e13",
+      "source": "n9",
+      "target": "n7"
+    },
+    {
+      "read_cam0:size": 1,
+      "renderer1:size": 1,
+      "size": "0.1",
+      "id": "e14",
+      "source": "n8",
+      "target": "n11"
+    },
+    {
+      "read_cam0:size": 1,
+      "renderer1:size": 1,
+      "size": "0.1",
+      "id": "e15",
+      "source": "n8",
+      "target": "n6"
+    },
+    {
+      "read_cam0:size": 1,
+      "renderer1:size": 1,
+      "size": "0.1",
+      "id": "e16",
+      "source": "n9",
+      "target": "n11"
+    },
+    {
+      "read_cam0:size": 1,
+      "renderer1:size": 1,
+      "size": "0.1",
+      "id": "e17",
+      "source": "n6",
+      "target": "n5"
+    },
+    {
+      "read_cam0:size": 1,
+      "renderer1:size": 1,
+      "size": "0.1",
+      "id": "e18",
+      "source": "n1",
+      "target": "n14"
+    },
+    {
+      "read_cam0:size": 1,
+      "renderer1:size": 1,
+      "size": "0.1",
+      "id": "e19",
+      "source": "n1",
+      "target": "n13"
+    },
+    {
+      "read_cam0:size": 1,
+      "renderer1:size": 1,
+      "size": "0.1",
+      "id": "e20",
+      "source": "n1",
+      "target": "n12"
+    },
+    {
+      "read_cam0:size": 1,
+      "renderer1:size": 1,
+      "size": "0.1",
+      "id": "e21",
+      "source": "n6",
+      "target": "n15"
+    },
+    {
+      "read_cam0:size": 1,
+      "renderer1:size": 1,
+      "size": "0.1",
+      "id": "e22",
+      "source": "n15",
+      "target": "n27"
+    },
+    {
+      "read_cam0:size": 1,
+      "renderer1:size": 1,
+      "type": "curvedArrow",
+      "label": "owns",
+      "size": "0.1",
+      "id": "e23",
+      "source": "n24",
+      "target": "n1"
+    },
+    {
+      "read_cam0:size": 1,
+      "renderer1:size": 1,
+      "size": "0.1",
+      "id": "e24",
+      "source": "n25",
+      "target": "n6"
+    },
+    {
+      "read_cam0:size": 1,
+      "renderer1:size": 1,
+      "size": "0.1",
+      "id": "e25",
+      "source": "n17",
+      "target": "n0"
+    },
+    {
+      "read_cam0:size": 1,
+      "renderer1:size": 1,
+      "size": "0.1",
+      "id": "e26",
+      "source": "n18",
+      "target": "n0"
+    },
+    {
+      "read_cam0:size": 1,
+      "renderer1:size": 1,
+      "size": "0.1",
+      "id": "e27",
+      "source": "n16",
+      "target": "n3"
+    },
+    {
+      "read_cam0:size": 1,
+      "renderer1:size": 1,
+      "size": "0.1",
+      "id": "e28",
+      "source": "n16",
+      "target": "n1"
+    },
+    {
+      "read_cam0:size": 1,
+      "renderer1:size": 1,
+      "size": "0.1",
+      "id": "e29",
+      "source": "n19",
+      "target": "n16"
+    },
+    {
+      "read_cam0:size": 1,
+      "renderer1:size": 1,
+      "size": "0.1",
+      "id": "e30",
+      "source": "n20",
+      "target": "n2"
+    },
+    {
+      "read_cam0:size": 1,
+      "renderer1:size": 1,
+      "size": "0.1",
+      "id": "e31",
+      "source": "n20",
+      "target": "n1"
+    },
+    {
+      "read_cam0:size": 1,
+      "renderer1:size": 1,
+      "size": "0.1",
+      "id": "e32",
+      "source": "n20",
+      "target": "n3"
+    },
+    {
+      "read_cam0:size": 1,
+      "renderer1:size": 1,
+      "size": "0.1",
+      "id": "33",
+      "source": "n20",
+      "target": "n19"
+    },
+    {
+      "read_cam0:size": 1,
+      "renderer1:size": 1,
+      "size": "0.1",
+      "id": "e34",
+      "source": "n25",
+      "target": "n19"
+    },
+    {
+      "read_cam0:size": 1,
+      "renderer1:size": 1,
+      "size": "0.1",
+      "id": "e35",
+      "source": "n23",
+      "target": "n3"
+    },
+    {
+      "read_cam0:size": 1,
+      "renderer1:size": 1,
+      "size": "0.1",
+      "id": "e36",
+      "source": "n26",
+      "target": "n5"
+    },
+    {
+      "read_cam0:size": 1,
+      "renderer1:size": 1,
+      "size": "0.1",
+      "id": "e37",
+      "source": "n25",
+      "target": "n26"
+    },
+    {
+      "read_cam0:size": 1,
+      "renderer1:size": 1,
+      "type": "curvedArrow",
+      "label": "owns",
+      "size": "0.1",
+      "id": "e38",
+      "source": "n24",
+      "target": "n3"
+    },
+    {
+      "read_cam0:size": 1,
+      "renderer1:size": 1,
+      "size": "0.1",
+      "id": "e39",
+      "source": "n3",
+      "target": "n24"
+    },
+    {
+      "read_cam0:size": 1,
+      "renderer1:size": 1,
+      "type": "curvedArrow",
+      "label": "owns",
+      "size": "0.1",
+      "id": "e40",
+      "source": "n24",
+      "target": "n23"
+    },
+    {
+      "read_cam0:size": 1,
+      "renderer1:size": 1,
+      "size": "0.1",
+      "id": "e41",
+      "source": "n20",
+      "target": "n21"
+    },
+    {
+      "read_cam0:size": 1,
+      "renderer1:size": 1,
+      "type": "curvedArrow",
+      "label": "owns",
+      "size": "0.1",
+      "id": "e42",
+      "source": "n24",
+      "target": "n2"
+    },
+    {
+      "read_cam0:size": 1,
+      "renderer1:size": 1,
+      "size": "0.1",
+      "id": "e43",
+      "source": "n27",
+      "target": "n14"
+    },
+    {
+      "type": "curvedArrow",
+      "label": "owns",
+      "read_cam0:size": 1,
+      "renderer1:size": 1,
+      "size": "0.1",
+      "id": "e44",
+      "source": "n28",
+      "target": "n0"
+    },
+    {
+      "size": 0.1,
+      "read_cam0:size": 1,
+      "renderer1:size": 1,
+      "id": "e45",
+      "source": "n1",
+      "target": "n5"
+    },
+    {
+      "size": 0.1,
+      "read_cam0:size": 1,
+      "renderer1:size": 1,
+      "id": "e46",
+      "source": "n0",
+      "target": "n5"
+    },
+    {
+      "size": 0.1,
+      "read_cam0:size": 1,
+      "renderer1:size": 1,
+      "id": "e47",
+      "source": "n21",
+      "target": "n22"
+    },
+    {
+      "size": 0.1,
+      "read_cam0:size": 1,
+      "renderer1:size": 1,
+      "id": "e48",
+      "source": "n22",
+      "target": "n29"
+    },
+    {
+      "size": 0.1,
+      "read_cam0:size": 1,
+      "renderer1:size": 1,
+      "id": "e49",
+      "source": "n29",
+      "target": "n10"
+    },
+    {
+      "size": 0.1,
+      "read_cam0:size": 1,
+      "renderer1:size": 1,
+      "id": "e50",
+      "source": "n8",
+      "target": "n10"
+    },
+    {
+      "size": 0.1,
+      "id": "e51",
+      "source": "n18",
+      "target": "n13",
+      "read_cam0:size": 1,
+      "renderer1:size": 1
+    }
+  ]
+}

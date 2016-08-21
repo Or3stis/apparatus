@@ -445,7 +445,7 @@
     "type": "circle",
     "info": {
       "description": "guard access",
-      "type": "security mechanism"
+      "type": "mechanism"
     },
     "read_cam0:size": 6,
     "read_cam0:x": 176.77006147421832,
@@ -464,7 +464,7 @@
     "type": "circle",
     "info": {
       "description": "integrity",
-      "type": "Security Objective",
+      "type": "objective",
       "property": "integrity"
     },
     "read_cam0:size": 6,

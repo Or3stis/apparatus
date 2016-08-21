@@ -1,3 +1,4 @@
+/* global targetNode, selectedEdge, sourceNode */
 // keyboard shortcuts
 
 // cmd + l, bring the console to focus
@@ -7,15 +8,24 @@ const moduleValidation = require('./moduleValidation.js')
 // help menu
 const helpMenu = 'no commands working now'
 
-module.exports = function keyboard (s) {
+module.exports = function keyboard (s, addEdge, toggleSideBars, deleteNode, deleteEdge) {
   document.addEventListener('keydown', (event) => {
+    // console.log(event.code)
+
+    let lastEdge = s.graph.edges().length
     // hot key to add edge
     if (event.altKey === true && event.code === 'KeyE') {
-      console.log('it works')
-      moduleValidation(s)
+      addEdge(s, sourceNode, targetNode, lastEdge) // module
+      lastEdge = s.graph.edges().length
+    } else if (event.altKey === true && event.code === 'KeyH') {
+      toggleSideBars()
+    }
+    // Backspace deletion of nodes and edges
+    if (event.code === 'Backspace') {
+      (selectedEdge === '') ? deleteNode() : deleteEdge()
     }
 
-    // hotkey for the console
+    // hotkey to focus on the console
     if (event.metaKey === true && event.code === 'KeyL') {
       document.getElementById('consoleID').focus()
     }
