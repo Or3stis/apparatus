@@ -7,7 +7,7 @@
   }
 }
 body {
-  background: #14171a;
+  background: #3a4b54;
   font-family: Menlo, monospace;
   color: #e0e0e0;
   height: 100vh;
@@ -22,7 +22,7 @@ body {
   animation: fadein 0.4s;
 }
 h3 {
-  color: #70bf53;
+  color: #5eacf7;
   text-align: center;
 }
 .window {
@@ -36,7 +36,7 @@ h3 {
   display: block;
 }
 .graph {
-  background: #252c33;
+  background: #2e3f49;
   -webkit-flex: 1;
 }
 .sidebar {
@@ -55,8 +55,8 @@ h3 {
   margin: 5px;
 }
 #consoleID {
-  background-color: #2d3e4f;
-  background-color: rgba(53, 73, 93, 0.1);
+  background-color: #2e3f49;
+  background-color: rgba(11, 10, 12, 0.1);
   margin: 5px;
   /*border: 1px solid;*/
   color: #f5f7fa;
@@ -68,8 +68,8 @@ h3 {
   /*background-color: red;*/
 }
 .button {
-  background-color: #35495d;
-  background-color: rgba(45, 62, 79, 0.1);
+  background-color: #5eacf7;
+  background-color: rgba(58, 75, 84, 0.1);
   margin: 5px;
   color: #e0e0e0;
   /*border-radius: 20px;*/
@@ -79,7 +79,7 @@ h3 {
   cursor: pointer;
 }
 .button:hover {
-  background-color: #3a99d8;
+  background-color: #5eacf7;
 }
 
 /*.button:focus, .selection:focus {
@@ -91,8 +91,8 @@ h3 {
   margin-top: 4px;
   margin-bottom: 4px;
   font-size: 12px;
-  background-color: #35495d;
-  background-color: rgba(53, 73, 93, 0.1);
+  background-color: #5eacf7;
+  background-color: rgba(58, 75, 84, 0.1);
   color: #e0e0e0;
 }
 

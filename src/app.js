@@ -58,8 +58,8 @@ sigma.parsers.json(fileToLoad, {
     labelSize: 'fixed',
     labelThreshold: 4,
     edgeLabelSize: 'fixed',
-    // defaultLabelColor: '#94a4a5',
-    // defaultEdgeLabelColor: '#94a4a5',
+    defaultLabelColor: '#94a4a5',
+    defaultEdgeLabelColor: '#94a4a5',
     mouseWheelEnabled: false,
     // must enable canvas in type for edge hovering
     enableEdgeHovering: true,

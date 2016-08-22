@@ -2,8 +2,8 @@
 
 const white = '#ecf0f1'
 const darkWhite = '#f5f5f5'
-const black = '#14171a'
-const deepBlack = '#252c33'
+const black = '#3a4b54'
+const deepBlack = '#2e3f49'
 const veryLightGray = '#e0e0e0'
 
 // when buton class is clicked the corresponing nodes are highlighted
