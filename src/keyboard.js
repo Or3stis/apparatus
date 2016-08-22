@@ -6,7 +6,7 @@
 const moduleValidation = require('./moduleValidation.js')
 
 // help menu
-const helpMenu = 'no commands working now'
+const helpMenu = 'only validate works'
 
 module.exports = function keyboard (s, addEdge, toggleSideBars, deleteNode, deleteEdge) {
   document.addEventListener('keydown', (event) => {
@@ -37,7 +37,6 @@ module.exports = function keyboard (s, addEdge, toggleSideBars, deleteNode, dele
       document.getElementById('consoleID').value = ''
       if (input === 'help' || input === 'options') {
         document.getElementById('infoForNodes').innerHTML = helpMenu
-        console.log('help')
       } else if (input === 'validate') {
         moduleValidation(s)
       } else {

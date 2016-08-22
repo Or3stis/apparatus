@@ -7,7 +7,7 @@
   }
 }
 body {
-  background: #35495d;
+  background: #14171a;
   font-family: Menlo, monospace;
   color: #e0e0e0;
   height: 100vh;
@@ -22,7 +22,7 @@ body {
   animation: fadein 0.4s;
 }
 h3 {
-  color: #39ca74;
+  color: #70bf53;
   text-align: center;
 }
 .window {
@@ -36,7 +36,7 @@ h3 {
   display: block;
 }
 .graph {
-  background: #2d3e4f;
+  background: #252c33;
   -webkit-flex: 1;
 }
 .sidebar {
@@ -59,7 +59,7 @@ h3 {
   background-color: rgba(53, 73, 93, 0.1);
   margin: 5px;
   /*border: 1px solid;*/
-  color: #e0e0e0;
+  color: #f5f7fa;
 }
 .legend {
   bottom: 0;

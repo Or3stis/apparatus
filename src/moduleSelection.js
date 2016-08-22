@@ -10,9 +10,9 @@ let groupArray = []
 const networkArray = ['device', 'network connection', 'micronet',
   'net', 'unidentified node']
 const securityArray = ['asset', 'threat', 'vulnerability', 'mechanism',
-  'constraint', 'secure micronet', 'objective'
+  'constraint', 'secure micronet', 'objective', 'malicious actor'
 ]
-const socialArray = ['actor', 'malicious actor']
+const socialArray = ['actor']
 
 // when buton class is clicked the corresponing nodes are highlighted
 module.exports = function moduleSelection (input, s, toggleTheme) {
