@@ -43,15 +43,14 @@ h3 {
   width: 170px;
   display: block;
 }
-.footer {
-  background: #35495d;
+/*.footer {
   bottom: 0;
   height: 50px;
   position: absolute;
   width: 100%;
   text-align: justify;
   display: block;
-}
+}*/
 .components {
   margin: 5px;
 }
@@ -64,7 +63,7 @@ h3 {
 }
 .legend {
   bottom: 0;
-  height: 150px;
+  height: 50px;
   position: absolute;
   /*background-color: red;*/
 }

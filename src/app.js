@@ -77,7 +77,7 @@ sigma.parsers.json(fileToLoad, {
   // functions when individual nodes are clicked
   s.bind('clickNode', (n) => {
     nodeInfo(n) // module
-    footerSourceTargetNode(n)
+    showSourceTargetNode(n)
     selectedEdge = '' // deselect edge
     s.refresh()
   })
@@ -192,7 +192,7 @@ sigma.parsers.json(fileToLoad, {
   }
 
   // it generates values used in addEdge/addOwn modules
-  const footerSourceTargetNode = (n) => {
+  const showSourceTargetNode = (n) => {
     // store the id of the selected node to be used for
     // addEdge function
     sourceNode = targetNode // second selection
@@ -201,7 +201,7 @@ sigma.parsers.json(fileToLoad, {
     // message displayed in the footer bar
     const selectedNodes = `source node: ${sourceNode.id} <br>
       targetNode: ${targetNode.id}`
-    document.getElementById('footerId').innerHTML = selectedNodes
+    document.getElementById('legendId').innerHTML = selectedNodes
   }
 
   // function for node deletion
@@ -229,15 +229,15 @@ sigma.parsers.json(fileToLoad, {
   const toggleSideBars = () => {
     const sidebarStatus = document.getElementById('sidebarId')
     const actionBarStatus = document.getElementById('actionBarId')
-    const footerStatus = document.getElementById('footerId')
+    // const footerStatus = document.getElementById('footerId')
     if (sidebarStatus.style.display === 'block') {
       sidebarStatus.style.display = 'none'
       actionBarStatus.style.display = 'none'
-      footerStatus.style.display = 'none'
+      // footerStatus.style.display = 'none'
     } else {
       sidebarStatus.style.display = 'block'
       actionBarStatus.style.display = 'block'
-      footerStatus.style.display = 'block'
+      // footerStatus.style.display = 'block'
     }
     s.refresh()
   }

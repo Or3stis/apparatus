@@ -12,7 +12,7 @@ module.exports = {
     document.getElementsByTagName('body')[0].style.background = darkWhite
     document.getElementsByTagName('body')[0].style.color = black
     document.getElementsByClassName('graph')[0].style.background = white
-    document.getElementsByClassName('footer')[0].style.background = darkWhite
+    // document.getElementsByClassName('footer')[0].style.background = darkWhite
 
     let buttonValues = document.getElementsByClassName('button')
     Object.keys(buttonValues).map((i) => {
@@ -29,7 +29,7 @@ module.exports = {
     document.getElementsByTagName('body')[0].style.background = black
     document.getElementsByTagName('body')[0].style.color = veryLightGray
     document.getElementsByClassName('graph')[0].style.background = deepBlack
-    document.getElementsByClassName('footer')[0].style.background = black
+    // document.getElementsByClassName('footer')[0].style.background = black
 
     let buttonValues = document.getElementsByClassName('button')
     Object.keys(buttonValues).map((i) => {
