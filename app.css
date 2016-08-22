@@ -32,6 +32,7 @@ h3 {
   -webkit-flex-direction: row;
 }
 .actionBar {
+  margin: 5px;
   width: 145px;
   display: block;
 }
@@ -40,6 +41,7 @@ h3 {
   -webkit-flex: 1;
 }
 .sidebar {
+  margin: 5px;
   width: 170px;
   display: block;
 }
