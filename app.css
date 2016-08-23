@@ -72,12 +72,14 @@ h3 {
 .button {
   background-color: #5eacf7;
   background-color: rgba(58, 75, 84, 0.1);
-  margin: 5px;
+  margin: 3px;
   color: #e0e0e0;
+  width: 130px;
+  height: 45px;
   /*border-radius: 20px;*/
   border: 1px solid;
   font-size: 16px;
-  padding: 8px 10px 8px 12px;
+  /*padding: 8px 10px 8px 12px;*/
   cursor: pointer;
 }
 .button:hover {
