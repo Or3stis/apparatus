@@ -22,7 +22,7 @@
   },
   "homepage": "https://github.com/#readme",
   "devDependencies": {
-    "electron": "^1.3.3",
+    "electron": "^1.3.4",
     "jsonfile": "^2.3.1"
   }
 }

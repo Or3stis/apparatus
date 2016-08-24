@@ -756,7 +756,9 @@
     {
       "read_cam0:size": 1,
       "renderer1:size": 1,
+      "type": "curvedArrow",
       "size": "0.1",
+      "label": "composed",
       "id": "e0",
       "source": "n0",
       "target": "n17"
@@ -766,6 +768,7 @@
       "renderer1:size": 1,
       "size": "0.1",
       "id": "e1",
+      "label": "owns",
       "source": "n3",
       "target": "n18"
     },
@@ -774,6 +777,7 @@
       "renderer1:size": 1,
       "size": "0.1",
       "id": "e2",
+      "label": "owns",
       "source": "n2",
       "target": "n19"
     },
@@ -782,6 +786,7 @@
       "renderer1:size": 1,
       "size": "0.1",
       "id": "e3",
+      "label": "owns",
       "source": "n22",
       "target": "n2"
     },
@@ -790,6 +795,7 @@
       "renderer1:size": 1,
       "size": "0.1",
       "id": "e4",
+      "label": "owns",
       "source": "n1",
       "target": "n4"
     },
@@ -798,6 +804,7 @@
       "renderer1:size": 1,
       "size": "0.1",
       "id": "e5",
+      "label": "owns",
       "source": "n2",
       "target": "n4"
     },
@@ -806,6 +813,7 @@
       "renderer1:size": 1,
       "size": "0.1",
       "id": "e6",
+      "label": "owns",
       "source": "n3",
       "target": "n4"
     },
@@ -814,6 +822,7 @@
       "renderer1:size": 1,
       "size": "0.1",
       "id": "e7",
+      "label": "owns",
       "source": "n5",
       "target": "n4"
     },
@@ -822,6 +831,7 @@
       "renderer1:size": 1,
       "size": "0.1",
       "id": "e8",
+      "label": "owns",
       "source": "n10",
       "target": "n2"
     },
@@ -830,6 +840,7 @@
       "renderer1:size": 1,
       "size": "0.1",
       "id": "e9",
+      "label": "owns",
       "source": "n10",
       "target": "n3"
     },
@@ -838,6 +849,7 @@
       "renderer1:size": 1,
       "size": "0.1",
       "id": "e10",
+      "label": "owns",
       "source": "n10",
       "target": "n1"
     },
@@ -846,6 +858,7 @@
       "renderer1:size": 1,
       "size": "0.1",
       "id": "e11",
+      "label": "owns",
       "source": "n6",
       "target": "n7"
     },
@@ -854,6 +867,7 @@
       "renderer1:size": 1,
       "size": "0.1",
       "id": "e12",
+      "label": "owns",
       "source": "n7",
       "target": "n2"
     },
@@ -862,6 +876,7 @@
       "renderer1:size": 1,
       "size": "0.1",
       "id": "e13",
+      "label": "owns",
       "source": "n9",
       "target": "n7"
     },
