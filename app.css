@@ -17,13 +17,21 @@ body {
   font-size: 13px;
   /*disable text selection*/
   -webkit-user-select: none;
-  -webkit-app-region: drag;
   /* Smoother startup */
   animation: fadein 0.4s;
 }
 h3 {
   color: #5eacf7;
   text-align: center;
+}
+.titleBar {
+  position: relative;
+  width: 100vw;
+  height: 15px;
+  cursor: pointer;
+  text-align: center;
+  margin: 4px;
+  -webkit-app-region: drag
 }
 .window {
   height: 100vh;

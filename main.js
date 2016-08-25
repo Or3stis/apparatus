@@ -15,8 +15,8 @@ function createWindow () {
   mainWindow = new BrowserWindow({
     width: 1200,
     height: 800,
-    // titleBarStyle: 'hidden ',
-    transparent: true
+    titleBarStyle: 'hidden'
+    // transparent: true
   })
 
   // and load the index.html of the app.
