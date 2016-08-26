@@ -311,13 +311,13 @@
       "id": "n11"
     },
     {
-      "label": "n12: Micronet/provideNetwork",
+      "label": "n12: Micronet/providersNetwork",
       "x": -2.32077893614769,
       "y": -18.54138946533203,
       "size": 7,
       "color": "#0088cc",
       "info": {
-        "description": "service privder network",
+        "description": "service provider network",
         "type": "micronet",
         "state": "static"
       },

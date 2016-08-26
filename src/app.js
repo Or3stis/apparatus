@@ -18,7 +18,7 @@ const keyboard = require('./src/keyboard.js')
 
 // important, location of the json file for save
 const fileToLoad = 'json/small2.json'
-document.getElementById('titleBarId').innerHTML = fileToLoad
+document.getElementById('titleBarId').innerHTML = `🚀 ${fileToLoad}`
 
 // global variables
 // captures the id of last two selected nodes

@@ -27,14 +27,14 @@ h3 {
 .titleBar {
   position: relative;
   width: 100vw;
-  height: 15px;
+  height: 20px;
   cursor: pointer;
   text-align: center;
-  margin: 4px;
+  /*can only drag window from title bar*/
   -webkit-app-region: drag
 }
 .window {
-  height: 100vh;
+  height: 97vh;
   width: 100vw;
   display: -webkit-flex;
   -webkit-flex-direction: row;

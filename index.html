@@ -10,91 +10,90 @@
 </head>
 
 <body>
-<div class="titleBar" id="titleBarId"></div>
+  <div class="titleBar" id="titleBarId"></div>
   <div class="window">
 
+    <div class="actionBar" id="actionBarId">
+      <h3>Control panel</h3>
 
-      <div class="actionBar" id="actionBarId">
-        <h3>Control panel</h3>
+      <div class="components" id="componentsId">
 
-        <div class="components" id="componentsId">
+        <select class="selection" required id="addStuff">
+          <!-- <option value="" disabled selected>add component</option> -->
+          <option value="" selected>add component</option>
+          <option value="device">device</option>
+          <option value="data">data</option>
+          <option value="micronet">micronet</option>
+          <option value="secure micronet">secure microcnet</option>
+          <option value="network connection">network connection</option>
+          <option value="threat">threat</option>
+          <option value="vulnerability">vulnerability</option>
+          <option value="asset">asset</option>
+          <option value="mechanism">mechanism</option>
+          <option value="constraint">constraint</option>
+          <option value="objective">obejctive</option>
+          <option value="actor">actor</option>
+          <option value="malicious actor">malicious actor</option>
+          <option value="unidentified node">unidentified node</option>
+          <option value="net">net</option>
+        </select>
 
-          <select class="selection" required id="addStuff">
-            <!-- <option value="" disabled selected>add component</option> -->
-            <option value="" selected>add component</option>
-            <option value="device">device</option>
-            <option value="data">data</option>
-            <option value="micronet">micronet</option>
-            <option value="secure micronet">secure microcnet</option>
-            <option value="network connection">network connection</option>
-            <option value="threat">threat</option>
-            <option value="vulnerability">vulnerability</option>
-            <option value="asset">asset</option>
-            <option value="mechanism">mechanism</option>
-            <option value="constraint">constraint</option>
-            <option value="objective">obejctive</option>
-            <option value="actor">actor</option>
-            <option value="malicious actor">malicious actor</option>
-            <option value="unidentified node">unidentified node</option>
-            <option value="net">net</option>
-          </select>
+        <button class="button" id="addEdge">connection</button>
+        <button class="button" id="addOwnership">ownership</button>
+        <button class="button" id="deleteNode">delete node</button>
+        <button class="button" id="deleteEdge">delete edge</button>
 
-          <button class="button" id="addEdge">connection</button>
-          <button class="button" id="addOwnership">ownership</button>
-          <button class="button" id="deleteNode">delete node</button>
-          <button class="button" id="deleteEdge">delete edge</button>
+        <select class="selection" required id="selection">
+          <option value="" disabled selected>Select component</option>
+          <option value="device">device</option>
+          <option value="data">data</option>
+          <option value="micronet">micronet</option>
+          <option value="secure micronet">secure micronet</option>
+          <option value="network connection">network connection</option>
+          <option value="threat">threat</option>
+          <option value="vulnerability">vulnerability</option>
+          <option value="asset">asset</option>
+          <option value="mechanism">mechanism</option>
+          <option value="constraint">constraint</option>
+          <option value="objective">objective</option>
+          <option value="actor">actor</option>
+          <option value="malicious actor">malicious actor</option>
+          <option value="unidentified node">unidentified node</option>
+          <option value="net">net</option>
+        </select>
 
-          <select class="selection" required id="selection">
-            <option value="" disabled selected>Select component</option>
-            <option value="device">device</option>
-            <option value="data">data</option>
-            <option value="micronet">micronet</option>
-            <option value="secure micronet">secure micronet</option>
-            <option value="network connection">network connection</option>
-            <option value="threat">threat</option>
-            <option value="vulnerability">vulnerability</option>
-            <option value="asset">asset</option>
-            <option value="mechanism">mechanism</option>
-            <option value="constraint">constraint</option>
-            <option value="objective">objective</option>
-            <option value="actor">actor</option>
-            <option value="malicious actor">malicious actor</option>
-            <option value="unidentified node">unidentified node</option>
-            <option value="net">net</option>
-          </select>
+        <select class="selection" required id="moduleGroup">
+          <option value="" disabled selected>Select module</option>
+          <option value="network">network</option>
+          <option value="security">security</option>
+          <option value="social">social</option>
+          <option value="network-security">network-security</option>
+          <option value="network-social">network-social</option>
+        </select>
 
-          <select class="selection" required id="moduleGroup">
-            <option value="" disabled selected>Select module</option>
-            <option value="network">network</option>
-            <option value="security">security</option>
-            <option value="social">social</option>
-            <option value="network-security">network-security</option>
-            <option value="network-social">network-social</option>
-          </select>
+        <button class="button" id="startAtlas">start atlas</button>
+        <button class="button" id="stopAtlas">stop atlas</button>
 
-          <button class="button" id="startAtlas">start atlas</button>
-          <button class="button" id="stopAtlas">stop atlas</button>
+        <button class="button" id="validateButton">validate security</button>
+        <button class="button" id="moduleValidateButton">validate instant</button>
 
-          <button class="button" id="validateButton">validate security</button>
-          <button class="button" id="moduleValidateButton">validate instant</button>
+        <button class="button" id="saveButton">save</button>
+        <button class="button" id="themeButton">theme</button>
+        <button class="button" id="testButton">test</button>
 
-          <button class="button" id="saveButton">save</button>
-          <button class="button" id="themeButton">theme</button>
-          <button class="button" id="testButton">test</button>
-
-        </div>
       </div>
-
-      <div class="graph" id="graph-container"></div>
-
-      <div class="sidebar" id="sidebarId">
-        <h3>Info bar</h3>
-        <input type="text" placeholder="Enter command.." maxlength="15" id="consoleID" class="selection" />
-        <div id="infoForNodes"></div>
-        <div class="legend" id="legendId"></div>
-      </div>
-      <!-- <div class="footer" id="footerId"></div> -->
     </div>
+
+    <div class="graph" id="graph-container"></div>
+
+    <div class="sidebar" id="sidebarId">
+      <h3>Info bar</h3>
+      <input type="text" placeholder="Enter command.." maxlength="15" id="consoleID" class="selection" />
+      <div id="infoForNodes"></div>
+      <div class="legend" id="legendId"></div>
+    </div>
+    <!-- <div class="footer" id="footerId"></div> -->
+  </div>
 </body>
 
 <script src="build/sigma.min.js"></script>
