@@ -180,7 +180,7 @@
       "info": {
         "description": "input tampering",
         "type": "threat",
-        "class": "tampeing"
+        "class": "tampering"
       },
       "read-cam0:size": 6,
       "read-cam0:x": -209.30309719844564,

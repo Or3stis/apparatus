@@ -15,8 +15,6 @@ body {
   margin: 0;
   padding: 0;
   font-size: 13px;
-  /*disable text selection*/
-  -webkit-user-select: none;
   /* Smoother startup */
   animation: fadein 0.4s;
 }
@@ -47,6 +45,8 @@ h3 {
 .graph {
   background: #2e3f49;
   -webkit-flex: 1;
+  /*disable text selection*/
+  -webkit-user-select: none;
 }
 .sidebar {
   margin: 5px;
