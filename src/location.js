@@ -7,5 +7,5 @@ module.exports = function (n) {
   let nodeLocation = ''
   nodeLocation = `x: ${n.data.captor.x} y: ${n.data.captor.y}`
     // appends info to the div
-  document.getElementById('infoForNodes').innerHTML = nodeLocation
+  document.getElementById('info-for-nodes').innerHTML = nodeLocation
 }

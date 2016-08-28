@@ -1,6 +1,6 @@
 'use scrict'
 
-// shows info of node in the div 'infoForNodes'
+// shows info of node in the div 'info-for-nodes'
 module.exports = function nodeInfo (n) {
   let nodeInfo = ''
   Object.keys(n.data.node.info).map((i) => {
@@ -12,5 +12,5 @@ module.exports = function nodeInfo (n) {
     nodeInfo = `${nodeInfo} ${n.data.node.info[i]} <br/>`
   })
   // appends info to the div
-  document.getElementById('infoForNodes').innerHTML = nodeInfo
+  document.getElementById('info-for-nodes').innerHTML = nodeInfo
 }

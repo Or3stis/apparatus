@@ -32,8 +32,8 @@ module.exports = function validation (s) {
     result = `${result} > Threat ${i} is not mitigated <br/>`
   })
 
-  // result will be displayed at infoForNodes div
+  // result will be displayed at info-for-nodes div
   result = `${result} > Threats total: ${arrThreat.length} <br/>`
   result = `${result} > Mitigated total: ${arrMitigated.length} <br/>`
-  document.getElementById('infoForNodes').innerHTML = result
+  document.getElementById('info-for-nodes').innerHTML = result
 }

@@ -21,6 +21,6 @@ module.exports = function buttonSelection (classification, s, toggleTheme) {
     }
   })
   s.graph.edges().map(e => e.color = shadowColor)
-  document.getElementById('infoForNodes').innerHTML = nodes
+  document.getElementById('info-for-nodes').innerHTML = nodes
   s.refresh()
 }

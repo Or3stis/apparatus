@@ -71,7 +71,6 @@ module.exports = function addComponent (component, s) {
       type = 'equilateral'
       size = 5
       break
-      // TODO fix it
     case 'mechanism':
       color = green
       type = 'circle'

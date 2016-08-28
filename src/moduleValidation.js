@@ -4,12 +4,12 @@
 
 // valid component connections
 const deviceArray = ['secure micronet', 'micronet', 'vulnerability',
-  'network connection', 'data', 'actor', 'asset', 'net', 'device'
+  'network connection', 'data', 'actor', 'asset', 'device'
 ]
 const networkArray = ['device', 'actor', 'data']
 const micronetArray = ['device', 'net', 'vulnerability',
-  'secure micronet']
-const netArray = ['micronet', 'unidentified node', 'threat', 'device']
+  'secure micronet', 'micronet']
+const netArray = ['micronet', 'unidentified node', 'threat']
 const undentifiedNodeArray = ['net', 'actor', 'malicious actor']
 const dataArray = ['asset', 'device', 'network connection', 'actor']
 const actorArray = ['asset', 'network connection', 'device',
@@ -69,5 +69,5 @@ function componentValidation (s, component, componentArray) {
       })
     }
   })
-  document.getElementById('infoForNodes').innerHTML = result
+  document.getElementById('info-for-nodes').innerHTML = result
 }

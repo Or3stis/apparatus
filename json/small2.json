@@ -328,7 +328,7 @@
       "renderer1:y": 98.74709539544705,
       "renderer1:size": 8,
       "originalColor": "#0088cc",
-      "id": "n30"
+      "id": "n12"
     },
     {
       "label": "n13: networkConnection/Wi-Fi",
@@ -577,6 +577,29 @@
       "id": "n22"
     },
     {
+      "label": "n23: Constraint/physicalProtection",
+      "x": -12.285515694343667,
+      "y": 13.51612859204672,
+      "size": 5,
+      "color": "#df80ff",
+      "type": "diamond",
+      "originalColor": "#df80ff",
+      "info": {
+        "description": "physical protection",
+        "type": "constraint"
+      },
+      "read-cam0:size": 6,
+      "read-cam0:x": -88.76566688707662,
+      "read-cam0:y": 315.9827346076489,
+      "renderer1:x": 325.9721277208856,
+      "renderer1:y": 719.9470602657415,
+      "renderer1:size": 6,
+      "read_cam0:size": 6,
+      "read_cam0:x": -146.5278722791144,
+      "read_cam0:y": 331.94706026574147,
+      "id": "n23"
+    },
+    {
       "label": "n24: Actor/user",
       "x": 11.937803268432617,
       "y": 1.0719777345657349,
@@ -688,29 +711,6 @@
       "read_cam0:x": -11.877916044070094,
       "read_cam0:y": -343.68888754119433,
       "id": "n28"
-    },
-    {
-      "label": "n29: Constraint/physicalProtection",
-      "x": -12.285515694343667,
-      "y": 13.51612859204672,
-      "size": 5,
-      "color": "#df80ff",
-      "type": "diamond",
-      "originalColor": "#df80ff",
-      "info": {
-        "description": "physical protection",
-        "type": "constraint"
-      },
-      "read-cam0:size": 6,
-      "read-cam0:x": -88.76566688707662,
-      "read-cam0:y": 315.9827346076489,
-      "renderer1:x": 325.9721277208856,
-      "renderer1:y": 719.9470602657415,
-      "renderer1:size": 6,
-      "read_cam0:size": 6,
-      "read_cam0:x": -146.5278722791144,
-      "read_cam0:y": 331.94706026574147,
-      "id": "n29"
     }
   ],
   "edges": [
@@ -779,7 +779,7 @@
       "renderer1:size": 1,
       "size": "0.1",
       "read_cam0:size": 1,
-      "label": "request",
+      "label": "requests",
       "id": "e7",
       "source": "n5",
       "target": "n4"
@@ -912,7 +912,7 @@
       "label": "requests",
       "id": "e20",
       "source": "n5",
-      "target": "n30"
+      "target": "n12"
     },
     {
       "read-cam0:size": 1,
@@ -1140,13 +1140,12 @@
     },
     {
       "size": 0.1,
-      "read-cam0:size": 1,
-      "renderer1:size": 1,
+      "label": "mitigates",
       "read_cam0:size": 1,
-      "label": "belongs",
+      "renderer1:size": 1,
       "id": "e43",
-      "source": "n1",
-      "target": "n5"
+      "source": "n23",
+      "target": "n19"
     },
     {
       "size": 0.1,
@@ -1156,7 +1155,7 @@
       "label": "belongs",
       "id": "e44",
       "source": "n0",
-      "target": "n30"
+      "target": "n12"
     },
     {
       "size": 0.1,
@@ -1176,7 +1175,7 @@
       "label": "satisfies",
       "id": "e46",
       "source": "n22",
-      "target": "n29"
+      "target": "n23"
     },
     {
       "size": 0.1,
@@ -1185,7 +1184,7 @@
       "read_cam0:size": 1,
       "label": "imposes",
       "id": "e47",
-      "source": "n29",
+      "source": "n23",
       "target": "n10"
     },
     {
@@ -1197,15 +1196,6 @@
       "id": "e48",
       "source": "n8",
       "target": "n10"
-    },
-    {
-      "size": 0.1,
-      "label": "mitigates",
-      "read_cam0:size": 1,
-      "renderer1:size": 1,
-      "id": "e49",
-      "source": "n29",
-      "target": "n19"
     }
   ]
 }

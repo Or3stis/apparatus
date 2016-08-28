@@ -29,7 +29,7 @@ h3 {
   color: var(--blue-color);
   text-align: center;
 }
-.titleBar {
+.title-bar {
   position: relative;
   width: 100vw;
   height: 20px;
@@ -44,7 +44,7 @@ h3 {
   display: -webkit-flex;
   -webkit-flex-direction: row;
 }
-.actionBar {
+.action-bar {
   margin: 5px;
   width: 145px;
   display: block;
@@ -71,7 +71,7 @@ h3 {
 .components {
   margin: 5px;
 }
-#consoleID {
+#console-id {
   background-color: var(--main-graph-color);
   background-color: rgba(11, 10, 12, 0.1);
   margin: 5px;

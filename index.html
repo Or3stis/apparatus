@@ -10,15 +10,15 @@
 </head>
 
 <body>
-  <div class="titleBar" id="titleBarId"></div>
+  <div class="title-bar" id="title-bar-id"></div>
   <div class="window">
 
-    <div class="actionBar" id="actionBarId">
+    <div class="action-bar" id="action-bar-id">
       <h3>Control panel</h3>
 
-      <div class="components" id="componentsId">
+      <div class="components" id="components-id">
 
-        <select class="selection" required id="addStuff">
+        <select class="selection" required id="add-stuff">
           <!-- <option value="" disabled selected>add component</option> -->
           <option value="" selected>add component</option>
           <option value="device">device</option>
@@ -38,12 +38,12 @@
           <option value="net">net</option>
         </select>
 
-        <button class="button" id="addEdge">connection</button>
-        <button class="button" id="addOwnership">ownership</button>
-        <button class="button" id="deleteNode">delete node</button>
-        <button class="button" id="deleteEdge">delete edge</button>
+        <button class="button" id="add-edge">connection</button>
+        <button class="button" id="add-ownership">ownership</button>
+        <button class="button" id="delete-node">delete node</button>
+        <button class="button" id="delete-edge">delete edge</button>
 
-        <select class="selection" required id="selection">
+        <select class="selection" required id="selection-id">
           <option value="" disabled selected>Select component</option>
           <option value="device">device</option>
           <option value="data">data</option>
@@ -62,7 +62,7 @@
           <option value="net">net</option>
         </select>
 
-        <select class="selection" required id="moduleGroup">
+        <select class="selection" required id="module-group">
           <option value="" disabled selected>Select module</option>
           <option value="network">network</option>
           <option value="security">security</option>
@@ -71,28 +71,28 @@
           <option value="network-social">network-social</option>
         </select>
 
-        <button class="button" id="startAtlas">start atlas</button>
-        <button class="button" id="stopAtlas">stop atlas</button>
+        <button class="button" id="start-atlas">start atlas</button>
+        <button class="button" id="stop-atlas">stop atlas</button>
 
-        <button class="button" id="validateButton">validate security</button>
-        <button class="button" id="moduleValidateButton">validate instant</button>
+        <button class="button" id="validate-button">validate security</button>
+        <button class="button" id="module-validate-button">validate instant</button>
 
-        <button class="button" id="saveButton">save</button>
-        <button class="button" id="themeButton">theme</button>
-        <button class="button" id="testButton">test</button>
+        <button class="button" id="save-button">save</button>
+        <button class="button" id="theme-button">theme</button>
+        <button class="button" id="test-button">test</button>
 
       </div>
     </div>
 
     <div class="graph" id="graph-container"></div>
 
-    <div class="sidebar" id="sidebarId">
+    <div class="sidebar" id="sidebar-id">
       <h3>Info bar</h3>
-      <input type="text" placeholder="Enter command.." maxlength="15" id="consoleID" class="selection" />
-      <div id="infoForNodes"></div>
-      <div class="legend" id="legendId"></div>
+      <input type="text" placeholder="Enter command.." maxlength="15" id="console-id" class="selection" />
+      <div id="info-for-nodes"></div>
+      <div class="legend" id="legend-id"></div>
     </div>
-    <!-- <div class="footer" id="footerId"></div> -->
+    <!-- <div class="footer" id="footer-id"></div> -->
   </div>
 </body>
 

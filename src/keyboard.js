@@ -27,20 +27,20 @@ module.exports = function keyboard (s, addEdge, toggleSideBars, deleteNode, dele
 
     // hotkey to focus on the console
     if (event.metaKey === true && event.code === 'KeyL') {
-      document.getElementById('consoleID').focus()
+      document.getElementById('console-id').focus()
     }
     // stuff for the console
-    const input = document.getElementById('consoleID').value
+    const input = document.getElementById('console-id').value
     // listens for you to press the ENTER key
     if (event.code === 'Enter') {
       // console.log(input)
-      document.getElementById('consoleID').value = ''
+      document.getElementById('console-id').value = ''
       if (input === 'help' || input === 'options') {
-        document.getElementById('infoForNodes').innerHTML = helpMenu
+        document.getElementById('info-for-nodes').innerHTML = helpMenu
       } else if (input === 'validate') {
         moduleValidation(s)
       } else {
-        document.getElementById('infoForNodes').innerHTML = 'not valid'
+        document.getElementById('info-for-nodes').innerHTML = 'not valid'
       }
     }
   })

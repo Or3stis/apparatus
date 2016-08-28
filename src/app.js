@@ -18,7 +18,7 @@ const keyboard = require('./src/keyboard.js')
 
 // important, location of the json file for save
 const fileToLoad = 'json/small2.json'
-document.getElementById('titleBarId').innerHTML = `🚀 ${fileToLoad}`
+document.getElementById('title-bar-id').innerHTML = `🚀 ${fileToLoad}`
 
 // global variables
 // captures the id of last two selected nodes
@@ -30,23 +30,23 @@ let selectedEdge = ''
 let toggleTheme = false
 
 // test button, remove at some point
-// const buttonTest = document.getElementById('testButton')
+// const buttonTest = document.getElementById('test-button')
 
 // decleration of the buttons
-const buttonSave = document.getElementById('saveButton')
-const buttonTheme = document.getElementById('themeButton')
-const buttonValidate = document.getElementById('validateButton')
-const buttonModuleValidate = document.getElementById('moduleValidateButton')
-const buttonAddEdge = document.getElementById('addEdge')
-const buttonAddOwns = document.getElementById('addOwnership')
-const buttonDeleteNode = document.getElementById('deleteNode')
-const buttonDeleteEdge = document.getElementById('deleteEdge')
-const buttonStopAtlas = document.getElementById('stopAtlas')
-const buttonStartAtlas = document.getElementById('startAtlas')
+const buttonSave = document.getElementById('save-button')
+const buttonTheme = document.getElementById('theme-button')
+const buttonValidate = document.getElementById('validate-button')
+const buttonModuleValidate = document.getElementById('module-validate-button')
+const buttonAddEdge = document.getElementById('add-edge')
+const buttonAddOwns = document.getElementById('add-ownership')
+const buttonDeleteNode = document.getElementById('delete-node')
+const buttonDeleteEdge = document.getElementById('delete-edge')
+const buttonStopAtlas = document.getElementById('stop-atlas')
+const buttonStartAtlas = document.getElementById('start-atlas')
 
-const select = document.getElementById('selection')
-const moduleGroup = document.getElementById('moduleGroup')
-const addStuff = document.getElementById('addStuff')
+const select = document.getElementById('selection-id')
+const moduleGroup = document.getElementById('module-group')
+const addStuff = document.getElementById('add-stuff')
 
 // create the graph from the json file
 sigma.parsers.json(fileToLoad, {
@@ -56,7 +56,7 @@ sigma.parsers.json(fileToLoad, {
   },
   settings: {
     labelSize: 'fixed',
-    labelThreshold: 4,
+    labelThreshold: 9,
     edgeLabelSize: 'fixed',
     defaultLabelColor: '#94a4a5',
     defaultEdgeLabelColor: '#94a4a5',
@@ -95,8 +95,8 @@ sigma.parsers.json(fileToLoad, {
   s.bind('doubleClickStage', () => {
     returnColorNeighbor()
     // reset the component choice for the filters
-    document.getElementById('selection').selectedIndex = ''
-    document.getElementById('moduleGroup').selectedIndex = ''
+    document.getElementById('selection-id').selectedIndex = ''
+    document.getElementById('module-group').selectedIndex = ''
     selectedEdge = '' // deselect edge
     targetNode = '' // deselect node
     s.refresh()
@@ -163,21 +163,21 @@ sigma.parsers.json(fileToLoad, {
   select.addEventListener('change', (e) => {
     buttonSelection(e.target.value, s, toggleTheme) // module
     // reset moduleGroup selection
-    document.getElementById('moduleGroup').selectedIndex = ''
+    document.getElementById('module-group').selectedIndex = ''
   })
   // grouping of the modules
   moduleGroup.addEventListener('change', (input) => {
     returnColorNeighbor() // function
     moduleSelection(input, s, toggleTheme) // module
     // reset selection selection
-    document.getElementById('selection').selectedIndex = ''
+    document.getElementById('selection-id').selectedIndex = ''
   })
   addStuff.addEventListener('change', (e) => {
     addComponent(e.target.value, s)
-    document.getElementById('infoForNodes').innerHTML = `${e.target.value}
+    document.getElementById('info-for-nodes').innerHTML = `${e.target.value}
       component added`
     // reset the component choice
-    document.getElementById('addStuff').selectedIndex = ''
+    document.getElementById('add-stuff').selectedIndex = ''
   })
 
   // last stage refresh
@@ -202,35 +202,35 @@ sigma.parsers.json(fileToLoad, {
     // message displayed in the footer bar
     const selectedNodes = `source node: ${sourceNode.id} <br>
       targetNode: ${targetNode.id}`
-    document.getElementById('legendId').innerHTML = selectedNodes
+    document.getElementById('legend-id').innerHTML = selectedNodes
   }
 
   // function for node deletion
   const deleteNode = () => {
     if (targetNode === '') {
-      document.getElementById('infoForNodes').innerHTML = 'no node selected'
+      document.getElementById('info-for-nodes').innerHTML = 'no node selected'
     }
     s.graph.dropNode(targetNode.id)
-    document.getElementById('infoForNodes').innerHTML = `${targetNode.id}
+    document.getElementById('info-for-nodes').innerHTML = `${targetNode.id}
     deleted`
     s.refresh()
   }
   // function for edge deletion
   const deleteEdge = () => {
     if (selectedEdge === '') {
-      document.getElementById('infoForNodes').innerHTML = 'no edge selected'
+      document.getElementById('info-for-nodes').innerHTML = 'no edge selected'
     }
     s.graph.dropEdge(selectedEdge.data.edge.id)
-    document.getElementById('infoForNodes').innerHTML =
+    document.getElementById('info-for-nodes').innerHTML =
       `${selectedEdge.data.edge.id} deleted`
     s.refresh()
   }
 
   // toggles side divs
   const toggleSideBars = () => {
-    const sidebarStatus = document.getElementById('sidebarId')
-    const actionBarStatus = document.getElementById('actionBarId')
-    // const footerStatus = document.getElementById('footerId')
+    const sidebarStatus = document.getElementById('sidebar-id')
+    const actionBarStatus = document.getElementById('action-bar-id')
+    // const footerStatus = document.getElementById('footer-id')
     if (sidebarStatus.style.display === 'block') {
       sidebarStatus.style.display = 'none'
       actionBarStatus.style.display = 'none'
