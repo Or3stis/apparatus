@@ -1,3 +1,10 @@
+:root {
+  --main-bg-color: #3a4b54;
+  --main-tx-color: #e0e0e0;
+  --main-graph-color: #2e3f49;
+  --blue-color: #5eacf7;
+}
+
 @keyframes fadein {
   from {
     opacity: 0;
@@ -7,9 +14,9 @@
   }
 }
 body {
-  background: #3a4b54;
+  background: var(--main-bg-color);
   font-family: Menlo, monospace;
-  color: #e0e0e0;
+  color: var(--main-tx-color);
   height: 100vh;
   width: 100vw;
   margin: 0;
@@ -19,7 +26,7 @@ body {
   animation: fadein 0.4s;
 }
 h3 {
-  color: #5eacf7;
+  color: var(--blue-color);
   text-align: center;
 }
 .titleBar {
@@ -43,7 +50,7 @@ h3 {
   display: block;
 }
 .graph {
-  background: #2e3f49;
+  background: var(--main-graph-color);
   -webkit-flex: 1;
   /*disable text selection*/
   -webkit-user-select: none;
@@ -65,23 +72,22 @@ h3 {
   margin: 5px;
 }
 #consoleID {
-  background-color: #2e3f49;
+  background-color: var(--main-graph-color);
   background-color: rgba(11, 10, 12, 0.1);
   margin: 5px;
   /*border: 1px solid;*/
-  color: #f5f7fa;
+  color: var(--main-tx-color);
 }
 .legend {
   bottom: 0;
   height: 50px;
   position: absolute;
-  /*background-color: red;*/
 }
 .button {
-  background-color: #5eacf7;
+  background-color: var(--main-bg-color);
   background-color: rgba(58, 75, 84, 0.1);
   margin: 3px;
-  color: #e0e0e0;
+  color: var(--main-tx-color);
   width: 130px;
   height: 45px;
   /*border-radius: 20px;*/
@@ -91,7 +97,7 @@ h3 {
   cursor: pointer;
 }
 .button:hover {
-  background-color: #5eacf7;
+  background-color: var(--blue-color);
 }
 
 /*.button:focus, .selection:focus {
@@ -103,7 +109,7 @@ h3 {
   margin-top: 4px;
   margin-bottom: 4px;
   font-size: 12px;
-  background-color: #5eacf7;
+  background-color: var(--main-bg-color);
   background-color: rgba(58, 75, 84, 0.1);
   color: #e0e0e0;
 }

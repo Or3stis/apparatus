@@ -55,16 +55,16 @@ sigma.parsers.json(fileToLoad, {
     type: 'canvas'
   },
   settings: {
-    // defaultLableSize: 25,
-    // labelSize: 'fixed',
+    labelSize: 'fixed',
     labelThreshold: 4,
-    // edgeLabelSize: 'fixed',
+    edgeLabelSize: 'fixed',
     defaultLabelColor: '#94a4a5',
     defaultEdgeLabelColor: '#94a4a5',
     mouseWheelEnabled: false,
     // must enable canvas in type for edge hovering
     enableEdgeHovering: true,
     edgeHoverSizeRatio: 2,
+    edgeHoverExtremities: true,
     doubleClickEnabled: false,
     enableCamera: false // does not move the graph in the container
   }
