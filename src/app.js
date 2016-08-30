@@ -211,8 +211,8 @@ sigma.parsers.json(fileToLoad, {
       document.getElementById('info-for-nodes').innerHTML = 'no node selected'
     }
     s.graph.dropNode(targetNode.id)
-    document.getElementById('info-for-nodes').innerHTML = `${targetNode.id}
-    deleted`
+    document.getElementById('info-for-nodes').innerHTML =
+      `${targetNode.id} deleted`
     s.refresh()
   }
   // function for edge deletion
