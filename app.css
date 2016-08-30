@@ -24,6 +24,8 @@ body {
   font-size: 13px;
   /* Smoother startup */
   animation: fadein 0.4s;
+  /*disable text selection*/
+  -webkit-user-select: none;
 }
 h3 {
   color: var(--blue-color);
@@ -52,8 +54,6 @@ h3 {
 .graph {
   background: var(--main-graph-color);
   -webkit-flex: 1;
-  /*disable text selection*/
-  -webkit-user-select: none;
 }
 .sidebar {
   margin: 5px;
