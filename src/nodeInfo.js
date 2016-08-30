@@ -6,10 +6,10 @@ module.exports = function nodeInfo (n) {
   Object.keys(n.data.node.info).map((i) => {
     // adds the keys of the object to the string
     if (n.data.node.info.hasOwnProperty(i)) {
-      nodeInfo = `${nodeInfo} > ${i}: `
+      nodeInfo = `${nodeInfo} • ${i}:`
     }
     // adds the values of the object to the string
-    nodeInfo = `${nodeInfo} ${n.data.node.info[i]} <br/>`
+    nodeInfo = `${nodeInfo} ${n.data.node.info[i]}<br/>`
   })
   // appends info to the div
   document.getElementById('info-for-nodes').innerHTML = nodeInfo
