@@ -8,7 +8,7 @@ const moduleValidation = require('./moduleValidation.js')
 // help menu
 const helpMenu = 'only validate works'
 
-module.exports = function keyboard (s, addEdge, toggleSideBars, deleteNode, deleteEdge) {
+module.exports = function keyboard (s, addEdge, toggleUI, deleteNode, deleteEdge) {
   document.addEventListener('keydown', (event) => {
     // console.log(event.code)
 
@@ -18,7 +18,7 @@ module.exports = function keyboard (s, addEdge, toggleSideBars, deleteNode, dele
       addEdge(s, sourceNode, targetNode, lastEdge) // module
       lastEdge = s.graph.edges().length
     } else if (event.altKey === true && event.code === 'KeyH') {
-      toggleSideBars()
+      toggleUI()
     }
     // Backspace deletion of nodes and edges
     if (event.code === 'Backspace') {

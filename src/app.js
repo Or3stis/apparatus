@@ -227,7 +227,7 @@ sigma.parsers.json(fileToLoad, {
   }
 
   // toggles side divs
-  const toggleSideBars = () => {
+  const toggleUI = () => {
     const sidebarStatus = document.getElementById('sidebar-id')
     const actionBarStatus = document.getElementById('action-bar-id')
     const titleBarStatus = document.getElementById('title-bar-id')
@@ -247,5 +247,5 @@ sigma.parsers.json(fileToLoad, {
   }
 
   // enable keyboard shortcuts
-  keyboard(s, addEdge, toggleSideBars, deleteNode, deleteEdge)
+  keyboard(s, addEdge, toggleUI, deleteNode, deleteEdge)
 })
