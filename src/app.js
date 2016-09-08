@@ -230,14 +230,17 @@ sigma.parsers.json(fileToLoad, {
   const toggleSideBars = () => {
     const sidebarStatus = document.getElementById('sidebar-id')
     const actionBarStatus = document.getElementById('action-bar-id')
+    const titleBarStatus = document.getElementById('title-bar-id')
     // const footerStatus = document.getElementById('footer-id')
     if (sidebarStatus.style.display === 'block') {
       sidebarStatus.style.display = 'none'
       actionBarStatus.style.display = 'none'
+      titleBarStatus.style.display = 'none'
       // footerStatus.style.display = 'none'
     } else {
       sidebarStatus.style.display = 'block'
       actionBarStatus.style.display = 'block'
+      titleBarStatus.style.display = 'block'
       // footerStatus.style.display = 'block'
     }
     s.refresh()
