@@ -56,7 +56,7 @@ sigma.parsers.json(fileToLoad, {
   },
   settings: {
     labelSize: 'fixed',
-    labelThreshold: 9,
+    labelThreshold: 3,
     edgeLabelSize: 'fixed',
     defaultLabelColor: '#94a4a5',
     defaultEdgeLabelColor: '#94a4a5',

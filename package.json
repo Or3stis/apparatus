@@ -1,6 +1,6 @@
 {
   "name": "apparatus",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "network security analyser",
   "main": "main.js",
   "scripts": {
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/"
+    "url": "git+https://github.com/Or3stis/apparatus"
   },
   "keywords": [
     "Electron",
@@ -18,11 +18,11 @@
   "author": "or3stis",
   "license": "CC0-1.0",
   "bugs": {
-    "url": "https://github.com//issues"
+    "url": "https://github.com/Or3stis/apparatus//issues"
   },
-  "homepage": "https://github.com/#readme",
+  "homepage": "https://github.com/Or3stis/apparatus/#readme",
   "devDependencies": {
-    "electron": "^1.3.5",
+    "electron": "^1.4.2",
     "jsonfile": "^2.3.1"
   }
 }
