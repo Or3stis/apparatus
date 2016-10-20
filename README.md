@@ -1,6 +1,6 @@
 # Graphical network security analysis tool
 
-[![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](http://standardjs.com/)
+[![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](http://standardjs.com/) ![](https://travis-ci.org/Or3stis/apparatus.svg?branch=master)
 
 A graphical security analysis tool for networks based on
 [electron](http://electron.atom.io/) and
