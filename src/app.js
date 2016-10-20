@@ -17,7 +17,7 @@ const switchTheme = require('./src/switchTheme.js')
 const keyboard = require('./src/keyboard.js')
 
 // important, location of the json file for save
-const fileToLoad = 'json/small2.json'
+const fileToLoad = 'json/large.json'
 document.getElementById('title-bar-id').innerHTML = `🚀 ${fileToLoad}`
 
 // global variables
@@ -56,7 +56,7 @@ sigma.parsers.json(fileToLoad, {
   },
   settings: {
     labelSize: 'fixed',
-    labelThreshold: 3,
+    labelThreshold: 9,
     edgeLabelSize: 'fixed',
     defaultLabelColor: '#94a4a5',
     defaultEdgeLabelColor: '#94a4a5',
