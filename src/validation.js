@@ -19,7 +19,7 @@ module.exports = function validation (s) {
       Object.keys(neighborNodes).map((i) => {
         if (neighborNodes[i].info.type === 'constraint') {
           arrMitigated.push(n.id)
-          result = `${result} > Threat ${n.id} is mitigated by constraint
+          result = `${result} • Threat ${n.id} is mitigated by constraint
           ${neighborNodes[i].id} <br/>`
         }
       })
@@ -29,11 +29,11 @@ module.exports = function validation (s) {
   const setMitigated = new Set(arrMitigated)
   const threats = new Set([...arrThreat].filter(x => !setMitigated.has(x)))
   Object.keys(threats).map((i) => {
-    result = `${result} > Threat ${i} is not mitigated <br/>`
+    result = `${result} • Threat ${i} is not mitigated <br/>`
   })
 
   // result will be displayed at info-for-nodes div
-  result = `${result} > Threats total: ${arrThreat.length} <br/>`
-  result = `${result} > Mitigated total: ${arrMitigated.length} <br/>`
+  result = `${result} • Threats total: ${arrThreat.length} <br/>`
+  result = `${result} • Mitigated total: ${arrMitigated.length} <br/>`
   document.getElementById('info-for-nodes').innerHTML = result
 }

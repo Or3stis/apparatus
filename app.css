@@ -16,7 +16,7 @@
 }
 body {
   background: var(--main-bg-color);
-  font-family: Menlo, monospace;
+  font-family: Monaco, Menlo, Consolas, monospace;
   color: var(--main-tx-color);
   height: 100vh;
   width: 100vw;

@@ -60,13 +60,13 @@ sigma.parsers.json(fileToLoad, {
     edgeLabelSize: 'fixed',
     defaultLabelColor: '#94a4a5',
     defaultEdgeLabelColor: '#94a4a5',
-    mouseWheelEnabled: false,
+    // mouseWheelEnabled: true,
     // must enable canvas in type for edge hovering
     enableEdgeHovering: true,
     edgeHoverSizeRatio: 2,
     edgeHoverExtremities: true,
     doubleClickEnabled: false,
-    enableCamera: false // does not move the graph in the container
+    enableCamera: true // does not move the graph in the container
   }
 }, (s) => {
   // store the initial colors of the nodes and edges
