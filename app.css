@@ -1,9 +1,9 @@
 :root {
-  --main-bg-color: #3a4b54;
+  --main-bg-color: #2e3440;
   --main-tx-color: #e0e0e0;
-  --main-graph-color: #2e3f49;
+  --main-graph-color: #3b4251;
   /*--main-graph-color: #fff;*/
-  --blue-color: #5eacf7;
+  --blue-color: #82a2c0;
 }
 
 @keyframes fadein {
@@ -74,7 +74,7 @@ h3 {
 }
 #console-id {
   background-color: var(--main-graph-color);
-  background-color: rgba(11, 10, 12, 0.1);
+  background-color: rgba(59, 66, 81, 0.1);
   margin: 5px;
   /*border: 1px solid;*/
   color: var(--main-tx-color);
@@ -86,7 +86,7 @@ h3 {
 }
 .button {
   background-color: var(--main-bg-color);
-  background-color: rgba(58, 75, 84, 0.1);
+  background-color: rgba(46, 52, 64, 0.1);
   margin: 3px;
   color: var(--main-tx-color);
   width: 130px;
@@ -111,8 +111,8 @@ h3 {
   margin-bottom: 4px;
   font-size: 12px;
   background-color: var(--main-bg-color);
-  background-color: rgba(58, 75, 84, 0.1);
-  color: #e0e0e0;
+  background-color: rgba(46, 52, 64, 0.1);
+  color: var(--main-tx-color);
 }
 
 /*select:required:invalid {

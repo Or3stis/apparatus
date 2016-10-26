@@ -1,9 +1,9 @@
 'use strict'
 
-const darkWhite = '#ecf0f1'
-const white = '#f5f5f5'
-const black = '#3a4b54'
-const deepBlack = '#2e3f49'
+const white = '#e5e9f0'
+const darkWhite = '#eceff4'
+const black = '#3b4251'
+const deepBlack = '#2e3440'
 const veryLightGray = '#e0e0e0'
 
 // when buton class is clicked the corresponing nodes are highlighted

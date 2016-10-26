@@ -19,4 +19,23 @@ http://chriskempson.github.io/base16/#flat
 0. cyan: #29bb9c  
 0. blue: #3a99d8  
 0. purple: #9a5cb4  
-0. brown: #bc6441  
+0. brown: #bc6441
+
+### Nord color theme
+
+1. dark-black: #2e3440
+1. black: #3b4251
+1. light-black: #434c5d
+1. very-light-black: #4c5660
+1. gray: #d8dee9
+1. light-gray: #e5e9f0
+1. light: #eceff4
+1. cyan: #90bcbb
+1. light-blue: #8ac0cf
+1. blue: #82a2c0
+1. dark-blue: #5f82aa
+1. red: #5d626b
+1. orange: #cf8772
+1. yellow: #eaca8f
+1. green: #a4bd8e
+1. purple: #b38fac

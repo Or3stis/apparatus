@@ -1,11 +1,11 @@
 'use strict'
 
-const blue = '#3a99d8'
-const red = '#e54d42'
-const orange = '#e47e30'
-const green = '#39ca74'
-const yellow = '#e47e30'
-const gray = '#94a4a5'
+const blue = '#82a2c0'
+const red = '#5d626b'
+const orange = '#cf8772'
+const green = '#a4bd8e'
+const yellow = '#eaca8f'
+const gray = '#d8dee9'
 
 let color = '#ffffff'
 let type = 'circle'
