@@ -1,14 +1,14 @@
+const config = require('./config')
+
 'use strict'
 
-// // values of the color themes
-const dark = '#424A57'
-const light = '#e0e0e0'
+// values of the color themes
 let shadowColor = ''
 
 // when buton class is clicked the corresponing nodes are highlighted
 module.exports = function buttonSelection (classification, s, toggleTheme) {
   // detects color theme
-  shadowColor = (toggleTheme === true) ? light : dark
+  shadowColor = (toggleTheme === true) ? config.lightLine : config.darkLine
 
   let nodes = ''
 

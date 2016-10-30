@@ -38,6 +38,7 @@ h3 {
   height: 20px;
   cursor: pointer;
   text-align: center;
+  opacity: 0.8;
   /*can only drag window from title bar*/
   -webkit-app-region: drag
 }
@@ -50,6 +51,7 @@ h3 {
 .action-bar {
   margin: 5px;
   width: 145px;
+  opacity: 0.8;
   display: block;
 }
 .graph {
@@ -59,7 +61,7 @@ h3 {
 .sidebar {
   margin: 5px;
   width: 170px;
-  display: block;
+  opacity: 0.8;
 }
 /*.footer {
   bottom: 0;

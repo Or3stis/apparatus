@@ -1,12 +1,8 @@
+const config = require('./config')
+
 'use strict'
 
-const blue = '#82a2c0'
-const red = '#5d626b'
-const orange = '#cf8772'
-const green = '#a4bd8e'
-const yellow = '#eaca8f'
-const gray = '#d8dee9'
-
+// initial values
 let color = '#ffffff'
 let type = 'circle'
 let size = 5
@@ -17,77 +13,77 @@ module.exports = function addComponent (component, s) {
 
   switch (component) {
     case 'device':
-      color = blue
+      color = config.blue
       type = 'circle'
       size = 5
       break
     case 'network connection':
-      color = blue
+      color = config.blue
       type = 'diamond'
       size = 5
       break
     case 'micronet':
-      color = blue
+      color = config.blue
       type = 'triangle'
       size = 7
       break
     case 'data':
-      color = blue
+      color = config.blue
       type = 'square'
       size = 5
       break
     case 'net':
-      color = gray
+      color = config.gray
       type = 'triangle'
       size = 7
       break
     case 'unidentified node':
-      color = gray
+      color = config.gray
       type = 'circle'
       size = 5
       break
     case 'actor':
-      color = yellow
+      color = config.yellow
       type = 'actor'
       size = 5
       break
     case 'malicious actor':
-      color = red
+      color = config.red
       type = 'actor'
       size = 5
       break
     case 'secure micronet':
-      color = green
+      color = config.green
       type = 'triangle'
       size = 7
       break
     case 'asset':
-      color = orange
+      color = config.orange
       type = 'hourglass'
       size = 5
       break
     case 'constraint':
-      color = green
+      color = config.green
       type = 'equilateral'
       size = 5
       break
     case 'mechanism':
-      color = green
+      color = config.green
       type = 'circle'
       size = 5
       break
     case 'threat':
-      color = red
+      color = config.red
       type = 'diamond'
       size = 5
       break
     case 'vulnerability':
-      color = red
+      color = config.red
       type = 'circle'
       size = 5
       break
     case 'objective':
-      color = green
+      color = config.green
       type = 'square'
       size = 5
       break

@@ -1,8 +1,8 @@
+const config = require('./config')
+
 'use strict'
 
 // values of the color themes
-const dark = '#424A57'
-const light = '#e0e0e0'
 let shadowColor = ''
 
 // grouping of the module components
@@ -17,7 +17,7 @@ const socialArray = ['actor']
 // when buton class is clicked the corresponing nodes are highlighted
 module.exports = function moduleSelection (input, s, toggleTheme) {
   // detects color theme
-  shadowColor = (toggleTheme === true) ? light : dark
+  shadowColor = (toggleTheme === true) ? config.lightLine : config.darkLine
 
   switch (input.target.value) {
     case 'network':

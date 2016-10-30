@@ -1,7 +1,7 @@
+const config = require('./config')
+
 'use scrict'
 
-const dark = '#424A57'
-const light = '#e0e0e0'
 let shadowColor = ''
 
 // when a node is clicked the neighbors is checked
@@ -9,7 +9,7 @@ let shadowColor = ''
 // needs the sigmaNeighbor.js to work
 module.exports = function showNeighbor (e, s, toggleTheme) {
   // detects color theme
-  shadowColor = (toggleTheme === true) ? light : dark
+  shadowColor = (toggleTheme === true) ? config.lightLine : config.darkLine
 
   let nodeId = e.data.node.id
   let toKeep = s.graph.neighbors(nodeId)
