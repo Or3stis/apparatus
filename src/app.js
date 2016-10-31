@@ -4,6 +4,7 @@
 'use strict'
 
 const nodeInfo = require('./src/nodeInfo.js')
+const hoverNodeInfo = require('./src/hoverNodeInfo.js')
 const showNeighbor = require('./src/showNeighbor.js')
 const validation = require('./src/validation.js')
 const moduleValidation = require('./src/moduleValidation.js')
@@ -104,6 +105,12 @@ sigma.parsers.json(fileToLoad, {
   s.bind('rightClickNode', (n) => {
     window.alert('right click works')
     s.refresh()
+  })
+  s.bind('overNode', (n) => {
+    hoverNodeInfo(n)
+  })
+  s.bind('outNode', (n) => {
+    document.getElementById('container-node-id').style.display = 'none'
   })
   // functions when the stage is clicked
   // s.bind('clickStage', () => {

@@ -128,3 +128,19 @@ option[value=""][disabled] {
 /*option {
   color: #94a4a5;
 }*/
+
+.container-node {
+  position: absolute;
+  font-size: 10px;
+  width: 160px;
+  height: 180px;
+  border-radius: 10px;
+  background: black;
+  opacity: 0.5;
+  display: none;
+}
+.container-node-info {
+  height: 95%;
+  width: 95%;
+  margin: 5px;
+}
