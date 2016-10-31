@@ -78,6 +78,7 @@ h3 {
   background-color: var(--main-graph-color);
   background-color: rgba(59, 66, 81, 0.1);
   margin: 5px;
+  margin-bottom: 15px;
   /*border: 1px solid;*/
   color: var(--main-tx-color);
 }
@@ -138,8 +139,10 @@ option[value=""][disabled] {
   background: black;
   opacity: 0.5;
   display: none;
+  margin: 10px;
 }
 .container-node-info {
+  color: var(--main-tx-color);
   height: 95%;
   width: 95%;
   margin: 5px;
