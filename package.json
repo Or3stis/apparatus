@@ -1,7 +1,7 @@
 {
   "name": "apparatus",
   "version": "0.3.0",
-  "description": "network security analyser",
+  "description": "a network security visualiser",
   "main": "main.js",
   "scripts": {
     "start": "electron main.js"
