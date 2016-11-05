@@ -116,6 +116,7 @@ h3 {
   background-color: var(--main-bg-color);
   background-color: rgba(46, 52, 64, 0.1);
   color: var(--main-tx-color);
+  border: none;
 }
 
 /*select:required:invalid {
@@ -132,7 +133,7 @@ option[value=""][disabled] {
 
 .container-node {
   position: absolute;
-  font-size: 10px;
+  font-size: 11px;
   width: 160px;
   height: 180px;
   border-radius: 10px;

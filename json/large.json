@@ -14,7 +14,6 @@
         "aspect": "physical",
         "layer": "application",
         "nodeType": "server",
-        "trust": "3",
         "attribute": "process",
         "input": "dataDigital",
         "output": "dataDigital"
@@ -42,7 +41,6 @@
         "aspect": "physical",
         "layer": "gateway",
         "nodeType": "router",
-        "trust": "3",
         "attribute": "relay",
         "input": "dataDigital",
         "output": "dataDigital"
@@ -70,7 +68,6 @@
         "aspect": "physical",
         "layer": "perception",
         "nodeType": "actuator",
-        "trust": "3",
         "attribute": "listener",
         "input": "command",
         "output": "physicalAction"
@@ -98,7 +95,6 @@
         "aspect": "physical",
         "layer": "perception",
         "nodeType": "mobilePhone",
-        "trust": "3",
         "attribute": "bipolar",
         "input": "dataDigital",
         "output": "dataDigital"
@@ -775,7 +771,6 @@
         "aspect": "physical",
         "layer": "perception",
         "nodeType": "mobilePhone",
-        "trust": "3",
         "attribute": "bipolar",
         "input": "dataDigital",
         "output": "dataDigital"
