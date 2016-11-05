@@ -34,7 +34,7 @@ http://chriskempson.github.io/base16/#flat
 1. light-blue: #8ac0cf
 1. blue: #82a2c0
 1. dark-blue: #5f82aa
-1. red: #5d626b
+1. red: #bd626b
 1. orange: #cf8772
 1. yellow: #eaca8f
 1. green: #a4bd8e
