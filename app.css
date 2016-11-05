@@ -1,7 +1,8 @@
 :root {
   --main-bg-color: #2e3440;
   --main-tx-color: #e0e0e0;
-  --main-graph-color: #3b4251;
+  /*--main-graph-color: #3b4251;*/
+  /*--main-graph-color: #2e3440;*/
   /*--main-graph-color: #fff;*/
   --blue-color: #82a2c0;
 }
@@ -55,7 +56,7 @@ h3 {
   display: block;
 }
 .graph {
-  background: var(--main-graph-color);
+  background: var(--main-bg-color);
   -webkit-flex: 1;
 }
 .sidebar {
@@ -75,7 +76,7 @@ h3 {
   margin: 5px;
 }
 #console-id {
-  background-color: var(--main-graph-color);
+  background-color: var(--main-bg-color);
   background-color: rgba(59, 66, 81, 0.1);
   margin: 5px;
   margin-bottom: 15px;

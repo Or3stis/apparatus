@@ -7,7 +7,7 @@ module.exports = {
   switchLightTheme: () => {
     document.getElementsByTagName('body')[0].style.background = config.white
     document.getElementsByTagName('body')[0].style.color = config.black
-    document.getElementsByClassName('graph')[0].style.background = config.darkWhite
+    document.getElementsByClassName('graph')[0].style.background = config.white
     // document.getElementsByClassName('footer')[0].style.background = darkWhite
 
     let buttonValues = document.getElementsByClassName('button')
@@ -22,7 +22,7 @@ module.exports = {
   },
 
   switchThemeDark: () => {
-    document.getElementsByTagName('body')[0].style.background = config.black
+    document.getElementsByTagName('body')[0].style.background = config.deepBlack
     document.getElementsByTagName('body')[0].style.color = config.veryLightGray
     document.getElementsByClassName('graph')[0].style.background = config.deepBlack
     // document.getElementsByClassName('footer')[0].style.background = black
