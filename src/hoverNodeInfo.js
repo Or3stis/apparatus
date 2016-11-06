@@ -2,6 +2,7 @@
 
 const containerNode = document.getElementById('container-node-id')
 const containerNodeInfo = document.getElementById('container-node-info-id')
+
 // shows info of node in the div 'info-for-nodes'
 module.exports = function nodeInfo (n) {
   let nodeInfo = ''
