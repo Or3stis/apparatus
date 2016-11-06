@@ -18,7 +18,7 @@ const switchTheme = require('./src/switchTheme.js')
 const keyboard = require('./src/keyboard.js')
 
 // important, location of the json file for save
-const fileToLoad = 'json/large.json'
+const fileToLoad = 'json/temperatureMonitor.json'
 document.getElementById('title-bar-id').innerHTML = `🚀 ${fileToLoad}`
 
 // global variables

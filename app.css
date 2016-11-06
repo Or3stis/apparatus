@@ -15,6 +15,7 @@
     opacity: 1;
   }
 }
+
 body {
   background: var(--main-bg-color);
   font-family: Monaco, Menlo, Consolas, monospace;
