@@ -2,11 +2,15 @@
 // keyboard shortcuts
 
 // cmd + l, bring the console to focus
-// cmd + e, add edge
+// alt + e, add edge
+// backspace, delete node/edge
+
 const moduleValidation = require('./moduleValidation.js')
 
 // help menu
-const helpMenu = 'only validate works'
+const helpMenu = `help: for options<br/> validate: to validate
+module<br/>alt + e: add an edge<br/>backspace: delete node/edge<br/>alt + h:
+toggle UI<br/>meta + l: focus on console<br/>`
 
 module.exports = function keyboard (s, addEdge, toggleUI, deleteNode, deleteEdge) {
   document.addEventListener('keydown', (event) => {
@@ -40,7 +44,7 @@ module.exports = function keyboard (s, addEdge, toggleUI, deleteNode, deleteEdge
       } else if (input === 'validate') {
         moduleValidation(s)
       } else {
-        document.getElementById('info-for-nodes').innerHTML = 'not valid'
+        document.getElementById('info-for-nodes').innerHTML = 'not valid command'
       }
     }
   })
