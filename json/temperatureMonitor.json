@@ -131,6 +131,7 @@
       "y": -6.386094660388386,
       "size": 7,
       "color": "#82a2c0",
+      "type": "triangle",
       "info": {
         "description": "temperature monitor system",
         "type": "micronet",
@@ -154,6 +155,7 @@
       "y": -15.541389465332031,
       "size": 7,
       "color": "#d8dee9",
+      "type": "triangle",
       "info": {
         "description": "Internet",
         "type": "net"
@@ -200,7 +202,7 @@
       "y": 1.1763397987077546,
       "size": 5,
       "color": "#bd626b",
-      "type": "diamond",
+      "type": "circle",
       "info": {
         "description": "no data sanitation",
         "type": "vulnerability"
@@ -223,7 +225,7 @@
       "y": 4.6195524782411574,
       "size": 5,
       "color": "#a4bd8e",
-      "type": "diamond",
+      "type": "equilateral",
       "info": {
         "description": "Environmental data should not tamper with the system",
         "type": "constraint"
@@ -246,7 +248,7 @@
       "y": 3.0303773953795883,
       "size": 5,
       "color": "#a4bd8e",
-      "type": "diamond",
+      "type": "circle",
       "info": {
         "description": "data sanitation at destination",
         "type": "mechanism"
@@ -269,7 +271,7 @@
       "y": 7.056287605295566,
       "size": 7,
       "color": "#a4bd8e",
-      "type": "diamond",
+      "type": "triangle",
       "info": {
         "description": "smart home policy",
         "type": "secure micronet"
@@ -292,7 +294,7 @@
       "y": 8.307375482925487,
       "size": 5,
       "color": "#a4bd8e",
-      "type": "diamond",
+      "type": "square",
       "info": {
         "description": "integrity",
         "property": "integrity",
@@ -316,6 +318,7 @@
       "y": -19.390388262831777,
       "size": 7,
       "color": "#82a2c0",
+      "type": "triangle",
       "info": {
         "description": "service provider network",
         "type": "micronet",
@@ -336,6 +339,7 @@
       "y": -3.276372277195401,
       "size": 5,
       "color": "#82a2c0",
+      "type": "diamond",
       "info": {
         "description": "wireless",
         "type": "network connection",
@@ -359,6 +363,7 @@
       "y": -7.4038219857969985,
       "size": 5,
       "color": "#82a2c0",
+      "type": "diamond",
       "info": {
         "description": "wireless",
         "type": "network connection",
@@ -382,7 +387,7 @@
       "y": -10.796246403825709,
       "size": 5,
       "color": "#cf8772",
-      "type": "diamond",
+      "type": "hourglass",
       "info": {
         "description": "Sensor data",
         "type": "asset"
@@ -405,7 +410,7 @@
       "y": 3.338855337960581,
       "size": 5,
       "color": "#cf8772",
-      "type": "diamond",
+      "type": "hourglass",
       "info": {
         "description": "device",
         "type": "asset"
@@ -512,7 +517,7 @@
       "y": 11.568011283874512,
       "size": 5,
       "color": "#bd626b",
-      "type": "diamond",
+      "type": "circle",
       "info": {
         "description": "physical access",
         "type": "vulnerability"
@@ -535,7 +540,7 @@
       "y": 14.508207077846386,
       "size": 5,
       "color": "#a4bd8e",
-      "type": "diamond",
+      "type": "circle",
       "info": {
         "description": "guard access",
         "type": "mechanism"
@@ -558,7 +563,7 @@
       "y": 16.070174287412065,
       "size": 5,
       "color": "#a4bd8e",
-      "type": "diamond",
+      "type": "square",
       "info": {
         "description": "availability",
         "type": "objective",
@@ -582,7 +587,7 @@
       "y": 13.51612859204672,
       "size": 5,
       "color": "#a4bd8e",
-      "type": "diamond",
+      "type": "equilateral",
       "originalColor": "#a4bd8e",
       "info": {
         "description": "physical protection",
@@ -651,6 +656,7 @@
       "y": -9.608897857515661,
       "size": 5,
       "color": "#d8dee9",
+      "type": "circle",
       "info": {
         "type": "unidentified node"
       },
@@ -672,6 +678,7 @@
       "y": -16.563367914474515,
       "size": 5,
       "color": "#82a2c0",
+      "type": "square",
       "info": {
         "description": "device generated data",
         "location": "local",

@@ -19,7 +19,7 @@ const keyboard = require('./src/keyboard.js')
 
 // important, location of the json file for save
 const fileToLoad = 'json/temperatureMonitor.json'
-document.getElementById('title-bar-id').innerHTML = `🚀 ${fileToLoad}`
+document.getElementById('title-bar-id').innerHTML = `⟩${fileToLoad}⟨`
 
 // global variables
 // captures the id of last two selected nodes
