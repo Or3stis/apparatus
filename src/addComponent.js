@@ -13,7 +13,7 @@ module.exports = function addComponent (component, s) {
 
   switch (component) {
     case 'device':
-      color = config.red
+      color = config.blue
       type = 'circle'
       size = 5
       break

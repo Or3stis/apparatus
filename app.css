@@ -105,10 +105,6 @@ h3 {
   background-color: var(--blue-color);
 }
 
-/*.button:focus, .selection:focus {
-  outline: none;
-}*/
-
 .selection {
   width: 130px;
   margin-top: 4px;
@@ -118,6 +114,15 @@ h3 {
   background-color: rgba(46, 52, 64, 0.1);
   color: var(--main-tx-color);
   border: none;
+}
+
+/*remove the blue outline box of chrome*/
+.button:focus, .selection:focus {
+  outline: none;
+}
+/*flash color when clicked*/
+.button:active, .selection:active {
+  background-color: var(--main-tx-color);
 }
 
 /*select:required:invalid {

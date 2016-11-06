@@ -15,7 +15,7 @@ module.exports = function buttonSelection (classification, s, toggleTheme) {
   s.graph.nodes().map((n) => {
     if (n.info.type === classification) {
       n.color = n.originalColor
-      nodes = `${nodes} > ${n.label} <br/>`
+      nodes = `${nodes} • ${n.label} <br/>`
     } else {
       n.color = shadowColor
     }
