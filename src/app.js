@@ -164,7 +164,7 @@ sigma.parsers.json(fileToLoad, {
     s.startForceAtlas2()
   })
   buttonTest.addEventListener('click', () => {
-    securityHints(s) // module
+    securityHints(s, toggleTheme) // module
   })
 
   // for the filter selection
