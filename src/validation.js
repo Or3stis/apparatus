@@ -27,7 +27,10 @@ module.exports = function validation (s) {
   })
   // checks the arrays to see which threat is not mitigated
   const setMitigated = new Set(arrMitigated)
-  const threats = new Set([...arrThreat].filter(x => !setMitigated.has(x)))
+  const threats = new Set([...arrThreat].filter((x) => {
+    !setMitigated.has(x)
+  }))
+
   Object.keys(threats).map((i) => {
     result = `${result} • Threat ${i} is not mitigated <br/>`
   })
