@@ -16,6 +16,7 @@ const addEdge = require('./src/addEdge.js')
 const addOwnership = require('./src/addOwnership.js')
 const switchTheme = require('./src/switchTheme.js')
 const keyboard = require('./src/keyboard.js')
+const securityHints = require('./src/securityHints.js')
 
 // important, location of the json file for save
 const fileToLoad = 'json/temperatureMonitor.json'
@@ -31,7 +32,7 @@ let selectedEdge = ''
 let toggleTheme = false
 
 // test button, remove at some point
-// const buttonTest = document.getElementById('test-button')
+const buttonTest = document.getElementById('test-button')
 
 // decleration of the buttons
 const buttonSave = document.getElementById('save-button')
@@ -162,9 +163,9 @@ sigma.parsers.json(fileToLoad, {
   buttonStartAtlas.addEventListener('click', () => {
     s.startForceAtlas2()
   })
-  // buttonTest.addEventListener('click', () => {
-  //
-  // })
+  buttonTest.addEventListener('click', () => {
+    securityHints(s) // module
+  })
 
   // for the filter selection
   select.addEventListener('change', (e) => {
