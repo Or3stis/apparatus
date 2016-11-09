@@ -1,6 +1,6 @@
 'use strict'
 
-const config = require('././config')
+const config = require('./config')
 
 // checks the values of the nodes for flagged values
 const flaggedList = ['wireless']

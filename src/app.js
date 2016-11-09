@@ -16,10 +16,11 @@ const addEdge = require('./src/addEdge.js')
 const addOwnership = require('./src/addOwnership.js')
 const switchTheme = require('./src/switchTheme.js')
 const keyboard = require('./src/keyboard.js')
-const securityHints = require('./src/securityHints.js')
+const flagNodes = require('./src/flagNodes.js')
+const config = require('./src/config.js')
 
 // important, location of the json file for save
-const fileToLoad = 'json/temperatureMonitor.json'
+const fileToLoad = 'json/large.json'
 document.getElementById('title-bar-id').innerHTML = `⟩${fileToLoad}⟨`
 
 // global variables
@@ -32,7 +33,7 @@ let selectedEdge = ''
 let toggleTheme = false
 
 // test button, remove at some point
-const buttonTest = document.getElementById('test-button')
+// const buttonTest = document.getElementById('test-button')
 
 // decleration of the buttons
 const buttonSave = document.getElementById('save-button')
@@ -45,6 +46,7 @@ const buttonDeleteNode = document.getElementById('delete-node')
 const buttonDeleteEdge = document.getElementById('delete-edge')
 const buttonStopAtlas = document.getElementById('stop-atlas')
 const buttonStartAtlas = document.getElementById('start-atlas')
+const buttonFlagged = document.getElementById('flagged-button')
 
 const select = document.getElementById('selection-id')
 const moduleGroup = document.getElementById('module-group')
@@ -60,8 +62,8 @@ sigma.parsers.json(fileToLoad, {
     labelSize: 'fixed',
     labelThreshold: 9,
     edgeLabelSize: 'fixed',
-    defaultLabelColor: '#94a4a5',
-    defaultEdgeLabelColor: '#94a4a5',
+    defaultLabelColor: config.comment,
+    defaultEdgeLabelColor: config.comment,
     // mouseWheelEnabled: true,
     // must enable canvas in type for edge hovering
     enableEdgeHovering: true,
@@ -163,10 +165,13 @@ sigma.parsers.json(fileToLoad, {
   buttonStartAtlas.addEventListener('click', () => {
     s.startForceAtlas2()
   })
-  buttonTest.addEventListener('click', () => {
-    securityHints(s, toggleTheme) // module
+  buttonFlagged.addEventListener('click', () => {
+    flagNodes(s, toggleTheme) // module
     s.refresh()
   })
+  // buttonTest.addEventListener('click', () => {
+  //
+  // })
 
   // for the filter selection
   select.addEventListener('change', (e) => {
@@ -260,3 +265,7 @@ sigma.parsers.json(fileToLoad, {
   // enable keyboard shortcuts
   keyboard(s, addEdge, toggleUI, deleteNode, deleteEdge)
 })
+
+// TODO: the legend is not working, the one that displays the target and
+// source node. Should ssow the seleciton of the node in the graph using
+// when double or clicking.

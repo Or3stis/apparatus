@@ -83,11 +83,14 @@ h3 {
   /*border: 1px solid;*/
   color: var(--main-tx-color);
 }
-.legend {
+/*.legend {
   bottom: 0;
   height: 50px;
+  width: 100vw;
   position: absolute;
-}
+  display: block;
+  background-color: black;
+}*/
 .button {
   background-color: var(--main-bg-color);
   background-color: rgba(46, 52, 64, 0.1);

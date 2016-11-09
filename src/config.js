@@ -15,5 +15,6 @@ config.yellow = '#eaca8f'
 config.gray = '#d8dee9'
 config.darkLine = '#424A57'
 config.lightLine = '#e0e0e0'
+config.comment = '#94a4a5'
 
 module.exports = config
