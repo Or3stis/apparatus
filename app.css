@@ -53,7 +53,6 @@ h3 {
 .action-bar {
   margin: 5px;
   width: 145px;
-  opacity: 0.8;
   display: block;
 }
 .graph {
@@ -63,7 +62,7 @@ h3 {
 .sidebar {
   margin: 5px;
   width: 170px;
-  opacity: 0.8;
+  font-size: 12px;
 }
 /*.footer {
   bottom: 0;
@@ -95,7 +94,7 @@ h3 {
   margin: 3px;
   color: var(--main-tx-color);
   width: 100px;
-  height: 30px;
+  height: 35px;
   border-radius: 20px;
   border: none;
   font-size: 12px;

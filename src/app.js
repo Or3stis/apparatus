@@ -165,6 +165,7 @@ sigma.parsers.json(fileToLoad, {
   })
   buttonTest.addEventListener('click', () => {
     securityHints(s, toggleTheme) // module
+    s.refresh()
   })
 
   // for the filter selection
