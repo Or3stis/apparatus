@@ -1,10 +1,9 @@
 :root {
   --main-bg-color: #2e3440;
   --main-tx-color: #e0e0e0;
-  /*--main-graph-color: #3b4251;*/
-  /*--main-graph-color: #2e3440;*/
-  /*--main-graph-color: #fff;*/
   --blue-color: #82a2c0;
+  --black-color: #3b4251;
+  --gray-color: #d8dee9;
 }
 
 @keyframes fadein {
@@ -137,8 +136,8 @@ option[value=""][disabled] {
 }
 
 option {
-  background-color: gray;
-  color: black;
+  background-color: var(--gray-color);
+  color: var(--black-color);
 }
 
 .container-node {
