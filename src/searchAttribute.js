@@ -29,3 +29,5 @@ module.exports = function securityHints (s, term, toggleTheme) {
   document.getElementById('info-for-nodes').innerHTML = searchNodes
   s.refresh()
 }
+
+// TODO the color change doesn't work

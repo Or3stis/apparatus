@@ -127,9 +127,13 @@ sigma.parsers.json(fileToLoad, {
     if (toggleTheme === false) {
       switchTheme.switchLightTheme()
       toggleTheme = true
+      returnColorNeighbor() // returns color when changing theme
+      s.refresh()
     } else {
       switchTheme.switchThemeDark()
       toggleTheme = false
+      returnColorNeighbor()
+      s.refresh()
     }
   })
 
