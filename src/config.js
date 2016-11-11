@@ -13,7 +13,7 @@ config.orange = '#cf8772'
 config.green = '#a4bd8e'
 config.yellow = '#eaca8f'
 config.gray = '#d8dee9'
-config.darkLine = '#424A57'
+config.darkLine = '#242933'
 config.lightLine = '#e0e0e0'
 config.comment = '#94a4a5'
 
