@@ -1,4 +1,4 @@
-# color theme for apparatus
+# color palate for apparatus
 
 #### base16 flat
 
@@ -22,6 +22,8 @@ http://chriskempson.github.io/base16/#flat
 0. brown: #bc6441
 
 ### Nord color theme
+
+#### Currently used
 
 1. dark-black: #2e3440
 1. black: #3b4251

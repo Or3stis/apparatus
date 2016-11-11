@@ -6,13 +6,14 @@
 // backspace, delete node/edge
 
 const moduleValidation = require('./moduleValidation.js')
+const searchAttribute = require('./searchAttribute.js')
 
 // help menu
-const helpMenu = `help: for options<br/> validate: to validate
-module<br/>alt + e: add an edge<br/>backspace: delete node/edge<br/>alt + h:
-toggle UI<br/>meta + l: focus on console<br/>`
+const helpMenu = `• help: for options<br/>• validate: to validate
+module<br/>•alt + e: add an edge<br/>• backspace: delete node/edge<br/>alt + h:
+• toggle UI<br/>• meta + l: focus on console<br/>• search for attributes<br/>`
 
-module.exports = function keyboard (s, addEdge, toggleUI, deleteNode, deleteEdge) {
+module.exports = function keyboard (s, addEdge, toggleUI, deleteNode, deleteEdge, toggleTheme) {
   document.addEventListener('keydown', (event) => {
     // console.log(event.code)
 
@@ -43,9 +44,14 @@ module.exports = function keyboard (s, addEdge, toggleUI, deleteNode, deleteEdge
         document.getElementById('info-for-nodes').innerHTML = helpMenu
       } else if (input === 'validate') {
         moduleValidation(s)
-      } else {
+      } else if (input === '') {
         document.getElementById('info-for-nodes').innerHTML = 'not valid command'
+      } else {
+        searchAttribute(s, input, toggleTheme)
       }
+      // else {
+      //   document.getElementById('info-for-nodes').innerHTML = 'not valid command'
+      // }
     }
   })
 }

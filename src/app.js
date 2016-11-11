@@ -167,7 +167,6 @@ sigma.parsers.json(fileToLoad, {
   })
   buttonFlagged.addEventListener('click', () => {
     flagNodes(s, toggleTheme) // module
-    s.refresh()
   })
   // buttonTest.addEventListener('click', () => {
   //
@@ -214,7 +213,7 @@ sigma.parsers.json(fileToLoad, {
     targetNode = n.data.node // first selection
 
     // message displayed in the footer bar
-    const selectedNodes = `source node: ${sourceNode.id} <br>
+    const selectedNodes = `sourceNode: ${sourceNode.id} <br>
       targetNode: ${targetNode.id}`
     document.getElementById('legend-id').innerHTML = selectedNodes
   }
@@ -263,7 +262,7 @@ sigma.parsers.json(fileToLoad, {
   }
 
   // enable keyboard shortcuts
-  keyboard(s, addEdge, toggleUI, deleteNode, deleteEdge)
+  keyboard(s, addEdge, toggleUI, deleteNode, deleteEdge, toggleTheme)
 })
 
 // TODO: the legend is not working, the one that displays the target and
