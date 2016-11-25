@@ -31,3 +31,6 @@ module.exports = function securityHints (s, term, toggleTheme) {
 }
 
 // TODO the color change doesn't work
+// the bug is in the keyboard.js function. It loads once on startup, so this
+// when it logs the color of the apps. After the initial check up it doesn't
+// recheck it.

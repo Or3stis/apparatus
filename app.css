@@ -37,9 +37,8 @@ h3 {
   position: relative;
   width: 100vw;
   height: 20px;
-  cursor: pointer;
+  cursor: wait;
   text-align: center;
-  opacity: 0.8;
   /*can only drag window from title bar*/
   -webkit-app-region: drag
 }
@@ -147,7 +146,6 @@ option {
   background: black;
   display: none;
   margin: 10px;
-
 }
 .container-node-info {
   height: 95%;
