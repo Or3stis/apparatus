@@ -79,6 +79,7 @@ h3 {
   margin: 5px;
   margin-bottom: 15px;
   /*border: 1px solid;*/
+  border-bottom: 1px solid var(--blue-color);
   color: var(--main-tx-color);
 }
 .legend {
