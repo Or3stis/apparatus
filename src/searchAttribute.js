@@ -25,7 +25,9 @@ module.exports = function securityHints (s, term, toggleTheme) {
     })
   })
   // paints the edges the shadow color
-  s.graph.edges().map(e => e.color = shadowColor)
+  s.graph.edges().map((e) => {
+    e.color = shadowColor
+  })
   document.getElementById('info-for-nodes').innerHTML = searchNodes
   s.refresh()
 }

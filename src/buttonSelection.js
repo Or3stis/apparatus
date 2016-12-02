@@ -20,7 +20,9 @@ module.exports = function buttonSelection (classification, s, toggleTheme) {
       n.color = shadowColor
     }
   })
-  s.graph.edges().map(e => e.color = shadowColor)
+  s.graph.edges().map((e) => {
+    e.color = shadowColor
+  })
   document.getElementById('info-for-nodes').innerHTML = nodes
   s.refresh()
 }

@@ -17,4 +17,8 @@ config.darkLine = '#242933'
 config.lightLine = '#e0e0e0'
 config.comment = '#94a4a5'
 
+// values for the flagged list
+// see flagNodes.js
+config.flag = ['wireless', 'perception']
+
 module.exports = config

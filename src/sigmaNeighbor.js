@@ -14,7 +14,9 @@
     const neighbors = {}
     const index = this.allNeighborsIndex[nodeId] || {}
 
-    Object.keys(index).map(i => neighbors[i] = this.nodesIndex[i])
+    Object.keys(index).map((i) => {
+      neighbors[i] = this.nodesIndex[i]
+    })
     return neighbors
   })
 }).call(window)

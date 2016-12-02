@@ -1,4 +1,4 @@
-/* global sigma CustomShapes*/
+/* global sigma CustomShapes */
 
 // here is where it begins
 'use strict'
@@ -74,8 +74,12 @@ sigma.parsers.json(fileToLoad, {
   }
 }, (s) => {
   // store the initial colors of the nodes and edges
-  s.graph.nodes().map(n => n.originalColor = n.color)
-  s.graph.edges().map(e => e.originalColor = e.color)
+  s.graph.nodes().map((n) => {
+    n.originalColor = n.color
+  })
+  s.graph.edges().map((e) => {
+    e.originalColor = e.color
+  })
 
   let lastEdge = s.graph.edges().length
 
@@ -205,10 +209,13 @@ sigma.parsers.json(fileToLoad, {
 
   // returns color to stage when clicked
   const returnColorNeighbor = () => {
-    s.graph.nodes().map(n => n.color = n.originalColor)
-    s.graph.edges().map(e => e.color = e.originalColor)
+    s.graph.nodes().map((n) => {
+      n.color = n.originalColor
+    })
+    s.graph.edges().map((e) => {
+      e.color = e.originalColor
+    })
   }
-
   // it generates values used in addEdge/addOwn modules
   const showSourceTargetNode = (n) => {
     // store the id of the selected node to be used for
