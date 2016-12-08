@@ -58,20 +58,7 @@ sigma.parsers.json(fileToLoad, {
     container: document.getElementById('graph-container'),
     type: 'canvas'
   },
-  settings: {
-    labelSize: 'fixed',
-    labelThreshold: 9,
-    edgeLabelSize: 'fixed',
-    defaultLabelColor: config.comment,
-    defaultEdgeLabelColor: config.comment,
-    // mouseWheelEnabled: true,
-    // must enable canvas in type for edge hovering
-    enableEdgeHovering: true,
-    edgeHoverSizeRatio: 2,
-    edgeHoverExtremities: true,
-    doubleClickEnabled: false,
-    enableCamera: true // does not move the graph in the container
-  }
+  settings: config.sigmaOptions
 }, (s) => {
   // store the initial colors of the nodes and edges
   s.graph.nodes().map((n) => {

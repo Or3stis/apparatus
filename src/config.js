@@ -17,6 +17,21 @@ config.darkLine = '#242933'
 config.lightLine = '#e0e0e0'
 config.comment = '#94a4a5'
 
+// settings of sigma graph
+config.sigmaOptions = {
+  labelSize: 'fixed',
+  labelThreshold: 9,
+  edgeLabelSize: 'fixed',
+  defaultLabelColor: config.comment,
+  defaultEdgeLabelColor: config.comment,
+  // mouseWheelEnabled: true,
+  // must enable canvas in type for edge hovering
+  enableEdgeHovering: true,
+  edgeHoverSizeRatio: 2,
+  edgeHoverExtremities: true,
+  doubleClickEnabled: false,
+  enableCamera: true
+}
 // values for the flagged list
 // see flagNodes.js
 config.flag = ['wireless', 'perception']
