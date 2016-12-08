@@ -8,7 +8,7 @@ const hoverNodeInfo = require('./src/hoverNodeInfo.js')
 const showNeighbor = require('./src/showNeighbor.js')
 const validation = require('./src/validation.js')
 const moduleValidation = require('./src/moduleValidation.js')
-const buttonSelection = require('./src/buttonSelection.js')
+const nodeSelection = require('./src/nodeSelection.js')
 const moduleSelection = require('./src/moduleSelection.js')
 const save = require('./src/save.js')
 const addComponent = require('./src/addComponent.js')
@@ -169,7 +169,7 @@ sigma.parsers.json(fileToLoad, {
 
   // for the filter selection
   select.addEventListener('change', (e) => {
-    buttonSelection(e.target.value, s, toggleTheme) // module
+    nodeSelection(e.target.value, s, toggleTheme) // module
     // reset moduleGroup selection
     document.getElementById('module-group').selectedIndex = ''
   })
@@ -262,7 +262,3 @@ sigma.parsers.json(fileToLoad, {
   // enable keyboard shortcuts
   keyboard(s, addEdge, toggleUI, deleteNode, deleteEdge, toggleTheme)
 })
-
-// TODO: the legend is not working, the one that displays the target and
-// source node. Should ssow the seleciton of the node in the graph using
-// when double or clicking.

@@ -36,7 +36,7 @@ module.exports = function validation (s) {
   })
 
   // result will be displayed at info-for-nodes div
-  result = `${result} • Threats total: ${arrThreat.length} <br/>`
-  result = `${result} • Mitigated total: ${arrMitigated.length} <br/>`
+  result = `${result} • Threats total: ${arrThreat.length}<br/>`
+  result = `${result} • Mitigated total: ${arrMitigated.length}<br/>`
   document.getElementById('info-for-nodes').innerHTML = result
 }
