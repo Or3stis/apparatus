@@ -16,7 +16,7 @@
 }
 
 body {
-  background: var(--main-bg-color);
+  background-color: var(--main-bg-color);
   font-family: Monaco, Menlo, Consolas, monospace;
   color: var(--main-tx-color);
   height: 100vh;
@@ -54,7 +54,7 @@ h3 {
   display: block;
 }
 .graph {
-  background: var(--main-bg-color);
+  background-color: var(--main-bg-color);
   -webkit-flex: 1;
 }
 .sidebar {
@@ -144,7 +144,7 @@ option {
   width: 160px;
   height: 180px;
   border-radius: 10px;
-  background: black;
+  background-color: black;
   display: none;
   margin: 10px;
 }

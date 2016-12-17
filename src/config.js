@@ -25,6 +25,7 @@ config.sigmaOptions = {
   defaultLabelColor: config.comment,
   defaultEdgeLabelColor: config.comment,
   // mouseWheelEnabled: true,
+  // must enable canvas in type for edge hovering
   enableEdgeHovering: true,
   edgeHoverSizeRatio: 2,
   edgeHoverExtremities: true,
