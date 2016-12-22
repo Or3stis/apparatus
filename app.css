@@ -1,6 +1,6 @@
 :root {
   --main-bg-color: #2e3440;
-  --main-tx-color: #e0e0e0;
+  --main-tx-color: #bdc3c7;
   --blue-color: #82a2c0;
   --black-color: #3b4251;
   --gray-color: #d8dee9;
@@ -95,14 +95,17 @@ h3 {
   color: var(--main-tx-color);
   width: 100px;
   height: 35px;
-  border-radius: 20px;
-  border: none;
+  /*border-radius: 20px;*/
+  border: 1px solid;
+  border-color: var(--main-bg-color);
   font-size: 12px;
   /*padding: 8px 10px 8px 12px;*/
   cursor: pointer;
 }
-.button:hover {
-  background-color: var(--blue-color);
+.button:hover, .selection:hover {
+  /*border-bottom: 1px solid;*/
+  border-bottom-color: var(--blue-color);
+  color: var(--blue-color)
 }
 
 .selection {
@@ -113,7 +116,8 @@ h3 {
   background-color: var(--main-bg-color);
   background-color: rgba(46, 52, 64, 0.1);
   color: var(--main-tx-color);
-  border: none;
+  border: 1px solid;
+  border-color: var(--main-bg-color);
 }
 
 /*remove the blue outline box of chrome*/
@@ -122,7 +126,8 @@ h3 {
 }
 /*flash color when clicked*/
 .button:active, .selection:active {
-  background-color: var(--main-tx-color);
+  color: var(--main-tx-color);
+  border-bottom-color: var(--main-tx-color);
 }
 
 /*select:required:invalid {
