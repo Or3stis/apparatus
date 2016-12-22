@@ -2,9 +2,6 @@ const config = require('./config')
 
 'use strict'
 
-// values of the color themes
-let shadowColor = ''
-
 // grouping of the module components
 let groupArray = []
 const networkArray = ['device', 'network connection', 'micronet',
@@ -15,10 +12,7 @@ const securityArray = ['asset', 'threat', 'vulnerability', 'mechanism',
 const socialArray = ['actor']
 
 // when buton class is clicked the corresponing nodes are highlighted
-module.exports = function moduleSelection (input, s, toggleTheme) {
-  // detects color theme
-  shadowColor = (toggleTheme === true) ? config.lightLine : config.darkLine
-
+module.exports = function moduleSelection (input, s) {
   switch (input.target.value) {
     case 'network':
       groupArray = networkArray
@@ -44,7 +38,7 @@ module.exports = function moduleSelection (input, s, toggleTheme) {
     if (groupArray.indexOf(n.info.type) !== -1) {
       n.color = n.originalColor
     } else {
-      n.color = shadowColor
+      n.color = config.darkLine
     }
   })
   s.refresh()

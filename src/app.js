@@ -14,7 +14,6 @@ const save = require('./src/save.js')
 const addComponent = require('./src/addComponent.js')
 const addEdge = require('./src/addEdge.js')
 const addOwnership = require('./src/addOwnership.js')
-const switchTheme = require('./src/switchTheme.js')
 const keyboard = require('./src/keyboard.js')
 const flagNodes = require('./src/flagNodes.js')
 const config = require('./src/config.js')
@@ -29,15 +28,12 @@ let sourceNode = ''
 let targetNode = ''
 // stores the last selected edge
 let selectedEdge = ''
-// theme switcher
-let toggleTheme = false
 
 // test button, remove at some point
 // const buttonTest = document.getElementById('test-button')
 
 // decleration of the buttons
 const buttonSave = document.getElementById('save-button')
-const buttonTheme = document.getElementById('theme-button')
 const buttonValidate = document.getElementById('validate-button')
 const buttonModuleValidate = document.getElementById('module-validate-button')
 const buttonAddEdge = document.getElementById('add-edge')
@@ -83,7 +79,7 @@ sigma.parsers.json(fileToLoad, {
     s.refresh()
   })
   s.bind('doubleClickNode', (n) => {
-    showNeighbor(n, s, toggleTheme) // module
+    showNeighbor(n, s) // module
     selectedEdge = '' // deselect edge
     s.refresh()
   })
@@ -113,20 +109,6 @@ sigma.parsers.json(fileToLoad, {
 
   // drag nodes plugin
   sigma.plugins.dragNodes(s, s.renderers[0])
-
-  buttonTheme.addEventListener('click', () => {
-    if (toggleTheme === false) {
-      switchTheme.switchLightTheme()
-      toggleTheme = true
-      returnColorNeighbor() // returns color when changing theme
-      s.refresh()
-    } else {
-      switchTheme.switchThemeDark()
-      toggleTheme = false
-      returnColorNeighbor()
-      s.refresh()
-    }
-  })
 
   buttonSave.addEventListener('click', () => {
     save(s) // module
@@ -161,7 +143,7 @@ sigma.parsers.json(fileToLoad, {
     s.startForceAtlas2()
   })
   buttonFlagged.addEventListener('click', () => {
-    flagNodes(s, toggleTheme) // module
+    flagNodes(s) // module
   })
   // buttonTest.addEventListener('click', () => {
   //
@@ -169,14 +151,14 @@ sigma.parsers.json(fileToLoad, {
 
   // for the filter selection
   select.addEventListener('change', (e) => {
-    nodeSelection(e.target.value, s, toggleTheme) // module
+    nodeSelection(e.target.value, s) // module
     // reset moduleGroup selection
     document.getElementById('module-group').selectedIndex = ''
   })
   // grouping of the modules
   moduleGroup.addEventListener('change', (input) => {
     returnColorNeighbor() // function
-    moduleSelection(input, s, toggleTheme) // module
+    moduleSelection(input, s) // module
     // reset selection selection
     document.getElementById('selection-id').selectedIndex = ''
   })
@@ -260,5 +242,5 @@ sigma.parsers.json(fileToLoad, {
   }
 
   // enable keyboard shortcuts
-  keyboard(s, addEdge, toggleUI, deleteNode, deleteEdge, toggleTheme)
+  keyboard(s, addEdge, toggleUI, deleteNode, deleteEdge)
 })

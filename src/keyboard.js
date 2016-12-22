@@ -13,7 +13,7 @@ const helpMenu = `• help: for options<br/>• validate: to validate
 module<br/>•alt + e: add an edge<br/>• backspace: delete node/edge<br/>alt + h:
 • toggle UI<br/>• meta + l: focus on console<br/>• search for attributes<br/>`
 
-module.exports = function keyboard (s, addEdge, toggleUI, deleteNode, deleteEdge, toggleTheme) {
+module.exports = function keyboard (s, addEdge, toggleUI, deleteNode, deleteEdge) {
   document.addEventListener('keydown', (event) => {
     // console.log(event.code)
 
@@ -47,7 +47,7 @@ module.exports = function keyboard (s, addEdge, toggleUI, deleteNode, deleteEdge
       } else if (input === '') {
         document.getElementById('info-for-nodes').innerHTML = 'not valid command'
       } else {
-        searchAttribute(s, input, toggleTheme)
+        searchAttribute(s, input)
       }
       // else {
       //   document.getElementById('info-for-nodes').innerHTML = 'not valid command'

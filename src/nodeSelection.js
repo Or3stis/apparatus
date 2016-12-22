@@ -2,14 +2,8 @@ const config = require('./config')
 
 'use strict'
 
-// values of the color themes
-let shadowColor = ''
-
 // when buton class is clicked the corresponing nodes are highlighted
-module.exports = function buttonSelection (classification, s, toggleTheme) {
-  // detects color theme
-  shadowColor = (toggleTheme === true) ? config.lightLine : config.darkLine
-
+module.exports = function buttonSelection (classification, s) {
   let nodes = ''
 
   s.graph.nodes().map((n) => {
@@ -17,11 +11,11 @@ module.exports = function buttonSelection (classification, s, toggleTheme) {
       n.color = n.originalColor
       nodes = `${nodes} • ${n.label} <br/>`
     } else {
-      n.color = shadowColor
+      n.color = config.darkLine
     }
   })
   s.graph.edges().map((e) => {
-    e.color = shadowColor
+    e.color = config.darkLine
   })
   document.getElementById('info-for-nodes').innerHTML = nodes
   s.refresh()
