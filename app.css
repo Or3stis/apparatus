@@ -28,39 +28,46 @@ body {
   animation: fadein 0.4s;
   /*disable text selection*/
   -webkit-user-select: none;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  /*background-color: blue;*/
 }
 h3 {
   color: var(--blue-color);
   text-align: center;
 }
+
 .title-bar {
   position: relative;
   width: 100vw;
   height: 20px;
   cursor: wait;
   text-align: center;
-  /*can only drag window from title bar*/
   -webkit-app-region: drag
 }
 .window {
   height: 97vh;
   width: 100vw;
-  display: -webkit-flex;
-  -webkit-flex-direction: row;
+  display: flex;
+  flex-direction: row;
 }
+
 .action-bar {
   margin: 5px;
   width: 145px;
   display: block;
+  float: left;
+  flex: 0;
 }
 .graph {
-  background-color: var(--main-bg-color);
-  -webkit-flex: 1;
+  flex: 1;
 }
 .sidebar {
   margin: 5px;
   width: 170px;
   font-size: 12px;
+  display: block;
+  flex: 0;
 }
 /*.footer {
   bottom: 0;
