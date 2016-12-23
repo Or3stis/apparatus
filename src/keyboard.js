@@ -9,9 +9,9 @@ const moduleValidation = require('./moduleValidation.js')
 const searchAttribute = require('./searchAttribute.js')
 
 // help menu
-const helpMenu = `• help: for options<br/>• validate: to validate
-module<br/>•alt + e: add an edge<br/>• backspace: delete node/edge<br/>alt + h:
-• toggle UI<br/>• meta + l: focus on console<br/>• search for attributes<br/>`
+const helpMenu = `• help: for options\n• validate: to validate
+module\n•alt + e: add an edge\n• backspace: delete node/edge\nalt + h:
+• toggle UI\n• meta + l: focus on console\n• search for attributes\n`
 
 module.exports = function keyboard (s, addEdge, toggleUI, deleteNode, deleteEdge) {
   document.addEventListener('keydown', (event) => {
@@ -41,16 +41,16 @@ module.exports = function keyboard (s, addEdge, toggleUI, deleteNode, deleteEdge
       // console.log(input)
       document.getElementById('console-id').value = ''
       if (input === 'help' || input === 'options') {
-        document.getElementById('info-for-nodes').innerHTML = helpMenu
+        document.getElementById('info-for-nodes-id').textContent = helpMenu
       } else if (input === 'validate') {
         moduleValidation(s)
       } else if (input === '') {
-        document.getElementById('info-for-nodes').innerHTML = 'not valid command'
+        document.getElementById('info-for-nodes-id').textContent = 'not valid command'
       } else {
         searchAttribute(s, input)
       }
       // else {
-      //   document.getElementById('info-for-nodes').innerHTML = 'not valid command'
+      //   document.getElementById('info-for-nodes-id').textContent = 'not valid command'
       // }
     }
   })

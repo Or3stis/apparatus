@@ -20,7 +20,7 @@ const config = require('./src/config.js')
 
 // important, location of the json file for save
 const fileToLoad = 'json/large.json'
-document.getElementById('title-bar-id').innerHTML = `${fileToLoad}`
+document.getElementById('title-bar-id').textContent = `${fileToLoad}`
 
 // global variables
 // captures the id of last two selected nodes
@@ -164,7 +164,7 @@ sigma.parsers.json(fileToLoad, {
   })
   addStuff.addEventListener('change', (e) => {
     addComponent(e.target.value, s)
-    document.getElementById('info-for-nodes').innerHTML = `${e.target.value}
+    document.getElementById('info-for-nodes-id').textContent = `${e.target.value}
       component added`
     // reset the component choice
     document.getElementById('add-stuff').selectedIndex = ''
@@ -193,28 +193,28 @@ sigma.parsers.json(fileToLoad, {
     targetNode = n.data.node // first selection
 
     // message displayed in the footer bar
-    const selectedNodes = `sourceNode: ${sourceNode.id} <br>
+    const selectedNodes = `sourceNode: ${sourceNode.id}\n
       targetNode: ${targetNode.id}`
-    document.getElementById('legend-id').innerHTML = selectedNodes
+    document.getElementById('legend-id').textContent = selectedNodes
   }
 
   // function for node deletion
   const deleteNode = () => {
     if (targetNode === '') {
-      document.getElementById('info-for-nodes').innerHTML = 'no node selected'
+      document.getElementById('info-for-nodes-id').textContent = 'no node selected'
     }
     s.graph.dropNode(targetNode.id)
-    document.getElementById('info-for-nodes').innerHTML =
+    document.getElementById('info-for-nodes-id').textContent =
       `${targetNode.id} deleted`
     s.refresh()
   }
   // function for edge deletion
   const deleteEdge = () => {
     if (selectedEdge === '') {
-      document.getElementById('info-for-nodes').innerHTML = 'no edge selected'
+      document.getElementById('info-for-nodes-id').textContent = 'no edge selected'
     }
     s.graph.dropEdge(selectedEdge.data.edge.id)
-    document.getElementById('info-for-nodes').innerHTML =
+    document.getElementById('info-for-nodes-id').textContent =
       `${selectedEdge.data.edge.id} deleted`
     s.refresh()
   }

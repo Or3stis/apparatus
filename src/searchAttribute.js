@@ -12,7 +12,7 @@ module.exports = function securityHints (s, term) {
     n.color = config.darkLine
     Object.keys(n.info).map((value) => {
       if (n.info[value] === term) {
-        searchNodes += `• ${n.label}<br/>`
+        searchNodes += `• ${n.label}\n`
         // repaints the flagged nodes in their original color
         n.color = n.originalColor
       }
@@ -22,6 +22,6 @@ module.exports = function securityHints (s, term) {
   s.graph.edges().map((e) => {
     e.color = config.darkLine
   })
-  document.getElementById('info-for-nodes').innerHTML = searchNodes
+  document.getElementById('info-for-nodes-id').textContent = searchNodes
   s.refresh()
 }

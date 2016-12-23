@@ -9,8 +9,8 @@ module.exports = function nodeInfo (n) {
       nodeInfo += `• ${i}: `
     }
     // adds the values of the object to the string
-    nodeInfo += `${n.data.node.info[i]}<br/>`
+    nodeInfo += `${n.data.node.info[i]}\n`
   })
   // appends info to the div
-  document.getElementById('info-for-nodes').innerHTML = nodeInfo
+  document.getElementById('info-for-nodes-id').textContent = nodeInfo
 }

@@ -15,16 +15,16 @@ const validEdge = (sourceNode, targetNode) => {
     if (ownerArray.indexOf(targetNode.info.type) !== -1) {
       token = notAllowed
     } else {
-      document.getElementById('info-for-nodes').innerHTML = 'edge not allowed'
+      document.getElementById('info-for-nodes-id').innerHTML = 'edge not allowed'
       token = allowed
     }
   } else {
-    document.getElementById('info-for-nodes').innerHTML = 'edge not allowed'
+    document.getElementById('info-for-nodes-id').innerHTML = 'edge not allowed'
     token = allowed
   }
 }
 
-// shows info of node in the div 'info-for-nodes'
+// shows info of node in the div 'info-for-nodes-id'
 module.exports = function addEdge (s, sourceNode, targetNode, lastEdge) {
   const addedEdge = lastEdge
 
@@ -36,10 +36,10 @@ module.exports = function addEdge (s, sourceNode, targetNode, lastEdge) {
       // checks if the existing edge is a curved
       if (e.type === 'curvedArrow') {
         if (sourceNode.id === e.source && targetNode.id === e.target) {
-          document.getElementById('info-for-nodes').innerHTML = 'edge exists'
+          document.getElementById('info-for-nodes-id').innerHTML = 'edge exists'
           token = allowed
         } else if (sourceNode.id === e.target && targetNode.id === e.source) {
-          document.getElementById('info-for-nodes').innerHTML = 'edge exists'
+          document.getElementById('info-for-nodes-id').innerHTML = 'edge exists'
           token = allowed
         } else {
           token = notAllowed

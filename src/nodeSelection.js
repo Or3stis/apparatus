@@ -9,7 +9,7 @@ module.exports = function buttonSelection (classification, s) {
   s.graph.nodes().map((n) => {
     if (n.info.type === classification) {
       n.color = n.originalColor
-      nodes = `${nodes} • ${n.label} <br/>`
+      nodes = `${nodes} • ${n.label}\n`
     } else {
       n.color = config.darkLine
     }
@@ -17,6 +17,6 @@ module.exports = function buttonSelection (classification, s) {
   s.graph.edges().map((e) => {
     e.color = config.darkLine
   })
-  document.getElementById('info-for-nodes').innerHTML = nodes
+  document.getElementById('info-for-nodes-id').textContent = nodes
   s.refresh()
 }

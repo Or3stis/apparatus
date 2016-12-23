@@ -13,7 +13,7 @@ module.exports = function securityHints (s) {
     Object.keys(n.info).map((value) => {
       flaggedList.map((i) => {
         if (n.info[value] === i) {
-          flaggedNodes += `• ${n.label} ⚑ ${i}<br/>`
+          flaggedNodes += `• ${n.label} ⚑ ${i}\n`
           // repaints the flagged nodes in their original color
           n.color = n.originalColor
         }
@@ -24,6 +24,6 @@ module.exports = function securityHints (s) {
   s.graph.edges().map((e) => {
     e.color = config.darkLine
   })
-  document.getElementById('info-for-nodes').innerHTML = flaggedNodes
+  document.getElementById('info-for-nodes-id').textContent = flaggedNodes
   s.refresh()
 }

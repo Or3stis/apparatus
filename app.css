@@ -28,8 +28,8 @@ body {
   animation: fadein 0.4s;
   /*disable text selection*/
   -webkit-user-select: none;
-  overflow-x: hidden;
-  overflow-y: hidden;
+  /*overflow-x: hidden;*/
+  /*overflow-y: hidden;*/
   /*background-color: blue;*/
 }
 h3 {
@@ -46,6 +46,7 @@ h3 {
   -webkit-app-region: drag
 }
 .window {
+  position: relative;
   height: 97vh;
   width: 100vw;
   display: flex;
@@ -54,7 +55,7 @@ h3 {
 
 .action-bar {
   margin: 5px;
-  width: 145px;
+  /*width: 145px;*/
   display: block;
   float: left;
   flex: 0;
@@ -64,10 +65,13 @@ h3 {
 }
 .sidebar {
   margin: 5px;
-  width: 170px;
+  /*width: 170px;*/
   font-size: 12px;
   display: block;
   flex: 0;
+}
+.info-for-nodes {
+  white-space: pre-wrap;
 }
 /*.footer {
   bottom: 0;
@@ -167,4 +171,5 @@ option {
   opacity: 0.7;
   color: var(--main-tx-color);
   font-size: 11px;
+  white-space: pre-wrap;
 }

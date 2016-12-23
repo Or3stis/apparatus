@@ -20,7 +20,7 @@ module.exports = function validation (s) {
         if (neighborNodes[i].info.type === 'constraint') {
           arrMitigated.push(n.id)
           result = `${result} • Threat ${n.id} is mitigated by constraint
-          ${neighborNodes[i].id} <br/>`
+          ${neighborNodes[i].id}\n`
         }
       })
     }
@@ -36,7 +36,7 @@ module.exports = function validation (s) {
   })
 
   // result will be displayed at info-for-nodes div
-  result = `${result} • Threats total: ${arrThreat.length}<br/>`
-  result = `${result} • Mitigated total: ${arrMitigated.length}<br/>`
-  document.getElementById('info-for-nodes').innerHTML = result
+  result = `${result} • Threats total: ${arrThreat.length}\n`
+  result = `${result} • Mitigated total: ${arrMitigated.length}\n`
+  document.getElementById('info-for-nodes-id').textContent = result
 }

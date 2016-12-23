@@ -38,7 +38,7 @@ const validEdge = (sourceNode, targetNode) => {
       if (deviceArray.indexOf(targetNode.info.type) !== -1) {
         token = notAllowed
       } else {
-        document.getElementById('info-for-nodes').innerHTML = 'edge not allowed'
+        document.getElementById('info-for-nodes-id').innerHTML = 'edge not allowed'
         token = allowed
       }
       break
@@ -46,7 +46,7 @@ const validEdge = (sourceNode, targetNode) => {
       if (networkArray.indexOf(targetNode.info.type) !== -1) {
         token = notAllowed
       } else {
-        document.getElementById('info-for-nodes').innerHTML = 'edge not allowed'
+        document.getElementById('info-for-nodes-id').innerHTML = 'edge not allowed'
         token = allowed
       }
       break
@@ -54,7 +54,7 @@ const validEdge = (sourceNode, targetNode) => {
       if (micronetArray.indexOf(targetNode.info.type) !== -1) {
         token = notAllowed
       } else {
-        document.getElementById('info-for-nodes').innerHTML = 'edge not allowed'
+        document.getElementById('info-for-nodes-id').innerHTML = 'edge not allowed'
         token = allowed
       }
       break
@@ -62,7 +62,7 @@ const validEdge = (sourceNode, targetNode) => {
       if (netArray.indexOf(targetNode.info.type) !== -1) {
         token = notAllowed
       } else {
-        document.getElementById('info-for-nodes').innerHTML = 'edge not allowed'
+        document.getElementById('info-for-nodes-id').innerHTML = 'edge not allowed'
         token = allowed
       }
       break
@@ -70,7 +70,7 @@ const validEdge = (sourceNode, targetNode) => {
       if (undentifiedNodeArray.indexOf(targetNode.info.type) !== -1) {
         token = notAllowed
       } else {
-        document.getElementById('info-for-nodes').innerHTML = 'edge not allowed'
+        document.getElementById('info-for-nodes-id').innerHTML = 'edge not allowed'
         token = allowed
       }
       break
@@ -78,7 +78,7 @@ const validEdge = (sourceNode, targetNode) => {
       if (dataArray.indexOf(targetNode.info.type) !== -1) {
         token = notAllowed
       } else {
-        document.getElementById('info-for-nodes').innerHTML = 'edge not allowed'
+        document.getElementById('info-for-nodes-id').innerHTML = 'edge not allowed'
         token = allowed
       }
       break
@@ -86,7 +86,7 @@ const validEdge = (sourceNode, targetNode) => {
       if (actorArray.indexOf(targetNode.info.type) !== -1) {
         token = notAllowed
       } else {
-        document.getElementById('info-for-nodes').innerHTML = 'edge not allowed'
+        document.getElementById('info-for-nodes-id').innerHTML = 'edge not allowed'
         token = allowed
       }
       break
@@ -94,7 +94,7 @@ const validEdge = (sourceNode, targetNode) => {
       if (maliciousActorArray.indexOf(targetNode.info.type) !== -1) {
         token = notAllowed
       } else {
-        document.getElementById('info-for-nodes').innerHTML = 'edge not allowed'
+        document.getElementById('info-for-nodes-id').innerHTML = 'edge not allowed'
         token = allowed
       }
       break
@@ -102,7 +102,7 @@ const validEdge = (sourceNode, targetNode) => {
       if (secureMicronetArray.indexOf(targetNode.info.type) !== -1) {
         token = notAllowed
       } else {
-        document.getElementById('info-for-nodes').innerHTML = 'edge not allowed'
+        document.getElementById('info-for-nodes-id').innerHTML = 'edge not allowed'
         token = allowed
       }
       break
@@ -110,7 +110,7 @@ const validEdge = (sourceNode, targetNode) => {
       if (assetArray.indexOf(targetNode.info.type) !== -1) {
         token = notAllowed
       } else {
-        document.getElementById('info-for-nodes').innerHTML = 'edge not allowed'
+        document.getElementById('info-for-nodes-id').innerHTML = 'edge not allowed'
         token = allowed
       }
       break
@@ -118,7 +118,7 @@ const validEdge = (sourceNode, targetNode) => {
       if (constraintArray.indexOf(targetNode.info.type) !== -1) {
         token = notAllowed
       } else {
-        document.getElementById('info-for-nodes').innerHTML = 'edge not allowed'
+        document.getElementById('info-for-nodes-id').innerHTML = 'edge not allowed'
         token = allowed
       }
       break
@@ -126,7 +126,7 @@ const validEdge = (sourceNode, targetNode) => {
       if (objectiveArray.indexOf(targetNode.info.type) !== -1) {
         token = notAllowed
       } else {
-        document.getElementById('info-for-nodes').innerHTML = 'edge not allowed'
+        document.getElementById('info-for-nodes-id').innerHTML = 'edge not allowed'
         token = allowed
       }
       break
@@ -134,7 +134,7 @@ const validEdge = (sourceNode, targetNode) => {
       if (mechanismArray.indexOf(targetNode.info.type) !== -1) {
         token = notAllowed
       } else {
-        document.getElementById('info-for-nodes').innerHTML = 'edge not allowed'
+        document.getElementById('info-for-nodes-id').innerHTML = 'edge not allowed'
         token = allowed
       }
       break
@@ -142,7 +142,7 @@ const validEdge = (sourceNode, targetNode) => {
       if (threatArray.indexOf(targetNode.info.type) !== -1) {
         token = notAllowed
       } else {
-        document.getElementById('info-for-nodes').innerHTML = 'edge not allowed'
+        document.getElementById('info-for-nodes-id').innerHTML = 'edge not allowed'
         token = allowed
       }
       break
@@ -150,7 +150,7 @@ const validEdge = (sourceNode, targetNode) => {
       if (vulnerabilityArray.indexOf(targetNode.info.type) !== -1) {
         token = notAllowed
       } else {
-        document.getElementById('info-for-nodes').innerHTML = 'edge not allowed'
+        document.getElementById('info-for-nodes-id').innerHTML = 'edge not allowed'
         token = allowed
       }
       break
@@ -159,7 +159,7 @@ const validEdge = (sourceNode, targetNode) => {
   }
 }
 
-// shows info of node in the div 'info-for-nodes'
+// shows info of node in the div 'info-for-nodes-id'
 module.exports = function addEdge (s, sourceNode, targetNode, lastEdge) {
   // finds the id of the last edge
   const addedEdge = lastEdge
@@ -172,10 +172,10 @@ module.exports = function addEdge (s, sourceNode, targetNode, lastEdge) {
       // checks if the existing edge is a curved
       if (e.type !== 'curvedArrow') {
         if (sourceNode.id === e.source && targetNode.id === e.target) {
-          document.getElementById('info-for-nodes').innerHTML = 'edge exists'
+          document.getElementById('info-for-nodes-id').innerHTML = 'edge exists'
           token = allowed
         } else if (sourceNode.id === e.target && targetNode.id === e.source) {
-          document.getElementById('info-for-nodes').innerHTML = 'edge exists'
+          document.getElementById('info-for-nodes-id').innerHTML = 'edge exists'
           token = allowed
         } else {
           token = notAllowed
