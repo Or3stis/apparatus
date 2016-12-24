@@ -193,8 +193,7 @@ sigma.parsers.json(fileToLoad, {
     targetNode = n.data.node // first selection
 
     // message displayed in the footer bar
-    const selectedNodes = `sourceNode: ${sourceNode.id}\n
-      targetNode: ${targetNode.id}`
+    const selectedNodes = `sourceNode: ${sourceNode.id}\ntargetNode: ${targetNode.id}`
     document.getElementById('legend-id').textContent = selectedNodes
   }
 

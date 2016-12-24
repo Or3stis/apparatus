@@ -31,6 +31,7 @@ body {
   overflow-x: hidden;
   overflow-y: hidden;
 }
+
 h3 {
   color: var(--blue-color);
   text-align: center;
@@ -44,6 +45,7 @@ h3 {
   text-align: center;
   -webkit-app-region: drag
 }
+
 .window {
   position: relative;
   height: 97vh;
@@ -56,28 +58,26 @@ h3 {
   display: block;
   flex: 0;
 }
+
 .graph {
   flex: 1;
 }
+
 .sidebar {
+  margin-right: 8px;
   font-size: 12px;
   display: block;
   flex: 0;
 }
+
 .info-for-nodes {
   white-space: pre-wrap;
 }
-/*.footer {
-  bottom: 0;
-  height: 50px;
-  position: absolute;
-  width: 100%;
-  text-align: justify;
-  display: block;
-}*/
+
 .components {
   margin: 5px;
 }
+
 #console-id {
   background-color: var(--main-bg-color);
   background-color: rgba(59, 66, 81, 0.1);
@@ -87,12 +87,15 @@ h3 {
   border-bottom: 1px solid var(--blue-color);
   color: var(--main-tx-color);
 }
+
 .legend {
   bottom: 0;
   height: 50px;
   width: 100vw;
   position: absolute;
+  white-space: pre-wrap;
 }
+
 .button {
   background-color: var(--main-bg-color);
   background-color: rgba(46, 52, 64, 0.1);
@@ -107,6 +110,7 @@ h3 {
   /*padding: 8px 10px 8px 12px;*/
   cursor: pointer;
 }
+
 .button:hover, .selection:hover {
   /*border-bottom: 1px solid;*/
   border-bottom-color: var(--blue-color);
@@ -129,11 +133,14 @@ h3 {
 .button:focus, .selection:focus {
   outline: none;
 }
+
+
 /*flash color when clicked*/
 .button:active, .selection:active {
   color: var(--main-tx-color);
   border-bottom-color: var(--main-tx-color);
 }
+
 
 /*select:required:invalid {
   color: #94a4a5;
@@ -157,6 +164,7 @@ option {
   margin: 10px;
   overflow: auto;
 }
+
 .container-node-info {
   margin: 5px;
   opacity: 0.7;
