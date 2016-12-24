@@ -28,9 +28,8 @@ body {
   animation: fadein 0.4s;
   /*disable text selection*/
   -webkit-user-select: none;
-  /*overflow-x: hidden;*/
-  /*overflow-y: hidden;*/
-  /*background-color: blue;*/
+  overflow-x: hidden;
+  overflow-y: hidden;
 }
 h3 {
   color: var(--blue-color);
@@ -48,24 +47,19 @@ h3 {
 .window {
   position: relative;
   height: 97vh;
-  width: 100vw;
+  /*width: 100vw;*/
   display: flex;
   flex-direction: row;
 }
 
 .action-bar {
-  margin: 5px;
-  /*width: 145px;*/
   display: block;
-  float: left;
   flex: 0;
 }
 .graph {
   flex: 1;
 }
 .sidebar {
-  margin: 5px;
-  /*width: 170px;*/
   font-size: 12px;
   display: block;
   flex: 0;
