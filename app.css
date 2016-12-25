@@ -19,8 +19,8 @@ body {
   background-color: var(--main-bg-color);
   font-family: Monaco, Menlo, Consolas, monospace;
   color: var(--main-tx-color);
-  height: 100vh;
-  width: 100vw;
+  height: 100%;
+  width: 100%;
   margin: 0;
   padding: 0;
   font-size: 13px;
@@ -39,7 +39,7 @@ h3 {
 
 .title-bar {
   position: relative;
-  width: 100vw;
+  width: 100%;
   height: 20px;
   cursor: wait;
   text-align: center;

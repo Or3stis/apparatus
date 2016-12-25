@@ -164,8 +164,7 @@ sigma.parsers.json(fileToLoad, {
   })
   addStuff.addEventListener('change', (e) => {
     addComponent(e.target.value, s)
-    document.getElementById('info-for-nodes-id').textContent = `${e.target.value}
-      component added`
+    document.getElementById('info-for-nodes-id').textContent = `${e.target.value} component added`
     // reset the component choice
     document.getElementById('add-stuff').selectedIndex = ''
   })

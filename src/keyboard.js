@@ -26,9 +26,10 @@ module.exports = function keyboard (s, addEdge, toggleUI, deleteNode, deleteEdge
       toggleUI()
     }
     // Backspace deletion of nodes and edges
-    if (event.code === 'Backspace') {
-      (selectedEdge === '') ? deleteNode() : deleteEdge()
-    }
+    // TODO must add focus on console because is deletes selected objects at any time.
+    // if (event.code === 'Backspace') {
+    //   (selectedEdge === '') ? deleteNode() : deleteEdge()
+    // }
 
     // hotkey to focus on the console
     if (event.metaKey === true && event.code === 'KeyL') {

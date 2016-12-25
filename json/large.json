@@ -665,7 +665,7 @@
       "type": "actor",
       "color": "#bd626b",
       "info": {
-        "description": "malicious actor",
+        "description": "attacker",
         "type": "malicious actor"
       },
       "read_cam0:size": 6,

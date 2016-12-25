@@ -14,7 +14,7 @@ function createWindow () {
   // Create the browser window.
   mainWindow = new BrowserWindow({
     width: 1200,
-    height: 750,
+    height: 745,
     titleBarStyle: 'hidden'
     // transparent: true
   })

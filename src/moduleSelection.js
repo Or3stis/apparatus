@@ -5,7 +5,7 @@ const config = require('./config')
 // grouping of the module components
 let groupArray = []
 const networkArray = ['device', 'network connection', 'micronet',
-  'net', 'unidentified node']
+  'net', 'unidentified node', 'data']
 const securityArray = ['asset', 'threat', 'vulnerability', 'mechanism',
   'constraint', 'secure micronet', 'objective', 'malicious actor'
 ]
@@ -24,10 +24,10 @@ module.exports = function moduleSelection (input, s) {
       groupArray = socialArray
       break
     case 'network-security':
-      groupArray = networkArray + securityArray
+      groupArray = networkArray.concat(securityArray)
       break
     case 'network-social':
-      groupArray = networkArray + socialArray
+      groupArray = networkArray.concat(socialArray)
       break
     default:
       groupArray = []
