@@ -64,10 +64,10 @@ h3 {
 }
 
 .sidebar {
-  margin-right: 8px;
+  /*margin-right: 8px;*/
   font-size: 12px;
   display: block;
-  flex: 0;
+  flex: 0.3;
 }
 
 .info-for-nodes {

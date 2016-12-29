@@ -19,10 +19,10 @@ module.exports = function validation (s) {
       Object.keys(neighborNodes).map((i) => {
         if (neighborNodes[i].info.type === 'constraint') {
           arrMitigated.push(n.id)
-          result = `${result} • Threat ${n.id} is mitigated by constraint
-          ${neighborNodes[i].id}\n`
+          result = `${result} • Threat ${n.id} is mitigated by constraint ${neighborNodes[i].id}\n`
         }
       })
+      console.log(arrMitigated)
     }
   })
   // checks the arrays to see which threat is not mitigated
@@ -32,7 +32,7 @@ module.exports = function validation (s) {
   }))
 
   Object.keys(threats).map((i) => {
-    result = `${result} • Threat ${i} is not mitigated <br/>`
+    result = `${result} • Threat ${i} is not mitigated\n`
   })
 
   // result will be displayed at info-for-nodes div
