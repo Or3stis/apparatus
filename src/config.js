@@ -20,7 +20,7 @@ config.comment = '#94a4a5'
 // settings of sigma graph
 config.sigmaOptions = {
   labelSize: 'fixed',
-  labelThreshold: 9,
+  labelThreshold: 3,
   edgeLabelSize: 'fixed',
   defaultLabelColor: config.comment,
   defaultEdgeLabelColor: config.comment,
