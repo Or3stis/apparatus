@@ -30,4 +30,4 @@ schema that is not finalized yet. The basic idea is to extend the node objects
 with a new object that will have information necessary for security analysis.
 You can see some examples of properly structured JSON files in the JSON folder.
 
-#### License [CC0 (Public Domain)](LICENSE.md)
+#### License [MIT](LICENSE.md)
