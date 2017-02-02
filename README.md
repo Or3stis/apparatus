@@ -1,4 +1,4 @@
-# A network security analysis tool and visualiser
+# A network security analysis tool and visualizer
 
 [![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](http://standardjs.com/) ![](https://travis-ci.org/Or3stis/apparatus.svg?branch=master)
 
@@ -24,10 +24,10 @@ npm install && npm start
 ```
 ## Instructions
 
-The application uses sigma.js to parse a JSON file and generate the graph of the
+The application uses [sigma.js](http://sigmajs.org/) to parse a JSON file and generate the graph of the
 network. In order to do security analysis the JSON has to follow a specific
 schema that is not finalized yet. The basic idea is to extend the node objects
 with a new object that will have information necessary for security analysis.
-You can see some examples of properly structured JSON files in the JSON folder.
+You can see some examples of properly structured JSON files in the `JSON` folder.
 
 #### License [MIT](LICENSE.md)
