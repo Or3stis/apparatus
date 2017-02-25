@@ -20,10 +20,12 @@ config.comment = '#94a4a5'
 // settings of sigma graph
 config.sigmaOptions = {
   labelSize: 'fixed',
-  labelThreshold: 3,
-  edgeLabelSize: 'fixed',
-  defaultLabelColor: config.comment,
-  defaultEdgeLabelColor: config.comment,
+  defaultLabelSize: 20,
+  defaultEdgeLabelSize: 20,
+  labelThreshold: 1,
+  edgeLabelSize: 'proportional',
+  defaultLabelColor: config.deepBlack,
+  defaultEdgeLabelColor: config.deepBlack,
   // mouseWheelEnabled: true,
   // must enable canvas in type for edge hovering
   enableEdgeHovering: true,

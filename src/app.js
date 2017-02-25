@@ -19,7 +19,7 @@ const flagNodes = require('./src/flagNodes.js')
 const config = require('./src/config.js')
 
 // important, location of the json file for save
-const fileToLoad = 'json/large.json'
+const fileToLoad = 'json/savedFile.json'
 document.getElementById('title-bar-id').textContent = `${fileToLoad}`
 
 // global variables
