@@ -4,7 +4,7 @@
 
 A graphical security analysis tool for networks based on
 [electron](http://electron.atom.io/) and
-[sigma.js](http://sigmajs.org/).
+[cytoscape.js](http://js.cytoscape.org/).
 
 The application is still in prototyping stage, which means a lot of
 functionality is being added with each commit, along with massive changes in
@@ -24,10 +24,8 @@ npm install && npm start
 ```
 ## Instructions
 
-The application uses [sigma.js](http://sigmajs.org/) to parse a JSON file and generate the graph of the
-network. In order to do security analysis the JSON has to follow a specific
+The application uses cytoscape.js to parse a js file and generate the graph of the network. In order to do security analysis the js has to follow a specific
 schema that is not finalized yet. The basic idea is to extend the node objects
 with a new object that will have information necessary for security analysis.
-You can see some examples of properly structured JSON files in the `JSON` folder.
 
 #### License [MIT](LICENSE.md)

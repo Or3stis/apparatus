@@ -1,5 +1,3 @@
-const config = require('./config')
-
 'use strict'
 
 // grouping of the module components
@@ -12,7 +10,7 @@ const securityArray = ['asset', 'threat', 'vulnerability', 'mechanism',
 const socialArray = ['actor']
 
 // when buton class is clicked the corresponing nodes are highlighted
-module.exports = function moduleSelection (input, s) {
+module.exports = function moduleSelection (input, cy) {
   switch (input.target.value) {
     case 'network':
       groupArray = networkArray
@@ -34,12 +32,11 @@ module.exports = function moduleSelection (input, s) {
       console.error('error in moduleSelection.js')
   }
 
-  s.graph.nodes().map((n) => {
-    if (groupArray.indexOf(n.info.type) !== -1) {
-      n.color = n.originalColor
-    } else {
-      n.color = config.darkLine
+  cy.elements().addClass('faded')
+
+  cy.nodes().each((n, node) => {
+    if (groupArray.indexOf(node.data().info.type) !== -1) {
+      node.removeClass('faded')
     }
   })
-  s.refresh()
 }

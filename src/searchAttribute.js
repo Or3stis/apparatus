@@ -1,27 +1,20 @@
 'use strict'
 
-const config = require('./config')
-
-// search the attributes of the node inside the graph
-// and highlight the corresponding nodes
-
-module.exports = function securityHints (s, term) {
+module.exports = function flag (cy, term) {
   let searchNodes = ''
-  s.graph.nodes().map((n) => {
-    // paints every node as the shadow color
-    n.color = config.darkLine
-    Object.keys(n.info).map((value) => {
-      if (n.info[value] === term) {
-        searchNodes += `• ${n.label}\n`
-        // repaints the flagged nodes in their original color
-        n.color = n.originalColor
+
+  // apply the faded class to all the elements
+  cy.elements().addClass('faded')
+
+  // check all the nodes in graph for the search terms
+  cy.nodes().each((n, node) => {
+    Object.keys(node.data().info).map((value) => {
+      if (node.data().info[value] === term) {
+        searchNodes += `• ${node.data().info.description}\n`
+        // remove faded class from the search nodes
+        node.removeClass('faded')
       }
     })
   })
-  // paints the edges the shadow color
-  s.graph.edges().map((e) => {
-    e.color = config.darkLine
-  })
   document.getElementById('info-for-nodes-id').textContent = searchNodes
-  s.refresh()
 }

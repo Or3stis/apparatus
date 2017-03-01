@@ -1,37 +1,34 @@
 'use scrict'
 
 // checks if a node threat has a connection to a node constraint
-module.exports = function validation (s) {
+module.exports = function validation (cy) {
   let arrThreat = [] // array with all threats
   let arrMitigated = [] // array with mitigated threats
   let result = '' // posted on the nodeInfo div
 
-  s.graph.nodes().map((n) => {
+  cy.nodes().each((n, node) => {
     // checks in node is threat and adds to arrThreat
-    if (n.info.type === 'threat') {
-      // console.log(e.id) // threats
-      arrThreat.push(n.id)
+    if (node.data().info.type === 'threat') {
+      arrThreat.push(node.data().id)
 
       // stores the neigborring nodes of the threats
-      const neighborNodes = s.graph.neighbors(n.id)
+      const neighborNodes = node.neighborhood().add(node)
 
       // check which threat has a constraint neighbor
-      Object.keys(neighborNodes).map((i) => {
-        if (neighborNodes[i].info.type === 'constraint') {
-          arrMitigated.push(n.id)
-          result = `${result} • Threat ${n.id} is mitigated by constraint ${neighborNodes[i].id}\n`
+      Object.keys(neighborNodes.data().info).map((i) => {
+        if (neighborNodes.data().info[i] === 'constraint') {
+          arrMitigated.push(node.data().id)
+          result = `${result} • Threat ${node.data().id} is mitigated by constraint ${neighborNodes.data().id}\n`
         }
       })
-      console.log(arrMitigated)
     }
   })
   // checks the arrays to see which threat is not mitigated
   const setMitigated = new Set(arrMitigated)
-  const threats = new Set([...arrThreat].filter((x) => {
-    !setMitigated.has(x)
-  }))
+  console.log(setMitigated)
+  const threats = new Set([...arrThreat].filter(x => !setMitigated.has(x)))
 
-  Object.keys(threats).map((i) => {
+  threats.forEach((i) => {
     result = `${result} • Threat ${i} is not mitigated\n`
   })
 
