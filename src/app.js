@@ -11,10 +11,11 @@ const moduleSelection = require('./src/moduleSelection.js')
 const nodeSelection = require('./src/nodeSelection.js')
 const validation = require('./src/validation.js')
 const keyboard = require('./src/keyboard.js')
+const addComponent = require('./src/addComponent.js')
 // const config = require('./src/config.js')
 
 // require the graph file
-const system = require('./src/system0.js')
+const system = require('./src/system.js')
 
 // setting up the graph container
 const cy = cytoscape({
@@ -53,6 +54,8 @@ cy.on('tap', (selection) => {
     // removes previous selections
     cy.elements().removeClass('faded')
     cy.elements().removeClass('selection')
+    document.getElementById('module-group').selectedIndex = ''
+    document.getElementById('selection-id').selectedIndex = ''
   }
 })
 // hover over a node
@@ -86,14 +89,21 @@ const moduleGroup = document.getElementById('module-group')
 moduleGroup.addEventListener('change', (input) => {
   moduleSelection(input, cy) // module
   // reset selection selection
-  document.getElementById('selection-id').selectedIndex = ''
+  // document.getElementById('module-group').selectedIndex = ''
 })
 // for the filter selection
 const select = document.getElementById('selection-id')
 select.addEventListener('change', (e) => {
   nodeSelection(cy, e.target.value) // module
   // reset moduleGroup selection
-  document.getElementById('module-group').selectedIndex = ''
+  // document.getElementById('selection-id').selectedIndex = ''
+})
+// adding component
+const add = document.getElementById('add-component-id')
+add.addEventListener('change', (e) => {
+  addComponent(cy, e.target.value) // module
+  // reset moduleGroup selection
+  document.getElementById('add-component-id').selectedIndex = ''
 })
 
 // toggles side divs

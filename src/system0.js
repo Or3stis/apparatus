@@ -128,7 +128,24 @@ system.graph = [
   }, {
     data: {
       id: '17',
-      label: 'Thing:unknown device',
+      label: 'Thing:mobile phone',
+      info: {
+        description: 'user'
+      }
+    },
+    classes: 'red'
+  }, {
+    data: {
+      id: '18',
+      label: 'Threat:non authenticated clients cause authenticated clients to disconnect',
+      info: {
+        description: 'user'
+      }
+    }
+  }, {
+    data: {
+      id: '19',
+      label: 'Constraint:Micronet ignores request',
       info: {
         description: 'user'
       }
@@ -252,9 +269,23 @@ system.graph = [
       id: '171',
       label: '',
       source: '17',
-      target: '1'
+      target: '2'
     },
     classes: 'red'
+  }, {
+    data: {
+      id: '181',
+      label: '',
+      source: '18',
+      target: '1'
+    }
+  }, {
+    data: {
+      id: '191',
+      label: '',
+      source: '19',
+      target: '18'
+    }
   }
 ]
 system.style = [{
@@ -294,6 +325,16 @@ system.style = [{
   selector: '.selection',
   style: {
     'background-color': config.red,
+    'line-color': config.red
+  }
+}, {
+  selector: 'node.red',
+  style: {
+    'background-color': config.red
+  }
+}, {
+  selector: 'edge.red',
+  style: {
     'line-color': config.red
   }
 }]

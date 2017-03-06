@@ -140,7 +140,7 @@ system.style = [{
     shape: 'circle',
     'background-color': config.blue,
     'color': config.comment,
-    label: 'data(id)'
+    label: 'data(label)'
   }
 }, {
   selector: 'edge',
