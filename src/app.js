@@ -12,17 +12,20 @@ const nodeSelection = require('./src/nodeSelection.js')
 const validation = require('./src/validation.js')
 const keyboard = require('./src/keyboard.js')
 const addComponent = require('./src/addComponent.js')
+const save = require('./src/save.js')
 // const config = require('./src/config.js')
 
 // require the graph file
-const system = require('./src/system.js')
+const system = require(`${__dirname}/graphs/system.js`)
+// graphs style
+const graphStyle = require(`${__dirname}/graphs/graphStyle.js`)
 
 // setting up the graph container
 const cy = cytoscape({
   container: document.getElementById('graph-container'),
   autounselectify: true,
   elements: system.graph,
-  style: system.style
+  style: graphStyle.style
 })
 
 // graph layout
@@ -78,10 +81,18 @@ const buttonFlag = document.getElementById('flag-button')
 buttonFlag.addEventListener('click', () => {
   flagNodes(cy)
 })
+// save graph
+// TODO need to load the graph from the json
+// TODO need to fix the file paths
+const buttonSave = document.getElementById('save-button')
+buttonSave.addEventListener('click', () => {
+  save(cy)
+})
 // test functions
 const buttonTest = document.getElementById('test-button')
 buttonTest.addEventListener('click', () => {
   searchAttribute(cy, 'laptop')
+  // save(cy)
 })
 
 // selections
