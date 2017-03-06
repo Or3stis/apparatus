@@ -1,5 +1,5 @@
 // style config for the graphs
-const config = require(`${__dirname}/config1.js`)
+const config = require(`${__dirname}/configGraphs.js`)
 
 const graphStyle = {}
 
