@@ -16,7 +16,9 @@ const save = require('./src/save.js')
 // const config = require('./src/config.js')
 
 // require the graph file
-const system = require(`${__dirname}/graphs/system.js`)
+// const system = require(`${__dirname}/graphs/system.js`)
+const system = require(`${__dirname}/src/savedFile.json`)
+
 // graphs style
 const graphStyle = require(`${__dirname}/graphs/graphStyle.js`)
 
@@ -24,7 +26,7 @@ const graphStyle = require(`${__dirname}/graphs/graphStyle.js`)
 const cy = cytoscape({
   container: document.getElementById('graph-container'),
   autounselectify: true,
-  elements: system.graph,
+  elements: system.elements,
   style: graphStyle.style
 })
 
