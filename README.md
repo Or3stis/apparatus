@@ -24,8 +24,6 @@ npm install && npm start
 ```
 ## Instructions
 
-The application uses cytoscape.js to parse a js file and generate the graph of the network. In order to do security analysis the js has to follow a specific
-schema that is not finalized yet. The basic idea is to extend the node objects
-with a new object that will have information necessary for security analysis.
+The application uses cytoscape.js to parse a json file and generate the graph of the network. In order to do security analysis the json has to follow a specificschema that is not finalized yet.
 
 #### License [MIT](LICENSE.md)
