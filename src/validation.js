@@ -25,7 +25,6 @@ module.exports = function validation (cy) {
   })
   // checks the arrays to see which threat is not mitigated
   const setMitigated = new Set(arrMitigated)
-  console.log(setMitigated)
   const threats = new Set([...arrThreat].filter(x => !setMitigated.has(x)))
 
   threats.forEach((i) => {
