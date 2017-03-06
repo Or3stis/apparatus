@@ -1,10 +1,10 @@
 :root {
   /*--main-bg-color: #ffffff;*/
-  --main-bg-color: #2e3440;
-  --main-tx-color: #bdc3c7;
-  --blue-color: #82a2c0;
+  --main-bg-color: #282c34;
+  --main-tx-color: #abb2bf;
+  --blue-color: #61afef;
   --black-color: #2d3e4f;
-  --gray-color: #d8dee9;
+  --gray-color: #abb2bf;
 }
 
 @keyframes fadein {
@@ -88,7 +88,7 @@ h3 {
   margin: 5px;
   margin-bottom: 15px;
   /*border: 1px solid;*/
-  border-bottom: 1px solid var(--blue-color);
+  border-bottom: 2px solid var(--blue-color);
   color: var(--main-tx-color);
 }
 
