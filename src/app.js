@@ -35,6 +35,8 @@ cy.layout({
   name: 'cose'
 })
 
+let selectedNode = []
+
 // when tapping on a node show the neighbors
 cy.on('tap', 'node', (selection) => {
   // removes previous selections
@@ -47,6 +49,7 @@ cy.on('tap', 'node', (selection) => {
 
   nodeInfo(node)
   node.addClass('selection')
+  selectedNode = selection.cyTarget[0]
 })
 cy.on('tap', 'edge', (selection) => {
   // removes previous selections
@@ -90,11 +93,16 @@ const buttonSave = document.getElementById('save-button')
 buttonSave.addEventListener('click', () => {
   save(cy)
 })
+const buttonDeleteNode = document.getElementById('delete-node')
+buttonDeleteNode.addEventListener('click', () => {
+  // cy.remove(selectedNode)
+  selectedNode.remove()
+})
 // test functions
 const buttonTest = document.getElementById('test-button')
 buttonTest.addEventListener('click', () => {
   searchAttribute(cy, 'laptop')
-  // save(cy)
+  // selectedNode.restore()
 })
 
 // selections
@@ -123,20 +131,12 @@ add.addEventListener('change', (e) => {
 const toggleUI = () => {
   const sidebarStatus = document.getElementById('sidebar-id')
   const actionBarStatus = document.getElementById('action-bar-id')
-  // const titleBarStatus = document.getElementById('title-bar-id')
-  // const footerStatus = document.getElementById('footer-id')
   if (sidebarStatus.style.display === 'block') {
     sidebarStatus.style.display = 'none'
     actionBarStatus.style.display = 'none'
-    // titleBarStatus.style.display = 'none'
-    // document.body.style.background = '#3b4251'
-    // footerStatus.style.display = 'none'
   } else {
     sidebarStatus.style.display = 'block'
     actionBarStatus.style.display = 'block'
-    // titleBarStatus.style.display = 'block'
-    // document.body.style.background = '#2e3440'
-    // footerStatus.style.display = 'block'
   }
 }
 
