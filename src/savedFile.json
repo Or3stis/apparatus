@@ -1,1 +1,277 @@
-{"elements":{"nodes":[{"data":{"id":"a","label":"node 1","info":{"description":"laptop","type":"device","id":"02","aspect":"physical","layer":"application","nodeType":"server","attribute":"process","input":"dataDigital","output":"dataDigital"}},"position":{"x":276.7182407948458,"y":407.99520860552633},"group":"nodes","removed":false,"selected":false,"selectable":true,"locked":false,"grabbable":true,"classes":""},{"data":{"id":"b","label":"node 2","info":{"description":"server","type":"device","id":"02","aspect":"physical","layer":"application","nodeType":"server","attribute":"process","input":"dataDigital","output":"dataDigital"}},"position":{"x":332.5467625738422,"y":549.6190842842731},"group":"nodes","removed":false,"selected":false,"selectable":true,"locked":false,"grabbable":true,"classes":""},{"data":{"id":"c","label":"node 3","info":{"description":"server","type":"device","id":"02","aspect":"physical","layer":"application","nodeType":"server","attribute":"process","input":"dataDigital","output":"dataDigital"}},"position":{"x":521.5900315972717,"y":264.1405120786204},"group":"nodes","removed":false,"selected":false,"selectable":true,"locked":false,"grabbable":true,"classes":""},{"data":{"id":"d","label":"node 3","info":{"description":"server","type":"threat","id":"02","aspect":"physical","layer":"application","nodeType":"server","attribute":"process","input":"dataDigital","output":"dataDigital"}},"position":{"x":374.78051120682096,"y":276.42941181182374},"group":"nodes","removed":false,"selected":false,"selectable":true,"locked":false,"grabbable":true,"classes":""},{"data":{"id":"e","label":"node 4","info":{"description":"server","type":"constraint","id":"02","aspect":"physical","layer":"application","nodeType":"server","attribute":"process","input":"dataDigital","output":"dataDigital"}},"position":{"x":445.39861769499146,"y":445.1067760269495},"group":"nodes","removed":false,"selected":false,"selectable":true,"locked":false,"grabbable":true,"classes":""},{"data":{"id":"f","label":"node 5","info":{"description":"server","type":"threat","id":"02","aspect":"physical","layer":"application","nodeType":"server","attribute":"process","input":"dataDigital","output":"dataDigital"}},"position":{"x":570.9123174795957,"y":526.6544289161625},"group":"nodes","removed":false,"selected":false,"selectable":true,"locked":false,"grabbable":true,"classes":""},{"data":{"weight":75,"id":"n7","label":"micronet","info":{"description":"micronet"},"position":{"x":180,"y":180}},"position":{"x":436.23327716424905,"y":874.9141304298521},"group":"nodes","removed":false,"selected":false,"selectable":true,"locked":false,"grabbable":true,"classes":""},{"data":{"weight":75,"id":"n8","label":"device","info":{"description":"device"},"position":{"x":180,"y":180}},"position":{"x":585,"y":875.3722159479919},"group":"nodes","removed":false,"selected":false,"selectable":true,"locked":false,"grabbable":true,"classes":""}],"edges":[{"data":{"id":"ab","source":"a","target":"b"},"position":{},"group":"edges","removed":false,"selected":false,"selectable":true,"locked":false,"grabbable":true,"classes":""},{"data":{"id":"cd","source":"c","target":"d"},"position":{},"group":"edges","removed":false,"selected":false,"selectable":true,"locked":false,"grabbable":true,"classes":""},{"data":{"id":"ef","source":"e","target":"f"},"position":{},"group":"edges","removed":false,"selected":false,"selectable":true,"locked":false,"grabbable":true,"classes":""},{"data":{"id":"ac","source":"a","target":"d"},"position":{},"group":"edges","removed":false,"selected":false,"selectable":true,"locked":false,"grabbable":true,"classes":""},{"data":{"id":"be","source":"b","target":"e"},"position":{},"group":"edges","removed":false,"selected":false,"selectable":true,"locked":false,"grabbable":true,"classes":""}]},"style":[{"selector":"node","style":{"background-color":"#61AFEF","color":"#d6d6d6","label":"data(label)"}},{"selector":"edge","style":{"line-color":"#61AFEF"}},{"selector":":selected","style":{"background-color":"#a4bd8e"}},{"selector":".faded","style":{"opacity":"0.25","text-opacity":"0"}},{"selector":".selection","style":{"background-color":"#a4bd8e","line-color":"#a4bd8e"}}],"zoomingEnabled":true,"userZoomingEnabled":true,"zoom":1.0057161937275019,"minZoom":1e-50,"maxZoom":1e+50,"panningEnabled":true,"userPanningEnabled":true,"pan":{"x":4.432292546420001,"y":-203.46747221766338},"boxSelectionEnabled":true,"renderer":{"name":"canvas"}}
+{
+  "elements": {
+    "nodes": [{
+      "data": {
+        "id": "n1",
+        "label": "node 1",
+        "info": {
+          "description": "laptop",
+          "type": "device",
+          "aspect": "physical",
+          "layer": "application",
+          "nodeType": "server",
+          "attribute": "process",
+          "input": "dataDigital",
+          "output": "dataDigital"
+        }
+      },
+      "position": {
+        "x": 308.5448853815455,
+        "y": 139.99287595214398
+      },
+      "group": "nodes",
+      "removed": false,
+      "selected": false,
+      "selectable": true,
+      "locked": false,
+      "grabbable": true,
+      "classes": ""
+    }, {
+      "data": {
+        "id": "n2",
+        "label": "node 2",
+        "info": {
+          "description": "server",
+          "type": "device",
+          "aspect": "physical",
+          "layer": "application",
+          "nodeType": "server",
+          "attribute": "process",
+          "input": "dataDigital",
+          "output": "dataDigital"
+        }
+      },
+      "position": {
+        "x": 172.57747556709384,
+        "y": 173.92363735721432
+      },
+      "group": "nodes",
+      "removed": false,
+      "selected": false,
+      "selectable": true,
+      "locked": false,
+      "grabbable": true,
+      "classes": ""
+    }, {
+      "data": {
+        "id": "n3",
+        "label": "node 3",
+        "info": {
+          "description": "server",
+          "type": "device",
+          "aspect": "physical",
+          "layer": "application",
+          "nodeType": "server",
+          "attribute": "process",
+          "input": "dataDigital",
+          "output": "dataDigital"
+        }
+      },
+      "position": {
+        "x": 79.23687259144576,
+        "y": -0.757931591049444
+      },
+      "group": "nodes",
+      "removed": false,
+      "selected": false,
+      "selectable": true,
+      "locked": false,
+      "grabbable": true,
+      "classes": ""
+    }, {
+      "data": {
+        "id": "n4",
+        "label": "node 4",
+        "info": {
+          "description": "server",
+          "type": "threat",
+          "aspect": "physical",
+          "layer": "application",
+          "nodeType": "server",
+          "attribute": "process",
+          "input": "dataDigital",
+          "output": "dataDigital"
+        }
+      },
+      "position": {
+        "x": 226.73449450949326,
+        "y": 5.15486786503119
+      },
+      "group": "nodes",
+      "removed": false,
+      "selected": false,
+      "selectable": true,
+      "locked": false,
+      "grabbable": true,
+      "classes": ""
+    }, {
+      "data": {
+        "id": "n5",
+        "label": "node 5",
+        "info": {
+          "description": "server",
+          "type": "constraint",
+          "aspect": "physical",
+          "layer": "application",
+          "nodeType": "server",
+          "attribute": "process",
+          "input": "dataDigital",
+          "output": "dataDigital"
+        }
+      },
+      "position": {
+        "x": 152.52942222288226,
+        "y": 314.42169615236674
+      },
+      "group": "nodes",
+      "removed": false,
+      "selected": false,
+      "selectable": true,
+      "locked": false,
+      "grabbable": true,
+      "classes": ""
+    }, {
+      "data": {
+        "id": "n6",
+        "label": "node 6",
+        "info": {
+          "description": "server",
+          "type": "threat",
+          "aspect": "physical",
+          "layer": "application",
+          "nodeType": "server",
+          "attribute": "process",
+          "input": "dataDigital",
+          "output": "dataDigital"
+        }
+      },
+      "position": {
+        "x": 11.416554241058897,
+        "y": 287.8169732118517
+      },
+      "group": "nodes",
+      "removed": false,
+      "selected": false,
+      "selectable": true,
+      "locked": false,
+      "grabbable": true,
+      "classes": ""
+    }],
+    "edges": [{
+      "data": {
+        "id": "e1",
+        "source": "n2",
+        "target": "n5"
+      },
+      "position": {},
+      "group": "edges",
+      "removed": false,
+      "selected": false,
+      "selectable": true,
+      "locked": false,
+      "grabbable": true,
+      "classes": ""
+    }, {
+      "data": {
+        "id": "e2",
+        "source": "n1",
+        "target": "n3"
+      },
+      "position": {},
+      "group": "edges",
+      "removed": false,
+      "selected": false,
+      "selectable": true,
+      "locked": false,
+      "grabbable": true,
+      "classes": ""
+    }, {
+      "data": {
+        "id": "e3",
+        "source": "n1",
+        "target": "n2"
+      },
+      "position": {},
+      "group": "edges",
+      "removed": false,
+      "selected": false,
+      "selectable": true,
+      "locked": false,
+      "grabbable": true,
+      "classes": ""
+    }, {
+      "data": {
+        "id": "e4",
+        "source": "n3",
+        "target": "n4"
+      },
+      "position": {},
+      "group": "edges",
+      "removed": false,
+      "selected": false,
+      "selectable": true,
+      "locked": false,
+      "grabbable": true,
+      "classes": ""
+    }, {
+      "data": {
+        "id": "e5",
+        "source": "n1",
+        "target": "n6"
+      },
+      "position": {},
+      "group": "edges",
+      "removed": false,
+      "selected": false,
+      "selectable": true,
+      "locked": false,
+      "grabbable": true,
+      "classes": ""
+    }]
+  },
+  "style": [{
+    "selector": "node",
+    "style": {
+      "background-color": "#61AFEF",
+      "color": "#d6d6d6",
+      "label": "data(label)"
+    }
+  }, {
+    "selector": "edge",
+    "style": {
+      "line-color": "#61AFEF"
+    }
+  }, {
+    "selector": ":selected",
+    "style": {
+      "background-color": "#a4bd8e"
+    }
+  }, {
+    "selector": ".faded",
+    "style": {
+      "opacity": "0.25",
+      "text-opacity": "0"
+    }
+  }, {
+    "selector": ".selection",
+    "style": {
+      "background-color": "#a4bd8e",
+      "line-color": "#a4bd8e"
+    }
+  }],
+  "zoomingEnabled": true,
+  "userZoomingEnabled": true,
+  "zoom": 0.791154519266502,
+  "minZoom": 1e-50,
+  "maxZoom": 1e+50,
+  "panningEnabled": true,
+  "userPanningEnabled": true,
+  "pan": {
+    "x": 41.53775901866413,
+    "y": 115.52647048095466
+  },
+  "boxSelectionEnabled": true,
+  "renderer": {
+    "name": "canvas"
+  }
+}

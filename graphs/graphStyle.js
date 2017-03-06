@@ -14,7 +14,12 @@ graphStyle.style = [{
 }, {
   selector: 'edge',
   style: {
-    'line-color': config.blue
+    'line-color': config.blue,
+    'color': config.comment,
+    label: 'data(id)',
+    'target-arrow-shape': 'triangle',
+    'target-arrow-color': config.blue,
+    'width': 2
   }
 }, {
   selector: ':selected',

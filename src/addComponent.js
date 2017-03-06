@@ -10,7 +10,6 @@
 // module.exports = function addComponent(component, cy) {
 module.exports = function addComponent (cy, component) {
   let lastNode = cy.nodes().length + 1
-  console.log(cy.nodes().length)
 
   switch (component) {
     case 'device':
@@ -80,7 +79,6 @@ module.exports = function addComponent (cy, component) {
   cy.add({
     group: 'nodes',
     data: {
-      weight: 75,
       id: `n${lastNode}`,
       label: `${component}`,
       info: {
@@ -88,8 +86,8 @@ module.exports = function addComponent (cy, component) {
         // type: `${component}`
       },
       position: {
-        x: 180,
-        y: 180
+        x: 400,
+        y: 400
       }
     }
   })

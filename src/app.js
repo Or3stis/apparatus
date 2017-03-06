@@ -12,6 +12,7 @@ const nodeSelection = require('./src/nodeSelection.js')
 const validation = require('./src/validation.js')
 const keyboard = require('./src/keyboard.js')
 const addComponent = require('./src/addComponent.js')
+const addEdge = require('./src/addEdge.js')
 const save = require('./src/save.js')
 // const config = require('./src/config.js')
 
@@ -36,25 +37,31 @@ cy.layout({
 })
 
 let selectedNode = []
+let selectedEdge = []
+let sourceNode = ''
+let targetNode = ''
 
 // when tapping on a node show the neighbors
 cy.on('tap', 'node', (selection) => {
   // removes previous selections
   cy.elements().removeClass('selection')
   // to show the neighbors
-  const node = selection.cyTarget
-  const neighborhood = node.neighborhood().add(node)
+  selectedNode = selection.cyTarget[0]
+  const neighborhood = selectedNode.neighborhood().add(selectedNode)
   cy.elements().addClass('faded')
   neighborhood.removeClass('faded')
 
-  nodeInfo(node)
-  node.addClass('selection')
-  selectedNode = selection.cyTarget[0]
+  nodeInfo(selectedNode)
+  selectedNode.addClass('selection')
+  // console.log(selectedNode.data().id)
+  sourceNode = targetNode // second selection
+  targetNode = selectedNode.data().id
 })
 cy.on('tap', 'edge', (selection) => {
   // removes previous selections
   cy.elements().removeClass('selection')
   selection.cyTarget.addClass('selection')
+  selectedEdge = selection.cyTarget[0]
 })
 // when tapping the stage
 cy.on('tap', (selection) => {
@@ -95,8 +102,15 @@ buttonSave.addEventListener('click', () => {
 })
 const buttonDeleteNode = document.getElementById('delete-node')
 buttonDeleteNode.addEventListener('click', () => {
-  // cy.remove(selectedNode)
   selectedNode.remove()
+})
+const buttonAddEdge = document.getElementById('add-edge')
+buttonAddEdge.addEventListener('click', () => {
+  addEdge(cy, sourceNode, targetNode)
+})
+const buttonDeleteEdge = document.getElementById('delete-edge')
+buttonDeleteEdge.addEventListener('click', () => {
+  selectedEdge.remove()
 })
 // test functions
 const buttonTest = document.getElementById('test-button')
