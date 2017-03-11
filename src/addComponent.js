@@ -1,10 +1,4 @@
-// const config = require('./config')
-
 'use strict'
-
-// initial values
-// let // color = '#ffffff'
-// let // type = 'circle'
 
 // add components in the graph
 // module.exports = function addComponent(component, cy) {

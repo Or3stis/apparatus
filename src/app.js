@@ -16,12 +16,13 @@ const addEdge = require('./src/addEdge.js')
 const save = require('./src/save.js')
 // const config = require('./src/config.js')
 
+// save the path
+const path = `${__dirname}`
 // require the graph file
-// const system = require(`${__dirname}/graphs/system.js`)
-const system = require(`${__dirname}/src/savedFile.json`)
+const system = require(`${path}/graphs/savedFile.json`)
 
 // graphs style
-const graphStyle = require(`${__dirname}/graphs/graphStyle.js`)
+const graphStyle = require(`${path}/graphs/graphStyle.js`)
 
 // setting up the graph container
 const cy = cytoscape({
@@ -91,14 +92,12 @@ buttonValidate.addEventListener('click', () => {
 // flag nodes
 const buttonFlag = document.getElementById('flag-button')
 buttonFlag.addEventListener('click', () => {
-  flagNodes(cy)
+  flagNodes(cy) // module
 })
 // save graph
-// TODO need to load the graph from the json
-// TODO need to fix the file paths
 const buttonSave = document.getElementById('save-button')
 buttonSave.addEventListener('click', () => {
-  save(cy)
+  save(cy, path) // module
 })
 const buttonDeleteNode = document.getElementById('delete-node')
 buttonDeleteNode.addEventListener('click', () => {
@@ -106,7 +105,7 @@ buttonDeleteNode.addEventListener('click', () => {
 })
 const buttonAddEdge = document.getElementById('add-edge')
 buttonAddEdge.addEventListener('click', () => {
-  addEdge(cy, sourceNode, targetNode)
+  addEdge(cy, sourceNode, targetNode) // module
 })
 const buttonDeleteEdge = document.getElementById('delete-edge')
 buttonDeleteEdge.addEventListener('click', () => {
@@ -115,7 +114,7 @@ buttonDeleteEdge.addEventListener('click', () => {
 // test functions
 const buttonTest = document.getElementById('test-button')
 buttonTest.addEventListener('click', () => {
-  searchAttribute(cy, 'laptop')
+  searchAttribute(cy, 'laptop') // module
   // selectedNode.restore()
 })
 

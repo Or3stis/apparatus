@@ -1,12 +1,10 @@
 'use scrict'
 
 const jsonfile = require('jsonfile')
-const fileToSave = `${__dirname}/savedFile.json`
-
-// TODO fix the directory issue
 
 // saves graph to savedFile.json
-module.exports = function save (cy) {
+module.exports = function save (cy, path) {
+  const fileToSave = `${path}/graphs/savedFile.json`
   // parses graph and stores it as an object
   const fullgraph = cy.json()
   jsonfile.writeFile(fileToSave, fullgraph, (err) => {

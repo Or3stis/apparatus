@@ -15,26 +15,18 @@
   <div class="window">
 
     <div class="action-bar" id="action-bar-id">
-      <!-- <h3>Control panel</h3> -->
-
       <div class="components" id="components-id">
 
         <select class="selection" required id="add-component-id">
           <!-- <option value="" disabled selected>add component</option> -->
           <option value="" selected>add component</option>
-          <option value="device">device</option>
+          <option value="device">thing</option>
           <option value="data">data</option>
           <option value="micronet">micronet</option>
-          <option value="secure micronet">secure microcnet</option>
-          <option value="network connection">network connection</option>
           <option value="threat">threat</option>
-          <option value="vulnerability">vulnerability</option>
           <option value="asset">asset</option>
-          <option value="mechanism">mechanism</option>
           <option value="constraint">constraint</option>
-          <option value="objective">objective</option>
           <option value="actor">actor</option>
-          <option value="malicious actor">malicious actor</option>
           <option value="unidentified node">unidentified node</option>
           <option value="net">net</option>
         </select>
@@ -46,19 +38,13 @@
 
         <select class="selection" required id="selection-id">
           <option value="" disabled selected>Select component</option>
-          <option value="device">device</option>
+          <option value="device">thing</option>
           <option value="data">data</option>
           <option value="micronet">micronet</option>
-          <option value="secure micronet">secure micronet</option>
-          <option value="network connection">network connection</option>
           <option value="threat">threat</option>
-          <option value="vulnerability">vulnerability</option>
           <option value="asset">asset</option>
-          <option value="mechanism">mechanism</option>
           <option value="constraint">constraint</option>
-          <option value="objective">objective</option>
           <option value="actor">actor</option>
-          <option value="malicious actor">malicious actor</option>
           <option value="unidentified node">unidentified node</option>
           <option value="net">net</option>
         </select>
@@ -93,7 +79,6 @@
     </div>
 
     <div class="sidebar" id="sidebar-id">
-      <!-- <h3>Info bar</h3> -->
       <input type="text" placeholder="type help.." maxlength="25" id="console-id" class="selection" />
       <!-- contenteditable is used to able change the stuff -->
       <div class="info-for-nodes" id="info-for-nodes-id" contenteditable></div>
