@@ -170,10 +170,9 @@ option {
 }
 
 .choose {
-  width: 300px;
-  height: 300px;
-  margin-left: 33%;
-  margin-top: 10%;
+  margin: 0 auto;
+  margin-top: 12em;
+  width: 12em;
 }
 
 .buttonPhase {
@@ -182,7 +181,6 @@ option {
   color: var(--main-tx-color);
   width: 150px;
   height: 40px;
-  margin-left: 80px;
   border: 1px solid;
   border-color: var(--main-bg-color);
   font-size: 14px;
@@ -191,4 +189,9 @@ option {
 
 .buttonPhase:hover {
   border-bottom-color: var(--blue-color);
+}
+
+/*remove the blue outline box of chrome*/
+.buttonPhase:focus {
+  outline: none;
 }
