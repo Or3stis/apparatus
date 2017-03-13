@@ -1,6 +1,6 @@
 'use strict'
 
-const config = require('./config')
+const config = require(`${__dirname}/config.js`)
 
 // checks the values of the nodes for flagged values
 const flaggedList = config.flag
