@@ -16,7 +16,7 @@ graphStyle.style = [{
   style: {
     'line-color': config.blue,
     'color': config.comment,
-    label: 'data(id)',
+    label: 'data(label)',
     'target-arrow-shape': 'triangle',
     'target-arrow-color': config.blue,
     'width': 2

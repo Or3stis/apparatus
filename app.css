@@ -18,7 +18,7 @@
 
 body {
   background-color: var(--main-bg-color);
-  font-family: Monaco, Menlo, Consolas, monospace;
+  font-family: Hack, Monaco, Consolas, monospace;
   color: var(--main-tx-color);
   height: 100%;
   width: 100%;

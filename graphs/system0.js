@@ -10,7 +10,7 @@ system.graph = [
       label: 'Net:Internet',
       weight: 100,
       info: {
-        description: 'Net'
+        type: 'net'
       }
     }
   }, {
@@ -18,7 +18,7 @@ system.graph = [
       id: '2',
       label: 'Micronet:IoT system',
       info: {
-        description: 'Micronet'
+        type: 'micronet'
       }
     }
   }, {
@@ -26,7 +26,7 @@ system.graph = [
       id: '3',
       label: 'Thing:temperature sensor',
       info: {
-        description: 'thing'
+        type: 'thing'
       }
     }
   }, {
@@ -34,7 +34,7 @@ system.graph = [
       id: '4',
       label: 'Security Sensor:server',
       info: {
-        description: 'server'
+        type: 'security sensor'
       }
     }
   }, {
@@ -42,7 +42,7 @@ system.graph = [
       id: '5',
       label: 'Thing:mobile device',
       info: {
-        description: 'thing'
+        type: 'thing'
       }
     }
   }, {
@@ -50,7 +50,7 @@ system.graph = [
       id: '6',
       label: 'Actor:user',
       info: {
-        description: 'user'
+        type: 'actor'
       }
     }
   }, {
@@ -58,7 +58,7 @@ system.graph = [
       id: '7',
       label: 'Data:user credential',
       info: {
-        description: 'user'
+        type: 'data'
       }
     }
   }, {
@@ -66,7 +66,7 @@ system.graph = [
       id: '8',
       label: 'Data:temperature data',
       info: {
-        description: 'user'
+        type: 'data'
       }
     }
   }, {
@@ -74,7 +74,7 @@ system.graph = [
       id: '9',
       label: 'Threat:user credentail can be stolen',
       info: {
-        description: 'user'
+        type: 'threat'
       }
     }
   }, {
@@ -82,7 +82,7 @@ system.graph = [
       id: '10',
       label: 'Constraint:client be authorized',
       info: {
-        description: 'user'
+        type: 'constraint'
       }
     }
   }, {
@@ -90,7 +90,7 @@ system.graph = [
       id: '11',
       label: 'Threat:non authenticated Things can tamper with data server',
       info: {
-        description: 'user'
+        type: 'threat'
       }
     }
   }, {
@@ -98,7 +98,7 @@ system.graph = [
       id: '12',
       label: 'Constraint:client be authenticated',
       info: {
-        description: 'user'
+        type: 'constraint'
       }
     }
   }, {
@@ -106,7 +106,7 @@ system.graph = [
       id: '13',
       label: 'Constraint:client be deauthenticated',
       info: {
-        description: 'user'
+        type: 'constraint'
       }
     }
   }, {
@@ -114,7 +114,7 @@ system.graph = [
       id: '15',
       label: 'Asset:user credential',
       info: {
-        description: 'user'
+        type: 'asset'
       }
     }
   }, {
@@ -122,7 +122,7 @@ system.graph = [
       id: '16',
       label: 'Asset:temperature data',
       info: {
-        description: 'user'
+        type: 'asset'
       }
     }
   }, {
@@ -130,7 +130,7 @@ system.graph = [
       id: '17',
       label: 'Thing:mobile phone',
       info: {
-        description: 'user'
+        type: 'thing'
       }
     },
     classes: 'red'
@@ -139,7 +139,7 @@ system.graph = [
       id: '18',
       label: 'Threat:non authenticated clients cause authenticated clients to disconnect',
       info: {
-        description: 'user'
+        type: 'threat'
       }
     }
   }, {
@@ -147,7 +147,7 @@ system.graph = [
       id: '19',
       label: 'Constraint:Micronet ignores request',
       info: {
-        description: 'user'
+        type: 'constraint'
       }
     }
   },
