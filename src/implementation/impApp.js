@@ -15,7 +15,7 @@ const keyboard = require('./src/keyboard.js')
 const addComponent = require('./src/addComponent.js')
 const addEdge = require('./src/addEdge.js')
 const save = require('./src/save.js')
-// const config = require('./src/config.js')
+const config = require('./style/config.js')
 
 // save the path
 const path = `${__dirname}`
@@ -23,7 +23,7 @@ const path = `${__dirname}`
 const system = require(`${path}/graphs/savedFile.json`)
 
 // graphs style
-const graphStyle = require(`${path}/graphs/graphStyle.js`)
+const graphStyle = require(`${path}/style/graphStyle.js`)
 
 // setting up the graph container
 const cy = cytoscape({
@@ -97,7 +97,7 @@ buttonModuleValidate.addEventListener('click', () => {
 // flag nodes
 const buttonFlag = document.getElementById('flag-button')
 buttonFlag.addEventListener('click', () => {
-  flagNodes(cy) // module
+  flagNodes(cy, config.flag) // module
 })
 // save graph
 const buttonSave = document.getElementById('save-button')

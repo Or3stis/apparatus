@@ -1,11 +1,6 @@
 'use strict'
 
-const config = require(`${__dirname}/config.js`)
-
-// checks the values of the nodes for flagged values
-const flaggedList = config.flag
-
-module.exports = function securityHints (cy) {
+module.exports = function securityHints (cy, flaggedList) {
   let flaggedNodes = ''
 
   // apply the faded class to all the elements
