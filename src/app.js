@@ -9,7 +9,8 @@ const searchAttribute = require('./src/searchAttribute.js')
 const flagNodes = require('./src/flagNodes.js')
 const moduleSelection = require('./src/moduleSelection.js')
 const nodeSelection = require('./src/nodeSelection.js')
-const validation = require('./src/validation.js')
+const threatValidation = require('./src/threatValidation.js')
+const moduleValidation = require('./src/moduleValidation.js')
 const keyboard = require('./src/keyboard.js')
 const addComponent = require('./src/addComponent.js')
 const addEdge = require('./src/addEdge.js')
@@ -85,9 +86,13 @@ cy.on('mouseout', 'node', (event) => {
 
 // buttons
 // validate security
-const buttonValidate = document.getElementById('validate-button')
-buttonValidate.addEventListener('click', () => {
-  validation(cy) // module
+const buttonThreatValidate = document.getElementById('threat-validate-button')
+buttonThreatValidate.addEventListener('click', () => {
+  threatValidation(cy) // module
+})
+const buttonModuleValidate = document.getElementById('module-validate-button')
+buttonModuleValidate.addEventListener('click', () => {
+  moduleValidation(cy) // module
 })
 // flag nodes
 const buttonFlag = document.getElementById('flag-button')

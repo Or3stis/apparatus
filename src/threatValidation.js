@@ -1,7 +1,7 @@
 'use scrict'
 
 // checks if a node threat has a connection to a node constraint
-module.exports = function validation (cy) {
+module.exports = function threatValidation (cy) {
   let arrThreat = [] // array with all threats
   let arrMitigated = [] // array with mitigated threats
   let result = '' // posted on the nodeInfo div

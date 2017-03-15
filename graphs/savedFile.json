@@ -1,1 +1,282 @@
-{"elements":{"nodes":[{"data":{"id":"n1","label":"node 1","info":{"description":"laptop","type":"device","aspect":"physical","layer":"application","nodeType":"server","attribute":"process","input":"dataDigital","output":"dataDigital"}},"position":{"x":436.9924217623283,"y":437.0353901697928},"group":"nodes","removed":false,"selected":false,"selectable":true,"locked":false,"grabbable":true,"classes":""},{"data":{"id":"n2","label":"node 2","info":{"description":"server","type":"device","aspect":"physical","layer":"application","nodeType":"server","attribute":"process","input":"dataDigital","output":"dataDigital"}},"position":{"x":392.2220563332089,"y":299.2931727459069},"group":"nodes","removed":false,"selected":false,"selectable":true,"locked":false,"grabbable":true,"classes":""},{"data":{"id":"n3","label":"node 3","info":{"description":"server","type":"device","aspect":"physical","layer":"application","nodeType":"server","attribute":"process","input":"dataDigital","output":"dataDigital"}},"position":{"x":573.8989196553036,"y":409.6482578966222},"group":"nodes","removed":false,"selected":false,"selectable":true,"locked":false,"grabbable":true,"classes":""},{"data":{"id":"n4","label":"node 4","info":{"description":"server","type":"threat","aspect":"physical","layer":"application","nodeType":"server","attribute":"process","input":"dataDigital","output":"dataDigital"}},"position":{"x":607.5698012867417,"y":554.8236333012412},"group":"nodes","removed":false,"selected":false,"selectable":true,"locked":false,"grabbable":true,"classes":""},{"data":{"id":"n5","label":"node 5","info":{"description":"server","type":"constraint","aspect":"physical","layer":"application","nodeType":"server","attribute":"process","input":"dataDigital","output":"dataDigital"}},"position":{"x":254.77069529784544,"y":344.05388934749766},"group":"nodes","removed":false,"selected":false,"selectable":true,"locked":false,"grabbable":true,"classes":""},{"data":{"id":"n6","label":"node 6","info":{"description":"server","type":"threat","aspect":"physical","layer":"application","nodeType":"server","attribute":"process","input":"dataDigital","output":"dataDigital"}},"position":{"x":360.00952960909206,"y":570.8510980113786},"group":"nodes","removed":false,"selected":false,"selectable":true,"locked":false,"grabbable":true,"classes":""}],"edges":[{"data":{"id":"e1","source":"n2","target":"n5"},"position":{},"group":"edges","removed":false,"selected":false,"selectable":true,"locked":false,"grabbable":true,"classes":""},{"data":{"id":"e2","source":"n1","target":"n3"},"position":{},"group":"edges","removed":false,"selected":false,"selectable":true,"locked":false,"grabbable":true,"classes":""},{"data":{"id":"e3","source":"n1","target":"n2"},"position":{},"group":"edges","removed":false,"selected":false,"selectable":true,"locked":false,"grabbable":true,"classes":""},{"data":{"id":"e4","source":"n3","target":"n4"},"position":{},"group":"edges","removed":false,"selected":false,"selectable":true,"locked":false,"grabbable":true,"classes":""},{"data":{"id":"e5","source":"n1","target":"n6"},"position":{},"group":"edges","removed":false,"selected":false,"selectable":true,"locked":false,"grabbable":true,"classes":""}]},"style":[{"selector":"node","style":{"background-color":"#61afef","color":"#abb2bf","label":"data(label)"}},{"selector":"edge","style":{"line-color":"#61afef","color":"#abb2bf","label":"data(id)","target-arrow-shape":"triangle","target-arrow-color":"#61afef","width":"2px"}},{"selector":":selected","style":{"background-color":"#98c379"}},{"selector":".faded","style":{"opacity":"0.25","text-opacity":"0"}},{"selector":".selection","style":{"background-color":"#98c379","line-color":"#98c379"}}],"zoomingEnabled":true,"userZoomingEnabled":true,"zoom":1.1641081963182802,"minZoom":1e-50,"maxZoom":1e+50,"panningEnabled":true,"userPanningEnabled":true,"pan":{"x":-64.92882004564694,"y":-281.15817321342814},"boxSelectionEnabled":true,"renderer":{"name":"canvas"}}
+{
+  "elements": {
+    "nodes": [{
+      "data": {
+        "id": "n1",
+        "label": "node 1",
+        "info": {
+          "description": "laptop",
+          "type": "device",
+          "aspect": "physical",
+          "layer": "application",
+          "nodeType": "server",
+          "attribute": "process",
+          "input": "dataDigital",
+          "output": "dataDigital"
+        }
+      },
+      "position": {
+        "x": 436.9924217623283,
+        "y": 437.0353901697928
+      },
+      "group": "nodes",
+      "removed": false,
+      "selected": false,
+      "selectable": true,
+      "locked": false,
+      "grabbable": true,
+      "classes": ""
+    }, {
+      "data": {
+        "id": "n2",
+        "label": "node 2",
+        "info": {
+          "description": "server",
+          "type": "device",
+          "aspect": "physical",
+          "layer": "application",
+          "nodeType": "server",
+          "attribute": "process",
+          "input": "dataDigital",
+          "output": "dataDigital"
+        }
+      },
+      "position": {
+        "x": 392.2220563332089,
+        "y": 299.2931727459069
+      },
+      "group": "nodes",
+      "removed": false,
+      "selected": false,
+      "selectable": true,
+      "locked": false,
+      "grabbable": true,
+      "classes": ""
+    }, {
+      "data": {
+        "id": "n3",
+        "label": "node 3",
+        "info": {
+          "description": "server",
+          "type": "device",
+          "aspect": "physical",
+          "layer": "application",
+          "nodeType": "server",
+          "attribute": "process",
+          "input": "dataDigital",
+          "output": "dataDigital"
+        }
+      },
+      "position": {
+        "x": 573.8989196553036,
+        "y": 409.6482578966222
+      },
+      "group": "nodes",
+      "removed": false,
+      "selected": false,
+      "selectable": true,
+      "locked": false,
+      "grabbable": true,
+      "classes": ""
+    }, {
+      "data": {
+        "id": "n4",
+        "label": "node 4",
+        "info": {
+          "description": "server",
+          "type": "threat",
+          "aspect": "physical",
+          "layer": "application",
+          "nodeType": "server",
+          "attribute": "process",
+          "input": "dataDigital",
+          "output": "dataDigital"
+        }
+      },
+      "position": {
+        "x": 607.5698012867417,
+        "y": 554.8236333012412
+      },
+      "group": "nodes",
+      "removed": false,
+      "selected": false,
+      "selectable": true,
+      "locked": false,
+      "grabbable": true,
+      "classes": ""
+    }, {
+      "data": {
+        "id": "n5",
+        "label": "node 5",
+        "info": {
+          "description": "server",
+          "type": "constraint",
+          "aspect": "physical",
+          "layer": "application",
+          "nodeType": "server",
+          "attribute": "process",
+          "input": "dataDigital",
+          "output": "dataDigital"
+        }
+      },
+      "position": {
+        "x": 254.77069529784544,
+        "y": 344.05388934749766
+      },
+      "group": "nodes",
+      "removed": false,
+      "selected": false,
+      "selectable": true,
+      "locked": false,
+      "grabbable": true,
+      "classes": ""
+    }, {
+      "data": {
+        "id": "n6",
+        "label": "node 6",
+        "info": {
+          "description": "server",
+          "type": "threat",
+          "aspect": "physical",
+          "layer": "application",
+          "nodeType": "server",
+          "attribute": "process",
+          "input": "dataDigital",
+          "output": "dataDigital"
+        }
+      },
+      "position": {
+        "x": 360.00952960909206,
+        "y": 570.8510980113786
+      },
+      "group": "nodes",
+      "removed": false,
+      "selected": false,
+      "selectable": true,
+      "locked": false,
+      "grabbable": true,
+      "classes": ""
+    }],
+    "edges": [{
+      "data": {
+        "id": "e1",
+        "source": "n2",
+        "target": "n5"
+      },
+      "position": {},
+      "group": "edges",
+      "removed": false,
+      "selected": false,
+      "selectable": true,
+      "locked": false,
+      "grabbable": true,
+      "classes": ""
+    }, {
+      "data": {
+        "id": "e2",
+        "source": "n1",
+        "target": "n3"
+      },
+      "position": {},
+      "group": "edges",
+      "removed": false,
+      "selected": false,
+      "selectable": true,
+      "locked": false,
+      "grabbable": true,
+      "classes": ""
+    }, {
+      "data": {
+        "id": "e3",
+        "source": "n1",
+        "target": "n2"
+      },
+      "position": {},
+      "group": "edges",
+      "removed": false,
+      "selected": false,
+      "selectable": true,
+      "locked": false,
+      "grabbable": true,
+      "classes": ""
+    }, {
+      "data": {
+        "id": "e4",
+        "source": "n3",
+        "target": "n4"
+      },
+      "position": {},
+      "group": "edges",
+      "removed": false,
+      "selected": false,
+      "selectable": true,
+      "locked": false,
+      "grabbable": true,
+      "classes": ""
+    }, {
+      "data": {
+        "id": "e5",
+        "source": "n1",
+        "target": "n6"
+      },
+      "position": {},
+      "group": "edges",
+      "removed": false,
+      "selected": false,
+      "selectable": true,
+      "locked": false,
+      "grabbable": true,
+      "classes": ""
+    }]
+  },
+  "style": [{
+    "selector": "node",
+    "style": {
+      "background-color": "#61afef",
+      "color": "#abb2bf",
+      "label": "data(label)"
+    }
+  }, {
+    "selector": "edge",
+    "style": {
+      "line-color": "#61afef",
+      "color": "#abb2bf",
+      "label": "data(id)",
+      "target-arrow-shape": "triangle",
+      "target-arrow-color": "#61afef",
+      "width": "2px"
+    }
+  }, {
+    "selector": ":selected",
+    "style": {
+      "background-color": "#98c379"
+    }
+  }, {
+    "selector": ".faded",
+    "style": {
+      "opacity": "0.25",
+      "text-opacity": "0"
+    }
+  }, {
+    "selector": ".selection",
+    "style": {
+      "background-color": "#98c379",
+      "line-color": "#98c379"
+    }
+  }],
+  "zoomingEnabled": true,
+  "userZoomingEnabled": true,
+  "zoom": 1.1641081963182802,
+  "minZoom": 1e-50,
+  "maxZoom": 1e+50,
+  "panningEnabled": true,
+  "userPanningEnabled": true,
+  "pan": {
+    "x": -64.92882004564694,
+    "y": -281.15817321342814
+  },
+  "boxSelectionEnabled": true,
+  "renderer": {
+    "name": "canvas"
+  }
+}
