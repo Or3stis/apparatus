@@ -3,6 +3,7 @@
 // here is where it begins
 'use strict'
 
+// const path = require('path')
 const nodeInfo = require('./src/nodeInfo.js')
 const hoverNodeInfo = require('./src/hoverNodeInfo.js')
 const searchAttribute = require('./src/searchAttribute.js')
@@ -10,7 +11,8 @@ const flagNodes = require('./src/flagNodes.js')
 const moduleSelection = require('./src/moduleSelection.js')
 const nodeSelection = require('./src/nodeSelection.js')
 const threatValidation = require('./src/threatValidation.js')
-const moduleValidation = require('./src/design/dgnModuleValidation.js')
+const impModuleValidation = require('./src/implementation/impModuleValidation.js')
+const dgnModuleValidation = require('./src/design/dgnModuleValidation.js')
 const keyboard = require('./src/keyboard.js')
 const addComponent = require('./src/addComponent.js')
 const addEdge = require('./src/addEdge.js')
@@ -19,7 +21,6 @@ const config = require('./style/config.js')
 
 // save the path
 const path = `${__dirname}`
-console.log(path)
 // require the graph file
 const system = require(`${path}/graphs/savedFile.json`)
 
@@ -93,7 +94,11 @@ buttonThreatValidate.addEventListener('click', () => {
 })
 const buttonModuleValidate = document.getElementById('module-validate-button')
 buttonModuleValidate.addEventListener('click', () => {
-  moduleValidation(cy) // module
+  if (window.location.pathname === `${path}/implementation.html`) {
+    impModuleValidation(cy)
+  } else {
+    dgnModuleValidation(cy)
+  }
 })
 // flag nodes
 const buttonFlag = document.getElementById('flag-button')
