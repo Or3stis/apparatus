@@ -1,5 +1,5 @@
-// style config for the graphs
-const config = require(`${__dirname}/configGraphs.js`)
+// style configGraph for the graphs
+const configGraph = require(`${__dirname}/configGraph.js`)
 
 const graphStyle = {}
 
@@ -7,24 +7,24 @@ graphStyle.style = [{
   selector: 'node',
   style: {
     shape: 'circle',
-    'background-color': config.blue,
-    'color': config.comment,
+    'background-color': configGraph.blue,
+    'color': configGraph.comment,
     label: 'data(label)'
   }
 }, {
   selector: 'edge',
   style: {
-    'line-color': config.blue,
-    'color': config.comment,
+    'line-color': configGraph.blue,
+    'color': configGraph.comment,
     label: 'data(label)',
     'target-arrow-shape': 'triangle',
-    'target-arrow-color': config.blue,
+    'target-arrow-color': configGraph.blue,
     'width': 2
   }
 }, {
   selector: ':selected',
   style: {
-    'background-color': config.green
+    'background-color': configGraph.green
   }
 }, {
   selector: '.faded',
@@ -35,8 +35,8 @@ graphStyle.style = [{
 }, {
   selector: '.selection',
   style: {
-    'background-color': config.green,
-    'line-color': config.green
+    'background-color': configGraph.green,
+    'line-color': configGraph.green
   }
 }]
 
