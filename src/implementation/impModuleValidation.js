@@ -59,9 +59,9 @@ function componentValidation (cy, component, componentArray) {
           arrWrong.pop(neighborNodes.data().info.type)
         }
         result = `${arrWrong}`
-        // if the array in empty, the module is correct
+        // if the array is empty, the module is correct
         if (result === '') {
-          result = 'model instant is valid'
+          result = 'model instant is valid 👍'
         }
       })
     }

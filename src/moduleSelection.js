@@ -3,9 +3,9 @@
 // grouping of the module components
 let groupArray = []
 const networkArray = ['device', 'network connection', 'micronet',
-  'net', 'unidentified node', 'data']
+  'net', 'unidentified node', 'data', 'thing']
 const securityArray = ['asset', 'threat', 'vulnerability', 'mechanism',
-  'constraint', 'secure micronet', 'objective', 'malicious actor'
+  'constraint', 'secure micronet', 'malicious actor'
 ]
 const socialArray = ['actor']
 

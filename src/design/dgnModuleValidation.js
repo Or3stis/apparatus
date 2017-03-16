@@ -43,7 +43,7 @@ function componentValidation (cy, component, componentArray) {
         result = `${arrWrong}`
         // if the array in empty, the module is correct
         if (result === '') {
-          result = 'model instant is valid'
+          result = 'model instance is valid 👍'
         }
       })
     }
