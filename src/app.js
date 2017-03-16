@@ -11,12 +11,15 @@ const flagNodes = require('./src/flagNodes.js')
 const moduleSelection = require('./src/moduleSelection.js')
 const nodeSelection = require('./src/nodeSelection.js')
 const threatValidation = require('./src/threatValidation.js')
-const impModuleValidation = require('./src/implementation/impModuleValidation.js')
-const dgnModuleValidation = require('./src/design/dgnModuleValidation.js')
 const keyboard = require('./src/keyboard.js')
 const addComponent = require('./src/addComponent.js')
 const addEdge = require('./src/addEdge.js')
 const save = require('./src/save.js')
+
+const impModuleValidation = require('./src/implementation/impModuleValidation.js')
+const vulnerabilityValidation = require('./src/vulnerabilityValidation.js')
+const dgnModuleValidation = require('./src/design/dgnModuleValidation.js')
+
 const config = require('./style/config.js')
 
 // save the path
@@ -87,10 +90,15 @@ cy.on('mouseout', 'node', (event) => {
 })
 
 // buttons
-// validate security
+// validate threats
 const buttonThreatValidate = document.getElementById('threat-validate-button')
 buttonThreatValidate.addEventListener('click', () => {
   threatValidation(cy) // module
+})
+// TODO test it
+const buttonVulnerabilityValidate = document.getElementById('vulnerability-validate-button')
+buttonVulnerabilityValidate.addEventListener('click', () => {
+  vulnerabilityValidation(cy) // module
 })
 const buttonModuleValidate = document.getElementById('module-validate-button')
 buttonModuleValidate.addEventListener('click', () => {
