@@ -10,6 +10,11 @@ The application is still in prototyping stage, which means a lot of
 functionality is being added with each commit, along with massive changes in
 about everything.
 
+Some screenshots..
+
+![](https://raw.githubusercontent.com/Or3stis/apparatus/master/assets/screenshot1.png)
+<img src="https://raw.githubusercontent.com/Or3stis/apparatus/master/assets/screenShot2.png" width="48">
+
 ## To Use
 
 To clone and run this repository you'll need [Git](https://git-scm.com) and [Node.js](https://nodejs.org/en/download/) installed on your computer. To download and install the app, type the following in your command line:

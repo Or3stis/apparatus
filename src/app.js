@@ -3,7 +3,6 @@
 // here is where it begins
 'use strict'
 
-// const path = require('path')
 const nodeInfo = require('./src/nodeInfo.js')
 const hoverNodeInfo = require('./src/hoverNodeInfo.js')
 const searchAttribute = require('./src/searchAttribute.js')
