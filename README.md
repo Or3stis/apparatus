@@ -12,8 +12,9 @@ about everything.
 
 Some screenshots..
 
-![](https://raw.githubusercontent.com/Or3stis/apparatus/master/assets/screenshot1.png)
-<img src="https://raw.githubusercontent.com/Or3stis/apparatus/master/assets/screenShot2.png" width="48">
+![](https://raw.githubusercontent.com/Or3stis/apparatus/master/assets/screenShot1.png)
+
+![](https://raw.githubusercontent.com/Or3stis/apparatus/master/assets/screenShot2.png)
 
 ## To Use
 
