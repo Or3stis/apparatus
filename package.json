@@ -22,7 +22,8 @@
   },
   "homepage": "https://github.com/Or3stis/apparatus/#readme",
   "devDependencies": {
-    "electron": "^1.4.12",
+    "devtron": "^1.4.0",
+    "electron": "^1.6.2",
     "jsonfile": "^2.4.0"
   }
 }
