@@ -1,4 +1,4 @@
-// configGraphuration values
+// graph color values
 
 const configGraph = {}
 

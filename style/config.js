@@ -1,4 +1,4 @@
-// configuration values
+// configuration and color values of the GUI
 
 const config = {}
 

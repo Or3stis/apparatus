@@ -1,4 +1,5 @@
-// style configGraph for the graphs
+// CSS style for the graphs
+
 const configGraph = require(`${__dirname}/configGraph.js`)
 
 const graphStyle = {}

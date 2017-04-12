@@ -94,7 +94,6 @@ const buttonThreatVefiry = document.getElementById('threat-verify-button')
 buttonThreatVefiry.addEventListener('click', () => {
   threatVerification(cy) // module
 })
-// TODO test it
 const buttonVulnVefiry = document.getElementById('vulnerability-verify-button')
 buttonVulnVefiry.addEventListener('click', () => {
   vulnVerification(cy) // module
@@ -102,9 +101,9 @@ buttonVulnVefiry.addEventListener('click', () => {
 const buttonModuleValidate = document.getElementById('module-validate-button')
 buttonModuleValidate.addEventListener('click', () => {
   if (window.location.pathname === `${path}/implementation.html`) {
-    impModuleValidation(cy)
+    impModuleValidation(cy) // imp module
   } else {
-    dgnModuleValidation(cy)
+    dgnModuleValidation(cy) // dgn module
   }
 })
 // flag nodes
