@@ -8,19 +8,27 @@ graphStyle.style = [{
   selector: 'node',
   style: {
     shape: 'circle',
-    'background-color': configGraph.blue,
-    'color': configGraph.comment,
-    label: 'data(label)'
+    'background-color': configGraph.gray,
+    // 'color': configGraph.black,
+    label: 'data(label)',
+    'text-valign': 'center',
+    'color': 'white',
+    'text-outline-width': 2,
+    'text-outline-color': configGraph.black
   }
 }, {
   selector: 'edge',
   style: {
-    'line-color': configGraph.blue,
-    'color': configGraph.comment,
+    'line-color': configGraph.gray,
+    // 'color': configGraph.black,
     label: 'data(label)',
     'target-arrow-shape': 'triangle',
-    'target-arrow-color': configGraph.blue,
-    'width': 2
+    'target-arrow-color': configGraph.gray,
+    'width': 2,
+    'curve-style': 'bezier',
+    'color': 'white',
+    'text-outline-width': 2,
+    'text-outline-color': configGraph.black
   }
 }, {
   selector: ':selected',

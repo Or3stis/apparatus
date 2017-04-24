@@ -1,4 +1,4 @@
-const config = require('./config.js')
+// const config = require('./config.js')
 
 const system = {}
 
@@ -7,8 +7,7 @@ system.graph = [
   {
     data: {
       id: '1',
-      label: 'Net:Internet',
-      weight: 100,
+      label: 'Net',
       info: {
         type: 'net'
       }
@@ -16,7 +15,7 @@ system.graph = [
   }, {
     data: {
       id: '2',
-      label: 'Micronet:IoT system',
+      label: 'Micronet',
       info: {
         type: 'micronet'
       }
@@ -24,7 +23,7 @@ system.graph = [
   }, {
     data: {
       id: '3',
-      label: 'Thing:temperature sensor',
+      label: 'Device',
       info: {
         type: 'thing'
       }
@@ -32,15 +31,22 @@ system.graph = [
   }, {
     data: {
       id: '4',
-      label: 'Security Sensor:server',
+      label: 'Device',
       info: {
-        type: 'security sensor'
+        description: 'laptop',
+        aspect: 'physical',
+        layer: 'perception',
+        type: 'server',
+        service: 'process',
+        input: 'dataDigital',
+        output: 'dataDigital',
+        update: 'automatic'
       }
     }
   }, {
     data: {
       id: '5',
-      label: 'Thing:mobile device',
+      label: 'Device',
       info: {
         type: 'thing'
       }
@@ -48,7 +54,7 @@ system.graph = [
   }, {
     data: {
       id: '6',
-      label: 'Actor:user',
+      label: 'Actor',
       info: {
         type: 'actor'
       }
@@ -56,7 +62,7 @@ system.graph = [
   }, {
     data: {
       id: '7',
-      label: 'Data:user credential',
+      label: 'Data',
       info: {
         type: 'data'
       }
@@ -64,7 +70,7 @@ system.graph = [
   }, {
     data: {
       id: '8',
-      label: 'Data:temperature data',
+      label: 'Data',
       info: {
         type: 'data'
       }
@@ -72,7 +78,7 @@ system.graph = [
   }, {
     data: {
       id: '9',
-      label: 'Threat:user credentail can be stolen',
+      label: 'Threat',
       info: {
         type: 'threat'
       }
@@ -80,7 +86,7 @@ system.graph = [
   }, {
     data: {
       id: '10',
-      label: 'Constraint:client be authorized',
+      label: 'Constraint',
       info: {
         type: 'constraint'
       }
@@ -88,7 +94,7 @@ system.graph = [
   }, {
     data: {
       id: '11',
-      label: 'Threat:non authenticated Things can tamper with data server',
+      label: 'Threat',
       info: {
         type: 'threat'
       }
@@ -96,7 +102,7 @@ system.graph = [
   }, {
     data: {
       id: '12',
-      label: 'Constraint:client be authenticated',
+      label: 'Constraint',
       info: {
         type: 'constraint'
       }
@@ -104,7 +110,7 @@ system.graph = [
   }, {
     data: {
       id: '13',
-      label: 'Constraint:client be deauthenticated',
+      label: 'Constraint',
       info: {
         type: 'constraint'
       }
@@ -112,7 +118,7 @@ system.graph = [
   }, {
     data: {
       id: '15',
-      label: 'Asset:user credential',
+      label: 'Asset',
       info: {
         type: 'asset'
       }
@@ -120,7 +126,7 @@ system.graph = [
   }, {
     data: {
       id: '16',
-      label: 'Asset:temperature data',
+      label: 'Asset',
       info: {
         type: 'asset'
       }
@@ -128,26 +134,25 @@ system.graph = [
   }, {
     data: {
       id: '17',
-      label: 'Thing:mobile phone',
+      label: 'Device',
       info: {
         type: 'thing'
       }
-    },
-    classes: 'red'
+    }
   }, {
     data: {
       id: '18',
-      label: 'Threat:non authenticated clients cause authenticated clients to disconnect',
+      label: 'Network Connection',
       info: {
-        type: 'threat'
+        type: 'thing'
       }
     }
   }, {
     data: {
       id: '19',
-      label: 'Constraint:Micronet ignores request',
+      label: 'Network Connection',
       info: {
-        type: 'constraint'
+        type: 'thing'
       }
     }
   },
@@ -170,22 +175,38 @@ system.graph = [
     data: {
       id: '25',
       label: '',
-      source: '2',
-      target: '5'
-    }
-  }, {
-    data: {
-      id: '34',
-      label: 'connects',
-      source: '3',
-      target: '4'
-    }
-  }, {
-    data: {
-      id: '54',
-      label: 'connects',
       source: '5',
+      target: '2'
+    }
+  }, {
+    data: {
+      id: '183',
+      label: 'connects',
+      weight: 1,
+      source: '18',
+      target: '3'
+    }
+  }, {
+    data: {
+      id: '184',
+      label: 'connects',
+      weight: 1,
+      source: '18',
       target: '4'
+    }
+  }, {
+    data: {
+      id: '194',
+      label: 'connects',
+      source: '19',
+      target: '4'
+    }
+  }, {
+    data: {
+      id: '195',
+      label: 'connects',
+      source: '19',
+      target: '5'
     }
   }, {
     data: {
@@ -270,73 +291,79 @@ system.graph = [
       label: '',
       source: '17',
       target: '2'
-    },
-    classes: 'red'
-  }, {
-    data: {
-      id: '181',
-      label: '',
-      source: '18',
-      target: '1'
     }
   }, {
     data: {
-      id: '191',
-      label: '',
-      source: '19',
-      target: '18'
+      id: '210',
+      label: 'imposes',
+      source: '10',
+      target: '2'
+    }
+  }, {
+    data: {
+      id: '212',
+      label: 'imposes',
+      source: '12',
+      target: '2'
+    }
+  }, {
+    data: {
+      id: '213',
+      label: 'imposes',
+      source: '13',
+      target: '2'
     }
   }
 ]
-system.style = [{
-  selector: 'node',
-  style: {
-    shape: 'circle',
-    'background-color': config.comment,
-    'color': config.black,
-    'text-valign': 'center',
-    'font-size': '20px',
-    label: 'data(label)'
-    // 'text-outline-color': config.comment
-  }
-}, {
-  selector: 'edge',
-  style: {
-    'line-color': config.comment,
-    'color': config.black,
-    'font-size': '20px',
-    label: 'data(label)',
-    'target-arrow-shape': 'triangle',
-    'target-arrow-color': config.comment,
-    'width': 2
-  }
-}, {
-  selector: ':selected',
-  style: {
-    'background-color': config.red
-  }
-}, {
-  // selector: '.faded',
-  style: {
-    'opacity': 0.25,
-    'text-opacity': 0
-  }
-}, {
-  selector: '.selection',
-  style: {
-    'background-color': config.red,
-    'line-color': config.red
-  }
-}, {
-  selector: 'node.red',
-  style: {
-    'background-color': config.red
-  }
-}, {
-  selector: 'edge.red',
-  style: {
-    'line-color': config.red
-  }
-}]
+// system.style = [{
+//   selector: 'node',
+//   style: {
+//     shape: 'circle',
+//     'background-color': config.comment,
+//     'color': config.black,
+//     'text-valign': 'center',
+//     'font-size': '20px',
+//     label: 'data(label)'
+//     // 'text-outline-color': config.comment
+//   }
+// }, {
+//   selector: 'edge',
+//   style: {
+//     'line-color': config.comment,
+//     'color': config.black,
+//     'font-size': '20px',
+//     label: 'data(label)',
+//     'target-arrow-shape': 'triangle',
+//     'target-arrow-color': config.comment,
+//     'width': 2
+//   }
+// }, {
+//   selector: ':selected',
+//   style: {
+//     'background-color': config.red
+//   }
+// }, {
+//   // selector: '.faded',
+//   style: {
+//     'opacity': 0.25,
+//     'text-opacity': 0
+//   }
+// }, {
+//   selector: '.selection',
+//   style: {
+//     'background-color': config.red,
+//     'line-color': config.red
+//   }
+// }, {
+//   selector: 'node.red',
+//   style: {
+//     'background-color': config.red
+//   }
+// }, {
+//   selector: 'edge.red',
+//   style: {
+//     'line-color': config.red
+//   }
+// }]
 
 module.exports = system

@@ -18,13 +18,14 @@ const save = require('./src/save.js')
 const impModuleValidation = require('./src/implementation/impModuleValidation.js')
 const vulnVerification = require('./src/vulnVerification.js')
 const dgnModuleValidation = require('./src/design/dgnModuleValidation.js')
+const findVulns = require('./src/findVulns.js')
 
 const config = require('./style/config.js')
 
 // save the path
 const path = `${__dirname}`
 // require the graph file
-const system = require(`${path}/graphs/savedFile.json`)
+const system = require(`${path}/graphs/system0.js`)
 
 // graphs style
 const graphStyle = require(`${path}/style/graphStyle.js`)
@@ -33,7 +34,7 @@ const graphStyle = require(`${path}/style/graphStyle.js`)
 const cy = cytoscape({
   container: document.getElementById('graph-container'),
   autounselectify: true,
-  elements: system.elements,
+  elements: system.graph,
   style: graphStyle.style
 })
 
@@ -131,7 +132,7 @@ buttonDeleteEdge.addEventListener('click', () => {
 // test functions
 const buttonTest = document.getElementById('test-button')
 buttonTest.addEventListener('click', () => {
-  searchAttribute(cy, 'laptop') // module
+  findVulns(cy) // module
   // selectedNode.restore()
 })
 
