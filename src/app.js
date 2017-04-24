@@ -13,6 +13,7 @@ const threatVerification = require('./src/threatVerification.js')
 const keyboard = require('./src/keyboard.js')
 const addComponent = require('./src/addComponent.js')
 const addEdge = require('./src/addEdge.js')
+const totalNodes = require('./src/totalNodes.js')
 const save = require('./src/save.js')
 
 const impModuleValidation = require('./src/implementation/impModuleValidation.js')
@@ -120,14 +121,17 @@ buttonSave.addEventListener('click', () => {
 const buttonDeleteNode = document.getElementById('delete-node')
 buttonDeleteNode.addEventListener('click', () => {
   selectedNode.remove()
+  totalNodes(cy)
 })
 const buttonAddEdge = document.getElementById('add-edge')
 buttonAddEdge.addEventListener('click', () => {
   addEdge(cy, sourceNode, targetNode) // module
+  totalNodes(cy)
 })
 const buttonDeleteEdge = document.getElementById('delete-edge')
 buttonDeleteEdge.addEventListener('click', () => {
   selectedEdge.remove()
+  totalNodes(cy)
 })
 const buttonFindVuln = document.getElementById('find-vuln-button')
 buttonFindVuln.addEventListener('click', () => {
@@ -160,6 +164,7 @@ add.addEventListener('change', (e) => {
   addComponent(cy, e.target.value) // module
   // reset moduleGroup selection
   document.getElementById('add-component-id').selectedIndex = ''
+  totalNodes(cy)
 })
 
 // toggles side divs
@@ -175,7 +180,6 @@ const toggleUI = () => {
   }
 }
 
-document.getElementById('legend-id').textContent = cy.elements().nodes().length
-
+totalNodes(cy)
 // enable keyboard shortcuts
 keyboard(cy, toggleUI)

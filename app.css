@@ -93,11 +93,10 @@ h3 {
 
 .legend {
   bottom: 0;
-  height: 50px;
+  height: 30px;
   width: 100vw;
   position: absolute;
   white-space: pre-wrap;
-  background-color: red;
 }
 
 .button {
