@@ -11,7 +11,8 @@ const socialArray = ['actor']
 
 // when buton class is clicked the corresponing nodes are highlighted
 module.exports = function moduleSelection (input, cy) {
-  switch (input.target.value) {
+  const condition = input.target.value
+  switch (condition) {
     case 'network':
       groupArray = networkArray
       break
@@ -39,4 +40,10 @@ module.exports = function moduleSelection (input, cy) {
       node.removeClass('faded')
     }
   })
+
+  // TODO: add span element
+  const groupNodeNumber = groupArray.length
+
+  const currentDiv = document.getElementById('legend-id')
+  currentDiv.textContent = `${condition} nodes: ${groupNodeNumber}`
 }
