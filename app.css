@@ -97,6 +97,7 @@ h3 {
   width: 100vw;
   position: absolute;
   white-space: pre-wrap;
+  background-color: red;
 }
 
 .button {

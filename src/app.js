@@ -5,7 +5,7 @@
 
 const nodeInfo = require('./src/nodeInfo.js')
 const hoverNodeInfo = require('./src/hoverNodeInfo.js')
-const searchAttribute = require('./src/searchAttribute.js')
+// const searchAttribute = require('./src/searchAttribute.js')
 const flagNodes = require('./src/flagNodes.js')
 const moduleSelection = require('./src/moduleSelection.js')
 const nodeSelection = require('./src/nodeSelection.js')
@@ -129,10 +129,14 @@ const buttonDeleteEdge = document.getElementById('delete-edge')
 buttonDeleteEdge.addEventListener('click', () => {
   selectedEdge.remove()
 })
-// test functions
+const buttonFindVuln = document.getElementById('find-vuln-button')
+buttonFindVuln.addEventListener('click', () => {
+  findVulns(cy) // module
+})
+// test function
 const buttonTest = document.getElementById('test-button')
 buttonTest.addEventListener('click', () => {
-  findVulns(cy) // module
+  // findVulns(cy) // module
   // selectedNode.restore()
 })
 
@@ -170,6 +174,8 @@ const toggleUI = () => {
     actionBarStatus.style.display = 'block'
   }
 }
+
+document.getElementById('legend-id').textContent = cy.elements().nodes().length
 
 // enable keyboard shortcuts
 keyboard(cy, toggleUI)
