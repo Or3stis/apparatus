@@ -3,6 +3,7 @@
   --main-dark-bg-color: #21252b;
   --main-tx-color: #abb2bf;
   --blue-color: #61afef;
+  --green-color: #98c379;
   --black-color: #2d3e4f;
   --gray-color: #abb2bf;
 }
@@ -63,6 +64,8 @@ h3 {
 
 .graph {
   flex: 1;
+  /*background-image: url(bulidingPlan.png);*/
+  background-size: cover;
 }
 
 .sidebar {
@@ -89,6 +92,10 @@ h3 {
   /*border: 1px solid;*/
   border-bottom: 2px solid var(--blue-color);
   color: var(--main-tx-color);
+}
+
+#console-id:focus {
+  border-bottom: 2px solid var(--green-color);
 }
 
 .legend {
