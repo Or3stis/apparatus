@@ -16,10 +16,13 @@ const addEdge = require('./src/addEdge.js')
 const totalNodes = require('./src/totalNodes.js')
 const save = require('./src/save.js')
 
+// reguire implementation functions
 const impModuleValidation = require('./src/implementation/impModuleValidation.js')
 const vulnVerification = require('./src/vulnVerification.js')
-const dgnModuleValidation = require('./src/design/dgnModuleValidation.js')
 const findVulns = require('./src/findVulns.js')
+
+// require design functions
+const dgnModuleValidation = require('./src/design/dgnModuleValidation.js')
 
 const config = require('./style/config.js')
 

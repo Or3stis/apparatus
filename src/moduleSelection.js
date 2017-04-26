@@ -5,7 +5,7 @@ let groupArray = []
 const networkArray = ['device', 'network connection', 'micronet',
   'net', 'unidentified node', 'data', 'thing']
 const securityArray = ['asset', 'threat', 'vulnerability', 'mechanism',
-  'constraint', 'secure micronet', 'malicious actor'
+  'constraint', 'malicious actor'
 ]
 const socialArray = ['actor']
 

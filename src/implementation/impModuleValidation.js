@@ -1,28 +1,22 @@
 'use scrict'
 
+const impMetamodel = require('./impSchema.js')
 // checks if the instance is correct
 
 // valid component connections
-const deviceArray = ['secure micronet', 'micronet', 'vulnerability',
-  'network connection', 'data', 'actor', 'asset', 'device'
-]
-const networkArray = ['device', 'actor', 'data']
-const micronetArray = ['device', 'net', 'vulnerability',
-  'secure micronet', 'micronet']
-const netArray = ['micronet', 'unidentified node', 'threat']
-const undentifiedNodeArray = ['net', 'actor', 'malicious actor']
-const dataArray = ['asset', 'device', 'network connection', 'actor']
-const actorArray = ['asset', 'network connection', 'device',
-  'unidentified node', 'data']
-const maliciousActorArray = actorArray.concat('threat')
-const secureMicronetArray = micronetArray.concat('constraint')
-const assetArray = ['data', 'threat', 'actor', 'device']
-const constraintArray = ['secure micronet', 'threat']
-const mechanismArray = ['vulnerability']
-const threatArray = ['asset', 'malicious actor', 'vulnerability', 'constraint',
-  'net']
-const vulnerabilityArray = ['threat', 'micronet', 'mechanism', 'device',
-  'network connection']
+const deviceArray = impMetamodel.deviceArray
+const networkArray = impMetamodel.networkArray
+const micronetArray = impMetamodel.micronetArray
+const netArray = impMetamodel.netArray
+const undentifiedNodeArray = impMetamodel.undentifiedNodeArray
+const dataArray = impMetamodel.dataArray
+const actorArray = impMetamodel.actorArray
+const maliciousActorArray = impMetamodel.maliciousActorArray
+const assetArray = impMetamodel.assetArray
+const constraintArray = impMetamodel.constraintArray
+const mechanismArray = impMetamodel.mechanismArray
+const threatArray = impMetamodel.threatArray
+const vulnerabilityArray = impMetamodel.vulnerabilityArray
 
 // decleration of arrays
 let result = '' // posted on the nodeInfo div
@@ -37,7 +31,6 @@ module.exports = function moduleValidation (cy) {
   componentValidation(cy, 'data', dataArray)
   componentValidation(cy, 'actor', actorArray)
   componentValidation(cy, 'malicious actor', maliciousActorArray)
-  componentValidation(cy, 'secure micronet', secureMicronetArray)
   componentValidation(cy, 'asset', assetArray)
   componentValidation(cy, 'constraint', constraintArray)
   componentValidation(cy, 'mechanism', mechanismArray)
