@@ -1,16 +1,17 @@
 'use scrict'
 
+const dgnMetamodel = require('./dgnSchema.js')
 // checks if the instance is correct
 
 // valid component connections
-const thingArray = ['micronet', 'data', 'actor', 'asset', 'thing']
-const micronetArray = ['thing', 'net', 'micronet']
-const netArray = ['micronet', 'thing', 'threat']
-const dataArray = ['asset', 'thing', 'actor']
-const actorArray = ['asset', 'thing', 'data']
-const assetArray = ['data', 'threat', 'actor', 'thing']
-const constraintArray = ['threat']
-const threatArray = ['asset', 'actor', 'constraint', 'net']
+const thingArray = dgnMetamodel.thingArray
+const micronetArray = dgnMetamodel.micronetArray
+const netArray = dgnMetamodel.netArray
+const dataArray = dgnMetamodel.dataArray
+const actorArray = dgnMetamodel.actorArray
+const assetArray = dgnMetamodel.assetArray
+const constraintArray = dgnMetamodel.constraintArray
+const threatArray = dgnMetamodel.threatArray
 
 // decleration of arrays
 let result = '' // posted on the nodeInfo div
