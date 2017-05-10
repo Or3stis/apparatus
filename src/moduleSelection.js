@@ -45,5 +45,5 @@ module.exports = function moduleSelection (input, cy) {
   const groupNodeNumber = groupArray.length
 
   const currentDiv = document.getElementById('legend-id')
-  currentDiv.textContent = `${condition} nodes: ${groupNodeNumber}`
+  currentDiv.textContent = `${condition}: ${groupNodeNumber}`
 }
