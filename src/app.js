@@ -69,7 +69,7 @@ cy.on('tap', 'node', (selection) => {
   targetNode = selectedNode.data().id
 
   // save file
-  save()
+  // save(cy, path)
 })
 cy.on('tap', 'edge', (selection) => {
   // removes previous selections
@@ -78,7 +78,7 @@ cy.on('tap', 'edge', (selection) => {
   selectedEdge = selection.cyTarget[0]
 
   // save file
-  save()
+  // save(cy, path)
 })
 // when tapping the stage
 cy.on('tap', (selection) => {
@@ -90,7 +90,7 @@ cy.on('tap', (selection) => {
     document.getElementById('selection-id').selectedIndex = ''
 
     // save file
-    save()
+    // save(cy, path)
   }
 })
 // hover over a node
