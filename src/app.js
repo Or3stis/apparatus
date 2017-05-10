@@ -67,6 +67,7 @@ cy.on('tap', 'node', (selection) => {
   // console.log(selectedNode.data().id)
   sourceNode = targetNode // second selection
   targetNode = selectedNode.data().id
+  totalNodes(cy)
 
   // save file
   // save(cy, path)
@@ -76,6 +77,7 @@ cy.on('tap', 'edge', (selection) => {
   cy.elements().removeClass('selection')
   selection.cyTarget.addClass('selection')
   selectedEdge = selection.cyTarget[0]
+  totalNodes(cy)
 
   // save file
   // save(cy, path)
@@ -88,7 +90,7 @@ cy.on('tap', (selection) => {
     cy.elements().removeClass('selection')
     document.getElementById('module-group').selectedIndex = ''
     document.getElementById('selection-id').selectedIndex = ''
-
+    totalNodes(cy)
     // save file
     // save(cy, path)
   }
@@ -108,10 +110,18 @@ const buttonThreatVefiry = document.getElementById('threat-verify-button')
 buttonThreatVefiry.addEventListener('click', () => {
   threatVerification(cy) // module
 })
-const buttonVulnVefiry = document.getElementById('vulnerability-verify-button')
-buttonVulnVefiry.addEventListener('click', () => {
-  vulnVerification(cy) // module
-})
+if (window.location.pathname === `${path}/implementation.html`) {
+  // verify vulnerabilities
+  const buttonVulnVefiry = document.getElementById('vulnerability-verify-button')
+  buttonVulnVefiry.addEventListener('click', () => {
+    vulnVerification(cy) // module
+  })
+  // find vulnerabilities
+  const buttonFindVuln = document.getElementById('find-vuln-button')
+  buttonFindVuln.addEventListener('click', () => {
+    findVulns(cy) // module
+  })
+}
 const buttonModuleValidate = document.getElementById('module-validate-button')
 buttonModuleValidate.addEventListener('click', () => {
   if (window.location.pathname === `${path}/implementation.html`) {
@@ -144,10 +154,6 @@ const buttonDeleteEdge = document.getElementById('delete-edge')
 buttonDeleteEdge.addEventListener('click', () => {
   selectedEdge.remove()
   totalNodes(cy)
-})
-const buttonFindVuln = document.getElementById('find-vuln-button')
-buttonFindVuln.addEventListener('click', () => {
-  findVulns(cy) // module
 })
 // test function
 const buttonTest = document.getElementById('test-button')
