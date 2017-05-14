@@ -1,7 +1,7 @@
-/* global cytoscape */
-
 // here is where it begins
 'use strict'
+
+const cytoscape = require('cytoscape')
 
 const nodeInfo = require('./src/nodeInfo.js')
 const hoverNodeInfo = require('./src/hoverNodeInfo.js')
@@ -57,7 +57,7 @@ cy.on('tap', 'node', (selection) => {
   // removes previous selections
   cy.elements().removeClass('selection')
   // to show the neighbors
-  selectedNode = selection.cyTarget[0]
+  selectedNode = selection.target[0]
   const neighborhood = selectedNode.neighborhood().add(selectedNode)
   cy.elements().addClass('faded')
   neighborhood.removeClass('faded')
@@ -75,8 +75,8 @@ cy.on('tap', 'node', (selection) => {
 cy.on('tap', 'edge', (selection) => {
   // removes previous selections
   cy.elements().removeClass('selection')
-  selection.cyTarget.addClass('selection')
-  selectedEdge = selection.cyTarget[0]
+  selection.target.addClass('selection')
+  selectedEdge = selection.target[0]
   totalNodes(cy)
 
   // save file
@@ -84,7 +84,7 @@ cy.on('tap', 'edge', (selection) => {
 })
 // when tapping the stage
 cy.on('tap', (selection) => {
-  if (selection.cyTarget === cy) {
+  if (selection.target === cy) {
     // removes previous selections
     cy.elements().removeClass('faded')
     cy.elements().removeClass('selection')
@@ -97,7 +97,7 @@ cy.on('tap', (selection) => {
 })
 // hover over a node
 cy.on('mouseover', 'node', (event) => {
-  hoverNodeInfo(event.cyTarget[0])
+  hoverNodeInfo(event.target[0])
 })
 // hover out of a node
 cy.on('mouseout', 'node', (event) => {
