@@ -22,7 +22,8 @@
 1.  red: '#ed4781',
 1.  green: '#19e589',
 1.  yellow: '#ffbc69',
-1.  blue: '#66d9ef',
+1.  blue: '#7aa5ff'
+1.  lightBlue: '#66d9ef',
 1.  magenta: '#a381ff',
 1.  cyan: '#6dfedf',
 1.  white: '#f1eff7',

@@ -17,7 +17,8 @@ const configGraph = {}
 
 configGraph.white = '#f1eff7'
 configGraph.black = '#292a44'
-configGraph.blue = '#66d9ef'
+configGraph.lightBlue = '#66d9ef'
+config.blue = '#7aa5ff'
 configGraph.red = '#ed4781'
 configGraph.orange = '#cf8772'
 configGraph.green = '#2de0a7'

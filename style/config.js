@@ -4,7 +4,8 @@ const config = {}
 
 config.white = '#f1eff7'
 config.black = '#292a44'
-config.blue = '#66d9ef'
+config.lightBlue = '#66d9ef'
+config.blue = '#7aa5ff'
 config.red = '#ed4781'
 config.orange = '#cf8772'
 config.green = '#2de0a7'
