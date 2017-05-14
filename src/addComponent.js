@@ -38,10 +38,6 @@ module.exports = function addComponent (cy, component) {
       // color = config.red
       // type = 'actor'
       break
-    case 'secure micronet':
-      // color = config.green
-      // type = 'triangle'
-      break
     case 'asset':
       // color = config.orange
       // type = 'hourglass'
