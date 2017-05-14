@@ -18,5 +18,5 @@ module.exports = function buttonSelection (cy, classification) {
   const classNode = nodes.length
 
   const currentDiv = document.getElementById('legend-id')
-  currentDiv.textContent = `${classification}: ${classNode}`
+  currentDiv.textContent = `${classification} nodes: ${classNode}`
 }
