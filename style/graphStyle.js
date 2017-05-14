@@ -33,7 +33,7 @@ graphStyle.style = [{
 }, {
   selector: ':selected',
   style: {
-    'background-color': configGraph.green
+    'background-color': configGraph.blue
   }
 }, {
   selector: '.faded',
@@ -44,8 +44,8 @@ graphStyle.style = [{
 }, {
   selector: '.selection',
   style: {
-    'background-color': configGraph.green,
-    'line-color': configGraph.green
+    'background-color': configGraph.blue,
+    'line-color': configGraph.blue
   }
 }]
 

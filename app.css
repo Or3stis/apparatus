@@ -1,4 +1,13 @@
 :root {
+  --main-bg-color: #292a44;
+  --main-dark-bg-color: #212136;
+  --main-tx-color: #f1eff7;
+  --blue-color: #66d9e7;
+  --cyan-color: #6df3df;
+  --black-color: #2d3e4f;
+  --gray-color: #abb2bf;
+}
+/*:root {
   --main-bg-color: #282c34;
   --main-dark-bg-color: #21252b;
   --main-tx-color: #abb2bf;
@@ -6,7 +15,7 @@
   --green-color: #98c379;
   --black-color: #2d3e4f;
   --gray-color: #abb2bf;
-}
+}*/
 
 @keyframes fadein {
   from {
@@ -96,12 +105,12 @@ h3 {
   margin: 5px;
   margin-bottom: 15px;
   /*border: 1px solid;*/
-  border-bottom: 2px solid var(--blue-color);
+  border-bottom: 2px solid var(--gray-color);
   color: var(--main-tx-color);
 }
 
 #console-id:focus {
-  border-bottom: 2px solid var(--green-color);
+  border-bottom: 2px solid var(--blue-color);
 }
 
 .legend {

@@ -2,23 +2,17 @@
 
 const config = {}
 
-config.white = '#abb2bf'
-// config.darkWhite = '#eceff4'
-config.black = '#3b4251'
-// config.deepBlack = '#2e3440'
-// config.veryLightGray = '#bdc3c7'
-config.blue = '#61afef'
-config.red = '#be5046'
+config.white = '#f1eff7'
+config.black = '#292a44'
+config.blue = '#66d9ef'
+config.red = '#ed4781'
 config.orange = '#cf8772'
-config.green = '#98c379'
-config.yellow = '#d19a66'
-config.magenta = '#c678dd'
-config.cyan = '#56b6c2'
+config.green = '#2de0a7'
+config.yellow = '#ffbc69'
+config.magenta = '#a381ff'
+config.cyan = '#6dfedf'
 config.gray = '#d8dee9'
-config.darkLine = '#242933'
-config.lightLine = '#e0e0e0'
-config.comment = '#abb2bf'
-// config.comment = '#94a4a5'
+config.comment = '#6D6DB5'
 
 // values for the flagged list
 // see flagNodes.js
