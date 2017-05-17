@@ -29,7 +29,10 @@ module.exports = function threatVerification (cy) {
   })
   // checks the arrays to see which threat is not mitigated
   const setMitigated = new Set(arrMitigated)
-  const threats = new Set([...arrThreat].filter(threat => !setMitigated.has(threat)))
+  // const threats = new Set([...arrThreat].filter(threat => !setMitigated.has(threat)))
+  const threats = new Set([...arrThreat].filter((threat) => {
+    !setMitigated.has(threat)
+  }))
 
   threats.forEach((i) => {
     result = `${result} • Threat ${i} is not mitigated\n`

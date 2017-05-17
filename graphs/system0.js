@@ -9,7 +9,7 @@ system.graph = [
       id: '1',
       label: 'Net',
       info: {
-        type: 'net',
+        description: 'laptop',
         concept: 'net'
       }
     }
@@ -18,7 +18,7 @@ system.graph = [
       id: '2',
       label: 'Micronet',
       info: {
-        type: 'micronet',
+        description: 'laptop',
         concept: 'micronet'
       }
     }
@@ -27,7 +27,14 @@ system.graph = [
       id: '3',
       label: 'Device',
       info: {
-        type: 'thing',
+        description: 'laptop',
+        aspect: 'physical',
+        layer: 'perception',
+        type: 'server',
+        service: 'process',
+        input: 'dataDigital',
+        output: 'dataDigital',
+        update: 'automatic',
         concept: 'device'
       }
     }
@@ -52,7 +59,14 @@ system.graph = [
       id: '5',
       label: 'Device',
       info: {
-        type: 'thing',
+        description: 'laptop',
+        aspect: 'physical',
+        layer: 'perception',
+        type: 'server',
+        service: 'process',
+        input: 'dataDigital',
+        output: 'dataDigital',
+        update: 'automatic',
         concept: 'device'
       }
     }
@@ -61,7 +75,7 @@ system.graph = [
       id: '6',
       label: 'Actor',
       info: {
-        type: 'actor',
+        description: 'laptop',
         concept: 'actor'
       }
     }
@@ -70,7 +84,7 @@ system.graph = [
       id: '7',
       label: 'Data',
       info: {
-        type: 'data',
+        description: 'laptop',
         concept: 'data'
       }
     }
@@ -79,7 +93,7 @@ system.graph = [
       id: '8',
       label: 'Data',
       info: {
-        type: 'data',
+        description: 'laptop',
         concept: 'data'
       }
     }
@@ -88,7 +102,7 @@ system.graph = [
       id: '9',
       label: 'Threat',
       info: {
-        type: 'threat',
+        description: 'laptop',
         concept: 'threat'
       }
     }
@@ -97,7 +111,7 @@ system.graph = [
       id: '10',
       label: 'Constraint',
       info: {
-        type: 'constraint',
+        description: 'laptop',
         concept: 'constraint'
       }
     }
@@ -106,7 +120,7 @@ system.graph = [
       id: '11',
       label: 'Threat',
       info: {
-        type: 'threat',
+        description: 'laptop',
         concept: 'threat'
       }
     }
@@ -115,7 +129,7 @@ system.graph = [
       id: '12',
       label: 'Constraint',
       info: {
-        type: 'constraint',
+        description: 'laptop',
         concept: 'constraint'
       }
     }
@@ -124,7 +138,7 @@ system.graph = [
       id: '13',
       label: 'Constraint',
       info: {
-        type: 'constraint',
+        description: 'laptop',
         concept: 'constraint'
       }
     }
@@ -133,7 +147,7 @@ system.graph = [
       id: '15',
       label: 'Asset',
       info: {
-        type: 'asset',
+        description: 'laptop',
         concept: 'asset'
       }
     }
@@ -142,7 +156,7 @@ system.graph = [
       id: '16',
       label: 'Asset',
       info: {
-        type: 'asset',
+        description: 'laptop',
         concept: 'asset'
       }
     }
@@ -151,7 +165,7 @@ system.graph = [
       id: '17',
       label: 'Device',
       info: {
-        type: 'thing',
+        description: 'laptop',
         concept: 'device'
       }
     }
@@ -160,7 +174,7 @@ system.graph = [
       id: '18',
       label: 'Network Connection',
       info: {
-        type: 'thing',
+        description: 'laptop',
         concept: 'network connection'
       }
     }
@@ -169,7 +183,7 @@ system.graph = [
       id: '19',
       label: 'Network Connection',
       info: {
-        type: 'thing',
+        description: 'laptop',
         concept: 'network connection'
       }
     }

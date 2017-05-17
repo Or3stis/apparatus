@@ -180,6 +180,7 @@ option {
   display: none;
   margin: 10px;
   overflow: auto;
+  z-index: 2;
 }
 
 .container-node-info {
