@@ -2,6 +2,6 @@
 
 module.exports = function totalNodes (cy) {
   const numberNodes = cy.elements().nodes().length
-  const currentDiv = document.getElementById('legend-id')
-  currentDiv.textContent = `total nodes: ${numberNodes}`
+  const htmlElement = document.getElementById('legend-id')
+  htmlElement.textContent = `total nodes: ${numberNodes}`
 }

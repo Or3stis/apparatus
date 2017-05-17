@@ -5,13 +5,14 @@
 // shows info of node in the div 'info-for-nodes'
 module.exports = function nodeInfo (node) {
   let nodeInfo = ''
-  Object.keys(node.data().info).map((i) => {
+  const nodeData = node.data().info
+  Object.keys(nodeData).map((i) => {
     // adds the keys of the object to the string
-    if (node.data().info.hasOwnProperty(i)) {
+    if (nodeData.hasOwnProperty(i)) {
       nodeInfo += `• ${i}: `
     }
     // adds the values of the object to the string
-    nodeInfo += `${node.data().info[i]}\n`
+    nodeInfo += `${nodeData[i]}\n`
   })
   // appends info to the div
   document.getElementById('info-for-nodes-id').textContent = nodeInfo

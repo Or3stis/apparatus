@@ -5,13 +5,14 @@ const containerNodeInfo = document.getElementById('container-node-info-id')
 
 module.exports = function nodeInfo (node) {
   let nodeInfo = ''
-  Object.keys(node.data().info).map((i) => {
+  const nodeData = node.data().info
+  Object.keys(nodeData).map((i) => {
     // adds the keys of the object to the string
-    if (node.data().info.hasOwnProperty(i)) {
+    if (nodeData.hasOwnProperty(i)) {
       nodeInfo = `${nodeInfo} • ${i}:`
     }
     // adds the values of the object to the string
-    nodeInfo = `${nodeInfo} ${node.data().info[i]}\n`
+    nodeInfo = `${nodeInfo} ${nodeData[i]}\n`
   })
   // appends info to the div
   containerNode.style.display = 'block'

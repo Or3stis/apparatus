@@ -10,13 +10,15 @@ module.exports = function threatVerification (cy) {
     // checks in node is threat and adds to arrThreat
     if (node.data().info.concept === 'threat') {
       arrThreat.push(node.data().id)
-
+      // console.log(node.data().id)
       // stores the neigborring nodes of the threats
-      const neighborNodes = node.neighborhood().add(node)
+      const neighborNodes = node.neighborhood()
+      const neighborInfo = neighborNodes.data().info
 
       // check which threat has a constraint neighbor
-      Object.keys(neighborNodes.data().info).map((i) => {
-        if (neighborNodes.data().info[i] === 'constraint') {
+      Object.keys(neighborInfo).map((i) => {
+        // console.log(neighborInfo)
+        if (neighborInfo[i] === 'constraint') {
           arrMitigated.push(node.data().id)
           result = `${result} • Threat ${node.data().id} is mitigated by constraint ${neighborNodes.data().id}\n`
         }
@@ -25,7 +27,7 @@ module.exports = function threatVerification (cy) {
   })
   // checks the arrays to see which threat is not mitigated
   const setMitigated = new Set(arrMitigated)
-  const threats = new Set([...arrThreat].filter(x => !setMitigated.has(x)))
+  const threats = new Set([...arrThreat].filter(threat => !setMitigated.has(threat)))
 
   threats.forEach((i) => {
     result = `${result} • Threat ${i} is not mitigated\n`

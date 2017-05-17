@@ -8,13 +8,15 @@ module.exports = function flag (cy, term) {
 
   // check all the nodes in graph for the search terms
   cy.nodes().map((node) => {
-    Object.keys(node.data().info).map((value) => {
-      if (node.data().info[value] === term) {
-        searchNodes += `• ${node.data().info.description}\n`
+    const nodeData = node.data().info
+    Object.keys(nodeData).map((value) => {
+      if (nodeData[value] === term) {
+        searchNodes += `• ${nodeData.description}\n`
         // remove faded class from the search nodes
         node.removeClass('faded')
       }
     })
   })
-  document.getElementById('info-for-nodes-id').textContent = searchNodes
+  const htmlElement = document.getElementById('info-for-nodes-id')
+  htmlElement.textContent = searchNodes
 }

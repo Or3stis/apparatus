@@ -13,10 +13,11 @@ module.exports = function vulnVerification (cy) {
 
       // stores the neigborring nodes of the vulnerabilities
       const neighborNodes = node.neighborhood().add(node)
+      const neighborInfo = neighborNodes.data().info
 
       // check which vulnerability has a constraint neighbor
-      Object.keys(neighborNodes.data().info).map((i) => {
-        if (neighborNodes.data().info[i] === 'mechanism') {
+      Object.keys(neighborInfo).map((i) => {
+        if (neighborInfo[i] === 'mechanism') {
           arrMitigated.push(node.data().id)
           result = `${result} • Vulnerability ${node.data().id} is mitigated by mechanism ${neighborNodes.data().id}\n`
         }

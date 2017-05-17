@@ -36,7 +36,8 @@ module.exports = function moduleSelection (input, cy) {
   cy.elements().addClass('faded')
 
   cy.nodes().map((node) => {
-    if (groupArray.indexOf(node.data().info.type) !== -1) {
+    const nodeConcept = node.data().info.concept
+    if (groupArray.indexOf(nodeConcept) !== -1) {
       node.removeClass('faded')
     }
   })
@@ -44,6 +45,6 @@ module.exports = function moduleSelection (input, cy) {
   // TODO: add span element
   const groupNodeNumber = groupArray.length
 
-  const currentDiv = document.getElementById('legend-id')
-  currentDiv.textContent = `${condition} nodes: ${groupNodeNumber}`
+  const htmlElement = document.getElementById('legend-id')
+  htmlElement.textContent = `${condition} nodes: ${groupNodeNumber}`
 }

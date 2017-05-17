@@ -35,7 +35,7 @@ function componentValidation (cy, component, componentArray) {
       // stores the neighboring nodes of the component
       const neighborNodes = node.neighborhood().add(node)
       const neigborObject = neighborNodes.data().info.concept
-      Object.keys(neigborObject).map((i) => {
+      Object.keys(neigborObject).map(() => {
         // every neighbor node is added to the array arrWrong
         arrWrong.push(neigborObject)
         // if the neighbor is a valid connection it is removed from the array
