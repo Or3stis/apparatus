@@ -15,7 +15,8 @@ system.graph = [
         nodeType: 'server',
         attribute: 'process',
         input: 'dataDigital',
-        output: 'dataDigital'
+        output: 'dataDigital',
+        concept: 'threat'
       }
     }
   }, {
@@ -31,7 +32,8 @@ system.graph = [
         nodeType: 'server',
         attribute: 'process',
         input: 'dataDigital',
-        output: 'dataDigital'
+        output: 'dataDigital',
+        concept: 'constraint'
       }
     }
   }, {
@@ -47,7 +49,8 @@ system.graph = [
         nodeType: 'server',
         attribute: 'process',
         input: 'dataDigital',
-        output: 'dataDigital'
+        output: 'dataDigital',
+        concept: 'threat'
       }
     }
   }, {
@@ -63,7 +66,8 @@ system.graph = [
         nodeType: 'server',
         attribute: 'process',
         input: 'dataDigital',
-        output: 'dataDigital'
+        output: 'dataDigital',
+        concept: 'threat'
       }
     }
   }, {
@@ -79,7 +83,8 @@ system.graph = [
         nodeType: 'server',
         attribute: 'process',
         input: 'dataDigital',
-        output: 'dataDigital'
+        output: 'dataDigital',
+        concept: 'threat'
       }
     }
   }, {
@@ -95,7 +100,8 @@ system.graph = [
         nodeType: 'server',
         attribute: 'process',
         input: 'dataDigital',
-        output: 'dataDigital'
+        output: 'dataDigital',
+        concept: 'threat'
       }
     }
   },
