@@ -35,7 +35,7 @@ module.exports = function moduleSelection (input, cy) {
 
   cy.elements().addClass('faded')
 
-  cy.nodes().each((n, node) => {
+  cy.nodes().map((node) => {
     if (groupArray.indexOf(node.data().info.type) !== -1) {
       node.removeClass('faded')
     }

@@ -6,7 +6,7 @@ module.exports = function vulnVerification (cy) {
   let arrMitigated = [] // array with mitigated threats
   let result = '' // posted on the nodeInfo div
 
-  cy.nodes().each((n, node) => {
+  cy.nodes().map((node) => {
     // checks in node is threat and adds to arrVulnerability
     if (node.data().info.type === 'vulnerability') {
       arrVulnerability.push(node.data().id)

@@ -6,7 +6,7 @@ module.exports = function buttonSelection (cy, classification) {
 
   cy.elements().addClass('faded')
 
-  cy.nodes().each((n, node) => {
+  cy.nodes().map((node) => {
     if (node.data().info.type === classification) {
       node.removeClass('faded')
       nodes += 1

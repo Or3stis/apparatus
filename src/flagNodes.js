@@ -7,7 +7,7 @@ module.exports = function securityHints (cy, flaggedList) {
   cy.elements().addClass('faded')
 
   // check all the nodes in graph for the search terms
-  cy.nodes().each((n, node) => {
+  cy.nodes().map((node) => {
     Object.keys(node.data().info).map((value) => {
       flaggedList.map((i) => {
         if (node.data().info[value] === i) {

@@ -4,7 +4,7 @@ const typeArray = ['type', 'service']
 let keywords = []
 
 module.exports = function findVuln (cy) {
-  cy.nodes().each((n, node) => {
+  cy.nodes().map((node) => {
     // change .label when I change the graph schema
     if (node.data().label === 'Device') {
       Object.keys(node.data().info).map((key) => {
