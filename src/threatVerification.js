@@ -9,20 +9,22 @@ module.exports = function threatVerification (cy) {
   cy.nodes().map((node) => {
     // checks in node is threat and adds to arrThreat
     if (node.data().info.concept === 'threat') {
+      node.addClass('attention')
       arrThreat.push(node.data().id)
-      // console.log(node.data().id)
       // stores the neigborring nodes of the threats
-      const neighborNodes = node.neighborhood()
-      const neighborInfo = neighborNodes.data().info
+      let neighborNodes = node.neighborhood()
+      // const neighborInfo = neighborNodes.data().info.concept
 
       // check which threat has a constraint neighbor
-      Object.keys(neighborInfo).map((i) => {
-        // console.log(neighborInfo)
-        if (neighborInfo[i] === 'constraint') {
+      Object.keys(neighborNodes.data().info).map((i) => {
+        if (neighborNodes.data().info[i] === 'constraint') {
           arrMitigated.push(node.data().id)
           result = `${result} • Threat ${node.data().id} is mitigated by constraint ${neighborNodes.data().id}\n`
         }
       })
+    }
+    if (node.data().info.concept === 'constraint') {
+      node.addClass('protect')
     }
   })
   // checks the arrays to see which threat is not mitigated

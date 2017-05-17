@@ -9,10 +9,11 @@ module.exports = function vulnVerification (cy) {
   cy.nodes().map((node) => {
     // checks in node is threat and adds to arrVulnerability
     if (node.data().info.concept === 'vulnerability') {
+      node.addClass('attention')
       arrVulnerability.push(node.data().id)
 
       // stores the neigborring nodes of the vulnerabilities
-      const neighborNodes = node.neighborhood().add(node)
+      const neighborNodes = node.neighborhood()
       const neighborInfo = neighborNodes.data().info
 
       // check which vulnerability has a constraint neighbor
@@ -23,10 +24,13 @@ module.exports = function vulnVerification (cy) {
         }
       })
     }
+    if (node.data().info.concept === 'mechanism') {
+      node.addClass('protect')
+    }
   })
   // checks the arrays to see which vulnerability is not mitigated
   const setMitigated = new Set(arrMitigated)
-  const vulnerabilities = new Set([...arrVulnerability].filter(x => !setMitigated.has(x)))
+  const vulnerabilities = new Set([...arrVulnerability].filter(vuln => !setMitigated.has(vuln)))
 
   vulnerabilities.forEach((i) => {
     result = `${result} • Vulnerability ${i} is not mitigated\n`

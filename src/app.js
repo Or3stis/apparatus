@@ -56,6 +56,8 @@ let targetNode = ''
 cy.on('tap', 'node', (selection) => {
   // removes previous selections
   cy.elements().removeClass('selection')
+  cy.elements().removeClass('attention')
+  cy.elements().removeClass('protect')
   // to show the neighbors
   selectedNode = selection.target[0]
   const neighborhood = selectedNode.neighborhood().add(selectedNode)
@@ -75,6 +77,8 @@ cy.on('tap', 'node', (selection) => {
 cy.on('tap', 'edge', (selection) => {
   // removes previous selections
   cy.elements().removeClass('selection')
+  cy.elements().removeClass('attention')
+  cy.elements().removeClass('protect')
   selection.target.addClass('selection')
   selectedEdge = selection.target[0]
   totalNodes(cy)
@@ -88,6 +92,8 @@ cy.on('tap', (selection) => {
     // removes previous selections
     cy.elements().removeClass('faded')
     cy.elements().removeClass('selection')
+    cy.elements().removeClass('attention')
+    cy.elements().removeClass('protect')
     document.getElementById('module-group').selectedIndex = ''
     document.getElementById('selection-id').selectedIndex = ''
     totalNodes(cy)
@@ -158,7 +164,9 @@ buttonDeleteEdge.addEventListener('click', () => {
 // test function
 const buttonTest = document.getElementById('test-button')
 buttonTest.addEventListener('click', () => {
-  // findVulns(cy) // module
+  console.log(cy.filter('node[label = "Device"]'))
+  cy.elements().addClass('faded')
+  cy.filter('node[label = "Device"]').removeClass('faded')
   // selectedNode.restore()
 })
 

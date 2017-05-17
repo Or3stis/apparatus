@@ -31,11 +31,6 @@ graphStyle.style = [{
     'text-outline-color': configGraph.black
   }
 }, {
-  selector: ':selected',
-  style: {
-    'background-color': configGraph.blue
-  }
-}, {
   selector: '.faded',
   style: {
     'opacity': 0.25,
@@ -46,6 +41,16 @@ graphStyle.style = [{
   style: {
     'background-color': configGraph.blue,
     'line-color': configGraph.blue
+  }
+}, {
+  selector: '.attention',
+  style: {
+    'background-color': configGraph.yellow
+  }
+}, {
+  selector: '.protect',
+  style: {
+    'background-color': configGraph.lightBlue
   }
 }]
 
