@@ -67,10 +67,6 @@ module.exports = function addComponent (cy, component) {
       // color = config.red
       // type = 'circle'
       break
-    case 'objective':
-      // color = config.green
-      // type = 'square'
-      break
     default:
       console.error('error in addComponent.js')
   }
