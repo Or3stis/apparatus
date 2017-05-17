@@ -6,7 +6,7 @@ let keywords = []
 module.exports = function findVuln (cy) {
   cy.nodes().map((node) => {
     // change .label when I change the graph schema
-    if (node.data().label === 'Device') {
+    if (node.data().concept === 'device') {
       Object.keys(node.data().info).map((key) => {
         if (typeArray.indexOf(key) !== -1) {
           keywords.push(node.data().info[key])

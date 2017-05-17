@@ -9,7 +9,8 @@ system.graph = [
       id: '1',
       label: 'Net',
       info: {
-        type: 'net'
+        type: 'net',
+        concept: 'net'
       }
     }
   }, {
@@ -17,7 +18,8 @@ system.graph = [
       id: '2',
       label: 'Micronet',
       info: {
-        type: 'micronet'
+        type: 'micronet',
+        concept: 'micronet'
       }
     }
   }, {
@@ -25,7 +27,8 @@ system.graph = [
       id: '3',
       label: 'Device',
       info: {
-        type: 'thing'
+        type: 'thing',
+        concept: 'device'
       }
     }
   }, {
@@ -40,7 +43,8 @@ system.graph = [
         service: 'process',
         input: 'dataDigital',
         output: 'dataDigital',
-        update: 'automatic'
+        update: 'automatic',
+        concept: 'device'
       }
     }
   }, {
@@ -48,7 +52,8 @@ system.graph = [
       id: '5',
       label: 'Device',
       info: {
-        type: 'thing'
+        type: 'thing',
+        concept: 'device'
       }
     }
   }, {
@@ -56,7 +61,8 @@ system.graph = [
       id: '6',
       label: 'Actor',
       info: {
-        type: 'actor'
+        type: 'actor',
+        concept: 'actor'
       }
     }
   }, {
@@ -64,7 +70,8 @@ system.graph = [
       id: '7',
       label: 'Data',
       info: {
-        type: 'data'
+        type: 'data',
+        concept: 'data'
       }
     }
   }, {
@@ -72,7 +79,8 @@ system.graph = [
       id: '8',
       label: 'Data',
       info: {
-        type: 'data'
+        type: 'data',
+        concept: 'data'
       }
     }
   }, {
@@ -80,7 +88,8 @@ system.graph = [
       id: '9',
       label: 'Threat',
       info: {
-        type: 'threat'
+        type: 'threat',
+        concept: 'threat'
       }
     }
   }, {
@@ -88,7 +97,8 @@ system.graph = [
       id: '10',
       label: 'Constraint',
       info: {
-        type: 'constraint'
+        type: 'constraint',
+        concept: 'constraint'
       }
     }
   }, {
@@ -96,7 +106,8 @@ system.graph = [
       id: '11',
       label: 'Threat',
       info: {
-        type: 'threat'
+        type: 'threat',
+        concept: 'threat'
       }
     }
   }, {
@@ -104,7 +115,8 @@ system.graph = [
       id: '12',
       label: 'Constraint',
       info: {
-        type: 'constraint'
+        type: 'constraint',
+        concept: 'constraint'
       }
     }
   }, {
@@ -112,7 +124,8 @@ system.graph = [
       id: '13',
       label: 'Constraint',
       info: {
-        type: 'constraint'
+        type: 'constraint',
+        concept: 'constraint'
       }
     }
   }, {
@@ -120,7 +133,8 @@ system.graph = [
       id: '15',
       label: 'Asset',
       info: {
-        type: 'asset'
+        type: 'asset',
+        concept: 'asset'
       }
     }
   }, {
@@ -128,7 +142,8 @@ system.graph = [
       id: '16',
       label: 'Asset',
       info: {
-        type: 'asset'
+        type: 'asset',
+        concept: 'asset'
       }
     }
   }, {
@@ -136,7 +151,8 @@ system.graph = [
       id: '17',
       label: 'Device',
       info: {
-        type: 'thing'
+        type: 'thing',
+        concept: 'device'
       }
     }
   }, {
@@ -144,7 +160,8 @@ system.graph = [
       id: '18',
       label: 'Network Connection',
       info: {
-        type: 'thing'
+        type: 'thing',
+        concept: 'network connection'
       }
     }
   }, {
@@ -152,7 +169,8 @@ system.graph = [
       id: '19',
       label: 'Network Connection',
       info: {
-        type: 'thing'
+        type: 'thing',
+        concept: 'network connection'
       }
     }
   },

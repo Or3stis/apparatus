@@ -8,7 +8,7 @@ module.exports = function threatVerification (cy) {
 
   cy.nodes().map((node) => {
     // checks in node is threat and adds to arrThreat
-    if (node.data().info.type === 'threat') {
+    if (node.data().info.concept === 'threat') {
       arrThreat.push(node.data().id)
 
       // stores the neigborring nodes of the threats

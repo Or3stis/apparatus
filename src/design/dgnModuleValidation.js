@@ -29,17 +29,18 @@ module.exports = function moduleValidation (cy) {
 }
 
 function componentValidation (cy, component, componentArray) {
-  cy.nodes().each((n, node) => {
+  cy.nodes().map((node) => {
     // checks if node is the desired component
-    if (node.data().info.type === component) {
+    if (node.data().info.concept === component) {
       // stores the neighboring nodes of the component
       const neighborNodes = node.neighborhood().add(node)
-      Object.keys(neighborNodes.data().info.type).map((i) => {
+      const neigborObject = neighborNodes.data().info.concept
+      Object.keys(neigborObject).map((i) => {
         // every neighbor node is added to the array arrWrong
-        arrWrong.push(neighborNodes.data().info.type)
+        arrWrong.push(neigborObject)
         // if the neighbor is a valid connection it is removed from the array
-        if (componentArray.indexOf(neighborNodes.data().info.type) !== -1) {
-          arrWrong.pop(neighborNodes.data().info.type)
+        if (componentArray.indexOf(neigborObject) !== -1) {
+          arrWrong.pop(neigborObject)
         }
         result = `${arrWrong}`
         // if the array in empty, the module is correct

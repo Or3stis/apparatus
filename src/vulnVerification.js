@@ -8,7 +8,7 @@ module.exports = function vulnVerification (cy) {
 
   cy.nodes().map((node) => {
     // checks in node is threat and adds to arrVulnerability
-    if (node.data().info.type === 'vulnerability') {
+    if (node.data().info.concept === 'vulnerability') {
       arrVulnerability.push(node.data().id)
 
       // stores the neigborring nodes of the vulnerabilities
