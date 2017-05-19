@@ -20,16 +20,18 @@ const save = require('./src/save.js')
 const impModuleValidation = require('./src/implementation/impModuleValidation.js')
 const vulnVerification = require('./src/vulnVerification.js')
 const findVulns = require('./src/findVulns.js')
+const impOverview = require('./src/implementation/impOverview.js')
 
 // require design functions
 const dgnModuleValidation = require('./src/design/dgnModuleValidation.js')
+const dgnOverview = require('./src/design/dgnOverview.js')
 
 const config = require('./style/config.js')
 
 // save the path
 const path = `${__dirname}`
 // require the graph file
-const system = require(`${path}/graphs/system.js`)
+const system = require(`${path}/graphs/system0.js`)
 
 // graphs style
 const graphStyle = require(`${path}/style/graphStyle.js`)
@@ -141,6 +143,14 @@ const buttonFlag = document.getElementById('flag-button')
 buttonFlag.addEventListener('click', () => {
   flagNodes(cy, config.flag) // module
 })
+const buttonOverview = document.getElementById('overview-button')
+buttonOverview.addEventListener('click', () => {
+  if (window.location.pathname === `${path}/implementation.html`) {
+    impOverview(cy) // imp module
+  } else {
+    dgnOverview(cy) // dgn module
+  }
+})
 // save graph
 const buttonSave = document.getElementById('save-button')
 buttonSave.addEventListener('click', () => {
@@ -164,10 +174,10 @@ buttonDeleteEdge.addEventListener('click', () => {
 // test function
 const buttonTest = document.getElementById('test-button')
 buttonTest.addEventListener('click', () => {
-  console.log(cy.filter('node[label = "Device"]'))
-  cy.elements().addClass('faded')
-  cy.filter('node[label = "Device"]').removeClass('faded')
-  // selectedNode.restore()
+  // console.log(cy.filter('node[label = "Device"]'))
+  // cy.elements().addClass('faded')
+  // cy.filter('node[label = "Device"]').removeClass('faded')
+  impOverview(cy)
 })
 
 // selections

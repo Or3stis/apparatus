@@ -3,9 +3,10 @@
 // grouping of the module components
 let groupArray = []
 const networkArray = ['device', 'network connection', 'micronet',
-  'net', 'unidentified node', 'data', 'thing']
-const securityArray = ['asset', 'threat', 'vulnerability', 'mechanism',
-  'constraint', 'malicious actor'
+  'net', 'unidentified node', 'data', 'thing'
+]
+const securityArray = ['asset', 'threat', 'vulnerability',
+  'mechanism', 'constraint', 'malicious actor'
 ]
 const socialArray = ['actor']
 
@@ -43,7 +44,6 @@ module.exports = function moduleSelection (input, cy) {
       totalNodes += 1
     }
   })
-
 
   const htmlElement = document.getElementById('legend-id')
   htmlElement.textContent = `${condition} nodes: ${totalNodes}`
