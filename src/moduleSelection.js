@@ -35,16 +35,16 @@ module.exports = function moduleSelection (input, cy) {
 
   cy.elements().addClass('faded')
 
+  let totalNodes = 0
   cy.nodes().map((node) => {
     const nodeConcept = node.data().info.concept
     if (groupArray.indexOf(nodeConcept) !== -1) {
       node.removeClass('faded')
+      totalNodes += 1
     }
   })
 
-  // TODO: add span element
-  const groupNodeNumber = groupArray.length
 
   const htmlElement = document.getElementById('legend-id')
-  htmlElement.textContent = `${condition} nodes: ${groupNodeNumber}`
+  htmlElement.textContent = `${condition} nodes: ${totalNodes}`
 }

@@ -2,21 +2,16 @@
 
 // when buton class is clicked the corresponing nodes are highlighted
 module.exports = function buttonSelection (cy, classification) {
-  let nodes = ''
-
   cy.elements().addClass('faded')
 
+  let totalNodes = 0
   cy.nodes().map((node) => {
-    if (node.data().info.type === classification) {
+    if (node.data().info.concept === classification) {
       node.removeClass('faded')
-      nodes += 1
+      totalNodes += 1
     }
   })
 
-  // document.getElementById('info-for-nodes-id').textContent = nodes
-
-  const classNode = nodes.length
-
   const currentDiv = document.getElementById('legend-id')
-  currentDiv.textContent = `${classification} nodes: ${classNode}`
+  currentDiv.textContent = `${classification} nodes: ${totalNodes}`
 }
