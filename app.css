@@ -1,6 +1,6 @@
 :root {
   --main-bg-color: #292a44;
-  --main-dark-bg-color: #212136;
+  --main-dark-bg-color: #212135;
   --main-tx-color: #f1eff7;
   --blue-color: #7aa5ff;
   --cyan-color: #6df3df;
@@ -101,9 +101,11 @@ h3 {
 }
 
 #console-id {
+  position: absolute;
   background-color: var(--main-bg-color);
   margin: 5px;
   margin-bottom: 15px;
+  bottom: 0;
   /*border: 1px solid;*/
   border-bottom: 2px solid var(--gray-color);
   color: var(--main-tx-color);
@@ -111,14 +113,6 @@ h3 {
 
 #console-id:focus {
   border-bottom: 2px solid var(--blue-color);
-}
-
-.legend {
-  bottom: 0;
-  height: 40px;
-  /*width: 100vw;*/
-  position: absolute;
-  white-space: pre-wrap;
 }
 
 .button {
@@ -190,6 +184,16 @@ option {
   color: var(--main-tx-color);
   font-size: 11px;
   white-space: pre-wrap;
+}
+
+.legend {
+  bottom: 0;
+  left: 0;
+  margin: 5px;
+  position: absolute;
+  white-space: pre-wrap;
+  font-size: 13px;
+  overflow: auto;
 }
 
 .choose {
