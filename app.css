@@ -28,13 +28,13 @@
 
 body {
   background-color: var(--main-bg-color);
-  font-family: Hack, Monaco, Consolas, monospace;
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", sans-serif;
   color: var(--main-tx-color);
   height: 100%;
   width: 100%;
   margin: 0;
   padding: 0;
-  font-size: 13px;
+  font-size: 15px;
   /* Smoother startup */
   animation: fadein 0.4s;
   /*disable text selection*/
@@ -186,6 +186,7 @@ option {
 .container-node-info {
   margin: 5px;
   opacity: 0.7;
+  font-family: Monaco, Consolas, monospace;
   color: var(--main-tx-color);
   font-size: 11px;
   white-space: pre-wrap;
