@@ -39,7 +39,7 @@ module.exports = function moduleSelection (input, cy) {
   let totalNodes = 0
   cy.nodes().map((node) => {
     const nodeConcept = node.data().info.concept
-    if (groupArray.indexOf(nodeConcept) !== -1) {
+    if (groupArray.includes(nodeConcept) === true) {
       node.removeClass('faded')
       totalNodes += 1
     }

@@ -30,7 +30,10 @@ module.exports = function vulnVerification (cy) {
   })
   // checks the arrays to see which vulnerability is not mitigated
   const setMitigated = new Set(arrMitigated)
-  const vulnerabilities = new Set([...arrVulnerability].filter(vuln => !setMitigated.has(vuln)))
+  // const vulnerabilities = new Set([...arrVulnerability].filter(vuln => !setMitigated.has(vuln)))
+  const vulnerabilities = new Set([...arrVulnerability].filter((vuln) => {
+    !setMitigated.has(vuln)
+  }))
 
   vulnerabilities.forEach((i) => {
     result = `${result} • Vulnerability ${i} is not mitigated\n`

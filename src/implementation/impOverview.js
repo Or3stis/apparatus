@@ -18,11 +18,11 @@ module.exports = function overview (cy) {
   let socialNode = 0
   cy.nodes().map((node) => {
     const nodeConcept = node.data().info.concept
-    if (networkArray.indexOf(nodeConcept) !== -1) {
+    if (networkArray.includes(nodeConcept) === true) {
       networkNode += 1
-    } else if (securityArray.indexOf(nodeConcept) !== -1) {
+    } else if (securityArray.includes(nodeConcept) === true) {
       securityNode += 1
-    } else if (socialArray.indexOf(nodeConcept !== -1)) {
+    } else if (socialArray.includes(nodeConcept) === true) {
       socialNode += 1
     }
   })

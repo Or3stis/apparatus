@@ -12,7 +12,7 @@ module.exports = function securityHints (cy, flaggedList) {
     Object.keys(nodeData).map((value) => {
       flaggedList.map((i) => {
         if (nodeData[value] === i) {
-          flaggedNodes += `• ${node.data().label} ⚑ ${i}\n`
+          flaggedNodes += `• ${node.data().label} -> ${i}\n`
           // remove faded class from the search nodes
           node.removeClass('faded')
         }

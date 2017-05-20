@@ -49,7 +49,7 @@ function componentValidation (cy, component, componentArray) {
         // every neighbor node is added to the array arrWrong
         arrWrong.push(neigborObject)
         // if the neighbor is a valid connection it is removed from the array
-        if (componentArray.indexOf(neigborObject) !== -1) {
+        if (componentArray.includes(neigborObject) === true) {
           arrWrong.pop(neigborObject)
         }
         result = `${arrWrong}`

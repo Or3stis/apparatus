@@ -18,7 +18,7 @@ const save = require('./src/save.js')
 
 // reguire implementation functions
 const impModuleValidation = require('./src/implementation/impModuleValidation.js')
-const vulnVerification = require('./src/vulnVerification.js')
+const vulnVerification = require('./src/implementation/vulnVerification.js')
 const findVulns = require('./src/findVulns.js')
 const impOverview = require('./src/implementation/impOverview.js')
 
@@ -31,7 +31,7 @@ const config = require('./style/config.js')
 // save the path
 const path = `${__dirname}`
 // require the graph file
-const system = require(`${path}/graphs/system0.js`)
+const system = require(`${path}/graphs/system.js`)
 
 // graphs style
 const graphStyle = require(`${path}/style/graphStyle.js`)
@@ -68,7 +68,6 @@ cy.on('tap', 'node', (selection) => {
 
   nodeInfo(selectedNode)
   selectedNode.addClass('selection')
-  // console.log(selectedNode.data().id)
   sourceNode = targetNode // second selection
   targetNode = selectedNode.data().id
   totalNodes(cy)
