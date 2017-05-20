@@ -39,5 +39,6 @@ module.exports = function vulnVerification (cy) {
   // result will be displayed at info-for-nodes div
   result = `${result} • Vulnerabilities total: ${arrVulnerability.length}\n`
   result = `${result} • Mitigated total: ${arrMitigated.length}\n`
-  document.getElementById('info-nodes-id').textContent = result
+  const htmlElement = document.getElementById('info-nodes-id')
+  htmlElement.textContent = result
 }

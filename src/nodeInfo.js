@@ -14,8 +14,8 @@ module.exports = function nodeInfo (node) {
     // adds the values of the object to the string
     nodeInfo += `${nodeData[i]}\n`
   })
-  // appends info to the div
-  document.getElementById('info-nodes-id').textContent = nodeInfo
+  const htmlElement = document.getElementById('info-nodes-id')
+  htmlElement.textContent = nodeInfo
 }
 
 // uses Div elements

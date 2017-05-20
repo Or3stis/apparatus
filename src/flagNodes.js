@@ -19,5 +19,6 @@ module.exports = function securityHints (cy, flaggedList) {
       })
     })
   })
-  document.getElementById('info-nodes-id').textContent = flaggedNodes
+  const htmlElement = document.getElementById('info-nodes-id')
+  htmlElement.textContent = flaggedNodes
 }
