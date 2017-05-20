@@ -91,7 +91,7 @@ h3 {
   grid-area: sidebar;
 }
 
-.info-for-nodes {
+.info-nodes {
   white-space: pre-wrap;
   outline: none;
 }

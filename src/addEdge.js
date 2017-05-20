@@ -9,5 +9,5 @@ module.exports = function addComponent (cy, sourceNode, targetNode) {
       target: `${targetNode}`
     }
   })
-  document.getElementById('info-for-nodes-id').textContent = 'edge added'
+  document.getElementById('info-nodes-id').textContent = 'edge added'
 }

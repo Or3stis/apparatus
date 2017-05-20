@@ -41,5 +41,5 @@ module.exports = function threatVerification (cy) {
   // result will be displayed at info-for-nodes div
   result = `${result} • Threats total: ${arrThreat.length}\n`
   result = `${result} • Mitigated total: ${arrMitigated.length}\n`
-  document.getElementById('info-for-nodes-id').textContent = result
+  document.getElementById('info-nodes-id').textContent = result
 }

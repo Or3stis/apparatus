@@ -60,5 +60,5 @@ function componentValidation (cy, component, componentArray) {
       })
     }
   })
-  document.getElementById('info-for-nodes-id').textContent = result
+  document.getElementById('info-nodes-id').textContent = result
 }

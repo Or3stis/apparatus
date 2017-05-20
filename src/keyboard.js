@@ -35,16 +35,17 @@ module.exports = function keyboard (cy, toggleUI) {
     }
     // stuff for the console
     const input = document.getElementById('console-id').value
+    const htmlElement = document.getElementById('info-nodes-id')
     // listens for you to press the ENTER key
     if (document.activeElement === consoleId && event.code === 'Enter') {
       document.getElementById('console-id').value = ''
       if (input === 'help' || input === 'options') {
-        document.getElementById('info-for-nodes-id').textContent = helpMenu
+        htmlElement.textContent = helpMenu
       } else if (input === 'validate') {
         // moduleValidation(s)
-        document.getElementById('info-for-nodes-id').textContent = 'not implemented'
+        htmlElement.textContent = 'not implemented'
       } else if (input === '') {
-        document.getElementById('info-for-nodes-id').textContent = 'not valid command'
+        htmlElement.textContent = 'not valid command'
       } else {
         searchAttribute(cy, input)
       }

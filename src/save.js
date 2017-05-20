@@ -12,5 +12,5 @@ module.exports = function save (cy, path) {
       throw err
     }
   })
-  document.getElementById('info-for-nodes-id').textContent = 'graph saved 👍'
+  document.getElementById('info-nodes-id').textContent = 'graph saved 👍'
 }

@@ -17,6 +17,6 @@ module.exports = function flag (cy, term) {
       }
     })
   })
-  const htmlElement = document.getElementById('info-for-nodes-id')
+  const htmlElement = document.getElementById('info-nodes-id')
   htmlElement.textContent = searchNodes
 }

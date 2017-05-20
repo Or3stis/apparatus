@@ -70,6 +70,6 @@ module.exports = function overview (cy) {
   result = `${result}malicious actor nodes: ${malActorNode}\n`
   result = `${result}actor nodes: ${actorNode}\n`
 
-  const htmlElement = document.getElementById('info-for-nodes-id')
+  const htmlElement = document.getElementById('info-nodes-id')
   htmlElement.textContent = `${result}`
 }
