@@ -11,7 +11,6 @@ const moduleSelection = require('./src/moduleSelection.js')
 const nodeSelection = require('./src/nodeSelection.js')
 const threatVerification = require('./src/threatVerification.js')
 const keyboard = require('./src/keyboard.js')
-const addComponent = require('./src/addComponent.js')
 const addEdge = require('./src/addEdge.js')
 const totalNodes = require('./src/totalNodes.js')
 const save = require('./src/save.js')
@@ -21,17 +20,19 @@ const impModuleValidation = require('./src/implementation/impModuleValidation.js
 const vulnVerification = require('./src/implementation/vulnVerification.js')
 const findVulns = require('./src/implementation/findVulns.js')
 const impOverview = require('./src/implementation/impOverview.js')
+const addImpComponent = require('./src/implementation/addImpComponent.js')
 
 // require design functions
 const dgnModuleValidation = require('./src/design/dgnModuleValidation.js')
 const dgnOverview = require('./src/design/dgnOverview.js')
+const addDgnComponent = require('./src/design/addDgnComponent.js')
 
 const config = require('./style/config.js')
 
 // save the path
 const path = `${__dirname}`
 // require the graph file
-const system = require(`${path}/graphs/system0.js`)
+const system = require(`${path}/graphs/system.js`)
 
 // graphs style
 const graphStyle = require(`${path}/style/graphStyle.js`)
@@ -196,7 +197,11 @@ select.addEventListener('change', (e) => {
 // adding component
 const add = document.getElementById('add-component-id')
 add.addEventListener('change', (e) => {
-  addComponent(cy, e.target.value) // module
+  if (window.location.pathname === `${path}/implementation.html`) {
+    addImpComponent(cy, e.target.value) // imp module
+  } else {
+    addDgnComponent(cy, e.target.value) // dgn module
+  }
   // reset moduleGroup selection
   document.getElementById('add-component-id').selectedIndex = ''
   totalNodes(cy)

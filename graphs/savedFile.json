@@ -2,22 +2,24 @@
   "elements": {
     "nodes": [{
       "data": {
-        "id": "n1",
+        "id": "a",
         "label": "node 1",
         "info": {
           "description": "laptop",
           "type": "device",
+          "id": "02",
           "aspect": "physical",
           "layer": "application",
           "nodeType": "server",
           "attribute": "process",
           "input": "dataDigital",
-          "output": "dataDigital"
+          "output": "dataDigital",
+          "concept": "threat"
         }
       },
       "position": {
-        "x": 436.9924217623283,
-        "y": 437.0353901697928
+        "x": 84.25,
+        "y": 120.4375
       },
       "group": "nodes",
       "removed": false,
@@ -28,22 +30,24 @@
       "classes": ""
     }, {
       "data": {
-        "id": "n2",
+        "id": "b",
         "label": "node 2",
         "info": {
           "description": "server",
           "type": "device",
+          "id": "02",
           "aspect": "physical",
           "layer": "application",
           "nodeType": "server",
           "attribute": "process",
           "input": "dataDigital",
-          "output": "dataDigital"
+          "output": "dataDigital",
+          "concept": "constraint"
         }
       },
       "position": {
-        "x": 392.2220563332089,
-        "y": 299.2931727459069
+        "x": 252.75,
+        "y": 120.4375
       },
       "group": "nodes",
       "removed": false,
@@ -54,22 +58,24 @@
       "classes": ""
     }, {
       "data": {
-        "id": "n3",
+        "id": "c",
         "label": "node 3",
         "info": {
           "description": "server",
           "type": "device",
+          "id": "02",
           "aspect": "physical",
           "layer": "application",
           "nodeType": "server",
           "attribute": "process",
           "input": "dataDigital",
-          "output": "dataDigital"
+          "output": "dataDigital",
+          "concept": "threat"
         }
       },
       "position": {
-        "x": 573.8989196553036,
-        "y": 409.6482578966222
+        "x": 84.25,
+        "y": 361.3125
       },
       "group": "nodes",
       "removed": false,
@@ -80,22 +86,52 @@
       "classes": ""
     }, {
       "data": {
-        "id": "n4",
+        "id": "d",
+        "label": "node 3",
+        "info": {
+          "description": "server",
+          "type": "threat",
+          "id": "02",
+          "aspect": "physical",
+          "layer": "application",
+          "nodeType": "server",
+          "attribute": "process",
+          "input": "dataDigital",
+          "output": "dataDigital",
+          "concept": "threat"
+        }
+      },
+      "position": {
+        "x": 252.75,
+        "y": 361.3125
+      },
+      "group": "nodes",
+      "removed": false,
+      "selected": false,
+      "selectable": true,
+      "locked": false,
+      "grabbable": true,
+      "classes": ""
+    }, {
+      "data": {
+        "id": "e",
         "label": "node 4",
         "info": {
           "description": "server",
-          "type": "threat",
+          "type": "constraint",
+          "id": "02",
           "aspect": "physical",
           "layer": "application",
           "nodeType": "server",
           "attribute": "process",
           "input": "dataDigital",
-          "output": "dataDigital"
+          "output": "dataDigital",
+          "concept": "threat"
         }
       },
       "position": {
-        "x": 607.5698012867417,
-        "y": 554.8236333012412
+        "x": 84.25,
+        "y": 602.1875
       },
       "group": "nodes",
       "removed": false,
@@ -106,22 +142,24 @@
       "classes": ""
     }, {
       "data": {
-        "id": "n5",
+        "id": "f",
         "label": "node 5",
         "info": {
           "description": "server",
-          "type": "constraint",
+          "type": "threat",
+          "id": "02",
           "aspect": "physical",
           "layer": "application",
           "nodeType": "server",
           "attribute": "process",
           "input": "dataDigital",
-          "output": "dataDigital"
+          "output": "dataDigital",
+          "concept": "threat"
         }
       },
       "position": {
-        "x": 254.77069529784544,
-        "y": 344.05388934749766
+        "x": 252.75,
+        "y": 602.1875
       },
       "group": "nodes",
       "removed": false,
@@ -132,22 +170,19 @@
       "classes": ""
     }, {
       "data": {
-        "id": "n6",
-        "label": "node 6",
+        "id": "n7",
+        "label": "device",
         "info": {
-          "description": "server",
-          "type": "threat",
-          "aspect": "physical",
-          "layer": "application",
-          "nodeType": "server",
-          "attribute": "process",
-          "input": "dataDigital",
-          "output": "dataDigital"
+          "test1,test2": "hee,test"
+        },
+        "position": {
+          "x": 200,
+          "y": 400
         }
       },
       "position": {
-        "x": 360.00952960909206,
-        "y": 570.8510980113786
+        "x": 0,
+        "y": 0
       },
       "group": "nodes",
       "removed": false,
@@ -159,9 +194,9 @@
     }],
     "edges": [{
       "data": {
-        "id": "e1",
-        "source": "n2",
-        "target": "n5"
+        "id": "ab",
+        "source": "a",
+        "target": "b"
       },
       "position": {},
       "group": "edges",
@@ -173,9 +208,9 @@
       "classes": ""
     }, {
       "data": {
-        "id": "e2",
-        "source": "n1",
-        "target": "n3"
+        "id": "cd",
+        "source": "c",
+        "target": "d"
       },
       "position": {},
       "group": "edges",
@@ -187,9 +222,9 @@
       "classes": ""
     }, {
       "data": {
-        "id": "e3",
-        "source": "n1",
-        "target": "n2"
+        "id": "ef",
+        "source": "e",
+        "target": "f"
       },
       "position": {},
       "group": "edges",
@@ -201,9 +236,9 @@
       "classes": ""
     }, {
       "data": {
-        "id": "e4",
-        "source": "n3",
-        "target": "n4"
+        "id": "ac",
+        "source": "a",
+        "target": "d"
       },
       "position": {},
       "group": "edges",
@@ -215,9 +250,9 @@
       "classes": ""
     }, {
       "data": {
-        "id": "e5",
-        "source": "n1",
-        "target": "n6"
+        "id": "be",
+        "source": "b",
+        "target": "e"
       },
       "position": {},
       "group": "edges",
@@ -232,24 +267,26 @@
   "style": [{
     "selector": "node",
     "style": {
-      "background-color": "#61afef",
-      "color": "#abb2bf",
-      "label": "data(label)"
+      "shape": "ellipse",
+      "background-color": "#d8dee9",
+      "label": "data(label)",
+      "text-valign": "center",
+      "color": "#f1eff7",
+      "text-outline-width": "2px",
+      "text-outline-color": "#292a44"
     }
   }, {
     "selector": "edge",
     "style": {
-      "line-color": "#61afef",
-      "color": "#abb2bf",
-      "label": "data(id)",
+      "curve-style": "bezier",
+      "line-color": "#d8dee9",
+      "label": "data(label)",
       "target-arrow-shape": "triangle",
-      "target-arrow-color": "#61afef",
-      "width": "2px"
-    }
-  }, {
-    "selector": ":selected",
-    "style": {
-      "background-color": "#98c379"
+      "target-arrow-color": "#d8dee9",
+      "width": "2px",
+      "color": "#f1eff7",
+      "text-outline-width": "2px",
+      "text-outline-color": "#292a44"
     }
   }, {
     "selector": ".faded",
@@ -260,20 +297,30 @@
   }, {
     "selector": ".selection",
     "style": {
-      "background-color": "#98c379",
-      "line-color": "#98c379"
+      "background-color": "#7aa5ff",
+      "line-color": "#7aa5ff"
+    }
+  }, {
+    "selector": ".attention",
+    "style": {
+      "background-color": "#ffbc69"
+    }
+  }, {
+    "selector": ".protect",
+    "style": {
+      "background-color": "#66d9ef"
     }
   }],
   "zoomingEnabled": true,
   "userZoomingEnabled": true,
-  "zoom": 1.1641081963182802,
+  "zoom": 0.6843266035159974,
   "minZoom": 1e-50,
   "maxZoom": 1e+50,
   "panningEnabled": true,
   "userPanningEnabled": true,
   "pan": {
-    "x": -64.92882004564694,
-    "y": -281.15817321342814
+    "x": 23.57357721925551,
+    "y": 38.649310092312504
   },
   "boxSelectionEnabled": true,
   "renderer": {
