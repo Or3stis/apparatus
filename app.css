@@ -7,6 +7,8 @@
   --black-color: #2d3e4f;
   --gray-color: #abb2bf;
 }
+
+
 /*:root {
   --main-bg-color: #282c34;
   --main-dark-bg-color: #21252b;
@@ -64,10 +66,7 @@ h3 {
   /*flex-direction: row;*/
   display: grid;
   grid-template-columns: 140px 1fr 165px;
-  grid-template-areas:
-    "action-bar graph sidebar"
-    "action-bar graph sidebar"
-    "action-bar graph sidebar";
+  grid-template-areas: "action-bar graph sidebar" "action-bar graph sidebar" "action-bar graph sidebar";
 }
 
 .action-bar {
@@ -174,16 +173,21 @@ h3 {
   color: var(--blue-color)
 }
 
+
 /*remove the blue outline box of chrome*/
+
 .button:focus, .selection:focus {
   outline: none;
 }
 
+
 /*flash color when clicked*/
+
 .button:active, .selection:active {
   color: var(--main-tx-color);
   border-bottom-color: var(--main-tx-color);
 }
+
 
 /*select:required:invalid {
   color: #94a4a5;
@@ -249,7 +253,9 @@ option {
   border-bottom-color: var(--blue-color);
 }
 
+
 /*remove the blue outline box of chrome*/
+
 .buttonPhase:focus {
   outline: none;
 }
