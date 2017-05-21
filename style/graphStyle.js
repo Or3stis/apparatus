@@ -1,6 +1,6 @@
 // CSS style for the graphs
 
-const configGraph = require(`${__dirname}/configGraph.js`)
+const configGraph = require(`./configGraph.js`)
 
 const graphStyle = {}
 

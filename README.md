@@ -32,6 +32,8 @@ npm install && npm start
 ```
 ## Instructions
 
-ASTo uses cytoscape.js to render an IoT system as a graph diagram. The concepts (nodes and edges) follow the Apparatus ontology. The ontology is encoded in a json schema (not finalized).
+ASTo uses cytoscape.js to render an IoT system as a graph diagram. The concepts (nodes and edges) follow the Apparatus ontology. The modeling language is encoded in a json schema (not finalized). The schemas are located in the `src/design/dgnSchema.js` and `src/`implementation/impSchema.js`
+
+The style of the app can be configured by the user. The values are located in the `style` folder.
 
 #### License [MIT](LICENSE.md)
