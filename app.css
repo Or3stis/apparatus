@@ -61,9 +61,6 @@ h3 {
 .window {
   position: relative;
   height: 97vh;
-  /*width: 100vw;*/
-  /*display: flex;*/
-  /*flex-direction: row;*/
   display: grid;
   grid-template-columns: 140px 1fr 165px;
   grid-template-areas: "action-bar graph sidebar" "action-bar graph sidebar" "action-bar graph sidebar";
@@ -112,7 +109,7 @@ h3 {
 .bubble {
   position: relative;
   width: 95vw;
-  background-color: var(--blue-color);
+  background-color: var(--gray-color);
   color: var(--main-bg-color);
   overflow: auto;
   white-space: pre-wrap;
@@ -122,28 +119,29 @@ h3 {
 }
 
 .bubble:hover {
-  background-color: var(--gray-color);
+  background-color: var(--blue-color);
 }
 
 #console-id {
-  width: 95vw;
+  width: 150px;
   position: fixed;
   background-color: var(--main-bg-color);
   margin: 5px;
-  /*margin-top: 15px;*/
-  /*margin-bottom: 15px;*/
   bottom: 0;
-  /*border: 1px solid;*/
-  border-bottom: 2px solid var(--gray-color);
+  border: 1px solid;
+  border-color: var(--main-bg-color);
+  border-bottom: 3px solid var(--gray-color);
   color: var(--main-tx-color);
+  font-size: 13px;
   display: flex;
   flex: 1 1 10px;
-  min-height: 12px;
-  max-height: 12px;
+  min-height: 20px;
+  max-height: 20px;
 }
 
 #console-id:focus {
-  border-bottom: 2px solid var(--blue-color);
+  border-bottom: 3px solid var(--blue-color);
+  outline: none;
 }
 
 .button {
@@ -203,10 +201,10 @@ option {
 }
 
 .container-node {
-  animation: fadein 0.4s;
   position: absolute;
+  opacity: 0.8;
   border-radius: 10px;
-  background-color: var(--black-color);
+  background-color: var(--main-dark-bg-color);
   display: none;
   margin: 10px;
   overflow: auto;
@@ -215,10 +213,8 @@ option {
 
 .container-node-info {
   margin: 5px;
-  opacity: 0.7;
-  font-family: Monaco, Consolas, monospace;
   color: var(--main-tx-color);
-  font-size: 11px;
+  font-size: 12px;
   white-space: pre-wrap;
 }
 
