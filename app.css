@@ -122,15 +122,17 @@ h3 {
   border-radius: 10px;
 }
 
-/*.bubble:focus {
+.bubble:hover {
   background-color: var(--gray-color);
-}*/
+}
 
 #console-id {
+  width: 95vw;
   position: fixed;
   background-color: var(--main-bg-color);
-  /*margin: 5px;*/
-  margin-top: 15px;
+  margin: 5px;
+  /*margin-top: 15px;*/
+  /*margin-bottom: 15px;*/
   bottom: 0;
   /*border: 1px solid;*/
   border-bottom: 2px solid var(--gray-color);
