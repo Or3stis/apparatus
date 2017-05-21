@@ -1,6 +1,7 @@
 'use scrict'
 
 const jsonfile = require('jsonfile')
+const printChat = require('./printChat.js')
 
 // saves graph to savedFile.json
 module.exports = function save (cy, path) {
@@ -12,6 +13,5 @@ module.exports = function save (cy, path) {
       throw err
     }
   })
-  const htmlElement = document.getElementById('info-nodes-id')
-  htmlElement.textContent = 'graph saved 👍'
+  printChat('graph saved 👍')
 }
