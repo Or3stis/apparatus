@@ -1,5 +1,7 @@
 'use strict'
 
+const printChat = require('../printChat.js')
+
 const networkArray = ['thing', 'micronet', 'net', 'data']
 const securityArray = ['asset', 'threat', 'constraint', 'malicious actor']
 const socialArray = ['actor']
@@ -70,6 +72,5 @@ module.exports = function overview (cy) {
   result = `${result}malicious actor nodes: ${malActorNode}\n`
   result = `${result}actor nodes: ${actorNode}\n`
 
-  const htmlElement = document.getElementById('info-nodes-id')
-  htmlElement.textContent = `${result}`
+  printChat(result)
 }

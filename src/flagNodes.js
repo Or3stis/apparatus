@@ -1,4 +1,5 @@
 'use strict'
+const printChat = require('./printChat.js')
 
 module.exports = function securityHints (cy, flaggedList) {
   let flaggedNodes = ''
@@ -19,6 +20,5 @@ module.exports = function securityHints (cy, flaggedList) {
       })
     })
   })
-  const htmlElement = document.getElementById('info-nodes-id')
-  htmlElement.textContent = flaggedNodes
+  printChat(flaggedNodes)
 }

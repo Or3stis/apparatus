@@ -39,8 +39,7 @@ body {
   animation: fadein 0.4s;
   /*disable text selection*/
   -webkit-user-select: none;
-  overflow-x: hidden;
-  overflow-y: hidden;
+  overflow: hidden;
 }
 
 h3 {
@@ -54,7 +53,7 @@ h3 {
   height: 22px;
   cursor: wait;
   text-align: center;
-  -webkit-app-region: drag
+  -webkit-app-region: drag;
 }
 
 .window {
@@ -64,7 +63,7 @@ h3 {
   /*display: flex;*/
   /*flex-direction: row;*/
   display: grid;
-  grid-template-columns: 140px 1fr 160px;
+  grid-template-columns: 140px 1fr 165px;
   grid-template-areas:
     "action-bar graph sidebar"
     "action-bar graph sidebar"
@@ -77,6 +76,10 @@ h3 {
   grid-area: action-bar;
 }
 
+.components {
+  margin: 5px;
+}
+
 .graph {
   /*background-image: url(bulidingPlan.png);*/
   background-size: cover;
@@ -85,30 +88,57 @@ h3 {
 
 .sidebar {
   margin-top: 10px;
-  margin-right: 8px;
   font-size: 12px;
   display: block;
   grid-area: sidebar;
+  overflow: auto;
+}
+
+.sidebar-wrapper {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  overflow-y: scroll;
 }
 
 .info-nodes {
-  white-space: pre-wrap;
+  display: flex;
+  flex: 1 1 93vh;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  align-content: flex-start;
   outline: none;
 }
 
-.components {
+.bubble {
+  position: relative;
+  width: 95vw;
+  background-color: var(--blue-color);
+  color: var(--main-bg-color);
+  overflow: auto;
+  white-space: pre-wrap;
   margin: 5px;
+  padding: 5px;
+  border-radius: 10px;
 }
 
+/*.bubble:focus {
+  background-color: var(--gray-color);
+}*/
+
 #console-id {
-  position: absolute;
+  position: fixed;
   background-color: var(--main-bg-color);
-  margin: 5px;
-  margin-bottom: 15px;
+  /*margin: 5px;*/
+  margin-top: 15px;
   bottom: 0;
   /*border: 1px solid;*/
   border-bottom: 2px solid var(--gray-color);
   color: var(--main-tx-color);
+  display: flex;
+  flex: 1 1 10px;
+  min-height: 12px;
+  max-height: 12px;
 }
 
 #console-id:focus {
@@ -170,7 +200,7 @@ option {
   animation: fadein 0.4s;
   position: absolute;
   border-radius: 10px;
-  background-color: var(--main-dark-bg-color);
+  background-color: var(--black-color);
   display: none;
   margin: 10px;
   overflow: auto;

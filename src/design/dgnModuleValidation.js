@@ -1,6 +1,7 @@
 'use scrict'
 
 const dgnMetamodel = require('./dgnSchema.js')
+const printChat = require('../printChat.js')
 // checks if the instance is correct
 
 // valid component connections
@@ -26,6 +27,7 @@ module.exports = function moduleValidation (cy) {
   componentValidation(cy, 'asset', assetArray)
   componentValidation(cy, 'constraint', constraintArray)
   componentValidation(cy, 'threat', threatArray)
+  printChat(result)
 }
 
 function componentValidation (cy, component, componentArray) {
@@ -42,13 +44,14 @@ function componentValidation (cy, component, componentArray) {
         if (componentArray.includes(neigborObject) === true) {
           arrWrong.pop(neigborObject)
         }
-        result = `${arrWrong}`
-        // if the array in empty, the module is correct
-        if (result === '') {
-          result = 'model instance is valid 👍'
-        }
       })
     }
   })
-  document.getElementById('info-nodes-id').textContent = result
+  result = `${arrWrong}`
+  // if the array in empty, the module is correct
+  if (result === []) {
+    result = 'model instance is valid 👍'
+  } else {
+    result = 'instance is wrong'
+  }
 }

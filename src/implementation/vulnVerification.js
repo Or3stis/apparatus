@@ -1,5 +1,7 @@
 'use scrict'
 
+const printChat = require('../printChat.js')
+
 // checks if a node vulnerability has a connection to a node constraint
 module.exports = function vulnVerification (cy) {
   let arrVulnerability = [] // array with all threats
@@ -42,6 +44,5 @@ module.exports = function vulnVerification (cy) {
   // result will be displayed at info-for-nodes div
   result = `${result} • Vulnerabilities total: ${arrVulnerability.length}\n`
   result = `${result} • Mitigated total: ${arrMitigated.length}\n`
-  const htmlElement = document.getElementById('info-nodes-id')
-  htmlElement.textContent = result
+  printChat(result)
 }

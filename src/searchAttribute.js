@@ -1,5 +1,7 @@
 'use strict'
 
+const printChat = require('./printChat.js')
+
 module.exports = function flag (cy, term) {
   let searchNodes = ''
 
@@ -17,6 +19,5 @@ module.exports = function flag (cy, term) {
       }
     })
   })
-  const htmlElement = document.getElementById('info-nodes-id')
-  htmlElement.textContent = searchNodes
+  printChat(searchNodes)
 }

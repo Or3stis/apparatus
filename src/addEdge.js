@@ -1,5 +1,7 @@
 'use strict'
 
+const printChat = require('./printChat.js')
+
 module.exports = function addComponent (cy, sourceNode, targetNode) {
   cy.add({
     group: 'edges',
@@ -9,6 +11,5 @@ module.exports = function addComponent (cy, sourceNode, targetNode) {
       target: `${targetNode}`
     }
   })
-  const htmlElement = document.getElementById('info-nodes-id')
-  htmlElement.textContent = 'edge added'
+  printChat('edge added')
 }

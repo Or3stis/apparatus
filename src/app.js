@@ -19,7 +19,7 @@ const save = require('./src/save.js')
 // reguire implementation functions
 const impModuleValidation = require('./src/implementation/impModuleValidation.js')
 const vulnVerification = require('./src/implementation/vulnVerification.js')
-const findVulns = require('./src/findVulns.js')
+const findVulns = require('./src/implementation/findVulns.js')
 const impOverview = require('./src/implementation/impOverview.js')
 
 // require design functions
