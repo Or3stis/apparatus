@@ -26,7 +26,8 @@
     "electron": "^1.6.8"
   },
   "dependencies": {
-    "cytoscape": "^3.1.0",
+    "cytoscape": "^3.1.1",
+    "electron": "^1.7.1",
     "jsonfile": "^3.0.0"
   }
 }
