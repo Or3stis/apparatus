@@ -52,6 +52,6 @@ function componentValidation (cy, component, componentArray) {
   if (result === []) {
     result = 'model instance is valid 👍'
   } else {
-    result = 'instance is wrong'
+    result = 'instance is incorrect'
   }
 }

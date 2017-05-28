@@ -112,12 +112,6 @@ cy.on('mouseout', 'node', (event) => {
   document.getElementById('container-node-id').style.display = 'none'
 })
 
-// buttons
-// vefiry threats
-const buttonThreatVefiry = document.getElementById('threat-verify-button')
-buttonThreatVefiry.addEventListener('click', () => {
-  threatVerification(cy) // module
-})
 if (window.location.pathname === `${path}/implementation.html`) {
   // verify vulnerabilities
   const buttonVulnVefiry = document.getElementById('vulnerability-verify-button')
@@ -134,22 +128,23 @@ const buttonModuleValidate = document.getElementById('module-validate-button')
 buttonModuleValidate.addEventListener('click', () => {
   if (window.location.pathname === `${path}/implementation.html`) {
     impModuleValidation(cy) // imp module
-  } else {
+  } else if (window.location.pathname === `${path}/design.html`) {
     dgnModuleValidation(cy) // dgn module
   }
-})
-// flag nodes
-const buttonFlag = document.getElementById('flag-button')
-buttonFlag.addEventListener('click', () => {
-  flagNodes(cy, config.flag) // module
 })
 const buttonOverview = document.getElementById('overview-button')
 buttonOverview.addEventListener('click', () => {
   if (window.location.pathname === `${path}/implementation.html`) {
     impOverview(cy) // imp module
-  } else {
+  } else if (window.location.pathname === `${path}/design.html`) {
     dgnOverview(cy) // dgn module
   }
+})
+
+// flag nodes
+const buttonFlag = document.getElementById('flag-button')
+buttonFlag.addEventListener('click', () => {
+  flagNodes(cy, config.flag) // module
 })
 // save graph
 const buttonSave = document.getElementById('save-button')
@@ -171,13 +166,17 @@ buttonDeleteEdge.addEventListener('click', () => {
   selectedEdge.remove()
   totalNodes(cy)
 })
+const buttonThreatVefiry = document.getElementById('threat-verify-button')
+buttonThreatVefiry.addEventListener('click', () => {
+  threatVerification(cy) // module
+})
 // test function
 const buttonTest = document.getElementById('test-button')
 buttonTest.addEventListener('click', () => {
   // console.log(cy.filter('node[label = "Device"]'))
   // cy.elements().addClass('faded')
   // cy.filter('node[label = "Device"]').removeClass('faded')
-  impOverview(cy)
+  // impOverview(cy)
 })
 
 // selections
@@ -199,7 +198,7 @@ const add = document.getElementById('add-component-id')
 add.addEventListener('change', (e) => {
   if (window.location.pathname === `${path}/implementation.html`) {
     addImpComponent(cy, e.target.value) // imp module
-  } else {
+  } else if (window.location.pathname === `${path}/design.html`) {
     addDgnComponent(cy, e.target.value) // dgn module
   }
   // reset moduleGroup selection
