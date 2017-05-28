@@ -41,7 +41,7 @@ module.exports = function addImpComponent (cy, component) {
           info: {
             description: '',
             listOfProtocols: '',
-            purpose: '',
+            // purpose: '',
             concept: 'network connection'
           },
           position: {
@@ -60,6 +60,7 @@ module.exports = function addImpComponent (cy, component) {
           info: {
             description: '',
             state: '',
+            purpose: '',
             concept: 'micronet'
           },
           position: {

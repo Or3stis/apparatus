@@ -33,7 +33,7 @@ module.exports = function addDgnComponent (cy, component) {
           label: `${component}`,
           info: {
             description: '',
-            state: '',
+            purpose: '',
             concept: 'micronet'
           },
           position: {
