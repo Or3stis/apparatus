@@ -122,6 +122,17 @@ h3 {
   background-color: var(--blue-color);
 }
 
+/*.tool {
+  background-color: var(--gray-color);
+  color: var(--main-bg-color);
+}
+.user {
+  left: 80px;
+  background-color: var(--black-color);
+  color: var(--main-tx-color);
+}*/
+
+
 .console-wrapper {
   width: 100vw;
   height: 30px;
