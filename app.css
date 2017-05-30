@@ -38,7 +38,7 @@ body {
   padding: 0;
   font-size: 15px;
   /* Smoother startup */
-  animation: fadein 0.4s;
+  -webkit-animation: fadein 0.4s;
   /*disable text selection*/
   -webkit-user-select: none;
   overflow: hidden;
@@ -116,6 +116,7 @@ h3 {
   margin: 5px;
   padding: 5px;
   border-radius: 10px;
+  -webkit-animation: fadein 0.4s;
 }
 
 .bubble:hover {
