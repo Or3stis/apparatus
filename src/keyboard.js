@@ -44,6 +44,8 @@ module.exports = function keyboard (cy, toggleUI) {
         printChat('not implemented')
       } else if (input === '') {
         printChat('not valid command')
+      } else if (input === 'clear') {
+        document.getElementById('info-nodes-id').textContent = ''
       } else {
         searchAttribute(cy, input)
       }
