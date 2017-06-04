@@ -32,7 +32,7 @@ const config = require('./style/config.js')
 // save the path
 const path = `${__dirname}`
 // require the graph file
-const system = require(`${path}/graphs/system.js`)
+const system = require(`${path}/graphs/smartHome.js`)
 
 // graphs style
 const graphStyle = require(`${path}/style/graphStyle.js`)

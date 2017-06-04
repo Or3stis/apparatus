@@ -10,7 +10,7 @@ module.exports = function findVuln (cy) {
     if (node.data().info.concept === 'device') {
       Object.keys(node.data().info).map((key) => {
         if (typeArray.includes(key) === true) {
-          keywords += `${node.data().info[key]}\n`
+          keywords += `• ${node.data().info[key]}\n`
         }
       })
     }

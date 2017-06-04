@@ -17,6 +17,7 @@ module.exports = function vulnVerification (cy) {
       // stores the neigborring nodes of the vulnerabilities
       const neighborNodes = node.neighborhood()
       const neighborInfo = neighborNodes.data().info
+      console.log(neighborNodes)
 
       // check which vulnerability has a constraint neighbor
       Object.keys(neighborInfo).map((i) => {
