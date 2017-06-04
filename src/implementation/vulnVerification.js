@@ -4,7 +4,7 @@ const printChat = require('../printChat.js')
 
 let vulnArray = []
 let result = ''
-let mitigatedVulns = ''
+let mitigatedVulns = 0
 
 module.exports = function vulnVerification (cy) {
   cy.elements().addClass('faded')
@@ -32,6 +32,6 @@ module.exports = function vulnVerification (cy) {
     })
   })
   result = `${result} • Vulnerabilities total: ${vulnArray.length}\n`
-  result = `${result} • Mitigated total: ${mitigatedVulns.length}\n`
+  result = `${result} • Mitigated total: ${mitigatedVulns}\n`
   printChat(result)
 }

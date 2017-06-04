@@ -4,7 +4,7 @@ const printChat = require('./printChat.js')
 
 let threatArray = []
 let result = ''
-let mitigatedThreats = ''
+let mitigatedThreats = 0
 
 module.exports = function threatVerification (cy) {
   cy.elements().addClass('faded')
@@ -32,6 +32,6 @@ module.exports = function threatVerification (cy) {
     })
   })
   result = `${result} • Threats total: ${threatArray.length}\n`
-  result = `${result} • Mitigated total: ${mitigatedThreats.length}\n`
+  result = `${result} • Mitigated total: ${mitigatedThreats}\n`
   printChat(result)
 }
