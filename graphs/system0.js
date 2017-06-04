@@ -1,5 +1,3 @@
-// const config = require('./config.js')
-
 const system = {}
 
 system.graph = [
@@ -347,55 +345,5 @@ system.graph = [
     }
   }
 ]
-// system.style = [{
-//   selector: 'node',
-//   style: {
-//     shape: 'circle',
-//     'background-color': config.comment,
-//     'color': config.black,
-//     'text-valign': 'center',
-//     'font-size': '20px',
-//     label: 'data(label)'
-//     // 'text-outline-color': config.comment
-//   }
-// }, {
-//   selector: 'edge',
-//   style: {
-//     'line-color': config.comment,
-//     'color': config.black,
-//     'font-size': '20px',
-//     label: 'data(label)',
-//     'target-arrow-shape': 'triangle',
-//     'target-arrow-color': config.comment,
-//     'width': 2
-//   }
-// }, {
-//   selector: ':selected',
-//   style: {
-//     'background-color': config.red
-//   }
-// }, {
-//   // selector: '.faded',
-//   style: {
-//     'opacity': 0.25,
-//     'text-opacity': 0
-//   }
-// }, {
-//   selector: '.selection',
-//   style: {
-//     'background-color': config.red,
-//     'line-color': config.red
-//   }
-// }, {
-//   selector: 'node.red',
-//   style: {
-//     'background-color': config.red
-//   }
-// }, {
-//   selector: 'edge.red',
-//   style: {
-//     'line-color': config.red
-//   }
-// }]
 
 module.exports = system

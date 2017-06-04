@@ -4,137 +4,194 @@ system.graph = [
   // nodes
   {
     data: {
-      id: 'a',
-      label: 'node 1',
+      id: '1',
+      label: 'laptop',
       info: {
         description: 'laptop',
-        type: 'device',
-        id: '02',
         aspect: 'physical',
-        layer: 'application',
-        nodeType: 'server',
-        attribute: 'process',
-        input: 'dataDigital',
+        layer: 'perception',
+        type: 'Macbook 2015',
+        service: 'request data',
+        input: 'action',
         output: 'dataDigital',
-        concept: 'threat'
+        update: 'automatic',
+        concept: 'device'
       }
     }
   }, {
     data: {
-      id: 'b',
-      label: 'node 2',
+      id: '2',
+      label: 'router',
       info: {
-        description: 'server',
-        type: 'device',
-        id: '02',
+        description: 'router',
         aspect: 'physical',
-        layer: 'application',
-        nodeType: 'server',
-        attribute: 'process',
+        layer: 'gateway',
+        type: 'NETGEAR R8500',
+        service: 'routing',
         input: 'dataDigital',
         output: 'dataDigital',
+        update: 'action',
+        concept: 'device'
+      }
+    }
+  }, {
+    data: {
+      id: '3',
+      label: 'baby camera',
+      info: {
+        description: 'baby camera',
+        aspect: 'physical',
+        layer: 'perception',
+        type: 'Philips in Sight',
+        service: 'camera',
+        input: 'dataEnvironemntal',
+        output: 'dataDigital',
+        concept: 'device'
+      }
+    }
+  }, {
+    data: {
+      id: '4',
+      label: 'network connection',
+      info: {
+        description: 'wireless',
+        listOfProtocols: 'HTTP, TELNET, SHH',
+        concept: 'network connection'
+      }
+    }
+  }, {
+    data: {
+      id: '5',
+      label: 'network connection',
+      info: {
+        description: 'wireless',
+        listOfProtocols: 'HTTP, TELNET, SHH',
+        concept: 'network connection'
+      }
+    }
+  }, {
+    data: {
+      id: '6',
+      label: 'actor',
+      info: {
+        description: 'user',
+        intent: 'view camera feed',
+        concept: 'actor'
+      }
+    }
+  }, {
+    data: {
+      id: '7',
+      label: 'data',
+      info: {
+        description: 'data in transit',
+        intent: 'local',
+        concept: 'data'
+      }
+    }
+  }, {
+    data: {
+      id: '8',
+      label: 'asset',
+      info: {
+        description: 'camera feed',
+        concept: 'asset'
+      }
+    }
+  }, {
+    data: {
+      id: '9',
+      label: 'constraint',
+      info: {
+        description: 'secure camera feed',
+        property: 'authorization',
         concept: 'constraint'
       }
     }
   }, {
     data: {
-      id: 'c',
-      label: 'node 3',
+      id: '10',
+      label: 'threat',
       info: {
-        description: 'server',
-        type: 'device',
-        id: '02',
-        aspect: 'physical',
-        layer: 'application',
-        nodeType: 'server',
-        attribute: 'process',
-        input: 'dataDigital',
-        output: 'dataDigital',
+        description: 'direct browsing',
+        type: 'spoofing',
         concept: 'threat'
       }
     }
   }, {
     data: {
-      id: 'd',
-      label: 'node 3',
+      id: '27',
+      label: 'micronet',
       info: {
-        description: 'server',
-        type: 'threat',
-        id: '02',
-        aspect: 'physical',
-        layer: 'application',
-        nodeType: 'server',
-        attribute: 'process',
-        input: 'dataDigital',
-        output: 'dataDigital',
-        concept: 'threat'
-      }
-    }
-  }, {
-    data: {
-      id: 'e',
-      label: 'node 4',
-      info: {
-        description: 'server',
-        type: 'constraint',
-        id: '02',
-        aspect: 'physical',
-        layer: 'application',
-        nodeType: 'server',
-        attribute: 'process',
-        input: 'dataDigital',
-        output: 'dataDigital',
-        concept: 'threat'
-      }
-    }
-  }, {
-    data: {
-      id: 'f',
-      label: 'node 5',
-      info: {
-        description: 'server',
-        type: 'threat',
-        id: '02',
-        aspect: 'physical',
-        layer: 'application',
-        nodeType: 'server',
-        attribute: 'process',
-        input: 'dataDigital',
-        output: 'dataDigital',
-        concept: 'threat'
+        description: 'smart home',
+        state: 'static',
+        concept: 'micronet'
       }
     }
   },
   // edges
   {
     data: {
-      id: 'ab',
-      source: 'a',
-      target: 'b'
+      id: 'e271',
+      source: '1',
+      target: '27',
+      label: 'belongs'
     }
   }, {
     data: {
-      id: 'cd',
-      source: 'c',
-      target: 'd'
+      id: 'e272',
+      source: '2',
+      target: '27',
+      label: 'belongs'
     }
   }, {
     data: {
-      id: 'ef',
-      source: 'e',
-      target: 'f'
+      id: 'e273',
+      source: '3',
+      target: '27',
+      label: 'belongs'
     }
   }, {
     data: {
-      id: 'ac',
-      source: 'a',
-      target: 'd'
+      id: 'e14',
+      source: '1',
+      target: '4',
+      label: 'connects'
     }
   }, {
     data: {
-      id: 'be',
-      source: 'b',
-      target: 'e'
+      id: 'e24',
+      source: '2',
+      target: '4',
+      label: 'connects'
+    }
+  }, {
+    data: {
+      id: 'e35',
+      source: '3',
+      target: '5',
+      label: 'connects'
+    }
+  }, {
+    data: {
+      id: 'e25',
+      source: '2',
+      target: '5',
+      label: 'connects'
+    }
+  }, {
+    data: {
+      id: 'e61',
+      source: '6',
+      target: '1',
+      label: 'uses'
+    }
+  }, {
+    data: {
+      id: 'e910',
+      source: '9',
+      target: '10',
+      label: 'mitigates'
     }
   }
 ]
