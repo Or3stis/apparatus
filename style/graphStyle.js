@@ -9,7 +9,6 @@ graphStyle.style = [{
   style: {
     shape: 'ellipse',
     'background-color': configGraph.gray,
-    // 'color': configGraph.black,
     label: 'data(label)',
     'text-valign': 'center',
     'color': configGraph.white,
@@ -21,9 +20,8 @@ graphStyle.style = [{
   style: {
     'curve-style': 'bezier',
     'line-color': configGraph.gray,
-    // 'color': configGraph.black,
-    label: 'data(label)',
-    'target-arrow-shape': 'triangle',
+    // label: 'data(label)',
+    // 'target-arrow-shape': 'triangle',
     'target-arrow-color': configGraph.gray,
     'width': 2,
     'color': configGraph.white,

@@ -7,12 +7,15 @@ let result = ''
 let mitigatedThreats = ''
 
 module.exports = function threatVerification (cy) {
+  cy.elements().addClass('faded')
   cy.nodes().map((node) => {
     if (node.data().info.concept === 'threat') {
+      node.removeClass('faded')
       node.addClass('attention')
       threatArray.push(node)
     }
     if (node.data().info.concept === 'constraint') {
+      node.removeClass('faded')
       node.addClass('protect')
     }
   })

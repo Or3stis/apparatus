@@ -7,12 +7,15 @@ let result = ''
 let mitigatedVulns = ''
 
 module.exports = function vulnVerification (cy) {
+  cy.elements().addClass('faded')
   cy.nodes().map((node) => {
     if (node.data().info.concept === 'vulnerability') {
+      node.removeClass('faded')
       node.addClass('attention')
       vulnArray.push(node)
     }
     if (node.data().info.concept === 'mechanism') {
+      node.removeClass('faded')
       node.addClass('protect')
     }
   })
