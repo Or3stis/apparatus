@@ -99,7 +99,7 @@ h3 {
 
 .info-nodes {
   display: flex;
-  flex: 1 1 93vh;
+  flex: 1 1 90vh;
   flex-wrap: wrap;
   align-items: flex-start;
   align-content: flex-start;
@@ -108,12 +108,12 @@ h3 {
 
 .bubble {
   position: relative;
-  width: 95vw;
+  /*width: 95vw;*/
   background-color: var(--gray-color);
   color: var(--main-bg-color);
   overflow: auto;
   white-space: pre-wrap;
-  margin: 5px;
+  margin-bottom: 5px;
   padding: 5px;
   border-radius: 10px;
   -webkit-animation: fadein 0.4s;
@@ -128,20 +128,22 @@ h3 {
   color: var(--main-bg-color);
 }
 .user {
-  left: 80px;
+  left: 50px;
   background-color: var(--black-color);
   color: var(--main-tx-color);
+  -webkit-animation: fadein 0.3s;
 }*/
 
 
 .console-wrapper {
-  width: 100vw;
+  width: 100%;
   height: 30px;
   padding: 5px;
   display: flex;
-  flex: 1 1 10px;
+  flex: 1 1 30px;
   bottom: 0;
   position: fixed;
+  background-color: var(--main-bg-color);
 }
 
 #console-id {
@@ -151,6 +153,7 @@ h3 {
   border-bottom: 3px solid var(--gray-color);
   color: var(--main-tx-color);
   font-size: 13px;
+  position: absolute;
 }
 
 #console-id:focus {
