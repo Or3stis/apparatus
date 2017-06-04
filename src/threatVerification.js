@@ -20,11 +20,11 @@ module.exports = function threatVerification (cy) {
   threatArray.map((threat) => {
     const neighbor = threat.neighborhood()
     neighbor.map((type) => {
-      // need to change it the concept
-      // the neighborhood also return the edges
-      if (type.data().label === 'constraint') {
-        result = `${result} • Threat ${threat.data().id} is mitigated by Constraint ${type.data().id}\n`
-        mitigatedThreats += 1
+      if (type.data().hasOwnProperty('info')) {
+        if (type.data().info.concept === 'constraint') {
+          result = `${result} • Threat ${threat.data().id} is mitigated by Constraint ${type.data().id}\n`
+          mitigatedThreats += 1
+        }
       }
     })
   })

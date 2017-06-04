@@ -20,11 +20,11 @@ module.exports = function vulnVerification (cy) {
   vulnArray.map((vuln) => {
     const neighbor = vuln.neighborhood()
     neighbor.map((type) => {
-      // need to change it the concept
-      // the neighborhood also return the edges
-      if (type.data().label === 'mechanism') {
-        result = `${result} • Vulnerability ${vuln.data().id} is mitigated by Mechanism ${type.data().id}\n`
-        mitigatedVulns += 1
+      if (type.data().hasOwnProperty('info')) {
+        if (type.data().info.concept === 'mechanism') {
+          result = `${result} • Vulnerability ${vuln.data().id} is mitigated by Mechanism ${type.data().id}\n`
+          mitigatedVulns += 1
+        }
       }
     })
   })
