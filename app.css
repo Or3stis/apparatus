@@ -109,8 +109,8 @@ h3 {
 .bubble {
   position: relative;
   /*width: 95vw;*/
-  background-color: var(--gray-color);
-  color: var(--main-bg-color);
+  background-color: var(--black-color);
+  color: var(--main-tx-color);
   overflow: auto;
   white-space: pre-wrap;
   margin-bottom: 5px;

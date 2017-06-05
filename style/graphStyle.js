@@ -20,8 +20,8 @@ graphStyle.style = [{
   style: {
     'curve-style': 'bezier',
     'line-color': configGraph.gray,
-    // label: 'data(label)',
-    // 'target-arrow-shape': 'triangle',
+    label: 'data(label)',
+    'target-arrow-shape': 'triangle',
     'target-arrow-color': configGraph.gray,
     'width': 2,
     'color': configGraph.white,

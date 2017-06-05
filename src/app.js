@@ -173,10 +173,10 @@ buttonThreatVefiry.addEventListener('click', () => {
 // test function
 const buttonTest = document.getElementById('test-button')
 buttonTest.addEventListener('click', () => {
-  // console.log(cy.filter('node[label = "Device"]'))
-  // cy.elements().addClass('faded')
-  // cy.filter('node[label = "Device"]').removeClass('faded')
-  // impOverview(cy)
+  const layout = cy.layout({
+    name: 'random'
+  })
+  layout.run()
 })
 
 // selections
