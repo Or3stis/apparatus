@@ -30,6 +30,6 @@ config.comment = '#6D6DB5'
 
 // values for the flagged list
 // see flagNodes.js
-config.flag = ['application', 'perception']
+config.flag = ['wireless', 'perception']
 
 module.exports = config
