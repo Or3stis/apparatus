@@ -1,10 +1,11 @@
 'use strict'
 
 const printChat = require('../printChat.js')
+const dgnMetamodel = require('./dgnSchema.js')
 
-const networkArray = ['thing', 'micronet', 'net', 'data']
-const securityArray = ['asset', 'threat', 'constraint', 'malicious actor']
-const socialArray = ['actor']
+const networkArray = dgnMetamodel.network
+const securityArray = dgnMetamodel.security
+const socialArray = dgnMetamodel.social
 
 let result = ''
 

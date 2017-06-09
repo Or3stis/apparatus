@@ -16,6 +16,7 @@ module.exports = function addDgnComponent (cy, component) {
           label: `${component}`,
           info: {
             description: '',
+            component: '',
             concept: 'thing'
           },
           position: {
