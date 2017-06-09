@@ -60,9 +60,9 @@ function componentValidation (cy, component, componentArray) {
     }
   })
   result = `${arrWrong}`
-  // if the array in empty, the module is correct
+  // if the string is empty, the module is correct
   if (result === '') {
-    result = 'model instance is valid 👍'
+    result = 'model instance is valid\n👍'
   } else {
     printChat(result)
     console.log(typeof result)

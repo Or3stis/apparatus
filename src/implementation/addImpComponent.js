@@ -5,7 +5,6 @@
 // TODO needs refactoring
 module.exports = function addImpComponent (cy, component) {
   let lastNode = cy.nodes().length + 1
-  // let nodeInfo = {}
 
   switch (component) {
     case 'device':
