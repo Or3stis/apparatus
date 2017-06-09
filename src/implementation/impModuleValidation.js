@@ -7,6 +7,7 @@ const printChat = require('../printChat.js')
 // valid component connections
 const deviceArray = impMetamodel.deviceArray
 const networkArray = impMetamodel.networkArray
+const applicationArray = impMetamodel.applicationArray
 const micronetArray = impMetamodel.micronetArray
 const netArray = impMetamodel.netArray
 const undentifiedNodeArray = impMetamodel.undentifiedNodeArray
@@ -26,6 +27,7 @@ let arrWrong = [] // stores wrong connection of nodes
 module.exports = function moduleValidation (cy) {
   componentValidation(cy, 'device', deviceArray)
   componentValidation(cy, 'network connection', networkArray)
+  componentValidation(cy, 'application', applicationArray)
   componentValidation(cy, 'micronet', micronetArray)
   componentValidation(cy, 'net', netArray)
   componentValidation(cy, 'unidentified node', undentifiedNodeArray)

@@ -41,8 +41,26 @@ module.exports = function addImpComponent (cy, component) {
           info: {
             description: '',
             listOfProtocols: '',
-            // purpose: '',
             concept: 'network connection'
+          },
+          position: {
+            x: 200,
+            y: 400
+          }
+        }
+      })
+      break
+    case 'application':
+      cy.add({
+        group: 'nodes',
+        data: {
+          id: `n${lastNode}`,
+          label: `${component}`,
+          info: {
+            description: '',
+            version: '',
+            update: '',
+            concept: 'application'
           },
           position: {
             x: 200,

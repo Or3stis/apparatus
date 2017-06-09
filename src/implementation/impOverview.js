@@ -1,13 +1,11 @@
 'use strict'
 
 const printChat = require('../printChat.js')
+const impMetamodel = require('./impSchema.js')
 
-const networkArray = ['device', 'network connection', 'micronet',
-  'net', 'unidentified node', 'data']
-const securityArray = ['asset', 'threat', 'vulnerability',
-  'mechanism', 'constraint', 'malicious actor'
-]
-const socialArray = ['actor']
+const networkArray = impMetamodel.network
+const securityArray = impMetamodel.security
+const socialArray = impMetamodel.social
 
 let result = ''
 
@@ -35,6 +33,7 @@ module.exports = function overview (cy) {
   let deviceNode = 0
   let connectionNode = 0
   let micronetNode = 0
+  let applicationNode = 0
   let netNode = 0
   let unidentifiedNode = 0
   let dataNode = 0
@@ -49,14 +48,16 @@ module.exports = function overview (cy) {
     const nodeConcept = node.data().info.concept
     if (nodeConcept === 'device') {
       deviceNode += 1
+    } else if (nodeConcept === 'application') {
+      applicationNode += 1
+    } else if (nodeConcept === 'data') {
+      dataNode += 1
     } else if (nodeConcept === 'network connection') {
       connectionNode += 1
     } else if (nodeConcept === 'micronet') {
       micronetNode += 1
     } else if (nodeConcept === 'net') {
       netNode += 1
-    } else if (nodeConcept === 'data') {
-      dataNode += 1
     } else if (nodeConcept === 'unidentified node') {
       unidentifiedNode += 1
     } else if (nodeConcept === 'asset') {
@@ -78,11 +79,12 @@ module.exports = function overview (cy) {
     }
   })
   result = `${result}device nodes: ${deviceNode}\n`
+  result = `${result}application nodes: ${applicationNode}\n`
   result = `${result}network connection nodes: ${connectionNode}\n`
   result = `${result}micronet nodes: ${micronetNode}\n`
   result = `${result}net nodes: ${netNode}\n`
   result = `${result}data nodes: ${dataNode}\n`
-  result = `${result}unidentified nodes nodes: ${unidentifiedNode}\n`
+  result = `${result}unidentified nodes: ${unidentifiedNode}\n`
   result = `${result}asset nodes: ${assetNode}\n`
   result = `${result}threat nodes: ${threatNode}\n`
   result = `${result}vulnerability nodes: ${vulnNode}\n`

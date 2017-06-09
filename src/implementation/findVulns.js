@@ -2,6 +2,8 @@
 
 const printChat = require('../printChat.js')
 
+// TODO add the application
+
 const typeArray = ['type', 'service']
 let keywords = ''
 
@@ -13,6 +15,8 @@ module.exports = function findVuln (cy) {
           keywords += `• ${node.data().info[key]}\n`
         }
       })
+    } else if (node.data().info.concept === 'application') {
+      keywords += `• ${node.data().info.version}\n`
     }
   })
   if (keywords === '') {
