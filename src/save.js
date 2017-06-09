@@ -13,5 +13,5 @@ module.exports = function save (cy, path) {
       throw err
     }
   })
-  printChat('graph saved 👍')
+  printChat('graph saved\n👍')
 }
