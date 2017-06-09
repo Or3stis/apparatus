@@ -27,12 +27,17 @@ const dgnModuleValidation = require('./src/design/dgnModuleValidation.js')
 const dgnOverview = require('./src/design/dgnOverview.js')
 const addDgnComponent = require('./src/design/addDgnComponent.js')
 
+// require design-state functions
+const dgnStateModuleValidation = require('./src/design-state/dgnStateModuleValidation.js')
+const dgnStateOverview = require('./src/design-state/dgnStateOverview.js')
+const addDgnStateComponent = require('./src/design-state/addDgnStateComponent.js')
+
 const config = require('./style/config.js')
 
 // save the path
 const path = `${__dirname}`
 // require the graph file
-const system = require(`${path}/graphs/smartHome.js`)
+const system = require(`${path}/graphs/system.js`)
 
 // graphs style
 const graphStyle = require(`${path}/style/graphStyle.js`)
@@ -130,6 +135,8 @@ buttonModuleValidate.addEventListener('click', () => {
     impModuleValidation(cy) // imp module
   } else if (window.location.pathname === `${path}/design.html`) {
     dgnModuleValidation(cy) // dgn module
+  } else if (window.location.pathname === `${path}/design-state.html`) {
+    dgnStateModuleValidation(cy) // dgn-state module
   }
 })
 const buttonOverview = document.getElementById('overview-button')
@@ -138,6 +145,8 @@ buttonOverview.addEventListener('click', () => {
     impOverview(cy) // imp module
   } else if (window.location.pathname === `${path}/design.html`) {
     dgnOverview(cy) // dgn module
+  } else if (window.location.pathname === `${path}/design-state.html`) {
+    dgnStateOverview(cy) // dgn-state module
   }
 })
 
@@ -200,6 +209,8 @@ add.addEventListener('change', (e) => {
     addImpComponent(cy, e.target.value) // imp module
   } else if (window.location.pathname === `${path}/design.html`) {
     addDgnComponent(cy, e.target.value) // dgn module
+  } else if (window.location.pathname === `${path}/design-state.html`) {
+    addDgnStateComponent(cy, e.target.value) // dgn-state module
   }
   // reset moduleGroup selection
   document.getElementById('add-component-id').selectedIndex = ''

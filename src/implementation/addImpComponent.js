@@ -266,21 +266,4 @@ module.exports = function addImpComponent (cy, component) {
     default:
       console.error('error in addComponent.js')
   }
-
-  // cy.add({
-  //   group: 'nodes',
-  //   data: {
-  //     id: `n${lastNode}`,
-  //     label: `${component}`,
-  //     info: {
-  //       [`${Object.keys(nodeInfo)[0]}`]: `${Object.values(nodeInfo)[0]}`,
-  //       [`${Object.keys(nodeInfo)[1]}`]: `${Object.values(nodeInfo)[1]}`,
-  //       [`${Object.keys(nodeInfo)[2]}`]: `${Object.values(nodeInfo)[2]}`
-  //     },
-  //     position: {
-  //       x: 200,
-  //       y: 400
-  //     }
-  //   }
-  // })
 }
