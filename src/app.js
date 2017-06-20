@@ -10,7 +10,7 @@ const flagNodes = require('./src/flagNodes.js')
 const moduleSelection = require('./src/moduleSelection.js')
 const nodeSelection = require('./src/nodeSelection.js')
 const threatVerification = require('./src/threatVerification.js')
-const keyboard = require('./src/keyboard.js')
+const keybindings = require('./src/keybindings.js')
 const addEdge = require('./src/addEdge.js')
 const totalNodes = require('./src/totalNodes.js')
 const save = require('./src/save.js')
@@ -236,4 +236,4 @@ const toggleUI = () => {
 
 totalNodes(cy)
 // enable keyboard shortcuts
-keyboard(cy, toggleUI)
+keybindings(cy, toggleUI)
