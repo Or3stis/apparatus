@@ -3,6 +3,9 @@
 
 const cytoscape = require('cytoscape')
 
+// for the prompt
+// const {dialog} = require('electron').remote
+
 const nodeInfo = require('./src/nodeInfo.js')
 const hoverNodeInfo = require('./src/hoverNodeInfo.js')
 // const searchAttribute = require('./src/searchAttribute.js')
@@ -14,6 +17,7 @@ const keybindings = require('./src/keybindings.js')
 const addEdge = require('./src/addEdge.js')
 const totalNodes = require('./src/totalNodes.js')
 const save = require('./src/save.js')
+const load = require('./src/load.js')
 
 // reguire implementation functions
 const impModuleValidation = require('./src/implementation/impModuleValidation.js')
@@ -37,16 +41,16 @@ const config = require('./style/config.js')
 // save the path
 const path = `${__dirname}`
 // require the graph file
-const system = require(`${path}/graphs/system.js`)
+let system = require(`${path}/graphs/implementation/smartHome.js`)
 
 // graphs style
 const graphStyle = require(`${path}/style/graphStyle.js`)
 
 // setting up the graph container
-const cy = cytoscape({
+let cy = cytoscape({
   container: document.getElementById('graph-container'),
   autounselectify: true,
-  elements: system.graph,
+  elements: system.elements,
   style: graphStyle.style
 })
 
@@ -158,6 +162,11 @@ buttonFlag.addEventListener('click', () => {
 const buttonSave = document.getElementById('save-button')
 buttonSave.addEventListener('click', () => {
   save(cy, path) // module
+})
+// load graph
+const buttonLoad = document.getElementById('load-button')
+buttonLoad.addEventListener('click', () => {
+  load(cy, system, cytoscape, graphStyle) // module
 })
 // delele selected node
 const buttonDeleteNode = document.getElementById('delete-node')

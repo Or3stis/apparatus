@@ -1,6 +1,6 @@
 const system = {}
 
-system.graph = [
+system.elements = [
   // nodes
   {
     data: {
