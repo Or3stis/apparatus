@@ -3,9 +3,6 @@
 
 const cytoscape = require('cytoscape')
 
-// for the prompt
-// const {dialog} = require('electron').remote
-
 const nodeInfo = require('./src/nodeInfo.js')
 const hoverNodeInfo = require('./src/hoverNodeInfo.js')
 // const searchAttribute = require('./src/searchAttribute.js')
