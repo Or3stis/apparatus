@@ -66,11 +66,11 @@ cy.on('tap', 'node', (selection) => {
   cy.elements().removeClass('selection')
   cy.elements().removeClass('attention')
   cy.elements().removeClass('protect')
-  // to show the neighbors
+  // // to show the neighbors
   selectedNode = selection.target[0]
-  const neighborhood = selectedNode.neighborhood().add(selectedNode)
-  cy.elements().addClass('faded')
-  neighborhood.removeClass('faded')
+  // const neighborhood = selectedNode.neighborhood().add(selectedNode)
+  // cy.elements().addClass('faded')
+  // neighborhood.removeClass('faded')
 
   nodeInfo(selectedNode)
   selectedNode.addClass('selection')
@@ -149,7 +149,6 @@ buttonOverview.addEventListener('click', () => {
     dgnStateOverview(cy) // dgn-state module
   }
 })
-
 // flag nodes
 const buttonFlag = document.getElementById('flag-button')
 buttonFlag.addEventListener('click', () => {
@@ -160,6 +159,7 @@ const buttonSave = document.getElementById('save-button')
 buttonSave.addEventListener('click', () => {
   save(cy, path) // module
 })
+// delele selected node
 const buttonDeleteNode = document.getElementById('delete-node')
 buttonDeleteNode.addEventListener('click', () => {
   selectedNode.remove()
@@ -179,13 +179,17 @@ const buttonThreatVefiry = document.getElementById('threat-verify-button')
 buttonThreatVefiry.addEventListener('click', () => {
   threatVerification(cy) // module
 })
+const buttonNeighbor = document.getElementById('neighbors-button')
+buttonNeighbor.addEventListener('click', () => {
+  // selectedNode from cy.on tap node function
+  const neighborhood = selectedNode.neighborhood().add(selectedNode)
+  cy.elements().addClass('faded')
+  neighborhood.removeClass('faded')
+})
 // test function
 const buttonTest = document.getElementById('test-button')
 buttonTest.addEventListener('click', () => {
-  const layout = cy.layout({
-    name: 'random'
-  })
-  layout.run()
+
 })
 
 // selections

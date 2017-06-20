@@ -1,0 +1,450 @@
+{
+  "elements": {
+    "nodes": [{
+      "data": {
+        "id": "1",
+        "label": "laptop",
+        "info": {
+          "description": "laptop",
+          "aspect": "physical",
+          "layer": "perception",
+          "type": "Macbook 2015",
+          "service": "request data",
+          "input": "action",
+          "output": "dataDigital",
+          "update": "automatic",
+          "concept": "device"
+        }
+      },
+      "position": {
+        "x": 85,
+        "y": 60.220052083333336
+      },
+      "group": "nodes",
+      "removed": false,
+      "selected": false,
+      "selectable": true,
+      "locked": false,
+      "grabbable": true,
+      "classes": "faded"
+    }, {
+      "data": {
+        "id": "2",
+        "label": "router",
+        "info": {
+          "description": "router",
+          "aspect": "physical",
+          "layer": "gateway",
+          "type": "NETGEAR R8500",
+          "service": "routing",
+          "input": "dataDigital",
+          "output": "dataDigital",
+          "update": "action",
+          "concept": "device"
+        }
+      },
+      "position": {
+        "x": 255,
+        "y": 60.220052083333336
+      },
+      "group": "nodes",
+      "removed": false,
+      "selected": false,
+      "selectable": true,
+      "locked": false,
+      "grabbable": true,
+      "classes": "faded"
+    }, {
+      "data": {
+        "id": "3",
+        "label": "baby camera",
+        "info": {
+          "description": "baby camera",
+          "aspect": "physical",
+          "layer": "perception",
+          "type": "Philips in Sight",
+          "service": "camera",
+          "input": "dataEnvironemntal",
+          "output": "dataDigital",
+          "concept": "device"
+        }
+      },
+      "position": {
+        "x": 85,
+        "y": 180.66015625
+      },
+      "group": "nodes",
+      "removed": false,
+      "selected": false,
+      "selectable": true,
+      "locked": false,
+      "grabbable": true,
+      "classes": "faded"
+    }, {
+      "data": {
+        "id": "4",
+        "label": "network connection",
+        "info": {
+          "description": "wireless",
+          "listOfProtocols": "HTTP, TELNET, SHH",
+          "concept": "network connection"
+        }
+      },
+      "position": {
+        "x": 255,
+        "y": 180.66015625
+      },
+      "group": "nodes",
+      "removed": false,
+      "selected": false,
+      "selectable": true,
+      "locked": false,
+      "grabbable": true,
+      "classes": "faded"
+    }, {
+      "data": {
+        "id": "5",
+        "label": "network connection",
+        "info": {
+          "description": "wireless",
+          "listOfProtocols": "HTTP, TELNET, SHH",
+          "concept": "network connection"
+        }
+      },
+      "position": {
+        "x": 85,
+        "y": 301.1002604166667
+      },
+      "group": "nodes",
+      "removed": false,
+      "selected": false,
+      "selectable": true,
+      "locked": false,
+      "grabbable": true,
+      "classes": "faded"
+    }, {
+      "data": {
+        "id": "6",
+        "label": "actor",
+        "info": {
+          "description": "user",
+          "intent": "view camera feed",
+          "concept": "actor"
+        }
+      },
+      "position": {
+        "x": 255,
+        "y": 301.1002604166667
+      },
+      "group": "nodes",
+      "removed": false,
+      "selected": false,
+      "selectable": true,
+      "locked": false,
+      "grabbable": true,
+      "classes": "faded"
+    }, {
+      "data": {
+        "id": "7",
+        "label": "data",
+        "info": {
+          "description": "data in transit",
+          "intent": "local",
+          "concept": "data"
+        }
+      },
+      "position": {
+        "x": 85,
+        "y": 421.5403645833333
+      },
+      "group": "nodes",
+      "removed": false,
+      "selected": false,
+      "selectable": true,
+      "locked": false,
+      "grabbable": true,
+      "classes": "faded"
+    }, {
+      "data": {
+        "id": "8",
+        "label": "asset",
+        "info": {
+          "description": "camera feed",
+          "concept": "asset"
+        }
+      },
+      "position": {
+        "x": 255,
+        "y": 421.5403645833333
+      },
+      "group": "nodes",
+      "removed": false,
+      "selected": false,
+      "selectable": true,
+      "locked": false,
+      "grabbable": true,
+      "classes": "selection"
+    }, {
+      "data": {
+        "id": "9",
+        "label": "constraint",
+        "info": {
+          "description": "secure camera feed",
+          "property": "authorization",
+          "concept": "constraint"
+        }
+      },
+      "position": {
+        "x": 85,
+        "y": 541.98046875
+      },
+      "group": "nodes",
+      "removed": false,
+      "selected": false,
+      "selectable": true,
+      "locked": false,
+      "grabbable": true,
+      "classes": "faded"
+    }, {
+      "data": {
+        "id": "10",
+        "label": "threat",
+        "info": {
+          "description": "direct browsing",
+          "type": "spoofing",
+          "concept": "threat"
+        }
+      },
+      "position": {
+        "x": 255,
+        "y": 541.98046875
+      },
+      "group": "nodes",
+      "removed": false,
+      "selected": false,
+      "selectable": true,
+      "locked": false,
+      "grabbable": true,
+      "classes": "faded"
+    }, {
+      "data": {
+        "id": "27",
+        "label": "micronet",
+        "info": {
+          "description": "smart home",
+          "state": "static",
+          "concept": "micronet"
+        }
+      },
+      "position": {
+        "x": 85,
+        "y": 662.4205729166667
+      },
+      "group": "nodes",
+      "removed": false,
+      "selected": false,
+      "selectable": true,
+      "locked": false,
+      "grabbable": true,
+      "classes": "faded"
+    }],
+    "edges": [{
+      "data": {
+        "id": "e271",
+        "source": "1",
+        "target": "27",
+        "label": "belongs"
+      },
+      "position": {},
+      "group": "edges",
+      "removed": false,
+      "selected": false,
+      "selectable": true,
+      "locked": false,
+      "grabbable": true,
+      "classes": "faded"
+    }, {
+      "data": {
+        "id": "e272",
+        "source": "2",
+        "target": "27",
+        "label": "belongs"
+      },
+      "position": {},
+      "group": "edges",
+      "removed": false,
+      "selected": false,
+      "selectable": true,
+      "locked": false,
+      "grabbable": true,
+      "classes": "faded"
+    }, {
+      "data": {
+        "id": "e273",
+        "source": "3",
+        "target": "27",
+        "label": "belongs"
+      },
+      "position": {},
+      "group": "edges",
+      "removed": false,
+      "selected": false,
+      "selectable": true,
+      "locked": false,
+      "grabbable": true,
+      "classes": "faded"
+    }, {
+      "data": {
+        "id": "e14",
+        "source": "1",
+        "target": "4",
+        "label": "connects"
+      },
+      "position": {},
+      "group": "edges",
+      "removed": false,
+      "selected": false,
+      "selectable": true,
+      "locked": false,
+      "grabbable": true,
+      "classes": "faded"
+    }, {
+      "data": {
+        "id": "e24",
+        "source": "2",
+        "target": "4",
+        "label": "connects"
+      },
+      "position": {},
+      "group": "edges",
+      "removed": false,
+      "selected": false,
+      "selectable": true,
+      "locked": false,
+      "grabbable": true,
+      "classes": "faded"
+    }, {
+      "data": {
+        "id": "e35",
+        "source": "3",
+        "target": "5",
+        "label": "connects"
+      },
+      "position": {},
+      "group": "edges",
+      "removed": false,
+      "selected": false,
+      "selectable": true,
+      "locked": false,
+      "grabbable": true,
+      "classes": "faded"
+    }, {
+      "data": {
+        "id": "e25",
+        "source": "2",
+        "target": "5",
+        "label": "connects"
+      },
+      "position": {},
+      "group": "edges",
+      "removed": false,
+      "selected": false,
+      "selectable": true,
+      "locked": false,
+      "grabbable": true,
+      "classes": "faded"
+    }, {
+      "data": {
+        "id": "e61",
+        "source": "6",
+        "target": "1",
+        "label": "uses"
+      },
+      "position": {},
+      "group": "edges",
+      "removed": false,
+      "selected": false,
+      "selectable": true,
+      "locked": false,
+      "grabbable": true,
+      "classes": "faded"
+    }, {
+      "data": {
+        "id": "e910",
+        "source": "9",
+        "target": "10",
+        "label": "mitigates"
+      },
+      "position": {},
+      "group": "edges",
+      "removed": false,
+      "selected": false,
+      "selectable": true,
+      "locked": false,
+      "grabbable": true,
+      "classes": "faded"
+    }]
+  },
+  "style": [{
+    "selector": "node",
+    "style": {
+      "shape": "ellipse",
+      "background-color": "#d8dee9",
+      "label": "data(label)",
+      "text-valign": "center",
+      "color": "#f1eff7",
+      "text-outline-width": "2px",
+      "text-outline-color": "#292a44"
+    }
+  }, {
+    "selector": "edge",
+    "style": {
+      "curve-style": "bezier",
+      "line-color": "#d8dee9",
+      "target-arrow-shape": "triangle",
+      "target-arrow-color": "#d8dee9",
+      "width": "2px",
+      "color": "#f1eff7",
+      "text-outline-width": "2px",
+      "text-outline-color": "#292a44"
+    }
+  }, {
+    "selector": ".faded",
+    "style": {
+      "opacity": "0.25",
+      "text-opacity": "0"
+    }
+  }, {
+    "selector": ".selection",
+    "style": {
+      "background-color": "#7aa5ff",
+      "line-color": "#7aa5ff",
+      "label": "data(label)"
+    }
+  }, {
+    "selector": ".attention",
+    "style": {
+      "background-color": "#ffbc69"
+    }
+  }, {
+    "selector": ".protect",
+    "style": {
+      "background-color": "#66d9ef"
+    }
+  }],
+  "zoomingEnabled": true,
+  "userZoomingEnabled": true,
+  "zoom": 0.8832807570977917,
+  "minZoom": 1e-50,
+  "maxZoom": 1e+50,
+  "panningEnabled": true,
+  "userPanningEnabled": true,
+  "pan": {
+    "x": 19.842271293375404,
+    "y": 42.173033320189234
+  },
+  "boxSelectionEnabled": true,
+  "renderer": {
+    "name": "canvas"
+  }
+}
