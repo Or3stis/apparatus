@@ -8,14 +8,15 @@
 // const moduleValidation = require('./moduleValidation.js')
 const searchAttribute = require('./searchAttribute.js')
 const printChat = require('./printChat.js')
-// help menu
-const helpMenu = `• help: for options\n• validate: to validate
-module\n• alt + e: add an edge\n• backspace: delete node/edge\nalt + h:
-• toggle UI\n• meta + l: focus on console\n• search for attributes\n`
-
-const consoleId = document.getElementById('console-id')
 
 module.exports = function keyboard (cy, toggleUI) {
+  // help menu
+  const helpMenu = `• help: for options\n• validate: to validate
+  module\n• alt + e: add an edge\n• backspace: delete node/edge\nalt + h:
+  • toggle UI\n• meta + l: focus on console\n• search for attributes\n`
+
+  const consoleId = document.getElementById('console-id')
+
   document.addEventListener('keydown', (event) => {
     // console.log(event.code)
     // hotkey to focus on the console

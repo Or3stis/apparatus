@@ -3,13 +3,13 @@
 const printChat = require('../printChat.js')
 const impMetamodel = require('./impSchema.js')
 
-const networkArray = impMetamodel.network
-const securityArray = impMetamodel.security
-const socialArray = impMetamodel.social
-
-let result = ''
-
 module.exports = function overview (cy) {
+  const networkArray = impMetamodel.network
+  const securityArray = impMetamodel.security
+  const socialArray = impMetamodel.social
+
+  let result = ''
+
   const totalNodes = cy.elements().nodes().length
   result = `total nodes: ${totalNodes}\n`
 

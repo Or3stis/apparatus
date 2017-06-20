@@ -2,11 +2,11 @@
 
 const printChat = require('../printChat.js')
 
-let vulnArray = []
-let result = ''
-let mitigatedVulns = 0
-
 module.exports = function vulnVerification (cy) {
+  let vulnArray = []
+  let result = ''
+  let mitigatedVulns = 0
+
   cy.elements().addClass('faded')
   cy.nodes().map((node) => {
     if (node.data().info.concept === 'vulnerability') {

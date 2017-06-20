@@ -1,9 +1,9 @@
 'use scrict'
 
-const containerNode = document.getElementById('container-node-id')
-const containerNodeInfo = document.getElementById('container-node-info-id')
-
 module.exports = function nodeInfo (node) {
+  const containerNode = document.getElementById('container-node-id')
+  const containerNodeInfo = document.getElementById('container-node-info-id')
+
   let nodeInfo = ''
   const nodeData = node.data().info
   Object.keys(nodeData).map((i) => {

@@ -2,11 +2,11 @@
 
 const printChat = require('./printChat.js')
 
-let threatArray = []
-let result = ''
-let mitigatedThreats = 0
-
 module.exports = function threatVerification (cy) {
+  let threatArray = []
+  let result = ''
+  let mitigatedThreats = 0
+
   cy.elements().addClass('faded')
   cy.nodes().map((node) => {
     if (node.data().info.concept === 'threat') {

@@ -1,17 +1,17 @@
 'use strict'
 
-// grouping of the module components
-let groupArray = []
-const networkArray = ['device', 'network connection', 'micronet',
-  'net', 'unidentified node', 'data', 'thing'
-]
-const securityArray = ['asset', 'threat', 'vulnerability',
-  'mechanism', 'constraint', 'malicious actor'
-]
-const socialArray = ['actor']
-
 // when buton class is clicked the corresponing nodes are highlighted
 module.exports = function moduleSelection (input, cy) {
+  // grouping of the module components
+  let groupArray = []
+  const networkArray = ['device', 'network connection', 'micronet',
+    'net', 'unidentified node', 'data', 'thing'
+  ]
+  const securityArray = ['asset', 'threat', 'vulnerability',
+    'mechanism', 'constraint', 'malicious actor'
+  ]
+  const socialArray = ['actor']
+
   const condition = input.target.value
   switch (condition) {
     case 'network':

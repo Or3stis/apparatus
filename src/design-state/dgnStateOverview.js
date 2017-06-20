@@ -2,9 +2,9 @@
 
 const printChat = require('../printChat.js')
 
-let result = ''
-
 module.exports = function overview (cy) {
+  let result = ''
+
   const totalNodes = cy.elements().nodes().length
   result = `total nodes: ${totalNodes}\n`
 

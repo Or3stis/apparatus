@@ -1,9 +1,7 @@
 'use scrict'
 
 const jsonfile = require('jsonfile')
-const {
-  dialog
-} = require('electron').remote
+const {dialog} = require('electron').remote
 const printChat = require('./printChat.js')
 
 // saves graph to savedFile.json

@@ -3,13 +3,13 @@
 const printChat = require('../printChat.js')
 const dgnMetamodel = require('./dgnSchema.js')
 
-const networkArray = dgnMetamodel.network
-const securityArray = dgnMetamodel.security
-const socialArray = dgnMetamodel.social
-
-let result = ''
-
 module.exports = function overview (cy) {
+  const networkArray = dgnMetamodel.network
+  const securityArray = dgnMetamodel.security
+  const socialArray = dgnMetamodel.social
+
+  let result = ''
+
   const totalNodes = cy.elements().nodes().length
   result = `total nodes: ${totalNodes}\n`
 

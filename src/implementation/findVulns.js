@@ -3,11 +3,9 @@
 const printChat = require('../printChat.js')
 
 // TODO add the application
-
-const typeArray = ['type', 'service']
-let keywords = ''
-
 module.exports = function findVuln (cy) {
+  const typeArray = ['type', 'service']
+  let keywords = ''
   cy.nodes().map((node) => {
     if (node.data().info.concept === 'device') {
       Object.keys(node.data().info).map((key) => {
