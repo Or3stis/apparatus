@@ -55,6 +55,11 @@ module.exports = function keyboard (cy, toggleUI) {
       }
       totalNodes(cy)
     }
+    // restore elements with meta + u
+    // only restore the last node
+    if (event.metaKey === true && event.code === 'KeyU') {
+      selectedNode.restore()
+    }
     // console commands
     const input = document.getElementById('console-id').value
     // listens for you to press the ENTER key

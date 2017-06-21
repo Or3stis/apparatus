@@ -66,12 +66,10 @@ cy.on('tap', 'node', (selection) => {
   cy.elements().removeClass('selection')
   cy.elements().removeClass('attention')
   cy.elements().removeClass('protect')
-  // // to show the neighbors
   selectedNode = selection.target[0]
   // const neighborhood = selectedNode.neighborhood().add(selectedNode)
   // cy.elements().addClass('faded')
   // neighborhood.removeClass('faded')
-
   nodeInfo(selectedNode)
   selectedNode.addClass('selection')
   sourceNode = targetNode // second selection
@@ -187,8 +185,7 @@ buttonNeighbor.addEventListener('click', () => {
 // test function
 const buttonTest = document.getElementById('test-button')
 buttonTest.addEventListener('click', () => {
-  selectedNode.restore()
-  // cy.elements().restore()
+
 })
 
 // selections
