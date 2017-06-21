@@ -1,39 +1,61 @@
-// keyboard shortcuts
 'use strict'
-
-// cmd + l, bring the console to focus
-// alt + e, add edge
-// backspace, delete node/edge
 
 // const moduleValidation = require('./moduleValidation.js')
 const searchAttribute = require('./searchAttribute.js')
 const printChat = require('./printChat.js')
+const totalNodes = require('./totalNodes.js')
 
 module.exports = function keyboard (cy, toggleUI) {
   // help menu
-  const helpMenu = `• help: for options\n• validate: to validate
-  module\n• alt + e: add an edge\n• backspace: delete node/edge\nalt + h:
-  • toggle UI\n• meta + l: focus on console\n• search for attributes\n`
+  const helpMenu = `• help: for options\n
+  • validate: to validate module\n
+  • alt + e: add an edge\n
+  • backspace: delete node/edge\n
+  • alt + h: toggle UI\n
+  • meta + l: focus on console\n
+  • search for attributes\n`
 
   const consoleId = document.getElementById('console-id')
 
+  let selectedNode = ''
+  cy.on('tap', 'node', (selection) => {
+    selectedNode = selection.target[0]
+    selectedEdge = ''
+  })
+  let selectedEdge = ''
+  cy.on('tap', 'edge', (selection) => {
+    selectedEdge = selection.target[0]
+    selectedNode = ''
+  })
+  // empties the selection values when clicking the graph
+  cy.on('tap', (selection) => {
+    if (selection.target === cy) {
+      selectedEdge = ''
+      selectedNode = ''
+    }
+  })
+
   document.addEventListener('keydown', (event) => {
-    // console.log(event.code)
-    // hotkey to focus on the console
+    // focus on console
     if (event.metaKey === true && event.code === 'KeyL') {
       consoleId.focus()
     }
-
-    // hot key to add edge
+    // toggle UI
     if (event.altKey === true && event.code === 'KeyH') {
       toggleUI()
     }
     // Backspace deletion of nodes and edges
-    // TODO must add focus on console because is deletes selected objects at any time.
-    // if (event.code === 'Backspace') {
-    //   (selectedEdge === '') ? deleteNode() : deleteEdge()
-    // }
-    // stuff for the console
+    // Fix it: when the selection is empty, it logs an error
+    if (event.code === 'Backspace') {
+      if (selectedNode === '') {
+        selectedEdge.remove()
+      }
+      if (selectedEdge === '') {
+        selectedNode.remove()
+      }
+      totalNodes(cy)
+    }
+    // console commands
     const input = document.getElementById('console-id').value
     // listens for you to press the ENTER key
     if (document.activeElement === consoleId && event.code === 'Enter') {
