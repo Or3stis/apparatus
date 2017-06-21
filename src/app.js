@@ -61,7 +61,6 @@ let selectedEdge = []
 let sourceNode = ''
 let targetNode = ''
 
-// when tapping on a node show the neighbors
 cy.on('tap', 'node', (selection) => {
   // removes previous selections
   cy.elements().removeClass('selection')
@@ -78,9 +77,6 @@ cy.on('tap', 'node', (selection) => {
   sourceNode = targetNode // second selection
   targetNode = selectedNode.data().id
   totalNodes(cy)
-
-  // save file
-  // save(cy, path)
 })
 cy.on('tap', 'edge', (selection) => {
   // removes previous selections
@@ -90,9 +86,6 @@ cy.on('tap', 'edge', (selection) => {
   selection.target.addClass('selection')
   selectedEdge = selection.target[0]
   totalNodes(cy)
-
-  // save file
-  // save(cy, path)
 })
 // when tapping the stage
 cy.on('tap', (selection) => {
@@ -105,8 +98,6 @@ cy.on('tap', (selection) => {
     document.getElementById('module-group').selectedIndex = ''
     document.getElementById('selection-id').selectedIndex = ''
     totalNodes(cy)
-    // save file
-    // save(cy, path)
   }
 })
 // hover over a node
@@ -118,9 +109,10 @@ cy.on('mouseout', 'node', (event) => {
   document.getElementById('container-node-id').style.display = 'none'
 })
 
+// load implementation specific buttons
 if (window.location.pathname === `${path}/implementation.html`) {
   // verify vulnerabilities
-  const buttonVulnVefiry = document.getElementById('vulnerability-verify-button')
+  const buttonVulnVefiry = document.getElementById('vuln-verify-button')
   buttonVulnVefiry.addEventListener('click', () => {
     vulnVerification(cy) // module
   })
@@ -195,7 +187,8 @@ buttonNeighbor.addEventListener('click', () => {
 // test function
 const buttonTest = document.getElementById('test-button')
 buttonTest.addEventListener('click', () => {
-
+  selectedNode.restore()
+  // cy.elements().restore()
 })
 
 // selections
