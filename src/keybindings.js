@@ -21,14 +21,20 @@ module.exports = function keyboard (cy, toggleUI) {
   cy.on('tap', 'node', (selection) => {
     selectedNode = selection.target[0]
     selectedEdge = ''
+    // loses the focus from the consoel when tapping a node
+    consoleId.blur()
   })
   let selectedEdge = ''
   cy.on('tap', 'edge', (selection) => {
     selectedEdge = selection.target[0]
     selectedNode = ''
+    // loses the focus from the consoel when tapping an edge
+    consoleId.blur()
   })
   // empties the selection values when clicking the graph
   cy.on('tap', (selection) => {
+    // loses the focus from the consoel when tapping the stage
+    consoleId.blur()
     if (selection.target === cy) {
       selectedEdge = ''
       selectedNode = ''
@@ -46,7 +52,7 @@ module.exports = function keyboard (cy, toggleUI) {
     }
     // Backspace deletion of nodes and edges
     // Fix it: when the selection is empty, it logs an error
-    if (event.code === 'Backspace') {
+    if (document.activeElement !== consoleId && event.code === 'Backspace') {
       if (selectedNode === '') {
         selectedEdge.remove()
       }
