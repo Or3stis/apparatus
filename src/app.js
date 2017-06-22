@@ -56,8 +56,8 @@ cy.layout({
   name: 'cose'
 })
 
-let selectedNode = []
-let selectedEdge = []
+let selectedNode = ''
+let selectedEdge = ''
 let sourceNode = ''
 let targetNode = ''
 
