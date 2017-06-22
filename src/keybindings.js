@@ -71,7 +71,7 @@ module.exports = function keyboard (cy, toggleUI) {
       addEdge(cy, sourceNode, targetNode)
     }
     // restore elements with meta + u
-    // only restore the last node
+    // BUG only restores the last node
     if (event.metaKey === true && event.code === 'KeyU') {
       selectedNode.restore()
     }
@@ -80,21 +80,21 @@ module.exports = function keyboard (cy, toggleUI) {
     // listens for you to press the ENTER key
     if (document.activeElement === consoleId && event.code === 'Enter') {
       document.getElementById('console-id').value = ''
-      if (input === 'help' || input === 'options') {
-        printChat(helpMenu)
-      } else if (input === 'validate') {
-        // moduleValidation(s)
-        printChat('not implemented')
-      } else if (input === '') {
-        printChat('not valid command')
-      } else if (input === 'clear') {
-        document.getElementById('info-nodes-id').textContent = ''
-      } else {
-        searchAttribute(cy, input)
+      switch (input) {
+        case ('help' || 'options'):
+          printChat(helpMenu)
+          break
+        case (''):
+          break
+        case ('clear'):
+          document.getElementById('info-nodes-id').textContent = ''
+          break
+        case ('validate'):
+          printChat('not implemented')
+          break
+        default:
+          searchAttribute(cy, input)
       }
-      // else {
-      //   document.getElementById('info-for-nodes-id').textContent = 'not valid command'
-      // }
     }
   })
 }
