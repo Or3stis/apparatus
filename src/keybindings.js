@@ -56,12 +56,11 @@ module.exports = function keyboard (cy, toggleUI) {
       toggleUI()
     }
     // Backspace deletion of nodes and edges
-    // Fix it: when the selection is empty, it logs an error
     if (document.activeElement !== consoleId && event.code === 'Backspace') {
-      if (selectedNode === '') {
+      if (selectedNode === '' && selectedEdge !== '') {
         selectedEdge.remove()
       }
-      if (selectedEdge === '') {
+      if (selectedEdge === '' && selectedNode !== '') {
         selectedNode.remove()
       }
       totalNodes(cy)
