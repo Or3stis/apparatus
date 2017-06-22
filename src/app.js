@@ -1,11 +1,9 @@
-// here is where it begins
 'use strict'
 
 const cytoscape = require('cytoscape')
 
 const nodeInfo = require('./src/nodeInfo.js')
 const hoverNodeInfo = require('./src/hoverNodeInfo.js')
-// const searchAttribute = require('./src/searchAttribute.js')
 const flagNodes = require('./src/flagNodes.js')
 const moduleSelection = require('./src/moduleSelection.js')
 const nodeSelection = require('./src/nodeSelection.js')
@@ -33,15 +31,14 @@ const dgnStateModuleValidation = require('./src/design-state/dgnStateModuleValid
 const dgnStateOverview = require('./src/design-state/dgnStateOverview.js')
 const addDgnStateComponent = require('./src/design-state/addDgnStateComponent.js')
 
-const config = require('./style/config.js')
-
 // save the path
 const path = `${__dirname}`
-// require the graph file
-let system = require(`${path}/graphs/implementation/smartHome.js`)
-
+// configuration files
+const config = require('./style/config.js')
 // graphs style
 const graphStyle = require(`${path}/style/graphStyle.js`)
+// require the graph file
+let system = require(`${path}/graphs/implementation/smartHome.js`)
 
 // setting up the graph container
 let cy = cytoscape({
