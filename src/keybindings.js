@@ -4,6 +4,7 @@
 const searchAttribute = require('./searchAttribute.js')
 const printChat = require('./printChat.js')
 const totalNodes = require('./totalNodes.js')
+const addEdge = require('./addEdge.js')
 
 module.exports = function keyboard (cy, toggleUI) {
   // help menu
@@ -18,9 +19,13 @@ module.exports = function keyboard (cy, toggleUI) {
   const consoleId = document.getElementById('console-id')
 
   let selectedNode = ''
+  let sourceNode = ''
+  let targetNode = ''
   cy.on('tap', 'node', (selection) => {
     selectedNode = selection.target[0]
     selectedEdge = ''
+    sourceNode = targetNode // second selection
+    targetNode = selectedNode.data().id
     // loses the focus from the consoel when tapping a node
     consoleId.blur()
   })
@@ -60,6 +65,10 @@ module.exports = function keyboard (cy, toggleUI) {
         selectedNode.remove()
       }
       totalNodes(cy)
+    }
+    // add edge
+    if (event.altKey === true && event.code === 'KeyE') {
+      addEdge(cy, sourceNode, targetNode)
     }
     // restore elements with meta + u
     // only restore the last node
