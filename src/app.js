@@ -185,7 +185,22 @@ buttonNeighbor.addEventListener('click', () => {
 // test function
 const buttonTest = document.getElementById('test-button')
 buttonTest.addEventListener('click', () => {
+  // test code goes here
+})
 
+// add component
+const add = document.getElementById('add-component-id')
+add.addEventListener('change', (e) => {
+  if (window.location.pathname === `${path}/implementation.html`) {
+    addImpComponent(cy, e.target.value) // imp module
+  } else if (window.location.pathname === `${path}/design.html`) {
+    addDgnComponent(cy, e.target.value) // dgn module
+  } else if (window.location.pathname === `${path}/design-state.html`) {
+    addDgnStateComponent(cy, e.target.value) // dgn-state module
+  }
+  // reset moduleGroup selection
+  document.getElementById('add-component-id').selectedIndex = ''
+  totalNodes(cy)
 })
 
 // selections
@@ -201,20 +216,6 @@ select.addEventListener('change', (e) => {
   nodeSelection(cy, e.target.value) // module
   // reset moduleGroup selection
   // document.getElementById('selection-id').selectedIndex = ''
-})
-// adding component
-const add = document.getElementById('add-component-id')
-add.addEventListener('change', (e) => {
-  if (window.location.pathname === `${path}/implementation.html`) {
-    addImpComponent(cy, e.target.value) // imp module
-  } else if (window.location.pathname === `${path}/design.html`) {
-    addDgnComponent(cy, e.target.value) // dgn module
-  } else if (window.location.pathname === `${path}/design-state.html`) {
-    addDgnStateComponent(cy, e.target.value) // dgn-state module
-  }
-  // reset moduleGroup selection
-  document.getElementById('add-component-id').selectedIndex = ''
-  totalNodes(cy)
 })
 
 // toggles side divs
