@@ -27,13 +27,15 @@ To clone and run this repository you'll need [Git](https://git-scm.com) and [Nod
 git clone https://github.com/Or3stis/apparatus.git
 # Go into the repository
 cd apparatus
-# Install dependencies and run the app
-npm install && npm start
+# Install dependencies
+npm install
+# to run the app
+npm start
 ```
 ## Instructions
 
-ASTo uses cytoscape.js to render an IoT system as a graph diagram. The concepts (nodes and edges) follow the Apparatus ontology. The modeling language is encoded in a json schema (not finalized). The schemas are located in the `src/design/dgnSchema.js` and `src/`implementation/impSchema.js`
+If you want to contribute that's great news 😃. Check the [contributing](https://github.com/Or3stis/apparatus/blob/master/CONTRIBUTING.md) guide.
 
-The style of the app can be configured by the user. The values are located in the `style` folder.
+If you want to find out how the app works check the [wiki](https://github.com/Or3stis/apparatus/wiki).
 
 #### License [MIT](LICENSE.md)
