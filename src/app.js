@@ -1,6 +1,7 @@
 'use strict'
 
 const cytoscape = require('cytoscape')
+const path = require('path')
 
 // require global moduless
 const nodeInfo = require('./src/nodeInfo.js')
@@ -37,14 +38,12 @@ const impStateModelValidation = require('./src/implementation-state/impStateMode
 const impStateOverview = require('./src/implementation-state/impStateOverview.js')
 const addImpStateComponent = require('./src/implementation-state/addImpStateComponent.js')
 
-// store the app path
-const path = `${__dirname}`
 // configuration for the UI
 const config = require('./style/config.js')
 // configuration for the graphs style
-const graphStyle = require(`${path}/style/graphStyle.js`)
+const graphStyle = require(`./style/graphStyle.js`)
 // require the initial graph file
-let graphModel = require(`${path}/graphs/implementation/smartHome.js`)
+let graphModel = require(`./graphs/implementation/smartHome.js`)
 
 // setting up the graph container
 let cy = cytoscape({
@@ -114,10 +113,15 @@ cy.on('mouseout', 'node', (event) => {
   document.getElementById('container-node-id').style.display = 'none'
 })
 
+// create the paths of each phase
+const dgnPath = path.join(__dirname, 'design.html')
+const dgnStatePath = path.join(__dirname, 'design-state.html')
+const impPath = path.join(__dirname, 'implementation.html')
+const impStatePath = path.join(__dirname, 'implementation-state.html')
 // here we load the buttons for each phase
 
 // load design phase buttons
-if (window.location.pathname === `${path}/design.html`) {
+if (window.location.pathname === dgnPath) {
   // validate the model
   const buttonModelValidate = document.getElementById('model-validate-button')
   buttonModelValidate.addEventListener('click', () => {
@@ -149,7 +153,7 @@ if (window.location.pathname === `${path}/design.html`) {
     // document.getElementById('module-group').selectedIndex = ''
   })
 // load design-state buttons
-} else if (window.location.pathname === `${path}/design-state.html`) {
+} else if (window.location.pathname === dgnStatePath) {
   // validate model
   const buttonModelValidate = document.getElementById('model-validate-button')
   buttonModelValidate.addEventListener('click', () => {
@@ -169,7 +173,7 @@ if (window.location.pathname === `${path}/design.html`) {
     totalNodes(cy) // global module
   })
 // loads implementation phase buttons
-} else if (window.location.pathname === `${path}/implementation.html`) {
+} else if (window.location.pathname === impPath) {
   // validate model
   const buttonModelValidate = document.getElementById('model-validate-button')
   buttonModelValidate.addEventListener('click', () => {
@@ -216,7 +220,7 @@ if (window.location.pathname === `${path}/design.html`) {
     // document.getElementById('module-group').selectedIndex = ''
   })
 // loads implementation-state buttons
-} else if (window.location.pathname === `${path}/implementation-state.html`) {
+} else if (window.location.pathname === impStatePath) {
   // validate model
   const buttonModelValidate = document.getElementById('model-validate-button')
   buttonModelValidate.addEventListener('click', () => {
