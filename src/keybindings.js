@@ -19,6 +19,7 @@ module.exports = function keyboard (cy, toggleUI) {
   let selectedNode = ''
   let sourceNode = ''
   let targetNode = ''
+
   cy.on('tap', 'node', (selection) => {
     selectedNode = selection.target[0]
     selectedEdge = ''
