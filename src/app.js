@@ -237,7 +237,7 @@ if (window.location.pathname === `${path}/design.html`) {
   })
 }
 
-// here the global buttons are declared
+// declaration of global buttons
 
 // save graph
 const buttonSave = document.getElementById('save-button')
@@ -301,5 +301,6 @@ const toggleUI = () => {
 }
 
 totalNodes(cy) // global module
-// enable keyboard shortcuts
-keybindings(cy, toggleUI)
+
+// enable keybindings
+keybindings(cy, toggleUI) // global module

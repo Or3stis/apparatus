@@ -1,6 +1,5 @@
 'use strict'
 
-// const moduleValidation = require('./moduleValidation.js')
 const searchAttribute = require('./searchAttribute.js')
 const printChat = require('./printChat.js')
 const totalNodes = require('./totalNodes.js')
@@ -9,7 +8,6 @@ const addEdge = require('./addEdge.js')
 module.exports = function keyboard (cy, toggleUI) {
   // help menu
   const helpMenu = `• help: for options\n
-  • validate: to validate module\n
   • alt + e: add an edge\n
   • backspace: delete node/edge\n
   • alt + h: toggle UI\n
@@ -46,12 +44,13 @@ module.exports = function keyboard (cy, toggleUI) {
     }
   })
 
+  // keyboard listeners
   document.addEventListener('keydown', (event) => {
     // focus on console
     if (event.metaKey === true && event.code === 'KeyL') {
       consoleId.focus()
     }
-    // toggle UI
+    // toggle side panels
     if (event.altKey === true && event.code === 'KeyH') {
       toggleUI()
     }
@@ -63,7 +62,7 @@ module.exports = function keyboard (cy, toggleUI) {
       if (selectedEdge === '' && selectedNode !== '') {
         selectedNode.remove()
       }
-      totalNodes(cy)
+      totalNodes(cy) // global module
     }
     // add edge
     if (event.altKey === true && event.code === 'KeyE') {
@@ -74,9 +73,10 @@ module.exports = function keyboard (cy, toggleUI) {
     if (event.metaKey === true && event.code === 'KeyU') {
       selectedNode.restore()
     }
+
     // console commands
     const input = document.getElementById('console-id').value
-    // listens for you to press the ENTER key
+    // listens for the ENTER key
     if (document.activeElement === consoleId && event.code === 'Enter') {
       document.getElementById('console-id').value = ''
       switch (input) {
@@ -87,9 +87,6 @@ module.exports = function keyboard (cy, toggleUI) {
           break
         case ('clear'):
           document.getElementById('info-nodes-id').textContent = ''
-          break
-        case ('validate'):
-          printChat('not implemented')
           break
         default:
           searchAttribute(cy, input)
