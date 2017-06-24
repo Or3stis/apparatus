@@ -109,9 +109,61 @@ cy.on('mouseout', 'node', (event) => {
   document.getElementById('container-node-id').style.display = 'none'
 })
 
-// load implementation specific buttons
-if (window.location.pathname === `${path}/implementation.html`) {
-  // verify vulnerabilities
+// load desing phase buttons
+if (window.location.pathname === `${path}/design.html`) {
+  const buttonModuleValidate = document.getElementById('module-validate-button')
+  buttonModuleValidate.addEventListener('click', () => {
+    dgnModuleValidation(cy) // dgn module
+  })
+  const buttonOverview = document.getElementById('overview-button')
+  buttonOverview.addEventListener('click', () => {
+    dgnOverview(cy) // dgn module
+  })
+  const buttonThreatVefiry = document.getElementById('threat-verify-button')
+  buttonThreatVefiry.addEventListener('click', () => {
+    threatVerification(cy) // module
+  })
+  // add component
+  const add = document.getElementById('add-component-id')
+  add.addEventListener('change', (e) => {
+    addDgnComponent(cy, e.target.value) // dgn module
+    // reset moduleGroup selection
+    document.getElementById('add-component-id').selectedIndex = ''
+    totalNodes(cy)
+  })
+  // selections
+  const moduleGroup = document.getElementById('module-group')
+  moduleGroup.addEventListener('change', (input) => {
+    moduleSelection(input, cy) // module
+    // reset selection selection
+    // document.getElementById('module-group').selectedIndex = ''
+  })
+} else if (window.location.pathname === `${path}/design-state.html`) {
+  const buttonModuleValidate = document.getElementById('module-validate-button')
+  buttonModuleValidate.addEventListener('click', () => {
+    dgnStateModuleValidation(cy) // dgn module
+  })
+  const buttonOverview = document.getElementById('overview-button')
+  buttonOverview.addEventListener('click', () => {
+    dgnStateOverview(cy) // dgn module
+  })
+  // add component
+  const add = document.getElementById('add-component-id')
+  add.addEventListener('change', (e) => {
+    addDgnStateComponent(cy, e.target.value) // dgn-state module
+    // reset moduleGroup selection
+    document.getElementById('add-component-id').selectedIndex = ''
+    totalNodes(cy)
+  })
+} else if (window.location.pathname === `${path}/implementation.html`) {
+  const buttonModuleValidate = document.getElementById('module-validate-button')
+  buttonModuleValidate.addEventListener('click', () => {
+    impModuleValidation(cy) // imp module
+  })
+  const buttonOverview = document.getElementById('overview-button')
+  buttonOverview.addEventListener('click', () => {
+    impOverview(cy) // dgn module
+  })
   const buttonVulnVefiry = document.getElementById('vuln-verify-button')
   buttonVulnVefiry.addEventListener('click', () => {
     vulnVerification(cy) // module
@@ -121,36 +173,48 @@ if (window.location.pathname === `${path}/implementation.html`) {
   buttonFindVuln.addEventListener('click', () => {
     findVulns(cy) // module
   })
-}
-const buttonModuleValidate = document.getElementById('module-validate-button')
-buttonModuleValidate.addEventListener('click', () => {
-  if (window.location.pathname === `${path}/implementation.html`) {
-    impModuleValidation(cy) // imp module
-  } else if (window.location.pathname === `${path}/design.html`) {
-    dgnModuleValidation(cy) // dgn module
-  } else if (window.location.pathname === `${path}/design-state.html`) {
-    dgnStateModuleValidation(cy) // dgn-state module
-  } else if (window.location.pathname === `${path}/implementation-state.html`) {
+  // flag nodes
+  const buttonFlag = document.getElementById('flag-button')
+  buttonFlag.addEventListener('click', () => {
+    flagNodes(cy, config.flag) // module
+  })
+  const buttonThreatVefiry = document.getElementById('threat-verify-button')
+  buttonThreatVefiry.addEventListener('click', () => {
+    threatVerification(cy) // module
+  })
+  // add component
+  const add = document.getElementById('add-component-id')
+  add.addEventListener('change', (e) => {
+    addImpComponent(cy, e.target.value) // imp module
+    // reset moduleGroup selection
+    document.getElementById('add-component-id').selectedIndex = ''
+    totalNodes(cy)
+  })
+  // selections
+  const moduleGroup = document.getElementById('module-group')
+  moduleGroup.addEventListener('change', (input) => {
+    moduleSelection(input, cy) // module
+    // reset selection selection
+    // document.getElementById('module-group').selectedIndex = ''
+  })
+} else if (window.location.pathname === `${path}/implementation-state.html`) {
+  const buttonModuleValidate = document.getElementById('module-validate-button')
+  buttonModuleValidate.addEventListener('click', () => {
     impStateModuleValidation(cy) // imp-state module
-  }
-})
-const buttonOverview = document.getElementById('overview-button')
-buttonOverview.addEventListener('click', () => {
-  if (window.location.pathname === `${path}/implementation.html`) {
-    impOverview(cy) // imp module
-  } else if (window.location.pathname === `${path}/design.html`) {
-    dgnOverview(cy) // dgn module
-  } else if (window.location.pathname === `${path}/design-state.html`) {
-    dgnStateOverview(cy) // dgn-state module
-  } else if (window.location.pathname === `${path}/implementation-state.html`) {
-    impStateOverview(cy) // imp-state module
-  }
-})
-// flag nodes
-const buttonFlag = document.getElementById('flag-button')
-buttonFlag.addEventListener('click', () => {
-  flagNodes(cy, config.flag) // module
-})
+  })
+  const buttonOverview = document.getElementById('overview-button')
+  buttonOverview.addEventListener('click', () => {
+    impStateOverview(cy) // dgn module
+  })
+  // add component
+  const add = document.getElementById('add-component-id')
+  add.addEventListener('change', (e) => {
+    addImpStateComponent(cy, e.target.value) // imp-state module
+    // reset moduleGroup selection
+    document.getElementById('add-component-id').selectedIndex = ''
+    totalNodes(cy)
+  })
+}
 // save graph
 const buttonSave = document.getElementById('save-button')
 buttonSave.addEventListener('click', () => {
@@ -177,10 +241,6 @@ buttonDeleteEdge.addEventListener('click', () => {
   selectedEdge.remove()
   totalNodes(cy)
 })
-const buttonThreatVefiry = document.getElementById('threat-verify-button')
-buttonThreatVefiry.addEventListener('click', () => {
-  threatVerification(cy) // module
-})
 const buttonNeighbor = document.getElementById('neighbors-button')
 buttonNeighbor.addEventListener('click', () => {
   // selectedNode from cy.on tap node function
@@ -194,30 +254,6 @@ buttonTest.addEventListener('click', () => {
   // test code goes here
 })
 
-// add component
-const add = document.getElementById('add-component-id')
-add.addEventListener('change', (e) => {
-  if (window.location.pathname === `${path}/implementation.html`) {
-    addImpComponent(cy, e.target.value) // imp module
-  } else if (window.location.pathname === `${path}/design.html`) {
-    addDgnComponent(cy, e.target.value) // dgn module
-  } else if (window.location.pathname === `${path}/design-state.html`) {
-    addDgnStateComponent(cy, e.target.value) // dgn-state module
-  } else if (window.location.pathname === `${path}/implementation-state.html`) {
-    addImpStateComponent(cy, e.target.value) // imp-state module
-  }
-  // reset moduleGroup selection
-  document.getElementById('add-component-id').selectedIndex = ''
-  totalNodes(cy)
-})
-
-// selections
-const moduleGroup = document.getElementById('module-group')
-moduleGroup.addEventListener('change', (input) => {
-  moduleSelection(input, cy) // module
-  // reset selection selection
-  // document.getElementById('module-group').selectedIndex = ''
-})
 // for the filter selection
 const select = document.getElementById('selection-id')
 select.addEventListener('change', (e) => {
