@@ -31,6 +31,11 @@ const dgnStateModuleValidation = require('./src/design-state/dgnStateModuleValid
 const dgnStateOverview = require('./src/design-state/dgnStateOverview.js')
 const addDgnStateComponent = require('./src/design-state/addDgnStateComponent.js')
 
+// require design-state functions
+const impStateModuleValidation = require('./src/implementation-state/impStateModuleValidation.js')
+const impStateOverview = require('./src/implementation-state/impStateOverview.js')
+const addImpStateComponent = require('./src/implementation-state/addImpStateComponent.js')
+
 // save the path
 const path = `${__dirname}`
 // configuration files
@@ -125,6 +130,8 @@ buttonModuleValidate.addEventListener('click', () => {
     dgnModuleValidation(cy) // dgn module
   } else if (window.location.pathname === `${path}/design-state.html`) {
     dgnStateModuleValidation(cy) // dgn-state module
+  } else if (window.location.pathname === `${path}/implementation-state.html`) {
+    impStateModuleValidation(cy) // imp-state module
   }
 })
 const buttonOverview = document.getElementById('overview-button')
@@ -135,6 +142,8 @@ buttonOverview.addEventListener('click', () => {
     dgnOverview(cy) // dgn module
   } else if (window.location.pathname === `${path}/design-state.html`) {
     dgnStateOverview(cy) // dgn-state module
+  } else if (window.location.pathname === `${path}/implementation-state.html`) {
+    impStateOverview(cy) // imp-state module
   }
 })
 // flag nodes
@@ -194,6 +203,8 @@ add.addEventListener('change', (e) => {
     addDgnComponent(cy, e.target.value) // dgn module
   } else if (window.location.pathname === `${path}/design-state.html`) {
     addDgnStateComponent(cy, e.target.value) // dgn-state module
+  } else if (window.location.pathname === `${path}/implementation-state.html`) {
+    addImpStateComponent(cy, e.target.value) // imp-state module
   }
   // reset moduleGroup selection
   document.getElementById('add-component-id').selectedIndex = ''
