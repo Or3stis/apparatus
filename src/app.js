@@ -16,24 +16,24 @@ const save = require('./src/save.js')
 const load = require('./src/load.js')
 
 // require design modules
-const dgnModuleValidation = require('./src/design/dgnModuleValidation.js')
+const dgnModelValidation = require('./src/design/dgnModelValidation.js')
 const dgnOverview = require('./src/design/dgnOverview.js')
 const addDgnComponent = require('./src/design/addDgnComponent.js')
 
-// require design-state modules
-const dgnStateModuleValidation = require('./src/design-state/dgnStateModuleValidation.js')
+// require design-state Models
+const dgnStateModelValidation = require('./src/design-state/dgnStateModelValidation.js')
 const dgnStateOverview = require('./src/design-state/dgnStateOverview.js')
 const addDgnStateComponent = require('./src/design-state/addDgnStateComponent.js')
 
 // reguire implementation modules
-const impModuleValidation = require('./src/implementation/impModuleValidation.js')
+const impModelValidation = require('./src/implementation/impModelValidation.js')
 const vulnVerification = require('./src/implementation/vulnVerification.js')
 const findVulns = require('./src/implementation/findVulns.js')
 const impOverview = require('./src/implementation/impOverview.js')
 const addImpComponent = require('./src/implementation/addImpComponent.js')
 
 // require implementation-state modules
-const impStateModuleValidation = require('./src/implementation-state/impStateModuleValidation.js')
+const impStateModelValidation = require('./src/implementation-state/impStateModelValidation.js')
 const impStateOverview = require('./src/implementation-state/impStateOverview.js')
 const addImpStateComponent = require('./src/implementation-state/addImpStateComponent.js')
 
@@ -119,9 +119,9 @@ cy.on('mouseout', 'node', (event) => {
 // load design phase buttons
 if (window.location.pathname === `${path}/design.html`) {
   // validate the model
-  const buttonModuleValidate = document.getElementById('module-validate-button')
-  buttonModuleValidate.addEventListener('click', () => {
-    dgnModuleValidation(cy) // dgn module
+  const buttonModelValidate = document.getElementById('model-validate-button')
+  buttonModelValidate.addEventListener('click', () => {
+    dgnModelValidation(cy) // dgn module
   })
   // model overiew
   const buttonOverview = document.getElementById('overview-button')
@@ -151,9 +151,9 @@ if (window.location.pathname === `${path}/design.html`) {
 // load design-state buttons
 } else if (window.location.pathname === `${path}/design-state.html`) {
   // validate model
-  const buttonModuleValidate = document.getElementById('module-validate-button')
-  buttonModuleValidate.addEventListener('click', () => {
-    dgnStateModuleValidation(cy) // dgn module
+  const buttonModelValidate = document.getElementById('model-validate-button')
+  buttonModelValidate.addEventListener('click', () => {
+    dgnStateModelValidation(cy) // dgn module
   })
   // model overview
   const buttonOverview = document.getElementById('overview-button')
@@ -171,9 +171,9 @@ if (window.location.pathname === `${path}/design.html`) {
 // loads implementation phase buttons
 } else if (window.location.pathname === `${path}/implementation.html`) {
   // validate model
-  const buttonModuleValidate = document.getElementById('module-validate-button')
-  buttonModuleValidate.addEventListener('click', () => {
-    impModuleValidation(cy) // imp module
+  const buttonModelValidate = document.getElementById('model-validate-button')
+  buttonModelValidate.addEventListener('click', () => {
+    impModelValidation(cy) // imp module
   })
   // model overview
   const buttonOverview = document.getElementById('overview-button')
@@ -218,9 +218,9 @@ if (window.location.pathname === `${path}/design.html`) {
 // loads implementation-state buttons
 } else if (window.location.pathname === `${path}/implementation-state.html`) {
   // validate model
-  const buttonModuleValidate = document.getElementById('module-validate-button')
-  buttonModuleValidate.addEventListener('click', () => {
-    impStateModuleValidation(cy) // imp-state module
+  const buttonModelValidate = document.getElementById('model-validate-button')
+  buttonModelValidate.addEventListener('click', () => {
+    impStateModelValidation(cy) // imp-state module
   })
   // model overview
   const buttonOverview = document.getElementById('overview-button')
