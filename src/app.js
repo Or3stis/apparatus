@@ -37,7 +37,7 @@ const impStateModuleValidation = require('./src/implementation-state/impStateMod
 const impStateOverview = require('./src/implementation-state/impStateOverview.js')
 const addImpStateComponent = require('./src/implementation-state/addImpStateComponent.js')
 
-// save the app path
+// store the app path
 const path = `${__dirname}`
 // configuration for the UI
 const config = require('./style/config.js')
@@ -74,14 +74,11 @@ cy.on('tap', 'node', (selection) => {
   cy.elements().removeClass('attention')
   cy.elements().removeClass('protect')
   selectedNode = selection.target[0]
-  // const neighborhood = selectedNode.neighborhood().add(selectedNode)
-  // cy.elements().addClass('faded')
-  // neighborhood.removeClass('faded')
-  nodeInfo(selectedNode)
+  nodeInfo(selectedNode) // global module
   selectedNode.addClass('selection')
   sourceNode = targetNode // second selection
   targetNode = selectedNode.data().id
-  totalNodes(cy)
+  totalNodes(cy) // global module
 })
 // do stuff when tapping on an edge
 cy.on('tap', 'edge', (selection) => {
@@ -91,7 +88,7 @@ cy.on('tap', 'edge', (selection) => {
   cy.elements().removeClass('protect')
   selection.target.addClass('selection')
   selectedEdge = selection.target[0]
-  totalNodes(cy)
+  totalNodes(cy) // global module
 })
 // do stuff when tapping the stage
 cy.on('tap', (selection) => {
@@ -104,15 +101,16 @@ cy.on('tap', (selection) => {
     cy.elements().removeClass('protect')
     document.getElementById('module-group').selectedIndex = ''
     document.getElementById('selection-id').selectedIndex = ''
-    totalNodes(cy)
+    totalNodes(cy) // global module
   }
 })
 // do stuff when hovering over a node
 cy.on('mouseover', 'node', (event) => {
-  hoverNodeInfo(event.target[0])
+  hoverNodeInfo(event.target[0]) // global module
 })
 // do stuff when hovering out of a node
 cy.on('mouseout', 'node', (event) => {
+  // hides the hover container
   document.getElementById('container-node-id').style.display = 'none'
 })
 
@@ -120,19 +118,22 @@ cy.on('mouseout', 'node', (event) => {
 
 // load design phase buttons
 if (window.location.pathname === `${path}/design.html`) {
+  // validate the model
   const buttonModuleValidate = document.getElementById('module-validate-button')
   buttonModuleValidate.addEventListener('click', () => {
     dgnModuleValidation(cy) // dgn module
   })
+  // model overiew
   const buttonOverview = document.getElementById('overview-button')
   buttonOverview.addEventListener('click', () => {
     dgnOverview(cy) // dgn module
   })
+  // verify threat
   const buttonThreatVefiry = document.getElementById('threat-verify-button')
   buttonThreatVefiry.addEventListener('click', () => {
     threatVerification(cy) // global module
   })
-  // add component
+  // add design phase component
   const add = document.getElementById('add-component-id')
   add.addEventListener('change', (e) => {
     addDgnComponent(cy, e.target.value) // dgn module
@@ -140,7 +141,7 @@ if (window.location.pathname === `${path}/design.html`) {
     document.getElementById('add-component-id').selectedIndex = ''
     totalNodes(cy) // global module
   })
-  // selections
+  // module selection
   const moduleGroup = document.getElementById('module-group')
   moduleGroup.addEventListener('change', (input) => {
     moduleSelection(input, cy) // global module
@@ -149,15 +150,17 @@ if (window.location.pathname === `${path}/design.html`) {
   })
 // load design-state buttons
 } else if (window.location.pathname === `${path}/design-state.html`) {
+  // validate model
   const buttonModuleValidate = document.getElementById('module-validate-button')
   buttonModuleValidate.addEventListener('click', () => {
     dgnStateModuleValidation(cy) // dgn module
   })
+  // model overview
   const buttonOverview = document.getElementById('overview-button')
   buttonOverview.addEventListener('click', () => {
     dgnStateOverview(cy) // dgn module
   })
-  // add component
+  // add design-state component
   const add = document.getElementById('add-component-id')
   add.addEventListener('change', (e) => {
     addDgnStateComponent(cy, e.target.value) // dgn-state module
@@ -167,14 +170,17 @@ if (window.location.pathname === `${path}/design.html`) {
   })
 // loads implementation phase buttons
 } else if (window.location.pathname === `${path}/implementation.html`) {
+  // validate model
   const buttonModuleValidate = document.getElementById('module-validate-button')
   buttonModuleValidate.addEventListener('click', () => {
     impModuleValidation(cy) // imp module
   })
+  // model overview
   const buttonOverview = document.getElementById('overview-button')
   buttonOverview.addEventListener('click', () => {
     impOverview(cy) // imp module
   })
+  // verify vulnerabilities
   const buttonVulnVefiry = document.getElementById('vuln-verify-button')
   buttonVulnVefiry.addEventListener('click', () => {
     vulnVerification(cy) // imp module
@@ -184,16 +190,17 @@ if (window.location.pathname === `${path}/design.html`) {
   buttonFindVuln.addEventListener('click', () => {
     findVulns(cy) // imp module
   })
-  // flag nodes
+  // flag nodes based on specific attributes
   const buttonFlag = document.getElementById('flag-button')
   buttonFlag.addEventListener('click', () => {
     flagNodes(cy, config.flag) // global module
   })
+  // verify threats
   const buttonThreatVefiry = document.getElementById('threat-verify-button')
   buttonThreatVefiry.addEventListener('click', () => {
     threatVerification(cy) // global module
   })
-  // add component
+  // add implementation component
   const add = document.getElementById('add-component-id')
   add.addEventListener('change', (e) => {
     addImpComponent(cy, e.target.value) // imp module
@@ -210,15 +217,17 @@ if (window.location.pathname === `${path}/design.html`) {
   })
 // loads implementation-state buttons
 } else if (window.location.pathname === `${path}/implementation-state.html`) {
+  // validate model
   const buttonModuleValidate = document.getElementById('module-validate-button')
   buttonModuleValidate.addEventListener('click', () => {
     impStateModuleValidation(cy) // imp-state module
   })
+  // model overview
   const buttonOverview = document.getElementById('overview-button')
   buttonOverview.addEventListener('click', () => {
     impStateOverview(cy) // imp-state module
   })
-  // add component
+  // add implementation-state component
   const add = document.getElementById('add-component-id')
   add.addEventListener('change', (e) => {
     addImpStateComponent(cy, e.target.value) // imp-state module
