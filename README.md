@@ -3,6 +3,8 @@
 ## An IoT network security analysis tool and visualizer
 
 [![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](http://standardjs.com/) ![](https://travis-ci.org/Or3stis/apparatus.svg?branch=master)
+[![David](https://img.shields.io/david/expressjs/express.svg)]()
+[![David](https://img.shields.io/david/dev/expressjs/express.svg)]()
 
 ASTo is security analysis tool for IoT networks. It is developed to support the Apparatus security framework. ASTo is based on
 [electron](http://electron.atom.io/) and
