@@ -1,6 +1,6 @@
-const system = {}
+const graphModel = {}
 
-system.elements = [
+graphModel.elements = [
   // nodes
   {
     data: {
@@ -196,4 +196,4 @@ system.elements = [
   }
 ]
 
-module.exports = system
+module.exports = graphModel

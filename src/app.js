@@ -2,6 +2,7 @@
 
 const cytoscape = require('cytoscape')
 
+// require global moduless
 const nodeInfo = require('./src/nodeInfo.js')
 const hoverNodeInfo = require('./src/hoverNodeInfo.js')
 const flagNodes = require('./src/flagNodes.js')
@@ -14,42 +15,43 @@ const totalNodes = require('./src/totalNodes.js')
 const save = require('./src/save.js')
 const load = require('./src/load.js')
 
-// reguire implementation functions
+// require design modules
+const dgnModuleValidation = require('./src/design/dgnModuleValidation.js')
+const dgnOverview = require('./src/design/dgnOverview.js')
+const addDgnComponent = require('./src/design/addDgnComponent.js')
+
+// require design-state modules
+const dgnStateModuleValidation = require('./src/design-state/dgnStateModuleValidation.js')
+const dgnStateOverview = require('./src/design-state/dgnStateOverview.js')
+const addDgnStateComponent = require('./src/design-state/addDgnStateComponent.js')
+
+// reguire implementation modules
 const impModuleValidation = require('./src/implementation/impModuleValidation.js')
 const vulnVerification = require('./src/implementation/vulnVerification.js')
 const findVulns = require('./src/implementation/findVulns.js')
 const impOverview = require('./src/implementation/impOverview.js')
 const addImpComponent = require('./src/implementation/addImpComponent.js')
 
-// require design functions
-const dgnModuleValidation = require('./src/design/dgnModuleValidation.js')
-const dgnOverview = require('./src/design/dgnOverview.js')
-const addDgnComponent = require('./src/design/addDgnComponent.js')
-
-// require design-state functions
-const dgnStateModuleValidation = require('./src/design-state/dgnStateModuleValidation.js')
-const dgnStateOverview = require('./src/design-state/dgnStateOverview.js')
-const addDgnStateComponent = require('./src/design-state/addDgnStateComponent.js')
-
-// require design-state functions
+// require implementation-state modules
 const impStateModuleValidation = require('./src/implementation-state/impStateModuleValidation.js')
 const impStateOverview = require('./src/implementation-state/impStateOverview.js')
 const addImpStateComponent = require('./src/implementation-state/addImpStateComponent.js')
 
-// save the path
+// save the app path
 const path = `${__dirname}`
-// configuration files
+// configuration for the UI
 const config = require('./style/config.js')
-// graphs style
+// configuration for the graphs style
 const graphStyle = require(`${path}/style/graphStyle.js`)
-// require the graph file
-let system = require(`${path}/graphs/implementation/smartHome.js`)
+// require the initial graph file
+let graphModel = require(`${path}/graphs/implementation/smartHome.js`)
 
 // setting up the graph container
 let cy = cytoscape({
   container: document.getElementById('graph-container'),
   autounselectify: true,
-  elements: system.elements,
+  // this loads the elements object of the loaded graph
+  elements: graphModel.elements,
   style: graphStyle.style
 })
 
@@ -63,6 +65,9 @@ let selectedEdge = ''
 let sourceNode = ''
 let targetNode = ''
 
+// cy.on does stuff when intrecting with the graph
+
+// do stuff when tapping on node
 cy.on('tap', 'node', (selection) => {
   // removes previous selections
   cy.elements().removeClass('selection')
@@ -78,6 +83,7 @@ cy.on('tap', 'node', (selection) => {
   targetNode = selectedNode.data().id
   totalNodes(cy)
 })
+// do stuff when tapping on an edge
 cy.on('tap', 'edge', (selection) => {
   // removes previous selections
   cy.elements().removeClass('selection')
@@ -87,8 +93,9 @@ cy.on('tap', 'edge', (selection) => {
   selectedEdge = selection.target[0]
   totalNodes(cy)
 })
-// when tapping the stage
+// do stuff when tapping the stage
 cy.on('tap', (selection) => {
+  // checks if only the stage was clicked
   if (selection.target === cy) {
     // removes previous selections
     cy.elements().removeClass('faded')
@@ -100,16 +107,18 @@ cy.on('tap', (selection) => {
     totalNodes(cy)
   }
 })
-// hover over a node
+// do stuff when hovering over a node
 cy.on('mouseover', 'node', (event) => {
   hoverNodeInfo(event.target[0])
 })
-// hover out of a node
+// do stuff when hovering out of a node
 cy.on('mouseout', 'node', (event) => {
   document.getElementById('container-node-id').style.display = 'none'
 })
 
-// load desing phase buttons
+// here we load the buttons for each phase
+
+// load design phase buttons
 if (window.location.pathname === `${path}/design.html`) {
   const buttonModuleValidate = document.getElementById('module-validate-button')
   buttonModuleValidate.addEventListener('click', () => {
@@ -121,7 +130,7 @@ if (window.location.pathname === `${path}/design.html`) {
   })
   const buttonThreatVefiry = document.getElementById('threat-verify-button')
   buttonThreatVefiry.addEventListener('click', () => {
-    threatVerification(cy) // module
+    threatVerification(cy) // global module
   })
   // add component
   const add = document.getElementById('add-component-id')
@@ -129,15 +138,16 @@ if (window.location.pathname === `${path}/design.html`) {
     addDgnComponent(cy, e.target.value) // dgn module
     // reset moduleGroup selection
     document.getElementById('add-component-id').selectedIndex = ''
-    totalNodes(cy)
+    totalNodes(cy) // global module
   })
   // selections
   const moduleGroup = document.getElementById('module-group')
   moduleGroup.addEventListener('change', (input) => {
-    moduleSelection(input, cy) // module
+    moduleSelection(input, cy) // global module
     // reset selection selection
     // document.getElementById('module-group').selectedIndex = ''
   })
+// load design-state buttons
 } else if (window.location.pathname === `${path}/design-state.html`) {
   const buttonModuleValidate = document.getElementById('module-validate-button')
   buttonModuleValidate.addEventListener('click', () => {
@@ -153,8 +163,9 @@ if (window.location.pathname === `${path}/design.html`) {
     addDgnStateComponent(cy, e.target.value) // dgn-state module
     // reset moduleGroup selection
     document.getElementById('add-component-id').selectedIndex = ''
-    totalNodes(cy)
+    totalNodes(cy) // global module
   })
+// loads implementation phase buttons
 } else if (window.location.pathname === `${path}/implementation.html`) {
   const buttonModuleValidate = document.getElementById('module-validate-button')
   buttonModuleValidate.addEventListener('click', () => {
@@ -162,25 +173,25 @@ if (window.location.pathname === `${path}/design.html`) {
   })
   const buttonOverview = document.getElementById('overview-button')
   buttonOverview.addEventListener('click', () => {
-    impOverview(cy) // dgn module
+    impOverview(cy) // imp module
   })
   const buttonVulnVefiry = document.getElementById('vuln-verify-button')
   buttonVulnVefiry.addEventListener('click', () => {
-    vulnVerification(cy) // module
+    vulnVerification(cy) // imp module
   })
   // find vulnerabilities
   const buttonFindVuln = document.getElementById('find-vuln-button')
   buttonFindVuln.addEventListener('click', () => {
-    findVulns(cy) // module
+    findVulns(cy) // imp module
   })
   // flag nodes
   const buttonFlag = document.getElementById('flag-button')
   buttonFlag.addEventListener('click', () => {
-    flagNodes(cy, config.flag) // module
+    flagNodes(cy, config.flag) // global module
   })
   const buttonThreatVefiry = document.getElementById('threat-verify-button')
   buttonThreatVefiry.addEventListener('click', () => {
-    threatVerification(cy) // module
+    threatVerification(cy) // global module
   })
   // add component
   const add = document.getElementById('add-component-id')
@@ -188,15 +199,16 @@ if (window.location.pathname === `${path}/design.html`) {
     addImpComponent(cy, e.target.value) // imp module
     // reset moduleGroup selection
     document.getElementById('add-component-id').selectedIndex = ''
-    totalNodes(cy)
+    totalNodes(cy) // global module
   })
-  // selections
+  // module selections
   const moduleGroup = document.getElementById('module-group')
   moduleGroup.addEventListener('change', (input) => {
     moduleSelection(input, cy) // module
     // reset selection selection
     // document.getElementById('module-group').selectedIndex = ''
   })
+// loads implementation-state buttons
 } else if (window.location.pathname === `${path}/implementation-state.html`) {
   const buttonModuleValidate = document.getElementById('module-validate-button')
   buttonModuleValidate.addEventListener('click', () => {
@@ -204,7 +216,7 @@ if (window.location.pathname === `${path}/design.html`) {
   })
   const buttonOverview = document.getElementById('overview-button')
   buttonOverview.addEventListener('click', () => {
-    impStateOverview(cy) // dgn module
+    impStateOverview(cy) // imp-state module
   })
   // add component
   const add = document.getElementById('add-component-id')
@@ -212,28 +224,31 @@ if (window.location.pathname === `${path}/design.html`) {
     addImpStateComponent(cy, e.target.value) // imp-state module
     // reset moduleGroup selection
     document.getElementById('add-component-id').selectedIndex = ''
-    totalNodes(cy)
+    totalNodes(cy) // global module
   })
 }
+
+// here the global buttons are declared
+
 // save graph
 const buttonSave = document.getElementById('save-button')
 buttonSave.addEventListener('click', () => {
-  save(cy, path) // module
+  save(cy, path) // global module
 })
 // load graph
 const buttonLoad = document.getElementById('load-button')
 buttonLoad.addEventListener('click', () => {
-  load(cy, system, cytoscape, graphStyle) // module
+  load(cy, graphModel, cytoscape, graphStyle) // global module
 })
 // delele selected node
 const buttonDeleteNode = document.getElementById('delete-node')
 buttonDeleteNode.addEventListener('click', () => {
   selectedNode.remove()
-  totalNodes(cy)
+  totalNodes(cy) // global module
 })
 const buttonAddEdge = document.getElementById('add-edge')
 buttonAddEdge.addEventListener('click', () => {
-  addEdge(cy, sourceNode, targetNode) // module
+  addEdge(cy, sourceNode, targetNode) // global module
   totalNodes(cy)
 })
 const buttonDeleteEdge = document.getElementById('delete-edge')
@@ -241,6 +256,7 @@ buttonDeleteEdge.addEventListener('click', () => {
   selectedEdge.remove()
   totalNodes(cy)
 })
+// show the neighbors of a tapped node
 const buttonNeighbor = document.getElementById('neighbors-button')
 buttonNeighbor.addEventListener('click', () => {
   // selectedNode from cy.on tap node function
@@ -254,15 +270,15 @@ buttonTest.addEventListener('click', () => {
   // test code goes here
 })
 
-// for the filter selection
+// highlights only the selected node class
 const select = document.getElementById('selection-id')
 select.addEventListener('change', (e) => {
-  nodeSelection(cy, e.target.value) // module
+  nodeSelection(cy, e.target.value) // global module
   // reset moduleGroup selection
   // document.getElementById('selection-id').selectedIndex = ''
 })
 
-// toggles side divs
+// toggles side panels
 const toggleUI = () => {
   const sidebarStatus = document.getElementById('sidebar-id')
   const actionBarStatus = document.getElementById('action-bar-id')
@@ -275,6 +291,6 @@ const toggleUI = () => {
   }
 }
 
-totalNodes(cy)
+totalNodes(cy) // global module
 // enable keyboard shortcuts
 keybindings(cy, toggleUI)
