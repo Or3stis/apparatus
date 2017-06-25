@@ -28,8 +28,4 @@ config.cyan = '#6dfedf'
 config.gray = '#d8dee9'
 config.comment = '#6D6DB5'
 
-// values for the flagged list
-// see flagNodes.js
-config.flag = ['wireless', 'perception']
-
 module.exports = config

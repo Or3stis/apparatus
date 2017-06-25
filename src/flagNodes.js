@@ -1,7 +1,8 @@
 'use strict'
 const printChat = require('./printChat.js')
 
-module.exports = function securityHints (cy, flaggedList) {
+module.exports = function securityHints (cy) {
+  const flaggedList = ['wireless', 'perception']
   let flaggedNodes = ''
 
   // apply the faded class to all the elements

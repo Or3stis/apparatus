@@ -38,8 +38,6 @@ const impStateModelValidation = require('./src/implementation-state/impStateMode
 const impStateOverview = require('./src/implementation-state/impStateOverview.js')
 const addImpStateComponent = require('./src/implementation-state/addImpStateComponent.js')
 
-// configuration for the UI
-const config = require('./style/config.js')
 // configuration for the graphs style
 const graphStyle = require(`./style/graphStyle.js`)
 // require the initial graph file
@@ -198,7 +196,7 @@ if (window.location.pathname === dgnPath) {
   // flag nodes based on specific attributes
   const buttonFlag = document.getElementById('flag-button')
   buttonFlag.addEventListener('click', () => {
-    flagNodes(cy, config.flag) // global module
+    flagNodes(cy) // global module
   })
   // verify threats
   const buttonThreatVefiry = document.getElementById('threat-verify-button')
