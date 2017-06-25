@@ -242,16 +242,6 @@ if (window.location.pathname === dgnPath) {
 
 // declaration of global buttons
 
-// save graph
-const buttonSave = document.getElementById('save-button')
-buttonSave.addEventListener('click', () => {
-  save(cy, path) // global module
-})
-// load graph
-const buttonLoad = document.getElementById('load-button')
-buttonLoad.addEventListener('click', () => {
-  load(cy, graphModel, cytoscape, graphStyle) // global module
-})
 // delele selected node
 const buttonDeleteNode = document.getElementById('delete-node')
 buttonDeleteNode.addEventListener('click', () => {
@@ -275,6 +265,24 @@ buttonNeighbor.addEventListener('click', () => {
   const neighborhood = selectedNode.neighborhood().add(selectedNode)
   cy.elements().addClass('faded')
   neighborhood.removeClass('faded')
+})
+// random layout
+const buttonLayout = document.getElementById('layout-button')
+buttonLayout.addEventListener('click', () => {
+  const layout = cy.layout({
+    name: 'random'
+  })
+  layout.run()
+})
+// save graph
+const buttonSave = document.getElementById('save-button')
+buttonSave.addEventListener('click', () => {
+  save(cy, path) // global module
+})
+// load graph
+const buttonLoad = document.getElementById('load-button')
+buttonLoad.addEventListener('click', () => {
+  load(cy, graphModel, cytoscape, graphStyle) // global module
 })
 // test function
 const buttonTest = document.getElementById('test-button')
