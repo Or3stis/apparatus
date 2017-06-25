@@ -2,6 +2,7 @@
 const printChat = require('./printChat.js')
 
 module.exports = function securityHints (cy) {
+  // flagged attributes
   const flaggedList = ['wireless', 'perception']
   let flaggedNodes = ''
 
