@@ -262,6 +262,57 @@ module.exports = function addImpComponent (cy, component) {
         }
       })
       break
+    case 'event sensor':
+      cy.add({
+        group: 'nodes',
+        data: {
+          id: `n${lastNode}`,
+          label: `${component}`,
+          info: {
+            description: '',
+            concept: 'event sensor'
+          },
+          position: {
+            x: 200,
+            y: 400
+          }
+        }
+      })
+      break
+    case 'report sensor':
+      cy.add({
+        group: 'nodes',
+        data: {
+          id: `n${lastNode}`,
+          label: `${component}`,
+          info: {
+            description: '',
+            concept: 'report sensor'
+          },
+          position: {
+            x: 200,
+            y: 400
+          }
+        }
+      })
+      break
+    case 'control sensor':
+      cy.add({
+        group: 'nodes',
+        data: {
+          id: `n${lastNode}`,
+          label: `${component}`,
+          info: {
+            description: '',
+            concept: 'control sensor'
+          },
+          position: {
+            x: 200,
+            y: 400
+          }
+        }
+      })
+      break
     default:
       console.error('error in addComponent.js')
   }

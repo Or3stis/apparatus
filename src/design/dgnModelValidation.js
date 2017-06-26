@@ -14,6 +14,7 @@ module.exports = function moduleValidation (cy) {
   const assetArray = dgnMetamodel.assetArray
   const constraintArray = dgnMetamodel.constraintArray
   const threatArray = dgnMetamodel.threatArray
+  const sensorArray = dgnMetamodel.sensorArray
 
   // decleration of arrays
   let result = '' // posted on the nodeInfo div
@@ -53,5 +54,6 @@ module.exports = function moduleValidation (cy) {
   componentValidation(cy, 'asset', assetArray)
   componentValidation(cy, 'constraint', constraintArray)
   componentValidation(cy, 'threat', threatArray)
+  componentValidation(cy, 'sensor', sensorArray)
   printChat(result)
 }

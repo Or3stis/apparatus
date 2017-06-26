@@ -5,12 +5,15 @@ module.exports = function moduleSelection (input, cy) {
   // grouping of the module components
   let groupArray = []
   const networkArray = ['device', 'network connection', 'micronet',
-    'net', 'unidentified node', 'data', 'thing'
+    'net', 'unidentified node', 'information', 'thing'
   ]
   const securityArray = ['asset', 'threat', 'vulnerability',
     'mechanism', 'constraint', 'malicious actor'
   ]
   const socialArray = ['actor']
+  const sensingArray = ['sensor', 'event sensor', 'report sensor',
+    'control sensor'
+  ]
 
   const condition = input.target.value
   switch (condition) {
@@ -23,8 +26,17 @@ module.exports = function moduleSelection (input, cy) {
     case 'social':
       groupArray = socialArray
       break
+    case 'sensing':
+      groupArray = sensingArray
+      break
     case 'network-security':
       groupArray = networkArray.concat(securityArray)
+      break
+    case 'network-sensing':
+      groupArray = networkArray.concat(sensingArray)
+      break
+    case 'security-sensing':
+      groupArray = securityArray.concat(sensingArray)
       break
     case 'network-social':
       groupArray = networkArray.concat(socialArray)

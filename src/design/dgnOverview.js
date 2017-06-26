@@ -7,6 +7,7 @@ module.exports = function overview (cy) {
   const networkArray = dgnMetamodel.network
   const securityArray = dgnMetamodel.security
   const socialArray = dgnMetamodel.social
+  const sensingArray = dgnMetamodel.sensing
 
   let result = ''
 
@@ -16,6 +17,8 @@ module.exports = function overview (cy) {
   let networkNode = 0
   let securityNode = 0
   let socialNode = 0
+  let sensingNode = 0
+
   cy.nodes().map((node) => {
     const nodeConcept = node.data().info.concept
     if (networkArray.includes(nodeConcept) === true) {
@@ -24,11 +27,14 @@ module.exports = function overview (cy) {
       securityNode += 1
     } else if (socialArray.includes(nodeConcept) === true) {
       socialNode += 1
+    } else if (sensingArray.includes(nodeConcept) === true) {
+      sensingNode += 1
     }
   })
   result = `${result}network nodes: ${networkNode}\n`
   result = `${result}social nodes: ${socialNode}\n`
   result = `${result}security nodes: ${securityNode}\n`
+  result = `${result}sensing nodes: ${sensingNode}\n`
 
   let thingNode = 0
   let micronetNode = 0
@@ -39,6 +45,8 @@ module.exports = function overview (cy) {
   let constraintNode = 0
   let malActorNode = 0
   let actorNode = 0
+  let sensorNode = 0
+
   cy.nodes().map((node) => {
     const nodeConcept = node.data().info.concept
     if (nodeConcept === 'thing') {
@@ -61,6 +69,8 @@ module.exports = function overview (cy) {
       malActorNode += 1
     } else if (nodeConcept === 'actor') {
       actorNode += 1
+    } else if (nodeConcept === 'sensor') {
+      sensorNode += 1
     }
   })
   result = `${result}thing nodes: ${thingNode}\n`
@@ -72,6 +82,7 @@ module.exports = function overview (cy) {
   result = `${result}constraint nodes: ${constraintNode}\n`
   result = `${result}malicious actor nodes: ${malActorNode}\n`
   result = `${result}actor nodes: ${actorNode}\n`
+  result = `${result}sensor nodes: ${sensorNode}\n`
 
   printChat(result)
 }

@@ -82,11 +82,11 @@ graphModel.elements = [
   }, {
     data: {
       id: '7',
-      label: 'data',
+      label: 'information',
       info: {
         description: 'data in transit',
         intent: 'local',
-        concept: 'data'
+        concept: 'information'
       }
     }
   },
