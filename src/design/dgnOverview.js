@@ -33,7 +33,7 @@ module.exports = function overview (cy) {
   let thingNode = 0
   let micronetNode = 0
   let netNode = 0
-  let dataNode = 0
+  let informationNode = 0
   let assetNode = 0
   let threatNode = 0
   let constraintNode = 0
@@ -47,8 +47,8 @@ module.exports = function overview (cy) {
       micronetNode += 1
     } else if (nodeConcept === 'net') {
       netNode += 1
-    } else if (nodeConcept === 'data') {
-      dataNode += 1
+    } else if (nodeConcept === 'information') {
+      informationNode += 1
     } else if (nodeConcept === 'asset') {
       assetNode += 1
     } else if (nodeConcept === 'threat') {
@@ -66,7 +66,7 @@ module.exports = function overview (cy) {
   result = `${result}thing nodes: ${thingNode}\n`
   result = `${result}micronet nodes: ${micronetNode}\n`
   result = `${result}net nodes: ${netNode}\n`
-  result = `${result}data nodes: ${dataNode}\n`
+  result = `${result}data nodes: ${informationNode}\n`
   result = `${result}asset nodes: ${assetNode}\n`
   result = `${result}threat nodes: ${threatNode}\n`
   result = `${result}constraint nodes: ${constraintNode}\n`

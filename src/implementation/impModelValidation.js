@@ -12,7 +12,7 @@ module.exports = function moduleValidation (cy) {
   const micronetArray = impMetamodel.micronetArray
   const netArray = impMetamodel.netArray
   const undentifiedNodeArray = impMetamodel.undentifiedNodeArray
-  const dataArray = impMetamodel.dataArray
+  const informationArray = impMetamodel.informationArray
   const actorArray = impMetamodel.actorArray
   const maliciousActorArray = impMetamodel.maliciousActorArray
   const assetArray = impMetamodel.assetArray
@@ -57,7 +57,7 @@ module.exports = function moduleValidation (cy) {
   componentValidation(cy, 'micronet', micronetArray)
   componentValidation(cy, 'net', netArray)
   componentValidation(cy, 'unidentified node', undentifiedNodeArray)
-  componentValidation(cy, 'data', dataArray)
+  componentValidation(cy, 'information', informationArray)
   componentValidation(cy, 'actor', actorArray)
   componentValidation(cy, 'malicious actor', maliciousActorArray)
   componentValidation(cy, 'asset', assetArray)

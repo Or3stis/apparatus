@@ -87,7 +87,7 @@ module.exports = function addImpComponent (cy, component) {
         }
       })
       break
-    case 'data':
+    case 'information':
       cy.add({
         group: 'nodes',
         data: {
@@ -96,7 +96,7 @@ module.exports = function addImpComponent (cy, component) {
           info: {
             description: '',
             location: '',
-            concept: 'data'
+            concept: 'information'
           },
           position: {
             x: 200,

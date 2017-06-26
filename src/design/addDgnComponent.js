@@ -44,7 +44,7 @@ module.exports = function addDgnComponent (cy, component) {
         }
       })
       break
-    case 'data':
+    case 'information':
       cy.add({
         group: 'nodes',
         data: {
@@ -52,8 +52,7 @@ module.exports = function addDgnComponent (cy, component) {
           label: `${component}`,
           info: {
             description: '',
-            location: '',
-            concept: 'data'
+            concept: 'information'
           },
           position: {
             x: 200,
@@ -71,23 +70,6 @@ module.exports = function addDgnComponent (cy, component) {
           info: {
             description: '',
             concept: 'net'
-          },
-          position: {
-            x: 200,
-            y: 400
-          }
-        }
-      })
-      break
-    case 'unidentified node':
-      cy.add({
-        group: 'nodes',
-        data: {
-          id: `n${lastNode}`,
-          label: `${component}`,
-          info: {
-            description: '',
-            concept: 'unidentified node'
           },
           position: {
             x: 200,

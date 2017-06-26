@@ -36,7 +36,7 @@ module.exports = function overview (cy) {
   let applicationNode = 0
   let netNode = 0
   let unidentifiedNode = 0
-  let dataNode = 0
+  let informationNode = 0
   let assetNode = 0
   let threatNode = 0
   let vulnNode = 0
@@ -50,8 +50,8 @@ module.exports = function overview (cy) {
       deviceNode += 1
     } else if (nodeConcept === 'application') {
       applicationNode += 1
-    } else if (nodeConcept === 'data') {
-      dataNode += 1
+    } else if (nodeConcept === 'information') {
+      informationNode += 1
     } else if (nodeConcept === 'network connection') {
       connectionNode += 1
     } else if (nodeConcept === 'micronet') {
@@ -83,7 +83,7 @@ module.exports = function overview (cy) {
   result = `${result}network connection nodes: ${connectionNode}\n`
   result = `${result}micronet nodes: ${micronetNode}\n`
   result = `${result}net nodes: ${netNode}\n`
-  result = `${result}data nodes: ${dataNode}\n`
+  result = `${result}data nodes: ${informationNode}\n`
   result = `${result}unidentified nodes: ${unidentifiedNode}\n`
   result = `${result}asset nodes: ${assetNode}\n`
   result = `${result}threat nodes: ${threatNode}\n`

@@ -51,7 +51,7 @@ module.exports = function addDgnComponent (cy, component) {
             description: '',
             trigger: '',
             constraint: '',
-            concept: 'evnet'
+            concept: 'event'
           },
           position: {
             x: 200,

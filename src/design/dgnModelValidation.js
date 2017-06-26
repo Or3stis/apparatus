@@ -9,7 +9,7 @@ module.exports = function moduleValidation (cy) {
   const thingArray = dgnMetamodel.thingArray
   const micronetArray = dgnMetamodel.micronetArray
   const netArray = dgnMetamodel.netArray
-  const dataArray = dgnMetamodel.dataArray
+  const informationArray = dgnMetamodel.informationArray
   const actorArray = dgnMetamodel.actorArray
   const assetArray = dgnMetamodel.assetArray
   const constraintArray = dgnMetamodel.constraintArray
@@ -48,7 +48,7 @@ module.exports = function moduleValidation (cy) {
   componentValidation(cy, 'thing', thingArray)
   componentValidation(cy, 'micronet', micronetArray)
   componentValidation(cy, 'net', netArray)
-  componentValidation(cy, 'data', dataArray)
+  componentValidation(cy, 'information', informationArray)
   componentValidation(cy, 'actor', actorArray)
   componentValidation(cy, 'asset', assetArray)
   componentValidation(cy, 'constraint', constraintArray)
