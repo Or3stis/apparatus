@@ -66,6 +66,7 @@ let targetNode = ''
 
 // do stuff when tapping on node
 cy.on('tap', 'node', (selection) => {
+  console.log(selection)
   // removes previous selections
   cy.elements().removeClass('selection')
   cy.elements().removeClass('attention')
@@ -100,6 +101,10 @@ cy.on('tap', (selection) => {
     document.getElementById('selection-id').selectedIndex = ''
     totalNodes(cy) // global module
   }
+})
+// right clicking
+cy.on('cxttapend', 'node', (event) => {
+  console.log('right clicking')
 })
 // do stuff when hovering over a node
 cy.on('mouseover', 'node', (event) => {
