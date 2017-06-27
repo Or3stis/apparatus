@@ -54,6 +54,7 @@ const formNode = (selectedNode) => {
   htmlElement.appendChild(form)
 
   const idForm = document.getElementById('form-id')
+  // idForm.focus()
   // capture the changed values of the node
   idForm.onsubmit = () => {
     inputIds.map((keyValue) => {
@@ -65,6 +66,8 @@ const formNode = (selectedNode) => {
     // return false to prevent the default form behavior
     return false
   }
+  // focus on the description attribute of the form
+  document.getElementById('description').focus()
 }
 
 module.exports = {

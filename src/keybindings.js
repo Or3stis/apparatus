@@ -10,6 +10,7 @@ module.exports = function keyboard (cy, toggleUI) {
   const helpMenu = `• help: for options\n
   • alt + e: add an edge\n
   • backspace: delete node/edge\n
+  • meta + z: to undo last action\n
   • alt + h: toggle UI\n
   • meta + l: focus on console\n
   • search for attributes\n`
@@ -69,9 +70,9 @@ module.exports = function keyboard (cy, toggleUI) {
     if (event.altKey === true && event.code === 'KeyE') {
       addEdge(cy, sourceNode, targetNode)
     }
-    // restore elements with meta + u
+    // restore elements with meta + z
     // BUG only restores the last node
-    if (event.metaKey === true && event.code === 'KeyU') {
+    if (event.metaKey === true && event.code === 'KeyZ') {
       selectedNode.restore()
     }
 
