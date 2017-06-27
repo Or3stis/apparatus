@@ -20,19 +20,19 @@ module.exports = function keyboard (cy, toggleUI) {
     selectedEdge = ''
     sourceNode = targetNode // second selection
     targetNode = selectedNode.data().id
-    // loses the focus from the consoel when tapping a node
+    // loses the focus from the console when tapping a node
     consoleId.blur()
   })
   let selectedEdge = ''
   cy.on('tap', 'edge', (selection) => {
     selectedEdge = selection.target[0]
     selectedNode = ''
-    // loses the focus from the consoel when tapping an edge
+    // loses the focus from the console when tapping an edge
     consoleId.blur()
   })
   // empties the selection values when clicking the graph
   cy.on('tap', (selection) => {
-    // loses the focus from the consoel when tapping the stage
+    // loses the focus from the console when tapping the stage
     consoleId.blur()
     if (selection.target === cy) {
       selectedEdge = ''
