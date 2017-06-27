@@ -24,21 +24,23 @@ const formNode = (selectedNode) => {
 
   const nodeData = selectedNode.data().info
   Object.keys(nodeData).map((key) => {
-    label = document.createElement('label')
-    input = document.createElement('input')
-    input.className = 'input-form'
-    // create an key-based id
-    input.id = key
-    input.type = 'text'
-    input.name = 'nodeValue'
-    input.value = nodeData[key]
+    if (key !== 'concept') {
+      label = document.createElement('label')
+      input = document.createElement('input')
+      input.className = 'input-form'
+      // create an key-based id
+      input.id = key
+      input.type = 'text'
+      input.name = 'nodeValue'
+      input.value = nodeData[key]
 
-    label.setAttribute('for', key)
-    label.textContent = `${key}: `
-    form.appendChild(label)
-    form.appendChild(input)
-    // store the keys to later render them dynamically
-    inputIds.push(key)
+      label.setAttribute('for', key)
+      label.textContent = `${key}: `
+      form.appendChild(label)
+      form.appendChild(input)
+      // store the keys to later render them dynamically
+      inputIds.push(key)
+    }
   })
 
   // create a submit button
