@@ -7,13 +7,7 @@ const addEdge = require('./addEdge.js')
 
 module.exports = function keyboard (cy, toggleUI) {
   // help menu
-  const helpMenu = `• help: for options\n
-  • alt + e: add an edge\n
-  • backspace: delete node/edge\n
-  • meta + z: to undo last action\n
-  • alt + h: toggle UI\n
-  • meta + l: focus on console\n
-  • search for attributes\n`
+  const helpMenu = '• help: for options\n• alt + e: add an edge\n• backspace: delete node/edge\n• meta + z: to undo last action\n• alt + h: toggle UI\n• meta + l: focus on console\n• search for attributes\n'
 
   const consoleId = document.getElementById('console-id')
 
