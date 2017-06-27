@@ -100,12 +100,13 @@ cy.on('tap', (selection) => {
     document.getElementById('module-group').selectedIndex = ''
     document.getElementById('selection-id').selectedIndex = ''
     totalNodes(cy) // global module
+    editNode.removeNode() // remove the form element
   }
 })
 // right clicking
 cy.on('cxttapend', 'node', (selection) => {
   selectedNode = selection.target[0]
-  editNode(selectedNode) // global module
+  editNode.formNode(selectedNode) // global module
 })
 // do stuff when hovering over a node
 cy.on('mouseover', 'node', (event) => {
@@ -350,71 +351,9 @@ buttonLoad.addEventListener('click', () => {
 const buttonTest = document.getElementById('test-button')
 buttonTest.addEventListener('click', () => {
   // test code goes here
-  // const test = selectedNode.data().info['description'] = 'test1'
-  // console.log(test)
-
-  const htmlElement = document.getElementById('info-nodes-id')
-  const form = document.createElement('form')
-  form.id = 'form-id'
-
-  let label = ''
-  let input = ''
-  let inputIds = []
-
-  const nodeData = selectedNode.data().info
-  Object.keys(nodeData).map((key) => {
-    label = document.createElement('label')
-    input = document.createElement('input')
-    input.id = key
-    input.type = 'text'
-    input.name = 'nodeValue'
-
-    label.setAttribute('for', key)
-    label.textContent = `${key}: `
-    form.appendChild(label)
-    form.appendChild(input)
-    // // adds the keys of the object to the string
-    // if (nodeData.hasOwnProperty(i)) {
-    //   nodeInfo += `• ${i}: `
-    // }
-    // // adds the values of the object to the string
-    // nodeInfo += `${nodeData[i]}\n`
-    inputIds.push(key)
-  })
-  console.log(inputIds)
-
-  // const result = document.createTextNode('name: ')
-
-  // const label = document.createElement('label')
-  // const input = document.createElement('input')
-  // input.id = 'input-id'
-  // input.type = 'text'
-  // input.name = 'user_name'
-  // input.id = 'user_name1'
-  //
-  // label.setAttribute('for', 'input-id')
-  // label.textContent = 'name: '
-  // form.appendChild(label)
-  // input.appendChild(result)
-
-  // create a button
-  const submit = document.createElement('input')
-  submit.type = 'submit'
-  submit.value = 'Submit'
-
-  // add all elements to the form
-  // form.appendChild(input)
-  form.appendChild(submit)
-  htmlElement.appendChild(form)
-  document.getElementById('form-id').onsubmit = () => {
-    inputIds.map((key) => {
-      let id = document.getElementById(key)
-      console.log(id.value)
-      selectedNode.data().info[key] = id.value
-    })
-    // You must return false to prevent the default form behavior
-    return false
-  }
+  const cont = document.getElementById('info-nodes-id')
+  const fo = document.getElementById('form-id')
+  cont.removeChild(fo)
 })
 
 // highlights only the selected node class

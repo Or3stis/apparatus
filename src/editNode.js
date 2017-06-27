@@ -2,9 +2,15 @@
 
 // dynamically edit nodes
 
-// const printChat = require('./printChat.js')
+// remove the created form element
+const removeNode = () => {
+  const parentEl = document.getElementById('info-nodes-id')
+  const formEl = document.getElementById('form-id')
+  parentEl.removeChild(formEl)
+}
 
-module.exports = function editNode (selectedNode) {
+// create the form element
+const formNode = (selectedNode) => {
   const htmlElement = document.getElementById('info-nodes-id')
   const form = document.createElement('form')
   form.className = 'bubble'
@@ -49,7 +55,14 @@ module.exports = function editNode (selectedNode) {
       let id = document.getElementById(keyValue)
       selectedNode.data().info[keyValue] = id.value
     })
+    // to remove it
+    removeNode()
     // You must return false to prevent the default form behavior
     return false
   }
+}
+
+module.exports = {
+  removeNode: removeNode,
+  formNode: formNode
 }
