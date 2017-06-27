@@ -24,6 +24,7 @@ const formNode = (selectedNode) => {
 
   const nodeData = selectedNode.data().info
   Object.keys(nodeData).map((key) => {
+    // won't display the concept attribute
     if (key !== 'concept') {
       label = document.createElement('label')
       input = document.createElement('input')
@@ -61,7 +62,7 @@ const formNode = (selectedNode) => {
     })
     // to remove it
     removeNode()
-    // You must return false to prevent the default form behavior
+    // return false to prevent the default form behavior
     return false
   }
 }

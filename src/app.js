@@ -6,7 +6,7 @@ const path = require('path')
 // require global moduless
 const nodeInfo = require('./src/nodeInfo.js')
 const hoverNodeInfo = require('./src/hoverNodeInfo.js')
-const flagNodes = require('./src/flagNodes.js')
+const patterns = require('./src/patterns.js')
 const moduleSelection = require('./src/moduleSelection.js')
 const nodeSelection = require('./src/nodeSelection.js')
 const threatVerification = require('./src/threatVerification.js')
@@ -206,10 +206,10 @@ if (pathLocation === dgnPath) {
   buttonFindVuln.addEventListener('click', () => {
     findVulns(cy) // imp module
   })
-  // flag nodes based on specific attributes
-  const buttonFlag = document.getElementById('flag-button')
-  buttonFlag.addEventListener('click', () => {
-    flagNodes(cy) // global module
+  // locate patterns based on specific attributes
+  const buttonPattern = document.getElementById('pattern-button')
+  buttonPattern.addEventListener('click', () => {
+    patterns(cy) // global module
   })
   // verify threats
   const buttonThreatVefiry = document.getElementById('threat-verify-button')

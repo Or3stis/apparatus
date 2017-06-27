@@ -1,9 +1,9 @@
 'use strict'
 const printChat = require('./printChat.js')
 
-module.exports = function securityHints (cy) {
+module.exports = function patterns (cy) {
   // flagged attributes
-  const flaggedList = ['wireless', 'perception']
+  const pattern = ['wireless', 'perception']
   let flaggedNodes = ''
 
   // apply the faded class to all the elements
@@ -13,7 +13,7 @@ module.exports = function securityHints (cy) {
   cy.nodes().map((node) => {
     const nodeData = node.data().info
     Object.keys(nodeData).map((value) => {
-      flaggedList.map((i) => {
+      pattern.map((i) => {
         if (nodeData[value] === i) {
           flaggedNodes += `• ${node.data().label} -> ${i}\n`
           // remove faded class from the search nodes
