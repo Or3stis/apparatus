@@ -15,6 +15,7 @@ const addEdge = require('./src/addEdge.js')
 const totalNodes = require('./src/totalNodes.js')
 const save = require('./src/save.js')
 const load = require('./src/load.js')
+const editNode = require('./src/editNode.js')
 
 // require design modules
 const dgnModelValidation = require('./src/design/dgnModelValidation.js')
@@ -102,8 +103,9 @@ cy.on('tap', (selection) => {
   }
 })
 // right clicking
-cy.on('cxttapend', 'node', (event) => {
-  console.log('right clicking')
+cy.on('cxttapend', 'node', (selection) => {
+  selectedNode = selection.target[0]
+  editNode(selectedNode) // global module
 })
 // do stuff when hovering over a node
 cy.on('mouseover', 'node', (event) => {
@@ -121,6 +123,8 @@ const dgnStatePath = 'design-state.html'
 const impPath = 'implementation.html'
 const impStatePath = 'implementation-state.html'
 
+// store the last word of the window path to make it cross plaform
+// blame chromium and its Posix paths on windows for this ugliness
 const pathLocation = (window.location.pathname).split('/').pop()
 
 // here we load the buttons for each phase
@@ -346,6 +350,71 @@ buttonLoad.addEventListener('click', () => {
 const buttonTest = document.getElementById('test-button')
 buttonTest.addEventListener('click', () => {
   // test code goes here
+  // const test = selectedNode.data().info['description'] = 'test1'
+  // console.log(test)
+
+  const htmlElement = document.getElementById('info-nodes-id')
+  const form = document.createElement('form')
+  form.id = 'form-id'
+
+  let label = ''
+  let input = ''
+  let inputIds = []
+
+  const nodeData = selectedNode.data().info
+  Object.keys(nodeData).map((key) => {
+    label = document.createElement('label')
+    input = document.createElement('input')
+    input.id = key
+    input.type = 'text'
+    input.name = 'nodeValue'
+
+    label.setAttribute('for', key)
+    label.textContent = `${key}: `
+    form.appendChild(label)
+    form.appendChild(input)
+    // // adds the keys of the object to the string
+    // if (nodeData.hasOwnProperty(i)) {
+    //   nodeInfo += `• ${i}: `
+    // }
+    // // adds the values of the object to the string
+    // nodeInfo += `${nodeData[i]}\n`
+    inputIds.push(key)
+  })
+  console.log(inputIds)
+
+  // const result = document.createTextNode('name: ')
+
+  // const label = document.createElement('label')
+  // const input = document.createElement('input')
+  // input.id = 'input-id'
+  // input.type = 'text'
+  // input.name = 'user_name'
+  // input.id = 'user_name1'
+  //
+  // label.setAttribute('for', 'input-id')
+  // label.textContent = 'name: '
+  // form.appendChild(label)
+  // input.appendChild(result)
+
+  // create a button
+  const submit = document.createElement('input')
+  submit.type = 'submit'
+  submit.value = 'Submit'
+
+  // add all elements to the form
+  // form.appendChild(input)
+  form.appendChild(submit)
+  htmlElement.appendChild(form)
+  document.getElementById('form-id').onsubmit = () => {
+    inputIds.map((key) => {
+      let id = document.getElementById(key)
+      console.log(id.value)
+      selectedNode.data().info[key] = id.value
+    })
+    // You must return false to prevent the default form behavior
+    return false
+  }
 })
 
 // highlights only the selected node class
