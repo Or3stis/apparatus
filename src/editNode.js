@@ -6,7 +6,9 @@
 const removeNode = () => {
   const parentEl = document.getElementById('info-nodes-id')
   const formEl = document.getElementById('form-id')
-  parentEl.removeChild(formEl)
+  if (formEl !== null) {
+    parentEl.removeChild(formEl)
+  }
 }
 
 // create the form element
