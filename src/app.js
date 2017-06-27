@@ -66,7 +66,6 @@ let targetNode = ''
 
 // do stuff when tapping on node
 cy.on('tap', 'node', (selection) => {
-  console.log(selection)
   // removes previous selections
   cy.elements().removeClass('selection')
   cy.elements().removeClass('attention')
