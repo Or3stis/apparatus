@@ -117,15 +117,17 @@ cy.on('mouseout', 'node', (event) => {
 })
 
 // create the paths of each phase
-const dgnPath = path.join(__dirname, 'design.html')
-const dgnStatePath = path.join(__dirname, 'design-state.html')
-const impPath = path.join(__dirname, 'implementation.html')
-const impStatePath = path.join(__dirname, 'implementation-state.html')
+const dgnPath = 'design.html'
+const dgnStatePath = 'design-state.html'
+const impPath = 'implementation.html'
+const impStatePath = 'implementation-state.html'
+
+const pathLocation = (window.location.pathname).split('/').pop()
 
 // here we load the buttons for each phase
 
 // load design phase buttons
-if (window.location.pathname === dgnPath) {
+if (pathLocation === dgnPath) {
   // validate the model
   const buttonModelValidate = document.getElementById('model-validate-button')
   buttonModelValidate.addEventListener('click', () => {
@@ -157,7 +159,7 @@ if (window.location.pathname === dgnPath) {
     // document.getElementById('module-group').selectedIndex = ''
   })
   // load design-state buttons
-} else if (window.location.pathname === dgnStatePath) {
+} else if (pathLocation === dgnStatePath) {
   // validate model
   const buttonModelValidate = document.getElementById('model-validate-button')
   buttonModelValidate.addEventListener('click', () => {
@@ -177,7 +179,7 @@ if (window.location.pathname === dgnPath) {
     totalNodes(cy) // global module
   })
   // loads implementation phase buttons
-} else if (window.location.pathname === impPath) {
+} else if (pathLocation === impPath) {
   // validate model
   const buttonModelValidate = document.getElementById('model-validate-button')
   buttonModelValidate.addEventListener('click', () => {
@@ -224,7 +226,7 @@ if (window.location.pathname === dgnPath) {
     // document.getElementById('module-group').selectedIndex = ''
   })
   // loads implementation-state buttons
-} else if (window.location.pathname === impStatePath) {
+} else if (pathLocation === impStatePath) {
   // validate model
   const buttonModelValidate = document.getElementById('model-validate-button')
   buttonModelValidate.addEventListener('click', () => {
