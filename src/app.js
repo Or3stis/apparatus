@@ -77,7 +77,7 @@ cy.on('tap', 'node', (selection) => {
   sourceNode = targetNode // second selection
   targetNode = selectedNode.data().id
   totalNodes(cy) // global module
-  editNode.removeNode() // remove the form element
+  editNode.removeElement() // remove the form element
 })
 // do stuff when tapping on an edge
 cy.on('tap', 'edge', (selection) => {
@@ -88,7 +88,7 @@ cy.on('tap', 'edge', (selection) => {
   selection.target.addClass('selection')
   selectedEdge = selection.target[0]
   totalNodes(cy) // global module
-  editNode.removeNode() // remove the form element
+  editNode.removeElement() // remove the form element
 })
 // do stuff when tapping the stage
 cy.on('tap', (selection) => {
@@ -102,7 +102,7 @@ cy.on('tap', (selection) => {
     document.getElementById('module-group').selectedIndex = ''
     document.getElementById('selection-id').selectedIndex = ''
     totalNodes(cy) // global module
-    editNode.removeNode() // remove the form element
+    editNode.removeElement() // remove the form element
   }
 })
 // right clicking
