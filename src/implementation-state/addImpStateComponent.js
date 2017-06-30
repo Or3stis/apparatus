@@ -75,7 +75,7 @@ module.exports = function addImpComponent (cy, component) {
         }
       })
       break
-    case 'event':
+    case 'high-level event':
       cy.add({
         group: 'nodes',
         data: {
@@ -85,7 +85,26 @@ module.exports = function addImpComponent (cy, component) {
             description: '',
             trigger: '',
             constraint: '',
-            concept: 'evnet'
+            concept: 'high-level event'
+          },
+          position: {
+            x: 200,
+            y: 400
+          }
+        }
+      })
+      break
+    case 'low-level event':
+      cy.add({
+        group: 'nodes',
+        data: {
+          id: `n${lastNode}`,
+          label: `${component}`,
+          info: {
+            description: '',
+            trigger: '',
+            mechanism: '',
+            concept: 'low-level event'
           },
           position: {
             x: 200,
