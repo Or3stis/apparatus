@@ -6,7 +6,7 @@ module.exports = function addComponent (cy, srcNode, tgtNode) {
   cy.add({
     group: 'edges',
     data: {
-      id: `${srcNode}${tgtNode}`,
+      id: `e${srcNode}${tgtNode}`,
       source: `${srcNode}`,
       target: `${tgtNode}`
     }

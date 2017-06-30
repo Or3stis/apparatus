@@ -21,6 +21,7 @@ const editNode = require('./src/editNode.js')
 const dgnModelValidation = require('./src/design/dgnModelValidation.js')
 const dgnOverview = require('./src/design/dgnOverview.js')
 const addDgnComponent = require('./src/design/addDgnComponent.js')
+const addDgnEdge = require('./src/design/addDgnEdge.js')
 
 // require design-state Models
 const dgnStateModelValidation = require('./src/design-state/dgnStateModelValidation.js')
@@ -42,7 +43,7 @@ const addImpStateComponent = require('./src/implementation-state/addImpStateComp
 // configuration for the graphs style
 const graphStyle = require(`./style/graphStyle.js`)
 // require the initial graph file
-let graphModel = require(`./graphs/implementation/smartHome.js`)
+let graphModel = require(`./graphs/system0.js`)
 
 // setting up the graph container
 let cy = cytoscape({
@@ -62,8 +63,8 @@ let selectedNode = ''
 let selectedEdge = ''
 let srcNode = ''
 let trgNode = ''
-let srcNodeConcept = ''
-let trgNodeConcept = ''
+let srcNodeCpt = ''
+let trgNodeCpt = ''
 
 // cy.on does stuff when intrecting with the graph
 
@@ -78,8 +79,8 @@ cy.on('tap', 'node', (selection) => {
   selectedNode.addClass('selection')
   srcNode = trgNode // second selection
   trgNode = selectedNode.data().id
-  srcNodeConcept = trgNodeConcept // second selection
-  trgNodeConcept = selectedNode.data().label
+  srcNodeCpt = trgNodeCpt // second selection
+  trgNodeCpt = selectedNode.data().info.concept
   totalNodes(cy) // global module
   editNode.removeElement() // remove the form element
 })
@@ -141,7 +142,7 @@ if (pathLocation === dgnPath) {
   // add design edges
   const buttonAddEdge = document.getElementById('add-edge')
   buttonAddEdge.addEventListener('click', () => {
-    addEdge(cy, srcNode, trgNode, srcNodeConcept, trgNodeConcept) // global module
+    addDgnEdge(cy, srcNode, trgNode, srcNodeCpt, trgNodeCpt) // design module
     totalNodes(cy)
   })
   // validate the model
