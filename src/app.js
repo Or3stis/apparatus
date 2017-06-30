@@ -11,7 +11,6 @@ const moduleSelection = require('./src/moduleSelection.js')
 const nodeSelection = require('./src/nodeSelection.js')
 const threatVerification = require('./src/threatVerification.js')
 const keybindings = require('./src/keybindings.js')
-const addEdge = require('./src/addEdge.js')
 const totalNodes = require('./src/totalNodes.js')
 const save = require('./src/save.js')
 const load = require('./src/load.js')
@@ -41,11 +40,12 @@ const addImpEdge = require('./src/implementation/addImpEdge.js')
 const impStateModelValidation = require('./src/implementation-state/impStateModelValidation.js')
 const impStateOverview = require('./src/implementation-state/impStateOverview.js')
 const addImpStateComponent = require('./src/implementation-state/addImpStateComponent.js')
+const addImpStateEdge = require('./src/implementation-state/addImpStateEdge.js')
 
 // configuration for the graphs style
 const graphStyle = require(`./style/graphStyle.js`)
 // require the initial graph file
-let graphModel = require(`./graphs/system0.js`)
+let graphModel = require(`./graphs/implementation/smartHome.js`)
 
 // setting up the graph container
 let cy = cytoscape({
@@ -261,7 +261,7 @@ if (pathLocation === dgnPath) {
   // add generic edges
   const buttonAddEdge = document.getElementById('add-edge')
   buttonAddEdge.addEventListener('click', () => {
-    addEdge(cy, srcNode, trgNode) // global module
+    addImpStateEdge(cy, srcNode, trgNode, srcNodeCpt, trgNodeCpt) // imp-state module
     totalNodes(cy)
   })
   // validate model
@@ -292,11 +292,6 @@ buttonDeleteNode.addEventListener('click', () => {
   selectedNode.remove()
   totalNodes(cy) // global module
 })
-// const buttonAddEdge = document.getElementById('add-edge')
-// buttonAddEdge.addEventListener('click', () => {
-//   addEdge(cy, srcNode, trgNode) // global module
-//   totalNodes(cy)
-// })
 const buttonDeleteEdge = document.getElementById('delete-edge')
 buttonDeleteEdge.addEventListener('click', () => {
   selectedEdge.remove()
@@ -384,9 +379,6 @@ buttonLoad.addEventListener('click', () => {
 const buttonTest = document.getElementById('test-button')
 buttonTest.addEventListener('click', () => {
   // test code goes here
-  const cont = document.getElementById('info-nodes-id')
-  const fo = document.getElementById('form-id')
-  cont.removeChild(fo)
 })
 
 // highlights only the selected node class
