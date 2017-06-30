@@ -35,6 +35,7 @@ const vulnVerification = require('./src/implementation/vulnVerification.js')
 const findVulns = require('./src/implementation/findVulns.js')
 const impOverview = require('./src/implementation/impOverview.js')
 const addImpComponent = require('./src/implementation/addImpComponent.js')
+const addImpEdge = require('./src/implementation/addImpEdge.js')
 
 // require implementation-state modules
 const impStateModelValidation = require('./src/implementation-state/impStateModelValidation.js')
@@ -207,7 +208,7 @@ if (pathLocation === dgnPath) {
   // add generic edges
   const buttonAddEdge = document.getElementById('add-edge')
   buttonAddEdge.addEventListener('click', () => {
-    addEdge(cy, srcNode, trgNode) // global module
+    addImpEdge(cy, srcNode, trgNode, srcNodeCpt, trgNodeCpt) // global module
     totalNodes(cy)
   })
   // validate model
