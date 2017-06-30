@@ -61,9 +61,9 @@ cy.layout({
 let selectedNode = ''
 let selectedEdge = ''
 let srcNode = ''
-let tgtNode = ''
+let trgNode = ''
 let srcNodeConcept = ''
-let tgtNodeConcept = ''
+let trgNodeConcept = ''
 
 // cy.on does stuff when intrecting with the graph
 
@@ -76,10 +76,10 @@ cy.on('tap', 'node', (selection) => {
   selectedNode = selection.target[0]
   nodeInfo(selectedNode) // global module
   selectedNode.addClass('selection')
-  srcNode = tgtNode // second selection
-  tgtNode = selectedNode.data().id
-  srcNodeConcept = tgtNodeConcept // second selection
-  tgtNodeConcept = selectedNode.data().label
+  srcNode = trgNode // second selection
+  trgNode = selectedNode.data().id
+  srcNodeConcept = trgNodeConcept // second selection
+  trgNodeConcept = selectedNode.data().label
   totalNodes(cy) // global module
   editNode.removeElement() // remove the form element
 })
@@ -141,7 +141,7 @@ if (pathLocation === dgnPath) {
   // add design edges
   const buttonAddEdge = document.getElementById('add-edge')
   buttonAddEdge.addEventListener('click', () => {
-    addEdge(cy, srcNode, tgtNode, srcNodeConcept, tgtNodeConcept) // global module
+    addEdge(cy, srcNode, trgNode, srcNodeConcept, trgNodeConcept) // global module
     totalNodes(cy)
   })
   // validate the model
@@ -179,7 +179,7 @@ if (pathLocation === dgnPath) {
   // add generic edges
   const buttonAddEdge = document.getElementById('add-edge')
   buttonAddEdge.addEventListener('click', () => {
-    addEdge(cy, srcNode, tgtNode) // global module
+    addEdge(cy, srcNode, trgNode) // global module
     totalNodes(cy)
   })
   // validate model
@@ -205,7 +205,7 @@ if (pathLocation === dgnPath) {
   // add generic edges
   const buttonAddEdge = document.getElementById('add-edge')
   buttonAddEdge.addEventListener('click', () => {
-    addEdge(cy, srcNode, tgtNode) // global module
+    addEdge(cy, srcNode, trgNode) // global module
     totalNodes(cy)
   })
   // validate model
@@ -258,7 +258,7 @@ if (pathLocation === dgnPath) {
   // add generic edges
   const buttonAddEdge = document.getElementById('add-edge')
   buttonAddEdge.addEventListener('click', () => {
-    addEdge(cy, srcNode, tgtNode) // global module
+    addEdge(cy, srcNode, trgNode) // global module
     totalNodes(cy)
   })
   // validate model
@@ -291,7 +291,7 @@ buttonDeleteNode.addEventListener('click', () => {
 })
 // const buttonAddEdge = document.getElementById('add-edge')
 // buttonAddEdge.addEventListener('click', () => {
-//   addEdge(cy, srcNode, tgtNode) // global module
+//   addEdge(cy, srcNode, trgNode) // global module
 //   totalNodes(cy)
 // })
 const buttonDeleteEdge = document.getElementById('delete-edge')
