@@ -154,15 +154,6 @@ module.exports = function addComponent (cy, srcNode, trgNode, srcNodeCpt, trgNod
       }
     })
   } else {
-    cy.add({
-      group: 'edges',
-      data: {
-        id: `e${srcNode}${trgNode}`,
-        source: `${srcNode}`,
-        target: `${trgNode}`,
-        label: 'mistake 😔'
-      }
-    })
+    printChat('mistake 😔')
   }
-  printChat('edge added')
 }
