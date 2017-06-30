@@ -2,167 +2,51 @@
 
 const printChat = require('../printChat.js')
 
+const addEdge = (cy, srcNode, trgNode, srcNodeCpt, trgNodeCp, label) => {
+  cy.add({
+    group: 'edges',
+    data: {
+      id: `e${srcNode}${trgNode}`,
+      source: `${srcNode}`,
+      target: `${trgNode}`,
+      label: `${label}`
+    }
+  })
+}
+
 module.exports = function addComponent (cy, srcNode, trgNode, srcNodeCpt, trgNodeCpt) {
   if (srcNodeCpt === 'net' && trgNodeCpt === 'micronet') {
-    cy.add({
-      group: 'edges',
-      data: {
-        id: `e${srcNode}${trgNode}`,
-        source: `${srcNode}`,
-        target: `${trgNode}`,
-        label: 'requests'
-      }
-    })
+    addEdge(cy, srcNode, trgNode, srcNodeCpt, trgNodeCpt, 'requests')
   } else if (srcNodeCpt === 'thing' && trgNodeCpt === 'micronet') {
-    cy.add({
-      group: 'edges',
-      data: {
-        id: `e${srcNode}${trgNode}`,
-        source: `${srcNode}`,
-        target: `${trgNode}`,
-        label: 'belongs'
-      }
-    })
+    addEdge(cy, srcNode, trgNode, srcNodeCpt, trgNodeCpt, 'belongs')
   } else if (srcNodeCpt === 'thing' && trgNodeCpt === 'thing') {
-    cy.add({
-      group: 'edges',
-      data: {
-        id: `e${srcNode}${trgNode}`,
-        source: `${srcNode}`,
-        target: `${trgNode}`,
-        label: 'connects'
-      }
-    })
+    addEdge(cy, srcNode, trgNode, srcNodeCpt, trgNodeCpt, 'connects')
   } else if (srcNodeCpt === 'thing' && trgNodeCpt === 'information') {
-    cy.add({
-      group: 'edges',
-      data: {
-        id: `e${srcNode}${trgNode}`,
-        source: `${srcNode}`,
-        target: `${trgNode}`,
-        label: 'has'
-      }
-    })
+    addEdge(cy, srcNode, trgNode, srcNodeCpt, trgNodeCpt, 'has')
   } else if (srcNodeCpt === 'constraint' && trgNodeCpt === 'micronet') {
-    cy.add({
-      group: 'edges',
-      data: {
-        id: `e${srcNode}${trgNode}`,
-        source: `${srcNode}`,
-        target: `${trgNode}`,
-        label: 'imposes'
-      }
-    })
+    addEdge(cy, srcNode, trgNode, srcNodeCpt, trgNodeCpt, 'imposes')
   } else if (srcNodeCpt === 'threat' && trgNodeCpt === 'thing') {
-    cy.add({
-      group: 'edges',
-      data: {
-        id: `e${srcNode}${trgNode}`,
-        source: `${srcNode}`,
-        target: `${trgNode}`,
-        label: 'poses'
-      }
-    })
+    addEdge(cy, srcNode, trgNode, srcNodeCpt, trgNodeCpt, 'poses')
   } else if (srcNodeCpt === 'asset' && trgNodeCpt === 'thing') {
-    cy.add({
-      group: 'edges',
-      data: {
-        id: `e${srcNode}${trgNode}`,
-        source: `${srcNode}`,
-        target: `${trgNode}`,
-        label: 'is'
-      }
-    })
+    addEdge(cy, srcNode, trgNode, srcNodeCpt, trgNodeCpt, 'is')
   } else if (srcNodeCpt === 'asset' && trgNodeCpt === 'information') {
-    cy.add({
-      group: 'edges',
-      data: {
-        id: `e${srcNode}${trgNode}`,
-        source: `${srcNode}`,
-        target: `${trgNode}`,
-        label: 'is'
-      }
-    })
+    addEdge(cy, srcNode, trgNode, srcNodeCpt, trgNodeCpt, 'is')
   } else if (srcNodeCpt === 'information' && trgNodeCpt === 'thing') {
-    cy.add({
-      group: 'edges',
-      data: {
-        id: `e${srcNode}${trgNode}`,
-        source: `${srcNode}`,
-        target: `${trgNode}`,
-        label: 'requires'
-      }
-    })
+    addEdge(cy, srcNode, trgNode, srcNodeCpt, trgNodeCpt, 'requires')
   } else if (srcNodeCpt === 'actor' && trgNodeCpt === 'thing') {
-    cy.add({
-      group: 'edges',
-      data: {
-        id: `e${srcNode}${trgNode}`,
-        source: `${srcNode}`,
-        target: `${trgNode}`,
-        label: 'uses'
-      }
-    })
+    addEdge(cy, srcNode, trgNode, srcNodeCpt, trgNodeCpt, 'uses')
   } else if (srcNodeCpt === 'actor' && trgNodeCpt === 'information') {
-    cy.add({
-      group: 'edges',
-      data: {
-        id: `e${srcNode}${trgNode}`,
-        source: `${srcNode}`,
-        target: `${trgNode}`,
-        label: 'knows'
-      }
-    })
+    addEdge(cy, srcNode, trgNode, srcNodeCpt, trgNodeCpt, 'knows')
   } else if (srcNodeCpt === 'thing' && trgNodeCpt === 'net') {
-    cy.add({
-      group: 'edges',
-      data: {
-        id: `e${srcNode}${trgNode}`,
-        source: `${srcNode}`,
-        target: `${trgNode}`,
-        label: 'belongs'
-      }
-    })
+    addEdge(cy, srcNode, trgNode, srcNodeCpt, trgNodeCpt, 'belongs')
   } else if (srcNodeCpt === 'threat' && trgNodeCpt === 'asset') {
-    cy.add({
-      group: 'edges',
-      data: {
-        id: `e${srcNode}${trgNode}`,
-        source: `${srcNode}`,
-        target: `${trgNode}`,
-        label: 'targets'
-      }
-    })
+    addEdge(cy, srcNode, trgNode, srcNodeCpt, trgNodeCpt, 'targets')
   } else if (srcNodeCpt === 'actor' && trgNodeCpt === 'threat') {
-    cy.add({
-      group: 'edges',
-      data: {
-        id: `e${srcNode}${trgNode}`,
-        source: `${srcNode}`,
-        target: `${trgNode}`,
-        label: 'poses'
-      }
-    })
+    addEdge(cy, srcNode, trgNode, srcNodeCpt, trgNodeCpt, 'poses')
   } else if (srcNodeCpt === 'constraint' && trgNodeCpt === 'threat') {
-    cy.add({
-      group: 'edges',
-      data: {
-        id: `e${srcNode}${trgNode}`,
-        source: `${srcNode}`,
-        target: `${trgNode}`,
-        label: 'mitigates'
-      }
-    })
+    addEdge(cy, srcNode, trgNode, srcNodeCpt, trgNodeCpt, 'mitigates')
   } else if (srcNodeCpt === 'micronet' && trgNodeCpt === 'micronet') {
-    cy.add({
-      group: 'edges',
-      data: {
-        id: `e${srcNode}${trgNode}`,
-        source: `${srcNode}`,
-        target: `${trgNode}`,
-        label: 'connects'
-      }
-    })
+    addEdge(cy, srcNode, trgNode, srcNodeCpt, trgNodeCpt, 'connects')
   } else {
     printChat('mistake 😔')
   }
