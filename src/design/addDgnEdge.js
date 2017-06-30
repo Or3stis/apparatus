@@ -153,6 +153,16 @@ module.exports = function addComponent (cy, srcNode, trgNode, srcNodeCpt, trgNod
         label: 'mitigates'
       }
     })
+  } else if (srcNodeCpt === 'micronet' && trgNodeCpt === 'micronet') {
+    cy.add({
+      group: 'edges',
+      data: {
+        id: `e${srcNode}${trgNode}`,
+        source: `${srcNode}`,
+        target: `${trgNode}`,
+        label: 'connects'
+      }
+    })
   } else {
     printChat('mistake 😔')
   }
