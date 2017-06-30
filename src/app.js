@@ -27,6 +27,7 @@ const addDgnEdge = require('./src/design/addDgnEdge.js')
 const dgnStateModelValidation = require('./src/design-state/dgnStateModelValidation.js')
 const dgnStateOverview = require('./src/design-state/dgnStateOverview.js')
 const addDgnStateComponent = require('./src/design-state/addDgnStateComponent.js')
+const addDgnStateEdge = require('./src/design-state/addDgnStateEdge.js')
 
 // reguire implementation modules
 const impModelValidation = require('./src/implementation/impModelValidation.js')
@@ -180,7 +181,7 @@ if (pathLocation === dgnPath) {
   // add generic edges
   const buttonAddEdge = document.getElementById('add-edge')
   buttonAddEdge.addEventListener('click', () => {
-    addEdge(cy, srcNode, trgNode) // global module
+    addDgnStateEdge(cy, srcNode, trgNode, srcNodeCpt, trgNodeCpt) // global module
     totalNodes(cy)
   })
   // validate model
