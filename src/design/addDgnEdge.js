@@ -73,7 +73,7 @@ module.exports = function addComponent (cy, srcNode, trgNode, srcNodeCpt, trgNod
         label: 'is'
       }
     })
-  } else if (srcNodeCpt === 'asset' && trgNodeCpt === 'informatin') {
+  } else if (srcNodeCpt === 'asset' && trgNodeCpt === 'information') {
     cy.add({
       group: 'edges',
       data: {
