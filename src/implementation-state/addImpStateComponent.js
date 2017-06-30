@@ -114,6 +114,6 @@ module.exports = function addImpComponent (cy, component) {
       })
       break
     default:
-      console.error('error in addImpComponent.js')
+      console.error('error in addImpStateComponent.js')
   }
 }
