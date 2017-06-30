@@ -23,16 +23,6 @@ module.exports = function addComponent (cy, srcNode, trgNode, srcNodeCpt, trgNod
         label: 'configuration'
       }
     })
-  } else if (srcNodeCpt === 'event' && trgNodeCpt === 'sensor') {
-    cy.add({
-      group: 'edges',
-      data: {
-        id: `e${srcNode}${trgNode}`,
-        source: `${srcNode}`,
-        target: `${trgNode}`,
-        label: 'affects'
-      }
-    })
   } else if (srcNodeCpt === 'event' && trgNodeCpt === 'model') {
     cy.add({
       group: 'edges',
