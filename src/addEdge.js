@@ -2,13 +2,13 @@
 
 const printChat = require('./printChat.js')
 
-module.exports = function addComponent (cy, sourceNode, targetNode) {
+module.exports = function addComponent (cy, srcNode, tgtNode) {
   cy.add({
     group: 'edges',
     data: {
-      id: `${sourceNode}${targetNode}`,
-      source: `${sourceNode}`,
-      target: `${targetNode}`
+      id: `${srcNode}${tgtNode}`,
+      source: `${srcNode}`,
+      target: `${tgtNode}`
     }
   })
   printChat('edge added')
