@@ -15,7 +15,7 @@ dgnMetamodel.actorArray = ['thing', 'information']
 dgnMetamodel.maliciousActorArray = dgnMetamodel.actorArray.concat('threat')
 dgnMetamodel.assetArray = ['information', 'threat', 'actor', 'thing']
 dgnMetamodel.constraintArray = ['threat', 'micronet']
-dgnMetamodel.threatArray = ['asset', 'actor', 'constraint', 'net']
+dgnMetamodel.threatArray = ['asset', 'malicious actor', 'constraint', 'net']
 dgnMetamodel.sensorArray = ['thing']
 
 module.exports = dgnMetamodel
