@@ -168,8 +168,8 @@ if (pathLocation === dgnPath) {
     threatVerification(cy) // global module
   })
   // add design phase component
-  const add = document.getElementById('add-component-id')
-  add.addEventListener('change', (e) => {
+  const addNode = document.getElementById('add-component-id')
+  addNode.addEventListener('change', (e) => {
     addDgnComponent(cy, e.target.value) // dgn module
     // reset moduleGroup selection
     document.getElementById('add-component-id').selectedIndex = ''
@@ -201,8 +201,8 @@ if (pathLocation === dgnPath) {
     dgnStateOverview(cy) // dgn-state module
   })
   // add design-state component
-  const add = document.getElementById('add-component-id')
-  add.addEventListener('change', (e) => {
+  const addNode = document.getElementById('add-component-id')
+  addNode.addEventListener('change', (e) => {
     addDgnStateComponent(cy, e.target.value) // dgn-state module
     // reset moduleGroup selection
     document.getElementById('add-component-id').selectedIndex = ''
@@ -247,8 +247,8 @@ if (pathLocation === dgnPath) {
     threatVerification(cy) // global module
   })
   // add implementation component
-  const add = document.getElementById('add-component-id')
-  add.addEventListener('change', (e) => {
+  const addNode = document.getElementById('add-component-id')
+  addNode.addEventListener('change', (e) => {
     addImpComponent(cy, e.target.value) // imp module
     // reset moduleGroup selection
     document.getElementById('add-component-id').selectedIndex = ''
@@ -280,8 +280,8 @@ if (pathLocation === dgnPath) {
     impStateOverview(cy) // imp-state module
   })
   // add implementation-state component
-  const add = document.getElementById('add-component-id')
-  add.addEventListener('change', (e) => {
+  const addNode = document.getElementById('add-component-id')
+  addNode.addEventListener('change', (e) => {
     addImpStateComponent(cy, e.target.value) // imp-state module
     // reset moduleGroup selection
     document.getElementById('add-component-id').selectedIndex = ''
