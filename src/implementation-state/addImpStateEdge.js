@@ -15,35 +15,50 @@ const addEdge = (cy, srcNode, trgNode, srcNodeCpt, trgNodeCp, label) => {
 }
 
 module.exports = function addComponent (cy, srcNode, trgNode, srcNodeCpt, trgNodeCpt) {
-  if (srcNodeCpt === 'model' && trgNodeCpt === 'model') {
-    addEdge(cy, srcNode, trgNode, srcNodeCpt, trgNodeCpt, 'configuration')
-  } else if (srcNodeCpt === 'event sensor' && trgNodeCpt === 'model') {
-    addEdge(cy, srcNode, trgNode, srcNodeCpt, trgNodeCpt, 'belongs')
-  } else if (srcNodeCpt === 'event sensor' && trgNodeCpt === 'high-level event') {
-    addEdge(cy, srcNode, trgNode, srcNodeCpt, trgNodeCpt, 'documents')
-  } else if (srcNodeCpt === 'event sensor' && trgNodeCpt === 'low-level event') {
-    addEdge(cy, srcNode, trgNode, srcNodeCpt, trgNodeCpt, 'documents')
-  } else if (srcNodeCpt === 'report sensor' && trgNodeCpt === 'model') {
-    addEdge(cy, srcNode, trgNode, srcNodeCpt, trgNodeCpt, 'belongs')
-  } else if (srcNodeCpt === 'report sensor' && trgNodeCpt === 'high-level event') {
-    addEdge(cy, srcNode, trgNode, srcNodeCpt, trgNodeCpt, 'detects')
-  } else if (srcNodeCpt === 'report sensor' && trgNodeCpt === 'low-level event') {
-    addEdge(cy, srcNode, trgNode, srcNodeCpt, trgNodeCpt, 'detects')
-  } else if (srcNodeCpt === 'report sensor' && trgNodeCpt === 'control sensor') {
-    addEdge(cy, srcNode, trgNode, srcNodeCpt, trgNodeCpt, 'notifies')
-  } else if (srcNodeCpt === 'control sensor' && trgNodeCpt === 'model') {
-    addEdge(cy, srcNode, trgNode, srcNodeCpt, trgNodeCpt, 'belongs')
-  } else if (srcNodeCpt === 'control sensor' && trgNodeCpt === 'event sensor') {
-    addEdge(cy, srcNode, trgNode, srcNodeCpt, trgNodeCpt, 'listens')
-  } else if (srcNodeCpt === 'control sensor' && trgNodeCpt === 'high-level event') {
-    addEdge(cy, srcNode, trgNode, srcNodeCpt, trgNodeCpt, 'detects')
-  } else if (srcNodeCpt === 'control sensor' && trgNodeCpt === 'low-level event') {
-    addEdge(cy, srcNode, trgNode, srcNodeCpt, trgNodeCpt, 'detects')
-  } else if (srcNodeCpt === 'high-level event' && trgNodeCpt === 'model') {
-    addEdge(cy, srcNode, trgNode, srcNodeCpt, trgNodeCpt, 'affects')
-  } else if (srcNodeCpt === 'low-level event' && trgNodeCpt === 'model') {
-    addEdge(cy, srcNode, trgNode, srcNodeCpt, trgNodeCpt, 'affects')
-  } else {
-    printChat('mistake 😔')
+  switch (true) {
+    case (srcNodeCpt === 'model' && trgNodeCpt === 'model'):
+      addEdge(cy, srcNode, trgNode, srcNodeCpt, trgNodeCpt, 'configuration')
+      break
+    case (srcNodeCpt === 'event sensor' && trgNodeCpt === 'model'):
+      addEdge(cy, srcNode, trgNode, srcNodeCpt, trgNodeCpt, 'belongs')
+      break
+    case (srcNodeCpt === 'event sensor' && trgNodeCpt === 'high-level event'):
+      addEdge(cy, srcNode, trgNode, srcNodeCpt, trgNodeCpt, 'documents')
+      break
+    case (srcNodeCpt === 'event sensor' && trgNodeCpt === 'low-level event'):
+      addEdge(cy, srcNode, trgNode, srcNodeCpt, trgNodeCpt, 'documents')
+      break
+    case (srcNodeCpt === 'report sensor' && trgNodeCpt === 'model'):
+      addEdge(cy, srcNode, trgNode, srcNodeCpt, trgNodeCpt, 'belongs')
+      break
+    case (srcNodeCpt === 'report sensor' && trgNodeCpt === 'high-level event'):
+      addEdge(cy, srcNode, trgNode, srcNodeCpt, trgNodeCpt, 'detects')
+      break
+    case (srcNodeCpt === 'report sensor' && trgNodeCpt === 'low-level event'):
+      addEdge(cy, srcNode, trgNode, srcNodeCpt, trgNodeCpt, 'detects')
+      break
+    case (srcNodeCpt === 'report sensor' && trgNodeCpt === 'control sensor'):
+      addEdge(cy, srcNode, trgNode, srcNodeCpt, trgNodeCpt, 'notifies')
+      break
+    case (srcNodeCpt === 'control sensor' && trgNodeCpt === 'model'):
+      addEdge(cy, srcNode, trgNode, srcNodeCpt, trgNodeCpt, 'belongs')
+      break
+    case (srcNodeCpt === 'control sensor' && trgNodeCpt === 'event sensor'):
+      addEdge(cy, srcNode, trgNode, srcNodeCpt, trgNodeCpt, 'listens')
+      break
+    case (srcNodeCpt === 'control sensor' && trgNodeCpt === 'high-level event'):
+      addEdge(cy, srcNode, trgNode, srcNodeCpt, trgNodeCpt, 'detects')
+      break
+    case (srcNodeCpt === 'control sensor' && trgNodeCpt === 'low-level event'):
+      addEdge(cy, srcNode, trgNode, srcNodeCpt, trgNodeCpt, 'detects')
+      break
+    case (srcNodeCpt === 'high-level event' && trgNodeCpt === 'model'):
+      addEdge(cy, srcNode, trgNode, srcNodeCpt, trgNodeCpt, 'affects')
+      break
+    case (srcNodeCpt === 'low-level event' && trgNodeCpt === 'model'):
+      addEdge(cy, srcNode, trgNode, srcNodeCpt, trgNodeCpt, 'affects')
+      break
+    default:
+      printChat('edge not allowed 😔')
   }
 }
