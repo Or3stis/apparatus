@@ -1,15 +1,13 @@
 'use strict'
 
-const printChat = require('./printChat.js')
-
-module.exports = function addComponent (cy, srcNode, tgtNode) {
+module.exports = function addEdge (cy, srcNode, trgNode, srcNodeCpt, trgNodeCp, label) {
   cy.add({
     group: 'edges',
     data: {
-      id: `e${srcNode}${tgtNode}`,
+      id: `e${srcNode}${trgNode}`,
       source: `${srcNode}`,
-      target: `${tgtNode}`
+      target: `${trgNode}`,
+      label: `${label}`
     }
   })
-  printChat('edge added')
 }

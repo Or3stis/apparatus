@@ -1,18 +1,7 @@
 'use strict'
 
 const printChat = require('../printChat.js')
-
-const addEdge = (cy, srcNode, trgNode, srcNodeCpt, trgNodeCp, label) => {
-  cy.add({
-    group: 'edges',
-    data: {
-      id: `e${srcNode}${trgNode}`,
-      source: `${srcNode}`,
-      target: `${trgNode}`,
-      label: `${label}`
-    }
-  })
-}
+const addEdge = require('../addEdge.js')
 
 module.exports = function addComponent (cy, srcNode, trgNode, srcNodeCpt, trgNodeCpt) {
   if (srcNodeCpt === 'micronet' && trgNodeCpt === 'micronet') {
