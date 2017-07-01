@@ -2,437 +2,101 @@
 
 const printChat = require('../printChat.js')
 
+const addEdge = (cy, srcNode, trgNode, srcNodeCpt, trgNodeCp, label) => {
+  cy.add({
+    group: 'edges',
+    data: {
+      id: `e${srcNode}${trgNode}`,
+      source: `${srcNode}`,
+      target: `${trgNode}`,
+      label: `${label}`
+    }
+  })
+}
+
 module.exports = function addComponent (cy, srcNode, trgNode, srcNodeCpt, trgNodeCpt) {
   if (srcNodeCpt === 'micronet' && trgNodeCpt === 'micronet') {
-    cy.add({
-      group: 'edges',
-      data: {
-        id: `e${srcNode}${trgNode}`,
-        source: `${srcNode}`,
-        target: `${trgNode}`,
-        label: 'connects'
-      }
-    })
+    addEdge(cy, srcNode, trgNode, srcNodeCpt, trgNodeCpt, 'connects')
   } else if (srcNodeCpt === 'device' && trgNodeCpt === 'device') {
-    cy.add({
-      group: 'edges',
-      data: {
-        id: `e${srcNode}${trgNode}`,
-        source: `${srcNode}`,
-        target: `${trgNode}`,
-        label: 'composed'
-      }
-    })
+    addEdge(cy, srcNode, trgNode, srcNodeCpt, trgNodeCpt, 'composed')
   } else if (srcNodeCpt === 'device' && trgNodeCpt === 'micronet') {
-    cy.add({
-      group: 'edges',
-      data: {
-        id: `e${srcNode}${trgNode}`,
-        source: `${srcNode}`,
-        target: `${trgNode}`,
-        label: 'belongs'
-      }
-    })
+    addEdge(cy, srcNode, trgNode, srcNodeCpt, trgNodeCpt, 'belongs')
   } else if (srcNodeCpt === 'device' && trgNodeCpt === 'information') {
-    cy.add({
-      group: 'edges',
-      data: {
-        id: `e${srcNode}${trgNode}`,
-        source: `${srcNode}`,
-        target: `${trgNode}`,
-        label: 'has'
-      }
-    })
+    addEdge(cy, srcNode, trgNode, srcNodeCpt, trgNodeCpt, 'has')
   } else if (srcNodeCpt === 'net' && trgNodeCpt === 'micronet') {
-    cy.add({
-      group: 'edges',
-      data: {
-        id: `e${srcNode}${trgNode}`,
-        source: `${srcNode}`,
-        target: `${trgNode}`,
-        label: 'requests'
-      }
-    })
+    addEdge(cy, srcNode, trgNode, srcNodeCpt, trgNodeCpt, 'requests')
   } else if (srcNodeCpt === 'net' && trgNodeCpt === 'threat') {
-    cy.add({
-      group: 'edges',
-      data: {
-        id: `e${srcNode}${trgNode}`,
-        source: `${srcNode}`,
-        target: `${trgNode}`,
-        label: 'poses'
-      }
-    })
+    addEdge(cy, srcNode, trgNode, srcNodeCpt, trgNodeCpt, 'poses')
   } else if (srcNodeCpt === 'unidentified node' && trgNodeCpt === 'net') {
-    cy.add({
-      group: 'edges',
-      data: {
-        id: `e${srcNode}${trgNode}`,
-        source: `${srcNode}`,
-        target: `${trgNode}`,
-        label: 'belongs'
-      }
-    })
+    addEdge(cy, srcNode, trgNode, srcNodeCpt, trgNodeCpt, 'belongs')
   } else if (srcNodeCpt === 'network connection' && trgNodeCpt === 'device') {
-    cy.add({
-      group: 'edges',
-      data: {
-        id: `e${srcNode}${trgNode}`,
-        source: `${srcNode}`,
-        target: `${trgNode}`,
-        label: 'connects'
-      }
-    })
-  } else if (srcNodeCpt === 'network connection' && trgNodeCpt === 'device') {
-    cy.add({
-      group: 'edges',
-      data: {
-        id: `e${srcNode}${trgNode}`,
-        source: `${srcNode}`,
-        target: `${trgNode}`,
-        label: 'connects'
-      }
-    })
+    addEdge(cy, srcNode, trgNode, srcNodeCpt, trgNodeCpt, 'connects')
   } else if (srcNodeCpt === 'network connection' && trgNodeCpt === 'information') {
-    cy.add({
-      group: 'edges',
-      data: {
-        id: `e${srcNode}${trgNode}`,
-        source: `${srcNode}`,
-        target: `${trgNode}`,
-        label: 'has'
-      }
-    })
+    addEdge(cy, srcNode, trgNode, srcNodeCpt, trgNodeCpt, 'has')
   } else if (srcNodeCpt === 'information' && trgNodeCpt === 'device') {
-    cy.add({
-      group: 'edges',
-      data: {
-        id: `e${srcNode}${trgNode}`,
-        source: `${srcNode}`,
-        target: `${trgNode}`,
-        label: 'requires'
-      }
-    })
+    addEdge(cy, srcNode, trgNode, srcNodeCpt, trgNodeCpt, 'requires')
   } else if (srcNodeCpt === 'information' && trgNodeCpt === 'application') {
-    cy.add({
-      group: 'edges',
-      data: {
-        id: `e${srcNode}${trgNode}`,
-        source: `${srcNode}`,
-        target: `${trgNode}`,
-        label: 'requires'
-      }
-    })
+    addEdge(cy, srcNode, trgNode, srcNodeCpt, trgNodeCpt, 'requires')
   } else if (srcNodeCpt === 'application' && trgNodeCpt === 'device') {
-    cy.add({
-      group: 'edges',
-      data: {
-        id: `e${srcNode}${trgNode}`,
-        source: `${srcNode}`,
-        target: `${trgNode}`,
-        label: 'runs'
-      }
-    })
+    addEdge(cy, srcNode, trgNode, srcNodeCpt, trgNodeCpt, 'runs')
   } else if (srcNodeCpt === 'application' && trgNodeCpt === 'information') {
-    cy.add({
-      group: 'edges',
-      data: {
-        id: `e${srcNode}${trgNode}`,
-        source: `${srcNode}`,
-        target: `${trgNode}`,
-        label: 'has'
-      }
-    })
+    addEdge(cy, srcNode, trgNode, srcNodeCpt, trgNodeCpt, 'has')
   } else if (srcNodeCpt === 'actor' && trgNodeCpt === 'application') {
-    cy.add({
-      group: 'edges',
-      data: {
-        id: `e${srcNode}${trgNode}`,
-        source: `${srcNode}`,
-        target: `${trgNode}`,
-        label: 'uses'
-      }
-    })
+    addEdge(cy, srcNode, trgNode, srcNodeCpt, trgNodeCpt, 'uses')
   } else if (srcNodeCpt === 'actor' && trgNodeCpt === 'unidentified node') {
-    cy.add({
-      group: 'edges',
-      data: {
-        id: `e${srcNode}${trgNode}`,
-        source: `${srcNode}`,
-        target: `${trgNode}`,
-        label: 'uses'
-      }
-    })
+    addEdge(cy, srcNode, trgNode, srcNodeCpt, trgNodeCpt, 'uses')
   } else if (srcNodeCpt === 'actor' && trgNodeCpt === 'device') {
-    cy.add({
-      group: 'edges',
-      data: {
-        id: `e${srcNode}${trgNode}`,
-        source: `${srcNode}`,
-        target: `${trgNode}`,
-        label: 'uses'
-      }
-    })
+    addEdge(cy, srcNode, trgNode, srcNodeCpt, trgNodeCpt, 'uses')
   } else if (srcNodeCpt === 'actor' && trgNodeCpt === 'information') {
-    cy.add({
-      group: 'edges',
-      data: {
-        id: `e${srcNode}${trgNode}`,
-        source: `${srcNode}`,
-        target: `${trgNode}`,
-        label: 'knows'
-      }
-    })
+    addEdge(cy, srcNode, trgNode, srcNodeCpt, trgNodeCpt, 'knows')
   } else if (srcNodeCpt === 'malicious actor' && trgNodeCpt === 'application') {
-    cy.add({
-      group: 'edges',
-      data: {
-        id: `e${srcNode}${trgNode}`,
-        source: `${srcNode}`,
-        target: `${trgNode}`,
-        label: 'uses'
-      }
-    })
+    addEdge(cy, srcNode, trgNode, srcNodeCpt, trgNodeCpt, 'uses')
   } else if (srcNodeCpt === 'malicious actor' && trgNodeCpt === 'unidentified node') {
-    cy.add({
-      group: 'edges',
-      data: {
-        id: `e${srcNode}${trgNode}`,
-        source: `${srcNode}`,
-        target: `${trgNode}`,
-        label: 'uses'
-      }
-    })
+    addEdge(cy, srcNode, trgNode, srcNodeCpt, trgNodeCpt, 'uses')
   } else if (srcNodeCpt === 'malicious actor' && trgNodeCpt === 'device') {
-    cy.add({
-      group: 'edges',
-      data: {
-        id: `e${srcNode}${trgNode}`,
-        source: `${srcNode}`,
-        target: `${trgNode}`,
-        label: 'uses'
-      }
-    })
+    addEdge(cy, srcNode, trgNode, srcNodeCpt, trgNodeCpt, 'uses')
   } else if (srcNodeCpt === 'malicious actor' && trgNodeCpt === 'information') {
-    cy.add({
-      group: 'edges',
-      data: {
-        id: `e${srcNode}${trgNode}`,
-        source: `${srcNode}`,
-        target: `${trgNode}`,
-        label: 'knows'
-      }
-    })
+    addEdge(cy, srcNode, trgNode, srcNodeCpt, trgNodeCpt, 'knows')
   } else if (srcNodeCpt === 'malicious actor' && trgNodeCpt === 'threat') {
-    cy.add({
-      group: 'edges',
-      data: {
-        id: `e${srcNode}${trgNode}`,
-        source: `${srcNode}`,
-        target: `${trgNode}`,
-        label: 'poses'
-      }
-    })
+    addEdge(cy, srcNode, trgNode, srcNodeCpt, trgNodeCpt, 'poses')
   } else if (srcNodeCpt === 'application' && trgNodeCpt === 'report sensor') {
-    cy.add({
-      group: 'edges',
-      data: {
-        id: `e${srcNode}${trgNode}`,
-        source: `${srcNode}`,
-        target: `${trgNode}`,
-        label: 'is'
-      }
-    })
+    addEdge(cy, srcNode, trgNode, srcNodeCpt, trgNodeCpt, 'report sensor')
   } else if (srcNodeCpt === 'application' && trgNodeCpt === 'contorl sensor') {
-    cy.add({
-      group: 'edges',
-      data: {
-        id: `e${srcNode}${trgNode}`,
-        source: `${srcNode}`,
-        target: `${trgNode}`,
-        label: 'is'
-      }
-    })
+    addEdge(cy, srcNode, trgNode, srcNodeCpt, trgNodeCpt, 'is')
   } else if (srcNodeCpt === 'application' && trgNodeCpt === 'event sensor') {
-    cy.add({
-      group: 'edges',
-      data: {
-        id: `e${srcNode}${trgNode}`,
-        source: `${srcNode}`,
-        target: `${trgNode}`,
-        label: 'is'
-      }
-    })
+    addEdge(cy, srcNode, trgNode, srcNodeCpt, trgNodeCpt, 'is')
   } else if (srcNodeCpt === 'report sensor' && trgNodeCpt === 'control sensor') {
-    cy.add({
-      group: 'edges',
-      data: {
-        id: `e${srcNode}${trgNode}`,
-        source: `${srcNode}`,
-        target: `${trgNode}`,
-        label: 'notifies'
-      }
-    })
+    addEdge(cy, srcNode, trgNode, srcNodeCpt, trgNodeCpt, 'notifies')
   } else if (srcNodeCpt === 'control sensor' && trgNodeCpt === 'event sensor') {
-    cy.add({
-      group: 'edges',
-      data: {
-        id: `e${srcNode}${trgNode}`,
-        source: `${srcNode}`,
-        target: `${trgNode}`,
-        label: 'listens'
-      }
-    })
+    addEdge(cy, srcNode, trgNode, srcNodeCpt, trgNodeCpt, 'listens')
   } else if (srcNodeCpt === 'control sensor' && trgNodeCpt === 'mechanism') {
-    cy.add({
-      group: 'edges',
-      data: {
-        id: `e${srcNode}${trgNode}`,
-        source: `${srcNode}`,
-        target: `${trgNode}`,
-        label: 'triggers'
-      }
-    })
+    addEdge(cy, srcNode, trgNode, srcNodeCpt, trgNodeCpt, 'triggers')
   } else if (srcNodeCpt === 'constraint' && trgNodeCpt === 'threat') {
-    cy.add({
-      group: 'edges',
-      data: {
-        id: `e${srcNode}${trgNode}`,
-        source: `${srcNode}`,
-        target: `${trgNode}`,
-        label: 'mitigates'
-      }
-    })
+    addEdge(cy, srcNode, trgNode, srcNodeCpt, trgNodeCpt, 'mitigates')
   } else if (srcNodeCpt === 'constraint' && trgNodeCpt === 'micronet') {
-    cy.add({
-      group: 'edges',
-      data: {
-        id: `e${srcNode}${trgNode}`,
-        source: `${srcNode}`,
-        target: `${trgNode}`,
-        label: 'imposes'
-      }
-    })
+    addEdge(cy, srcNode, trgNode, srcNodeCpt, trgNodeCpt, 'imposes')
   } else if (srcNodeCpt === 'mechanism' && trgNodeCpt === 'constraint') {
-    cy.add({
-      group: 'edges',
-      data: {
-        id: `e${srcNode}${trgNode}`,
-        source: `${srcNode}`,
-        target: `${trgNode}`,
-        label: 'satisfies'
-      }
-    })
+    addEdge(cy, srcNode, trgNode, srcNodeCpt, trgNodeCpt, 'satisfies')
   } else if (srcNodeCpt === 'mechanism' && trgNodeCpt === 'vulnerability') {
-    cy.add({
-      group: 'edges',
-      data: {
-        id: `e${srcNode}${trgNode}`,
-        source: `${srcNode}`,
-        target: `${trgNode}`,
-        label: 'protects'
-      }
-    })
-  } else if (srcNodeCpt === 'mechanism' && trgNodeCpt === 'vulnerability') {
-    cy.add({
-      group: 'edges',
-      data: {
-        id: `e${srcNode}${trgNode}`,
-        source: `${srcNode}`,
-        target: `${trgNode}`,
-        label: 'protects'
-      }
-    })
+    addEdge(cy, srcNode, trgNode, srcNodeCpt, trgNodeCpt, 'protects')
   } else if (srcNodeCpt === 'threat' && trgNodeCpt === 'vulnerability') {
-    cy.add({
-      group: 'edges',
-      data: {
-        id: `e${srcNode}${trgNode}`,
-        source: `${srcNode}`,
-        target: `${trgNode}`,
-        label: 'exploits'
-      }
-    })
+    addEdge(cy, srcNode, trgNode, srcNodeCpt, trgNodeCpt, 'exploits')
   } else if (srcNodeCpt === 'threat' && trgNodeCpt === 'asset') {
-    cy.add({
-      group: 'edges',
-      data: {
-        id: `e${srcNode}${trgNode}`,
-        source: `${srcNode}`,
-        target: `${trgNode}`,
-        label: 'targets'
-      }
-    })
+    addEdge(cy, srcNode, trgNode, srcNodeCpt, trgNodeCpt, 'targets')
   } else if (srcNodeCpt === 'vulnerability' && trgNodeCpt === 'micronet') {
-    cy.add({
-      group: 'edges',
-      data: {
-        id: `e${srcNode}${trgNode}`,
-        source: `${srcNode}`,
-        target: `${trgNode}`,
-        label: 'affects'
-      }
-    })
+    addEdge(cy, srcNode, trgNode, srcNodeCpt, trgNodeCpt, 'affects')
   } else if (srcNodeCpt === 'vulnerability' && trgNodeCpt === 'device') {
-    cy.add({
-      group: 'edges',
-      data: {
-        id: `e${srcNode}${trgNode}`,
-        source: `${srcNode}`,
-        target: `${trgNode}`,
-        label: 'affects'
-      }
-    })
+    addEdge(cy, srcNode, trgNode, srcNodeCpt, trgNodeCpt, 'affects')
   } else if (srcNodeCpt === 'vulnerability' && trgNodeCpt === 'network connection') {
-    cy.add({
-      group: 'edges',
-      data: {
-        id: `e${srcNode}${trgNode}`,
-        source: `${srcNode}`,
-        target: `${trgNode}`,
-        label: 'affects'
-      }
-    })
+    addEdge(cy, srcNode, trgNode, srcNodeCpt, trgNodeCpt, 'affects')
   } else if (srcNodeCpt === 'vulnerability' && trgNodeCpt === 'application') {
-    cy.add({
-      group: 'edges',
-      data: {
-        id: `e${srcNode}${trgNode}`,
-        source: `${srcNode}`,
-        target: `${trgNode}`,
-        label: 'affects'
-      }
-    })
+    addEdge(cy, srcNode, trgNode, srcNodeCpt, trgNodeCpt, 'affects')
   } else if (srcNodeCpt === 'asset' && trgNodeCpt === 'device') {
-    cy.add({
-      group: 'edges',
-      data: {
-        id: `e${srcNode}${trgNode}`,
-        source: `${srcNode}`,
-        target: `${trgNode}`,
-        label: 'is'
-      }
-    })
+    addEdge(cy, srcNode, trgNode, srcNodeCpt, trgNodeCpt, 'is')
   } else if (srcNodeCpt === 'asset' && trgNodeCpt === 'application') {
-    cy.add({
-      group: 'edges',
-      data: {
-        id: `e${srcNode}${trgNode}`,
-        source: `${srcNode}`,
-        target: `${trgNode}`,
-        label: 'is'
-      }
-    })
+    addEdge(cy, srcNode, trgNode, srcNodeCpt, trgNodeCpt, 'is')
   } else if (srcNodeCpt === 'asset' && trgNodeCpt === 'information') {
-    cy.add({
-      group: 'edges',
-      data: {
-        id: `e${srcNode}${trgNode}`,
-        source: `${srcNode}`,
-        target: `${trgNode}`,
-        label: 'is'
-      }
-    })
+    addEdge(cy, srcNode, trgNode, srcNodeCpt, trgNodeCpt, 'is')
   } else {
     printChat('mistake 😔')
   }
