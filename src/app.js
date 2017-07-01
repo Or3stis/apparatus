@@ -4,7 +4,7 @@ const cytoscape = require('cytoscape')
 const path = require('path')
 
 // require global moduless
-const nodeInfo = require('./src/nodeInfo.js')
+// const nodeInfo = require('./src/nodeInfo.js')
 const hoverNodeInfo = require('./src/hoverNodeInfo.js')
 const patterns = require('./src/patterns.js')
 const moduleSelection = require('./src/moduleSelection.js')
@@ -77,7 +77,7 @@ cy.on('tap', 'node', (selection) => {
   cy.elements().removeClass('attention')
   cy.elements().removeClass('protect')
   selectedNode = selection.target[0]
-  nodeInfo(selectedNode) // global module
+  // nodeInfo(selectedNode) // global module
   selectedNode.addClass('selection')
   srcNode = trgNode // second selection
   trgNode = selectedNode.data().id
