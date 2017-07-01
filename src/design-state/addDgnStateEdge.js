@@ -15,15 +15,20 @@ const addEdge = (cy, srcNode, trgNode, srcNodeCpt, trgNodeCp, label) => {
 }
 
 module.exports = function addComponent (cy, srcNode, trgNode, srcNodeCpt, trgNodeCpt) {
-  if (srcNodeCpt === 'sensor' && trgNodeCpt === 'model') {
-    addEdge(cy, srcNode, trgNode, srcNodeCpt, trgNodeCpt, 'belongs')
-  } else if (srcNodeCpt === 'model' && trgNodeCpt === 'model') {
-    addEdge(cy, srcNode, trgNode, srcNodeCpt, trgNodeCpt, 'configuration')
-  } else if (srcNodeCpt === 'event' && trgNodeCpt === 'model') {
-    addEdge(cy, srcNode, trgNode, srcNodeCpt, trgNodeCpt, 'affects')
-  } else if (srcNodeCpt === 'sensor' && trgNodeCpt === 'event') {
-    addEdge(cy, srcNode, trgNode, srcNodeCpt, trgNodeCpt, 'detects')
-  } else {
-    printChat('mistake 😔')
+  switch (true) {
+    case (srcNodeCpt === 'sensor' && trgNodeCpt === 'model'):
+      addEdge(cy, srcNode, trgNode, srcNodeCpt, trgNodeCpt, 'belongs')
+      break
+    case (srcNodeCpt === 'model' && trgNodeCpt === 'model'):
+      addEdge(cy, srcNode, trgNode, srcNodeCpt, trgNodeCpt, 'configuration')
+      break
+    case (srcNodeCpt === 'event' && trgNodeCpt === 'model'):
+      addEdge(cy, srcNode, trgNode, srcNodeCpt, trgNodeCpt, 'affects')
+      break
+    case (srcNodeCpt === 'sensor' && trgNodeCpt === 'event'):
+      addEdge(cy, srcNode, trgNode, srcNodeCpt, trgNodeCpt, 'detects')
+      break
+    default:
+      printChat('mistake 😔')
   }
 }
