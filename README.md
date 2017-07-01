@@ -22,6 +22,8 @@ Some screenshots..
 
 ![](https://raw.githubusercontent.com/Or3stis/apparatus/master/assets/screenShot2.png)
 
+![](https://raw.githubusercontent.com/Or3stis/apparatus/master/assets/screenShot3.png)
+
 ## To Use
 
 To clone and run this repository you'll need [Git](https://git-scm.com) and [Node.js](https://nodejs.org/en/download/) installed on your computer. To download and install the app, type the following in your terminal:
