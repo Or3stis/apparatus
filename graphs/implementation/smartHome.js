@@ -135,7 +135,7 @@ graphModel.elements = [
       info: {
         description: 'attacker',
         intent: 'view camera feed',
-        concept: 'alicious actor'
+        concept: 'malicious actor'
       }
     }
   }, {
