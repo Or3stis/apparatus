@@ -41,8 +41,12 @@ module.exports = function addComponent (cy, srcNode, trgNode, srcNodeCpt, trgNod
     addEdge(cy, srcNode, trgNode, srcNodeCpt, trgNodeCpt, 'belongs')
   } else if (srcNodeCpt === 'threat' && trgNodeCpt === 'asset') {
     addEdge(cy, srcNode, trgNode, srcNodeCpt, trgNodeCpt, 'targets')
-  } else if (srcNodeCpt === 'actor' && trgNodeCpt === 'threat') {
+  } else if (srcNodeCpt === 'malicious actor' && trgNodeCpt === 'threat') {
     addEdge(cy, srcNode, trgNode, srcNodeCpt, trgNodeCpt, 'poses')
+  } else if (srcNodeCpt === 'malicious actor' && trgNodeCpt === 'thing') {
+    addEdge(cy, srcNode, trgNode, srcNodeCpt, trgNodeCpt, 'uses')
+  } else if (srcNodeCpt === 'malicious actor' && trgNodeCpt === 'information') {
+    addEdge(cy, srcNode, trgNode, srcNodeCpt, trgNodeCpt, 'knows')
   } else if (srcNodeCpt === 'constraint' && trgNodeCpt === 'threat') {
     addEdge(cy, srcNode, trgNode, srcNodeCpt, trgNodeCpt, 'mitigates')
   } else if (srcNodeCpt === 'micronet' && trgNodeCpt === 'micronet') {

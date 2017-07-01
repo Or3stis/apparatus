@@ -96,6 +96,24 @@ module.exports = function addDgnComponent (cy, component) {
         }
       })
       break
+    case 'malicious actor':
+      cy.add({
+        group: 'nodes',
+        data: {
+          id: `n${lastNode}`,
+          label: `${component}`,
+          info: {
+            description: '',
+            intent: '',
+            concept: 'malicious actor'
+          },
+          position: {
+            x: 200,
+            y: 400
+          }
+        }
+      })
+      break
     case 'asset':
       cy.add({
         group: 'nodes',

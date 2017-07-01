@@ -11,6 +11,7 @@ module.exports = function moduleValidation (cy) {
   const netArray = dgnMetamodel.netArray
   const informationArray = dgnMetamodel.informationArray
   const actorArray = dgnMetamodel.actorArray
+  const maliciousActorArray = dgnMetamodel.maliciousActorArray
   const assetArray = dgnMetamodel.assetArray
   const constraintArray = dgnMetamodel.constraintArray
   const threatArray = dgnMetamodel.threatArray
@@ -51,6 +52,7 @@ module.exports = function moduleValidation (cy) {
   componentValidation(cy, 'net', netArray)
   componentValidation(cy, 'information', informationArray)
   componentValidation(cy, 'actor', actorArray)
+  componentValidation(cy, 'malicious actor', maliciousActorArray)
   componentValidation(cy, 'asset', assetArray)
   componentValidation(cy, 'constraint', constraintArray)
   componentValidation(cy, 'threat', threatArray)
