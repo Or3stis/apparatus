@@ -88,8 +88,9 @@ cy.on('tap', 'node', (selection) => {
   trgNode = selectedNode.data().id
   srcNodeCpt = trgNodeCpt // second selection
   trgNodeCpt = selectedNode.data().info.concept
+  selectedEdge = '' // clear token
   totalNodes(cy) // global module
-  editNode.removeElement() // remove the form element
+  editNode.removeElement() // remove the edit node element
 })
 // do stuff when tapping on an edge
 cy.on('tap', 'edge', (selection) => {
@@ -98,9 +99,10 @@ cy.on('tap', 'edge', (selection) => {
   cy.elements().removeClass('attention')
   cy.elements().removeClass('protect')
   selection.target.addClass('selection')
+  selectedNode = '' // clear token
   selectedEdge = selection.target[0]
   totalNodes(cy) // global module
-  editNode.removeElement() // remove the form element
+  editNode.removeElement() // remove the edit node element
 })
 // do stuff when tapping the stage
 cy.on('tap', (selection) => {
@@ -111,10 +113,13 @@ cy.on('tap', (selection) => {
     cy.elements().removeClass('selection')
     cy.elements().removeClass('attention')
     cy.elements().removeClass('protect')
+    // clear tokens
     document.getElementById('module-group').selectedIndex = ''
     document.getElementById('selection-id').selectedIndex = ''
+    selectedNode = ''
+    selectedEdge = ''
     totalNodes(cy) // global module
-    editNode.removeElement() // remove the form element
+    editNode.removeElement() // remove the edit node element
   }
 })
 // right clicking
@@ -292,15 +297,15 @@ if (pathLocation === dgnPath) {
 // declaration of global buttons
 
 // delele selected node
-const buttonDeleteNode = document.getElementById('delete-node')
-buttonDeleteNode.addEventListener('click', () => {
-  selectedNode.remove()
+const buttonDelete = document.getElementById('delete')
+buttonDelete.addEventListener('click', () => {
+  if (selectedNode === '' && selectedEdge !== '') {
+    selectedEdge.remove()
+  }
+  if (selectedEdge === '' && selectedNode !== '') {
+    selectedNode.remove()
+  }
   totalNodes(cy) // global module
-})
-const buttonDeleteEdge = document.getElementById('delete-edge')
-buttonDeleteEdge.addEventListener('click', () => {
-  selectedEdge.remove()
-  totalNodes(cy)
 })
 // show the neighbors of a tapped node
 const buttonNeighbor = document.getElementById('neighbors-button')
