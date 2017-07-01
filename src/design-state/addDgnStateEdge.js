@@ -29,6 +29,6 @@ module.exports = function addComponent (cy, srcNode, trgNode, srcNodeCpt, trgNod
       addEdge(cy, srcNode, trgNode, srcNodeCpt, trgNodeCpt, 'detects')
       break
     default:
-      printChat('mistake 😔')
+      printChat('edge not allowed 😔')
   }
 }
