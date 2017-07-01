@@ -182,18 +182,18 @@ if (pathLocation === dgnPath) {
   // add generic edges
   const buttonAddEdge = document.getElementById('add-edge')
   buttonAddEdge.addEventListener('click', () => {
-    addDgnStateEdge(cy, srcNode, trgNode, srcNodeCpt, trgNodeCpt) // global module
+    addDgnStateEdge(cy, srcNode, trgNode, srcNodeCpt, trgNodeCpt) // dgn-state module
     totalNodes(cy)
   })
   // validate model
   const buttonModelValidate = document.getElementById('model-validate-button')
   buttonModelValidate.addEventListener('click', () => {
-    dgnStateModelValidation(cy) // dgn module
+    dgnStateModelValidation(cy) // dgn-state module
   })
   // model overview
   const buttonOverview = document.getElementById('overview-button')
   buttonOverview.addEventListener('click', () => {
-    dgnStateOverview(cy) // dgn module
+    dgnStateOverview(cy) // dgn-state module
   })
   // add design-state component
   const add = document.getElementById('add-component-id')
@@ -201,14 +201,14 @@ if (pathLocation === dgnPath) {
     addDgnStateComponent(cy, e.target.value) // dgn-state module
     // reset moduleGroup selection
     document.getElementById('add-component-id').selectedIndex = ''
-    totalNodes(cy) // global module
+    totalNodes(cy) // dgn-state module
   })
   // loads implementation phase buttons
 } else if (pathLocation === impPath) {
   // add generic edges
   const buttonAddEdge = document.getElementById('add-edge')
   buttonAddEdge.addEventListener('click', () => {
-    addImpEdge(cy, srcNode, trgNode, srcNodeCpt, trgNodeCpt) // global module
+    addImpEdge(cy, srcNode, trgNode, srcNodeCpt, trgNodeCpt) // imp module
     totalNodes(cy)
   })
   // validate model
@@ -252,7 +252,7 @@ if (pathLocation === dgnPath) {
   // module selections
   const moduleGroup = document.getElementById('module-group')
   moduleGroup.addEventListener('change', (input) => {
-    moduleSelection(input, cy) // module
+    moduleSelection(input, cy) // global module
     // reset selection selection
     // document.getElementById('module-group').selectedIndex = ''
   })
