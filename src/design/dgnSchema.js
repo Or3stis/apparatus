@@ -7,7 +7,9 @@ dgnMetamodel.social = ['actor']
 dgnMetamodel.sensing = ['sensor']
 
 // allowed concepts connections
-dgnMetamodel.thingArray = ['micronet', 'information', 'actor', 'asset', 'thing']
+dgnMetamodel.thingArray = ['micronet', 'information', 'actor',
+  'malicious actor', 'asset', 'thing'
+]
 dgnMetamodel.micronetArray = ['thing', 'net', 'micronet']
 dgnMetamodel.netArray = ['micronet', 'thing', 'threat']
 dgnMetamodel.informationArray = ['asset', 'thing', 'actor']
