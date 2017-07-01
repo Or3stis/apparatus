@@ -321,3 +321,11 @@ option {
   background-color: rgba(171, 178, 191, 0.3);
   /*-webkit-box-shadow: inset 0 0 6px rgba(171,178,191,0.5);*/
 }
+
+/*warning to save*/
+#home-button-id:hover:after {
+  content: 'save first';
+}
+#home-button-id:hover span {
+  display: none;
+}
