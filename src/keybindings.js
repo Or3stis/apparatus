@@ -12,18 +12,18 @@ module.exports = function keyboard (cy, toggleUI) {
   const consoleId = document.getElementById('console-id')
 
   let selectedNode = ''
-  let sourceNode = ''
-  let targetNode = ''
+  let selectedEdge = ''
+  // let sourceNode = ''
+  // let targetNode = ''
 
   cy.on('tap', 'node', (selection) => {
     selectedNode = selection.target[0]
     selectedEdge = ''
-    sourceNode = targetNode // second selection
-    targetNode = selectedNode.data().id
+    // sourceNode = targetNode // second selection
+    // targetNode = selectedNode.data().id
     // loses the focus from the console when tapping a node
     consoleId.blur()
   })
-  let selectedEdge = ''
   cy.on('tap', 'edge', (selection) => {
     selectedEdge = selection.target[0]
     selectedNode = ''
