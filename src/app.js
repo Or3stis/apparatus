@@ -68,6 +68,10 @@ let trgNode = ''
 let srcNodeCpt = ''
 let trgNodeCpt = ''
 
+// initial label render
+cy.nodes().addClass('label-nodes')
+cy.edges().addClass('label-edges')
+
 // cy.on does stuff when intrecting with the graph
 
 // do stuff when tapping on node
@@ -374,6 +378,24 @@ buttonSave.addEventListener('click', () => {
 const buttonLoad = document.getElementById('load-button')
 buttonLoad.addEventListener('click', () => {
   load(cy, graphModel, cytoscape, graphStyle) // global module
+})
+const hideLabelsButton = document.getElementById('hide-label')
+hideLabelsButton.addEventListener('click', () => {
+  cy.nodes().removeClass('label-nodes')
+  cy.edges().removeClass('label-edges')
+})
+const showLabelsButton = document.getElementById('show-label')
+showLabelsButton.addEventListener('click', () => {
+  cy.nodes().addClass('label-nodes')
+  cy.edges().addClass('label-edges')
+})
+const showLabelNodeButton = document.getElementById('show-label-node')
+showLabelNodeButton.addEventListener('click', () => {
+  cy.nodes().addClass('label-nodes')
+})
+const showLabelEdgeButton = document.getElementById('show-label-edge')
+showLabelEdgeButton.addEventListener('click', () => {
+  cy.edges().addClass('label-edges')
 })
 // test function
 const buttonTest = document.getElementById('test-button')

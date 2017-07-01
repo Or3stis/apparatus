@@ -221,11 +221,6 @@ h3 {
   border-bottom-color: var(--main-tx-color);
 }
 
-
-/*select:required:invalid {
-  color: #94a4a5;
-}*/
-
 option[value=""][disabled] {
   display: none;
 }
@@ -263,6 +258,35 @@ option {
   overflow: auto;
 }
 
+.label-wrapper {
+  width: 100%;
+  height: 30px;
+  background-color: var(--main-bg-color);
+}
+
+.label-button {
+  background-color: var(--main-dark-bg-color);
+  margin: 3px;
+  color: var(--main-tx-color);
+  width: 20px;
+  height: 20px;
+  border: 1px solid;
+  border-radius: 20px;
+  border-color: var(--main-dark-bg-color);
+  font-size: 10px;
+  white-space: pre-wrap;
+  overflow: auto;
+}
+
+.label-button:hover {
+  background-color: var(--blue-color);
+}
+
+/*remove the blue outline box of chrome*/
+.label-button:focus {
+  outline: none;
+}
+
 .choose {
   margin: 0 auto;
   margin-top: 12em;
@@ -284,9 +308,7 @@ option {
   border-bottom-color: var(--blue-color);
 }
 
-
 /*remove the blue outline box of chrome*/
-
 .buttonPhase:focus {
   outline: none;
 }
