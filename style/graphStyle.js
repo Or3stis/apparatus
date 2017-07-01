@@ -38,8 +38,7 @@ graphStyle.style = [{
   selector: '.selection',
   style: {
     'background-color': configGraph.blue,
-    'line-color': configGraph.blue,
-    label: 'data(label)'
+    'line-color': configGraph.blue
   }
 }, {
   selector: '.attention',
