@@ -39,8 +39,7 @@ let graphModel = require(`./graphs/implementation/smartHome.js`)
 let cy = cytoscape({
   container: document.getElementById('graph-container'),
   autounselectify: true,
-  // this loads the elements object of the loaded graph
-  elements: graphModel.elements,
+  elements: graphModel.elements, // loads the elements object of the graph
   style: graphStyle.style
 })
 
@@ -218,7 +217,7 @@ buttonNeighbor.addEventListener('click', () => {
   cy.elements().addClass('faded')
   neighborhood.removeClass('faded')
 })
-// cose layout, source: http://js.cytoscape.org/#layouts/cose
+// cose layout
 const buttonLayout = document.getElementById('layout-button')
 buttonLayout.addEventListener('click', () => {
   coseLayout(cy)
@@ -262,8 +261,6 @@ buttonTest.addEventListener('click', () => {
 const select = document.getElementById('selection-id')
 select.addEventListener('change', e => {
   nodeSelection(cy, e.target.value) // global module
-  // reset moduleGroup selection
-  // document.getElementById('selection-id').selectedIndex = ''
 })
 
 // toggles side panels

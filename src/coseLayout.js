@@ -1,6 +1,8 @@
 'use scrict'
 
-// shows info of node in the div 'info-for-nodes'
+// source: http://js.cytoscape.org/#layouts/cose
+
+// changes the layout of the graph
 module.exports = function coseLayout (cy) {
   const layout = cy.layout({
     name: 'cose',
