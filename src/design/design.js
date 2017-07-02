@@ -16,7 +16,7 @@ const moduleSelection = require('../moduleSelection.js')
 const addNode = (cy) => {
   const addNode = document.getElementById('add-component-id')
   addNode.addEventListener('change', (e) => {
-    addDgnComponent(cy, e.target.value) // imp-state module
+    addDgnComponent(cy, e.target.value)
     cy.nodes().addClass('label-nodes')
     // reset moduleGroup selection
     document.getElementById('add-component-id').selectedIndex = ''
@@ -40,7 +40,7 @@ const addEdge = (cy, srcNode, trgNode, srcNodeCpt, trgNodeCpt) => {
 const validate = (cy) => {
   const buttonModelValidate = document.getElementById('model-validate-button')
   buttonModelValidate.addEventListener('click', () => {
-    dgnModelValidation(cy) // imp-state module
+    dgnModelValidation(cy)
   })
 }
 
@@ -48,7 +48,7 @@ const validate = (cy) => {
 const overview = (cy) => {
   const buttonOverview = document.getElementById('overview-button')
   buttonOverview.addEventListener('click', () => {
-    dgnOverview(cy) // imp-state module
+    dgnOverview(cy)
   })
 }
 
@@ -57,8 +57,6 @@ const moduleGroup = (cy) => {
   const group = document.getElementById('module-group')
   group.addEventListener('change', (input) => {
     moduleSelection(input, cy) // global module
-    // reset selection selection
-    // document.getElementById('module-group').selectedIndex = ''
   })
 }
 

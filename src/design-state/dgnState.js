@@ -15,7 +15,7 @@ const totalNodes = require('../totalNodes.js')
 const addNode = (cy) => {
   const addNode = document.getElementById('add-component-id')
   addNode.addEventListener('change', (e) => {
-    addDgnStateComponent(cy, e.target.value) // imp-state module
+    addDgnStateComponent(cy, e.target.value)
     cy.nodes().addClass('label-nodes')
     // reset moduleGroup selection
     document.getElementById('add-component-id').selectedIndex = ''
@@ -39,7 +39,7 @@ const addEdge = (cy, srcNode, trgNode, srcNodeCpt, trgNodeCpt) => {
 const validate = (cy) => {
   const buttonModelValidate = document.getElementById('model-validate-button')
   buttonModelValidate.addEventListener('click', () => {
-    dgnStateModelValidation(cy) // imp-state module
+    dgnStateModelValidation(cy)
   })
 }
 
@@ -47,7 +47,7 @@ const validate = (cy) => {
 const overview = (cy) => {
   const buttonOverview = document.getElementById('overview-button')
   buttonOverview.addEventListener('click', () => {
-    dgnStateOverview(cy) // imp-state module
+    dgnStateOverview(cy)
   })
 }
 
