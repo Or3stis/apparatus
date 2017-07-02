@@ -1,8 +1,8 @@
 'use strict'
 
-// implementation-state main module
+// design-state main module
 
-// require implementation-state modules
+// require design-state modules
 const dgnStateModelValidation = require('./dgnStateModelValidation.js')
 const dgnStateOverview = require('./dgnStateOverview.js')
 const addDgnStateComponent = require('./addDgnStateComponent.js')
@@ -11,7 +11,7 @@ const addDgnStateEdge = require('./addDgnStateEdge.js')
 // require global modules
 const totalNodes = require('../totalNodes')
 
-// add imp-state nodes
+// add dgn-state nodes
 const addNode = (cy) => {
   const addNode = document.getElementById('add-component-id')
   addNode.addEventListener('change', (e) => {
@@ -23,7 +23,8 @@ const addNode = (cy) => {
   })
 }
 
-// add imp-state edges
+// add dgn-state edges
+// TODO doesn't work
 const addEdge = (cy, srcNode, trgNode, srcNodeCpt, trgNodeCpt) => {
   const buttonAddEdge = document.getElementById('add-edge')
   buttonAddEdge.addEventListener('click', () => {
