@@ -42,6 +42,6 @@ module.exports = function moduleValidation (cy) {
   componentValidation(cy, 'sensor', sensorArray)
   componentValidation(cy, 'model', modelArray)
   componentValidation(cy, 'event', eventArray)
-  
+
   printChat(result)
 }
