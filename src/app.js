@@ -6,10 +6,7 @@ const path = require('path')
 // require global moduless
 // const nodeInfo = require('./src/nodeInfo.js')
 const hoverNodeInfo = require('./src/hoverNodeInfo.js')
-const patterns = require('./src/patterns.js')
-const moduleSelection = require('./src/moduleSelection.js')
 const nodeSelection = require('./src/nodeSelection.js')
-const threatVerification = require('./src/threatVerification.js')
 const keybindings = require('./src/keybindings.js')
 const totalNodes = require('./src/totalNodes.js')
 const save = require('./src/save.js')
@@ -18,9 +15,6 @@ const editNode = require('./src/editNode.js')
 const coseLayout = require('./src/coseLayout.js')
 
 // require design modules
-// const dgnModelValidation = require('./src/design/dgnModelValidation.js')
-// const dgnOverview = require('./src/design/dgnOverview.js')
-// const addDgnComponent = require('./src/design/addDgnComponent.js')
 const addDgnEdge = require('./src/design/addDgnEdge.js')
 const dgn = require('./src/design/design.js')
 
@@ -29,12 +23,8 @@ const addDgnStateEdge = require('./src/design-state/addDgnStateEdge.js')
 const dgnState = require('./src/design-state/dgnState.js')
 
 // reguire implementation modules
-const impModelValidation = require('./src/implementation/impModelValidation.js')
-const vulnVerification = require('./src/implementation/vulnVerification.js')
-const findVulns = require('./src/implementation/findVulns.js')
-const impOverview = require('./src/implementation/impOverview.js')
-const addImpComponent = require('./src/implementation/addImpComponent.js')
 const addImpEdge = require('./src/implementation/addImpEdge.js')
+const imp = require('./src/implementation/implementation.js')
 
 // require implementation-state modules
 const addImpStateEdge = require('./src/implementation-state/addImpStateEdge.js')
@@ -175,60 +165,24 @@ if (pathLocation === dgnPath) {
   })
 // loads implementation phase buttons
 } else if (pathLocation === impPath) {
-  // add generic edges
+  imp.addNode(cy)
+  // imp.addEdge(cy, srcNode, trgNode, srcNodeCpt, trgNodeCpt)
+  imp.overview(cy)
+  imp.validate(cy)
+  imp.threatVerify(cy)
+  imp.vulnVerify(cy)
+  imp.findVulnerabilities(cy)
+  imp.findPattern(cy)
+  imp.moduleGroup(cy)
+
+  // add imp edges
   const buttonAddEdge = document.getElementById('add-edge')
   buttonAddEdge.addEventListener('click', () => {
     addImpEdge(cy, srcNode, trgNode, srcNodeCpt, trgNodeCpt) // imp module
     cy.edges().addClass('label-edges')
     totalNodes(cy)
   })
-  // validate model
-  const buttonModelValidate = document.getElementById('model-validate-button')
-  buttonModelValidate.addEventListener('click', () => {
-    impModelValidation(cy) // imp module
-  })
-  // model overview
-  const buttonOverview = document.getElementById('overview-button')
-  buttonOverview.addEventListener('click', () => {
-    impOverview(cy) // imp module
-  })
-  // verify vulnerabilities
-  const buttonVulnVefiry = document.getElementById('vuln-verify-button')
-  buttonVulnVefiry.addEventListener('click', () => {
-    vulnVerification(cy) // imp module
-  })
-  // find vulnerabilities
-  const buttonFindVuln = document.getElementById('find-vuln-button')
-  buttonFindVuln.addEventListener('click', () => {
-    findVulns(cy) // imp module
-  })
-  // locate patterns based on specific attributes
-  const buttonPattern = document.getElementById('pattern-button')
-  buttonPattern.addEventListener('click', () => {
-    patterns(cy) // global module
-  })
-  // verify threats
-  const buttonThreatVefiry = document.getElementById('threat-verify-button')
-  buttonThreatVefiry.addEventListener('click', () => {
-    threatVerification(cy) // global module
-  })
-  // add implementation component
-  const addNode = document.getElementById('add-component-id')
-  addNode.addEventListener('change', (e) => {
-    addImpComponent(cy, e.target.value) // imp module
-    cy.nodes().addClass('label-nodes')
-    // reset moduleGroup selection
-    document.getElementById('add-component-id').selectedIndex = ''
-    totalNodes(cy) // global module
-  })
-  // module selections
-  const moduleGroup = document.getElementById('module-group')
-  moduleGroup.addEventListener('change', (input) => {
-    moduleSelection(input, cy) // global module
-    // reset selection selection
-    // document.getElementById('module-group').selectedIndex = ''
-  })
-  // loads implementation-state buttons
+// loads implementation-state buttons
 } else if (pathLocation === impStatePath) {
   impState.addNode(cy)
   // impState.addEdge(cy, srcNode, trgNode, srcNodeCpt, trgNodeCpt)
