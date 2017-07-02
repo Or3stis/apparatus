@@ -152,6 +152,7 @@ if (pathLocation === dgnPath) {
   const buttonAddEdge = document.getElementById('add-edge')
   buttonAddEdge.addEventListener('click', () => {
     addDgnEdge(cy, srcNode, trgNode, srcNodeCpt, trgNodeCpt) // design module
+    cy.edges().addClass('label-edges')
     totalNodes(cy)
   })
   // validate the model
@@ -173,6 +174,7 @@ if (pathLocation === dgnPath) {
   const addNode = document.getElementById('add-component-id')
   addNode.addEventListener('change', (e) => {
     addDgnComponent(cy, e.target.value) // dgn module
+    cy.nodes().addClass('label-nodes')
     // reset moduleGroup selection
     document.getElementById('add-component-id').selectedIndex = ''
     totalNodes(cy) // global module
@@ -190,6 +192,7 @@ if (pathLocation === dgnPath) {
   const buttonAddEdge = document.getElementById('add-edge')
   buttonAddEdge.addEventListener('click', () => {
     addDgnStateEdge(cy, srcNode, trgNode, srcNodeCpt, trgNodeCpt) // dgn-state module
+    cy.edges().addClass('label-edges')
     totalNodes(cy)
   })
   // validate model
@@ -206,6 +209,7 @@ if (pathLocation === dgnPath) {
   const addNode = document.getElementById('add-component-id')
   addNode.addEventListener('change', (e) => {
     addDgnStateComponent(cy, e.target.value) // dgn-state module
+    cy.nodes().addClass('label-nodes')
     // reset moduleGroup selection
     document.getElementById('add-component-id').selectedIndex = ''
     totalNodes(cy) // dgn-state module
@@ -216,6 +220,7 @@ if (pathLocation === dgnPath) {
   const buttonAddEdge = document.getElementById('add-edge')
   buttonAddEdge.addEventListener('click', () => {
     addImpEdge(cy, srcNode, trgNode, srcNodeCpt, trgNodeCpt) // imp module
+    cy.edges().addClass('label-edges')
     totalNodes(cy)
   })
   // validate model
@@ -252,6 +257,7 @@ if (pathLocation === dgnPath) {
   const addNode = document.getElementById('add-component-id')
   addNode.addEventListener('change', (e) => {
     addImpComponent(cy, e.target.value) // imp module
+    cy.nodes().addClass('label-nodes')
     // reset moduleGroup selection
     document.getElementById('add-component-id').selectedIndex = ''
     totalNodes(cy) // global module

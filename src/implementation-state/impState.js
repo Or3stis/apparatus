@@ -16,6 +16,7 @@ const addNode = (cy) => {
   const addNode = document.getElementById('add-component-id')
   addNode.addEventListener('change', (e) => {
     addImpStateComponent(cy, e.target.value) // imp-state module
+    cy.nodes().addClass('label-nodes')
     // reset moduleGroup selection
     document.getElementById('add-component-id').selectedIndex = ''
     totalNodes(cy) // global module
@@ -27,6 +28,7 @@ const addEdge = (cy, srcNode, trgNode, srcNodeCpt, trgNodeCpt) => {
   const buttonAddEdge = document.getElementById('add-edge')
   buttonAddEdge.addEventListener('click', () => {
     addImpStateEdge(cy, srcNode, trgNode, srcNodeCpt, trgNodeCpt)
+    cy.edges().addClass('label-edges')
     totalNodes(cy) // global module
   })
 }
