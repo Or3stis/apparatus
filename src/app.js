@@ -37,11 +37,8 @@ const impOverview = require('./src/implementation/impOverview.js')
 const addImpComponent = require('./src/implementation/addImpComponent.js')
 const addImpEdge = require('./src/implementation/addImpEdge.js')
 
-// require implementation-state modules
-const impStateModelValidation = require('./src/implementation-state/impStateModelValidation.js')
-const impStateOverview = require('./src/implementation-state/impStateOverview.js')
-const addImpStateComponent = require('./src/implementation-state/addImpStateComponent.js')
-const addImpStateEdge = require('./src/implementation-state/addImpStateEdge.js')
+// // require implementation-state modules
+const impState = require('./src/implementation-state/impState.js')
 
 // configuration for the graphs style
 const graphStyle = require(`./style/graphStyle.js`)
@@ -268,30 +265,10 @@ if (pathLocation === dgnPath) {
   })
   // loads implementation-state buttons
 } else if (pathLocation === impStatePath) {
-  // add generic edges
-  const buttonAddEdge = document.getElementById('add-edge')
-  buttonAddEdge.addEventListener('click', () => {
-    addImpStateEdge(cy, srcNode, trgNode, srcNodeCpt, trgNodeCpt) // imp-state module
-    totalNodes(cy)
-  })
-  // validate model
-  const buttonModelValidate = document.getElementById('model-validate-button')
-  buttonModelValidate.addEventListener('click', () => {
-    impStateModelValidation(cy) // imp-state module
-  })
-  // model overview
-  const buttonOverview = document.getElementById('overview-button')
-  buttonOverview.addEventListener('click', () => {
-    impStateOverview(cy) // imp-state module
-  })
-  // add implementation-state component
-  const addNode = document.getElementById('add-component-id')
-  addNode.addEventListener('change', (e) => {
-    addImpStateComponent(cy, e.target.value) // imp-state module
-    // reset moduleGroup selection
-    document.getElementById('add-component-id').selectedIndex = ''
-    totalNodes(cy) // global module
-  })
+  impState.addNode(cy)
+  impState.addEdge(cy, srcNode, trgNode, srcNodeCpt, trgNodeCpt)
+  impState.overview(cy)
+  impState.validate(cy)
 }
 
 // declaration of global buttons
