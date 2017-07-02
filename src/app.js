@@ -24,10 +24,8 @@ const addDgnComponent = require('./src/design/addDgnComponent.js')
 const addDgnEdge = require('./src/design/addDgnEdge.js')
 
 // require design-state Models
-const dgnStateModelValidation = require('./src/design-state/dgnStateModelValidation.js')
-const dgnStateOverview = require('./src/design-state/dgnStateOverview.js')
-const addDgnStateComponent = require('./src/design-state/addDgnStateComponent.js')
 const addDgnStateEdge = require('./src/design-state/addDgnStateEdge.js')
+const dgnState = require('./src/design-state/dgnState.js')
 
 // reguire implementation modules
 const impModelValidation = require('./src/implementation/impModelValidation.js')
@@ -37,7 +35,8 @@ const impOverview = require('./src/implementation/impOverview.js')
 const addImpComponent = require('./src/implementation/addImpComponent.js')
 const addImpEdge = require('./src/implementation/addImpEdge.js')
 
-// // require implementation-state modules
+// require implementation-state modules
+const addImpStateEdge = require('./src/implementation-state/addImpStateEdge.js')
 const impState = require('./src/implementation-state/impState.js')
 
 // configuration for the graphs style
@@ -188,31 +187,16 @@ if (pathLocation === dgnPath) {
   })
   // load design-state buttons
 } else if (pathLocation === dgnStatePath) {
+  dgnState.addNode(cy)
+  // dgnState.addEdge(cy, srcNode, trgNode, srcNodeCpt, trgNodeCpt)
+  dgnState.overview(cy)
+  dgnState.validate(cy)
   // add generic edges
   const buttonAddEdge = document.getElementById('add-edge')
   buttonAddEdge.addEventListener('click', () => {
     addDgnStateEdge(cy, srcNode, trgNode, srcNodeCpt, trgNodeCpt) // dgn-state module
     cy.edges().addClass('label-edges')
     totalNodes(cy)
-  })
-  // validate model
-  const buttonModelValidate = document.getElementById('model-validate-button')
-  buttonModelValidate.addEventListener('click', () => {
-    dgnStateModelValidation(cy) // dgn-state module
-  })
-  // model overview
-  const buttonOverview = document.getElementById('overview-button')
-  buttonOverview.addEventListener('click', () => {
-    dgnStateOverview(cy) // dgn-state module
-  })
-  // add design-state component
-  const addNode = document.getElementById('add-component-id')
-  addNode.addEventListener('change', (e) => {
-    addDgnStateComponent(cy, e.target.value) // dgn-state module
-    cy.nodes().addClass('label-nodes')
-    // reset moduleGroup selection
-    document.getElementById('add-component-id').selectedIndex = ''
-    totalNodes(cy) // dgn-state module
   })
   // loads implementation phase buttons
 } else if (pathLocation === impPath) {
@@ -272,9 +256,16 @@ if (pathLocation === dgnPath) {
   // loads implementation-state buttons
 } else if (pathLocation === impStatePath) {
   impState.addNode(cy)
-  impState.addEdge(cy, srcNode, trgNode, srcNodeCpt, trgNodeCpt)
+  // impState.addEdge(cy, srcNode, trgNode, srcNodeCpt, trgNodeCpt)
   impState.overview(cy)
   impState.validate(cy)
+
+  const buttonAddEdge = document.getElementById('add-edge')
+  buttonAddEdge.addEventListener('click', () => {
+    addImpStateEdge(cy, srcNode, trgNode, srcNodeCpt, trgNodeCpt) // dgn-state module
+    cy.edges().addClass('label-edges')
+    totalNodes(cy)
+  })
 }
 
 // declaration of global buttons
@@ -335,6 +326,7 @@ showLabelEdgeButton.addEventListener('click', () => {
 const buttonTest = document.getElementById('test-button')
 buttonTest.addEventListener('click', () => {
   // test code goes here
+  dgnState.test(srcNodeCpt, trgNodeCpt)
 })
 
 // highlights only the selected node class
