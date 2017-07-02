@@ -9,9 +9,9 @@ module.exports = function flag (cy, term) {
   cy.elements().addClass('faded')
 
   // check all the nodes in graph for the search terms
-  cy.nodes().map((node) => {
+  cy.nodes().map(node => {
     const nodeData = node.data().info
-    Object.keys(nodeData).map((value) => {
+    Object.keys(nodeData).map(value => {
       if (nodeData[value] === term) {
         searchNodes += `• ${nodeData.description}\n`
         // remove faded class from the search nodes

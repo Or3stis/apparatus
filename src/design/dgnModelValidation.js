@@ -22,7 +22,7 @@ module.exports = function moduleValidation (cy) {
   let arrWrong = [] // stores wrong connection of nodes
 
   function componentValidation (cy, component, componentArray) {
-    cy.nodes().map((node) => {
+    cy.nodes().map(node => {
       // checks if node is the desired component
       if (node.data().info.concept === component) {
         // stores the neighboring nodes of the component
@@ -38,6 +38,7 @@ module.exports = function moduleValidation (cy) {
         })
       }
     })
+
     result = `${arrWrong}`
     // if the string is empty, the module is correct
     if (result === '') {
@@ -57,5 +58,6 @@ module.exports = function moduleValidation (cy) {
   componentValidation(cy, 'constraint', constraintArray)
   componentValidation(cy, 'threat', threatArray)
   componentValidation(cy, 'sensor', sensorArray)
+
   printChat(result)
 }

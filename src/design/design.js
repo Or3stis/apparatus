@@ -13,9 +13,9 @@ const totalNodes = require('../totalNodes.js')
 const moduleSelection = require('../moduleSelection.js')
 
 // design nodes
-const addNode = (cy) => {
+const addNode = cy => {
   const addNode = document.getElementById('add-component-id')
-  addNode.addEventListener('change', (e) => {
+  addNode.addEventListener('change', e => {
     addDgnComponent(cy, e.target.value)
     cy.nodes().addClass('label-nodes')
     // reset moduleGroup selection
@@ -37,7 +37,7 @@ const addEdge = (cy, srcNode, trgNode, srcNodeCpt, trgNodeCpt) => {
 }
 
 // validate model
-const validate = (cy) => {
+const validate = cy => {
   const buttonModelValidate = document.getElementById('model-validate-button')
   buttonModelValidate.addEventListener('click', () => {
     dgnModelValidation(cy)
@@ -45,7 +45,7 @@ const validate = (cy) => {
 }
 
 // model overview
-const overview = (cy) => {
+const overview = cy => {
   const buttonOverview = document.getElementById('overview-button')
   buttonOverview.addEventListener('click', () => {
     dgnOverview(cy)
@@ -53,9 +53,9 @@ const overview = (cy) => {
 }
 
 // module selection
-const moduleGroup = (cy) => {
+const moduleGroup = cy => {
   const group = document.getElementById('module-group')
-  group.addEventListener('change', (input) => {
+  group.addEventListener('change', input => {
     moduleSelection(input, cy) // global module
   })
 }

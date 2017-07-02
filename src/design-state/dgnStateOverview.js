@@ -11,7 +11,8 @@ module.exports = function overview (cy) {
   let sensorNode = 0
   let modelNode = 0
   let eventNode = 0
-  cy.nodes().map((node) => {
+
+  cy.nodes().map(node => {
     const nodeConcept = node.data().info.concept
     if (nodeConcept === 'sensor') {
       sensorNode += 1

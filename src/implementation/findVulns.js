@@ -6,9 +6,9 @@ const printChat = require('../printChat.js')
 module.exports = function findVuln (cy) {
   const typeArray = ['type', 'service']
   let keywords = ''
-  cy.nodes().map((node) => {
+  cy.nodes().map(node => {
     if (node.data().info.concept === 'device') {
-      Object.keys(node.data().info).map((key) => {
+      Object.keys(node.data().info).map(key => {
         if (typeArray.includes(key) === true) {
           keywords += `• ${node.data().info[key]}\n`
         }

@@ -63,7 +63,7 @@ cy.edges().addClass('label-edges')
 // cy.on does stuff when intrecting with the graph
 
 // do stuff when tapping on node
-cy.on('tap', 'node', (selection) => {
+cy.on('tap', 'node', selection => {
   // removes previous selections
   cy.elements().removeClass('selection')
   cy.elements().removeClass('attention')
@@ -80,7 +80,7 @@ cy.on('tap', 'node', (selection) => {
   editNode.removeElement() // remove the edit node element
 })
 // do stuff when tapping on an edge
-cy.on('tap', 'edge', (selection) => {
+cy.on('tap', 'edge', selection => {
   // removes previous selections
   cy.elements().removeClass('selection')
   cy.elements().removeClass('attention')
@@ -92,7 +92,7 @@ cy.on('tap', 'edge', (selection) => {
   editNode.removeElement() // remove the edit node element
 })
 // do stuff when tapping the stage
-cy.on('tap', (selection) => {
+cy.on('tap', selection => {
   // checks if only the stage was clicked
   if (selection.target === cy) {
     // removes previous selections
@@ -110,16 +110,16 @@ cy.on('tap', (selection) => {
   }
 })
 // right clicking
-cy.on('cxttapend', 'node', (selection) => {
+cy.on('cxttapend', 'node', selection => {
   selectedNode = selection.target[0]
   editNode.formNode(selectedNode) // global module
 })
 // do stuff when hovering over a node
-cy.on('mouseover', 'node', (event) => {
+cy.on('mouseover', 'node', event => {
   hoverNodeInfo(event.target[0]) // global module
 })
 // do stuff when hovering out of a node
-cy.on('mouseout', 'node', (event) => {
+cy.on('mouseout', 'node', event => {
   // hides the hover container
   document.getElementById('container-node-id').style.display = 'none'
 })
@@ -132,7 +132,7 @@ const impStatePath = 'implementation-state.html'
 
 // store the last word of the window path to make it cross plaform
 // blame chromium and its Posix paths on windows for this ugliness
-const pathLocation = (window.location.pathname).split('/').pop()
+const pathLocation = window.location.pathname.split('/').pop()
 
 // here we load the buttons for each phase
 
@@ -150,7 +150,7 @@ if (pathLocation === dgnPath) {
     cy.edges().addClass('label-edges')
     totalNodes(cy)
   })
-// load design-state buttons
+  // load design-state buttons
 } else if (pathLocation === dgnStatePath) {
   dgnState.addNode(cy)
   // dgnState.addEdge(cy, srcNode, trgNode, srcNodeCpt, trgNodeCpt)
@@ -163,7 +163,7 @@ if (pathLocation === dgnPath) {
     cy.edges().addClass('label-edges')
     totalNodes(cy)
   })
-// loads implementation phase buttons
+  // loads implementation phase buttons
 } else if (pathLocation === impPath) {
   imp.addNode(cy)
   // imp.addEdge(cy, srcNode, trgNode, srcNodeCpt, trgNodeCpt)
@@ -182,7 +182,7 @@ if (pathLocation === dgnPath) {
     cy.edges().addClass('label-edges')
     totalNodes(cy)
   })
-// loads implementation-state buttons
+  // loads implementation-state buttons
 } else if (pathLocation === impStatePath) {
   impState.addNode(cy)
   // impState.addEdge(cy, srcNode, trgNode, srcNodeCpt, trgNodeCpt)
@@ -260,7 +260,7 @@ buttonTest.addEventListener('click', () => {
 
 // highlights only the selected node class
 const select = document.getElementById('selection-id')
-select.addEventListener('change', (e) => {
+select.addEventListener('change', e => {
   nodeSelection(cy, e.target.value) // global module
   // reset moduleGroup selection
   // document.getElementById('selection-id').selectedIndex = ''

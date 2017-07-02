@@ -29,7 +29,7 @@ module.exports = function moduleValidation (cy) {
   let arrWrong = [] // stores wrong connection of nodes
 
   function componentValidation (cy, component, componentArray) {
-    cy.nodes().map((node) => {
+    cy.nodes().map(node => {
       // checks if node is the desired component
       if (node.data().info.concept === component) {
         // stores the neighboring nodes of the component
@@ -54,6 +54,7 @@ module.exports = function moduleValidation (cy) {
       console.log(typeof result)
     }
   }
+
   componentValidation(cy, 'device', deviceArray)
   componentValidation(cy, 'network connection', networkArray)
   componentValidation(cy, 'application', applicationArray)
@@ -71,5 +72,6 @@ module.exports = function moduleValidation (cy) {
   componentValidation(cy, 'event sensor', eventSensorArray)
   componentValidation(cy, 'report sensor', reportSensorArray)
   componentValidation(cy, 'control sensor', controlSensorArray)
+
   printChat(result)
 }

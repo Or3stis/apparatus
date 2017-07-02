@@ -7,7 +7,8 @@ const totalNodes = require('./totalNodes.js')
 
 module.exports = function keyboard (cy, toggleUI) {
   // help menu
-  const helpMenu = '• help: for options\n• backspace: delete node/edge\n• meta + z: to undo last action\n• alt + h: toggle UI\n• meta + l: focus on console\n• search for attributes\n'
+  const helpMenu =
+    '• help: for options\n• backspace: delete node/edge\n• meta + z: to undo last action\n• alt + h: toggle UI\n• meta + l: focus on console\n• search for attributes\n'
 
   const consoleId = document.getElementById('console-id')
 
@@ -16,7 +17,7 @@ module.exports = function keyboard (cy, toggleUI) {
   // let sourceNode = ''
   // let targetNode = ''
 
-  cy.on('tap', 'node', (selection) => {
+  cy.on('tap', 'node', selection => {
     selectedNode = selection.target[0]
     selectedEdge = ''
     // sourceNode = targetNode // second selection
@@ -24,14 +25,14 @@ module.exports = function keyboard (cy, toggleUI) {
     // loses the focus from the console when tapping a node
     consoleId.blur()
   })
-  cy.on('tap', 'edge', (selection) => {
+  cy.on('tap', 'edge', selection => {
     selectedEdge = selection.target[0]
     selectedNode = ''
     // loses the focus from the console when tapping an edge
     consoleId.blur()
   })
   // empties the selection values when clicking the graph
-  cy.on('tap', (selection) => {
+  cy.on('tap', selection => {
     // loses the focus from the console when tapping the stage
     consoleId.blur()
     if (selection.target === cy) {
@@ -41,7 +42,7 @@ module.exports = function keyboard (cy, toggleUI) {
   })
 
   // keyboard listeners
-  document.addEventListener('keydown', (event) => {
+  document.addEventListener('keydown', event => {
     // focus on console
     if (event.metaKey === true && event.code === 'KeyL') {
       consoleId.focus()
@@ -76,12 +77,12 @@ module.exports = function keyboard (cy, toggleUI) {
     if (document.activeElement === consoleId && event.code === 'Enter') {
       document.getElementById('console-id').value = ''
       switch (input) {
-        case ('help' || 'options'):
+        case 'help' || 'options':
           printChat(helpMenu)
           break
-        case (''):
+        case '':
           break
-        case ('clear'):
+        case 'clear':
           document.getElementById('info-nodes-id').textContent = ''
           break
         default:

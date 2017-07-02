@@ -9,8 +9,9 @@ module.exports = function moduleValidation (cy) {
   const sensorArray = dgnStateMetamodel.sensorArray
   const modelArray = dgnStateMetamodel.modelArray
   const eventArray = dgnStateMetamodel.eventArray
+
   function componentValidation (cy, component, componentArray) {
-    cy.nodes().map((node) => {
+    cy.nodes().map(node => {
       // checks if node is the desired component
       if (node.data().info.concept === component) {
         // stores the neighboring nodes of the component
@@ -41,5 +42,6 @@ module.exports = function moduleValidation (cy) {
   componentValidation(cy, 'sensor', sensorArray)
   componentValidation(cy, 'model', modelArray)
   componentValidation(cy, 'event', eventArray)
+  
   printChat(result)
 }

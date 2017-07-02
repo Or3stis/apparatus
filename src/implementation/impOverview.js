@@ -18,7 +18,8 @@ module.exports = function overview (cy) {
   let securityNode = 0
   let socialNode = 0
   let sensingNode = 0
-  cy.nodes().map((node) => {
+
+  cy.nodes().map(node => {
     const nodeConcept = node.data().info.concept
     if (networkArray.includes(nodeConcept) === true) {
       networkNode += 1
@@ -52,7 +53,8 @@ module.exports = function overview (cy) {
   let eventSensorNode = 0
   let reportSensorNode = 0
   let controlSensorNode = 0
-  cy.nodes().map((node) => {
+
+  cy.nodes().map(node => {
     const nodeConcept = node.data().info.concept
     if (nodeConcept === 'device') {
       deviceNode += 1
@@ -92,6 +94,7 @@ module.exports = function overview (cy) {
       controlSensorNode += 1
     }
   })
+
   result = `${result}device nodes: ${deviceNode}\n`
   result = `${result}application nodes: ${applicationNode}\n`
   result = `${result}network connection nodes: ${connectionNode}\n`

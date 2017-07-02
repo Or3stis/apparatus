@@ -19,7 +19,7 @@ module.exports = function overview (cy) {
   let socialNode = 0
   let sensingNode = 0
 
-  cy.nodes().map((node) => {
+  cy.nodes().map(node => {
     const nodeConcept = node.data().info.concept
     if (networkArray.includes(nodeConcept) === true) {
       networkNode += 1
@@ -47,7 +47,7 @@ module.exports = function overview (cy) {
   let actorNode = 0
   let sensorNode = 0
 
-  cy.nodes().map((node) => {
+  cy.nodes().map(node => {
     const nodeConcept = node.data().info.concept
     if (nodeConcept === 'thing') {
       thingNode += 1
@@ -73,6 +73,7 @@ module.exports = function overview (cy) {
       sensorNode += 1
     }
   })
+
   result = `${result}thing nodes: ${thingNode}\n`
   result = `${result}micronet nodes: ${micronetNode}\n`
   result = `${result}net nodes: ${netNode}\n`

@@ -12,9 +12,9 @@ const addDgnStateEdge = require('./addDgnStateEdge.js')
 const totalNodes = require('../totalNodes.js')
 
 // add dgn-state nodes
-const addNode = (cy) => {
+const addNode = cy => {
   const addNode = document.getElementById('add-component-id')
-  addNode.addEventListener('change', (e) => {
+  addNode.addEventListener('change', e => {
     addDgnStateComponent(cy, e.target.value)
     cy.nodes().addClass('label-nodes')
     // reset moduleGroup selection
@@ -36,7 +36,7 @@ const addEdge = (cy, srcNode, trgNode, srcNodeCpt, trgNodeCpt) => {
 }
 
 // validate model
-const validate = (cy) => {
+const validate = cy => {
   const buttonModelValidate = document.getElementById('model-validate-button')
   buttonModelValidate.addEventListener('click', () => {
     dgnStateModelValidation(cy)
@@ -44,7 +44,7 @@ const validate = (cy) => {
 }
 
 // model overview
-const overview = (cy) => {
+const overview = cy => {
   const buttonOverview = document.getElementById('overview-button')
   buttonOverview.addEventListener('click', () => {
     dgnStateOverview(cy)

@@ -4,14 +4,28 @@
 module.exports = function moduleSelection (input, cy) {
   // grouping of the module components
   let groupArray = []
-  const networkArray = ['device', 'network connection', 'micronet',
-    'net', 'unidentified node', 'information', 'thing'
+  const networkArray = [
+    'device',
+    'network connection',
+    'micronet',
+    'net',
+    'unidentified node',
+    'information',
+    'thing'
   ]
-  const securityArray = ['asset', 'threat', 'vulnerability',
-    'mechanism', 'constraint', 'malicious actor'
+  const securityArray = [
+    'asset',
+    'threat',
+    'vulnerability',
+    'mechanism',
+    'constraint',
+    'malicious actor'
   ]
   const socialArray = ['actor']
-  const sensingArray = ['sensor', 'event sensor', 'report sensor',
+  const sensingArray = [
+    'sensor',
+    'event sensor',
+    'report sensor',
     'control sensor'
   ]
 
@@ -49,7 +63,7 @@ module.exports = function moduleSelection (input, cy) {
   cy.elements().addClass('faded')
 
   let totalNodes = 0
-  cy.nodes().map((node) => {
+  cy.nodes().map(node => {
     const nodeConcept = node.data().info.concept
     if (groupArray.includes(nodeConcept) === true) {
       node.removeClass('faded')

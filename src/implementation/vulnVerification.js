@@ -8,7 +8,7 @@ module.exports = function vulnVerification (cy) {
   let mitigatedVulns = 0
 
   cy.elements().addClass('faded')
-  cy.nodes().map((node) => {
+  cy.nodes().map(node => {
     if (node.data().info.concept === 'vulnerability') {
       node.removeClass('faded')
       node.addClass('attention')
@@ -20,17 +20,19 @@ module.exports = function vulnVerification (cy) {
     }
   })
 
-  vulnArray.map((vuln) => {
+  vulnArray.map(vuln => {
     const neighbor = vuln.neighborhood()
-    neighbor.map((type) => {
+    neighbor.map(type => {
       if (type.data().hasOwnProperty('info')) {
         if (type.data().info.concept === 'mechanism') {
-          result = `${result} • Vulnerability ${vuln.data().id} is mitigated by Mechanism ${type.data().id}\n`
+          result = `${result} • Vulnerability ${vuln.data()
+            .id} is mitigated by Mechanism ${type.data().id}\n`
           mitigatedVulns += 1
         }
       }
     })
   })
+
   result = `${result} • Vulnerabilities total: ${vulnArray.length}\n`
   result = `${result} • Mitigated total: ${mitigatedVulns}\n`
   printChat(result)

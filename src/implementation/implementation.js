@@ -17,9 +17,9 @@ const patterns = require('../patterns.js')
 const moduleSelection = require('../moduleSelection.js')
 
 // design nodes
-const addNode = (cy) => {
+const addNode = cy => {
   const addNode = document.getElementById('add-component-id')
-  addNode.addEventListener('change', (e) => {
+  addNode.addEventListener('change', e => {
     addImpComponent(cy, e.target.value)
     cy.nodes().addClass('label-nodes')
     // reset moduleGroup selection
@@ -41,7 +41,7 @@ const addEdge = (cy, srcNode, trgNode, srcNodeCpt, trgNodeCpt) => {
 }
 
 // validate model
-const validate = (cy) => {
+const validate = cy => {
   const buttonModelValidate = document.getElementById('model-validate-button')
   buttonModelValidate.addEventListener('click', () => {
     impModelValidation(cy)
@@ -49,7 +49,7 @@ const validate = (cy) => {
 }
 
 // verify threats
-const threatVerify = (cy) => {
+const threatVerify = cy => {
   const buttonThreatVefiry = document.getElementById('threat-verify-button')
   buttonThreatVefiry.addEventListener('click', () => {
     threatVerification(cy) // global module
@@ -57,7 +57,7 @@ const threatVerify = (cy) => {
 }
 
 // verify vulnerabilities
-const vulnVerify = (cy) => {
+const vulnVerify = cy => {
   const buttonVulnVefiry = document.getElementById('vuln-verify-button')
   buttonVulnVefiry.addEventListener('click', () => {
     vulnVerification(cy)
@@ -65,7 +65,7 @@ const vulnVerify = (cy) => {
 }
 
 // find vulnerabilities
-const findVulnerabilities = (cy) => {
+const findVulnerabilities = cy => {
   const buttonFindVuln = document.getElementById('find-vuln-button')
   buttonFindVuln.addEventListener('click', () => {
     findVulns(cy)
@@ -73,7 +73,7 @@ const findVulnerabilities = (cy) => {
 }
 
 // find patterns
-const findPattern = (cy) => {
+const findPattern = cy => {
   const buttonPattern = document.getElementById('pattern-button')
   buttonPattern.addEventListener('click', () => {
     patterns(cy) // global module
@@ -81,7 +81,7 @@ const findPattern = (cy) => {
 }
 
 // model overview
-const overview = (cy) => {
+const overview = cy => {
   const buttonOverview = document.getElementById('overview-button')
   buttonOverview.addEventListener('click', () => {
     impOverview(cy)
@@ -89,9 +89,9 @@ const overview = (cy) => {
 }
 
 // module selection
-const moduleGroup = (cy) => {
+const moduleGroup = cy => {
   const group = document.getElementById('module-group')
-  group.addEventListener('change', (input) => {
+  group.addEventListener('change', input => {
     moduleSelection(input, cy) // global module
   })
 }

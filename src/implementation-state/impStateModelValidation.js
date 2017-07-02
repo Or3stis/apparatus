@@ -11,8 +11,9 @@ module.exports = function moduleValidation (cy) {
   const controlSensorArray = impStateMetamodel.controlSensorArray
   const modelArray = impStateMetamodel.modelArray
   const eventArray = impStateMetamodel.eventArray
+
   function componentValidation (cy, component, componentArray) {
-    cy.nodes().map((node) => {
+    cy.nodes().map(node => {
       // checks if node is the desired component
       if (node.data().info.concept === component) {
         // stores the neighboring nodes of the component
@@ -45,5 +46,6 @@ module.exports = function moduleValidation (cy) {
   componentValidation(cy, 'control sensor', controlSensorArray)
   componentValidation(cy, 'model', modelArray)
   componentValidation(cy, 'event', eventArray)
+
   printChat(result)
 }
