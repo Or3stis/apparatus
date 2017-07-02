@@ -9,7 +9,7 @@ const addImpStateComponent = require('./addImpStateComponent.js')
 const addImpStateEdge = require('./addImpStateEdge.js')
 
 // require global modules
-const totalNodes = require('../totalNodes')
+const totalNodes = require('../totalNodes.js')
 
 // add imp-state nodes
 const addNode = (cy) => {
