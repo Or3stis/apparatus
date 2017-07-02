@@ -38,6 +38,16 @@ npm install
 # to run the app
 npm start
 ```
+
+Because the app is still in prototyping stage, it is best to keep up to date with the most recent changes. To do so, type:
+
+```bash
+# inside the apparatus directory
+
+# update to latest
+git pull
+```
+
 ## Instructions
 
 If you want to contribute that's great news 😃. Check the [contributing](https://github.com/Or3stis/apparatus/blob/master/CONTRIBUTING.md) guide.
