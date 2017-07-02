@@ -18,10 +18,11 @@ const editNode = require('./src/editNode.js')
 const coseLayout = require('./src/coseLayout.js')
 
 // require design modules
-const dgnModelValidation = require('./src/design/dgnModelValidation.js')
-const dgnOverview = require('./src/design/dgnOverview.js')
-const addDgnComponent = require('./src/design/addDgnComponent.js')
+// const dgnModelValidation = require('./src/design/dgnModelValidation.js')
+// const dgnOverview = require('./src/design/dgnOverview.js')
+// const addDgnComponent = require('./src/design/addDgnComponent.js')
 const addDgnEdge = require('./src/design/addDgnEdge.js')
+const dgn = require('./src/design/design.js')
 
 // require design-state Models
 const addDgnStateEdge = require('./src/design-state/addDgnStateEdge.js')
@@ -147,6 +148,11 @@ const pathLocation = (window.location.pathname).split('/').pop()
 
 // load design phase buttons
 if (pathLocation === dgnPath) {
+  dgn.addNode(cy)
+  // dgn.addEdge(cy, srcNode, trgNode, srcNodeCpt, trgNodeCpt)
+  dgn.overview(cy)
+  dgn.validate(cy)
+  dgn.moduleGroup(cy)
   // add design edges
   const buttonAddEdge = document.getElementById('add-edge')
   buttonAddEdge.addEventListener('click', () => {
@@ -154,38 +160,7 @@ if (pathLocation === dgnPath) {
     cy.edges().addClass('label-edges')
     totalNodes(cy)
   })
-  // validate the model
-  const buttonModelValidate = document.getElementById('model-validate-button')
-  buttonModelValidate.addEventListener('click', () => {
-    dgnModelValidation(cy) // dgn module
-  })
-  // model overiew
-  const buttonOverview = document.getElementById('overview-button')
-  buttonOverview.addEventListener('click', () => {
-    dgnOverview(cy) // dgn module
-  })
-  // verify threat
-  const buttonThreatVefiry = document.getElementById('threat-verify-button')
-  buttonThreatVefiry.addEventListener('click', () => {
-    threatVerification(cy) // global module
-  })
-  // add design phase component
-  const addNode = document.getElementById('add-component-id')
-  addNode.addEventListener('change', (e) => {
-    addDgnComponent(cy, e.target.value) // dgn module
-    cy.nodes().addClass('label-nodes')
-    // reset moduleGroup selection
-    document.getElementById('add-component-id').selectedIndex = ''
-    totalNodes(cy) // global module
-  })
-  // module selection
-  const moduleGroup = document.getElementById('module-group')
-  moduleGroup.addEventListener('change', (input) => {
-    moduleSelection(input, cy) // global module
-    // reset selection selection
-    // document.getElementById('module-group').selectedIndex = ''
-  })
-  // load design-state buttons
+// load design-state buttons
 } else if (pathLocation === dgnStatePath) {
   dgnState.addNode(cy)
   // dgnState.addEdge(cy, srcNode, trgNode, srcNodeCpt, trgNodeCpt)
@@ -198,7 +173,7 @@ if (pathLocation === dgnPath) {
     cy.edges().addClass('label-edges')
     totalNodes(cy)
   })
-  // loads implementation phase buttons
+// loads implementation phase buttons
 } else if (pathLocation === impPath) {
   // add generic edges
   const buttonAddEdge = document.getElementById('add-edge')
