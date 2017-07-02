@@ -9,8 +9,8 @@ const addDgnComponent = require('./addDgnComponent.js')
 const addDgnEdge = require('./addDgnEdge.js')
 
 // require global modules
-const totalNodes = require('../totalNodes')
-const moduleSelection = require('../moduleSelection')
+const totalNodes = require('../totalNodes.js')
+const moduleSelection = require('../moduleSelection.js')
 
 // design nodes
 const addNode = (cy) => {
