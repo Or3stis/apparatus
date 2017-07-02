@@ -9,7 +9,7 @@ const addDgnStateComponent = require('./addDgnStateComponent.js')
 const addDgnStateEdge = require('./addDgnStateEdge.js')
 
 // require global modules
-const totalNodes = require('../totalNodes')
+const totalNodes = require('../totalNodes.js')
 
 // add dgn-state nodes
 const addNode = (cy) => {
