@@ -14,8 +14,6 @@ The application is still in prototyping stage, which means a lot of
 functionality is being added with each commit, along with massive changes in
 almost everything.
 
-A shoutout to [@hejrobin](https://github.com/hejrobin) who created [gloom](https://github.com/hejrobin/gloom), which inspired ASTo's awesome color theme.
-
 Some screenshots..
 
 ![](https://raw.githubusercontent.com/Or3stis/apparatus/master/assets/screenShot1.png)
@@ -53,5 +51,9 @@ git pull
 If you want to contribute that's great news 😃. Check the [contributing](https://github.com/Or3stis/apparatus/blob/master/CONTRIBUTING.md) guide.
 
 If you want to find out how the app works check the [wiki](https://github.com/Or3stis/apparatus/wiki).
+
+## Thanks
+
+A shoutout to [@hejrobin](https://github.com/hejrobin) who created [gloom](https://github.com/hejrobin/gloom), which inspired ASTo's awesome color theme.
 
 #### License [MIT](LICENSE.md)
