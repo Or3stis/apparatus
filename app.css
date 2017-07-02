@@ -8,7 +8,6 @@
   --gray-color: #abb2bf;
 }
 
-
 /*:root {
   --main-bg-color: #282c34;
   --main-dark-bg-color: #21252b;
@@ -141,9 +140,11 @@ h3 {
   border-color: var(--main-bg-color);
   color: var(--main-tx-color);
 }
+
 .input-form {
   outline: none;
 }
+
 .submit-form {
   background-color: var(--main-bg-color);
   margin-top: 3px;
@@ -203,7 +204,7 @@ h3 {
 
 .button:hover, .selection:hover {
   border-bottom-color: var(--blue-color);
-  color: var(--blue-color)
+  color: var(--blue-color);
 }
 
 /*remove the blue outline box of chrome*/
@@ -280,6 +281,11 @@ option {
   outline: none;
 }
 
+/*flash color when clicked*/
+.label-button:active {
+  background-color: : var(--main-tx-color);
+}
+
 .choose {
   margin: 0 auto;
   margin-top: 12em;
@@ -322,10 +328,11 @@ option {
   /*-webkit-box-shadow: inset 0 0 6px rgba(171,178,191,0.5);*/
 }
 
-/*warning to save*/
+/*warning to save file on exit*/
 #home-button-id:hover:after {
   content: 'save first';
 }
+
 #home-button-id:hover span {
   display: none;
 }
