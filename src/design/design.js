@@ -11,7 +11,7 @@ const addDgnEdge = require('./addDgnEdge.js')
 // require global modules
 const totalNodes = require('../totalNodes.js')
 const moduleSelection = require('../moduleSelection.js')
-const threatVerification = require('../threatVerification.js')
+const threatVerification = require('../core/threatVerification.js')
 
 // design nodes
 const addNode = cy => {

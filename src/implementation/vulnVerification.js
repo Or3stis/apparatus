@@ -1,6 +1,6 @@
 'use strict'
 
-const printChat = require('../printChat.js')
+const printChat = require('../core/printChat.js')
 
 module.exports = function vulnVerification (cy) {
   let vulnArray = []

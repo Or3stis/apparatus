@@ -1,7 +1,7 @@
 'use scrict'
 
 const impStateMetamodel = require('./impStateSchema.js')
-const printChat = require('../printChat.js')
+const printChat = require('../core/printChat.js')
 // checks if the instance is correct
 
 module.exports = function moduleValidation (cy) {

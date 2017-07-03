@@ -1,7 +1,7 @@
 'use strict'
 
-const printChat = require('../printChat.js')
-const addEdge = require('../addEdge.js')
+const printChat = require('../core/printChat.js')
+const addEdge = require('../core/addEdge.js')
 
 module.exports = function addComponent (
   cy,

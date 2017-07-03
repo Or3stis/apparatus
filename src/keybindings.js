@@ -1,7 +1,7 @@
 'use strict'
 
-const searchAttribute = require('./searchAttribute.js')
-const printChat = require('./printChat.js')
+const searchAttribute = require('./core/searchAttribute.js')
+const printChat = require('./core/printChat.js')
 const totalNodes = require('./totalNodes.js')
 // const addEdge = require('./addEdge.js')
 

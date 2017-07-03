@@ -1,6 +1,6 @@
 'use strict'
 
-const printChat = require('../printChat.js')
+const printChat = require('../core/printChat.js')
 const dgnMetamodel = require('./dgnSchema.js')
 
 module.exports = function overview (cy) {

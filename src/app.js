@@ -4,15 +4,14 @@ const cytoscape = require('cytoscape')
 const path = require('path')
 
 // require global moduless
-// const nodeInfo = require('./src/nodeInfo.js')
+const nodeInfo = require('./src/core/nodeInfo.js')
 const hoverNodeInfo = require('./src/hoverNodeInfo.js')
-const nodeSelection = require('./src/nodeSelection.js')
 const keybindings = require('./src/keybindings.js')
 const totalNodes = require('./src/totalNodes.js')
-const save = require('./src/save.js')
-const load = require('./src/load.js')
 const editNode = require('./src/editNode.js')
-const coseLayout = require('./src/coseLayout.js')
+
+// require core modules
+const core = require('./src/core/core.js')
 
 // require design modules
 const addDgnEdge = require('./src/design/addDgnEdge.js')
@@ -33,10 +32,10 @@ const impState = require('./src/implementation-state/impState.js')
 // configuration for the graphs style
 const graphStyle = require(`./style/graphStyle.js`)
 // require the initial graph file
-let graphModel = require(`./graphs/implementation/smartHome.js`)
+const graphModel = require(`./graphs/system.js`)
 
 // setting up the graph container
-let cy = cytoscape({
+const cy = cytoscape({
   container: document.getElementById('graph-container'),
   autounselectify: true,
   elements: graphModel.elements, // loads the elements object of the graph
@@ -68,7 +67,7 @@ cy.on('tap', 'node', selection => {
   cy.elements().removeClass('attention')
   cy.elements().removeClass('protect')
   selectedNode = selection.target[0]
-  // nodeInfo(selectedNode) // global module
+  nodeInfo(selectedNode) // global module
   selectedNode.addClass('selection')
   srcNode = trgNode // second selection
   trgNode = selectedNode.data().id
@@ -199,6 +198,16 @@ if (pathLocation === dgnPath) {
 
 // declaration of global buttons
 
+// highlights only the selected node class
+core.selectionNode(cy)
+// cose layout
+core.layout(cy)
+// enable label buttons
+core.labels(cy)
+// save graph
+core.saveGraph(cy, path)
+// load graph - TODO doesn't work properly
+core.loadGraph(cy, graphStyle)
 // delele selected node
 const buttonDelete = document.getElementById('delete')
 buttonDelete.addEventListener('click', () => {
@@ -218,50 +227,11 @@ buttonNeighbor.addEventListener('click', () => {
   cy.elements().addClass('faded')
   neighborhood.removeClass('faded')
 })
-// cose layout
-const buttonLayout = document.getElementById('layout-button')
-buttonLayout.addEventListener('click', () => {
-  coseLayout(cy)
-})
-// save graph
-const buttonSave = document.getElementById('save-button')
-buttonSave.addEventListener('click', () => {
-  save(cy, path) // global module
-})
-// load graph
-const buttonLoad = document.getElementById('load-button')
-buttonLoad.addEventListener('click', () => {
-  load(cy, graphModel, cytoscape, graphStyle) // global module
-})
-const hideLabelsButton = document.getElementById('hide-label')
-hideLabelsButton.addEventListener('click', () => {
-  cy.nodes().removeClass('label-nodes')
-  cy.edges().removeClass('label-edges')
-})
-const showLabelsButton = document.getElementById('show-label')
-showLabelsButton.addEventListener('click', () => {
-  cy.nodes().addClass('label-nodes')
-  cy.edges().addClass('label-edges')
-})
-const showLabelNodeButton = document.getElementById('show-label-node')
-showLabelNodeButton.addEventListener('click', () => {
-  cy.nodes().addClass('label-nodes')
-})
-const showLabelEdgeButton = document.getElementById('show-label-edge')
-showLabelEdgeButton.addEventListener('click', () => {
-  cy.edges().addClass('label-edges')
-})
 // test function
 const buttonTest = document.getElementById('test-button')
 buttonTest.addEventListener('click', () => {
   // test code goes here
   dgnState.test(srcNodeCpt, trgNodeCpt)
-})
-
-// highlights only the selected node class
-const select = document.getElementById('selection-id')
-select.addEventListener('change', e => {
-  nodeSelection(cy, e.target.value) // global module
 })
 
 // toggles side panels
