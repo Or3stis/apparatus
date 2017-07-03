@@ -148,7 +148,6 @@ if (pathLocation === dgnPath) {
   buttonAddEdge.addEventListener('click', () => {
     addDgnEdge(cy, srcNode, trgNode, srcNodeCpt, trgNodeCpt) // design module
     cy.edges().addClass('label-edges')
-    totalNodes(cy)
   })
   // load design-state buttons
 } else if (pathLocation === dgnStatePath) {
@@ -161,7 +160,6 @@ if (pathLocation === dgnPath) {
   buttonAddEdge.addEventListener('click', () => {
     addDgnStateEdge(cy, srcNode, trgNode, srcNodeCpt, trgNodeCpt) // dgn-state module
     cy.edges().addClass('label-edges')
-    totalNodes(cy)
   })
   // loads implementation phase buttons
 } else if (pathLocation === impPath) {
@@ -179,7 +177,6 @@ if (pathLocation === dgnPath) {
   buttonAddEdge.addEventListener('click', () => {
     addImpEdge(cy, srcNode, trgNode, srcNodeCpt, trgNodeCpt) // imp module
     cy.edges().addClass('label-edges')
-    totalNodes(cy)
   })
   // loads implementation-state buttons
 } else if (pathLocation === impStatePath) {
@@ -191,7 +188,6 @@ if (pathLocation === dgnPath) {
   buttonAddEdge.addEventListener('click', () => {
     addImpStateEdge(cy, srcNode, trgNode, srcNodeCpt, trgNodeCpt) // dgn-state module
     cy.edges().addClass('label-edges')
-    totalNodes(cy)
   })
 }
 
