@@ -14,7 +14,7 @@ const findVulns = require('./findVulns.js')
 const totalNodes = require('../totalNodes.js')
 const threatVerification = require('../core/threatVerification.js')
 const patterns = require('../core/patterns.js')
-const moduleSelection = require('../moduleSelection.js')
+const moduleSelection = require('../core/moduleSelection.js')
 
 // design nodes
 const addNode = cy => {
