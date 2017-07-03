@@ -4,11 +4,11 @@ const cytoscape = require('cytoscape')
 const path = require('path')
 
 // require global moduless
-const hoverNodeInfo = require('./src/hoverNodeInfo.js')
 const keybindings = require('./src/keybindings.js')
 
 // require core modules
 const core = require('./src/core/core.js')
+const hoverNodeInfo = require('./src/core/hoverNodeInfo.js')
 const editNode = require('./src/core/editNode.js')
 const totalNodes = require('./src/core/totalNodes.js')
 // const nodeInfo = require('./src/core/nodeInfo.js')

@@ -1,7 +1,6 @@
 'use strict'
 
 // core modules, shared between all phases
-
 const nodeSelection = require('./nodeSelection.js')
 const coseLayout = require('./coseLayout.js')
 const save = require('./save.js')
