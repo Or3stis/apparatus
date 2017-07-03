@@ -6,10 +6,10 @@ const path = require('path')
 // require global moduless
 const hoverNodeInfo = require('./src/hoverNodeInfo.js')
 const keybindings = require('./src/keybindings.js')
-const editNode = require('./src/editNode.js')
 
 // require core modules
 const core = require('./src/core/core.js')
+const editNode = require('./src/core/editNode.js')
 const totalNodes = require('./src/core/totalNodes.js')
 // const nodeInfo = require('./src/core/nodeInfo.js')
 
