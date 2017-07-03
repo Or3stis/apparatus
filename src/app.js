@@ -4,7 +4,6 @@ const cytoscape = require('cytoscape')
 const path = require('path')
 
 // require global moduless
-const nodeInfo = require('./src/core/nodeInfo.js')
 const hoverNodeInfo = require('./src/hoverNodeInfo.js')
 const keybindings = require('./src/keybindings.js')
 const totalNodes = require('./src/totalNodes.js')
@@ -12,6 +11,7 @@ const editNode = require('./src/editNode.js')
 
 // require core modules
 const core = require('./src/core/core.js')
+// const nodeInfo = require('./src/core/nodeInfo.js')
 
 // require design modules
 const addDgnEdge = require('./src/design/addDgnEdge.js')
@@ -31,8 +31,9 @@ const impState = require('./src/implementation-state/impState.js')
 
 // configuration for the graphs style
 const graphStyle = require(`./style/graphStyle.js`)
+
 // require the initial graph file
-const graphModel = require(`./graphs/system.js`)
+const graphModel = require(`./graphs/implementation/smartHome.js`)
 
 // setting up the graph container
 const cy = cytoscape({
@@ -67,7 +68,7 @@ cy.on('tap', 'node', selection => {
   cy.elements().removeClass('attention')
   cy.elements().removeClass('protect')
   selectedNode = selection.target[0]
-  nodeInfo(selectedNode) // global module
+  // nodeInfo(selectedNode) // global module
   selectedNode.addClass('selection')
   srcNode = trgNode // second selection
   trgNode = selectedNode.data().id
@@ -208,6 +209,7 @@ core.labels(cy)
 core.saveGraph(cy, path)
 // load graph - TODO doesn't work properly
 core.loadGraph(cy, graphStyle)
+
 // delele selected node
 const buttonDelete = document.getElementById('delete')
 buttonDelete.addEventListener('click', () => {
