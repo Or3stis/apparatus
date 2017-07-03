@@ -14,6 +14,7 @@ const findVulns = require('./findVulns.js')
 const totalNodes = require('../core/totalNodes.js')
 const threatVerification = require('../core/threatVerification.js')
 const patterns = require('../core/patterns.js')
+const moduleSelection = require('../core/moduleSelection.js')
 
 // design nodes
 const addNode = cy => {
@@ -80,6 +81,13 @@ const overview = cy => {
     impOverview(cy)
   })
 }
+// module selection
+const moduleGroup = cy => {
+  const group = document.getElementById('module-group')
+  group.addEventListener('change', input => {
+    moduleSelection(input, cy) // global module
+  })
+}
 
 module.exports = {
   addNode: addNode,
@@ -89,5 +97,6 @@ module.exports = {
   threatVerify: threatVerify,
   vulnVerify: vulnVerify,
   findVulnerabilities: findVulnerabilities,
-  findPattern: findPattern
+  findPattern: findPattern,
+  moduleGroup: moduleGroup
 }

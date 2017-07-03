@@ -11,6 +11,7 @@ const addDgnEdge = require('./addDgnEdge.js')
 // require global modules
 const totalNodes = require('../core/totalNodes.js')
 const threatVerification = require('../core/threatVerification.js')
+const moduleSelection = require('../core/moduleSelection.js')
 
 // design nodes
 const addNode = cy => {
@@ -56,11 +57,19 @@ const overview = cy => {
     dgnOverview(cy)
   })
 }
+// module selection
+const moduleGroup = cy => {
+  const group = document.getElementById('module-group')
+  group.addEventListener('change', input => {
+    moduleSelection(input, cy) // global module
+  })
+}
 
 module.exports = {
   addNode: addNode,
   addEdge: addEdge,
   threatVerify: threatVerify,
   validate: validate,
-  overview: overview
+  overview: overview,
+  moduleGroup: moduleGroup
 }

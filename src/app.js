@@ -141,7 +141,7 @@ if (pathLocation === dgnPath) {
   dgn.threatVerify(cy)
   dgn.overview(cy)
   dgn.validate(cy)
-  core.moduleGroup(cy)
+  dgn.moduleGroup(cy)
   // add design edges
   // dgn.addEdge(cy, srcNode, trgNode, srcNodeCpt, trgNodeCpt)
   const buttonAddEdge = document.getElementById('add-edge')
@@ -170,7 +170,7 @@ if (pathLocation === dgnPath) {
   imp.vulnVerify(cy)
   imp.findVulnerabilities(cy)
   imp.findPattern(cy)
-  core.moduleGroup(cy)
+  imp.moduleGroup(cy)
   // add imp edges
   // imp.addEdge(cy, srcNode, trgNode, srcNodeCpt, trgNodeCpt)
   const buttonAddEdge = document.getElementById('add-edge')
