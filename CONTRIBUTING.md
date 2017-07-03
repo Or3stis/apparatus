@@ -5,13 +5,13 @@
 ASTo is an application to support security analysis using the Apparatus security framework. If you use the Apparatus framework and want to add more features to the tool, that's great news.
 
 1. Make a fork. Play around with the code.
-2. Make sure your code follows the [Standard](https://github.com/standard/standard) coding style.
+2. Run `npm run lint` to make sure the code follows [Standard](https://github.com/standard/standard) coding style.
 3. Make a Pull request.
 4. If your pull request introduces a new dependency, make a note of it in your commit.
 
 ## Option 2 You like the tool and want to use it for own methodology or framework.
 
-ASTo was developed to support the Apparatus framework and I would prefer to keep it like that. Having said that ASTo was designed with modularity in mind. It is very easy to replace the Apparatus specific concepts with concepts from another modeling language. 
+ASTo was developed to support the Apparatus framework and I would prefer to keep it like that. Having said that ASTo was designed with modularity in mind. It is very easy to replace the Apparatus specific concepts with concepts from another modeling language.
 
 I would be more than happy to help anyone with the necessary changes.
 
