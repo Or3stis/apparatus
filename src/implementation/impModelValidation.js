@@ -51,7 +51,6 @@ module.exports = function moduleValidation (cy) {
       result = 'model instance is valid\n👍'
     } else {
       printChat(result)
-      console.log(typeof result)
     }
   }
 
