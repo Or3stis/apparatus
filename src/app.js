@@ -139,6 +139,7 @@ const pathLocation = window.location.pathname.split('/').pop()
 if (pathLocation === dgnPath) {
   dgn.addNode(cy)
   // dgn.addEdge(cy, srcNode, trgNode, srcNodeCpt, trgNodeCpt)
+  dgn.threatVerify(cy)
   dgn.overview(cy)
   dgn.validate(cy)
   dgn.moduleGroup(cy)

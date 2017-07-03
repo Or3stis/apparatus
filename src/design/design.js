@@ -11,6 +11,7 @@ const addDgnEdge = require('./addDgnEdge.js')
 // require global modules
 const totalNodes = require('../totalNodes.js')
 const moduleSelection = require('../moduleSelection.js')
+const threatVerification = require('../threatVerification.js')
 
 // design nodes
 const addNode = cy => {
@@ -43,7 +44,13 @@ const validate = cy => {
     dgnModelValidation(cy)
   })
 }
-
+// verify threats
+const threatVerify = cy => {
+  const buttonThreatVefiry = document.getElementById('threat-verify-button')
+  buttonThreatVefiry.addEventListener('click', () => {
+    threatVerification(cy) // global module
+  })
+}
 // model overview
 const overview = cy => {
   const buttonOverview = document.getElementById('overview-button')
@@ -63,6 +70,7 @@ const moduleGroup = cy => {
 module.exports = {
   addNode: addNode,
   addEdge: addEdge,
+  threatVerify: threatVerify,
   validate: validate,
   overview: overview,
   moduleGroup: moduleGroup
