@@ -14,7 +14,6 @@ const findVulns = require('./findVulns.js')
 const totalNodes = require('../core/totalNodes.js')
 const threatVerification = require('../core/threatVerification.js')
 const patterns = require('../core/patterns.js')
-const moduleSelection = require('../core/moduleSelection.js')
 
 // design nodes
 const addNode = cy => {
@@ -39,7 +38,6 @@ const addEdge = (cy, srcNode, trgNode, srcNodeCpt, trgNodeCpt) => {
     totalNodes(cy) // global module
   })
 }
-
 // validate model
 const validate = cy => {
   const buttonModelValidate = document.getElementById('model-validate-button')
@@ -47,7 +45,6 @@ const validate = cy => {
     impModelValidation(cy)
   })
 }
-
 // verify threats
 const threatVerify = cy => {
   const buttonThreatVefiry = document.getElementById('threat-verify-button')
@@ -55,7 +52,6 @@ const threatVerify = cy => {
     threatVerification(cy) // global module
   })
 }
-
 // verify vulnerabilities
 const vulnVerify = cy => {
   const buttonVulnVefiry = document.getElementById('vuln-verify-button')
@@ -63,7 +59,6 @@ const vulnVerify = cy => {
     vulnVerification(cy)
   })
 }
-
 // find vulnerabilities
 const findVulnerabilities = cy => {
   const buttonFindVuln = document.getElementById('find-vuln-button')
@@ -71,7 +66,6 @@ const findVulnerabilities = cy => {
     findVulns(cy)
   })
 }
-
 // find patterns
 const findPattern = cy => {
   const buttonPattern = document.getElementById('pattern-button')
@@ -79,20 +73,11 @@ const findPattern = cy => {
     patterns(cy) // global module
   })
 }
-
 // model overview
 const overview = cy => {
   const buttonOverview = document.getElementById('overview-button')
   buttonOverview.addEventListener('click', () => {
     impOverview(cy)
-  })
-}
-
-// module selection
-const moduleGroup = cy => {
-  const group = document.getElementById('module-group')
-  group.addEventListener('change', input => {
-    moduleSelection(input, cy) // global module
   })
 }
 
@@ -104,6 +89,5 @@ module.exports = {
   threatVerify: threatVerify,
   vulnVerify: vulnVerify,
   findVulnerabilities: findVulnerabilities,
-  findPattern: findPattern,
-  moduleGroup: moduleGroup
+  findPattern: findPattern
 }

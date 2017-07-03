@@ -3,6 +3,7 @@
 // core modules, shared between all phases
 const nodeSelection = require('./nodeSelection.js')
 const coseLayout = require('./coseLayout.js')
+const moduleSelection = require('./moduleSelection.js')
 const save = require('./save.js')
 const load = require('./load.js')
 
@@ -56,11 +57,19 @@ const loadGraph = (cy, graphModel, cytoscape, graphStyle) => {
     load(cy, graphModel, cytoscape, graphStyle)
   })
 }
+// module selection
+const moduleGroup = cy => {
+  const group = document.getElementById('module-group')
+  group.addEventListener('change', input => {
+    moduleSelection(input, cy) // global module
+  })
+}
 
 module.exports = {
   selectionNode: selectionNode,
   layout: layout,
   labels: labels,
+  moduleGroup: moduleGroup,
   saveGraph: saveGraph,
   loadGraph: loadGraph
 }

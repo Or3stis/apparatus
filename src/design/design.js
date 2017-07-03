@@ -10,7 +10,6 @@ const addDgnEdge = require('./addDgnEdge.js')
 
 // require global modules
 const totalNodes = require('../core/totalNodes.js')
-const moduleSelection = require('../core/moduleSelection.js')
 const threatVerification = require('../core/threatVerification.js')
 
 // design nodes
@@ -33,10 +32,9 @@ const addEdge = (cy, srcNode, trgNode, srcNodeCpt, trgNodeCpt) => {
     addDgnEdge(cy, srcNode, trgNode, srcNodeCpt, trgNodeCpt)
     cy.edges().addClass('label-edges')
     console.log(srcNode)
-    totalNodes(cy) // global module
+    totalNodes(cy)
   })
 }
-
 // validate model
 const validate = cy => {
   const buttonModelValidate = document.getElementById('model-validate-button')
@@ -59,19 +57,10 @@ const overview = cy => {
   })
 }
 
-// module selection
-const moduleGroup = cy => {
-  const group = document.getElementById('module-group')
-  group.addEventListener('change', input => {
-    moduleSelection(input, cy) // global module
-  })
-}
-
 module.exports = {
   addNode: addNode,
   addEdge: addEdge,
   threatVerify: threatVerify,
   validate: validate,
-  overview: overview,
-  moduleGroup: moduleGroup
+  overview: overview
 }
