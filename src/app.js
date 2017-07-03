@@ -48,6 +48,11 @@ cy.layout({
   name: 'cose'
 })
 
+// initial label render
+cy.nodes().addClass('label-nodes')
+cy.edges().addClass('label-edges')
+
+// global variables, used in cy.on
 let selectedNode = ''
 let selectedEdge = ''
 let srcNode = ''
@@ -55,12 +60,7 @@ let trgNode = ''
 let srcNodeCpt = ''
 let trgNodeCpt = ''
 
-// initial label render
-cy.nodes().addClass('label-nodes')
-cy.edges().addClass('label-edges')
-
 // cy.on does stuff when intrecting with the graph
-
 // do stuff when tapping on node
 cy.on('tap', 'node', selection => {
   // removes previous selections
@@ -133,17 +133,17 @@ const impStatePath = 'implementation-state.html'
 // blame chromium and its Posix paths on windows for this ugliness
 const pathLocation = window.location.pathname.split('/').pop()
 
-// here we load the buttons for each phase
+// load the buttons for each phase
 
 // load design phase buttons
 if (pathLocation === dgnPath) {
   dgn.addNode(cy)
-  // dgn.addEdge(cy, srcNode, trgNode, srcNodeCpt, trgNodeCpt)
   dgn.threatVerify(cy)
   dgn.overview(cy)
   dgn.validate(cy)
   dgn.moduleGroup(cy)
   // add design edges
+  // dgn.addEdge(cy, srcNode, trgNode, srcNodeCpt, trgNodeCpt)
   const buttonAddEdge = document.getElementById('add-edge')
   buttonAddEdge.addEventListener('click', () => {
     addDgnEdge(cy, srcNode, trgNode, srcNodeCpt, trgNodeCpt) // design module
@@ -153,10 +153,10 @@ if (pathLocation === dgnPath) {
   // load design-state buttons
 } else if (pathLocation === dgnStatePath) {
   dgnState.addNode(cy)
-  // dgnState.addEdge(cy, srcNode, trgNode, srcNodeCpt, trgNodeCpt)
   dgnState.overview(cy)
   dgnState.validate(cy)
   // add generic edges
+  // dgnState.addEdge(cy, srcNode, trgNode, srcNodeCpt, trgNodeCpt)
   const buttonAddEdge = document.getElementById('add-edge')
   buttonAddEdge.addEventListener('click', () => {
     addDgnStateEdge(cy, srcNode, trgNode, srcNodeCpt, trgNodeCpt) // dgn-state module
@@ -166,7 +166,6 @@ if (pathLocation === dgnPath) {
   // loads implementation phase buttons
 } else if (pathLocation === impPath) {
   imp.addNode(cy)
-  // imp.addEdge(cy, srcNode, trgNode, srcNodeCpt, trgNodeCpt)
   imp.overview(cy)
   imp.validate(cy)
   imp.threatVerify(cy)
@@ -174,8 +173,8 @@ if (pathLocation === dgnPath) {
   imp.findVulnerabilities(cy)
   imp.findPattern(cy)
   imp.moduleGroup(cy)
-
   // add imp edges
+  // imp.addEdge(cy, srcNode, trgNode, srcNodeCpt, trgNodeCpt)
   const buttonAddEdge = document.getElementById('add-edge')
   buttonAddEdge.addEventListener('click', () => {
     addImpEdge(cy, srcNode, trgNode, srcNodeCpt, trgNodeCpt) // imp module
@@ -185,10 +184,9 @@ if (pathLocation === dgnPath) {
   // loads implementation-state buttons
 } else if (pathLocation === impStatePath) {
   impState.addNode(cy)
-  // impState.addEdge(cy, srcNode, trgNode, srcNodeCpt, trgNodeCpt)
   impState.overview(cy)
   impState.validate(cy)
-
+  // impState.addEdge(cy, srcNode, trgNode, srcNodeCpt, trgNodeCpt)
   const buttonAddEdge = document.getElementById('add-edge')
   buttonAddEdge.addEventListener('click', () => {
     addImpStateEdge(cy, srcNode, trgNode, srcNodeCpt, trgNodeCpt) // dgn-state module
