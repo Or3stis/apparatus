@@ -11,7 +11,7 @@ const vulnVerification = require('./vulnVerification.js')
 const findVulns = require('./findVulns.js')
 
 // require global modules
-const totalNodes = require('../totalNodes.js')
+const totalNodes = require('../core/totalNodes.js')
 const threatVerification = require('../core/threatVerification.js')
 const patterns = require('../core/patterns.js')
 const moduleSelection = require('../core/moduleSelection.js')

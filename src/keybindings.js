@@ -2,7 +2,7 @@
 
 const searchAttribute = require('./core/searchAttribute.js')
 const printChat = require('./core/printChat.js')
-const totalNodes = require('./totalNodes.js')
+const totalNodes = require('./core/totalNodes.js')
 // const addEdge = require('./addEdge.js')
 
 module.exports = function keyboard (cy, toggleUI) {

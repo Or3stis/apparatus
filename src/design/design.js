@@ -9,7 +9,7 @@ const addDgnComponent = require('./addDgnComponent.js')
 const addDgnEdge = require('./addDgnEdge.js')
 
 // require global modules
-const totalNodes = require('../totalNodes.js')
+const totalNodes = require('../core/totalNodes.js')
 const moduleSelection = require('../core/moduleSelection.js')
 const threatVerification = require('../core/threatVerification.js')
 
