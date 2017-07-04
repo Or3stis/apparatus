@@ -146,13 +146,7 @@ if (pathLocation === dgnPath) {
   dgnState.addNode(cy)
   dgnState.overview(cy)
   dgnState.validate(cy)
-  // add generic edges
-  // dgnState.addEdge(cy, srcNode, trgNode, srcNodeCpt, trgNodeCpt)
-  const buttonAddEdge = document.getElementById('add-edge')
-  buttonAddEdge.addEventListener('click', () => {
-    addDgnStateEdge(cy, srcNode, trgNode, srcNodeCpt, trgNodeCpt) // dgn-state module
-    cy.edges().addClass('label-edges')
-  })
+  dgnState.addEdge(cy, srcNode, trgNode, srcNodeCpt, trgNodeCpt)
   // loads implementation phase buttons
 } else if (pathLocation === impPath) {
   imp.addNode(cy)

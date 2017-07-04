@@ -30,7 +30,6 @@ const addEdge = (cy, srcNode, trgNode, srcNodeCpt, trgNodeCpt) => {
   buttonAddEdge.addEventListener('click', () => {
     addDgnEdge(cy, srcNode.out, trgNode.out, srcNodeCpt.out, trgNodeCpt.out)
     cy.edges().addClass('label-edges')
-    totalNodes(cy)
   })
 }
 // validate model

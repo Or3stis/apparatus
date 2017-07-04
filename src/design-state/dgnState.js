@@ -24,14 +24,11 @@ const addNode = cy => {
 }
 
 // add dgn-state edges
-// TODO doesn't work
 const addEdge = (cy, srcNode, trgNode, srcNodeCpt, trgNodeCpt) => {
   const buttonAddEdge = document.getElementById('add-edge')
   buttonAddEdge.addEventListener('click', () => {
-    addDgnStateEdge(cy, srcNode, trgNode, srcNodeCpt, trgNodeCpt)
+    addDgnStateEdge(cy, srcNode.out, trgNode.out, srcNodeCpt.out, trgNodeCpt.out)
     cy.edges().addClass('label-edges')
-    console.log(srcNode)
-    totalNodes(cy) // global module
   })
 }
 
