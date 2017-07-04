@@ -5,9 +5,10 @@ const nodeSelection = require('./nodeSelection.js')
 const coseLayout = require('./coseLayout.js')
 const save = require('./save.js')
 const load = require('./load.js')
+const totalNodes = require('./totalNodes.js')
 
 // highlights only the selected node class
-const selectionNode = (cy) => {
+const selectionNode = cy => {
   const select = document.getElementById('selection-id')
   select.addEventListener('change', e => {
     nodeSelection(cy, e.target.value)
@@ -23,15 +24,33 @@ const showNeighbor = (cy, selectedNode) => {
     neighborhood.removeClass('faded')
   })
 }
+const deleteEl = (cy, selectedNode, selectedEdge) => {
+  const buttonDelete = document.getElementById('delete')
+  buttonDelete.addEventListener('click', () => {
+    if (
+      Object.keys(selectedNode.out).length === 0 &&
+      Object.keys(selectedEdge.out).length !== 0
+    ) {
+      selectedEdge.out.remove()
+    }
+    if (
+      Object.keys(selectedEdge.out).length === 0 &&
+      Object.keys(selectedNode.out).length !== 0
+    ) {
+      selectedNode.out.remove()
+    }
+    totalNodes(cy) // global module
+  })
+}
 // cose layout
-const layout = (cy) => {
+const layout = cy => {
   const buttonLayout = document.getElementById('layout-button')
   buttonLayout.addEventListener('click', () => {
     coseLayout(cy)
   })
 }
 // enable label buttons
-const labels = (cy) => {
+const labels = cy => {
   const hideLabelsButton = document.getElementById('hide-label')
   hideLabelsButton.addEventListener('click', () => {
     cy.nodes().removeClass('label-nodes')
@@ -70,6 +89,7 @@ const loadGraph = (cy, graphModel, cytoscape, graphStyle) => {
 module.exports = {
   selectionNode: selectionNode,
   layout: layout,
+  deleteEl: deleteEl,
   showNeighbor: showNeighbor,
   labels: labels,
   saveGraph: saveGraph,

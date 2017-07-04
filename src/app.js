@@ -7,24 +7,19 @@ const path = require('path')
 const keybindings = require('./src/keybindings.js')
 
 // require core modules
+// const nodeInfo = require('./src/core/nodeInfo.js')
 const core = require('./src/core/core.js')
 const hoverNodeInfo = require('./src/core/hoverNodeInfo.js')
 const editNode = require('./src/core/editNode.js')
 const totalNodes = require('./src/core/totalNodes.js')
-// const nodeInfo = require('./src/core/nodeInfo.js')
-
 // require design modules
 const dgn = require('./src/design/design.js')
-
 // require design-state Models
 const dgnState = require('./src/design-state/dgnState.js')
-
 // reguire implementation modules
 const imp = require('./src/implementation/implementation.js')
-
 // require implementation-state modules
 const impState = require('./src/implementation-state/impState.js')
-
 // configuration for the graphs style
 const graphStyle = require(`./style/graphStyle.js`)
 
@@ -38,7 +33,6 @@ const cy = cytoscape({
   elements: graphModel.elements, // loads the elements object of the graph
   style: graphStyle.style
 })
-
 // graph layout
 cy.layout({
   name: 'cose'
@@ -69,7 +63,7 @@ cy.on('tap', 'node', selection => {
   trgNode.out = selectedNode.out.data().id
   srcNodeCpt.out = trgNodeCpt.out // second selection
   trgNodeCpt.out = selectedNode.out.data().info.concept
-  selectedEdge = '' // clear token
+  selectedEdge.out = {} // clear token
   totalNodes(cy) // global module
   editNode.removeElement() // remove the edit node element
 })
@@ -81,7 +75,7 @@ cy.on('tap', 'edge', selection => {
   cy.elements().removeClass('protect')
   selection.target.addClass('selection')
   selectedNode.out = {} // clear token
-  selectedEdge = selection.target[0]
+  selectedEdge.out = selection.target[0]
   totalNodes(cy) // global module
   editNode.removeElement() // remove the edit node element
 })
@@ -98,7 +92,7 @@ cy.on('tap', selection => {
     document.getElementById('module-group').selectedIndex = ''
     document.getElementById('selection-id').selectedIndex = ''
     selectedNode.out = {}
-    selectedEdge = ''
+    selectedEdge.out = {}
     totalNodes(cy) // global module
     editNode.removeElement() // remove the edit node element
   }
@@ -177,27 +171,9 @@ core.saveGraph(cy, path)
 core.loadGraph(cy, graphStyle)
 // show the neighbors of a tapped node
 core.showNeighbor(cy, selectedNode)
+// delete elements
+core.deleteEl(cy, selectedNode, selectedEdge)
 
-// TODO check
-// delele selected node
-const buttonDelete = document.getElementById('delete')
-buttonDelete.addEventListener('click', () => {
-  if (Object.keys(selectedNode.out).length === 0 && selectedEdge !== '') {
-    selectedEdge.remove()
-  }
-  if (selectedEdge === '' && Object.keys(selectedNode.out).length !== 0) {
-    selectedNode.out.remove()
-  }
-  totalNodes(cy) // global module
-})
-// // show the neighbors of a tapped node
-// const buttonNeighbor = document.getElementById('neighbors-button')
-// buttonNeighbor.addEventListener('click', () => {
-//   // selectedNode from cy.on tap node function
-//   const neighborhood = selectedNode.out.neighborhood().add(selectedNode.out)
-//   cy.elements().addClass('faded')
-//   neighborhood.removeClass('faded')
-// })
 // test function
 const buttonTest = document.getElementById('test-button')
 buttonTest.addEventListener('click', () => {
