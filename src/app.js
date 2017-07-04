@@ -23,7 +23,6 @@ const dgnState = require('./src/design-state/dgnState.js')
 const imp = require('./src/implementation/implementation.js')
 
 // require implementation-state modules
-const addImpStateEdge = require('./src/implementation-state/addImpStateEdge.js')
 const impState = require('./src/implementation-state/impState.js')
 
 // configuration for the graphs style
@@ -161,12 +160,7 @@ if (pathLocation === dgnPath) {
   impState.addNode(cy)
   impState.overview(cy)
   impState.validate(cy)
-  // impState.addEdge(cy, srcNode, trgNode, srcNodeCpt, trgNodeCpt)
-  const buttonAddEdge = document.getElementById('add-edge')
-  buttonAddEdge.addEventListener('click', () => {
-    addImpStateEdge(cy, srcNode, trgNode, srcNodeCpt, trgNodeCpt) // dgn-state module
-    cy.edges().addClass('label-edges')
-  })
+  impState.addEdge(cy, srcNode, trgNode, srcNodeCpt, trgNodeCpt)
 }
 
 // declaration of global buttons
