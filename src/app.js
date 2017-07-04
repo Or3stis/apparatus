@@ -49,8 +49,8 @@ cy.nodes().addClass('label-nodes')
 cy.edges().addClass('label-edges')
 
 // global variables, used in cy.on
-let selectedNode = ''
-let selectedEdge = ''
+let selectedNode = {}
+let selectedEdge = {}
 let srcNode = {}
 let trgNode = {}
 let srcNodeCpt = {}
@@ -63,12 +63,12 @@ cy.on('tap', 'node', selection => {
   cy.elements().removeClass('selection')
   cy.elements().removeClass('attention')
   cy.elements().removeClass('protect')
-  selectedNode = selection.target[0]
-  selectedNode.addClass('selection')
+  selectedNode.out = selection.target[0]
+  selectedNode.out.addClass('selection')
   srcNode.out = trgNode.out // second selection
-  trgNode.out = selectedNode.data().id
+  trgNode.out = selectedNode.out.data().id
   srcNodeCpt.out = trgNodeCpt.out // second selection
-  trgNodeCpt.out = selectedNode.data().info.concept
+  trgNodeCpt.out = selectedNode.out.data().info.concept
   selectedEdge = '' // clear token
   totalNodes(cy) // global module
   editNode.removeElement() // remove the edit node element
@@ -80,7 +80,7 @@ cy.on('tap', 'edge', selection => {
   cy.elements().removeClass('attention')
   cy.elements().removeClass('protect')
   selection.target.addClass('selection')
-  selectedNode = '' // clear token
+  selectedNode.out = {} // clear token
   selectedEdge = selection.target[0]
   totalNodes(cy) // global module
   editNode.removeElement() // remove the edit node element
@@ -97,7 +97,7 @@ cy.on('tap', selection => {
     // clear tokens
     document.getElementById('module-group').selectedIndex = ''
     document.getElementById('selection-id').selectedIndex = ''
-    selectedNode = ''
+    selectedNode.out = {}
     selectedEdge = ''
     totalNodes(cy) // global module
     editNode.removeElement() // remove the edit node element
@@ -175,33 +175,34 @@ core.labels(cy)
 core.saveGraph(cy, path)
 // load graph - TODO doesn't work properly
 core.loadGraph(cy, graphStyle)
+// show the neighbors of a tapped node
+core.showNeighbor(cy, selectedNode)
 
 // TODO check
 // delele selected node
 const buttonDelete = document.getElementById('delete')
 buttonDelete.addEventListener('click', () => {
-  if (selectedNode === '' && selectedEdge !== '') {
+  if (Object.keys(selectedNode.out).length === 0 && selectedEdge !== '') {
     selectedEdge.remove()
   }
-  if (selectedEdge === '' && selectedNode !== '') {
-    selectedNode.remove()
+  if (selectedEdge === '' && Object.keys(selectedNode.out).length !== 0) {
+    selectedNode.out.remove()
   }
   totalNodes(cy) // global module
 })
-// show the neighbors of a tapped node
-const buttonNeighbor = document.getElementById('neighbors-button')
-buttonNeighbor.addEventListener('click', () => {
-  // selectedNode from cy.on tap node function
-  const neighborhood = selectedNode.neighborhood().add(selectedNode)
-  cy.elements().addClass('faded')
-  neighborhood.removeClass('faded')
-})
-// test function
-// const buttonTest = document.getElementById('test-button')
-// buttonTest.addEventListener('click', () => {
-//   // test code goes here
-//   dgnState.test(srcNodeCpt, trgNodeCpt)
+// // show the neighbors of a tapped node
+// const buttonNeighbor = document.getElementById('neighbors-button')
+// buttonNeighbor.addEventListener('click', () => {
+//   // selectedNode from cy.on tap node function
+//   const neighborhood = selectedNode.out.neighborhood().add(selectedNode.out)
+//   cy.elements().addClass('faded')
+//   neighborhood.removeClass('faded')
 // })
+// test function
+const buttonTest = document.getElementById('test-button')
+buttonTest.addEventListener('click', () => {
+  // test code goes here
+})
 
 // toggles side panels
 const toggleUI = () => {

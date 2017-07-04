@@ -13,7 +13,17 @@ const selectionNode = (cy) => {
     nodeSelection(cy, e.target.value)
   })
 }
-  // cose layout
+const showNeighbor = (cy, selectedNode) => {
+  // show the neighbors of a tapped node
+  const buttonNeighbor = document.getElementById('neighbors-button')
+  buttonNeighbor.addEventListener('click', () => {
+    // selectedNode from cy.on tap node function
+    const neighborhood = selectedNode.out.neighborhood().add(selectedNode.out)
+    cy.elements().addClass('faded')
+    neighborhood.removeClass('faded')
+  })
+}
+// cose layout
 const layout = (cy) => {
   const buttonLayout = document.getElementById('layout-button')
   buttonLayout.addEventListener('click', () => {
@@ -60,6 +70,7 @@ const loadGraph = (cy, graphModel, cytoscape, graphStyle) => {
 module.exports = {
   selectionNode: selectionNode,
   layout: layout,
+  showNeighbor: showNeighbor,
   labels: labels,
   saveGraph: saveGraph,
   loadGraph: loadGraph
