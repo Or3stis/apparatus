@@ -17,11 +17,9 @@ const totalNodes = require('./src/core/totalNodes.js')
 const dgn = require('./src/design/design.js')
 
 // require design-state Models
-const addDgnStateEdge = require('./src/design-state/addDgnStateEdge.js')
 const dgnState = require('./src/design-state/dgnState.js')
 
 // reguire implementation modules
-const addImpEdge = require('./src/implementation/addImpEdge.js')
 const imp = require('./src/implementation/implementation.js')
 
 // require implementation-state modules
@@ -157,13 +155,7 @@ if (pathLocation === dgnPath) {
   imp.findVulnerabilities(cy)
   imp.findPattern(cy)
   imp.moduleGroup(cy)
-  // add imp edges
-  // imp.addEdge(cy, srcNode, trgNode, srcNodeCpt, trgNodeCpt)
-  const buttonAddEdge = document.getElementById('add-edge')
-  buttonAddEdge.addEventListener('click', () => {
-    addImpEdge(cy, srcNode, trgNode, srcNodeCpt, trgNodeCpt) // imp module
-    cy.edges().addClass('label-edges')
-  })
+  imp.addEdge(cy, srcNode, trgNode, srcNodeCpt, trgNodeCpt)
   // loads implementation-state buttons
 } else if (pathLocation === impStatePath) {
   impState.addNode(cy)

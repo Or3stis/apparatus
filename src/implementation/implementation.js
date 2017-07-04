@@ -29,14 +29,11 @@ const addNode = cy => {
 }
 
 // add design edges
-// TODO doesn't work
 const addEdge = (cy, srcNode, trgNode, srcNodeCpt, trgNodeCpt) => {
   const buttonAddEdge = document.getElementById('add-edge')
   buttonAddEdge.addEventListener('click', () => {
-    addImpEdge(cy, srcNode, trgNode, srcNodeCpt, trgNodeCpt)
+    addImpEdge(cy, srcNode.out, trgNode.out, srcNodeCpt.out, trgNodeCpt.out)
     cy.edges().addClass('label-edges')
-    console.log(srcNode)
-    totalNodes(cy) // global module
   })
 }
 // validate model
