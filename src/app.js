@@ -14,7 +14,6 @@ const totalNodes = require('./src/core/totalNodes.js')
 // const nodeInfo = require('./src/core/nodeInfo.js')
 
 // require design modules
-const addDgnEdge = require('./src/design/addDgnEdge.js')
 const dgn = require('./src/design/design.js')
 
 // require design-state Models
@@ -55,10 +54,10 @@ cy.edges().addClass('label-edges')
 // global variables, used in cy.on
 let selectedNode = ''
 let selectedEdge = ''
-let srcNode = ''
-let trgNode = ''
-let srcNodeCpt = ''
-let trgNodeCpt = ''
+let srcNode = {}
+let trgNode = {}
+let srcNodeCpt = {}
+let trgNodeCpt = {}
 
 // cy.on does stuff when intrecting with the graph
 // do stuff when tapping on node
@@ -68,12 +67,11 @@ cy.on('tap', 'node', selection => {
   cy.elements().removeClass('attention')
   cy.elements().removeClass('protect')
   selectedNode = selection.target[0]
-  // nodeInfo(selectedNode) // global module
   selectedNode.addClass('selection')
-  srcNode = trgNode // second selection
-  trgNode = selectedNode.data().id
-  srcNodeCpt = trgNodeCpt // second selection
-  trgNodeCpt = selectedNode.data().info.concept
+  srcNode.out = trgNode.out // second selection
+  trgNode.out = selectedNode.data().id
+  srcNodeCpt.out = trgNodeCpt.out // second selection
+  trgNodeCpt.out = selectedNode.data().info.concept
   selectedEdge = '' // clear token
   totalNodes(cy) // global module
   editNode.removeElement() // remove the edit node element
@@ -142,13 +140,7 @@ if (pathLocation === dgnPath) {
   dgn.overview(cy)
   dgn.validate(cy)
   dgn.moduleGroup(cy)
-  // add design edges
-  // dgn.addEdge(cy, srcNode, trgNode, srcNodeCpt, trgNodeCpt)
-  const buttonAddEdge = document.getElementById('add-edge')
-  buttonAddEdge.addEventListener('click', () => {
-    addDgnEdge(cy, srcNode, trgNode, srcNodeCpt, trgNodeCpt) // design module
-    cy.edges().addClass('label-edges')
-  })
+  dgn.addEdge(cy, srcNode, trgNode, srcNodeCpt, trgNodeCpt)
   // load design-state buttons
 } else if (pathLocation === dgnStatePath) {
   dgnState.addNode(cy)
@@ -204,6 +196,7 @@ core.saveGraph(cy, path)
 // load graph - TODO doesn't work properly
 core.loadGraph(cy, graphStyle)
 
+// TODO check
 // delele selected node
 const buttonDelete = document.getElementById('delete')
 buttonDelete.addEventListener('click', () => {
@@ -224,11 +217,11 @@ buttonNeighbor.addEventListener('click', () => {
   neighborhood.removeClass('faded')
 })
 // test function
-const buttonTest = document.getElementById('test-button')
-buttonTest.addEventListener('click', () => {
-  // test code goes here
-  dgnState.test(srcNodeCpt, trgNodeCpt)
-})
+// const buttonTest = document.getElementById('test-button')
+// buttonTest.addEventListener('click', () => {
+//   // test code goes here
+//   dgnState.test(srcNodeCpt, trgNodeCpt)
+// })
 
 // toggles side panels
 const toggleUI = () => {

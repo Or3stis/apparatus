@@ -24,15 +24,12 @@ const addNode = cy => {
     totalNodes(cy) // global module
   })
 }
-
 // add design edges
-// TODO doesn't work
 const addEdge = (cy, srcNode, trgNode, srcNodeCpt, trgNodeCpt) => {
   const buttonAddEdge = document.getElementById('add-edge')
   buttonAddEdge.addEventListener('click', () => {
-    addDgnEdge(cy, srcNode, trgNode, srcNodeCpt, trgNodeCpt)
+    addDgnEdge(cy, srcNode.out, trgNode.out, srcNodeCpt.out, trgNodeCpt.out)
     cy.edges().addClass('label-edges')
-    console.log(srcNode)
     totalNodes(cy)
   })
 }
