@@ -19,7 +19,7 @@ module.exports = function save (cy, path) {
       if (err) {
         throw err
       }
+      printChat('graph saved\n👍')
     })
   })
-  printChat('graph saved\n👍')
 }
