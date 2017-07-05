@@ -25,7 +25,7 @@
   "dependencies": {
     "cytoscape": "^3.1.2",
     "electron": "^1.6.11",
-    "jsonfile": "^3.0.0"
+    "jsonfile": "^3.0.1"
   },
   "devDependencies": {
     "prettier": "^1.5.2",
