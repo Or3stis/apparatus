@@ -2,7 +2,8 @@
 
 ## An IoT network security analysis tool and visualizer
 
-[![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](http://standardjs.com/) ![](https://travis-ci.org/Or3stis/apparatus.svg?branch=master)
+[![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](http://standardjs.com/)
+[![styled with prettier](https://img.shields.io/badge/styled_with-prettier-ff69b4.svg)](https://github.com/prettier/prettier) ![](https://travis-ci.org/Or3stis/apparatus.svg?branch=master)
 [![David](https://img.shields.io/david/expressjs/express.svg)]()
 [![David](https://img.shields.io/david/dev/expressjs/express.svg)]()
 

@@ -4,7 +4,7 @@
   "description": "a network security visualiser",
   "main": "main.js",
   "scripts": {
-    "lint": "standard --fix",
+    "lint": "&& standard --fix",
     "start": "electron main.js"
   },
   "repository": {
@@ -28,6 +28,7 @@
     "jsonfile": "^3.0.0"
   },
   "devDependencies": {
+    "prettier": "^1.5.2",
     "standard": "^10.0.2"
   }
 }
