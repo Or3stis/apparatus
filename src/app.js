@@ -173,6 +173,8 @@ core.loadGraph(cy, graphStyle)
 core.showNeighbor(cy, selectedNode)
 // delete elements
 core.deleteEl(cy, selectedNode, selectedEdge)
+// initial node count
+totalNodes(cy)
 
 // test function
 const buttonTest = document.getElementById('test-button')
@@ -193,7 +195,5 @@ const toggleUI = () => {
   }
 }
 
-totalNodes(cy) // global module
-
 // enable keybindings
-keybindings(cy, toggleUI) // global module
+keybindings(cy, selectedNode, selectedEdge, toggleUI) // global module
