@@ -11,6 +11,7 @@ module.exports = function keyboard (cy, selectedNode, selectedEdge, toggleUI) {
     '• help: for options\n• backspace: delete node/edge\n• meta + z: to undo last action\n• alt + h: toggle UI\n• meta + l: focus on console\n• search for attributes\n'
 
   const consoleId = document.getElementById('console-id')
+  const formId = document.getElementById('form-id')
 
   // loses the focus from the console when tapping
   cy.on('tap', 'node', selection => {
@@ -34,21 +35,25 @@ module.exports = function keyboard (cy, selectedNode, selectedEdge, toggleUI) {
       toggleUI()
     }
     // Backspace deletion of nodes and edges
-    if (document.activeElement !== consoleId && event.code === 'Backspace') {
-      if (
-        Object.keys(selectedNode.out).length === 0 &&
-        Object.keys(selectedEdge.out).length !== 0
-      ) {
-        selectedEdge.out.remove()
-      }
-      if (
-        Object.keys(selectedEdge.out).length === 0 &&
-        Object.keys(selectedNode.out).length !== 0
-      ) {
-        selectedNode.out.remove()
-      }
-      totalNodes(cy) // global module
-    }
+    // if (
+    //   document.activeElement !== consoleId &&
+    //   document.activeElement !== formId &&
+    //   event.code === 'Backspace'
+    // ) {
+    //   if (
+    //     Object.keys(selectedNode.out).length === 0 &&
+    //     Object.keys(selectedEdge.out).length !== 0
+    //   ) {
+    //     selectedEdge.out.remove()
+    //   }
+    //   if (
+    //     Object.keys(selectedEdge.out).length === 0 &&
+    //     Object.keys(selectedNode.out).length !== 0
+    //   ) {
+    //     selectedNode.out.remove()
+    //   }
+    //   totalNodes(cy) // global module
+    // }
     // add edge
     // if (event.altKey === true && event.code === 'KeyE') {
     //   addEdge(cy, sourceNode, targetNode)
