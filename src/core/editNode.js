@@ -4,7 +4,6 @@
 
 // create the form
 const createForm = (selectedNode) => {
-  // const formEl = document.getElementById('form-id')
   const htmlElement = document.getElementById('info-nodes-id')
   const form = document.createElement('form')
   form.className = 'bubble'
