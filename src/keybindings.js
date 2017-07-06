@@ -56,7 +56,7 @@ module.exports = function keyboard (cy, selectedNode, selectedEdge, toggleUI) {
     // restore elements with meta + z
     // BUG only restores the last node
     if (event.metaKey === true && event.code === 'KeyZ') {
-      selectedNode.restore()
+      selectedNode.out.restore()
     }
     // console commands
     const input = document.getElementById('console-id').value
