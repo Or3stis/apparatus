@@ -4,7 +4,7 @@ const cytoscape = require('cytoscape')
 const path = require('path')
 
 // require global moduless
-const keybindings = require('./src/keybindings.js')
+const commands = require('./src/commands.js')
 
 // require core modules
 // const nodeInfo = require('./src/core/nodeInfo.js')
@@ -175,11 +175,14 @@ core.showNeighbor(cy, selectedNode)
 core.deleteEl(cy, selectedNode, selectedEdge)
 // initial node count
 totalNodes(cy)
+// command prompt
+commands(cy)
 
 // test function
 const buttonTest = document.getElementById('test-button')
 buttonTest.addEventListener('click', () => {
   // test code goes here
+  toggleUI()
 })
 
 // toggles side panels
@@ -196,4 +199,4 @@ const toggleUI = () => {
 }
 
 // enable keybindings
-keybindings(cy, selectedNode, selectedEdge, toggleUI) // global module
+// keybindings(cy, selectedNode, selectedEdge, toggleUI) // global module
