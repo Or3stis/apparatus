@@ -89,7 +89,7 @@ cy.on('tap', selection => {
     cy.elements().removeClass('attention')
     cy.elements().removeClass('protect')
     // clear tokens
-    document.getElementById('module-group').selectedIndex = ''
+    // document.getElementById('module-group').selectedIndex = ''
     document.getElementById('selection-id').selectedIndex = ''
     selectedNode.out = {}
     selectedEdge.out = {}
