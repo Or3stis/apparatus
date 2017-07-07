@@ -176,7 +176,7 @@ core.deleteEl(cy, selectedNode, selectedEdge)
 // initial node count
 totalNodes(cy)
 // command prompt
-commands(cy)
+commands(cy, selectedNode)
 
 // test function
 const buttonTest = document.getElementById('test-button')

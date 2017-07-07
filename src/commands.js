@@ -3,10 +3,12 @@
 const searchAttribute = require('./core/searchAttribute.js')
 const printChat = require('./core/printChat.js')
 
-module.exports = function console (cy) {
+module.exports = function console (cy, selectedNode) {
   // help menu
-  const helpMenu =
-    '• help: for options\n• backspace: delete node/edge\n• meta + z: to undo last action\n• alt + h: toggle UI\n• meta + l: focus on console\n• search for attributes\n'
+  const helpMenu = `• help: for options
+• meta + l: focus on console
+• meta + z: restore node
+• search for attributes`
 
   // loses the focus from the console when tapping
   cy.on('tap', 'node', selection => {
@@ -38,12 +40,18 @@ module.exports = function console (cy) {
     }
   }
 
+  // keydown listeners
   document.addEventListener('keydown', event => {
     // focus on the consoleId
     if (event.metaKey === true && event.code === 'KeyL') {
       consoleId.focus()
     }
-    // listens for the ENTER key
+    // restore elements with meta + z
+    // BUG only restores the last node
+    if (event.metaKey === true && event.code === 'KeyZ') {
+      selectedNode.out.restore()
+    }
+    // listens for the ENTER key when focus is on the console
     if (document.activeElement === consoleId && event.code === 'Enter') {
       commands()
     }
