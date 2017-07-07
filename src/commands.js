@@ -21,8 +21,8 @@ module.exports = function console (cy, selectedNode) {
     consoleId.blur()
   })
 
-  const consoleId = document.getElementById('console-id')
   // console commands
+  const consoleId = document.getElementById('console-id')
   const commands = () => {
     const input = document.getElementById('console-id').value
     document.getElementById('console-id').value = ''
