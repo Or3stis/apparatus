@@ -1,8 +1,9 @@
-// configuration and color values of the GUI
+// graph color values
 
 const config = {}
 
-// oneDark colors
+// Atom's One Dark color theme
+
 // config.white = '#abb2bf'
 // config.black = '#3b4251'
 // config.blue = '#61afef'
@@ -14,6 +15,8 @@ const config = {}
 // config.cyan = '#56b6c2'
 // config.gray = '#d8dee9'
 // config.comment = '#abb2bf'
+
+// Gloom color theme
 
 config.white = '#f1eff7'
 config.black = '#292a44'

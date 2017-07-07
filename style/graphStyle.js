@@ -1,6 +1,6 @@
 // CSS style for the graphs
 
-const configGraph = require(`./configGraph.js`)
+const config = require(`./config.js`)
 
 const graphStyle = {}
 
@@ -8,13 +8,13 @@ graphStyle.style = [{
   selector: 'node',
   style: {
     shape: 'ellipse',
-    'background-color': configGraph.gray
+    'background-color': config.gray
   }
 }, {
   selector: 'edge',
   style: {
     'curve-style': 'bezier',
-    'line-color': configGraph.gray,
+    'line-color': config.gray,
     'width': 2
   }
 }, {
@@ -26,37 +26,37 @@ graphStyle.style = [{
 }, {
   selector: '.selection',
   style: {
-    'background-color': configGraph.blue,
-    'line-color': configGraph.blue
+    'background-color': config.blue,
+    'line-color': config.blue
   }
 }, {
   selector: '.attention',
   style: {
-    'background-color': configGraph.yellow
+    'background-color': config.yellow
   }
 }, {
   selector: '.protect',
   style: {
-    'background-color': configGraph.lightBlue
+    'background-color': config.lightBlue
   }
 }, {
   selector: '.label-nodes',
   style: {
     label: 'data(label)',
     'text-valign': 'center',
-    'color': configGraph.white,
+    'color': config.white,
     'text-outline-width': 2,
-    'text-outline-color': configGraph.black
+    'text-outline-color': config.black
   }
 }, {
   selector: '.label-edges',
   style: {
     label: 'data(label)',
     'target-arrow-shape': 'triangle',
-    'target-arrow-color': configGraph.gray,
-    'color': configGraph.white,
+    'target-arrow-color': config.gray,
+    'color': config.white,
     'text-outline-width': 2,
-    'text-outline-color': configGraph.black
+    'text-outline-color': config.black
   }
 }]
 
