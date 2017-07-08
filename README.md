@@ -54,8 +54,5 @@ If you want to contribute that's great news 😃. Check the [contributing](https
 
 If you want to find out how the app works check the [wiki](https://github.com/Or3stis/apparatus/wiki).
 
-## Thanks
-
-A shoutout to [@hejrobin](https://github.com/hejrobin) who created [gloom](https://github.com/hejrobin/gloom), which inspired ASTo's awesome color theme.
 
 #### License [MIT](LICENSE.md)
