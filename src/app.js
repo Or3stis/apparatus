@@ -172,11 +172,11 @@ core.loadGraph(cy, graphStyle)
 // show the neighbors of a tapped node
 core.showNeighbor(cy, selectedNode)
 // delete elements
-core.deleteEl(cy, selectedNode, selectedEdge)
+core.deleteButton(cy, selectedNode, selectedEdge)
 // initial node count
 totalNodes(cy)
 // command prompt
-commands(cy, selectedNode)
+commands(cy, selectedNode, selectedEdge)
 
 // test function
 const buttonTest = document.getElementById('test-button')

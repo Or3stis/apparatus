@@ -4,10 +4,11 @@ const searchAttribute = require('./core/searchAttribute.js')
 const printChat = require('./core/printChat.js')
 const core = require('./core/core.js')
 
-module.exports = function console (cy, selectedNode, deletedNodes) {
+module.exports = function console (cy, selectedNode, selectedEdge) {
   // help menu
   const helpMenu = `• help: for options
 • meta + l: focus on console
+• meta + backspace: deletes element
 • meta + z: restore node
 • search for attributes`
 
@@ -47,8 +48,10 @@ module.exports = function console (cy, selectedNode, deletedNodes) {
     if (event.metaKey === true && event.code === 'KeyL') {
       consoleId.focus()
     }
+    if (event.metaKey === true && event.code === 'Backspace') {
+      core.deleteEl(cy, selectedNode, selectedEdge)
+    }
     // restore elements with meta + z
-    // BUG only restores the last node
     if (event.metaKey === true && event.code === 'KeyZ') {
       core.restoreNode()
     }

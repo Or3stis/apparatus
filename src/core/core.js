@@ -26,23 +26,28 @@ const showNeighbor = (cy, selectedNode) => {
 }
 // holds the deleted nodes
 let deletedNodes = []
+// used as module
 const deleteEl = (cy, selectedNode, selectedEdge) => {
+  if (
+    Object.keys(selectedNode.out).length === 0 &&
+    Object.keys(selectedEdge.out).length !== 0
+  ) {
+    selectedEdge.out.remove()
+  }
+  if (
+    Object.keys(selectedEdge.out).length === 0 &&
+    Object.keys(selectedNode.out).length !== 0
+  ) {
+    deletedNodes.push(selectedNode.out)
+    selectedNode.out.remove()
+  }
+  totalNodes(cy)
+}
+// bind the delete Button
+const deleteButton = (cy, selectedNode, selectedEdge) => {
   const buttonDelete = document.getElementById('delete')
   buttonDelete.addEventListener('click', () => {
-    if (
-      Object.keys(selectedNode.out).length === 0 &&
-      Object.keys(selectedEdge.out).length !== 0
-    ) {
-      selectedEdge.out.remove()
-    }
-    if (
-      Object.keys(selectedEdge.out).length === 0 &&
-      Object.keys(selectedNode.out).length !== 0
-    ) {
-      deletedNodes.push(selectedNode.out)
-      selectedNode.out.remove()
-    }
-    totalNodes(cy) // global module
+    deleteEl(cy, selectedNode, selectedEdge)
   })
 }
 // cose layout
@@ -97,6 +102,7 @@ const restoreNode = () => {
 module.exports = {
   selectionNode: selectionNode,
   layout: layout,
+  deleteButton: deleteButton,
   deleteEl: deleteEl,
   showNeighbor: showNeighbor,
   labels: labels,
