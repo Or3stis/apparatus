@@ -2,16 +2,15 @@
 
 const searchAttribute = require('./core/searchAttribute.js')
 const printChat = require('./core/printChat.js')
-const totalNodes = require('./core/totalNodes.js')
-// const addEdge = require('./addEdge.js')
+const core = require('./core/core.js')
 
-module.exports = function keyboard (cy, selectedNode, selectedEdge, toggleUI) {
+module.exports = function console (cy, selectedNode, selectedEdge) {
   // help menu
-  const helpMenu =
-    '• help: for options\n• backspace: delete node/edge\n• meta + z: to undo last action\n• alt + h: toggle UI\n• meta + l: focus on console\n• search for attributes\n'
-
-  const consoleId = document.getElementById('console-id')
-  // let formId = document.getElementById('form-id')
+  const helpMenu = `• help: for options
+• meta + l: focus on console
+• meta + backspace: deletes element
+• meta + z: restore node
+• search for attributes`
 
   // loses the focus from the console when tapping
   cy.on('tap', 'node', selection => {
@@ -24,64 +23,41 @@ module.exports = function keyboard (cy, selectedNode, selectedEdge, toggleUI) {
     consoleId.blur()
   })
 
-  // keyboard listeners
+  // console commands
+  const consoleId = document.getElementById('console-id')
+  const commands = () => {
+    const input = document.getElementById('console-id').value
+    document.getElementById('console-id').value = ''
+    switch (input) {
+      case 'help' || 'options':
+        printChat(helpMenu)
+        break
+      case '':
+        break
+      case 'clear':
+        document.getElementById('info-nodes-id').textContent = ''
+        break
+      default:
+        searchAttribute(cy, input)
+    }
+  }
+
+  // keydown listeners
   document.addEventListener('keydown', event => {
-    // focus on console
+    // focus on the consoleId
     if (event.metaKey === true && event.code === 'KeyL') {
       consoleId.focus()
     }
-    // toggle side panels
-    if (event.altKey === true && event.code === 'KeyH') {
-      toggleUI()
+    if (event.metaKey === true && event.code === 'Backspace') {
+      core.deleteEl(cy, selectedNode, selectedEdge)
     }
-    // Backspace deletion of nodes and edges
-    // if (document.activeElement !== consoleId && event.code === 'Backspace') {
-    //   // check if there is form element on the document
-    //   // since pressing backspace on the form element would delete the
-    //   // selected Element as well
-    //   formId = document.getElementById('form-id')
-    //   if (formId === null) {
-    //     if (
-    //       Object.keys(selectedNode.out).length === 0 &&
-    //       Object.keys(selectedEdge.out).length !== 0
-    //     ) {
-    //       selectedEdge.out.remove()
-    //     }
-    //     if (
-    //       Object.keys(selectedEdge.out).length === 0 &&
-    //       Object.keys(selectedNode.out).length !== 0
-    //     ) {
-    //       selectedNode.out.remove()
-    //     }
-    //     totalNodes(cy) // global module
-    //   }
-    // }
-    // add edge
-    // if (event.altKey === true && event.code === 'KeyE') {
-    //   addEdge(cy, sourceNode, targetNode)
-    // }
     // restore elements with meta + z
-    // BUG only restores the last node
     if (event.metaKey === true && event.code === 'KeyZ') {
-      selectedNode.out.restore()
+      core.restoreNode()
     }
-    // console commands
-    const input = document.getElementById('console-id').value
-    // listens for the ENTER key
+    // listens for the ENTER key when focus is on the console
     if (document.activeElement === consoleId && event.code === 'Enter') {
-      document.getElementById('console-id').value = ''
-      switch (input) {
-        case 'help' || 'options':
-          printChat(helpMenu)
-          break
-        case '':
-          break
-        case 'clear':
-          document.getElementById('info-nodes-id').textContent = ''
-          break
-        default:
-          searchAttribute(cy, input)
-      }
+      commands()
     }
   })
 }

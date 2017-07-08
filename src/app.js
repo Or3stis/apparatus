@@ -3,8 +3,8 @@
 const cytoscape = require('cytoscape')
 const path = require('path')
 
-// require global moduless
-const commands = require('./src/commands.js')
+// require keybindings
+const keybindings = require('./src/keybindings.js')
 
 // require core modules
 // const nodeInfo = require('./src/core/nodeInfo.js')
@@ -175,8 +175,8 @@ core.showNeighbor(cy, selectedNode)
 core.deleteButton(cy, selectedNode, selectedEdge)
 // initial node count
 totalNodes(cy)
-// command prompt
-commands(cy, selectedNode, selectedEdge)
+// enable keybindings
+keybindings(cy, selectedNode, selectedEdge)
 
 // test function
 const buttonTest = document.getElementById('test-button')
@@ -197,6 +197,3 @@ const toggleUI = () => {
     actionBarStatus.style.display = 'block'
   }
 }
-
-// enable keybindings
-// keybindings(cy, selectedNode, selectedEdge, toggleUI) // global module
