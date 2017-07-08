@@ -8,13 +8,13 @@ graphStyle.style = [{
   selector: 'node',
   style: {
     shape: 'ellipse',
-    'background-color': config.gray
+    'background-color': config.white
   }
 }, {
   selector: 'edge',
   style: {
     'curve-style': 'bezier',
-    'line-color': config.gray,
+    'line-color': config.white,
     'width': 2
   }
 }, {
@@ -37,7 +37,7 @@ graphStyle.style = [{
 }, {
   selector: '.protect',
   style: {
-    'background-color': config.lightBlue
+    'background-color': config.cyan
   }
 }, {
   selector: '.label-nodes',
@@ -46,17 +46,17 @@ graphStyle.style = [{
     'text-valign': 'center',
     'color': config.white,
     'text-outline-width': 2,
-    'text-outline-color': config.black
+    'text-outline-color': config.background
   }
 }, {
   selector: '.label-edges',
   style: {
     label: 'data(label)',
     'target-arrow-shape': 'triangle',
-    'target-arrow-color': config.gray,
+    'target-arrow-color': config.white,
     'color': config.white,
     'text-outline-width': 2,
-    'text-outline-color': config.black
+    'text-outline-color': config.background
   }
 }]
 
