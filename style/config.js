@@ -6,7 +6,7 @@ const config = {}
 
 config.white = '#abb2bf'
 config.black = '#3b4251'
-config.blue = '#5573BB'
+config.blue = '#61afef'
 config.red = '#be5046'
 config.orange = '#cf8772'
 config.green = '#98c379'
