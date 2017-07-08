@@ -24,6 +24,8 @@ const showNeighbor = (cy, selectedNode) => {
     neighborhood.removeClass('faded')
   })
 }
+// holds the deleted nodes
+let deletedNodes = []
 const deleteEl = (cy, selectedNode, selectedEdge) => {
   const buttonDelete = document.getElementById('delete')
   buttonDelete.addEventListener('click', () => {
@@ -37,6 +39,7 @@ const deleteEl = (cy, selectedNode, selectedEdge) => {
       Object.keys(selectedEdge.out).length === 0 &&
       Object.keys(selectedNode.out).length !== 0
     ) {
+      deletedNodes.push(selectedNode.out)
       selectedNode.out.remove()
     }
     totalNodes(cy) // global module
@@ -85,6 +88,11 @@ const loadGraph = (cy, graphModel, cytoscape, graphStyle) => {
     load(cy, graphModel, cytoscape, graphStyle)
   })
 }
+const restoreNode = () => {
+  if (deletedNodes.length !== 0) {
+    deletedNodes.pop().restore()
+  }
+}
 
 module.exports = {
   selectionNode: selectionNode,
@@ -93,5 +101,6 @@ module.exports = {
   showNeighbor: showNeighbor,
   labels: labels,
   saveGraph: saveGraph,
+  restoreNode: restoreNode,
   loadGraph: loadGraph
 }
