@@ -26,7 +26,7 @@ module.exports = function vulnVerification (cy) {
       if (type.data().hasOwnProperty('info')) {
         if (type.data().info.concept === 'mechanism') {
           result = `${result} • Vulnerability ${vuln.data()
-            .id} is mitigated by Mechanism ${type.data().id}\n`
+            .id} mitigated by Mechanism ${type.data().id}\n`
           mitigatedVulns += 1
         }
       }
