@@ -182,7 +182,7 @@ keybindings(cy, selectedNode, selectedEdge)
 const buttonTest = document.getElementById('test-button')
 buttonTest.addEventListener('click', () => {
   // test code goes here
-  toggleUI()
+  // toggleUI()
 })
 
 // toggles side panels
