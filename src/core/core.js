@@ -76,7 +76,7 @@ const labels = cy => {
     cy.nodes().removeClass('label-id')
     cy.nodes().addClass('label-nodes')
   })
-  const showIdNodeButton = document.getElementById('show-id-node')
+  const showIdNodeButton = document.getElementById('show-node-id')
   showIdNodeButton.addEventListener('click', () => {
     cy.nodes().addClass('label-id')
   })
