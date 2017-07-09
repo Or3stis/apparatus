@@ -62,6 +62,7 @@ const labels = cy => {
   const hideLabelsButton = document.getElementById('hide-label')
   hideLabelsButton.addEventListener('click', () => {
     cy.nodes().removeClass('label-nodes')
+    cy.nodes().removeClass('label-id')
     cy.edges().removeClass('label-edges')
   })
   const showLabelsButton = document.getElementById('show-label')
@@ -71,11 +72,12 @@ const labels = cy => {
   })
   const showLabelNodeButton = document.getElementById('show-label-node')
   showLabelNodeButton.addEventListener('click', () => {
+    cy.nodes().removeClass('label-id')
     cy.nodes().addClass('label-nodes')
   })
   const showLabelEdgeButton = document.getElementById('show-label-edge')
   showLabelEdgeButton.addEventListener('click', () => {
-    cy.edges().addClass('label-edges')
+    cy.nodes().addClass('label-id')
   })
 }
 // save graph
