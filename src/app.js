@@ -6,6 +6,8 @@ const path = require('path')
 // require keybindings
 const keybindings = require('./src/keybindings.js')
 
+const printChat = require('./src/core/printChat.js')
+
 // require core modules
 // const nodeInfo = require('./src/core/nodeInfo.js')
 const core = require('./src/core/core.js')
@@ -183,6 +185,7 @@ const buttonTest = document.getElementById('test-button')
 buttonTest.addEventListener('click', () => {
   // test code goes here
   // toggleUI()
+  printChat('test function\nused for debugging')
 })
 
 // toggles side panels
