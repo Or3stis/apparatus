@@ -14,11 +14,9 @@ const totalNodes = require('../core/totalNodes.js')
 // add imp-state nodes
 const addNode = cy => {
   const addNode = document.getElementById('add-component-id')
-  addNode.addEventListener('change', e => {
-    addImpStateComponent(cy, e.target.value) // imp-state module
+  addNode.addEventListener('click', e => {
+    addImpStateComponent(cy, e.target.textContent) // imp-state module
     cy.nodes().addClass('label-nodes')
-    // reset moduleGroup selection
-    document.getElementById('add-component-id').selectedIndex = ''
     totalNodes(cy) // global module
   })
 }

@@ -92,7 +92,7 @@ cy.on('tap', selection => {
     cy.elements().removeClass('protect')
     // clear tokens
     // document.getElementById('module-group').selectedIndex = ''
-    document.getElementById('selection-id').selectedIndex = ''
+    // document.getElementById('selection-id').selectedIndex = ''
     selectedNode.out = {}
     selectedEdge.out = {}
     totalNodes(cy) // global module
@@ -115,7 +115,7 @@ cy.on('mouseout', 'node', event => {
 })
 
 // create the paths of each phase
-const dgnPath = 'design.html'
+const dgnPath = 'design-test.html'
 const dgnStatePath = 'design-state.html'
 const impPath = 'implementation.html'
 const impStatePath = 'implementation-state.html'

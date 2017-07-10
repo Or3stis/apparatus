@@ -16,11 +16,12 @@ const moduleSelection = require('../core/moduleSelection.js')
 // design nodes
 const addNode = cy => {
   const addNode = document.getElementById('add-component-id')
-  addNode.addEventListener('change', e => {
-    addDgnComponent(cy, e.target.value)
+  addNode.addEventListener('click', e => {
+    addDgnComponent(cy, e.target.textContent)
+    console.log(e.target.textContent)
     cy.nodes().addClass('label-nodes')
     // reset moduleGroup selection
-    document.getElementById('add-component-id').selectedIndex = ''
+    // document.getElementById('add-component-id').selectedIndex = ''
     totalNodes(cy) // global module
   })
 }
@@ -56,8 +57,8 @@ const overview = cy => {
 // module selection
 const moduleGroup = cy => {
   const group = document.getElementById('module-group')
-  group.addEventListener('change', input => {
-    moduleSelection(input, cy) // global module
+  group.addEventListener('click', e => {
+    moduleSelection(cy, e.target.textContent) // global module
   })
 }
 

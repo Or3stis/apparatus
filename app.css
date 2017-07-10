@@ -58,23 +58,24 @@ h3 {
   cursor: wait;
   text-align: center;
   -webkit-app-region: drag;
+  border-bottom: 1px solid;
+  border-color: var(--main-dark-bg-color);
 }
 
 .window {
   position: relative;
   height: 97vh;
   display: grid;
-  /*grid-template-columns: 50px 1fr 165px;*/
-  grid-template-columns: 140px 1fr 165px;
+  grid-template-columns: 50px 1fr 165px;
+  /*grid-template-columns: 140px 1fr 165px;*/
   grid-template-areas: "action-bar graph sidebar" "action-bar graph sidebar" "action-bar graph sidebar";
 }
 
 .action-bar {
-  margin-top: 10px;
+  /*margin-top: 10px;*/
   display: block;
   grid-area: action-bar;
-  background-color: var(--main-bg-color);
-  /*background-color: var(--main-dark-bg-color);*/
+  background-color: var(--main-dark-bg-color);
 }
 
 .components {
@@ -187,53 +188,6 @@ h3 {
   outline: none;
 }
 
-.button {
-  background-color: var(--main-bg-color);
-  margin: 3px;
-  color: var(--main-tx-color);
-  width: 100px;
-  height: 33px;
-  border: 1px solid;
-  border-color: var(--main-bg-color);
-  font-size: 12px;
-}
-
-.selection {
-  width: 133px;
-  margin-top: 4px;
-  margin-bottom: 4px;
-  font-size: 12px;
-  background-color: var(--main-bg-color);
-  color: var(--main-tx-color);
-  border: 1px solid;
-  border-color: var(--main-bg-color);
-}
-
-.button:hover, .selection:hover {
-  border-bottom-color: var(--blue-color);
-  color: var(--blue-color);
-}
-
-/*remove the blue outline box of chrome*/
-.button:focus, .selection:focus {
-  outline: none;
-}
-
-/*flash color when clicked*/
-.button:active, .selection:active {
-  color: var(--main-tx-color);
-  border-bottom-color: var(--main-tx-color);
-}
-
-option[value=""][disabled] {
-  display: none;
-}
-
-option {
-  background-color: var(--gray-color);
-  color: var(--black-color);
-}
-
 .container-node {
   position: absolute;
   opacity: 0.8;
@@ -262,20 +216,90 @@ option {
   overflow: auto;
 }
 
+/*warning to save file on exit*/
+#home-button-id:hover:after {
+  content: 'save first';
+}
+
+#home-button-id:hover span {
+  display: none;
+}
+
+/*new gui stuff*/
+.icon{
+  fill: var(--main-tx-color);
+}
+.icon:hover {
+  fill: var(--blue-color);
+}
+
+.button-icon {
+  background-color: var(--main-dark-bg-color);
+  margin: 2px;
+  color: var(--main-tx-color);
+  border: 1px solid;
+  border-color: var(--main-dark-bg-color);
+  /*font-size: 12px;*/
+}
+
+/*flash color when clicked*/
+.button-icon:active, .icon:active {
+  fill: var(--main-tx-color);
+  /*border-bottom-color: var(--main-tx-color);*/
+}
+
+.button-icon:focus {
+  outline: none;
+  fill: var(--blue-color);
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    display: none;
+    margin: 0;
+    list-style: none;
+    padding: 0;
+    overflow: auto;
+    z-index: 1;
+}
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+.dropdown a {
+    display: block;
+    padding: 0.2em 0.8em;
+    text-decoration: none;
+    background-color: var(--main-dark-bg-color);
+    color: var(--main-tx-color);
+    font-size: 12px;
+}
+.dropdown a:hover {
+    background-color: var(--blue-color);
+    color: var(--main-dark-bg-color);
+}
+
 .label-wrapper {
-  bottom: 10px;
+  bottom: 0;
+  margin: 0 auto;
+  width: 40px;
   position: fixed;
 }
 
 .label-button {
   background-color: var(--main-dark-bg-color);
-  margin: 1px;
+  margin: 0;
+  margin-left: 10px;
   color: var(--main-tx-color);
   width: 20px;
   height: 20px;
   border: 1px solid;
   border-radius: 20px;
-  border-color: var(--main-dark-bg-color);
+  border-color: var(--main-tx-color);
   font-size: 10px;
 }
 
@@ -332,41 +356,4 @@ option {
   border-radius: 6px;
   background-color: rgba(171, 178, 191, 0.3);
   /*-webkit-box-shadow: inset 0 0 6px rgba(171,178,191,0.5);*/
-}
-
-/*warning to save file on exit*/
-#home-button-id:hover:after {
-  content: 'save first';
-}
-
-#home-button-id:hover span {
-  display: none;
-}
-
-/*new gui stuff*/
-.icon{
-  fill: var(--main-tx-color);
-}
-.icon:hover {
-  fill: var(--blue-color);
-}
-
-.button-icon {
-  background-color: var(--main-dark-bg-color);
-  margin: 2px;
-  color: var(--main-tx-color);
-  border: 1px solid;
-  border-color: var(--main-dark-bg-color);
-  font-size: 12px;
-}
-
-/*flash color when clicked*/
-.button-icon:active, .icon:active {
-  fill: var(--main-tx-color);
-  /*border-bottom-color: var(--main-tx-color);*/
-}
-
-.button-icon:focus {
-  outline: none;
-  fill: var(--blue-color);
 }

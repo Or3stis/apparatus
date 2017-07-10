@@ -14,11 +14,9 @@ const totalNodes = require('../core/totalNodes.js')
 // add dgn-state nodes
 const addNode = cy => {
   const addNode = document.getElementById('add-component-id')
-  addNode.addEventListener('change', e => {
-    addDgnStateComponent(cy, e.target.value)
+  addNode.addEventListener('click', e => {
+    addDgnStateComponent(cy, e.target.textContent)
     cy.nodes().addClass('label-nodes')
-    // reset moduleGroup selection
-    document.getElementById('add-component-id').selectedIndex = ''
     totalNodes(cy) // global module
   })
 }

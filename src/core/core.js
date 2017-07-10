@@ -10,8 +10,8 @@ const totalNodes = require('./totalNodes.js')
 // highlights only the selected node class
 const selectionNode = cy => {
   const select = document.getElementById('selection-id')
-  select.addEventListener('change', e => {
-    nodeSelection(cy, e.target.value)
+  select.addEventListener('click', e => {
+    nodeSelection(cy, e.target.textContent)
   })
 }
 const showNeighbor = (cy, selectedNode) => {

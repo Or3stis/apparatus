@@ -1,7 +1,7 @@
 'use strict'
 
 // when buton class is clicked the corresponing nodes are highlighted
-module.exports = function moduleSelection (input, cy) {
+module.exports = function moduleSelection (cy, input) {
   // grouping of the module components
   let groupArray = []
   const networkArray = [
@@ -29,7 +29,7 @@ module.exports = function moduleSelection (input, cy) {
     'control sensor'
   ]
 
-  const condition = input.target.value
+  const condition = input
   switch (condition) {
     case 'network':
       groupArray = networkArray

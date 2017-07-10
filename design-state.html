@@ -17,37 +17,90 @@
     <div class="action-bar" id="action-bar-id">
       <div class="components" id="components-id">
 
-        <select class="selection" required id="add-component-id">
-          <option value="" disabled selected>add component</option>
-          <option value="sensor">sensor</option>
-          <option value="model">model</option>
-          <option value="event">event</option>
-        </select>
+        <div class="dropdown" id="add-component-id">
+          <button class="button-icon dropbtn">
+            <svg width="24" height="24">
+              <use xlink:href="icons/add-node.svg#add-node" class="icon"></use>
+           </svg>
+          </button>
+          <ul class="dropdown-menu">
+            <li><a href="#sensor">sensor</a></li>
+            <li><a href="#model">model</a></li>
+            <li><a href="#event">event</a></li>
+          </ul>
+        </div>
 
-        <button class="button" id="add-edge">connection</button>
-        <button class="button" id="delete">delete</button>
+        <button class="button-icon" id="add-edge" title="connection">
+          <svg width="24" height="24">
+            <use xlink:href="icons/connection.svg#connection" class="icon"></use>
+          </svg>
+        </button>
 
-        <select class="selection" required id="selection-id">
-          <option value="" disabled selected>Select component</option>
-          <option value="sensor">sensor</option>
-          <option value="model">model</option>
-          <option value="event">event</option>
-        </select>
+        <button class="button-icon" id="delete" title="remove">
+          <svg width="24" height="24">
+            <use xlink:href="icons/remove.svg#remove" class="icon"></use>
+          </svg>
+        </button>
 
-        <!-- <select class="selection" required id="module-group"> -->
-          <!-- <option value="" disabled selected>Select module</option> -->
-        <!-- </select> -->
+        <div class="dropdown" id="selection-id">
+          <button class="button-icon dropbtn">
+            <svg width="24" height="24">
+              <use xlink:href="icons/list.svg#list" class="icon"></use>
+           </svg>
+          </button>
+          <ul class="dropdown-menu">
+            <li><a href="#sensor">sensor</a></li>
+            <li><a href="#model">model</a></li>
+            <li><a href="#event">event</a></li>
+          </ul>
+        </div>
 
-        <button class="button" id="neighbors-button">neighbors</button>
-        <button class="button" id="model-validate-button">model validation</button>
-        <button class="button" id="overview-button">overview</button>
-        <button class="button" id="layout-button">cose layout</button>
-        <button class="button" id="save-button">save</button>
-        <button class="button" id="load-button">load</button>
+        <button class="button-icon" id="neighbors-button" title="show neighbors">
+          <svg width="24" height="24">
+            <use xlink:href="icons/share.svg#share" class="icon"></use>
+          </svg>
+        </button>
+
+        <button class="button-icon" id="model-validate-button" title="model validation">
+          <svg width="24" height="24">
+            <use xlink:href="icons/check.svg#check" class="icon"></use>
+          </svg>
+        </button>
+
+        <button class="button-icon" id="overview-button" title="overview">
+          <svg width="24" height="24">
+            <use xlink:href="icons/explore.svg#explore" class="icon"></use>
+          </svg>
+        </button>
+
+        <button class="button-icon" id="layout-button" title="cose layout">
+          <svg width="24" height="24">
+            <use xlink:href="icons/group.svg#group" class="icon"></use>
+          </svg>
+        </button>
+
+        <button class="button-icon" id="save-button">
+          <svg width="24" height="24">
+            <use xlink:href="icons/save.svg#save" class="icon"></use>
+          </svg>
+        </button>
+
+        <button class="button-icon" id="load-button">
+          <svg width="24" height="24">
+            <use xlink:href="icons/folder.svg#folder" class="icon"></use>
+          </svg>
+        </button>
+
         <form>
-          <button class="button" id="home-button-id" type="submit" formaction="index.html"><span>home</span></button>
+          <button class="button-icon" id="home-button-id" type="submit" formaction="index.html" title="home">
+            <svg width="24" height="24"><use xlink:href="icons/home.svg#home" class="icon"></use></svg></button>
         </form>
-        <button class="button" id="test-button">test</button>
+
+        <button class="button-icon" id="test-button" title="test">
+          <svg width="24" height="24">
+            <use xlink:href="icons/bug.svg#bug" class="icon"></use>
+          </svg>
+        </button>
 
         <div class="label-wrapper" id="label-wrapper-id">
           <button class="label-button" id="hide-label" title="hide labels">1</button>
