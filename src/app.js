@@ -115,7 +115,7 @@ cy.on('mouseout', 'node', event => {
 })
 
 // create the paths of each phase
-const dgnPath = 'design-test.html'
+const dgnPath = 'design.html'
 const dgnStatePath = 'design-state.html'
 const impPath = 'implementation.html'
 const impStatePath = 'implementation-state.html'
