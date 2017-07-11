@@ -91,8 +91,6 @@ cy.on('tap', selection => {
     cy.elements().removeClass('attention')
     cy.elements().removeClass('protect')
     // clear tokens
-    // document.getElementById('module-group').selectedIndex = ''
-    // document.getElementById('selection-id').selectedIndex = ''
     selectedNode.out = {}
     selectedEdge.out = {}
     totalNodes(cy) // global module
@@ -189,14 +187,14 @@ buttonTest.addEventListener('click', () => {
 })
 
 // toggles side panels
-const toggleUI = () => {
-  const sidebarStatus = document.getElementById('sidebar-id')
-  const actionBarStatus = document.getElementById('action-bar-id')
-  if (sidebarStatus.style.display === 'block') {
-    sidebarStatus.style.display = 'none'
-    actionBarStatus.style.display = 'none'
-  } else {
-    sidebarStatus.style.display = 'block'
-    actionBarStatus.style.display = 'block'
-  }
-}
+// const toggleUI = () => {
+//   const sidebarStatus = document.getElementById('sidebar-id')
+//   const actionBarStatus = document.getElementById('action-bar-id')
+//   if (sidebarStatus.style.display === 'block') {
+//     sidebarStatus.style.display = 'none'
+//     actionBarStatus.style.display = 'none'
+//   } else {
+//     sidebarStatus.style.display = 'block'
+//     actionBarStatus.style.display = 'block'
+//   }
+// }

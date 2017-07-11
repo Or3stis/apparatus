@@ -1,6 +1,6 @@
 const dgnMetamodel = {}
 
-// metamodel concepts
+// metamodel group concepts
 dgnMetamodel.network = ['micronet', 'net', 'information', 'thing']
 dgnMetamodel.security = ['asset', 'threat', 'constraint', 'malicious actor']
 dgnMetamodel.social = ['actor']

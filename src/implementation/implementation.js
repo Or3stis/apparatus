@@ -2,7 +2,7 @@
 
 // implementation module
 
-// require design-state modules
+// require implementation modules
 const impModelValidation = require('./impModelValidation.js')
 const impOverview = require('./impOverview.js')
 const addImpComponent = require('./addImpComponent.js')

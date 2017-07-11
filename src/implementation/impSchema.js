@@ -1,6 +1,6 @@
 const impMetamodel = {}
 
-// metamodel concepts
+// metamodel group concepts
 impMetamodel.network = [
   'device',
   'network connection',
