@@ -180,6 +180,7 @@ h3 {
   border-bottom: 3px solid var(--gray-color);
   color: var(--main-tx-color);
   font-size: 13px;
+  font-family: monaco, consolas, mono;
   position: absolute;
 }
 
