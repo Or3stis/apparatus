@@ -67,12 +67,10 @@ h3 {
   height: 97vh;
   display: grid;
   grid-template-columns: 50px 1fr 165px;
-  /*grid-template-columns: 140px 1fr 165px;*/
   grid-template-areas: "action-bar graph sidebar" "action-bar graph sidebar" "action-bar graph sidebar";
 }
 
 .action-bar {
-  /*margin-top: 10px;*/
   display: block;
   grid-area: action-bar;
   background-color: var(--main-dark-bg-color);
@@ -83,7 +81,6 @@ h3 {
 }
 
 .graph {
-  /*background-image: url(bulidingPlan.png);*/
   background-size: cover;
   grid-area: graph;
 }
@@ -114,8 +111,6 @@ h3 {
 
 .bubble {
   position: relative;
-  /*width: 95vw;*/
-  /*background-color: var(--black-color);*/
   background-color: var(--main-dark-bg-color);
   color: var(--main-tx-color);
   overflow: auto;
@@ -209,7 +204,6 @@ h3 {
 
 .legend {
   bottom: 0;
-  /*left: 0;*/
   margin: 5px;
   position: fixed;
   white-space: pre-wrap;
@@ -246,7 +240,6 @@ h3 {
 /*flash color when clicked*/
 .button-icon:active, .icon:active {
   fill: var(--main-tx-color);
-  /*border-bottom-color: var(--main-tx-color);*/
 }
 
 .button-icon:focus {
