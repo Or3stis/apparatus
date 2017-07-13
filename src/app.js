@@ -23,7 +23,7 @@ const imp = require('./src/implementation/implementation.js')
 // require implementation-state modules
 const impState = require('./src/implementation-state/impState.js')
 // configuration for the graphs style
-const graphStyle = require(`./style/graphStyle.js`)
+const graphStyle = require(`./config/graphStyle.js`)
 
 // require the initial graph file
 const graphModel = require(`./graphs/implementation/smartHome.js`)
