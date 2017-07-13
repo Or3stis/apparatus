@@ -40,7 +40,7 @@ body {
   padding: 0;
   font-size: 15px;
   /* Smoother startup */
-  -webkit-animation: fadein 0.2s;
+  -webkit-animation: fadein 0.3s;
   /*disable text selection*/
   -webkit-user-select: none;
   overflow: hidden;
