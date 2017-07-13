@@ -8,6 +8,7 @@ module.exports = function vulnVerification (cy) {
   let mitigatedVulns = 0
 
   cy.elements().addClass('faded')
+
   cy.nodes().map(node => {
     if (node.data().info.concept === 'vulnerability') {
       node.removeClass('faded')
