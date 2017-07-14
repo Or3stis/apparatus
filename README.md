@@ -39,7 +39,7 @@ npm install
 npm start
 ```
 
-Because the app is still in prototyping stage, it is best to keep up to date with the most recent changes. To do so, type:
+Because the app is still in prototype stage, it is best to keep up to date with the most recent commits. To do so, before starting the app, type:
 
 ```bash
 # inside the apparatus directory
@@ -47,6 +47,14 @@ Because the app is still in prototyping stage, it is best to keep up to date wit
 # update to latest
 git pull
 ```
+
+## Note
+
+The save function (save icon) works as expected.
+
+__But__ the load function (file icon) does not work and has been temporarily disabled. The default model that is being rendered is actually hardcoded in the `/src/app.js`. If you want to load a different model you need to change the path. The variable is named `graphModel` and currently is in line 29 ```const graphModel = require(`./graphs/implementation/smartHome.js`)```.
+
+The load functionality will be addressed in the following commits.
 
 ## Instructions
 
