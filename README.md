@@ -54,7 +54,7 @@ The save function (save icon) works as expected.
 
 __But__ the load function (file icon) does not work and has been temporarily disabled. The default model that is being rendered is actually hardcoded in the `/src/app.js`. If you want to load a different model you need to change the path. The variable is named `graphModel` and currently is in line 29 ```const graphModel = require(`./graphs/implementation/smartHome.js`)```.
 
-The load functionality will be addressed in the following commits.
+The load functionality will be resolved in the forthcoming commits.
 
 ## Instructions
 
