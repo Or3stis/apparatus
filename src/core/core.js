@@ -4,7 +4,7 @@
 const nodeSelection = require('./nodeSelection.js')
 const coseLayout = require('./coseLayout.js')
 const save = require('./save.js')
-const load = require('./load.js')
+// const load = require('./load.js')
 const totalNodes = require('./totalNodes.js')
 
 // highlights only the selected node class
@@ -90,12 +90,12 @@ const saveGraph = (cy, path) => {
   })
 }
 // loads a graph
-const loadGraph = (cy, graphModel, cytoscape, graphStyle) => {
-  const buttonLoad = document.getElementById('load-button')
-  buttonLoad.addEventListener('click', () => {
-    load(cy, graphModel, cytoscape, graphStyle)
-  })
-}
+// const loadGraph = (cy, graphModel, cytoscape, graphStyle) => {
+//   const buttonLoad = document.getElementById('load-button')
+//   buttonLoad.addEventListener('click', () => {
+//     load(cy, graphModel, cytoscape, graphStyle)
+//   })
+// }
 const restoreNode = () => {
   if (deletedNodes.length !== 0) {
     deletedNodes.pop().restore()
@@ -110,6 +110,6 @@ module.exports = {
   showNeighbor: showNeighbor,
   labels: labels,
   saveGraph: saveGraph,
-  restoreNode: restoreNode,
-  loadGraph: loadGraph
+  restoreNode: restoreNode
+  // loadGraph: loadGraph
 }
