@@ -48,14 +48,6 @@ Because the app is still in prototype stage, it is best to keep up to date with 
 git pull
 ```
 
-## Note
-
-The save function (save icon) works as expected.
-
-__But__ the load function (file icon) does not work and has been temporarily disabled. The default model that is being rendered is actually hardcoded in the `/src/app.js`. If you want to load a different model you need to change the path. The variable is named `graphModel` and currently is in line 29 ```const graphModel = require(`./graphs/implementation/smartHome.js`)```.
-
-The load functionality will be resolved in the forthcoming commits.
-
 ## Instructions
 
 If you want to contribute that's great news 😃. Check the [contributing](https://github.com/Or3stis/apparatus/blob/master/CONTRIBUTING.md) guide.
