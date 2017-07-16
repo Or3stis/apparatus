@@ -82,11 +82,11 @@ const labels = cy => {
   })
 }
 // save graph
-const saveGraph = (cy, path) => {
+const saveGraph = (cy) => {
   // save graph
   const buttonSave = document.getElementById('save-button')
   buttonSave.addEventListener('click', () => {
-    save(cy, path)
+    save(cy)
   })
 }
 // loads a graph

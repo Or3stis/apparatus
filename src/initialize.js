@@ -3,8 +3,6 @@
 
 'use strict'
 
-const path = require('path')
-
 // require keybindings
 const keybindings = require('../src/keybindings.js')
 const printChat = require('../src/core/printChat.js')
@@ -151,7 +149,7 @@ module.exports = function setup (cy) {
   // enable label buttons
   core.labels(cy)
   // save graph
-  core.saveGraph(cy, path)
+  core.saveGraph(cy)
   // load graph - TODO doesn't work properly
   // core.loadGraph(graphStyle)
   // show the neighbors of a tapped node

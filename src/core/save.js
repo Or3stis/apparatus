@@ -5,7 +5,7 @@ const {dialog} = require('electron').remote
 const printChat = require('./printChat.js')
 
 // saves graph
-module.exports = function save (cy, path) {
+module.exports = function save (cy) {
   // parses graph and stores it as an object
   const fullgraph = cy.json()
 
