@@ -54,5 +54,7 @@ If you want to contribute that's great news 😃. Check the [contributing](https
 
 If you want to find out how the app works check the [wiki](https://github.com/Or3stis/apparatus/wiki).
 
+You can check the project's planned features in the [roadmap](https://github.com/Or3stis/apparatus/wiki/Roadmap).
+
 
 #### License [MIT](LICENSE.md)
