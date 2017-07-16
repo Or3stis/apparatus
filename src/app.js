@@ -10,7 +10,7 @@ load(cy) // comment for debugging
 /*
 The default behavior of the app (asking to load graphs) can be annoying
 when developing new features. To prevent that, uncomment the code below and
-comment everyting above it. It loads a hard coded graph everytime you reload
+comment everything above it. It loads a hard coded graph every time you reload
 the app.
 */
 
