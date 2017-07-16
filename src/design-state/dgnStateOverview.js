@@ -6,7 +6,7 @@ module.exports = function overview (cy) {
   let result = ''
 
   const totalNodes = cy.elements().nodes().length
-  result = `total nodes: ${totalNodes}\n`
+  result = `• total nodes: ${totalNodes}\n`
 
   let sensorNode = 0
   let modelNode = 0
@@ -22,9 +22,9 @@ module.exports = function overview (cy) {
       eventNode += 1
     }
   })
-  result = `${result}sensor nodes: ${sensorNode}\n`
-  result = `${result}model nodes: ${modelNode}\n`
-  result = `${result}event nodes: ${eventNode}\n`
+  result = `${result}\n• sensor nodes: ${sensorNode}\n`
+  result = `${result}• model nodes: ${modelNode}\n`
+  result = `${result}• event nodes: ${eventNode}\n`
 
   printChat(result)
 }

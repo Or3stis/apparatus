@@ -12,7 +12,7 @@ module.exports = function overview (cy) {
   let result = ''
 
   const totalNodes = cy.elements().nodes().length
-  result = `total nodes: ${totalNodes}\n`
+  result = `• total nodes: ${totalNodes}\n\n`
 
   let networkNode = 0
   let securityNode = 0
@@ -31,10 +31,10 @@ module.exports = function overview (cy) {
       sensingNode += 1
     }
   })
-  result = `${result}network nodes: ${networkNode}\n`
-  result = `${result}social nodes: ${socialNode}\n`
-  result = `${result}security nodes: ${securityNode}\n`
-  result = `${result}sensing nodes: ${sensingNode}\n`
+  result = `${result}• network nodes: ${networkNode}\n`
+  result = `${result}• social nodes: ${socialNode}\n`
+  result = `${result}• security nodes: ${securityNode}\n`
+  result = `${result}• sensing nodes: ${sensingNode}\n\n`
 
   let thingNode = 0
   let micronetNode = 0
@@ -74,16 +74,16 @@ module.exports = function overview (cy) {
     }
   })
 
-  result = `${result}thing nodes: ${thingNode}\n`
-  result = `${result}micronet nodes: ${micronetNode}\n`
-  result = `${result}net nodes: ${netNode}\n`
-  result = `${result}data nodes: ${informationNode}\n`
-  result = `${result}asset nodes: ${assetNode}\n`
-  result = `${result}threat nodes: ${threatNode}\n`
-  result = `${result}constraint nodes: ${constraintNode}\n`
-  result = `${result}malicious actor nodes: ${malActorNode}\n`
-  result = `${result}actor nodes: ${actorNode}\n`
-  result = `${result}sensor nodes: ${sensorNode}\n`
+  result = `${result}• thing nodes: ${thingNode}\n`
+  result = `${result}• micronet nodes: ${micronetNode}\n`
+  result = `${result}• net nodes: ${netNode}\n`
+  result = `${result}• data nodes: ${informationNode}\n`
+  result = `${result}• asset nodes: ${assetNode}\n`
+  result = `${result}• threat nodes: ${threatNode}\n`
+  result = `${result}• constraint nodes: ${constraintNode}\n`
+  result = `${result}• malicious actor nodes: ${malActorNode}\n`
+  result = `${result}• actor nodes: ${actorNode}\n`
+  result = `${result}• sensor nodes: ${sensorNode}\n`
 
   printChat(result)
 }
