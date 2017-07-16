@@ -60,5 +60,9 @@ If you want to find out how the app works check the [wiki](https://github.com/Or
 
 You can check the project's planned features in the [roadmap](https://github.com/Or3stis/apparatus/wiki/Roadmap).
 
+## Thanks
+
+A shoutout to [@NOMNUDS](https://github.com/NOMNUDS) that provides the much needed feedback on Windows.
+
 
 #### License [MIT](LICENSE.md)
