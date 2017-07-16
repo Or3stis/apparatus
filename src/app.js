@@ -36,7 +36,7 @@ const loadCy = () => {
   }
   dialog.showOpenDialog(
     {
-      properties: [...dialogOptions],
+      properties: [...dialogOptions]:ambulance:,
       filters: [{ name: 'javascript', extensions: ['json', 'js'] }]
     },
     fileNames => {
