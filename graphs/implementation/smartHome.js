@@ -5,7 +5,7 @@ graphModel.elements = [
   {
     data: {
       id: '1',
-      label: 'laptop',
+      label: 'device',
       info: {
         description: 'laptop',
         aspect: 'physical',
@@ -21,7 +21,7 @@ graphModel.elements = [
   }, {
     data: {
       id: '2',
-      label: 'router',
+      label: 'device',
       info: {
         description: 'router',
         aspect: 'physical',
@@ -37,7 +37,7 @@ graphModel.elements = [
   }, {
     data: {
       id: '3',
-      label: 'baby camera',
+      label: 'device',
       info: {
         description: 'baby camera',
         aspect: 'physical',
