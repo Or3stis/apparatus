@@ -54,7 +54,7 @@ You will find some example graphs in the `graphs` folder.
 
 ## Instructions
 
-If you want to contribute that's great news 😃. Check the [contributing](https://github.com/Or3stis/apparatus/blob/master/CONTRIBUTING.md) guide. The application is being developed on mac. That means that new commits might introduce breaking changes in other platforms. Especially commits that involve access to the file system. If something is not working, don't hesitate to create an [issue](https://github.com/Or3stis/apparatus/issues).
+If you want to contribute that's great news 😃. Check the [contributing](https://github.com/Or3stis/apparatus/blob/master/CONTRIBUTING.md) guide. The application is being developed on Mac. That means that new commits might introduce breaking changes in other platforms. Especially commits that involve access to the file system. If something is not working, don't hesitate to create an [issue](https://github.com/Or3stis/apparatus/issues).
 
 If you want to find out how the app works check the [wiki](https://github.com/Or3stis/apparatus/wiki).
 
@@ -62,7 +62,7 @@ You can check the project's planned features in the [roadmap](https://github.com
 
 ## Thanks
 
-A shoutout to [@NOMNUDS](https://github.com/NOMNUDS) who provides the much needed feedback on Windows.
+A shoutout to [@NOMNUDS](https://github.com/NOMNUDS) who provides the much-needed feedback on Windows.
 
 
 #### License [MIT](LICENSE.md)
