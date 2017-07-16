@@ -90,10 +90,10 @@ const saveGraph = (cy) => {
   })
 }
 // loads a graph
-// const loadGraph = (cy, graphModel, cytoscape, graphStyle) => {
+// const loadGraph = (cy) => {
 //   const buttonLoad = document.getElementById('load-button')
 //   buttonLoad.addEventListener('click', () => {
-//     load(cy, graphModel, cytoscape, graphStyle)
+//     load(cy)
 //   })
 // }
 const restoreNode = () => {

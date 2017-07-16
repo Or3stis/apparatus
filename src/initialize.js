@@ -151,7 +151,7 @@ module.exports = function setup (cy) {
   // save graph
   core.saveGraph(cy)
   // load graph - TODO doesn't work properly
-  // core.loadGraph(graphStyle)
+  // core.loadGraph(cy)
   // show the neighbors of a tapped node
   core.showNeighbor(cy, selectedNode)
   // delete elements
