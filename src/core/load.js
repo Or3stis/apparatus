@@ -3,36 +3,34 @@
 // not used
 
 // TODO doesn't work properly
-const cytoscape = require('cytoscape')
 const { dialog } = require('electron').remote
-const printChat = require('./printChat')
+const fs = require('fs')
+const initialize = require('../initialize.js')
+const cyOptions = require('./cyOptions.js')
 
 // loads graphs in js or json format
-module.exports = function load (graphStyle) {
-  printChat('load function is temporarily disabled')
-  let cy = {}
+module.exports = function load (cy) {
+  // check platform
+  let dialogOptions = []
+  if (process.platform === 'darwin') {
+    dialogOptions = ['openFile', 'openDirectory']
+  } else {
+    dialogOptions = ['openFile']
+  }
+
   dialog.showOpenDialog(
     {
-      properties: ['openFile', 'openDirectory'],
+      properties: [...dialogOptions],
       filters: [{ name: 'javascript', extensions: ['json', 'js'] }]
     },
-    fileName => {
-      let model = require(`${fileName}`)
-      let modelElements = model.elements
-      console.log(modelElements)
-      cy = cytoscape({
-        container: document.getElementById('graph-container'),
-        autounselectify: true,
-        elements: modelElements,
-        style: graphStyle.style
+    fileNames => {
+      if (fileNames === undefined) return
+
+      const fileName = fileNames[0]
+      fs.readFile(fileName, 'utf-8', () => {
+        cyOptions(cy, fileName) // defines the cy instance
+        initialize(cy.out) // links the cy instance with the rest of the app
       })
-      const layout = cy.layout({
-        name: 'cose'
-      })
-      layout.run()
-      cy.nodes().removeClass('faded')
-      cy.nodes().addClass('label-nodes')
-      cy.edges().addClass('label-edges')
     }
   )
 }
