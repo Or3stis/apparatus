@@ -1,8 +1,5 @@
 'use scrict'
 
-// not used
-
-// TODO doesn't work properly
 const { dialog } = require('electron').remote
 const fs = require('fs')
 const initialize = require('../initialize.js')

@@ -1,7 +1,5 @@
 'use strict'
 
-// not used
-
 const cytoscape = require('cytoscape')
 const graphStyle = require('../../config/graphStyle.js')
 
