@@ -29,7 +29,7 @@ const cyOptions = (file) => {
 }
 const loadCy = () => {
   let dialogOptions = []
-  if (process.platform !== 'darwin') {
+  if (process.platform === 'darwin') {
     dialogOptions = ['openFile', 'openDirectory']
   } else {
     dialogOptions = ['openFile']
