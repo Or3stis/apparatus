@@ -48,6 +48,10 @@ Because the app is still in prototype stage, it is best to keep up to date with 
 git pull
 ```
 
+The first window (home screen) will ask you to choose which modeling phase would you like to perform analysis in. After you select a phase, a native dialog window will be displayed and ask you choose a file to load. By default, you can only choose `.js` or `.json` files.
+
+You will find some example graphs in the `graphs` folder.
+
 ## Instructions
 
 If you want to contribute that's great news 😃. Check the [contributing](https://github.com/Or3stis/apparatus/blob/master/CONTRIBUTING.md) guide.
