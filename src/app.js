@@ -9,6 +9,9 @@ const initialize = require('./src/initialize.js')
 // configuration for the graphs style
 const graphStyle = require(`./config/graphStyle.js`)
 
+// uncomment for debugging
+// const testGraph = './graphs/implementation/smartHome.js'
+
 let cy = {}
 
 const cyOptions = (file) => {
@@ -24,11 +27,16 @@ const cyOptions = (file) => {
     name: 'cose'
   })
 }
-const start = () => {
-  // loads a file on start
+const loadCy = () => {
+  let dialogOptions = []
+  if (process.platform !== 'darwin') {
+    dialogOptions = ['openFile', 'openDirectory']
+  } else {
+    dialogOptions = ['openFile']
+  }
   dialog.showOpenDialog(
     {
-      properties: ['openFile', 'openDirectory'],
+      properties: [...dialogOptions],
       filters: [{ name: 'javascript', extensions: ['json', 'js'] }]
     },
     fileNames => {
@@ -42,6 +50,13 @@ const start = () => {
       })
     }
   )
+}
+const start = () => {
+  // loads a file on start
+  loadCy() // comment for debugging
+
+  // cyOptions(testGraph) // uncomment for debugging
+  // initialize(cy) // uncomment for debugging
 }
 
 start()
