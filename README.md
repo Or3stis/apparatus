@@ -62,7 +62,7 @@ You can check the project's planned features in the [roadmap](https://github.com
 
 ## Thanks
 
-A shoutout to [@NOMNUDS](https://github.com/NOMNUDS) that provides the much needed feedback on Windows.
+A shoutout to [@NOMNUDS](https://github.com/NOMNUDS) who provides the much needed feedback on Windows.
 
 
 #### License [MIT](LICENSE.md)
