@@ -34,7 +34,7 @@ module.exports = function vulnVerification (cy) {
     })
   })
 
-  result = `${result} • Vulnerabilities total: ${vulnArray.length}\n`
+  result = `${result}\n • Vulnerabilities total: ${vulnArray.length}\n`
   result = `${result} • Mitigated total: ${mitigatedVulns}\n`
   printChat(result)
 }
