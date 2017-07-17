@@ -1,4 +1,4 @@
-'use scrict'
+'use strict'
 
 const jsonfile = require('jsonfile')
 const {dialog} = require('electron').remote

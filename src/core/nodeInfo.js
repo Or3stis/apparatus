@@ -1,4 +1,4 @@
-'use scrict'
+'use strict'
 
 const printChat = require('./printChat.js')
 

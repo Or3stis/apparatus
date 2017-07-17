@@ -1,3 +1,4 @@
+'use strict'
 // find the total number of nodes
 
 module.exports = function totalNodes (cy) {

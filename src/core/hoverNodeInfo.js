@@ -1,4 +1,4 @@
-'use scrict'
+'use strict'
 
 module.exports = function nodeInfo (node) {
   const containerNode = document.getElementById('container-node-id')

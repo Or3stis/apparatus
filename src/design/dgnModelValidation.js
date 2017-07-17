@@ -1,4 +1,4 @@
-'use scrict'
+'use strict'
 
 const dgnMetamodel = require('./dgnSchema.js')
 const printChat = require('../core/printChat.js')

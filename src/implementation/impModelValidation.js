@@ -1,4 +1,4 @@
-'use scrict'
+'use strict'
 
 const impMetamodel = require('./impSchema.js')
 const printChat = require('../core/printChat.js')

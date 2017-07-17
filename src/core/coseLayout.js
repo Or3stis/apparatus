@@ -1,4 +1,4 @@
-'use scrict'
+'use strict'
 
 // source: http://js.cytoscape.org/#layouts/cose
 

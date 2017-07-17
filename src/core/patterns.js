@@ -1,4 +1,5 @@
 'use strict'
+
 const printChat = require('./printChat.js')
 
 module.exports = function patterns (cy) {
