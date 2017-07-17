@@ -9,22 +9,26 @@ const testGraph = '../../graphs/implementation/smartHome.js'
 
 let cy = {}
 
+// loads the empty template
 const newGraph = () => {
   cyOptions(cy, template)
   initialize(cy.out)
 }
+// loads the debugging graph
 const debugGraph = () => {
   cyOptions(cy, testGraph)
   initialize(cy.out)
 }
 
 // TODO move it to different modules
+// creates the option menu on startup
+// the element is removed on selection
 const start = () => {
   const graph = document.getElementById('graph-container')
   const wrapper = document.createElement('wrapper')
   wrapper.id = 'wrapper-id'
-  wrapper.textContent = 'select'
   wrapper.className = 'wrapper'
+  wrapper.textContent = 'select'
 
   const buttonNew = document.createElement('button')
   buttonNew.id = 'new-id'
