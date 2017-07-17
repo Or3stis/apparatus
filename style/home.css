@@ -71,7 +71,3 @@ h3 {
 .buttonPhase:hover {
   border-bottom-color: var(--blue-color);
 }
-/*remove the blue outline box of chrome*/
-.buttonPhase:focus {
-  outline: none;
-}
