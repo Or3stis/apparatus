@@ -307,6 +307,38 @@ body {
   background-color: : var(--main-tx-color);
 }
 
+.wrapper {
+  position: absolute;
+  width: 130px;
+  border-radius: 10px;
+  background-color: var(--black-color);
+  margin: auto;
+  margin-top: 12em;
+  z-index: 2;
+  right: 50%;
+  text-align: center;
+}
+
+.startButtons {
+  background-color: var(--main-dark-bg-color);
+  margin: 5px;
+  color: var(--main-tx-color);
+  width: 120px;
+  height: 30px;
+  border-radius: 10px;
+  border: 1px solid;
+  border-color: var(--main-dark-bg-color);
+  font-size: 13px;
+}
+
+.startButtons:hover {
+  border-color: var(--blue-color);
+}
+/*remove the blue outline box of chrome*/
+.startButtons:focus {
+  outline: none;
+}
+
 ::-webkit-scrollbar {
   width: 7px;
 }
