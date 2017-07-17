@@ -32,7 +32,7 @@ module.exports = function threatVerification (cy) {
       }
     })
   })
-  result = `${result} • Threats total: ${threatArray.length}\n`
+  result = `${result}\n • Threats total: ${threatArray.length}\n`
   result = `${result} • Mitigated total: ${mitigatedThreats}\n`
   printChat(result)
 }
