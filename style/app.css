@@ -9,6 +9,7 @@
   --gray-color: #abb2bf;
 }*/
 
+
 /*atom dark color theme*/
 :root {
   --main-bg-color: #282c34;
@@ -115,10 +116,10 @@ body {
   border-radius: 10px;
   -webkit-animation: fadein 0.4s;
 }
-
 .bubble:hover {
   background-color: var(--black-color);
 }
+
 
 /*.tool {
   background-color: var(--gray-color);
@@ -138,11 +139,9 @@ body {
   border-color: var(--main-bg-color);
   color: var(--main-tx-color);
 }
-
 .input-form {
   outline: none;
 }
-
 .submit-form {
   background-color: var(--main-bg-color);
   margin-top: 3px;
@@ -162,7 +161,6 @@ body {
   position: fixed;
   background-color: var(--main-bg-color);
 }
-
 #console-id {
   height: 20px;
   background-color: var(--main-bg-color);
@@ -174,7 +172,6 @@ body {
   font-family: monaco, consolas, mono;
   position: absolute;
 }
-
 #console-id:focus {
   border-bottom: 3px solid var(--blue-color);
   outline: none;
@@ -207,79 +204,75 @@ body {
   overflow: auto;
 }
 
+
 /*warning to save file on exit*/
 #home-button-id:hover:after {
   content: 'save first';
 }
-
 #home-button-id:hover span {
   display: none;
 }
 
-/*new gui stuff*/
-.icon{
+.icon {
   fill: var(--main-tx-color);
 }
 .icon:hover {
   fill: var(--blue-color);
 }
-
 .button-icon {
   background-color: var(--main-dark-bg-color);
   margin: 2px;
   color: var(--main-tx-color);
   border: 1px solid;
   border-color: var(--main-dark-bg-color);
-  /*font-size: 12px;*/
 }
-
 /*flash color when clicked*/
 .button-icon:active, .icon:active {
   fill: var(--main-tx-color);
 }
-
 .button-icon:focus {
   outline: none;
   fill: var(--blue-color);
 }
 
+/*dropdown buttons*/
 .dropdown {
-    position: relative;
-    display: inline-block;
+  position: relative;
+  display: inline-block;
 }
 .dropdown-menu {
-    position: absolute;
-    top: 100%;
-    display: none;
-    margin: 0;
-    list-style: none;
-    padding: 0;
-    overflow: auto;
-    z-index: 1;
+  position: absolute;
+  top: 100%;
+  display: none;
+  margin: 0;
+  list-style: none;
+  padding: 0;
+  overflow: auto;
+  z-index: 1;
 }
 .dropdown:hover .dropdown-menu {
-    display: block;
+  display: block;
 }
 .dropdown a {
-    display: block;
-    padding: 0.2em 0.8em;
-    text-decoration: none;
-    background-color: var(--main-dark-bg-color);
-    color: var(--main-tx-color);
-    font-size: 12px;
+  display: block;
+  padding: 0.2em 0.8em;
+  text-decoration: none;
+  background-color: var(--main-dark-bg-color);
+  color: var(--main-tx-color);
+  font-size: 12px;
 }
 .dropdown a:hover {
-    background-color: var(--blue-color);
-    color: var(--main-dark-bg-color);
+  background-color: var(--blue-color);
+  color: var(--main-dark-bg-color);
 }
 
+/*label button components*/
 .label-wrapper {
   bottom: 0;
   margin: 0 auto;
   width: 40px;
   position: fixed;
 }
-
 .label-button {
   background-color: var(--main-dark-bg-color);
   margin: 0;
@@ -292,16 +285,13 @@ body {
   border-color: var(--main-tx-color);
   font-size: 10px;
 }
-
 .label-button:hover {
   border-color: var(--blue-color);
 }
-
 /*remove the blue outline box of chrome*/
 .label-button:focus {
   outline: none;
 }
-
 /*flash color when clicked*/
 .label-button:active {
   background-color: : var(--main-tx-color);
@@ -333,20 +323,14 @@ body {
 .startButtons:hover {
   border-color: var(--blue-color);
 }
-/*remove the blue outline box of chrome*/
-.startButtons:focus {
-  outline: none;
-}
 
 ::-webkit-scrollbar {
   width: 7px;
 }
-
 ::-webkit-scrollbar-track {
   -webkit-box-shadow: none;
   border-radius: 6px;
 }
-
 ::-webkit-scrollbar-thumb {
   border-radius: 6px;
   background-color: rgba(171, 178, 191, 0.3);
