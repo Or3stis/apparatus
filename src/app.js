@@ -19,7 +19,7 @@ const debugGraph = () => {
   initialize(cy.out)
 }
 
-// new stuff
+// TODO move it to different modules
 const start = () => {
   const graph = document.getElementById('graph-container')
   const wrapper = document.createElement('wrapper')
