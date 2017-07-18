@@ -3,6 +3,7 @@
 const searchAttribute = require('./core/searchAttribute.js')
 const printChat = require('./core/printChat.js')
 const core = require('./core/core.js')
+const save = require('./core/save.js')
 
 module.exports = function console (cy, selectedNode, selectedEdge) {
   // help menu
@@ -10,6 +11,7 @@ module.exports = function console (cy, selectedNode, selectedEdge) {
 • meta + l: focus on console
 • meta + backspace: deletes element
 • meta + z: restore node
+• shift + meta + s: save as model
 • search for attributes`
 
   // loses the focus from the console when tapping
@@ -51,9 +53,12 @@ module.exports = function console (cy, selectedNode, selectedEdge) {
     if (event.metaKey === true && event.code === 'Backspace') {
       core.deleteEl(cy, selectedNode, selectedEdge)
     }
-    // restore elements with meta + z
     if (event.metaKey === true && event.code === 'KeyZ') {
+      // restore elements with meta + z
       core.restoreNode()
+    }
+    if (event.shiftKey === true && event.metaKey === true && event.code === 'KeyS') {
+      save(cy)
     }
     // listens for the ENTER key when focus is on the console
     if (document.activeElement === consoleId && event.code === 'Enter') {
