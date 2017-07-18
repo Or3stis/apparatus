@@ -12,7 +12,8 @@ module.exports = function cyOptions (cy, file) {
     style: graphStyle.style
   })
   // graph layout
-  cy.out.layout({
-    name: 'cose'
+  const layout = cy.out.layout({
+    name: 'breadthfirst'
   })
+  layout.run()
 }

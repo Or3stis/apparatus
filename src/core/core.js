@@ -2,7 +2,7 @@
 
 // core modules, shared between all phases
 const nodeSelection = require('./nodeSelection.js')
-const coseLayout = require('./coseLayout.js')
+const layout = require('./layout.js')
 const save = require('./save.js')
 // const load = require('./load.js')
 const totalNodes = require('./totalNodes.js')
@@ -51,10 +51,10 @@ const deleteButton = (cy, selectedNode, selectedEdge) => {
   })
 }
 // cose layout
-const layout = cy => {
+const graphLayout = cy => {
   const buttonLayout = document.getElementById('layout-button')
-  buttonLayout.addEventListener('click', () => {
-    coseLayout(cy)
+  buttonLayout.addEventListener('click', e => {
+    layout(cy, e.target.textContent)
   })
 }
 // enable label buttons
@@ -115,7 +115,7 @@ const restoreNode = () => {
 
 module.exports = {
   selectionNode: selectionNode,
-  layout: layout,
+  graphLayout: graphLayout,
   deleteButton: deleteButton,
   deleteEl: deleteEl,
   showNeighbor: showNeighbor,

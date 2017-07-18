@@ -145,7 +145,7 @@ module.exports = function setup (cy) {
   // highlights only the selected node class
   core.selectionNode(cy)
   // cose layout
-  core.layout(cy)
+  core.graphLayout(cy)
   // enable label buttons
   core.labels(cy)
   // save graph
