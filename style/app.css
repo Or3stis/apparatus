@@ -323,6 +323,9 @@ body {
 .startButtons:hover {
   border-color: var(--blue-color);
 }
+.startButtons:focus {
+  outline: none;
+}
 
 ::-webkit-scrollbar {
   width: 7px;
