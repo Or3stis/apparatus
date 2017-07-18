@@ -265,6 +265,9 @@ body {
   background-color: var(--blue-color);
   color: var(--main-dark-bg-color);
 }
+.dropdown a:active {
+  background-color: var(--main-tx-color);
+}
 
 /*label button components*/
 .label-wrapper {
@@ -287,6 +290,7 @@ body {
 }
 .label-button:hover {
   border-color: var(--blue-color);
+  color: var(--blue-color);
 }
 /*remove the blue outline box of chrome*/
 .label-button:focus {
@@ -294,7 +298,8 @@ body {
 }
 /*flash color when clicked*/
 .label-button:active {
-  background-color: : var(--main-tx-color);
+  border-color: var(--main-tx-color);
+  color: : var(--main-tx-color);
 }
 
 /*load menu*/
