@@ -57,7 +57,11 @@ module.exports = function console (cy, selectedNode, selectedEdge) {
       // restore elements with meta + z
       core.restoreNode()
     }
-    if (event.shiftKey === true && event.metaKey === true && event.code === 'KeyS') {
+    if (
+      event.shiftKey === true &&
+      event.metaKey === true &&
+      event.code === 'KeyS'
+    ) {
       save(cy)
     }
     // listens for the ENTER key when focus is on the console
