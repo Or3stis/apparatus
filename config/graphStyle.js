@@ -67,6 +67,15 @@ graphStyle.style = [{
     'text-outline-width': 2,
     'text-outline-color': config.background
   }
+}, {
+  selector: '.label-dsc',
+  style: {
+    label: 'data(info.description)',
+    'text-valign': 'center',
+    'color': config.white,
+    'text-outline-width': 2,
+    'text-outline-color': config.background
+  }
 }]
 
 module.exports = graphStyle

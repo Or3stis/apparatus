@@ -63,22 +63,33 @@ const labels = cy => {
   hideLabelsButton.addEventListener('click', () => {
     cy.nodes().removeClass('label-nodes')
     cy.nodes().removeClass('label-id')
+    cy.nodes().removeClass('label-dsc')
     cy.edges().removeClass('label-edges')
   })
   const showLabelsButton = document.getElementById('show-label')
   showLabelsButton.addEventListener('click', () => {
     cy.nodes().removeClass('label-id')
+    cy.nodes().removeClass('label-dsc')
     cy.nodes().addClass('label-nodes')
     cy.edges().addClass('label-edges')
   })
   const showLabelNodeButton = document.getElementById('show-label-node')
   showLabelNodeButton.addEventListener('click', () => {
     cy.nodes().removeClass('label-id')
+    cy.nodes().removeClass('label-dsc')
     cy.nodes().addClass('label-nodes')
   })
   const showIdNodeButton = document.getElementById('show-node-id')
   showIdNodeButton.addEventListener('click', () => {
+    cy.nodes().removeClass('label-nodes')
+    cy.nodes().removeClass('label-dsc')
     cy.nodes().addClass('label-id')
+  })
+  const showDiscNodeButton = document.getElementById('show-node-disc')
+  showDiscNodeButton.addEventListener('click', () => {
+    cy.nodes().removeClass('label-nodes')
+    cy.nodes().removeClass('label-id')
+    cy.nodes().addClass('label-dsc')
   })
 }
 // save graph
