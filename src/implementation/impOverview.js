@@ -74,8 +74,6 @@ module.exports = function overview (cy) {
       assetNode += 1
     } else if (nodeConcept === 'threat') {
       threatNode += 1
-    } else if (nodeConcept === 'threat') {
-      threatNode += 1
     } else if (nodeConcept === 'vulnerability') {
       vulnNode += 1
     } else if (nodeConcept === 'mechanism') {
