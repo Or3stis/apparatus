@@ -3,15 +3,13 @@
 // add components in the graph
 
 // TODO needs refactoring
-module.exports = function addDgnComponent (cy, component) {
-  let lastNode = cy.nodes().length + 1
-
+module.exports = function addDgnComponent (cy, component, nodeCounter) {
   switch (component) {
     case 'sensor':
       cy.add({
         group: 'nodes',
         data: {
-          id: `n${lastNode}`,
+          id: `n${nodeCounter}`,
           label: `${component}`,
           info: {
             description: '',
@@ -28,7 +26,7 @@ module.exports = function addDgnComponent (cy, component) {
       cy.add({
         group: 'nodes',
         data: {
-          id: `n${lastNode}`,
+          id: `n${nodeCounter}`,
           label: `${component}`,
           info: {
             description: '',
@@ -45,7 +43,7 @@ module.exports = function addDgnComponent (cy, component) {
       cy.add({
         group: 'nodes',
         data: {
-          id: `n${lastNode}`,
+          id: `n${nodeCounter}`,
           label: `${component}`,
           info: {
             description: '',

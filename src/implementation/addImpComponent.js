@@ -3,15 +3,13 @@
 // add components in the graph
 
 // TODO needs refactoring
-module.exports = function addImpComponent (cy, component) {
-  let lastNode = cy.nodes().length + 1
-
+module.exports = function addImpComponent (cy, component, nodeCounter) {
   switch (component) {
     case 'device':
       cy.add({
         group: 'nodes',
         data: {
-          id: `n${lastNode}`,
+          id: `n${nodeCounter}`,
           label: `${component}`,
           info: {
             description: '',
@@ -35,7 +33,7 @@ module.exports = function addImpComponent (cy, component) {
       cy.add({
         group: 'nodes',
         data: {
-          id: `n${lastNode}`,
+          id: `n${nodeCounter}`,
           label: `${component}`,
           info: {
             description: '',
@@ -53,7 +51,7 @@ module.exports = function addImpComponent (cy, component) {
       cy.add({
         group: 'nodes',
         data: {
-          id: `n${lastNode}`,
+          id: `n${nodeCounter}`,
           label: `${component}`,
           info: {
             description: '',
@@ -72,7 +70,7 @@ module.exports = function addImpComponent (cy, component) {
       cy.add({
         group: 'nodes',
         data: {
-          id: `n${lastNode}`,
+          id: `n${nodeCounter}`,
           label: `${component}`,
           info: {
             description: '',
@@ -91,7 +89,7 @@ module.exports = function addImpComponent (cy, component) {
       cy.add({
         group: 'nodes',
         data: {
-          id: `n${lastNode}`,
+          id: `n${nodeCounter}`,
           label: `${component}`,
           info: {
             description: '',
@@ -109,7 +107,7 @@ module.exports = function addImpComponent (cy, component) {
       cy.add({
         group: 'nodes',
         data: {
-          id: `n${lastNode}`,
+          id: `n${nodeCounter}`,
           label: `${component}`,
           info: {
             description: '',
@@ -126,7 +124,7 @@ module.exports = function addImpComponent (cy, component) {
       cy.add({
         group: 'nodes',
         data: {
-          id: `n${lastNode}`,
+          id: `n${nodeCounter}`,
           label: `${component}`,
           info: {
             description: '',
@@ -143,7 +141,7 @@ module.exports = function addImpComponent (cy, component) {
       cy.add({
         group: 'nodes',
         data: {
-          id: `n${lastNode}`,
+          id: `n${nodeCounter}`,
           label: `${component}`,
           info: {
             description: '',
@@ -161,7 +159,7 @@ module.exports = function addImpComponent (cy, component) {
       cy.add({
         group: 'nodes',
         data: {
-          id: `n${lastNode}`,
+          id: `n${nodeCounter}`,
           label: `${component}`,
           info: {
             description: '',
@@ -179,7 +177,7 @@ module.exports = function addImpComponent (cy, component) {
       cy.add({
         group: 'nodes',
         data: {
-          id: `n${lastNode}`,
+          id: `n${nodeCounter}`,
           label: `${component}`,
           info: {
             description: '',
@@ -196,7 +194,7 @@ module.exports = function addImpComponent (cy, component) {
       cy.add({
         group: 'nodes',
         data: {
-          id: `n${lastNode}`,
+          id: `n${nodeCounter}`,
           label: `${component}`,
           info: {
             description: '',
@@ -214,7 +212,7 @@ module.exports = function addImpComponent (cy, component) {
       cy.add({
         group: 'nodes',
         data: {
-          id: `n${lastNode}`,
+          id: `n${nodeCounter}`,
           label: `${component}`,
           info: {
             description: '',
@@ -231,7 +229,7 @@ module.exports = function addImpComponent (cy, component) {
       cy.add({
         group: 'nodes',
         data: {
-          id: `n${lastNode}`,
+          id: `n${nodeCounter}`,
           label: `${component}`,
           info: {
             description: '',
@@ -249,7 +247,7 @@ module.exports = function addImpComponent (cy, component) {
       cy.add({
         group: 'nodes',
         data: {
-          id: `n${lastNode}`,
+          id: `n${nodeCounter}`,
           label: `${component}`,
           info: {
             description: '',
@@ -266,7 +264,7 @@ module.exports = function addImpComponent (cy, component) {
       cy.add({
         group: 'nodes',
         data: {
-          id: `n${lastNode}`,
+          id: `n${nodeCounter}`,
           label: `${component}`,
           info: {
             description: '',
@@ -283,7 +281,7 @@ module.exports = function addImpComponent (cy, component) {
       cy.add({
         group: 'nodes',
         data: {
-          id: `n${lastNode}`,
+          id: `n${nodeCounter}`,
           label: `${component}`,
           info: {
             description: '',
@@ -300,7 +298,7 @@ module.exports = function addImpComponent (cy, component) {
       cy.add({
         group: 'nodes',
         data: {
-          id: `n${lastNode}`,
+          id: `n${nodeCounter}`,
           label: `${component}`,
           info: {
             description: '',

@@ -11,11 +11,12 @@ const addDgnStateEdge = require('./addDgnStateEdge.js')
 // require global modules
 const totalNodes = require('../core/totalNodes.js')
 
-// add dgn-state nodes
-const addNode = cy => {
+// add desing node
+const addNode = (cy, nodeCounter) => {
   const addNode = document.getElementById('add-component-id')
   addNode.addEventListener('click', e => {
-    addDgnStateComponent(cy, e.target.textContent)
+    nodeCounter += 1
+    addDgnStateComponent(cy, e.target.textContent, nodeCounter)
     cy.nodes().addClass('label-nodes')
     totalNodes(cy) // global module
   })

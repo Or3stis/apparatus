@@ -11,11 +11,11 @@ const addImpStateEdge = require('./addImpStateEdge.js')
 // require global modules
 const totalNodes = require('../core/totalNodes.js')
 
-// add imp-state nodes
-const addNode = cy => {
+const addNode = (cy, nodeCounter) => {
   const addNode = document.getElementById('add-component-id')
   addNode.addEventListener('click', e => {
-    addImpStateComponent(cy, e.target.textContent) // imp-state module
+    nodeCounter += 1
+    addImpStateComponent(cy, e.target.textContent, nodeCounter)
     cy.nodes().addClass('label-nodes')
     totalNodes(cy) // global module
   })

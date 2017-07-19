@@ -34,6 +34,7 @@ module.exports = function setup (cy) {
   let trgNode = {}
   let srcNodeCpt = {}
   let trgNodeCpt = {}
+  const initialCount = cy.nodes().length
 
   // cy.on does stuff when intrecting with the graph
   // do stuff when tapping on node
@@ -109,7 +110,7 @@ module.exports = function setup (cy) {
 
   // load design phase buttons
   if (pathLocation === dgnPath) {
-    dgn.addNode(cy)
+    dgn.addNode(cy, initialCount)
     dgn.threatVerify(cy)
     dgn.overview(cy)
     dgn.validate(cy)
@@ -117,13 +118,13 @@ module.exports = function setup (cy) {
     dgn.addEdge(cy, srcNode, trgNode, srcNodeCpt, trgNodeCpt)
     // load design-state buttons
   } else if (pathLocation === dgnStatePath) {
-    dgnState.addNode(cy)
+    dgnState.addNode(cy, initialCount)
     dgnState.overview(cy)
     dgnState.validate(cy)
     dgnState.addEdge(cy, srcNode, trgNode, srcNodeCpt, trgNodeCpt)
     // loads implementation phase buttons
   } else if (pathLocation === impPath) {
-    imp.addNode(cy)
+    imp.addNode(cy, initialCount)
     imp.overview(cy)
     imp.validate(cy)
     imp.threatVerify(cy)
@@ -134,7 +135,7 @@ module.exports = function setup (cy) {
     imp.addEdge(cy, srcNode, trgNode, srcNodeCpt, trgNodeCpt)
     // loads implementation-state buttons
   } else if (pathLocation === impStatePath) {
-    impState.addNode(cy)
+    impState.addNode(cy, initialCount)
     impState.overview(cy)
     impState.validate(cy)
     impState.addEdge(cy, srcNode, trgNode, srcNodeCpt, trgNodeCpt)

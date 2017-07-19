@@ -13,11 +13,12 @@ const totalNodes = require('../core/totalNodes.js')
 const threatVerification = require('../core/threatVerification.js')
 const moduleSelection = require('../core/moduleSelection.js')
 
-// design nodes
-const addNode = cy => {
+// add design nodes
+const addNode = (cy, nodeCounter) => {
   const addNode = document.getElementById('add-component-id')
   addNode.addEventListener('click', e => {
-    addDgnComponent(cy, e.target.textContent)
+    nodeCounter += 1
+    addDgnComponent(cy, e.target.textContent, nodeCounter)
     cy.nodes().addClass('label-nodes')
     totalNodes(cy) // global module
   })
