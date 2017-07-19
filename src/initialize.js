@@ -34,10 +34,11 @@ module.exports = function setup (cy) {
   let trgNode = {}
   let srcNodeCpt = {}
   let trgNodeCpt = {}
+  // counter variable to create unique sequential node ids in addComponents.js
   const initialCount = cy.nodes().length
 
   // cy.on does stuff when intrecting with the graph
-  // do stuff when tapping on node
+  // actions when tapping on node
   cy.on('tap', 'node', selection => {
     // removes previous selections
     cy.elements().removeClass('selection')
@@ -53,7 +54,7 @@ module.exports = function setup (cy) {
     totalNodes(cy) // global module
     editNode.removeElement() // remove the edit node element
   })
-  // do stuff when tapping on an edge
+  // actions when tapping on an edge
   cy.on('tap', 'edge', selection => {
     // removes previous selections
     cy.elements().removeClass('selection')
@@ -65,7 +66,7 @@ module.exports = function setup (cy) {
     totalNodes(cy) // global module
     editNode.removeElement() // remove the edit node element
   })
-  // do stuff when tapping the stage
+  // actions when tapping the stage
   cy.on('tap', selection => {
     // checks if only the stage was clicked
     if (selection.target === cy) {
@@ -86,11 +87,11 @@ module.exports = function setup (cy) {
     selectedNode = selection.target[0]
     editNode.formNode(selectedNode) // global module
   })
-  // do stuff when hovering over a node
+  // actions when hovering over a node
   cy.on('mouseover', 'node', event => {
     hoverNodeInfo(event.target[0]) // global module
   })
-  // do stuff when hovering out of a node
+  // actions when hovering out of a node
   cy.on('mouseout', 'node', event => {
     // hides the hover container
     document.getElementById('container-node-id').style.display = 'none'
