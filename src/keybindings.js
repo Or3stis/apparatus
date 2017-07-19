@@ -7,12 +7,12 @@ const save = require('./core/save.js')
 
 module.exports = function console (cy, selectedNode, selectedEdge) {
   // help menu
-  const helpMenu = `• help: for options
-• meta + l: focus on console
-• meta + backspace: deletes element
-• meta + z: restore node
-• shift + meta + s: save as model
-• search for attributes`
+  const helpMenu = `• focus on console:  ⌘L
+• delete element: ⌘⌫
+• restore node: ⌘Z
+• save as: ⇧⌘S
+
+• keyword search for attributes`
 
   // loses the focus from the console when tapping
   cy.on('tap', 'node', selection => {
@@ -31,7 +31,7 @@ module.exports = function console (cy, selectedNode, selectedEdge) {
     const input = document.getElementById('console-id').value
     document.getElementById('console-id').value = ''
     switch (input) {
-      case 'help' || 'options':
+      case 'help':
         printChat(helpMenu)
         break
       case '':
@@ -46,20 +46,27 @@ module.exports = function console (cy, selectedNode, selectedEdge) {
 
   // keydown listeners
   document.addEventListener('keydown', event => {
+    let key = ''
+    if (process.platform === 'darwin') {
+      key = event.metaKey
+    } else {
+      key = event.ctrlKey
+    }
     // focus on the consoleId
-    if (event.metaKey === true && event.code === 'KeyL') {
+    if (key === true && event.code === 'KeyL') {
       consoleId.focus()
     }
-    if (event.metaKey === true && event.code === 'Backspace') {
+    // delete elements
+    if (key === true && event.code === 'Backspace') {
       core.deleteEl(cy, selectedNode, selectedEdge)
     }
-    if (event.metaKey === true && event.code === 'KeyZ') {
+    if (key === true && event.code === 'KeyZ') {
       // restore elements with meta + z
       core.restoreNode()
     }
     if (
       event.shiftKey === true &&
-      event.metaKey === true &&
+      key === true &&
       event.code === 'KeyS'
     ) {
       save(cy)
