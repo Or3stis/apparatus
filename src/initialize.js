@@ -29,14 +29,20 @@ module.exports = function setup (cy) {
 
   // global variables, used in cy.on
   let selectedNode = {}
-  // initialize value to prevent undefined errors
-  selectedNode.out = {}
   let oldSelectedNode = {}
   let selectedEdge = {}
   let srcNode = {}
   let trgNode = {}
   let srcNodeCpt = {}
   let trgNodeCpt = {}
+  // initialize export variables to prevent undefined errors
+  selectedNode.out = {}
+  selectedEdge.out = {}
+  srcNode.out = {}
+  trgNode.out = {}
+  srcNodeCpt.out = {}
+  trgNodeCpt.out = {}
+
   // counter variable to create unique sequential node ids in addComponents.js
   const initialCount = cy.nodes().length
 
