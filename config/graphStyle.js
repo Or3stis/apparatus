@@ -30,6 +30,11 @@ graphStyle.style = [{
     'line-color': config.blue
   }
 }, {
+  selector: '.old-selection',
+  style: {
+    'background-color': config.orange
+  }
+}, {
   selector: '.attention',
   style: {
     'background-color': config.yellow
