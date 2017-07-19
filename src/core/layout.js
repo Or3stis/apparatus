@@ -75,6 +75,24 @@ module.exports = function layout (cy, selection) {
     ready: undefined, // callback on layoutready
     stop: undefined // callback on layoutstop
   })
+  const breadLayoutCircle = cy.layout({
+    name: 'breadthfirst',
+    fit: true,
+    directed: false, // whether the tree is directed downwards (or edges can point in any direction if false)
+    padding: 30,
+    circle: true, // put depths in concentric circles if true, put depths top down if false
+    spacingFactor: 1.75, // positive spacing factor, larger => more space between nodes (N.B. n/a if causes overlap)
+    boundingBox: undefined, // constrain layout bounds; { x1, y1, x2, y2 } or { x1, y1, w, h }
+    avoidOverlap: true, // prevents node overlap, may overflow boundingBox if not enough space
+    nodeDimensionsIncludeLabels: false, // Excludes the label when calculating node bounding boxes for the layout algorithm
+    roots: undefined, // the roots of the trees
+    maximalAdjustments: 0, // how many times to try to position the nodes in a maximal way (i.e. no backtracking)
+    animate: false, // whether to transition the node positions
+    animationDuration: 500, // duration of animation in ms if enabled
+    animationEasing: undefined, // easing of animation if enabled
+    ready: undefined, // callback on layoutready
+    stop: undefined // callback on layoutstop
+  })
   const circle = cy.layout({
     name: 'circle',
     fit: true,
@@ -127,6 +145,9 @@ module.exports = function layout (cy, selection) {
       break
     case 'grid':
       grid.run()
+      break
+    case 'breadthfirst(circle)':
+      breadLayoutCircle.run()
       break
     default:
       console.error('error in layout.js')
