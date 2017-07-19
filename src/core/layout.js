@@ -97,11 +97,17 @@ module.exports = function layout (cy, selection) {
     stop: undefined // callback on layoutstop
   })
 
-  if (selection === 'cose') {
-    coseLayout.run()
-  } else if (selection === 'breadthfirst') {
-    breadLayout.run()
-  } else if (selection === 'circle') {
-    circle.run()
+  switch (selection) {
+    case 'cose':
+      coseLayout.run()
+      break
+    case 'breadthfirst':
+      breadLayout.run()
+      break
+    case 'circle':
+      circle.run()
+      break
+    default:
+      console.error('error in layout.js')
   }
 }
