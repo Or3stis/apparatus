@@ -11,7 +11,7 @@ module.exports = function console (cy, selectedNode, selectedEdge) {
 • delete element: ⌘⌫
 • restore node: ⌘Z
 • save as: ⇧⌘S
-
+• clear sidebar: clear
 • keyword search for attributes`
 
   // loses the focus from the console when tapping
