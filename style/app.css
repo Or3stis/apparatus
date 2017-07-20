@@ -115,6 +115,7 @@ body {
   padding: 5px;
   border-radius: 10px;
   -webkit-animation: fadein 0.4s;
+  /*box-shadow: 3px 2px 11px 7px rgba(33,37,43,0.7);*/
 }
 .bubble:hover {
   background-color: var(--black-color);
@@ -299,7 +300,7 @@ body {
 /*flash color when clicked*/
 .label-button:active {
   border-color: var(--main-tx-color);
-  color: : var(--main-tx-color);
+  color: var(--main-tx-color);
 }
 
 /*load menu*/
@@ -313,6 +314,7 @@ body {
   z-index: 2;
   right: 50%;
   text-align: center;
+  box-shadow: 3px 2px 11px 7px rgba(33,37,43,0.7);
 }
 .startButtons {
   background-color: var(--main-dark-bg-color);
@@ -327,6 +329,7 @@ body {
 }
 .startButtons:hover {
   border-color: var(--blue-color);
+  color: var(--blue-color);
 }
 .startButtons:focus {
   outline: none;
