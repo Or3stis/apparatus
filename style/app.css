@@ -136,12 +136,16 @@ body {
 .input-form {
   background-color: var(--main-bg-color);
   border: 1px solid;
-  border-radius: 10px;
+  border-radius: 5px;
   border-color: var(--main-bg-color);
   color: var(--main-tx-color);
 }
 .input-form {
   outline: none;
+}
+.input-form:focus {
+  border-color: rgba(97, 175, 239,0.6);
+  /*border-color: var(--blue-color);*/
 }
 .submit-form {
   background-color: var(--main-bg-color);
