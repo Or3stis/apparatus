@@ -23,7 +23,7 @@
   },
   "homepage": "https://github.com/Or3stis/apparatus/#readme",
   "dependencies": {
-    "cytoscape": "^3.1.3",
+    "cytoscape": "^3.1.4",
     "electron": "^1.6.11",
     "jsonfile": "^3.0.1"
   },
