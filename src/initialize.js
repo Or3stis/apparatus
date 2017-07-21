@@ -37,6 +37,7 @@ module.exports = function setup (cy) {
   let trgNodeCpt = {}
   // initialize export variables to prevent undefined errors
   selectedNode.out = {}
+  oldSelectedNode.out = {}
   selectedEdge.out = {}
   srcNode.out = {}
   trgNode.out = {}
@@ -54,11 +55,11 @@ module.exports = function setup (cy) {
     cy.elements().removeClass('attention')
     cy.elements().removeClass('protect')
     cy.nodes().removeClass('old-selection')
-    oldSelectedNode = selectedNode.out
+    oldSelectedNode.out = selectedNode.out
     selectedNode.out = selection.target[0]
     selectedNode.out.addClass('selection')
-    if (Object.keys(oldSelectedNode).length !== 0) {
-      oldSelectedNode.addClass('old-selection')
+    if (Object.keys(oldSelectedNode.out).length !== 0) {
+      oldSelectedNode.out.addClass('old-selection')
     }
     srcNode.out = trgNode.out // second selection
     trgNode.out = selectedNode.out.data().id
@@ -77,7 +78,7 @@ module.exports = function setup (cy) {
     cy.nodes().removeClass('old-selection')
     selection.target.addClass('selection')
     selectedNode.out = {} // clear token
-    oldSelectedNode = {} // clear token
+    oldSelectedNode.out = {} // clear token
     selectedEdge.out = selection.target[0]
     totalNodes(cy) // global module
     editNode.removeElement() // remove the edit node element
@@ -94,7 +95,7 @@ module.exports = function setup (cy) {
       cy.nodes().removeClass('old-selection')
       // clear tokens
       selectedNode.out = {}
-      oldSelectedNode = {}
+      oldSelectedNode.out = {}
       selectedEdge.out = {}
       totalNodes(cy) // global module
       editNode.removeElement() // remove the edit node element
@@ -106,7 +107,7 @@ module.exports = function setup (cy) {
     editNode.formNode(selectedNode) // global module
     // clear tokens
     selectedNode.out = {}
-    oldSelectedNode = {}
+    oldSelectedNode.out = {}
     selectedEdge.out = {}
   })
   // actions when hovering over a node
