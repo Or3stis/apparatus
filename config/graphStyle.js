@@ -8,7 +8,9 @@ graphStyle.style = [{
   selector: 'node',
   style: {
     shape: 'ellipse',
-    'background-color': config.white
+    'background-color': config.white,
+    'text-wrap': 'wrap',
+    'text-max-width': '100px'
   }
 }, {
   selector: 'edge',
