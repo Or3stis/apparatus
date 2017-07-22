@@ -1,5 +1,6 @@
 'use strict'
 
+const config = require('../config/config.js')
 const searchAttribute = require('./core/searchAttribute.js')
 const printChat = require('./core/printChat.js')
 const core = require('./core/core.js')
@@ -14,6 +15,17 @@ module.exports = function console (cy, selectedNode, selectedEdge) {
 • clear sidebar: clear
 • keyword search for attributes`
 
+  const consoleId = document.getElementById('console-id')
+  const labelId = document.getElementById('input-label-id')
+  // indicate focus on console
+  consoleId.addEventListener('focus', (e) => {
+    labelId.style.color = config.blue
+    consoleId.style.outline = 'none'
+  })
+  consoleId.addEventListener('blur', () => {
+    labelId.style.color = config.white
+  })
+
   // loses the focus from the console when tapping
   cy.on('tap', 'node', selection => {
     consoleId.blur()
@@ -26,7 +38,6 @@ module.exports = function console (cy, selectedNode, selectedEdge) {
   })
 
   // console commands
-  const consoleId = document.getElementById('console-id')
   const commands = () => {
     const input = document.getElementById('console-id').value
     document.getElementById('console-id').value = ''

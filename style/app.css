@@ -45,6 +45,7 @@ body {
   /*disable text selection*/
   -webkit-user-select: none;
   overflow: hidden;
+  outline: none;
 }
 
 .title-bar {
@@ -157,7 +158,7 @@ body {
 }
 
 .console-wrapper {
-  width: 100%;
+  width: 90%;
   height: 22px;
   padding: 5px;
   display: flex;
@@ -169,17 +170,16 @@ body {
 #console-id {
   height: 20px;
   background-color: var(--main-bg-color);
-  border: 1px solid;
-  border-color: var(--main-bg-color);
-  border-bottom: 3px solid var(--gray-color);
+  border: none;
   color: var(--main-tx-color);
   font-size: 11px;
   font-family: monaco, consolas, mono;
-  position: absolute;
 }
-#console-id:focus {
-  border-bottom: 3px solid var(--blue-color);
-  outline: none;
+#input-label-id {
+  top: 3px;
+  padding-right: 2px;
+  position: relative;
+  font-size: 13px;
 }
 
 .container-node {
