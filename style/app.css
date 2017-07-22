@@ -45,8 +45,10 @@ body {
   /*disable text selection*/
   -webkit-user-select: none;
   overflow: hidden;
-  outline: none;
 }
+
+/*remove outlines*/
+*:focus {outline:none}
 
 .title-bar {
   position: relative;
@@ -103,7 +105,6 @@ body {
   flex-wrap: wrap;
   align-items: flex-start;
   align-content: flex-start;
-  outline: none;
 }
 
 .bubble {
@@ -116,7 +117,6 @@ body {
   padding: 5px;
   border-radius: 10px;
   -webkit-animation: fadein 0.4s;
-  /*box-shadow: 3px 2px 11px 7px rgba(33,37,43,0.7);*/
 }
 .bubble:hover {
   background-color: var(--black-color);
@@ -141,12 +141,8 @@ body {
   border-color: var(--main-bg-color);
   color: var(--main-tx-color);
 }
-.input-form {
-  outline: none;
-}
 .input-form:focus {
   border-color: rgba(97, 175, 239,0.6);
-  /*border-color: var(--blue-color);*/
 }
 .submit-form {
   background-color: var(--main-bg-color);
@@ -236,7 +232,6 @@ body {
   fill: var(--main-tx-color);
 }
 .button-icon:focus {
-  outline: none;
   fill: var(--blue-color);
 }
 
@@ -297,10 +292,6 @@ body {
   border-color: var(--blue-color);
   color: var(--blue-color);
 }
-/*remove the blue outline box of chrome*/
-.label-button:focus {
-  outline: none;
-}
 /*flash color when clicked*/
 .label-button:active {
   border-color: var(--main-tx-color);
@@ -334,9 +325,6 @@ body {
 .startButtons:hover {
   border-color: var(--blue-color);
   color: var(--blue-color);
-}
-.startButtons:focus {
-  outline: none;
 }
 
 ::-webkit-scrollbar {

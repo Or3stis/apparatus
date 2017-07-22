@@ -20,7 +20,6 @@ module.exports = function console (cy, selectedNode, selectedEdge) {
   // indicate focus on console
   consoleId.addEventListener('focus', (e) => {
     labelId.style.color = config.blue
-    consoleId.style.outline = 'none'
   })
   consoleId.addEventListener('blur', () => {
     labelId.style.color = config.white
