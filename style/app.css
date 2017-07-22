@@ -177,6 +177,9 @@ body {
   position: relative;
   font-size: 13px;
 }
+input::-webkit-input-placeholder {
+ opacity: 0.5;
+}
 
 .container-node {
   position: absolute;
