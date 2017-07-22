@@ -89,6 +89,7 @@ body {
   display: block;
   grid-area: sidebar;
   overflow: auto;
+  -webkit-user-select: text;
 }
 
 .sidebar-wrapper {
@@ -113,7 +114,7 @@ body {
   overflow: auto;
   white-space: pre-wrap;
   margin-bottom: 5px;
-  padding: 5px;
+  padding: 4px;
   border-radius: 10px;
   -webkit-animation: fadein 0.4s;
 }
@@ -331,6 +332,7 @@ input::-webkit-input-placeholder {
 
 ::-webkit-scrollbar {
   width: 7px;
+  height: 2px;
 }
 ::-webkit-scrollbar-track {
   -webkit-box-shadow: none;
