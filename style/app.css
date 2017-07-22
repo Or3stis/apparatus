@@ -101,7 +101,7 @@ body {
 
 .info-nodes {
   display: flex;
-  flex: 1 1 90vh;
+  flex: 1 1 92vh;
   flex-wrap: wrap;
   align-items: flex-start;
   align-content: flex-start;
@@ -156,7 +156,7 @@ body {
 .console-wrapper {
   width: 90%;
   height: 22px;
-  padding: 5px;
+  padding: 4px;
   display: flex;
   flex: 1 1 22px;
   bottom: 0;
@@ -168,14 +168,14 @@ body {
   background-color: var(--main-bg-color);
   border: none;
   color: var(--main-tx-color);
-  font-size: 11px;
+  font-size: 12px;
   font-family: monaco, consolas, mono;
 }
 #input-label-id {
   top: 3px;
   padding-right: 2px;
   position: relative;
-  font-size: 13px;
+  font-size: 14px;
 }
 input::-webkit-input-placeholder {
  opacity: 0.5;
