@@ -41,9 +41,8 @@ module.exports = function moduleValidation (cy) {
 
     result = `${arrWrong}`
     // if the string is empty, the module is correct
-    if (result === '') {
-      result = 'model instance is valid\n👍'
-    } else {
+    if (result !== '') {
+      result = `• ${component} has wrong connections`
       printChat(result)
     }
   }
@@ -59,5 +58,7 @@ module.exports = function moduleValidation (cy) {
   componentValidation(cy, 'threat', threatArray)
   componentValidation(cy, 'sensor', sensorArray)
 
-  printChat(result)
+  if (result === '') {
+    printChat('model instance is valid\n👍')
+  }
 }

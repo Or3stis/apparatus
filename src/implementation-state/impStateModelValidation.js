@@ -30,10 +30,9 @@ module.exports = function moduleValidation (cy) {
       }
     })
     result = `${arrWrong}`
-    // if the string is empty, the module is correct
-    if (result === '') {
-      result = 'model instance is valid\n👍'
-    } else {
+    // if result is not empty print the wrong component
+    if (result !== '') {
+      result = `• ${component} has wrong connections`
       printChat(result)
     }
   }
@@ -47,5 +46,8 @@ module.exports = function moduleValidation (cy) {
   componentValidation(cy, 'model', modelArray)
   componentValidation(cy, 'event', eventArray)
 
-  printChat(result)
+  // if the string is empty, the module is correct
+  if (result === '') {
+    printChat('model instance is valid\n👍')
+  }
 }
