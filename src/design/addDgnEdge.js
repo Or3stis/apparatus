@@ -66,6 +66,6 @@ module.exports = function addComponent (
       addEdge(cy, srcNode, trgNode, srcNodeCpt, trgNodeCpt, 'connects')
       break
     default:
-      printChat(`${srcNodeCpt} -> ${trgNodeCpt}\nnot allowed 😔`)
+      printChat(`${srcNodeCpt} → ${trgNodeCpt}\nnot allowed 😔`)
   }
 }
