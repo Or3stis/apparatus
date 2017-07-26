@@ -7,9 +7,8 @@ module.exports = function patterns (cy) {
   const removeElement = () => {
     const parentEl = document.getElementById('info-nodes-id')
     const formEl = document.getElementById('form-id')
-    if (formEl !== null) {
-      parentEl.removeChild(formEl)
-    }
+
+    if (formEl !== null) parentEl.removeChild(formEl)
   }
   // search pattern
   const flagNodes = pattern => {

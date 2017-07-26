@@ -4,7 +4,7 @@ const cytoscape = require('cytoscape')
 const graphStyle = require('../../config/graphStyle.js')
 
 module.exports = function cyOptions (cy, file) {
-  let model = require(file)
+  const model = require(file)
   cy.out = cytoscape({
     container: document.getElementById('graph-container'),
     autounselectify: true,
