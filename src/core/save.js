@@ -12,7 +12,7 @@ module.exports = function save (cy) {
   dialog.showSaveDialog({
     filters: [{
       name: 'javascript',
-      extensions: ['json', 'js']
+      extensions: ['json']
     }]
   }, (fileToSave) => {
     jsonfile.writeFile(fileToSave, fullgraph, (err) => {
