@@ -4,7 +4,6 @@ const load = require('./src/core/load.js')
 const initialize = require('./src/initialize.js')
 const cyOptions = require('./src/core/cyOptions.js')
 
-const pcapImport = require('./src/pcapImport.js')
 const template = '../../graphs/modelTemplate.js'
 const testGraph = '../../graphs/implementation/smartHome.js'
 
