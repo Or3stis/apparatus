@@ -1,6 +1,6 @@
 'use strict'
 
-// when buton class is clicked the corresponing nodes are highlighted
+// when button module selection is clicked, corresponing nodes are highlighted
 module.exports = function moduleSelection (cy, input) {
   // grouping of the module components
   let groupArray = []
@@ -63,6 +63,8 @@ module.exports = function moduleSelection (cy, input) {
   cy.elements().addClass('faded')
 
   let totalNodes = 0
+  // removes the faded class from the selected nodes
+  // and adds them to node count
   cy.nodes().map(node => {
     const nodeConcept = node.data().info.concept
     if (groupArray.includes(nodeConcept) === true) {

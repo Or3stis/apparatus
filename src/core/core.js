@@ -94,7 +94,6 @@ const labels = cy => {
 }
 // save graph
 const saveGraph = (cy) => {
-  // save graph
   const buttonSave = document.getElementById('save-button')
   buttonSave.addEventListener('click', () => {
     save(cy)

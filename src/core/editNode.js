@@ -21,6 +21,7 @@ const createForm = (selectedNode) => {
       input = document.createElement('input')
       input.className = 'input-form'
       // create an key-based id
+      // to iterate on the submitted attributes
       input.id = key
       input.type = 'text'
       input.name = 'nodeValue'
@@ -40,7 +41,6 @@ const createForm = (selectedNode) => {
   submit.className = 'submit-form'
   submit.type = 'submit'
   submit.value = 'Submit'
-
   form.appendChild(submit)
   htmlElement.appendChild(form)
 
@@ -51,11 +51,12 @@ const createForm = (selectedNode) => {
       let id = document.getElementById(keyValue)
       selectedNode.data().info[keyValue] = id.value
     })
-    // to remove it
+    // remove elements once the submit is clicked
     removeElement()
     // return false to prevent the default form behavior
     return false
   }
+
   // focus on the description attribute of the form
   document.getElementById('description').focus()
 }
