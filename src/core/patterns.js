@@ -10,6 +10,7 @@ module.exports = function patterns (cy) {
 
     if (formEl !== null) parentEl.removeChild(formEl)
   }
+
   // search pattern
   const flagNodes = pattern => {
     // flagged attributes
@@ -30,11 +31,13 @@ module.exports = function patterns (cy) {
         })
       })
     })
+
     printChat(flaggedNodes)
   }
 
   const htmlElement = document.getElementById('info-nodes-id')
 
+  // create the patter element
   const form = document.createElement('form')
   form.className = 'bubble'
   form.id = 'form-id'
@@ -59,11 +62,14 @@ module.exports = function patterns (cy) {
   formId.onsubmit = () => {
     let keywords = document.getElementById('pattern-id')
     let pattern = `${keywords.value}`.split(' ')
+
     removeElement()
+
     flagNodes(pattern)
     // return false to prevent the default form behavior
     return false
   }
-  // focus on the description attribute of the form
+
+  // focus on the input of the form
   document.getElementById('pattern-id').focus()
 }
