@@ -1,7 +1,6 @@
 'use strict'
 
-const { dialog } = require('electron').remote
-const fs = require('fs')
+const {dialog} = require('electron').remote
 const initialize = require('../initialize.js')
 const cyOptions = require('./cyOptions.js')
 
@@ -24,10 +23,8 @@ module.exports = function load (cy) {
       if (fileNames === undefined) return
 
       const fileName = fileNames[0]
-      fs.readFile(fileName, 'utf-8', () => {
-        cyOptions(cy, fileName) // defines the cy instance
-        initialize(cy.out) // links the cy instance with the rest of the app
-      })
+      cyOptions(cy, fileName) // defines the cy instance
+      initialize(cy.out) // links the cy instance with the rest of the app
     }
   )
 }
