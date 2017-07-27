@@ -17,6 +17,7 @@ function createWindow () {
     height: 745,
     titleBarStyle: 'hidden',
     webPreferences: {
+      // to gain access to grid layout
       experimentalFeatures: true
     }
   })
