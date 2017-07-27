@@ -48,7 +48,7 @@ Because the app is still in prototype stage, it is best to keep up to date with 
 git pull
 ```
 
-The first window (home screen) will ask you to choose which modeling phase would you like to perform analysis in. After you select a phase, a native dialog window will be displayed and ask you choose a file to load. By default, you can only choose `.js` or `.json` files.
+Once the app start, the first window (home screen) will ask you to choose which modeling phase would you like to perform analysis in. After you select a phase, you will be presented with three choices. The first is to create a new graph. The second choice is to load an existing graph. By default, you can only choose `.js` or `.json` files. The layout of the loaded graph is set in `/src/core/cyOptions.js` and it will run a breadth-first placement algorithm. The third option is the debug app, which loads a default graph used for debugging purposes.
 
 You will find some example graphs in the `graphs` folder.
 
