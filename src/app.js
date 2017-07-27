@@ -4,18 +4,19 @@ const load = require('./src/core/load.js')
 const initialize = require('./src/initialize.js')
 const cyOptions = require('./src/core/cyOptions.js')
 
+const pcapImport = require('./src/pcapImport.js')
 const template = '../../graphs/modelTemplate.js'
 const testGraph = '../../graphs/implementation/smartHome.js'
 
 let cy = {}
 
 // loads the empty template
-const newGraph = () => {
+const newGraph = (cy) => {
   cyOptions(cy, template)
   initialize(cy.out)
 }
 // loads the debugging graph
-const debugGraph = () => {
+const debugGraph = (cy) => {
   cyOptions(cy, testGraph)
   initialize(cy.out)
 }
@@ -49,7 +50,7 @@ const start = () => {
   buttonDebug.className = 'startButtons'
   buttonDebug.type = 'button'
   buttonDebug.value = 'debug'
-  buttonDebug.textContent = 'bebug app'
+  buttonDebug.textContent = 'debug app'
 
   wrapper.appendChild(buttonNew)
   wrapper.appendChild(buttonLoad)
@@ -58,7 +59,7 @@ const start = () => {
   graph.appendChild(wrapper)
 
   buttonNew.addEventListener('click', () => {
-    newGraph()
+    newGraph(cy)
     graph.removeChild(wrapper)
   })
   buttonLoad.addEventListener('click', () => {
