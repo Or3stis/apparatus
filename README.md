@@ -28,7 +28,9 @@ Some screenshots..
 
 ## Experimental features
 
-ASTo can generate graph files from network captures files (.pcapng). This feature is only available from the implementation phase menu. It uses `tcpdump` to create a `txt` with the current timestamp and then uses the `txt` to create the `js` file of the graph. The `txt` file is created for debugging purposes and will be deprecated in later commits. The generated files are stored in the `graphs/implementation` directory. Tcpdump is installed by default on Unix based systems. If `tcpdump` is not installed in your system, you will get an error message.
+ASTo can generate graph files from network captures files (.pcapng). This is part of the process to automate certain parts of the plebeian and time consuming task of graph creation. The `pcapng` import feature is only available from the implementation phase menu. It uses `tcpdump` to create a `txt` with the current timestamp and then uses the `txt` to create the `js` file of the graph. The `txt` file is created for debugging purposes and will be deprecated in later commits. The generated files are stored in the `graphs/implementation` directory.
+
+Tcpdump is installed by default on Unix based systems. If `tcpdump` is not installed in your system, the tool will display an error message.
 
 Currently, there are a few issues, depending on the `pcapng` file. There might be some duplicate network connections. IPs that run more than one services will be rendered as separate devices instead of a single device with multiple applications. I am still experimenting with the code and tcpdump filters. If you want to know more about how this feature visit the [wiki](https://github.com/Or3stis/apparatus/wiki#generate-graphs-from-pcapng-files-experimental-feature).
 
