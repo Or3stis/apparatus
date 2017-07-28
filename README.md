@@ -32,7 +32,7 @@ ASTo can generate graph files from network captures files (.pcapng). This is par
 
 Tcpdump is installed by default on Unix based systems. If `tcpdump` is not installed in your system, the tool will display an error message.
 
-Currently, there are a few issues, depending on the `pcapng` file. There might be some duplicate network connections. IPs that run more than one services will be rendered as separate devices instead of a single device with multiple applications. I am still experimenting with the code and tcpdump filters. If you want to know more about how this feature visit the [wiki](https://github.com/Or3stis/apparatus/wiki#generate-graphs-from-pcapng-files-experimental-feature).
+Currently, there are a few issues, depending on the `pcapng` file. There might be some duplicate network connections. IPs that run more than one services will be rendered as separate devices instead of a single device with multiple applications. I am still experimenting with the code and tcpdump filters. If you want to know more about how this feature works visit the [wiki](https://github.com/Or3stis/apparatus/wiki#generate-graphs-from-pcapng-files-experimental-feature).
 
 ## To Use
 
