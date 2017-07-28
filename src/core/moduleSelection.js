@@ -11,6 +11,7 @@ module.exports = function moduleSelection (cy, input) {
     'net',
     'unidentified node',
     'information',
+    'application',
     'thing'
   ]
   const securityArray = [
