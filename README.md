@@ -24,6 +24,12 @@ Some screenshots..
 
 ![](https://raw.githubusercontent.com/Or3stis/apparatus/master/assets/screenShot3.png)
 
+## Experimental features
+
+ASTo can generate graph files from network captures files (.pcapng). This feature is only available from the implementation phase menu. It uses `tcpdump` to create a `txt` with the current timestamp and then uses the `txt` to create the `js` file of the graph. The `txt` file is created for debugging purposes and will be deprecated in later commits. Tcpdump is installed by default on Unix based systems. If `tcpdump` is not installed in your system, you will get an error message.
+
+Currently, there are a few issues, depending on the `pcapng` file. There might be some duplicate network connections. IPs that run more than one services will be rendered as separate devices instead of a single device with multiple applications. I am still experimenting with the code and tcpdump filters. If you want to know more about how this feature visit the [wiki](https://github.com/Or3stis/apparatus/wiki#generate-graphs-from-pcapng-files-experimental-feature).
+
 ## To Use
 
 To clone and run this repository you'll need [Git](https://git-scm.com) and [Node.js](https://nodejs.org/en/download/) installed on your computer. To download and install the app, type the following in your terminal:
@@ -48,7 +54,7 @@ Because the app is still in prototype stage, it is best to keep up to date with 
 git pull
 ```
 
-Once the app start, the first window (home screen) will ask you to choose which modeling phase would you like to perform analysis in. After you select a phase, you will be presented with three choices. The first is to create a new graph. The second choice is to load an existing graph. By default, you can only choose `.js` or `.json` files. The layout of the loaded graph is set in `/src/core/cyOptions.js` and it will run a breadth-first placement algorithm. The third option is the debug app, which loads a default graph used for debugging purposes.
+Once the app starts, the first window (home screen) will ask you to choose which modeling phase would you like to perform analysis in. After you select a phase, you will be presented with three choices. The first is to create a new graph. The second choice is to load an existing graph. By default, you can only choose `.js` or `.json` files. The layout of the loaded graph is set in `/src/core/cyOptions.js` and it will run a breadth-first placement algorithm. The third option is the debug app, which loads a default graph used for debugging purposes.
 
 You will find some example graphs in the `graphs` folder.
 

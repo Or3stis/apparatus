@@ -3,6 +3,7 @@
 const load = require('./src/core/load.js')
 const initialize = require('./src/initialize.js')
 const cyOptions = require('./src/core/cyOptions.js')
+const pcapImport = require('./src/implementation/pcapImport.js')
 
 const template = '../../graphs/modelTemplate.js'
 const testGraph = '../../graphs/implementation/smartHome.js'
@@ -54,6 +55,25 @@ const start = () => {
   wrapper.appendChild(buttonNew)
   wrapper.appendChild(buttonLoad)
   wrapper.appendChild(buttonDebug)
+
+  // loads the pcapImport module during the implementation phase
+  const pathLocation = window.location.pathname.split('/').pop()
+  if (pathLocation === 'implementation.html') {
+    const buttonImport = document.createElement('button')
+    buttonImport.id = 'import-id'
+    buttonImport.className = 'startButtons'
+    buttonImport.type = 'button'
+    buttonImport.value = 'import'
+    buttonImport.innerHTML = 'import pcang file <small style="color: #d19a66;">beta</small>'
+    // buttonImport.textContent = 'import pcang file'
+
+    wrapper.appendChild(buttonImport)
+
+    buttonImport.addEventListener('click', () => {
+      pcapImport(cy)
+      graph.removeChild(wrapper)
+    })
+  }
 
   graph.appendChild(wrapper)
 
