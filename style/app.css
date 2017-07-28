@@ -304,7 +304,7 @@ input::-webkit-input-placeholder {
 /*load menu*/
 .wrapper {
   position: absolute;
-  width: 130px;
+  width: 150px;
   border-radius: 10px;
   color: var(--blue-color);
   background-color: var(--main-bg-color);
@@ -320,7 +320,7 @@ input::-webkit-input-placeholder {
   margin: 5px;
   color: var(--main-tx-color);
   width: 120px;
-  height: 30px;
+  height: 40px;
   border-radius: 10px;
   border: 1px solid;
   border-color: var(--main-dark-bg-color);
@@ -362,7 +362,7 @@ input::-webkit-input-placeholder {
   margin: 5px;
   color: var(--main-tx-color);
   width: 140px;
-  height: 40px;
+  height: 50px;
   border-radius: 10px;
   border: 1px solid;
   border-color: var(--main-dark-bg-color);
