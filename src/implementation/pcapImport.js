@@ -1,6 +1,10 @@
 'use strict'
 
-const {dialog} = require('electron').remote
+// TODO pair common port with services in the map function that creates devices
+// TODO code is incompehensible, make it better
+// TODO create applications as services
+
+const { dialog } = require('electron').remote
 const fs = require('fs')
 const child = require('child_process')
 
@@ -9,59 +13,94 @@ const cyOptions = require('../core/cyOptions.js')
 
 // // create timeStamp to name the files
 const time = new Date()
+// const timeStamp = 'test'
 const timeStamp = `${time.getDate()}.${time.getMonth()}.${time.getFullYear()}at${time.getHours()}.${time.getMinutes()}.${time.getSeconds()}`
 
-// writes the data from the read function
-// loads written graph on the tool
-const writeGraph = (cy, total, connections) => {
-  // node content of the file
-  let nodeContent = ''
-  // edge content of the file
-  let edgeContent = ''
+// node content of the file
+let nodeContentJs = ''
+// edge content of the file
+let edgeContentJs = ''
 
-  // creates the nodes
-  Object.keys(total).map(key => {
-    nodeContent += `
+const createDevices = (devices) => {
+  let idCounterApplication = devices.length * 2
+  Object.keys(devices).map(key => {
+    let nodeInformation = devices[key].split('.')
+    let nodeService = nodeInformation.pop()
+    let nodeIP = nodeInformation.join('.')
+
+    nodeContentJs += `
   {
     data: {
       id: '${key}',
       label: 'device',
       info: {
-        description: '${total[key]}',
+        description: '${nodeIP}',
         aspect: '',
         layer: '',
         type: '',
-        service: '',
+        service: '${nodeService}',
         input: '',
         output: '',
         update: '',
         concept: 'device'
       }
     }
+  },
+  {
+    data: {
+      id: '${idCounterApplication}',
+      label: 'application',
+      info: {
+        description: 'port ${nodeService}',
+        version: '',
+        update: '',
+        concept: 'application'
+      }
+    }
   },`
-  })
 
+  // creates edge from the device node to the application nodes
+    edgeContentJs += `
+  {
+    data: {
+      id: 'e${key}${idCounterApplication}',
+      source: '${key}',
+      target: '${idCounterApplication}',
+      update: '',
+      label: 'has'
+    }
+  },`
+    idCounterApplication += 1
+  })
+}
+
+// creates network connections and adds edges between them and the devices
+const createConnections = (devices, connections) => {
   // used as the id counter for the network connections
-  let idCounter = total.length
+  let idCounterNetwork = devices.length
+
   // creates the edges and the network connection nodes concept
   connections.map(node => {
     let element = node.split(' ')
     let srcId = ''
     let trgId = ''
-    Object.keys(total).map(id => {
-      if (total[id] === element[0]) {
+
+    // find the nodes id, used to create the edges
+    Object.keys(devices).map(id => {
+      if (devices[id] === element[0]) {
         srcId = id
       }
     })
-    Object.keys(total).map(id => {
-      if (total[id] === element[1]) {
+    Object.keys(devices).map(id => {
+      if (devices[id] === element[1]) {
         trgId = id
       }
     })
-    nodeContent += `
+
+    nodeContentJs += `
   {
     data: {
-      id: '${idCounter}',
+      id: '${idCounterNetwork}',
       label: 'network connection',
       info: {
         description: '${element[2]}',
@@ -70,26 +109,34 @@ const writeGraph = (cy, total, connections) => {
       }
     }
   },`
-    edgeContent += `
+
+    // creates edges between devices and network connections
+    edgeContentJs += `
   {
     data: {
-      id: 'e${srcId}${idCounter}',
+      id: 'e${srcId}${idCounterNetwork}',
       source: '${srcId}',
-      target: '${idCounter}',
+      target: '${idCounterNetwork}',
       label: 'connects'
     }
   },
   {
     data: {
-      id: 'e${trgId}${idCounter}',
+      id: 'e${trgId}${idCounterNetwork}',
       source: '${trgId}',
-      target: '${idCounter}',
+      target: '${idCounterNetwork}',
       label: 'connects'
     }
   },`
-    idCounter += 1
+    idCounterNetwork += 1
   })
+}
 
+// writes the data from the read function
+// the data are read from the txt created in readFile function
+const writeGraph = (cy, devices, connections) => {
+  createDevices(devices)
+  createConnections(devices, connections)
   // creates the first line of the file
   const fileStart = 'const graphModel = {}\ngraphModel.elements = [\n// nodes'
   // end of written file
@@ -97,8 +144,8 @@ const writeGraph = (cy, total, connections) => {
 
   // concatenates the created content
   const toWrite = fileStart
-    .concat(nodeContent)
-    .concat(edgeContent)
+    .concat(nodeContentJs)
+    .concat(edgeContentJs)
     .concat(fileEnd)
 
   // writes the graph on file
@@ -111,15 +158,20 @@ const writeGraph = (cy, total, connections) => {
   })
 }
 
-// read the txt file that was created by the tcpdump command
-const readTxtFile = (cy) => {
+// reads the .txt file that was created by the tcpdump command
+const readTxtFile = cy => {
   fs.readFile(`graphs/implementation/${timeStamp}.txt`, (err, data) => {
     if (err) throw err
 
     const nodeArray = data.toString().split('\n')
+    // stores the source concepts
     let srcNodes = []
+    // store the target concepts
     let trgNodes = []
+    // store the connection in the following format
+    // source, target, network protocol
     let connection = []
+
     nodeArray.map(eachLine => {
       let row = eachLine.split(' ')
       if (row[1] !== undefined && row[3] !== undefined) {
@@ -128,6 +180,9 @@ const readTxtFile = (cy) => {
         connection.push(`${row[1]} ${row[3].replace(':', '')} ${row[4]}`)
       }
     })
+
+    // const applicationNodes = Object.assign(srcApplication, trgApplication)
+
     // stores the unique connections
     // many are reversed src -> trg and trg -> src
     const allConnections = [...new Set(connection)]
@@ -149,13 +204,13 @@ const readTxtFile = (cy) => {
     })
 
     // stores the toral nodes
-    const totalNodes = [...new Set(srcNodes.concat(trgNodes))]
+    const deviceNodes = [...new Set(srcNodes.concat(trgNodes))]
     // stores the edges
     // line format srcNode tgtNode protocol
     const uniqueConnections = [...new Set(uniqueLine)]
 
-    // write data
-    writeGraph(cy, totalNodes, uniqueConnections)
+    // write graph data on as .js file
+    writeGraph(cy, deviceNodes, uniqueConnections)
   })
 }
 
@@ -180,7 +235,7 @@ module.exports = function pcapImport (cy) {
 
         const fileName = fileNames[0]
         // tcpdump command to be executed
-        const tcpDumpCommand = `tcpdump -qt -r ${fileName} > graphs/implementation/${timeStamp}.txt`
+        const tcpDumpCommand = `tcpdump -qtn -r ${fileName} > graphs/implementation/${timeStamp}.txt`
 
         child.execSync(tcpDumpCommand)
 
