@@ -33,7 +33,7 @@
 
 body {
   background-color: var(--main-bg-color);
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Ubuntu", "Helvetica Neue", sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", sans-serif;
   color: var(--main-tx-color);
   height: 100%;
   width: 100%;
@@ -168,7 +168,7 @@ body {
   background-color: var(--main-bg-color);
   border: none;
   color: var(--main-tx-color);
-  font-size: 12px;
+  font-size: 13px;
   font-family: monaco, consolas, mono;
 }
 #input-label-id {
@@ -274,7 +274,7 @@ input::-webkit-input-placeholder {
 
 /*label button components*/
 .label-wrapper {
-  bottom: 0;
+  bottom: 5px;
   margin: 0 auto;
   width: 40px;
   position: fixed;
@@ -324,7 +324,7 @@ input::-webkit-input-placeholder {
   border-radius: 10px;
   border: 1px solid;
   border-color: var(--main-dark-bg-color);
-  font-size: 13px;
+  font-size: 14px;
 }
 .startButtons:hover {
   border-color: var(--blue-color);
@@ -366,7 +366,7 @@ input::-webkit-input-placeholder {
   border-radius: 10px;
   border: 1px solid;
   border-color: var(--main-dark-bg-color);
-  font-size: 13px;
+  font-size: 14px;
 }
 .buttonPhase:hover {
   border-color: var(--blue-color);
