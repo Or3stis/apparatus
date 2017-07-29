@@ -64,7 +64,7 @@ const start = () => {
     buttonImport.className = 'startButtons'
     buttonImport.type = 'button'
     buttonImport.value = 'import'
-    buttonImport.innerHTML = 'import pcapng file <small style="color: #d19a66;">beta</small>'
+    buttonImport.innerHTML = 'import .pcapng file <small style="color: #d19a66;">beta</small>'
     // buttonImport.textContent = 'import pcang file'
 
     wrapper.appendChild(buttonImport)
