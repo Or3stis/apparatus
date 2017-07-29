@@ -181,8 +181,6 @@ const readTxtFile = cy => {
       }
     })
 
-    // const applicationNodes = Object.assign(srcApplication, trgApplication)
-
     // stores the unique connections
     // many are reversed src -> trg and trg -> src
     const allConnections = [...new Set(connection)]
