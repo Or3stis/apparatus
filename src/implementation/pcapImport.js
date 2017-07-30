@@ -21,37 +21,122 @@ let nodeContentJs = ''
 // edge content of the file
 let edgeContentJs = ''
 
-const createDevices = (devices) => {
-  let idCounterApplication = devices.length * 2
+// stores the connections in the following format
+// source, target, network protocol
+let connection = []
+// stores the total device nodes
+let deviceNodes = []
+// stores all the connections
+// many are reversed src -> trg to trg -> src
+let allConnections = []
+const storeConnections = txtData => {
+  let srcNodes = []
+  // store the target concepts
+  let trgNodes = []
+
+  txtData.map(eachLine => {
+    let row = eachLine.split(' ')
+    if (row[1] !== undefined && row[3] !== undefined) {
+      srcNodes.push(row[1])
+      trgNodes.push(row[3].replace(':', ''))
+      connection.push(`${row[1]} ${row[3].replace(':', '')} ${row[4]}`)
+    }
+  })
+  deviceNodes = [...new Set(srcNodes.concat(trgNodes))]
+  allConnections = [...new Set(connection)]
+}
+
+// // stores the total device nodes
+// const deviceNodes = [...new Set(srcNodes.concat(trgNodes))]
+// stores the information to create network connections
+// each row format srcNode tgtNode protocol
+let uniqueConnections = []
+const removeServices = allConnections => {
+  let counter = 0
+  let uniqueLine = []
+  // removes the services from the devices IP
+  allConnections.map(row => {
+    let element = row.split(' ')
+    let src = element[0].split('.')
+    src.pop()
+    let srcIP = src.join('.')
+
+    let trg = element[1].split('.')
+    trg.pop()
+    let trgIP = trg.join('.')
+
+    if (counter % 2 === 1) {
+      uniqueLine.push(`${srcIP} ${trgIP} ${element[2]}`)
+    } else if (counter % 2 === 0) {
+      uniqueLine.push(`${trgIP} ${srcIP} ${element[2]}`)
+    }
+    counter += 1
+  })
+
+  uniqueConnections = [...new Set(uniqueLine)]
+}
+
+// object of arrays
+// to store the unique devices IP [key] and services [array]
+let uniqueDevicesServices = {}
+// to store the unique devices IP
+let uniqueDevices = []
+const storeUniqueDevicesServices = devices => {
   Object.keys(devices).map(key => {
     let nodeInformation = devices[key].split('.')
     let nodeService = nodeInformation.pop()
     let nodeIP = nodeInformation.join('.')
 
+    if (Object.keys(uniqueDevicesServices).length === 0) {
+      uniqueDevicesServices[nodeIP] = nodeService
+    }
+    if (uniqueDevicesServices[nodeIP] !== nodeIP) {
+      uniqueDevicesServices[nodeIP] += ` ${nodeService}`
+      uniqueDevices.push(nodeIP)
+    }
+  })
+  uniqueDevices = [...new Set(uniqueDevices)]
+}
+
+const createDevices = uniqueDevicesServices => {
+  let idCounterDevice = 0
+  Object.keys(uniqueDevicesServices).map(deviceIp => {
     nodeContentJs += `
   {
     data: {
-      id: '${key}',
+      id: '${idCounterDevice}',
       label: 'device',
       info: {
-        description: '${nodeIP}',
+        description: '${deviceIp}',
         aspect: '',
         layer: '',
         type: '',
-        service: '${nodeService}',
+        service: '',
         input: '',
         output: '',
         update: '',
         concept: 'device'
       }
     }
-  },
-  {
+  },`
+    idCounterDevice += 1
+  })
+}
+
+const createDevicesApplications = devices => {
+  let idCounterApplication = devices.length * 2
+  let deviceIdCounter = 0
+
+  Object.keys(uniqueDevicesServices).map(i => {
+    let services = uniqueDevicesServices[i].split(' ')
+    services.map(service => {
+      if (service !== 'undefined') {
+        nodeContentJs += ` {
     data: {
       id: '${idCounterApplication}',
       label: 'application',
       info: {
-        description: 'port ${nodeService}',
+        description: 'port ${service}',
         version: '',
         update: '',
         concept: 'application'
@@ -59,18 +144,20 @@ const createDevices = (devices) => {
     }
   },`
 
-  // creates edge from the device node to the application nodes
-    edgeContentJs += `
-  {
+        // creates edge from the device node to the application nodes
+        edgeContentJs += ` {
     data: {
-      id: 'e${key}${idCounterApplication}',
-      source: '${key}',
+      id: 'e${deviceIdCounter}${idCounterApplication}',
+      source: '${deviceIdCounter}',
       target: '${idCounterApplication}',
       update: '',
       label: 'has'
     }
   },`
-    idCounterApplication += 1
+        idCounterApplication += 1
+      }
+    })
+    deviceIdCounter += 1
   })
 }
 
@@ -80,12 +167,25 @@ const createConnections = (devices, connections) => {
   let idCounterNetwork = devices.length
 
   // creates the edges and the network connection nodes concept
-  connections.map(node => {
-    let element = node.split(' ')
+  connections.map(row => {
+    let element = row.split(' ')
+
+    // creates the network connection nodes
+    nodeContentJs += ` {
+    data: {
+      id: '${idCounterNetwork}',
+      label: 'network connection',
+      info: {
+        description: '${element[2]}',
+        listOfProtocols: '${element[2]}',
+        concept: 'network connection'
+      }
+    }
+  },`
+
+    // find the nodes id to create the edges
     let srcId = ''
     let trgId = ''
-
-    // find the nodes id, used to create the edges
     Object.keys(devices).map(id => {
       if (devices[id] === element[0]) {
         srcId = id
@@ -97,30 +197,15 @@ const createConnections = (devices, connections) => {
       }
     })
 
-    nodeContentJs += `
-  {
-    data: {
-      id: '${idCounterNetwork}',
-      label: 'network connection',
-      info: {
-        description: '${element[2]}',
-        listOfProtocols: '',
-        concept: 'network connection'
-      }
-    }
-  },`
-
     // creates edges between devices and network connections
-    edgeContentJs += `
-  {
+    edgeContentJs += ` {
     data: {
       id: 'e${srcId}${idCounterNetwork}',
       source: '${srcId}',
       target: '${idCounterNetwork}',
       label: 'connects'
     }
-  },
-  {
+  }, {
     data: {
       id: 'e${trgId}${idCounterNetwork}',
       source: '${trgId}',
@@ -135,8 +220,11 @@ const createConnections = (devices, connections) => {
 // writes the data from the read function
 // the data are read from the txt created in readFile function
 const writeGraph = (cy, devices, connections) => {
-  createDevices(devices)
-  createConnections(devices, connections)
+  storeUniqueDevicesServices(devices)
+  createDevices(uniqueDevicesServices)
+  createDevicesApplications(devices)
+  createConnections(uniqueDevices, connections)
+
   // creates the first line of the file
   const fileStart = 'const graphModel = {}\ngraphModel.elements = [\n// nodes'
   // end of written file
@@ -163,51 +251,12 @@ const readTxtFile = cy => {
   fs.readFile(`graphs/implementation/${timeStamp}.txt`, (err, data) => {
     if (err) throw err
 
-    const nodeArray = data.toString().split('\n')
-    // stores the source concepts
-    let srcNodes = []
-    // store the target concepts
-    let trgNodes = []
-    // store the connection in the following format
-    // source, target, network protocol
-    let connection = []
+    const txtData = data.toString().split('\n')
 
-    nodeArray.map(eachLine => {
-      let row = eachLine.split(' ')
-      if (row[1] !== undefined && row[3] !== undefined) {
-        srcNodes.push(row[1])
-        trgNodes.push(row[3].replace(':', ''))
-        connection.push(`${row[1]} ${row[3].replace(':', '')} ${row[4]}`)
-      }
-    })
+    storeConnections(txtData)
+    removeServices(allConnections)
 
-    // stores the unique connections
-    // many are reversed src -> trg and trg -> src
-    const allConnections = [...new Set(connection)]
-
-    // used to transpose the second line, which is usually the reverse of the
-    // previous line. If the two lines are the same, the duplicate is removed
-    // when the uniqueConnections Set is created
-    // TODO has duplicates
-    let counter = 1
-    let uniqueLine = []
-    allConnections.map(line => {
-      let element = line.split(' ')
-      if (counter % 2 === 1) {
-        uniqueLine.push(`${element[0]} ${element[1]} ${element[2]}`)
-      } else if (counter % 2 === 0) {
-        uniqueLine.push(`${element[1]} ${element[0]} ${element[2]}`)
-      }
-      counter += 1
-    })
-
-    // stores the toral nodes
-    const deviceNodes = [...new Set(srcNodes.concat(trgNodes))]
-    // stores the edges
-    // line format srcNode tgtNode protocol
-    const uniqueConnections = [...new Set(uniqueLine)]
-
-    // write graph data on as .js file
+    // writes graph data on as .js file
     writeGraph(cy, deviceNodes, uniqueConnections)
   })
 }
