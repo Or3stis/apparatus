@@ -168,7 +168,7 @@ body {
   background-color: var(--main-bg-color);
   border: none;
   color: var(--main-tx-color);
-  font-size: 13px;
+  font-size: 12px;
   font-family: monaco, consolas, mono;
 }
 #input-label-id {
