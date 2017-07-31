@@ -36,7 +36,7 @@ Currently, there are a few issues, depending on the `pcapng` file. There might b
 
 \- _Note in performance_. If you render a graph with more than a thousand nodes, depending on your hardware, you might detect some performance issues. The reason is that the default label rendering of nodes and edges in ASTo is quite expensive. Rendering label on nodes and edges along with directional arrows is expensive. To improve performance you can hide the labels and the directional arrows by pressing the `1` button in the bottom right corner. The `1` button hides all the specific styles imposed by ASTo and leaves a default graph. Button `2` restores the labels on both the nodes and the edges, along with the directional arrows. Buttons `3` (node label) `4`(node id) `5`(node description) replace the labels on the nodes with different information. A trick to improve performance while retaining some information is to only hide the directional arrows (which are the most expensive) and the labels on the edges. To do so, press `1` to hide everything and then either `3` `4` or `5` to only show the labels on the nodes.
 
-You can find more information about Cytoscape's performance optimizations in this [link]((http://js.cytoscape.org/#performance).
+You can find more information about Cytoscape's performance optimizations in this [link](http://js.cytoscape.org/#performance).
 
 ## To Use
 
