@@ -1,6 +1,6 @@
 # ASTo - Apparatus Software Tool
 
-## An IoT network security analysis tool and visualizer
+## An IoT network security analysis and visualization tool
 
 [![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](http://standardjs.com/)
 [![styled with prettier](https://img.shields.io/badge/styled_with-prettier-ff69b4.svg)](https://github.com/prettier/prettier) ![](https://travis-ci.org/Or3stis/apparatus.svg?branch=master)
