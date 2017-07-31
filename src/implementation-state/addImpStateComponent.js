@@ -14,10 +14,6 @@ module.exports = function addImpComponent (cy, component, nodeCounter) {
           info: {
             description: '',
             concept: 'event sensor'
-          },
-          position: {
-            x: 200,
-            y: 400
           }
         }
       })
@@ -31,10 +27,6 @@ module.exports = function addImpComponent (cy, component, nodeCounter) {
           info: {
             description: '',
             concept: 'report sensor'
-          },
-          position: {
-            x: 200,
-            y: 400
           }
         }
       })
@@ -48,10 +40,6 @@ module.exports = function addImpComponent (cy, component, nodeCounter) {
           info: {
             description: '',
             concept: 'control sensor'
-          },
-          position: {
-            x: 200,
-            y: 400
           }
         }
       })
@@ -65,10 +53,6 @@ module.exports = function addImpComponent (cy, component, nodeCounter) {
           info: {
             description: '',
             concept: 'model'
-          },
-          position: {
-            x: 200,
-            y: 400
           }
         }
       })
@@ -84,10 +68,6 @@ module.exports = function addImpComponent (cy, component, nodeCounter) {
             trigger: '',
             constraint: '',
             concept: 'high-level event'
-          },
-          position: {
-            x: 200,
-            y: 400
           }
         }
       })
@@ -103,10 +83,6 @@ module.exports = function addImpComponent (cy, component, nodeCounter) {
             trigger: '',
             mechanism: '',
             concept: 'low-level event'
-          },
-          position: {
-            x: 200,
-            y: 400
           }
         }
       })
