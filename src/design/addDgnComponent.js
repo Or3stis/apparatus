@@ -15,10 +15,6 @@ module.exports = function addDgnComponent (cy, component, nodeCounter) {
             description: '',
             component: '',
             concept: 'thing'
-          },
-          position: {
-            x: 200,
-            y: 400
           }
         }
       })
@@ -33,10 +29,6 @@ module.exports = function addDgnComponent (cy, component, nodeCounter) {
             description: '',
             purpose: '',
             concept: 'micronet'
-          },
-          position: {
-            x: 200,
-            y: 400
           }
         }
       })
@@ -50,10 +42,6 @@ module.exports = function addDgnComponent (cy, component, nodeCounter) {
           info: {
             description: '',
             concept: 'information'
-          },
-          position: {
-            x: 200,
-            y: 400
           }
         }
       })
@@ -67,10 +55,6 @@ module.exports = function addDgnComponent (cy, component, nodeCounter) {
           info: {
             description: '',
             concept: 'net'
-          },
-          position: {
-            x: 200,
-            y: 400
           }
         }
       })
@@ -85,10 +69,6 @@ module.exports = function addDgnComponent (cy, component, nodeCounter) {
             description: '',
             intent: '',
             concept: 'actor'
-          },
-          position: {
-            x: 200,
-            y: 400
           }
         }
       })
@@ -103,10 +83,6 @@ module.exports = function addDgnComponent (cy, component, nodeCounter) {
             description: '',
             intent: '',
             concept: 'malicious actor'
-          },
-          position: {
-            x: 200,
-            y: 400
           }
         }
       })
@@ -120,10 +96,6 @@ module.exports = function addDgnComponent (cy, component, nodeCounter) {
           info: {
             description: '',
             concept: 'asset'
-          },
-          position: {
-            x: 200,
-            y: 400
           }
         }
       })
@@ -138,10 +110,6 @@ module.exports = function addDgnComponent (cy, component, nodeCounter) {
             description: '',
             property: '',
             concept: 'constraint'
-          },
-          position: {
-            x: 200,
-            y: 400
           }
         }
       })
@@ -156,10 +124,6 @@ module.exports = function addDgnComponent (cy, component, nodeCounter) {
             description: '',
             type: '',
             concept: 'threat'
-          },
-          position: {
-            x: 200,
-            y: 400
           }
         }
       })
@@ -173,10 +137,6 @@ module.exports = function addDgnComponent (cy, component, nodeCounter) {
           info: {
             description: '',
             concept: 'sensor'
-          },
-          position: {
-            x: 200,
-            y: 400
           }
         }
       })
