@@ -3,6 +3,7 @@
 // TODO pair common port with services in the map function that creates devices
 // TODO code is incompehensible, make it better
 // TODO create applications as services
+// TODO fix the ids of the nodes, they must from 0 and increase by 1
 
 const { dialog } = require('electron').remote
 const fs = require('fs')
