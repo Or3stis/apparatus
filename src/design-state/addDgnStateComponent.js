@@ -14,10 +14,6 @@ module.exports = function addDgnComponent (cy, component, nodeCounter) {
           info: {
             description: '',
             concept: 'sensor'
-          },
-          position: {
-            x: 200,
-            y: 400
           }
         }
       })
@@ -31,10 +27,6 @@ module.exports = function addDgnComponent (cy, component, nodeCounter) {
           info: {
             description: '',
             concept: 'model'
-          },
-          position: {
-            x: 200,
-            y: 400
           }
         }
       })
@@ -50,10 +42,6 @@ module.exports = function addDgnComponent (cy, component, nodeCounter) {
             trigger: '',
             constraint: '',
             concept: 'event'
-          },
-          position: {
-            x: 200,
-            y: 400
           }
         }
       })
