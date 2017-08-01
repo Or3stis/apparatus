@@ -9,6 +9,7 @@ const { dialog } = require('electron').remote
 const fs = require('fs')
 const child = require('child_process')
 
+const commonPorts = require('./commonPorts.js')
 const initialize = require('../initialize.js')
 const cyOptions = require('../core/cyOptions.js')
 
@@ -132,6 +133,12 @@ const createDevicesApplications = devices => {
     let services = uniqueDevicesServices[i].split(' ')
     services.map(service => {
       if (service !== 'undefined') {
+        // checks if port service is known
+        Object.keys(commonPorts).map(port => {
+          if (port === service) {
+            service += ` ${commonPorts[port]}`
+          }
+        })
         nodeContentJs += ` {
     data: {
       id: '${idCounterApplication}',
