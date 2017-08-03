@@ -37,6 +37,10 @@ const commonPorts = {
   2826: 'slc-systemlog',
   2828: 'slc-ctrlrloops',
   2829: 'silkp1',
+  2830: 'silkp2',
+  2831: 'silkp3',
+  2832: 'silkp4',
+  2833: 'glishd',
   5357: 'wsdapi',
   8080: 'HTTP Proxy'
 }
