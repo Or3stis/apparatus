@@ -16,6 +16,10 @@ module.exports = function addDgnComponent (cy, component, nodeCounter) {
             component: '',
             concept: 'thing'
           }
+        },
+        renderedPosition: {
+          x: 200,
+          y: 200
         }
       })
       break
@@ -30,6 +34,10 @@ module.exports = function addDgnComponent (cy, component, nodeCounter) {
             purpose: '',
             concept: 'micronet'
           }
+        },
+        renderedPosition: {
+          x: 200,
+          y: 200
         }
       })
       break
@@ -43,6 +51,10 @@ module.exports = function addDgnComponent (cy, component, nodeCounter) {
             description: '',
             concept: 'information'
           }
+        },
+        renderedPosition: {
+          x: 200,
+          y: 200
         }
       })
       break
@@ -56,6 +68,10 @@ module.exports = function addDgnComponent (cy, component, nodeCounter) {
             description: '',
             concept: 'net'
           }
+        },
+        renderedPosition: {
+          x: 200,
+          y: 200
         }
       })
       break
@@ -70,6 +86,10 @@ module.exports = function addDgnComponent (cy, component, nodeCounter) {
             intent: '',
             concept: 'actor'
           }
+        },
+        renderedPosition: {
+          x: 200,
+          y: 200
         }
       })
       break
@@ -84,6 +104,10 @@ module.exports = function addDgnComponent (cy, component, nodeCounter) {
             intent: '',
             concept: 'malicious actor'
           }
+        },
+        renderedPosition: {
+          x: 200,
+          y: 200
         }
       })
       break
@@ -97,6 +121,10 @@ module.exports = function addDgnComponent (cy, component, nodeCounter) {
             description: '',
             concept: 'asset'
           }
+        },
+        renderedPosition: {
+          x: 200,
+          y: 200
         }
       })
       break
@@ -111,6 +139,10 @@ module.exports = function addDgnComponent (cy, component, nodeCounter) {
             property: '',
             concept: 'constraint'
           }
+        },
+        renderedPosition: {
+          x: 200,
+          y: 200
         }
       })
       break
@@ -125,6 +157,10 @@ module.exports = function addDgnComponent (cy, component, nodeCounter) {
             type: '',
             concept: 'threat'
           }
+        },
+        renderedPosition: {
+          x: 200,
+          y: 200
         }
       })
       break
@@ -138,6 +174,10 @@ module.exports = function addDgnComponent (cy, component, nodeCounter) {
             description: '',
             concept: 'sensor'
           }
+        },
+        renderedPosition: {
+          x: 200,
+          y: 200
         }
       })
       break
