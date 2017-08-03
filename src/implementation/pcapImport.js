@@ -48,8 +48,6 @@ const storeConnections = txtData => {
   allConnections = [...new Set(connection)]
 }
 
-// // stores the total device nodes
-// const deviceNodes = [...new Set(srcNodes.concat(trgNodes))]
 // stores the information to create network connections
 // each row format srcNode tgtNode protocol
 let uniqueConnections = []
