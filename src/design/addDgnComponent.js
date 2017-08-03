@@ -18,7 +18,7 @@ module.exports = function addDgnComponent (cy, component, nodeCounter) {
           }
         },
         renderedPosition: {
-          x: 200,
+          x: 100,
           y: 200
         }
       })
@@ -36,7 +36,7 @@ module.exports = function addDgnComponent (cy, component, nodeCounter) {
           }
         },
         renderedPosition: {
-          x: 200,
+          x: 100,
           y: 200
         }
       })
@@ -53,7 +53,7 @@ module.exports = function addDgnComponent (cy, component, nodeCounter) {
           }
         },
         renderedPosition: {
-          x: 200,
+          x: 100,
           y: 200
         }
       })
@@ -70,7 +70,7 @@ module.exports = function addDgnComponent (cy, component, nodeCounter) {
           }
         },
         renderedPosition: {
-          x: 200,
+          x: 100,
           y: 200
         }
       })
@@ -88,7 +88,7 @@ module.exports = function addDgnComponent (cy, component, nodeCounter) {
           }
         },
         renderedPosition: {
-          x: 200,
+          x: 100,
           y: 200
         }
       })
@@ -106,7 +106,7 @@ module.exports = function addDgnComponent (cy, component, nodeCounter) {
           }
         },
         renderedPosition: {
-          x: 200,
+          x: 100,
           y: 200
         }
       })
@@ -123,7 +123,7 @@ module.exports = function addDgnComponent (cy, component, nodeCounter) {
           }
         },
         renderedPosition: {
-          x: 200,
+          x: 100,
           y: 200
         }
       })
@@ -141,7 +141,7 @@ module.exports = function addDgnComponent (cy, component, nodeCounter) {
           }
         },
         renderedPosition: {
-          x: 200,
+          x: 100,
           y: 200
         }
       })
@@ -159,7 +159,7 @@ module.exports = function addDgnComponent (cy, component, nodeCounter) {
           }
         },
         renderedPosition: {
-          x: 200,
+          x: 100,
           y: 200
         }
       })
@@ -176,7 +176,7 @@ module.exports = function addDgnComponent (cy, component, nodeCounter) {
           }
         },
         renderedPosition: {
-          x: 200,
+          x: 100,
           y: 200
         }
       })

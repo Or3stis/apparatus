@@ -22,6 +22,10 @@ module.exports = function addImpComponent (cy, component, nodeCounter) {
             update: '',
             concept: 'device'
           }
+        },
+        renderedPosition: {
+          x: 100,
+          y: 200
         }
       })
       break
@@ -36,6 +40,10 @@ module.exports = function addImpComponent (cy, component, nodeCounter) {
             listOfProtocols: '',
             concept: 'network connection'
           }
+        },
+        renderedPosition: {
+          x: 100,
+          y: 200
         }
       })
       break
@@ -51,6 +59,10 @@ module.exports = function addImpComponent (cy, component, nodeCounter) {
             update: '',
             concept: 'application'
           }
+        },
+        renderedPosition: {
+          x: 100,
+          y: 200
         }
       })
       break
@@ -66,6 +78,10 @@ module.exports = function addImpComponent (cy, component, nodeCounter) {
             purpose: '',
             concept: 'micronet'
           }
+        },
+        renderedPosition: {
+          x: 100,
+          y: 200
         }
       })
       break
@@ -80,6 +96,10 @@ module.exports = function addImpComponent (cy, component, nodeCounter) {
             location: '',
             concept: 'information'
           }
+        },
+        renderedPosition: {
+          x: 100,
+          y: 200
         }
       })
       break
@@ -93,6 +113,10 @@ module.exports = function addImpComponent (cy, component, nodeCounter) {
             description: '',
             concept: 'net'
           }
+        },
+        renderedPosition: {
+          x: 100,
+          y: 200
         }
       })
       break
@@ -106,6 +130,10 @@ module.exports = function addImpComponent (cy, component, nodeCounter) {
             description: '',
             concept: 'unidentified node'
           }
+        },
+        renderedPosition: {
+          x: 100,
+          y: 200
         }
       })
       break
@@ -120,6 +148,10 @@ module.exports = function addImpComponent (cy, component, nodeCounter) {
             intent: '',
             concept: 'actor'
           }
+        },
+        renderedPosition: {
+          x: 100,
+          y: 200
         }
       })
       break
@@ -134,6 +166,10 @@ module.exports = function addImpComponent (cy, component, nodeCounter) {
             intent: '',
             concept: 'malicious actor'
           }
+        },
+        renderedPosition: {
+          x: 100,
+          y: 200
         }
       })
       break
@@ -147,6 +183,10 @@ module.exports = function addImpComponent (cy, component, nodeCounter) {
             description: '',
             concept: 'asset'
           }
+        },
+        renderedPosition: {
+          x: 100,
+          y: 200
         }
       })
       break
@@ -161,6 +201,10 @@ module.exports = function addImpComponent (cy, component, nodeCounter) {
             property: '',
             concept: 'constraint'
           }
+        },
+        renderedPosition: {
+          x: 100,
+          y: 200
         }
       })
       break
@@ -174,6 +218,10 @@ module.exports = function addImpComponent (cy, component, nodeCounter) {
             description: '',
             concept: 'mechanism'
           }
+        },
+        renderedPosition: {
+          x: 100,
+          y: 200
         }
       })
       break
@@ -188,6 +236,10 @@ module.exports = function addImpComponent (cy, component, nodeCounter) {
             type: '',
             concept: 'threat'
           }
+        },
+        renderedPosition: {
+          x: 100,
+          y: 200
         }
       })
       break
@@ -201,6 +253,10 @@ module.exports = function addImpComponent (cy, component, nodeCounter) {
             description: '',
             concept: 'vulnerability'
           }
+        },
+        renderedPosition: {
+          x: 100,
+          y: 200
         }
       })
       break
@@ -214,6 +270,10 @@ module.exports = function addImpComponent (cy, component, nodeCounter) {
             description: '',
             concept: 'event sensor'
           }
+        },
+        renderedPosition: {
+          x: 100,
+          y: 200
         }
       })
       break
@@ -227,6 +287,10 @@ module.exports = function addImpComponent (cy, component, nodeCounter) {
             description: '',
             concept: 'report sensor'
           }
+        },
+        renderedPosition: {
+          x: 100,
+          y: 200
         }
       })
       break
@@ -240,6 +304,10 @@ module.exports = function addImpComponent (cy, component, nodeCounter) {
             description: '',
             concept: 'control sensor'
           }
+        },
+        renderedPosition: {
+          x: 100,
+          y: 200
         }
       })
       break
