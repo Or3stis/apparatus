@@ -118,9 +118,9 @@ module.exports = function setup (cy) {
   })
   // right clicking
   cy.on('cxttapend', 'node', selection => {
-    selectedNode = selection.target[0]
+    selectedNode.out = selection.target[0]
     // menu.nodeMenu(cy, selection)
-    editNode.formNode(selectedNode) // global module
+    editNode.formNode(selectedNode.out) // global module
 
     // clear tokens
     selectedNode.out = {}
