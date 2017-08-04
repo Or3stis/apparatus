@@ -2,8 +2,6 @@
 
 // TODO pair common port with services in the map function that creates devices
 // TODO code is incompehensible, make it better
-// TODO create applications as services
-// TODO fix the ids of the nodes, they must from 0 and increase by 1
 
 const { dialog } = require('electron').remote
 const fs = require('fs')
@@ -98,13 +96,15 @@ const storeUniqueDevicesServices = devices => {
   uniqueDevices = [...new Set(uniqueDevices)]
 }
 
+// unified counter to create the nodes
+let idCounter = 0
 const createDevices = uniqueDevicesServices => {
-  let idCounterDevice = 0
+  // let idCounterDevice = 0
   Object.keys(uniqueDevicesServices).map(deviceIp => {
     nodeContentJs += `
   {
     data: {
-      id: '${idCounterDevice}',
+      id: '${idCounter}',
       label: 'device',
       info: {
         description: '${deviceIp}',
@@ -119,12 +119,11 @@ const createDevices = uniqueDevicesServices => {
       }
     }
   },`
-    idCounterDevice += 1
+    idCounter += 1
   })
 }
 
 const createDevicesApplications = devices => {
-  let idCounterApplication = devices.length * 2
   let deviceIdCounter = 0
 
   Object.keys(uniqueDevicesServices).map(i => {
@@ -139,7 +138,7 @@ const createDevicesApplications = devices => {
         })
         nodeContentJs += ` {
     data: {
-      id: '${idCounterApplication}',
+      id: '${idCounter}',
       label: 'application',
       info: {
         description: 'port ${service}',
@@ -153,14 +152,14 @@ const createDevicesApplications = devices => {
         // creates edge from the device node to the application nodes
         edgeContentJs += ` {
     data: {
-      id: 'e${deviceIdCounter}${idCounterApplication}',
+      id: 'e${deviceIdCounter}${idCounter}',
       source: '${deviceIdCounter}',
-      target: '${idCounterApplication}',
+      target: '${idCounter}',
       update: '',
       label: 'has'
     }
   },`
-        idCounterApplication += 1
+        idCounter += 1
       }
     })
     deviceIdCounter += 1
@@ -169,9 +168,6 @@ const createDevicesApplications = devices => {
 
 // creates network connections and adds edges between them and the devices
 const createConnections = (devices, connections) => {
-  // used as the id counter for the network connections
-  let idCounterNetwork = devices.length
-
   // creates the edges and the network connection nodes concept
   connections.map(row => {
     let element = row.split(' ')
@@ -179,7 +175,7 @@ const createConnections = (devices, connections) => {
     // creates the network connection nodes
     nodeContentJs += ` {
     data: {
-      id: '${idCounterNetwork}',
+      id: '${idCounter}',
       label: 'network connection',
       info: {
         description: '${element[2]}',
@@ -206,20 +202,20 @@ const createConnections = (devices, connections) => {
     // creates edges between devices and network connections
     edgeContentJs += ` {
     data: {
-      id: 'e${srcId}${idCounterNetwork}',
+      id: 'e${srcId}${idCounter}',
       source: '${srcId}',
-      target: '${idCounterNetwork}',
+      target: '${idCounter}',
       label: 'connects'
     }
   }, {
     data: {
-      id: 'e${trgId}${idCounterNetwork}',
+      id: 'e${trgId}${idCounter}',
       source: '${trgId}',
-      target: '${idCounterNetwork}',
+      target: '${idCounter}',
       label: 'connects'
     }
   },`
-    idCounterNetwork += 1
+    idCounter += 1
   })
 }
 
