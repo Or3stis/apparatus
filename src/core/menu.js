@@ -1,7 +1,6 @@
 'use strict'
 
 const editNode = require('./editNode.js')
-const threatVerification = require('./threatVerification.js')
 const core = require('./core.js')
 
 let posY = ''
@@ -80,7 +79,7 @@ const stageMenu = (cy, selection) => {
     stageMenu.id = 'stageMenu-id'
     stageMenu.innerHTML = `<div class="dropdown" style='display: block; position: absolute; top:${posY}px; left: ${posX}px;'>
       <ul class="dropdown-menu" style='display:block;'>
-        <li><a href="#threat-verification">threat verification</a></li>
+        <li><a href="#restore-node">restore node</a></li>
       </ul>
     </div>`
 
@@ -89,8 +88,8 @@ const stageMenu = (cy, selection) => {
     stageMenu.addEventListener('click', e => {
       const event = e.target.textContent
 
-      if (event === 'threat verification') {
-        threatVerification(cy)
+      if (event === 'restore node') {
+        core.restoreNode()
       }
       removeStageMenu()
     })
