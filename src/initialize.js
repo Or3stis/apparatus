@@ -13,6 +13,7 @@ const core = require('../src/core/core.js')
 const hoverNodeInfo = require('../src/core/hoverNodeInfo.js')
 const editNode = require('../src/core/editNode.js')
 const totalNodes = require('../src/core/totalNodes.js')
+// const menu = require('../src/core/menu.js')
 // require design modules
 const dgn = require('../src/design/design.js')
 // require design-state Models
@@ -55,18 +56,25 @@ module.exports = function setup (cy) {
     cy.elements().removeClass('attention')
     cy.elements().removeClass('protect')
     cy.nodes().removeClass('old-selection')
+
     oldSelectedNode.out = selectedNode.out
     selectedNode.out = selection.target[0]
     selectedNode.out.addClass('selection')
+
+    // adds the old-selection class to the previous selection
     if (Object.keys(oldSelectedNode.out).length !== 0) {
       oldSelectedNode.out.addClass('old-selection')
     }
+
     srcNode.out = trgNode.out // second selection
     trgNode.out = selectedNode.out.data().id
     srcNodeCpt.out = trgNodeCpt.out // second selection
     trgNodeCpt.out = selectedNode.out.data().info.concept
+
     selectedEdge.out = {} // clear token
+
     totalNodes(cy) // global module
+
     editNode.removeElement() // remove the edit node element
   })
   // actions when tapping on an edge
@@ -77,10 +85,14 @@ module.exports = function setup (cy) {
     cy.elements().removeClass('protect')
     cy.nodes().removeClass('old-selection')
     selection.target.addClass('selection')
+
     selectedNode.out = {} // clear token
     oldSelectedNode.out = {} // clear token
+
     selectedEdge.out = selection.target[0]
+
     totalNodes(cy) // global module
+
     editNode.removeElement() // remove the edit node element
   })
   // actions when tapping the stage
@@ -93,23 +105,35 @@ module.exports = function setup (cy) {
       cy.elements().removeClass('attention')
       cy.elements().removeClass('protect')
       cy.nodes().removeClass('old-selection')
+
       // clear tokens
       selectedNode.out = {}
       oldSelectedNode.out = {}
       selectedEdge.out = {}
+
       totalNodes(cy) // global module
+
       editNode.removeElement() // remove the edit node element
     }
   })
   // right clicking
   cy.on('cxttapend', 'node', selection => {
     selectedNode = selection.target[0]
+    // menu.nodeMenu(cy, selection)
     editNode.formNode(selectedNode) // global module
+
     // clear tokens
     selectedNode.out = {}
     oldSelectedNode.out = {}
     selectedEdge.out = {}
   })
+  // right clicking on stage
+  // cy.on('cxttapend', selection => {
+  //   // checks if only the stage was clicked
+  //   if (selection.target === cy) {
+  //     menu.stageMenu(cy, selection)
+  //   }
+  // })
   // actions when hovering over a node
   cy.on('mouseover', 'node', event => {
     hoverNodeInfo(event.target[0]) // global module
