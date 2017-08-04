@@ -77,7 +77,7 @@ module.exports = function setup (cy) {
 
     editNode.removeElement() // remove the edit node element
     menu.removeNodeMenu() // remove node menu element
-    menu.removeStageMenu() // remove stage menu element
+    // menu.removeStageMenu() // remove stage menu element
   })
   // actions when tapping on an edge
   cy.on('tap', 'edge', selection => {
@@ -97,7 +97,7 @@ module.exports = function setup (cy) {
 
     editNode.removeElement() // remove the edit node element
     menu.removeNodeMenu() // remove node menu element
-    menu.removeStageMenu() // remove stage menu element
+    // menu.removeStageMenu() // remove stage menu element
   })
   // actions when tapping the stage
   cy.on('tap', selection => {
@@ -119,7 +119,7 @@ module.exports = function setup (cy) {
 
       editNode.removeElement() // remove the edit node element
       menu.removeNodeMenu() // remove node menu element
-      menu.removeStageMenu() // remove stage menu element
+      // menu.removeStageMenu() // remove stage menu element
     }
   })
   // right clicking
@@ -132,17 +132,17 @@ module.exports = function setup (cy) {
     oldSelectedNode.out = {}
     selectedEdge.out = {}
 
-    menu.removeStageMenu() // remove stage menu element
+    // menu.removeStageMenu() // remove stage menu element
   })
   // right clicking on stage
-  cy.on('cxttapend', selection => {
-    // checks if only the stage was clicked
-    if (selection.target === cy) {
-      // removes the stage menu if it exists
-      menu.removeStageMenu()
-      menu.stageMenu(cy, selection)
-    }
-  })
+  // cy.on('cxttapend', selection => {
+  //   // checks if only the stage was clicked
+  //   if (selection.target === cy) {
+  //     // removes the stage menu if it exists
+  //     menu.removeStageMenu()
+  //     menu.stageMenu(cy, selection)
+  //   }
+  // })
   // actions when hovering over a node
   cy.on('mouseover', 'node', event => {
     hoverNodeInfo(event.target[0]) // global module
