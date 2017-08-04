@@ -5,6 +5,7 @@ const threatVerification = require('./threatVerification.js')
 
 let posY = ''
 let posX = ''
+// get mouse position on click
 const mousePosition = (selection) => {
   posX = selection.renderedPosition.x
   posY = selection.renderedPosition.y
@@ -12,7 +13,7 @@ const mousePosition = (selection) => {
 
 // remove the node menu element
 const removeNodeMenu = () => {
-  const parentEl = document.getElementById('graph-container')
+  const parentEl = document.getElementById('window-id')
   const formEl = document.getElementById('nodeMenu-id')
 
   if (formEl !== null) parentEl.removeChild(formEl)
@@ -20,7 +21,7 @@ const removeNodeMenu = () => {
 
 // removes the stage menu element
 const removeStageMenu = () => {
-  const parentEl = document.getElementById('graph-container')
+  const parentEl = document.getElementById('window-id')
   const formEl = document.getElementById('stageMenu-id')
 
   if (formEl !== null) parentEl.removeChild(formEl)
@@ -28,9 +29,9 @@ const removeStageMenu = () => {
 
 // creates the node menu element
 const nodeMenu = (cy, selection) => {
-  removeStageMenu()
+  // removeStageMenu()
   const selectedNode = selection.target[0]
-  const graph = document.getElementById('graph-container')
+  const graph = document.getElementById('window-id')
 
   mousePosition(selection)
 
@@ -66,8 +67,8 @@ const nodeMenu = (cy, selection) => {
 
 // creates the stage menu element
 const stageMenu = (cy, selection) => {
-  removeNodeMenu()
-  const graph = document.getElementById('graph-container')
+  // removeNodeMenu()
+  const graph = document.getElementById('window-id')
 
   mousePosition(selection)
 
