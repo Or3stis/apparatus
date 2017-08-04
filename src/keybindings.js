@@ -68,7 +68,7 @@ module.exports = function console (cy, selectedNode, selectedEdge) {
     }
     // delete elements
     if (key === true && event.code === 'Backspace') {
-      core.deleteEl(cy, selectedNode, selectedEdge)
+      core.deleteEl(cy, selectedNode.out, selectedEdge.out)
     }
     if (key === true && event.code === 'KeyZ') {
       // restore elements with meta + z

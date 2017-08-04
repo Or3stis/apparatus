@@ -2,11 +2,12 @@
 
 const editNode = require('./editNode.js')
 const threatVerification = require('./threatVerification.js')
+const core = require('./core.js')
 
 let posY = ''
 let posX = ''
 // get mouse position on click
-const mousePosition = (selection) => {
+const mousePosition = selection => {
   posX = selection.renderedPosition.x
   posY = selection.renderedPosition.y
 }
@@ -28,9 +29,7 @@ const removeStageMenu = () => {
 }
 
 // creates the node menu element
-const nodeMenu = (cy, selection) => {
-  // removeStageMenu()
-  const selectedNode = selection.target[0]
+const nodeMenu = (cy, selection, selectedNode) => {
   const graph = document.getElementById('window-id')
 
   mousePosition(selection)
@@ -44,6 +43,7 @@ const nodeMenu = (cy, selection) => {
     <ul class="dropdown-menu" style='display:block;'>
     <li><a href="#edit-node">edit node</a></li>
     <li><a href="#show-neighbors">show neighbors</a></li>
+    <li><a href="#delete">delete</a></li>
     </ul>
     </div>`
 
@@ -56,6 +56,8 @@ const nodeMenu = (cy, selection) => {
         neighborhood.removeClass('faded')
       } else if (event === 'edit node') {
         editNode.formNode(selectedNode)
+      } else if (event === 'delete') {
+        core.deleteEl(cy, selectedNode, 0)
       }
       removeNodeMenu()
     })
@@ -67,7 +69,6 @@ const nodeMenu = (cy, selection) => {
 
 // creates the stage menu element
 const stageMenu = (cy, selection) => {
-  // removeNodeMenu()
   const graph = document.getElementById('window-id')
 
   mousePosition(selection)

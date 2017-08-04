@@ -29,17 +29,17 @@ let deletedNodes = []
 // used as module
 const deleteEl = (cy, selectedNode, selectedEdge) => {
   if (
-    Object.keys(selectedNode.out).length === 0 &&
-    Object.keys(selectedEdge.out).length !== 0
+    Object.keys(selectedNode).length === 0 &&
+    Object.keys(selectedEdge).length !== 0
   ) {
-    selectedEdge.out.remove()
+    selectedEdge.remove()
   }
   if (
-    Object.keys(selectedEdge.out).length === 0 &&
-    Object.keys(selectedNode.out).length !== 0
+    Object.keys(selectedEdge).length === 0 &&
+    Object.keys(selectedNode).length !== 0
   ) {
-    deletedNodes.push(selectedNode.out)
-    selectedNode.out.remove()
+    deletedNodes.push(selectedNode)
+    selectedNode.remove()
   }
   totalNodes(cy)
 }
@@ -47,7 +47,7 @@ const deleteEl = (cy, selectedNode, selectedEdge) => {
 const deleteButton = (cy, selectedNode, selectedEdge) => {
   const buttonDelete = document.getElementById('delete')
   buttonDelete.addEventListener('click', () => {
-    deleteEl(cy, selectedNode, selectedEdge)
+    deleteEl(cy, selectedNode.out, selectedEdge.out)
   })
 }
 // cose layout

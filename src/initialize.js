@@ -125,7 +125,7 @@ module.exports = function setup (cy) {
   // right clicking
   cy.on('cxttapend', 'node', selection => {
     selectedNode.out = selection.target[0]
-    menu.nodeMenu(cy, selection)
+    menu.nodeMenu(cy, selection, selectedNode.out)
 
     // clear tokens
     selectedNode.out = {}
