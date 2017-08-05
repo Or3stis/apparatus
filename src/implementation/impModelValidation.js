@@ -1,7 +1,7 @@
 'use strict'
 
 const impMetamodel = require('./impSchema.js')
-const printChat = require('../core/printChat.js')
+const printChat = require('../helpers/printChat.js')
 // checks if the instance is correct
 
 module.exports = function moduleValidation (cy) {

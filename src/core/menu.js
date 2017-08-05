@@ -2,7 +2,7 @@
 
 const editNode = require('./editNode.js')
 const core = require('./core.js')
-const rmElement = require('./rmElement.js')
+const rmElement = require('../helpers/rmElement.js')
 
 let posY = ''
 let posX = ''

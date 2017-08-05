@@ -5,7 +5,7 @@
 
 // require keybindings
 const keybindings = require('../src/keybindings.js')
-const printChat = require('../src/core/printChat.js')
+const printChat = require('../src/helpers/printChat.js')
 
 // require core modules
 // const nodeInfo = require('./src/core/nodeInfo.js')
@@ -13,7 +13,7 @@ const core = require('../src/core/core.js')
 const hoverNodeInfo = require('../src/core/hoverNodeInfo.js')
 const totalNodes = require('../src/core/totalNodes.js')
 const menu = require('../src/core/menu.js')
-const rmElement = require('../src/core/rmElement.js')
+const rmElement = require('../src/helpers/rmElement.js')
 // require design modules
 const dgn = require('../src/design/design.js')
 // require design-state Models

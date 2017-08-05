@@ -1,6 +1,6 @@
 // finds vulnerabilities from CVE database
 
-const printChat = require('../core/printChat.js')
+const printChat = require('../helpers/printChat.js')
 
 // TODO add the application
 module.exports = function findVuln (cy) {

@@ -2,9 +2,9 @@
 
 const config = require('../config/config.js')
 const searchAttribute = require('./core/searchAttribute.js')
-const printChat = require('./core/printChat.js')
+const printChat = require('./helpers/printChat.js')
 const core = require('./core/core.js')
-const save = require('./core/save.js')
+const save = require('./helpers/save.js')
 
 module.exports = function console (cy, selectedNode, selectedEdge) {
   // help menu

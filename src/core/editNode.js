@@ -2,7 +2,7 @@
 
 // dynamically edit nodes
 
-const rmElement = require('./rmElement.js')
+const rmElement = require('../helpers/rmElement.js')
 
 // create the form
 const createForm = (selectedNode) => {

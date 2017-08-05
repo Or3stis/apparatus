@@ -1,6 +1,6 @@
 'use strict'
 
-const printChat = require('../core/printChat.js')
+const printChat = require('../helpers/printChat.js')
 
 module.exports = function overview (cy) {
   let result = ''

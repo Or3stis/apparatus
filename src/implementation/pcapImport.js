@@ -9,7 +9,7 @@ const child = require('child_process')
 
 const commonPorts = require('./commonPorts.js')
 const initialize = require('../initialize.js')
-const cyOptions = require('../core/cyOptions.js')
+const cyOptions = require('../helpers/cyOptions.js')
 
 // // create timeStamp to name the files
 const time = new Date()
@@ -124,7 +124,7 @@ const createDevices = uniqueDevicesServices => {
 }
 
 const createDevicesApplications = devices => {
-  let deviceIdCounter = 0
+  let deviceIdCounter = 0 // device concepts start from 0
 
   Object.keys(uniqueDevicesServices).map(i => {
     let services = uniqueDevicesServices[i].split(' ')

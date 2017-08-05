@@ -1,6 +1,6 @@
 'use strict'
 
-const printChat = require('../core/printChat.js')
+const printChat = require('../helpers/printChat.js')
 const impMetamodel = require('./impSchema.js')
 
 module.exports = function overview (cy) {

@@ -1,8 +1,8 @@
 'use strict'
 
-const load = require('./src/core/load.js')
+const load = require('./src/helpers/load.js')
+const cyOptions = require('./src/helpers/cyOptions.js')
 const initialize = require('./src/initialize.js')
-const cyOptions = require('./src/core/cyOptions.js')
 const pcapImport = require('./src/implementation/pcapImport.js')
 
 const template = '../../graphs/modelTemplate.js'
