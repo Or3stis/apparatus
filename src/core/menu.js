@@ -37,13 +37,15 @@ const nodeMenu = (cy, selection, selectedNode) => {
   const nodeMenuExists = document.getElementById('nodeMenu-id')
   if (nodeMenuExists === null) {
     const nodeMenu = document.createElement('button')
+
     nodeMenu.id = 'nodeMenu-id'
+
     nodeMenu.innerHTML = `<div class="dropdown" style='display: block; position: absolute; top:${posY}px; left: ${posX}px;'>
-    <ul class="dropdown-menu" style='display:block;'>
-    <li><a href="#edit-node">edit node</a></li>
-    <li><a href="#show-neighbors">show neighbors</a></li>
-    <li><a href="#delete">delete</a></li>
-    </ul>
+      <ul class="dropdown-menu" style='display:block;'>
+        <li><a href="#edit-node">edit node</a></li>
+        <li><a href="#show-neighbors">show neighbors</a></li>
+        <li><a href="#delete">delete</a></li>
+      </ul>
     </div>`
 
     nodeMenu.addEventListener('click', e => {
@@ -76,7 +78,9 @@ const stageMenu = (cy, selection) => {
   const stageMenuExists = document.getElementById('stageMenu-id')
   if (stageMenuExists === null) {
     const stageMenu = document.createElement('button')
+
     stageMenu.id = 'stageMenu-id'
+
     stageMenu.innerHTML = `<div class="dropdown" style='display: block; position: absolute; top:${posY}px; left: ${posX}px;'>
       <ul class="dropdown-menu" style='display:block;'>
         <li><a href="#restore-node">restore node</a></li>

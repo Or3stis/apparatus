@@ -14,14 +14,19 @@ const selectionNode = cy => {
     nodeSelection(cy, e.target.textContent)
   })
 }
+
+// show the neighbors of a tapped node
+const getNeighbors = (cy, selectedNode) => {
+  // selectedNode from cy.on tap node function
+  const neighborhood = selectedNode.neighborhood().add(selectedNode)
+  cy.elements().addClass('faded')
+  neighborhood.removeClass('faded')
+}
+// links the showNeighbor button
 const showNeighbor = (cy, selectedNode) => {
-  // show the neighbors of a tapped node
   const buttonNeighbor = document.getElementById('neighbors-button')
   buttonNeighbor.addEventListener('click', () => {
-    // selectedNode from cy.on tap node function
-    const neighborhood = selectedNode.out.neighborhood().add(selectedNode.out)
-    cy.elements().addClass('faded')
-    neighborhood.removeClass('faded')
+    getNeighbors(cy, selectedNode.out)
   })
 }
 // holds the deleted nodes
@@ -118,6 +123,7 @@ module.exports = {
   deleteButton: deleteButton,
   deleteEl: deleteEl,
   showNeighbor: showNeighbor,
+  getNeighbors: getNeighbors,
   labels: labels,
   saveGraph: saveGraph,
   restoreNode: restoreNode
