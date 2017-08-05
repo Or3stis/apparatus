@@ -261,6 +261,8 @@ input::-webkit-input-placeholder {
   padding: 0.2em 0.8em;
   text-decoration: none;
   background-color: var(--main-dark-bg-color);
+  border-bottom: 1px solid;
+  border-color: var(--main-bg-color);
   color: var(--main-tx-color);
   font-size: 12px;
 }
