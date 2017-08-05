@@ -11,9 +11,9 @@ const printChat = require('../src/core/printChat.js')
 // const nodeInfo = require('./src/core/nodeInfo.js')
 const core = require('../src/core/core.js')
 const hoverNodeInfo = require('../src/core/hoverNodeInfo.js')
-const editNode = require('../src/core/editNode.js')
 const totalNodes = require('../src/core/totalNodes.js')
 const menu = require('../src/core/menu.js')
+const rmElement = require('../src/core/rmElement.js')
 // require design modules
 const dgn = require('../src/design/design.js')
 // require design-state Models
@@ -75,9 +75,9 @@ module.exports = function setup (cy) {
 
     totalNodes(cy) // global module
 
-    editNode.removeElement() // remove the edit node element
-    menu.removeNodeMenu() // remove node menu element
-    menu.removeStageMenu() // remove stage menu element
+    rmElement('info-nodes-id', 'form-id') // remove the edit node element
+    rmElement('window-id', 'nodeMenu-id') // remove node menu element
+    rmElement('window-id', 'stageMenu-id') // remove stage menu element
   })
   // actions when tapping on an edge
   cy.on('tap', 'edge', selection => {
@@ -95,9 +95,9 @@ module.exports = function setup (cy) {
 
     totalNodes(cy) // global module
 
-    editNode.removeElement() // remove the edit node element
-    menu.removeNodeMenu() // remove node menu element
-    menu.removeStageMenu() // remove stage menu element
+    rmElement('info-nodes-id', 'form-id') // remove the edit node element
+    rmElement('window-id', 'nodeMenu-id') // remove node menu element
+    rmElement('window-id', 'stageMenu-id') // remove stage menu element
   })
   // actions when tapping the stage
   cy.on('tap', selection => {
@@ -117,9 +117,9 @@ module.exports = function setup (cy) {
 
       totalNodes(cy) // global module
 
-      editNode.removeElement() // remove the edit node element
-      menu.removeNodeMenu() // remove node menu element
-      menu.removeStageMenu() // remove stage menu element
+      rmElement('info-nodes-id', 'form-id') // remove the edit node element
+      rmElement('window-id', 'nodeMenu-id') // remove node menu element
+      rmElement('window-id', 'stageMenu-id') // remove stage menu element
     }
   })
   // right clicking
@@ -132,14 +132,14 @@ module.exports = function setup (cy) {
     oldSelectedNode.out = {}
     selectedEdge.out = {}
 
-    menu.removeStageMenu() // remove stage menu element
+    rmElement('window-id', 'stageMenu-id') // remove stage menu element
   })
   // right clicking on stage
   cy.on('cxttapend', selection => {
     // checks if only the stage was clicked
     if (selection.target === cy) {
       // removes the stage menu if it exists
-      menu.removeStageMenu()
+      rmElement('window-id', 'stageMenu-id')
       menu.stageMenu(cy, selection)
     }
   })

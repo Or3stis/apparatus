@@ -2,6 +2,7 @@
 
 const editNode = require('./editNode.js')
 const core = require('./core.js')
+const rmElement = require('./rmElement.js')
 
 let posY = ''
 let posX = ''
@@ -9,22 +10,6 @@ let posX = ''
 const mousePosition = selection => {
   posX = selection.renderedPosition.x
   posY = selection.renderedPosition.y
-}
-
-// remove the node menu element
-const removeNodeMenu = () => {
-  const parentEl = document.getElementById('window-id')
-  const formEl = document.getElementById('nodeMenu-id')
-
-  if (formEl !== null) parentEl.removeChild(formEl)
-}
-
-// removes the stage menu element
-const removeStageMenu = () => {
-  const parentEl = document.getElementById('window-id')
-  const formEl = document.getElementById('stageMenu-id')
-
-  if (formEl !== null) parentEl.removeChild(formEl)
 }
 
 // creates the node menu element
@@ -58,11 +43,11 @@ const nodeMenu = (cy, selection, selectedNode) => {
       } else if (event === 'delete') {
         core.deleteEl(cy, selectedNode, 0)
       }
-      removeNodeMenu()
+      rmElement('window-id', 'nodeMenu-id')
     })
     graph.appendChild(nodeMenu)
   } else {
-    removeNodeMenu()
+    rmElement('window-id', 'nodeMenu-id')
   }
 }
 
@@ -93,16 +78,14 @@ const stageMenu = (cy, selection) => {
       if (event === 'restore node') {
         core.restoreNode()
       }
-      removeStageMenu()
+      rmElement('window-id', 'stageMenu-id')
     })
   } else {
-    removeStageMenu()
+    rmElement('window-id', 'stageMenu-id')
   }
 }
 
 module.exports = {
   nodeMenu: nodeMenu,
-  stageMenu: stageMenu,
-  removeNodeMenu: removeNodeMenu,
-  removeStageMenu: removeStageMenu
+  stageMenu: stageMenu
 }

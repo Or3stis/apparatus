@@ -2,6 +2,8 @@
 
 // dynamically edit nodes
 
+const rmElement = require('./rmElement.js')
+
 // create the form
 const createForm = (selectedNode) => {
   const htmlElement = document.getElementById('info-nodes-id')
@@ -52,7 +54,7 @@ const createForm = (selectedNode) => {
       selectedNode.data().info[keyValue] = id.value
     })
     // remove elements once the submit is clicked
-    removeElement()
+    rmElement('info-nodes-id', 'form-id')
     // return false to prevent the default form behavior
     return false
   }
@@ -62,18 +64,18 @@ const createForm = (selectedNode) => {
 }
 
 // remove the created form element
-const removeElement = () => {
-  const parentEl = document.getElementById('info-nodes-id')
-  const formEl = document.getElementById('form-id')
-
-  if (formEl !== null) parentEl.removeChild(formEl)
-}
+// const removeElement = () => {
+//   const parentEl = document.getElementById('info-nodes-id')
+//   const formEl = document.getElementById('form-id')
+//
+//   if (formEl !== null) parentEl.removeChild(formEl)
+// }
 
 // create the form element
 const formNode = (selectedNode) => {
   const form = document.getElementById('form-id')
   if (form !== null) {
-    removeElement()
+    rmElement('info-nodes-id', 'form-id')
     createForm(selectedNode)
   } else if (form === null) {
     createForm(selectedNode)
@@ -81,6 +83,5 @@ const formNode = (selectedNode) => {
 }
 
 module.exports = {
-  removeElement: removeElement,
   formNode: formNode
 }
