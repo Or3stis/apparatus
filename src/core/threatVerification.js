@@ -23,7 +23,7 @@ module.exports = function threatVerification (cy) {
   threatArray.map(threat => {
     const neighbor = threat.neighborhood()
     neighbor.map(type => {
-      if (type.data().hasOwnProperty('info')) {
+      if (type.data().hasOwnProperty('info') === true) {
         if (type.data().info.concept === 'constraint') {
           result = `${result} • Threat ${threat.data()
             .id} mitigated by Constraint ${type.data().id}\n`
