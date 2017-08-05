@@ -196,7 +196,7 @@ module.exports = function setup (cy) {
     impState.addNode(cy, initialCount)
     impState.overview(cy)
     impState.validate(cy)
-    impState.addEdge(cy, srcNode, trgNode, srcNodeCpt, trgNodeCpt)
+    impState.addEdge(cy, srcNode, trgNode)
   }
 
   // declaration of global buttons

@@ -21,16 +21,10 @@ const addNode = (cy, nodeCounter) => {
   })
 }
 // add imp-state edges
-const addEdge = (cy, srcNode, trgNode, srcNodeCpt, trgNodeCpt) => {
+const addEdge = (cy, srcNode, trgNode) => {
   const buttonAddEdge = document.getElementById('add-edge')
   buttonAddEdge.addEventListener('click', () => {
-    addImpStateEdge(
-      cy,
-      srcNode.out,
-      trgNode.out,
-      srcNodeCpt.out,
-      trgNodeCpt.out
-    )
+    addImpStateEdge(cy, srcNode.out, trgNode.out)
     cy.edges().addClass('label-edges')
   })
 }
