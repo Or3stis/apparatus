@@ -1,13 +1,6 @@
 'use strict'
 
-module.exports = function addEdge (
-  cy,
-  srcNode,
-  trgNode,
-  srcNodeCpt,
-  trgNodeCp,
-  label
-) {
+module.exports = function addEdge (cy, srcNode, trgNode, label) {
   cy.add({
     group: 'edges',
     data: {
