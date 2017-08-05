@@ -67,7 +67,8 @@ module.exports = function setup (cy) {
     }
 
     srcNode.out = trgNode.out // second selection
-    trgNode.out = selectedNode.out.data().id
+    trgNode.out = selectedNode.out.data()
+    // trgNode.out = selectedNode.out.data().id
     srcNodeCpt.out = trgNodeCpt.out // second selection
     trgNodeCpt.out = selectedNode.out.data().info.concept
 
@@ -172,7 +173,7 @@ module.exports = function setup (cy) {
     dgn.overview(cy)
     dgn.validate(cy)
     dgn.moduleGroup(cy)
-    dgn.addEdge(cy, srcNode, trgNode, srcNodeCpt, trgNodeCpt)
+    dgn.addEdge(cy, srcNode, trgNode)
     // load design-state buttons
   } else if (pathLocation === dgnStatePath) {
     dgnState.addNode(cy, initialCount)

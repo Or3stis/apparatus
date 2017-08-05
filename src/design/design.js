@@ -27,7 +27,7 @@ const addNode = (cy, nodeCounter) => {
 const addEdge = (cy, srcNode, trgNode, srcNodeCpt, trgNodeCpt) => {
   const buttonAddEdge = document.getElementById('add-edge')
   buttonAddEdge.addEventListener('click', () => {
-    addDgnEdge(cy, srcNode.out, trgNode.out, srcNodeCpt.out, trgNodeCpt.out)
+    addDgnEdge(cy, srcNode.out, trgNode.out)
     cy.edges().addClass('label-edges')
   })
 }
