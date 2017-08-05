@@ -9,6 +9,7 @@ module.exports = function vulnVerification (cy) {
 
   cy.elements().addClass('faded')
 
+  // highlights vulnerability and mechanism nodes
   cy.nodes().map(node => {
     if (node.data().info.concept === 'vulnerability') {
       node.removeClass('faded')
@@ -21,6 +22,7 @@ module.exports = function vulnVerification (cy) {
     }
   })
 
+  // checks if vulnerability node is connected to a mechanism node
   vulnArray.map(vuln => {
     const neighbor = vuln.neighborhood()
     neighbor.map(type => {
