@@ -190,7 +190,7 @@ module.exports = function setup (cy) {
     imp.findVulnerabilities(cy)
     imp.findPattern(cy)
     imp.moduleGroup(cy)
-    imp.addEdge(cy, srcNode, trgNode, srcNodeCpt, trgNodeCpt)
+    imp.addEdge(cy, srcNode, trgNode)
     // loads implementation-state buttons
   } else if (pathLocation === impStatePath) {
     impState.addNode(cy, initialCount)
