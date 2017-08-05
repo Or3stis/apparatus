@@ -34,16 +34,12 @@ module.exports = function setup (cy) {
   let selectedEdge = {}
   let srcNode = {}
   let trgNode = {}
-  let srcNodeCpt = {}
-  let trgNodeCpt = {}
   // initialize export variables to prevent undefined errors
   selectedNode.out = {}
   oldSelectedNode.out = {}
   selectedEdge.out = {}
   srcNode.out = {}
   trgNode.out = {}
-  srcNodeCpt.out = {}
-  trgNodeCpt.out = {}
 
   // counter variable to create unique sequential node ids in addComponents.js
   const initialCount = cy.nodes().length
@@ -68,9 +64,6 @@ module.exports = function setup (cy) {
 
     srcNode.out = trgNode.out // second selection
     trgNode.out = selectedNode.out.data()
-    // trgNode.out = selectedNode.out.data().id
-    srcNodeCpt.out = trgNodeCpt.out // second selection
-    trgNodeCpt.out = selectedNode.out.data().info.concept
 
     selectedEdge.out = {} // clear token
 

@@ -23,7 +23,7 @@ const addNode = (cy, nodeCounter) => {
 }
 
 // add dgn-state edges
-const addEdge = (cy, srcNode, trgNode, srcNodeCpt, trgNodeCpt) => {
+const addEdge = (cy, srcNode, trgNode) => {
   const buttonAddEdge = document.getElementById('add-edge')
   buttonAddEdge.addEventListener('click', () => {
     addDgnStateEdge(cy, srcNode.out, trgNode.out)

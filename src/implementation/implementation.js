@@ -27,7 +27,7 @@ const addNode = (cy, nodeCounter) => {
 }
 
 // add design edges
-const addEdge = (cy, srcNode, trgNode, srcNodeCpt, trgNodeCpt) => {
+const addEdge = (cy, srcNode, trgNode) => {
   const buttonAddEdge = document.getElementById('add-edge')
   buttonAddEdge.addEventListener('click', () => {
     addImpEdge(cy, srcNode.out, trgNode.out)
