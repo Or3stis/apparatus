@@ -179,7 +179,7 @@ module.exports = function setup (cy) {
     dgnState.addNode(cy, initialCount)
     dgnState.overview(cy)
     dgnState.validate(cy)
-    dgnState.addEdge(cy, srcNode, trgNode, srcNodeCpt, trgNodeCpt)
+    dgnState.addEdge(cy, srcNode, trgNode)
     // loads implementation phase buttons
   } else if (pathLocation === impPath) {
     imp.addNode(cy, initialCount)
