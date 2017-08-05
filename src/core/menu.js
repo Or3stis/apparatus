@@ -52,9 +52,7 @@ const nodeMenu = (cy, selection, selectedNode) => {
       const event = e.target.textContent
 
       if (event === 'show neighbors') {
-        const neighborhood = selectedNode.neighborhood().add(selectedNode)
-        cy.elements().addClass('faded')
-        neighborhood.removeClass('faded')
+        core.getNeighbors(cy, selectedNode)
       } else if (event === 'edit node') {
         editNode.formNode(selectedNode)
       } else if (event === 'delete') {
