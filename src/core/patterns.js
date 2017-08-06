@@ -1,16 +1,9 @@
 'use strict'
 
 const printChat = require('../helpers/printChat.js')
+const rmElement = require('../helpers/rmElement.js')
 
 module.exports = function patterns (cy) {
-  // remove the created form element
-  const removeElement = () => {
-    const parentEl = document.getElementById('info-nodes-id')
-    const formEl = document.getElementById('form-id')
-
-    if (formEl !== null) parentEl.removeChild(formEl)
-  }
-
   // search pattern
   const flagNodes = pattern => {
     // flagged attributes
@@ -63,7 +56,7 @@ module.exports = function patterns (cy) {
     let keywords = document.getElementById('pattern-id')
     let pattern = `${keywords.value}`.split(' ')
 
-    removeElement()
+    rmElement('info-nodes-id', 'form-id')
 
     flagNodes(pattern)
     // return false to prevent the default form behavior
