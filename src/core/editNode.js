@@ -63,14 +63,6 @@ const createForm = (selectedNode) => {
   document.getElementById('description').focus()
 }
 
-// remove the created form element
-// const removeElement = () => {
-//   const parentEl = document.getElementById('info-nodes-id')
-//   const formEl = document.getElementById('form-id')
-//
-//   if (formEl !== null) parentEl.removeChild(formEl)
-// }
-
 // create the form element
 const formNode = (selectedNode) => {
   const form = document.getElementById('form-id')
