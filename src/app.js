@@ -21,7 +21,6 @@ const debugGraph = (cy) => {
   initialize(cy.out)
 }
 
-// TODO move it to different modules
 // creates the option menu on startup
 // the element is removed on selection
 const start = () => {
