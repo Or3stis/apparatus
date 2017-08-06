@@ -11,16 +11,16 @@ module.exports = function addComponent (cy, srcNode, trgNode) {
 
   switch (true) {
     case srcNodeCpt === 'sensor' && trgNodeCpt === 'model':
-      addEdge(cy, srcNodeId, trgNodeId, srcNodeCpt, trgNodeCpt, 'belongs')
+      addEdge(cy, srcNodeId, trgNodeId, 'belongs')
       break
     case srcNodeCpt === 'model' && trgNodeCpt === 'model':
-      addEdge(cy, srcNodeId, trgNodeId, srcNodeCpt, trgNodeCpt, 'configuration')
+      addEdge(cy, srcNodeId, trgNodeId, 'configuration')
       break
     case srcNodeCpt === 'event' && trgNodeCpt === 'model':
-      addEdge(cy, srcNodeId, trgNodeId, srcNodeCpt, trgNodeCpt, 'affects')
+      addEdge(cy, srcNodeId, trgNodeId, 'affects')
       break
     case srcNodeCpt === 'sensor' && trgNodeCpt === 'event':
-      addEdge(cy, srcNodeId, trgNodeId, srcNodeCpt, trgNodeCpt, 'detects')
+      addEdge(cy, srcNodeId, trgNodeId, 'detects')
       break
     default:
       printChat(`${srcNodeCpt} → ${trgNodeCpt}\nnot allowed 😔`)
