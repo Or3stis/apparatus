@@ -16,4 +16,8 @@ module.exports = function cyOptions (cy, file) {
     name: 'breadthfirst'
   })
   layout.run()
+
+  // add the file location to the title bar
+  const titleBar = document.getElementById('title-bar-id')
+  titleBar.innerHTML += ` <i>~/${file}</i<`
 }
