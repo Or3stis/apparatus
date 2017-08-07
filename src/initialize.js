@@ -29,7 +29,7 @@ const imp = require('../src/implementation/implementation.js')
 // require implementation-state modules
 const impState = require('../src/implementation-state/impState.js')
 
-module.exports = function setup (cy) {
+module.exports = function initialize (cy) {
   // initial label render
   cy.nodes().addClass('label-nodes')
   cy.edges().addClass('label-edges')
