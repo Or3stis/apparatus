@@ -78,9 +78,6 @@ const labels = cy => {
   })
   const showLabelsEdgeButton = document.getElementById('show-label-edge')
   showLabelsEdgeButton.addEventListener('click', () => {
-    cy.nodes().removeClass('label-id')
-    cy.nodes().removeClass('label-dsc')
-    cy.nodes().removeClass('label-nodes')
     cy.edges().addClass('label-edges')
   })
   const showLabelNodeButton = document.getElementById('show-label-node')
