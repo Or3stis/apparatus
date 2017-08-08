@@ -14,9 +14,9 @@ const totalNodes = require('../core/totalNodes.js')
 // add desing node
 const addNode = (cy, nodeCounter) => {
   const addNode = document.getElementById('add-component-id')
-  addNode.addEventListener('click', e => {
+  addNode.addEventListener('click', event => {
     nodeCounter += 1
-    addDgnStateComponent(cy, e.target.textContent, nodeCounter)
+    addDgnStateComponent(cy, event, nodeCounter)
     cy.nodes().addClass('label-nodes')
     totalNodes(cy) // global module
   })
