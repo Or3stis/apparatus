@@ -24,7 +24,7 @@ module.exports = function load (cy, phase) {
 
       const fileName = fileNames[0]
       cyOptions(cy, fileName) // defines the cy instance
-      initialize(cy.out, phase) // links the cy instance with the rest of the app
+      initialize(cy.out, phase) // links the cy instance with the app
     }
   )
 }

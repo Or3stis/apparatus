@@ -18,6 +18,7 @@ function createWindow () {
     titleBarStyle: 'hidden',
     webPreferences: {
       // to gain access to grid layout
+      // TODO remove once it is suported
       experimentalFeatures: true
     }
   })
