@@ -3,6 +3,7 @@
 const config = require('../config/config.js')
 const searchAttribute = require('./core/searchAttribute.js')
 const printChat = require('./helpers/printChat.js')
+const printChatHTML = require('./helpers/printChatHTML.js')
 const core = require('./core/core.js')
 const save = require('./helpers/save.js')
 
@@ -15,10 +16,12 @@ module.exports = function console (cy, selectedNode, selectedEdge) {
 • clear sidebar: clear
 • keyword search for attributes`
 
+  const wikiURL = `click to view <button id='url' class='startButtons' style='background-color:#3b4251; width: 40px; height: 25px;'>wiki</button>`
+
   const consoleId = document.getElementById('console-id')
   const labelId = document.getElementById('input-label-id')
   // indicate focus on console
-  consoleId.addEventListener('focus', (e) => {
+  consoleId.addEventListener('focus', e => {
     labelId.style.color = config.blue
   })
   consoleId.addEventListener('blur', () => {
@@ -43,6 +46,10 @@ module.exports = function console (cy, selectedNode, selectedEdge) {
     switch (input) {
       case 'help':
         printChat(helpMenu)
+        printChatHTML(wikiURL)
+        document.getElementById('url').addEventListener('click', () => {
+          require('electron').shell.openExternal('https://github.com/Or3stis/apparatus/wiki')
+        })
         break
       case '':
         break
@@ -74,11 +81,7 @@ module.exports = function console (cy, selectedNode, selectedEdge) {
       // restore elements with meta + z
       core.restoreNode()
     }
-    if (
-      event.shiftKey === true &&
-      key === true &&
-      event.code === 'KeyS'
-    ) {
+    if (event.shiftKey === true && key === true && event.code === 'KeyS') {
       save(cy)
     }
     // listens for the ENTER key when focus is on the console
