@@ -3,7 +3,15 @@
 // add components in the graph
 
 // TODO needs refactoring
-module.exports = function addImpComponent (cy, component, nodeCounter) {
+module.exports = function addImpComponent (cy, event, nodeCounter) {
+  // get mouse position on click
+  // display new node on the left of the menu
+  let posX = event.x + 50
+  let posY = event.y - 30
+
+  // get the selected concept
+  let component = event.target.textContent
+
   switch (component) {
     case 'device':
       cy.add({
@@ -24,8 +32,8 @@ module.exports = function addImpComponent (cy, component, nodeCounter) {
           }
         },
         renderedPosition: {
-          x: 100,
-          y: 200
+          x: posX,
+          y: posY
         }
       })
       break
@@ -42,8 +50,8 @@ module.exports = function addImpComponent (cy, component, nodeCounter) {
           }
         },
         renderedPosition: {
-          x: 100,
-          y: 200
+          x: posX,
+          y: posY
         }
       })
       break
@@ -61,8 +69,8 @@ module.exports = function addImpComponent (cy, component, nodeCounter) {
           }
         },
         renderedPosition: {
-          x: 100,
-          y: 200
+          x: posX,
+          y: posY
         }
       })
       break
@@ -80,8 +88,8 @@ module.exports = function addImpComponent (cy, component, nodeCounter) {
           }
         },
         renderedPosition: {
-          x: 100,
-          y: 200
+          x: posX,
+          y: posY
         }
       })
       break
@@ -98,8 +106,8 @@ module.exports = function addImpComponent (cy, component, nodeCounter) {
           }
         },
         renderedPosition: {
-          x: 100,
-          y: 200
+          x: posX,
+          y: posY
         }
       })
       break
@@ -115,8 +123,8 @@ module.exports = function addImpComponent (cy, component, nodeCounter) {
           }
         },
         renderedPosition: {
-          x: 100,
-          y: 200
+          x: posX,
+          y: posY
         }
       })
       break
@@ -132,8 +140,8 @@ module.exports = function addImpComponent (cy, component, nodeCounter) {
           }
         },
         renderedPosition: {
-          x: 100,
-          y: 200
+          x: posX,
+          y: posY
         }
       })
       break
@@ -150,8 +158,8 @@ module.exports = function addImpComponent (cy, component, nodeCounter) {
           }
         },
         renderedPosition: {
-          x: 100,
-          y: 200
+          x: posX,
+          y: posY
         }
       })
       break
@@ -168,8 +176,8 @@ module.exports = function addImpComponent (cy, component, nodeCounter) {
           }
         },
         renderedPosition: {
-          x: 100,
-          y: 200
+          x: posX,
+          y: posY
         }
       })
       break
@@ -185,8 +193,8 @@ module.exports = function addImpComponent (cy, component, nodeCounter) {
           }
         },
         renderedPosition: {
-          x: 100,
-          y: 200
+          x: posX,
+          y: posY
         }
       })
       break
@@ -203,8 +211,8 @@ module.exports = function addImpComponent (cy, component, nodeCounter) {
           }
         },
         renderedPosition: {
-          x: 100,
-          y: 200
+          x: posX,
+          y: posY
         }
       })
       break
@@ -220,8 +228,8 @@ module.exports = function addImpComponent (cy, component, nodeCounter) {
           }
         },
         renderedPosition: {
-          x: 100,
-          y: 200
+          x: posX,
+          y: posY
         }
       })
       break
@@ -238,8 +246,8 @@ module.exports = function addImpComponent (cy, component, nodeCounter) {
           }
         },
         renderedPosition: {
-          x: 100,
-          y: 200
+          x: posX,
+          y: posY
         }
       })
       break
@@ -255,8 +263,8 @@ module.exports = function addImpComponent (cy, component, nodeCounter) {
           }
         },
         renderedPosition: {
-          x: 100,
-          y: 200
+          x: posX,
+          y: posY
         }
       })
       break
@@ -272,8 +280,8 @@ module.exports = function addImpComponent (cy, component, nodeCounter) {
           }
         },
         renderedPosition: {
-          x: 100,
-          y: 200
+          x: posX,
+          y: posY
         }
       })
       break
@@ -289,8 +297,8 @@ module.exports = function addImpComponent (cy, component, nodeCounter) {
           }
         },
         renderedPosition: {
-          x: 100,
-          y: 200
+          x: posX,
+          y: posY
         }
       })
       break
@@ -306,8 +314,8 @@ module.exports = function addImpComponent (cy, component, nodeCounter) {
           }
         },
         renderedPosition: {
-          x: 100,
-          y: 200
+          x: posX,
+          y: posY
         }
       })
       break
