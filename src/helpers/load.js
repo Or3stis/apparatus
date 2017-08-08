@@ -5,7 +5,7 @@ const initialize = require('../initialize.js')
 const cyOptions = require('./cyOptions.js')
 
 // loads graphs in js or json format
-module.exports = function load (cy) {
+module.exports = function load (cy, phase) {
   // check platform
   let dialogOptions = []
   if (process.platform === 'darwin') {
@@ -24,7 +24,7 @@ module.exports = function load (cy) {
 
       const fileName = fileNames[0]
       cyOptions(cy, fileName) // defines the cy instance
-      initialize(cy.out) // links the cy instance with the rest of the app
+      initialize(cy.out, phase) // links the cy instance with the rest of the app
     }
   )
 }
