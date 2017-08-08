@@ -1,5 +1,6 @@
 'use strict'
 
+// prints text formatted
 module.exports = function printChat (toPrint) {
   const htmlElement = document.getElementById('info-nodes-id')
   const span = document.createElement('span')
