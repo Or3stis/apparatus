@@ -16,7 +16,9 @@ module.exports = function console (cy, selectedNode, selectedEdge) {
 • clear sidebar: clear
 • keyword search for attributes`
 
-  const wikiURL = `click to view <button id='url' class='startButtons' style='background-color:#3b4251; width: 40px; height: 25px;'>wiki</button>`
+  // adds the url for the wiki
+  const wikiURLButton = `click to view <button id='url-button' class='startButtons' style='background-color:#3b4251; width: 40px; height: 25px;'>wiki</button>`
+  const url = 'https://github.com/Or3stis/apparatus/wiki'
 
   const consoleId = document.getElementById('console-id')
   const labelId = document.getElementById('input-label-id')
@@ -46,9 +48,9 @@ module.exports = function console (cy, selectedNode, selectedEdge) {
     switch (input) {
       case 'help':
         printChat(helpMenu)
-        printChatHTML(wikiURL)
-        document.getElementById('url').addEventListener('click', () => {
-          require('electron').shell.openExternal('https://github.com/Or3stis/apparatus/wiki')
+        printChatHTML(wikiURLButton)
+        document.getElementById('url-button').addEventListener('click', () => {
+          require('electron').shell.openExternal(url)
         })
         break
       case '':
