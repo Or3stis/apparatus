@@ -22,6 +22,7 @@ const getNeighbors = (cy, selectedNode) => {
   cy.elements().addClass('faded')
   neighborhood.removeClass('faded')
 }
+
 // links the showNeighbor button
 const showNeighbor = (cy, selectedNode) => {
   const buttonNeighbor = document.getElementById('neighbors-button')
@@ -29,6 +30,7 @@ const showNeighbor = (cy, selectedNode) => {
     getNeighbors(cy, selectedNode.out)
   })
 }
+
 // holds the deleted nodes
 let deletedNodes = []
 // used as module
@@ -48,6 +50,7 @@ const deleteEl = (cy, selectedNode, selectedEdge) => {
   }
   totalNodes(cy)
 }
+
 // bind the delete Button
 const deleteButton = (cy, selectedNode, selectedEdge) => {
   const buttonDelete = document.getElementById('delete')
@@ -55,6 +58,7 @@ const deleteButton = (cy, selectedNode, selectedEdge) => {
     deleteEl(cy, selectedNode.out, selectedEdge.out)
   })
 }
+
 // cose layout
 const graphLayout = cy => {
   const buttonLayout = document.getElementById('layout-button')
@@ -62,6 +66,7 @@ const graphLayout = cy => {
     layout(cy, e.target.textContent)
   })
 }
+
 // enable label buttons
 const labels = cy => {
   const hideLabelsButton = document.getElementById('hide-label')
@@ -97,6 +102,7 @@ const labels = cy => {
     cy.nodes().addClass('label-dsc')
   })
 }
+
 // save graph
 const saveGraph = (cy) => {
   const buttonSave = document.getElementById('save-button')

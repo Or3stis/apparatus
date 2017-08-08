@@ -1,6 +1,6 @@
 'use strict'
 
-// prints text formatted
+// prints html formatted text
 module.exports = function printChat (toPrint) {
   const htmlElement = document.getElementById('info-nodes-id')
   const span = document.createElement('span')
@@ -10,8 +10,7 @@ module.exports = function printChat (toPrint) {
   //   span.className = 'bubble tool'
   // }
   span.className = 'bubble'
-  const result = document.createTextNode(toPrint)
-  span.appendChild(result)
+  span.innerHTML = toPrint
   htmlElement.appendChild(span)
   htmlElement.lastChild.scrollIntoView(false)
 }

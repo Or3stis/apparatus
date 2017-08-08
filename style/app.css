@@ -69,7 +69,7 @@ body {
 }
 
 .action-bar {
-  display: block;
+  display: none;
   grid-area: action-bar;
   background-color: var(--main-dark-bg-color);
 }
@@ -86,7 +86,7 @@ body {
 .sidebar {
   margin-top: 10px;
   font-size: 12px;
-  display: block;
+  display: none;
   grid-area: sidebar;
   overflow: auto;
   -webkit-user-select: text;

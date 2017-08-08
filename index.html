@@ -12,22 +12,34 @@
 <body>
   <div class="title-bar" id="title-bar-id">~/home</div>
 
-  <div class="choose">
-    <span>choose phase..</span>
-    <form>
-      <button class="buttonPhase" type="submit" formaction="design.html">design phase</button>
-    </form>
-    <form>
-      <button class="buttonPhase" type="submit" formaction="design-state.html">design state phase</button>
-    </form>
-    <form>
-      <button class="buttonPhase" type="submit" formaction="implementation.html">implementation phase</button>
-    </form>
-    <form>
-      <button class="buttonPhase" type="submit" formaction="implementation-state.html">implementation state phase </button>
-    </form>
+  <div class="window" id="window-id">
+
+    <div class="action-bar" id="action-bar-id">
+      <div class="components" id="components-id">
+      </div>
+    </div>
+
+
+  <div class="graph" id="graph-container">
+    <div class="container-node" id="container-node-id">
+      <div class="container-node-info" id="container-node-info-id"></div>
+    </div>
+    <div class="legend" id="legend-id"></div>
   </div>
 
+  <div class="sidebar" id="sidebar-id">
+    <div class="sidebar-wrapper" id="sidebar-wrapper-id">
+      <div class="info-nodes" id="info-nodes-id"></div>
+      <div class="console-wrapper">
+        <label id="input-label-id">&#10095;</label>
+        <input type="text" placeholder="cmd/ctrl + l or help" maxlength="25" id="console-id"/>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+  <script type="text/javascript" src="src/app.js"></script>
 </body>
 
 </html>

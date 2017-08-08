@@ -244,7 +244,7 @@ const writeGraph = (cy, devices, connections) => {
 
     // loads the created graph on the tool
     cyOptions(cy, `../../graphs/implementation/${timeStamp}.js`)
-    initialize(cy.out)
+    initialize(cy.out, 'implementation')
   })
 }
 
@@ -263,7 +263,7 @@ const readTxtFile = cy => {
   })
 }
 
-module.exports = function pcapImport (cy) {
+module.exports = function pcapImport (cy, phase) {
   const testTcpdump = child.spawnSync('type', ['tcpdump']).status === 0
 
   if (testTcpdump === true) {

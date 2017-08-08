@@ -29,7 +29,7 @@ const imp = require('../src/implementation/implementation.js')
 // require implementation-state modules
 const impState = require('../src/implementation-state/impState.js')
 
-module.exports = function initialize (cy) {
+module.exports = function initialize (cy, phase) {
   // initial label render
   cy.nodes().addClass('label-nodes')
   cy.edges().addClass('label-edges')
@@ -154,19 +154,15 @@ module.exports = function initialize (cy) {
   })
 
   // create the paths of each phase
-  const dgnPath = 'design.html'
-  const dgnStatePath = 'design-state.html'
-  const impPath = 'implementation.html'
-  const impStatePath = 'implementation-state.html'
-
-  // store the last word of the window path to make it cross plaform
-  // blame chromium and its Posix paths on windows for this ugliness
-  const pathLocation = window.location.pathname.split('/').pop()
+  const dgnPath = 'design'
+  const dgnStatePath = 'design-state'
+  const impPath = 'implementation'
+  const impStatePath = 'implementation-state'
 
   // load the buttons for each phase
 
   // load design phase buttons
-  if (pathLocation === dgnPath) {
+  if (phase === dgnPath) {
     dgn.addNode(cy, initialCount)
     dgn.threatVerify(cy)
     dgn.overview(cy)
@@ -174,13 +170,13 @@ module.exports = function initialize (cy) {
     dgn.moduleGroup(cy)
     dgn.addEdge(cy, srcNode, trgNode)
     // load design-state buttons
-  } else if (pathLocation === dgnStatePath) {
+  } else if (phase === dgnStatePath) {
     dgnState.addNode(cy, initialCount)
     dgnState.overview(cy)
     dgnState.validate(cy)
     dgnState.addEdge(cy, srcNode, trgNode)
     // loads implementation phase buttons
-  } else if (pathLocation === impPath) {
+  } else if (phase === impPath) {
     imp.addNode(cy, initialCount)
     imp.overview(cy)
     imp.validate(cy)
@@ -191,7 +187,7 @@ module.exports = function initialize (cy) {
     imp.moduleGroup(cy)
     imp.addEdge(cy, srcNode, trgNode)
     // loads implementation-state buttons
-  } else if (pathLocation === impStatePath) {
+  } else if (phase === impStatePath) {
     impState.addNode(cy, initialCount)
     impState.overview(cy)
     impState.validate(cy)
