@@ -9,7 +9,6 @@
   --gray-color: #abb2bf;
 }*/
 
-
 /*atom dark color theme*/
 :root {
   --main-bg-color: #282c34;
@@ -33,7 +32,8 @@
 
 body {
   background-color: var(--main-bg-color);
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue",
+    sans-serif;
   color: var(--main-tx-color);
   height: 100%;
   width: 100%;
@@ -48,7 +48,9 @@ body {
 }
 
 /*remove outlines*/
-*:focus {outline:none}
+*:focus {
+  outline: none;
+}
 
 .title-bar {
   position: relative;
@@ -66,7 +68,8 @@ body {
   height: 97vh;
   display: grid;
   grid-template-columns: 50px 1fr 165px;
-  grid-template-areas: "action-bar graph sidebar" "action-bar graph sidebar" "action-bar graph sidebar";
+  grid-template-areas: "action-bar graph sidebar" "action-bar graph sidebar"
+    "action-bar graph sidebar";
 }
 
 .action-bar {
@@ -121,7 +124,6 @@ body {
   background-color: var(--black-color);
 }
 
-
 /*.tool {
   background-color: var(--gray-color);
   color: var(--main-bg-color);
@@ -141,7 +143,7 @@ body {
   color: var(--main-tx-color);
 }
 .input-form:focus {
-  border-color: rgba(97, 175, 239,0.6);
+  border-color: rgba(97, 175, 239, 0.6);
 }
 .submit-form {
   background-color: var(--main-bg-color);
@@ -178,7 +180,7 @@ body {
   font-size: 14px;
 }
 input::-webkit-input-placeholder {
- opacity: 0.5;
+  opacity: 0.5;
 }
 
 /*shows node information on hover*/
@@ -209,7 +211,6 @@ input::-webkit-input-placeholder {
   overflow: auto;
 }
 
-
 /*warning to save file on exit*/
 #home-button-id:hover:after {
   content: 'save first';
@@ -233,7 +234,8 @@ input::-webkit-input-placeholder {
   border-color: var(--main-dark-bg-color);
 }
 /*flash color when clicked*/
-.button-icon:active, .icon:active {
+.button-icon:active,
+.icon:active {
   fill: var(--main-tx-color);
 }
 .button-icon:focus {
@@ -317,7 +319,7 @@ input::-webkit-input-placeholder {
   z-index: 2;
   right: 50%;
   text-align: center;
-  box-shadow: 3px 2px 11px 7px rgba(33,37,43,0.7);
+  box-shadow: 3px 2px 11px 7px rgba(33, 37, 43, 0.7);
 }
 .startButtons {
   background-color: var(--main-dark-bg-color);
