@@ -1,9 +1,9 @@
 'use strict'
 
-const design = require('./src/phasesUI/designUI.js')
-const designState = require('./src/phasesUI/designStateUI.js')
-const implementation = require('./src/phasesUI/implementationUI.js')
-const implementationState = require('./src/phasesUI/implementationStateUI.js')
+const designUI = require('./src/phasesUI/designUI.js')
+const designStateUI = require('./src/phasesUI/designStateUI.js')
+const implementationUI = require('./src/phasesUI/implementationUI.js')
+const implementationStateUI = require('./src/phasesUI/implementationStateUI.js')
 
 const graph = document.getElementById('graph-container')
 const wrapper = document.createElement('wrapper')
@@ -43,18 +43,18 @@ wrapper.appendChild(buttonImpState)
 graph.appendChild(wrapper)
 
 buttonDgn.addEventListener('click', () => {
-  design()
+  designUI()
   graph.removeChild(wrapper)
 })
 buttonDgnState.addEventListener('click', () => {
-  designState()
+  designStateUI()
   graph.removeChild(wrapper)
 })
 buttonImp.addEventListener('click', () => {
-  implementation()
+  implementationUI()
   graph.removeChild(wrapper)
 })
 buttonImpState.addEventListener('click', () => {
-  implementationState()
+  implementationStateUI()
   graph.removeChild(wrapper)
 })

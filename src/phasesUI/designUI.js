@@ -1,6 +1,6 @@
 'use strict'
 
-const bindPhases = require('../../src/bindPhases.js')
+const phaseMenu = require('../../src/phaseMenu.js')
 
 module.exports = function designUI () {
   // shows design phase on the title
@@ -162,5 +162,5 @@ module.exports = function designUI () {
 
 </div>`
 
-  bindPhases('design')
+  phaseMenu('design')
 }

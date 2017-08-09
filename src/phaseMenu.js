@@ -1,5 +1,7 @@
 'use strict'
 
+// initial options menu for each phase
+
 const load = require('../src/helpers/load.js')
 const cyOptions = require('../src/helpers/cyOptions.js')
 const initialize = require('../src/initialize.js')
@@ -23,7 +25,7 @@ const debugGraph = (cy, phase) => {
 
 // creates the option menu on startup
 // the element is removed on selection
-module.exports = function bindPhases (phase) {
+module.exports = function phaseMenu (phase) {
   const graph = document.getElementById('graph-container')
   const wrapper = document.createElement('wrapper')
   wrapper.id = 'wrapper-id'
