@@ -60,6 +60,7 @@ body {
   border-color: var(--main-dark-bg-color);
 }
 
+/*sets up the grid view*/
 .window {
   position: relative;
   height: 97vh;
@@ -91,14 +92,12 @@ body {
   overflow: auto;
   -webkit-user-select: text;
 }
-
 .sidebar-wrapper {
   display: flex;
   flex: 1 1 auto;
   flex-direction: column;
   overflow-y: scroll;
 }
-
 .info-nodes {
   display: flex;
   flex: 1 1 92vh;
@@ -106,7 +105,7 @@ body {
   align-items: flex-start;
   align-content: flex-start;
 }
-
+/*data in info-nodes is shown as a bubble*/
 .bubble {
   position: relative;
   background-color: var(--main-dark-bg-color);
@@ -153,6 +152,7 @@ body {
   border-color: var(--main-bg-color);
 }
 
+/*command console*/
 .console-wrapper {
   width: 90%;
   height: 22px;
@@ -181,6 +181,7 @@ input::-webkit-input-placeholder {
  opacity: 0.5;
 }
 
+/*shows node information on hover*/
 .container-node {
   position: absolute;
   opacity: 0.8;
@@ -191,7 +192,6 @@ input::-webkit-input-placeholder {
   overflow: auto;
   z-index: 2;
 }
-
 .container-node-info {
   margin: 5px;
   color: var(--main-tx-color);
@@ -199,6 +199,7 @@ input::-webkit-input-placeholder {
   white-space: pre-wrap;
 }
 
+/*displays node number*/
 .legend {
   bottom: 0;
   margin: 5px;
@@ -217,6 +218,7 @@ input::-webkit-input-placeholder {
   display: none;
 }
 
+/*action bar icons*/
 .icon {
   fill: var(--main-tx-color);
 }
