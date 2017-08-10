@@ -126,6 +126,12 @@ module.exports = function designUI () {
   </svg>
 </button>
 
+<button class="button-icon" id="pattern-button" title="patterns">
+  <svg width="24" height="24">
+    <use xlink:href="icons/search.svg#search" class="icon"></use>
+  </svg>
+</button>
+
 <button class="button-icon" id="save-button">
   <svg width="24" height="24">
     <use xlink:href="icons/save.svg#save" class="icon"></use>

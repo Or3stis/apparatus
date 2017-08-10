@@ -169,6 +169,7 @@ module.exports = function initialize (cy, phase) {
     dgn.validate(cy)
     dgn.moduleGroup(cy)
     dgn.addEdge(cy, srcNode, trgNode)
+    core.findPattern(cy)
     // load design-state buttons
   } else if (phase === dgnStatePath) {
     dgnState.addNode(cy, initialCount)
@@ -183,9 +184,9 @@ module.exports = function initialize (cy, phase) {
     imp.threatVerify(cy)
     imp.vulnVerify(cy)
     imp.findVulnerabilities(cy)
-    imp.findPattern(cy)
     imp.moduleGroup(cy)
     imp.addEdge(cy, srcNode, trgNode)
+    core.findPattern(cy)
     // loads implementation-state buttons
   } else if (phase === impStatePath) {
     impState.addNode(cy, initialCount)
