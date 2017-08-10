@@ -5,7 +5,7 @@
 const rmElement = require('../helpers/rmElement.js')
 
 // create the form
-const createForm = (selectedNode) => {
+const createForm = selectedNode => {
   const htmlElement = document.getElementById('info-nodes-id')
   const form = document.createElement('form')
   form.className = 'bubble'
@@ -16,7 +16,7 @@ const createForm = (selectedNode) => {
   let inputIds = []
 
   const nodeData = selectedNode.data().info
-  Object.keys(nodeData).map((key) => {
+  Object.keys(nodeData).map(key => {
     // won't display the concept attribute
     if (key !== 'concept') {
       label = document.createElement('label')
@@ -49,7 +49,7 @@ const createForm = (selectedNode) => {
   const formId = document.getElementById('form-id')
   // capture the changed values of the node
   formId.onsubmit = () => {
-    inputIds.map((keyValue) => {
+    inputIds.map(keyValue => {
       let id = document.getElementById(keyValue)
       selectedNode.data().info[keyValue] = id.value
     })
@@ -64,7 +64,7 @@ const createForm = (selectedNode) => {
 }
 
 // create the form element
-const formNode = (selectedNode) => {
+const formNode = selectedNode => {
   const form = document.getElementById('form-id')
   if (form !== null) {
     rmElement('info-nodes-id', 'form-id')

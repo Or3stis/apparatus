@@ -29,17 +29,17 @@ module.exports = function layout (cy, selection) {
     // Extra spacing between components in non-compound graphs
     componentSpacing: 100,
     // Node repulsion (non overlapping) multiplier
-    nodeRepulsion: (node) => {
+    nodeRepulsion: node => {
       return 400000
     },
     // Node repulsion (overlapping) multiplier
     nodeOverlap: 10,
     // Ideal edge (non nested) length
-    idealEdgeLength: (edge) => {
+    idealEdgeLength: edge => {
       return 10
     },
     // Divisor to compute edge forces
-    edgeElasticity: (edge) => {
+    edgeElasticity: edge => {
       return 100
     },
     // Nesting factor (multiplier) to compute ideal edge length for nested edges
@@ -124,7 +124,7 @@ module.exports = function layout (cy, selection) {
     condense: false, // uses all available space on false, uses minimal space on true
     rows: undefined, // force num of rows in the grid
     cols: undefined, // force num of columns in the grid
-    position: (node) => {}, // returns { row, col } for element
+    position: node => {}, // returns { row, col } for element
     sort: undefined, // a sorting function to order the nodes; e.g. function(a, b){ return a.data('weight') - b.data('weight') }
     animate: false, // whether to transition the node positions
     animationDuration: 500, // duration of animation in ms if enabled

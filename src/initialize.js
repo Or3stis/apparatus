@@ -209,7 +209,7 @@ module.exports = function initialize (cy, phase) {
 
   core.showNeighbor(cy, selectedNode) // show the neighbors of a tapped node
 
-  core.deleteButton(cy, selectedNode, selectedEdge)   // delete elements
+  core.deleteButton(cy, selectedNode, selectedEdge) // delete elements
 
   totalNodes(cy) // initial node count
 

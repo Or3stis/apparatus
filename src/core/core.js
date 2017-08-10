@@ -118,7 +118,7 @@ const labels = cy => {
 }
 
 // save the graph using the save.js module
-const saveGraph = (cy) => {
+const saveGraph = cy => {
   const buttonSave = document.getElementById('save-button')
   buttonSave.addEventListener('click', () => {
     save(cy)
