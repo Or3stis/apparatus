@@ -197,22 +197,22 @@ module.exports = function initialize (cy, phase) {
 
   // declaration of global buttons
 
-  // highlights only the selected node class
-  core.selectionNode(cy)
-  // cose layout
-  core.graphLayout(cy)
-  // enable label buttons
-  core.labels(cy)
-  // save graph
-  core.saveGraph(cy)
+  core.selectionNode(cy) // highlights only the selected node class
+
+  core.graphLayout(cy) // applies the selected layout
+
+  core.labels(cy) // enable label buttons
+
+  core.saveGraph(cy) // save graph
   // load graph - TODO doesn't work properly
   // core.loadGraph(cy)
-  // show the neighbors of a tapped node
-  core.showNeighbor(cy, selectedNode)
-  // delete elements
-  core.deleteButton(cy, selectedNode, selectedEdge)
-  // initial node count
-  totalNodes(cy)
+
+  core.showNeighbor(cy, selectedNode) // show the neighbors of a tapped node
+
+  core.deleteButton(cy, selectedNode, selectedEdge)   // delete elements
+
+  totalNodes(cy) // initial node count
+
   // enable keybindings
   keybindings(cy, selectedNode, selectedEdge)
 
