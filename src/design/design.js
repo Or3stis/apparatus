@@ -13,17 +13,17 @@ const totalNodes = require('../core/totalNodes.js')
 const threatVerification = require('../core/threatVerification.js')
 const moduleSelection = require('../core/moduleSelection.js')
 
-// add design nodes
+// add design nodes using the addDgnComponent.js
 const addNode = (cy, nodeCounter) => {
   const addNode = document.getElementById('add-component-id')
   addNode.addEventListener('click', event => {
-    nodeCounter += 1
+    nodeCounter += 1 // used for the id of the node
     addDgnComponent(cy, event, nodeCounter)
     cy.nodes().addClass('label-nodes')
     totalNodes(cy) // global module
   })
 }
-// add design edges
+// add design edges using the addDgnEdge.js
 const addEdge = (cy, srcNode, trgNode) => {
   const buttonAddEdge = document.getElementById('add-edge')
   buttonAddEdge.addEventListener('click', () => {
