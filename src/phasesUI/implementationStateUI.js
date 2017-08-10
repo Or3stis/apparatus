@@ -129,5 +129,6 @@ module.exports = function implementationStateUI () {
 
 </div>`
 
+  // linkes the implementation-state UI with the rest of the app
   phaseMenu('implementation-state')
 }

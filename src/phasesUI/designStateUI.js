@@ -124,5 +124,6 @@ module.exports = function designStateUI () {
 
 </div>`
 
+  // links the design-state UI with the rest of the app
   phaseMenu('design-state')
 }

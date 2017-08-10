@@ -193,5 +193,6 @@ module.exports = function implementationUI () {
 
 </div>`
 
+  // links the implementationUI with the rest of the app
   phaseMenu('implementation')
 }

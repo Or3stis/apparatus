@@ -168,5 +168,6 @@ module.exports = function designUI () {
 
 </div>`
 
+  // links the design UI with the rest of the app
   phaseMenu('design')
 }
