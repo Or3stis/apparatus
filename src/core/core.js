@@ -52,6 +52,13 @@ const deleteEl = (cy, selectedNode, selectedEdge) => {
   totalNodes(cy)
 }
 
+// restores deleted nodes from the deleteNodes array
+const restoreNode = () => {
+  if (deletedNodes.length !== 0) {
+    deletedNodes.pop().restore()
+  }
+}
+
 // bind the delete Button
 const deleteButton = (cy, selectedNode, selectedEdge) => {
   const buttonDelete = document.getElementById('delete')
@@ -60,7 +67,8 @@ const deleteButton = (cy, selectedNode, selectedEdge) => {
   })
 }
 
-// cose layout
+// applies the selected layout to the graph
+// uses the layout.js module
 const graphLayout = cy => {
   const buttonLayout = document.getElementById('layout-button')
   buttonLayout.addEventListener('click', e => {
@@ -68,11 +76,11 @@ const graphLayout = cy => {
   })
 }
 
-// find patterns
+// find patterns using the findPattern.js module
 const findPattern = cy => {
   const buttonPattern = document.getElementById('pattern-button')
   buttonPattern.addEventListener('click', () => {
-    patterns(cy) // global module
+    patterns(cy)
   })
 }
 
@@ -109,7 +117,7 @@ const labels = cy => {
   })
 }
 
-// save graph
+// save the graph using the save.js module
 const saveGraph = (cy) => {
   const buttonSave = document.getElementById('save-button')
   buttonSave.addEventListener('click', () => {
@@ -123,22 +131,17 @@ const saveGraph = (cy) => {
 //     load(cy)
 //   })
 // }
-const restoreNode = () => {
-  if (deletedNodes.length !== 0) {
-    deletedNodes.pop().restore()
-  }
-}
 
 module.exports = {
   selectionNode: selectionNode,
   graphLayout: graphLayout,
   deleteButton: deleteButton,
   deleteEl: deleteEl,
+  restoreNode: restoreNode,
   showNeighbor: showNeighbor,
   getNeighbors: getNeighbors,
   findPattern: findPattern,
   labels: labels,
-  saveGraph: saveGraph,
-  restoreNode: restoreNode
+  saveGraph: saveGraph
   // loadGraph: loadGraph
 }
