@@ -27,7 +27,7 @@ module.exports = function console (cy, selectedNode, selectedEdge) {
     labelId.style.color = config.blue
   })
   consoleId.addEventListener('blur', () => {
-    labelId.style.color = config.white
+    labelId.style.color = config.text
   })
 
   // loses the focus from the console when tapping

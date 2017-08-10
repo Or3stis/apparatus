@@ -4,7 +4,7 @@ const config = {}
 
 // Atom's One Dark color theme
 
-config.white = '#abb2bf'
+config.text = '#abb2bf'
 config.black = '#3b4251'
 config.blue = '#61afef'
 config.red = '#be5046'
@@ -17,7 +17,7 @@ config.background = '#282c34'
 
 // Gloom color theme
 
-// config.white = '#dcdcdc'
+// config.text = '#dcdcdc'
 // config.black = '#2d3e4f'
 // config.lightBlue = '#66d9ef'
 // config.blue = '#6d94e5'

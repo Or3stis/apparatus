@@ -8,7 +8,7 @@ graphStyle.style = [{
   selector: 'node',
   style: {
     shape: 'ellipse',
-    'background-color': config.white,
+    'background-color': config.text,
     'text-wrap': 'wrap',
     'text-max-width': '100px'
   }
@@ -16,7 +16,7 @@ graphStyle.style = [{
   selector: 'edge',
   style: {
     'curve-style': 'bezier',
-    'line-color': config.white,
+    'line-color': config.text,
     'width': 2
   }
 }, {
@@ -51,7 +51,7 @@ graphStyle.style = [{
   style: {
     label: 'data(label)',
     'text-valign': 'center',
-    'color': config.white,
+    'color': config.text,
     'text-outline-width': 2,
     'text-outline-color': config.background
   }
@@ -60,8 +60,8 @@ graphStyle.style = [{
   style: {
     label: 'data(label)',
     'target-arrow-shape': 'triangle',
-    'target-arrow-color': config.white,
-    'color': config.white,
+    'target-arrow-color': config.text,
+    'color': config.text,
     'text-outline-width': 2,
     'text-outline-color': config.background
   }
@@ -70,7 +70,7 @@ graphStyle.style = [{
   style: {
     label: 'data(id)',
     'text-valign': 'center',
-    'color': config.white,
+    'color': config.text,
     'text-outline-width': 2,
     'text-outline-color': config.background
   }
@@ -79,7 +79,7 @@ graphStyle.style = [{
   style: {
     label: 'data(info.description)',
     'text-valign': 'center',
-    'color': config.white,
+    'color': config.text,
     'text-outline-width': 2,
     'text-outline-color': config.background
   }
