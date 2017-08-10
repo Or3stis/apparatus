@@ -11,31 +11,35 @@ const addImpStateEdge = require('./addImpStateEdge.js')
 // require global modules
 const totalNodes = require('../core/totalNodes.js')
 
+// adds implementation-state nodes using addImpStateComponent.js
 const addNode = (cy, nodeCounter) => {
   const addNode = document.getElementById('add-component-id')
   addNode.addEventListener('click', event => {
-    nodeCounter += 1
+    nodeCounter += 1 // used for the id of new node
     addImpStateComponent(cy, event, nodeCounter)
     cy.nodes().addClass('label-nodes')
     totalNodes(cy) // global module
   })
 }
-// add imp-state edges
+
+// add imp-state edges using the addImpStateEdge.js
 const addEdge = (cy, srcNode, trgNode) => {
   const buttonAddEdge = document.getElementById('add-edge')
   buttonAddEdge.addEventListener('click', () => {
     addImpStateEdge(cy, srcNode.out, trgNode.out)
-    cy.edges().addClass('label-edges')
+    cy.edges().addClass('label-edges') // shows the labe of the new edge
   })
 }
-// validate model
+
+// validate model using the impStateModelValidation.js
 const validate = cy => {
   const buttonModelValidate = document.getElementById('model-validate-button')
   buttonModelValidate.addEventListener('click', () => {
     impStateModelValidation(cy) // imp-state module
   })
 }
-// model overview
+
+// model overview using impStateOverview.js
 const overview = cy => {
   const buttonOverview = document.getElementById('overview-button')
   buttonOverview.addEventListener('click', () => {
