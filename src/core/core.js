@@ -6,6 +6,7 @@ const layout = require('./layout.js')
 const save = require('../helpers/save.js')
 // const load = require('./load.js')
 const totalNodes = require('./totalNodes.js')
+const patterns = require('./patterns.js')
 
 // highlights only the selected node class
 const selectionNode = cy => {
@@ -64,6 +65,14 @@ const graphLayout = cy => {
   const buttonLayout = document.getElementById('layout-button')
   buttonLayout.addEventListener('click', e => {
     layout(cy, e.target.textContent)
+  })
+}
+
+// find patterns
+const findPattern = cy => {
+  const buttonPattern = document.getElementById('pattern-button')
+  buttonPattern.addEventListener('click', () => {
+    patterns(cy) // global module
   })
 }
 
@@ -127,6 +136,7 @@ module.exports = {
   deleteEl: deleteEl,
   showNeighbor: showNeighbor,
   getNeighbors: getNeighbors,
+  findPattern: findPattern,
   labels: labels,
   saveGraph: saveGraph,
   restoreNode: restoreNode
