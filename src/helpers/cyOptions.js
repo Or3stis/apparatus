@@ -17,7 +17,7 @@ module.exports = function cyOptions (cy, file) {
   })
   layout.run()
 
-  // add the file location to the title bar
+  // add the files location to the title bar
   const titleBar = document.getElementById('title-bar-id')
-  titleBar.innerHTML += ` <i>~/${file}</i<`
+  titleBar.innerHTML += ` <i>~/${file}</i>`
 }
