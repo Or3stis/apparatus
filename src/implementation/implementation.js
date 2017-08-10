@@ -13,7 +13,6 @@ const findVulns = require('./findVulns.js')
 // require global modules
 const totalNodes = require('../core/totalNodes.js')
 const threatVerification = require('../core/threatVerification.js')
-const patterns = require('../core/patterns.js')
 const moduleSelection = require('../core/moduleSelection.js')
 
 const addNode = (cy, nodeCounter) => {
@@ -62,13 +61,7 @@ const findVulnerabilities = cy => {
     findVulns(cy)
   })
 }
-// find patterns
-const findPattern = cy => {
-  const buttonPattern = document.getElementById('pattern-button')
-  buttonPattern.addEventListener('click', () => {
-    patterns(cy) // global module
-  })
-}
+
 // model overview
 const overview = cy => {
   const buttonOverview = document.getElementById('overview-button')
@@ -92,6 +85,5 @@ module.exports = {
   threatVerify: threatVerify,
   vulnVerify: vulnVerify,
   findVulnerabilities: findVulnerabilities,
-  findPattern: findPattern,
   moduleGroup: moduleGroup
 }
