@@ -11,11 +11,7 @@
     "type": "git",
     "url": "git+https://github.com/Or3stis/apparatus"
   },
-  "keywords": [
-    "Electron",
-    "network",
-    "security"
-  ],
+  "keywords": ["Electron", "network", "security"],
   "author": "or3stis",
   "license": "MIT",
   "bugs": {
