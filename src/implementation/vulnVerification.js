@@ -41,6 +41,6 @@ module.exports = function vulnVerification (cy) {
   printChat(result)
 
   if (vulnArray.length <= mitigatedVulns) {
-    printChat('all vulnerabilities are mitigated 🎉')
+    printChat('all vulnerabilities mitigated 🎉')
   }
 }
