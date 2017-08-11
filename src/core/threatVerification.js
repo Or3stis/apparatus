@@ -38,4 +38,8 @@ module.exports = function threatVerification (cy) {
   result = `${result}\n • Threats total: ${threatArray.length}\n`
   result = `${result} • Mitigated total: ${mitigatedThreats}\n`
   printChat(result)
+
+  if (threatArray.length <= mitigatedThreats) {
+    printChat('all threats mitigated 🎉')
+  }
 }
