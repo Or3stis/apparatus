@@ -11,7 +11,11 @@
     "type": "git",
     "url": "git+https://github.com/Or3stis/apparatus"
   },
-  "keywords": ["Electron", "network", "security"],
+  "keywords": [
+    "Electron",
+    "network",
+    "security"
+  ],
   "author": "or3stis",
   "license": "MIT",
   "bugs": {
@@ -20,7 +24,7 @@
   "homepage": "https://github.com/Or3stis/apparatus/#readme",
   "dependencies": {
     "cytoscape": "^3.1.4",
-    "electron": "^1.6.11",
+    "electron": "^1.7.6",
     "jsonfile": "^3.0.1"
   },
   "devDependencies": {
