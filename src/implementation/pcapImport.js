@@ -142,7 +142,7 @@ const createDevicesApplications = devices => {
       label: 'application',
       info: {
         description: 'port ${service}',
-        version: '',
+        version: '${service}',
         update: '',
         concept: 'application'
       }
