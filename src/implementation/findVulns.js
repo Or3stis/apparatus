@@ -7,49 +7,54 @@ const fs = require('fs')
 
 // only checks for the concepts of device and application
 module.exports = function findVuln (cy) {
-  // array that stores the attributes of the concepts that will be checked
-  let keywords = ''
-  // stores the id of the node and the value of the attribute
-  let vulnInfo = {}
+  // stores the nodes keywords
+  let nodesKeywords = []
 
   cy.elements().addClass('faded')
 
   cy.nodes().map(node => {
     if (node.data().info.concept === 'device') {
-      keywords += `• ${node.data().info.type}\n`
-      vulnInfo[node.data().id] = node.data().info.type
+      nodesKeywords.push(node.data().info.type)
 
       node.removeClass('faded')
       node.addClass('attention')
     } else if (node.data().info.concept === 'application') {
-      keywords += `• ${node.data().info.version}\n`
-      vulnInfo[node.data().id] = node.data().info.version
+      nodesKeywords.push(node.data().info.version)
 
       node.removeClass('faded')
       node.addClass('attention')
     }
   })
 
-  if (keywords === '') {
+  if (nodesKeywords.length === 0) {
     printChat('no vulnerabilities were found')
   } else {
+    // removes duplicate keywords
+    const uniqueKeywords = [...new Set(nodesKeywords)]
+
+    // stores the keywords for display
+    let keywordsPrint = ''
+    uniqueKeywords.map(keyword => {
+      keywordsPrint += `• ${keyword}\n`
+    })
+
     printChat('sending request to http://cve/circ.lu')
-    printChat(`☛ keywords used:\n\n${keywords}`)
-    requestVulnData(vulnInfo)
+    printChat(`☛ keywords used:\n\n${keywordsPrint}`)
+    requestVulnData(uniqueKeywords)
   }
 }
 
 // request vulnerability information from cve
-const requestVulnData = vulnInfo => {
+const requestVulnData = nodesKeywords => {
   // get the name of the fileNames
   const title = document.getElementById('title-bar-id')
   const file = title.textContent.split('/').pop()
 
   // stores the CVE list
   let totalVuln = []
-  Object.keys(vulnInfo).map(vuln => {
+  nodesKeywords.map(vuln => {
     http
-      .get(`http://cve.circl.lu/api/search/${vulnInfo[vuln]}`, resp => {
+      .get(`http://cve.circl.lu/api/search/${vuln}`, resp => {
         let data = ''
 
         // A chunk of data has been recieved.
@@ -77,8 +82,8 @@ const requestVulnData = vulnInfo => {
           // })
 
           // displays the total amount of vulnerabilities
-          printChat(
-            `${vulnInfo[vuln]} vulnerabilities found: ${totalVuln.length}`
+          printChatHTML(
+            `${vuln} vulnerabilities found: <strong>${totalVuln.length}</strong>`
           )
         })
       })
