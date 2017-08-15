@@ -70,11 +70,11 @@ module.exports = function console (cy, selectedNode, selectedEdge, phase) {
     document.getElementById('console-id').value = ''
     switch (input) {
       case 'help':
-        if (process.platform === 'darwin') {
-          printChat(helpMenuDarwin)
-        } else {
-          printChat(helpMenu)
-        }
+        // checks the platform to display the corrent help menu
+        process.platform === 'darwin'
+          ? printChat(helpMenuDarwin)
+          : printChat(helpMenu)
+
         printChatHTML(wikiURLButton)
         document.getElementById('url-button').addEventListener('click', () => {
           require('electron').shell.openExternal(url)
@@ -93,11 +93,10 @@ module.exports = function console (cy, selectedNode, selectedEdge, phase) {
   // keydown listeners
   document.addEventListener('keydown', event => {
     let key = ''
-    if (process.platform === 'darwin') {
-      key = event.metaKey
-    } else {
-      key = event.ctrlKey
-    }
+    // checks the platform to assing the meta key
+    process.platform === 'darwin'
+      ? (key = event.metaKey)
+      : (key = event.ctrlKey)
 
     // focus on the consoleId
     if (key === true && event.code === 'KeyL') {
