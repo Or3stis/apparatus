@@ -8,7 +8,7 @@ module.exports = function nodeInfo (node) {
   const nodeData = node.data().info
   Object.keys(nodeData).map(i => {
     // adds the keys of the object to the string
-    if (nodeData.hasOwnProperty(i)) {
+    if (nodeData.hasOwnProperty(i) === true) {
       nodeInfo += `• ${i}: `
     }
     // adds the values of the object to the string
