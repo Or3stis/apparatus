@@ -8,12 +8,13 @@ module.exports = function nodeInfo (node) {
   const nodeData = node.data().info
   Object.keys(nodeData).map(i => {
     // adds the keys of the object to the string
-    if (nodeData.hasOwnProperty(i)) {
+    if (nodeData.hasOwnProperty(i) === true) {
       nodeInfo = `${nodeInfo} • ${i}:`
     }
     // adds the values of the object to the string
     nodeInfo = `${nodeInfo} ${nodeData[i]}\n`
   })
+
   // appends info to the div
   containerNode.style.display = 'block'
   containerNodeInfo.textContent = nodeInfo
