@@ -57,26 +57,24 @@ const requestVulnData = nodesKeywords => {
       .get(`http://cve.circl.lu/api/search/${vuln}`, resp => {
         let data = ''
 
-        // A chunk of data has been recieved.
+        // add each received chunk of data
         resp.on('data', chunk => {
           data += chunk
         })
 
-        // The whole response has been received. Print out the result.
+        // whole response has been received
         resp.on('end', () => {
           // write the results
-
           fs.writeFile(`analysis/vulnerability-${file}`, data, err => {
-            if (err) throw err
+            if (err) console.error(`Error: ${err.message}`)
           })
-          // this works for office
+
+          // this works for single keywords
           Object.values(JSON.parse(data)).map(key => {
-            key.map(info => {
-              // CVE id
-              totalVuln.push(info.id)
-            })
+            // arry with the CVE ids
+            key.map(info => totalVuln.push(info.id))
           })
-          // this works for microsoft/office
+          // this works for double keywords -> vendor/product
           // JSON.parse(data).map((key) => {
           // console.log(key)
           // })
