@@ -1,11 +1,14 @@
 'use strict'
 
 const config = require('../config/config.js')
+
 const core = require('./core/core.js')
 const searchAttribute = require('./core/searchAttribute.js')
+
 const printChat = require('./helpers/printChat.js')
 const printChatHTML = require('./helpers/printChatHTML.js')
 const save = require('./helpers/save.js')
+
 const addDgnEdge = require('./design/addDgnEdge.js')
 const addDgnStateEdge = require('./design-state/addDgnStateEdge.js')
 const addImpEdge = require('./implementation/addImpEdge.js')
