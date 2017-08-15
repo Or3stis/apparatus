@@ -214,7 +214,7 @@ module.exports = function initialize (cy, phase) {
   totalNodes(cy) // initial node count
 
   // enable keybindings
-  keybindings(cy, selectedNode, selectedEdge)
+  keybindings(cy, selectedNode, selectedEdge, phase)
 
   // test function
   const buttonTest = document.getElementById('test-button')
