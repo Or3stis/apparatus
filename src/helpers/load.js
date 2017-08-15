@@ -8,11 +8,10 @@ const cyOptions = require('./cyOptions.js')
 module.exports = function load (cy, phase) {
   // check platform
   let dialogOptions = []
-  if (process.platform === 'darwin') {
-    dialogOptions = ['openFile', 'openDirectory']
-  } else {
-    dialogOptions = ['openFile']
-  }
+  // check the platform
+  process.platform === 'darwin'
+    ? dialogOptions = ['openFile', 'openDirectory']
+    : dialogOptions = ['openFile']
 
   dialog.showOpenDialog(
     {
