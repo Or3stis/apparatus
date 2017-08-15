@@ -14,7 +14,14 @@ const addDgnStateEdge = require('./design-state/addDgnStateEdge.js')
 const addImpEdge = require('./implementation/addImpEdge.js')
 const addImpStateEdge = require('./implementation-state/addImpStateEdge.js')
 
-module.exports = function console (cy, selectedNode, selectedEdge, phase) {
+module.exports = function (
+  cy,
+  selectedNode,
+  selectedEdge,
+  srcNode,
+  trgNode,
+  phase
+) {
   // help menu for macOs
   const helpMenuDarwin = `• focus on console: ⌘L
 • add Edge: ⌘E
@@ -47,21 +54,13 @@ module.exports = function console (cy, selectedNode, selectedEdge, phase) {
     labelId.style.color = config.text
   })
 
-  let srcNode = []
-  let trgNode = []
   // loses the focus from the console when tapping
-  cy.on('tap', 'node', selection => {
-    consoleId.blur()
-
-    // stores the selected nodes for the addEdge keybinding
-    srcNode = trgNode // second selection
-    trgNode = selectedNode.out.data()
-  })
-  cy.on('tap', 'edge', selection => {
-    consoleId.blur()
-  })
+  cy.on('tap', 'node', selection => consoleId.blur())
+  cy.on('tap', 'edge', selection => consoleId.blur())
   cy.on('tap', selection => {
-    consoleId.blur()
+    if (selection.target === cy) {
+      consoleId.blur()
+    }
   })
 
   // console commands
@@ -106,13 +105,13 @@ module.exports = function console (cy, selectedNode, selectedEdge, phase) {
     // add edge
     if (key === true && event.code === 'KeyE') {
       if (phase === 'design') {
-        addDgnEdge(cy, srcNode, trgNode)
+        addDgnEdge(cy, srcNode.out, trgNode.out)
       } else if (phase === 'design-state') {
-        addDgnStateEdge(cy, srcNode, trgNode)
+        addDgnStateEdge(cy, srcNode.out, trgNode.out)
       } else if (phase === 'implementation') {
-        addImpEdge(cy, srcNode, trgNode)
+        addImpEdge(cy, srcNode.out, trgNode.out)
       } else if (phase === 'implementation-state') {
-        addImpStateEdge(cy, srcNode, trgNode)
+        addImpStateEdge(cy, srcNode.out, trgNode.out)
       }
       cy.edges().addClass('label-edges')
     }
