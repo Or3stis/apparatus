@@ -153,16 +153,10 @@ module.exports = function initialize (cy, phase) {
     document.getElementById('container-node-id').style.display = 'none'
   })
 
-  // assign the value for each phase
-  const dgnUI = 'design'
-  const dgnStateUI = 'design-state'
-  const impUI = 'implementation'
-  const impStateUI = 'implementation-state'
-
   // load the buttons for each phase
 
   // load design phase buttons
-  if (phase === dgnUI) {
+  if (phase === 'design') {
     dgn.addNode(cy, initialCount)
     dgn.threatVerify(cy)
     dgn.overview(cy)
@@ -171,13 +165,13 @@ module.exports = function initialize (cy, phase) {
     dgn.addEdge(cy, srcNode, trgNode)
     core.findPattern(cy)
     // load design-state buttons
-  } else if (phase === dgnStateUI) {
+  } else if (phase === 'design-state') {
     dgnState.addNode(cy, initialCount)
     dgnState.overview(cy)
     dgnState.validate(cy)
     dgnState.addEdge(cy, srcNode, trgNode)
     // loads implementation phase buttons
-  } else if (phase === impUI) {
+  } else if (phase === 'implementation') {
     imp.addNode(cy, initialCount)
     imp.overview(cy)
     imp.validate(cy)
@@ -188,7 +182,7 @@ module.exports = function initialize (cy, phase) {
     imp.addEdge(cy, srcNode, trgNode)
     core.findPattern(cy)
     // loads implementation-state buttons
-  } else if (phase === impStateUI) {
+  } else if (phase === 'implementation-state') {
     impState.addNode(cy, initialCount)
     impState.overview(cy)
     impState.validate(cy)
