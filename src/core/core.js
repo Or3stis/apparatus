@@ -3,17 +3,16 @@
 // core modules, shared between all phases
 const nodeSelection = require('./nodeSelection.js')
 const layout = require('./layout.js')
-const save = require('../helpers/save.js')
-// const load = require('./load.js')
 const totalNodes = require('./totalNodes.js')
 const patterns = require('./patterns.js')
+
+const save = require('../helpers/save.js')
+// const load = require('../helpers/load.js')
 
 // highlights only the selected node class
 const selectionNode = cy => {
   const select = document.getElementById('selection-id')
-  select.addEventListener('click', e => {
-    nodeSelection(cy, e.target.textContent)
-  })
+  select.addEventListener('click', e => nodeSelection(cy, e.target.textContent))
 }
 
 // show the neighbors of a tapped node
@@ -36,12 +35,14 @@ const showNeighbor = (cy, selectedNode) => {
 let deletedNodes = []
 // used as module
 const deleteEl = (cy, selectedNode, selectedEdge) => {
+  // removes edges
   if (
     Object.keys(selectedNode).length === 0 &&
     Object.keys(selectedEdge).length !== 0
   ) {
     selectedEdge.remove()
   }
+  // removes nodes and adds them to deletedNodes array
   if (
     Object.keys(selectedEdge).length === 0 &&
     Object.keys(selectedNode).length !== 0
@@ -54,9 +55,7 @@ const deleteEl = (cy, selectedNode, selectedEdge) => {
 
 // restores deleted nodes from the deleteNodes array
 const restoreNode = () => {
-  if (deletedNodes.length !== 0) {
-    deletedNodes.pop().restore()
-  }
+  if (deletedNodes.length !== 0) deletedNodes.pop().restore()
 }
 
 // bind the delete Button
@@ -71,17 +70,13 @@ const deleteButton = (cy, selectedNode, selectedEdge) => {
 // uses the layout.js module
 const graphLayout = cy => {
   const buttonLayout = document.getElementById('layout-button')
-  buttonLayout.addEventListener('click', e => {
-    layout(cy, e.target.textContent)
-  })
+  buttonLayout.addEventListener('click', e => layout(cy, e.target.textContent))
 }
 
 // find patterns using the findPattern.js module
 const findPattern = cy => {
   const buttonPattern = document.getElementById('pattern-button')
-  buttonPattern.addEventListener('click', () => {
-    patterns(cy)
-  })
+  buttonPattern.addEventListener('click', () => patterns(cy))
 }
 
 // enable label buttons
@@ -120,9 +115,7 @@ const labels = cy => {
 // save the graph using the save.js module
 const saveGraph = cy => {
   const buttonSave = document.getElementById('save-button')
-  buttonSave.addEventListener('click', () => {
-    save(cy)
-  })
+  buttonSave.addEventListener('click', () => save(cy))
 }
 // loads a graph
 // const loadGraph = (cy) => {
