@@ -55,13 +55,7 @@ module.exports = function (
   })
 
   // loses the focus from the console when tapping
-  cy.on('tap', 'node', selection => consoleId.blur())
-  cy.on('tap', 'edge', selection => consoleId.blur())
-  cy.on('tap', selection => {
-    if (selection.target === cy) {
-      consoleId.blur()
-    }
-  })
+  cy.on('tap', selection => consoleId.blur())
 
   // console commands
   const commands = () => {
