@@ -15,7 +15,7 @@ const addImpEdge = require('./implementation/addImpEdge.js')
 const addImpStateEdge = require('./implementation-state/addImpStateEdge.js')
 
 module.exports = function console (cy, selectedNode, selectedEdge, phase) {
-  // help menu
+  // help menu for macOs
   const helpMenuDarwin = `• focus on console: ⌘L
 • add Edge: ⌘E
 • delete element: ⌘⌫
@@ -24,6 +24,7 @@ module.exports = function console (cy, selectedNode, selectedEdge, phase) {
 • clear sidebar: clear
 • keyword search for attributes`
 
+  // help menu for Linux and Windows
   const helpMenu = `• focus on console: ctrl+L
 • add Edge: ctrl+E
 • delete element: ctrl+backspace
