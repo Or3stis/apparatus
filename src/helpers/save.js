@@ -21,7 +21,7 @@ module.exports = function save (cy) {
     fileToSave => {
       jsonfile.writeFile(fileToSave, fullgraph, err => {
         if (err) {
-          throw err
+          console.error(err.message)
         } else {
           printChat('graph saved\n👍')
         }
