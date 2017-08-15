@@ -98,16 +98,19 @@ module.exports = function (
 
     // add edge
     if (key === true && event.code === 'KeyE') {
-      if (phase === 'design') {
-        addDgnEdge(cy, srcNode.out, trgNode.out)
-      } else if (phase === 'design-state') {
-        addDgnStateEdge(cy, srcNode.out, trgNode.out)
-      } else if (phase === 'implementation') {
-        addImpEdge(cy, srcNode.out, trgNode.out)
-      } else if (phase === 'implementation-state') {
-        addImpStateEdge(cy, srcNode.out, trgNode.out)
+      // checks for undefined selections
+      if (Object.keys(srcNode.out).length !== 0) {
+        if (phase === 'design') {
+          addDgnEdge(cy, srcNode.out, trgNode.out)
+        } else if (phase === 'design-state') {
+          addDgnStateEdge(cy, srcNode.out, trgNode.out)
+        } else if (phase === 'implementation') {
+          addImpEdge(cy, srcNode.out, trgNode.out)
+        } else if (phase === 'implementation-state') {
+          addImpStateEdge(cy, srcNode.out, trgNode.out)
+        }
+        cy.edges().addClass('label-edges')
       }
-      cy.edges().addClass('label-edges')
     }
 
     // delete elements
