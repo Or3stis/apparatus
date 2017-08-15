@@ -43,10 +43,12 @@ const nodeMenu = (cy, selection, selectedNode) => {
       } else if (event === 'delete') {
         core.deleteEl(cy, selectedNode, 0)
       }
+      // removes the menu on selection
       rmElement('window-id', 'nodeMenu-id')
     })
     graph.appendChild(nodeMenu)
   } else {
+    // removes the menu on selection
     rmElement('window-id', 'nodeMenu-id')
   }
 }
@@ -78,9 +80,11 @@ const stageMenu = (cy, selection) => {
       if (event === 'restore node') {
         core.restoreNode()
       }
+      // removes the menu on selection
       rmElement('window-id', 'stageMenu-id')
     })
   } else {
+    // removes the menu on selection
     rmElement('window-id', 'stageMenu-id')
   }
 }
