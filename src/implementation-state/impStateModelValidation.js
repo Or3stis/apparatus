@@ -2,7 +2,7 @@
 
 const impStateMetamodel = require('./impStateSchema.js')
 const printChat = require('../helpers/printChat.js')
-// checks if the instance is correct
+// checks if the model is correct
 
 module.exports = function moduleValidation (cy) {
   // valid component connections
@@ -19,6 +19,7 @@ module.exports = function moduleValidation (cy) {
         // stores the neighboring nodes of the component
         const neighborNodes = node.neighborhood().add(node)
         const neigborObject = neighborNodes.data().info.concept
+
         Object.keys(neigborObject).map(() => {
           // every neighbor node is added to the array arrWrong
           arrWrong.push(neigborObject)

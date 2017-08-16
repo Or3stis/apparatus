@@ -32,7 +32,7 @@ module.exports = function findVuln (cy) {
     // removes duplicate keywords
     const uniqueKeywords = [...new Set(nodesKeywords)]
 
-    // stores the keywords for display
+    // stores the keywords for print
     let keywordsPrint = ''
     uniqueKeywords.map(keyword => {
       keywordsPrint += `• ${keyword}\n`

@@ -23,6 +23,7 @@ const addNode = (cy, nodeCounter) => {
     totalNodes(cy) // global module
   })
 }
+
 // add design edges using the addDgnEdge.js
 const addEdge = (cy, srcNode, trgNode) => {
   const buttonAddEdge = document.getElementById('add-edge')
@@ -31,6 +32,7 @@ const addEdge = (cy, srcNode, trgNode) => {
     cy.edges().addClass('label-edges')
   })
 }
+
 // validate model
 const validate = cy => {
   const buttonModelValidate = document.getElementById('model-validate-button')
@@ -38,6 +40,7 @@ const validate = cy => {
     dgnModelValidation(cy)
   })
 }
+
 // verify threats
 const threatVerify = cy => {
   const buttonThreatVefiry = document.getElementById('threat-verify-button')
@@ -45,6 +48,7 @@ const threatVerify = cy => {
     threatVerification(cy) // global module
   })
 }
+
 // model overview
 const overview = cy => {
   const buttonOverview = document.getElementById('overview-button')
@@ -52,6 +56,7 @@ const overview = cy => {
     dgnOverview(cy)
   })
 }
+
 // module selection
 const moduleGroup = cy => {
   const group = document.getElementById('module-group')
