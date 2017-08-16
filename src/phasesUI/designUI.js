@@ -24,16 +24,16 @@ module.exports = function designUI () {
     </svg>
   </button>
   <ul class="dropdown-menu">
-    <li><a href="#thing">thing</a></li>
-    <li><a href="#information">information</a></li>
-    <li><a href="#micronet">micronet</a></li>
-    <li><a href="#threat">threat</a></li>
-    <li><a href="#asset">asset</a></li>
-    <li><a href="#constraint">constraint</a></li>
-    <li><a href="#actor">actor</a></li>
-    <li><a href="#malicious actor">malicious actor</a></li>
-    <li><a href="#net">net</a></li>
-    <li><a href="#sensor">sensor</a></li>
+    <li><a>thing</a></li>
+    <li><a>information</a></li>
+    <li><a>micronet</a></li>
+    <li><a>threat</a></li>
+    <li><a>asset</a></li>
+    <li><a>constraint</a></li>
+    <li><a>actor</a></li>
+    <li><a>malicious actor</a></li>
+    <li><a>net</a></li>
+    <li><a>sensor</a></li>
   </ul>
 </div>
 
@@ -56,16 +56,16 @@ module.exports = function designUI () {
     </svg>
   </button>
   <ul class="dropdown-menu">
-    <li><a href="#thing">thing</a></li>
-    <li><a href="#information">information</a></li>
-    <li><a href="#micronet">micronet</a></li>
-    <li><a href="#threat">threat</a></li>
-    <li><a href="#asset">asset</a></li>
-    <li><a href="#constraint">constraint</a></li>
-    <li><a href="#actor">actor</a></li>
-    <li><a href="#malicious actor">malicious actor</a></li>
-    <li><a href="#net">net</a></li>
-    <li><a href="#sensor">sensor</a></li>
+    <li><a>thing</a></li>
+    <li><a>information</a></li>
+    <li><a>micronet</a></li>
+    <li><a>threat</a></li>
+    <li><a>asset</a></li>
+    <li><a>constraint</a></li>
+    <li><a>actor</a></li>
+    <li><a>malicious actor</a></li>
+    <li><a>net</a></li>
+    <li><a>sensor</a></li>
   </ul>
 </div>
 
@@ -76,14 +76,14 @@ module.exports = function designUI () {
     </svg>
   </button>
   <ul class="dropdown-menu">
-    <li><a href="#network">network</a></li>
-    <li><a href="#security">security</a></li>
-    <li><a href="#social">social</a></li>
-    <li><a href="#sensing">sensing</a></li>
-    <li><a href="#network-security">network-security</a></li>
-    <li><a href="#network-sensing">network-sensing</a></li>
-    <li><a href="#security-sensing">security-sensing</a></li>
-    <li><a href="#network-social">network-social</a></li>
+    <li><a>network</a></li>
+    <li><a>security</a></li>
+    <li><a>social</a></li>
+    <li><a>sensing</a></li>
+    <li><a>network-security</a></li>
+    <li><a>network-sensing</a></li>
+    <li><a>security-sensing</a></li>
+    <li><a>network-social</a></li>
   </ul>
 </div>
 
@@ -94,11 +94,11 @@ module.exports = function designUI () {
     </svg>
   </button>
   <ul class="dropdown-menu">
-    <li><a href="#cose">cose</a></li>
-    <li><a href="#breadthfirst">breadthfirst</a></li>
-    <li><a href="#breadthfirst(circle)">breadthfirst(circle)</a></li>
-    <li><a href="#circle">circle</a></li>
-    <li><a href="#grid">grid</a></li>
+    <li><a>cose</a></li>
+    <li><a>breadthfirst</a></li>
+    <li><a>breadthfirst(circle)</a></li>
+    <li><a>circle</a></li>
+    <li><a>grid</a></li>
   </ul>
 </div>
 
