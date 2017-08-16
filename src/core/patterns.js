@@ -5,7 +5,7 @@ const rmElement = require('../helpers/rmElement.js')
 
 module.exports = function patterns (cy) {
   // search pattern
-  const flagNodes = pattern => {
+  const searchPattern = pattern => {
     // flagged attributes
     let flaggedNodes = ''
     // apply the faded class to all the elements
@@ -58,7 +58,7 @@ module.exports = function patterns (cy) {
 
     rmElement('info-nodes-id', 'form-id')
 
-    flagNodes(pattern)
+    searchPattern(pattern)
     // return false to prevent the default form behavior
     return false
   }
