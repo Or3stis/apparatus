@@ -14,10 +14,12 @@ const commonPorts = {
   80: 'HTTP',
   81: 'TOR',
   88: 'Kerberos',
+  110: 'POP3',
   115: 'SFTP',
   118: 'SQL Server',
   128: 'gss-xlicen',
   135: 'loc-srv',
+  143: 'IMAP',
   150: 'sql-net',
   443: 'HTTPS',
   513: 'rlogin',
@@ -41,6 +43,7 @@ const commonPorts = {
   2831: 'silkp3',
   2832: 'silkp4',
   2833: 'glishd',
+  3389: 'Remote Desktop Protocol',
   5357: 'wsdapi',
   8080: 'HTTP Proxy'
 }
