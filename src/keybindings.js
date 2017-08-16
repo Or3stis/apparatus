@@ -40,7 +40,7 @@ module.exports = function (
 • clear sidebar: clear
 • keyword search for attributes`
 
-  // adds the url for the wiki
+  // adds the url of the github wiki
   const wikiURLButton = `click to view <button id='url-button' class='startButtons' style='background-color:#3b4251; width: 40px; height: 25px;'>wiki</button>`
   const url = 'https://github.com/Or3stis/apparatus/wiki'
 
@@ -61,6 +61,7 @@ module.exports = function (
   const commands = () => {
     const input = document.getElementById('console-id').value
     document.getElementById('console-id').value = ''
+
     switch (input) {
       case 'help':
         // checks the platform to display the corrent help menu
