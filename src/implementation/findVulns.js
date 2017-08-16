@@ -38,7 +38,7 @@ module.exports = function findVuln (cy) {
       keywordsPrint += `• ${keyword}\n`
     })
 
-    printChat('sending request to http://cve/circ.lu')
+    printChat('sending request to http://cve.circl.lu/api/')
     printChat(`☛ keywords used:\n\n${keywordsPrint}`)
     requestVulnData(uniqueKeywords)
   }
