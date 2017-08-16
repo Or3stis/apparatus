@@ -24,12 +24,12 @@ module.exports = function implementationStateUI () {
       </svg>
     </button>
     <ul class="dropdown-menu">
-      <li><a href="#model">model</a></li>
-      <li><a href="#event sensor">event sensor</a></li>
-      <li><a href="#report sensor">report sensor</a></li>
-      <li><a href="#control sensor">control sensor</a></li>
-      <li><a href="#high-level event">high-level event</a></li>
-      <li><a href="#low-level event">low-level event</a></li>
+      <li><a>model</a></li>
+      <li><a>event sensor</a></li>
+      <li><a>report sensor</a></li>
+      <li><a>control sensor</a></li>
+      <li><a>high-level event</a></li>
+      <li><a>low-level event</a></li>
     </ul>
   </div>
 
@@ -52,12 +52,12 @@ module.exports = function implementationStateUI () {
       </svg>
     </button>
     <ul class="dropdown-menu">
-      <li><a href="#event sensor">event sensor</a></li>
-      <li><a href="#report sensor">report sensor</a></li>
-      <li><a href="#control sensor">control sensor</a></li>
-      <li><a href="#model">model</a></li>
-      <li><a href="#high-level event">high-level event</a></li>
-      <li><a href="#low-level event">low-level event</a></li>
+      <li><a>model</a></li>
+      <li><a>event sensor</a></li>
+      <li><a>report sensor</a></li>
+      <li><a>control sensor</a></li>
+      <li><a>high-level event</a></li>
+      <li><a>low-level event</a></li>
     </ul>
   </div>
 
@@ -68,11 +68,11 @@ module.exports = function implementationStateUI () {
       </svg>
     </button>
     <ul class="dropdown-menu">
-      <li><a href="#cose">cose</a></li>
-      <li><a href="#breadthfirst">breadthfirst</a></li>
-      <li><a href="#breadthfirst(circle)">breadthfirst(circle)</a></li>
-      <li><a href="#circle">circle</a></li>
-      <li><a href="#grid">grid</a></li>
+      <li><a>cose</a></li>
+      <li><a>breadthfirst</a></li>
+      <li><a>breadthfirst(circle)</a></li>
+      <li><a>circle</a></li>
+      <li><a>grid</a></li>
     </ul>
   </div>
 

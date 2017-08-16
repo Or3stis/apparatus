@@ -49,8 +49,8 @@ module.exports = function designStateUI () {
       </svg>
     </button>
     <ul class="dropdown-menu">
-      <li><a>sensor</a></li>
       <li><a>model</a></li>
+      <li><a>sensor</a></li>
       <li><a>event</a></li>
     </ul>
   </div>
