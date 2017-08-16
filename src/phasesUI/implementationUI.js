@@ -24,23 +24,23 @@ module.exports = function implementationUI () {
      </svg>
     </button>
     <ul class="dropdown-menu">
-      <li><a href="#device">device</a></li>
-      <li><a href="#network connection">network connection</a></li>
-      <li><a href="#application">application</a></li>
-      <li><a href="#information">information</a></li>
-      <li><a href="#micronet">micronet</a></li>
-      <li><a href="#threat">threat</a></li>
-      <li><a href="#vulnerability">vulnerability</a></li>
-      <li><a href="#asset">asset</a></li>
-      <li><a href="#constraint">constraint</a></li>
-      <li><a href="#mechanism">mechanism</a></li>
-      <li><a href="#actor">actor</a></li>
-      <li><a href="#malicious actor">malicious actor</a></li>
-      <li><a href="#unidentified node">unidentified node</a></li>
-      <li><a href="#net">net</a></li>
-      <li><a href="#event sensor">event sensor</a></li>
-      <li><a href="#report sensor">report sensor</a></li>
-      <li><a href="#control sensor">control sensor</a></li>
+      <li><a>device</a></li>
+      <li><a>network connection</a></li>
+      <li><a>application</a></li>
+      <li><a>information</a></li>
+      <li><a>micronet</a></li>
+      <li><a>threat</a></li>
+      <li><a>vulnerability</a></li>
+      <li><a>asset</a></li>
+      <li><a>constraint</a></li>
+      <li><a>mechanism</a></li>
+      <li><a>actor</a></li>
+      <li><a>malicious actor</a></li>
+      <li><a>unidentified node</a></li>
+      <li><a>net</a></li>
+      <li><a>event sensor</a></li>
+      <li><a>report sensor</a></li>
+      <li><a>control sensor</a></li>
     </ul>
   </div>
 
@@ -63,23 +63,23 @@ module.exports = function implementationUI () {
       </svg>
     </button>
     <ul class="dropdown-menu">
-      <li><a href="#device">device</a></li>
-      <li><a href="#network connection">network connection</a></li>
-      <li><a href="#application">application</a></li>
-      <li><a href="#information">information</a></li>
-      <li><a href="#micronet">micronet</a></li>
-      <li><a href="#threat">threat</a></li>
-      <li><a href="#vulnerability">vulnerability</a></li>
-      <li><a href="#asset">asset</a></li>
-      <li><a href="#constraint">constraint</a></li>
-      <li><a href="#mechanism">mechanism</a></li>
-      <li><a href="#actor">actor</a></li>
-      <li><a href="#malicious actor">malicious actor</a></li>
-      <li><a href="#unidentified node">unidentified node</a></li>
-      <li><a href="#net">net</a></li>
-      <li><a href="#event sensor">event sensor</a></li>
-      <li><a href="#report sensor">report sensor</a></li>
-      <li><a href="#control sensor">control sensor</a></li>
+      <li><a>device</a></li>
+      <li><a>network connection</a></li>
+      <li><a>application</a></li>
+      <li><a>information</a></li>
+      <li><a>micronet</a></li>
+      <li><a>threat</a></li>
+      <li><a>vulnerability</a></li>
+      <li><a>asset</a></li>
+      <li><a>constraint</a></li>
+      <li><a>mechanism</a></li>
+      <li><a>actor</a></li>
+      <li><a>malicious actor</a></li>
+      <li><a>unidentified node</a></li>
+      <li><a>net</a></li>
+      <li><a>event sensor</a></li>
+      <li><a>report sensor</a></li>
+      <li><a>control sensor</a></li>
     </ul>
   </div>
 
@@ -90,14 +90,14 @@ module.exports = function implementationUI () {
       </svg>
     </button>
     <ul class="dropdown-menu">
-      <li><a href="#network">network</a></li>
-      <li><a href="#security">security</a></li>
-      <li><a href="#social">social</a></li>
-      <li><a href="#sensing">sensing</a></li>
-      <li><a href="#network-security">network-security</a></li>
-      <li><a href="#network-sensing">network-sensing</a></li>
-      <li><a href="#security-sensing">security-sensing</a></li>
-      <li><a href="#network-social">network-social</a></li>
+      <li><a>network</a></li>
+      <li><a>security</a></li>
+      <li><a>social</a></li>
+      <li><a>sensing</a></li>
+      <li><a>network-security</a></li>
+      <li><a>network-sensing</a></li>
+      <li><a>security-sensing</a></li>
+      <li><a>network-social</a></li>
     </ul>
   </div>
 
@@ -108,11 +108,11 @@ module.exports = function implementationUI () {
       </svg>
     </button>
     <ul class="dropdown-menu">
-      <li><a href="#cose">cose</a></li>
-      <li><a href="#breadthfirst">breadthfirst</a></li>
-      <li><a href="#breadthfirst(circle)">breadthfirst(circle)</a></li>
-      <li><a href="#circle">circle</a></li>
-      <li><a href="#grid">grid</a></li>
+      <li><a>cose</a></li>
+      <li><a>breadthfirst</a></li>
+      <li><a>breadthfirst(circle)</a></li>
+      <li><a>circle</a></li>
+      <li><a>grid</a></li>
     </ul>
   </div>
 
