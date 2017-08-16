@@ -24,9 +24,9 @@ module.exports = function designStateUI () {
       </svg>
     </button>
     <ul class="dropdown-menu">
-      <li><a href="#model">model</a></li>
-      <li><a href="#sensor">sensor</a></li>
-      <li><a href="#event">event</a></li>
+      <li><a>model</a></li>
+      <li><a>sensor</a></li>
+      <li><a>event</a></li>
     </ul>
   </div>
 
@@ -49,9 +49,9 @@ module.exports = function designStateUI () {
       </svg>
     </button>
     <ul class="dropdown-menu">
-      <li><a href="#sensor">sensor</a></li>
-      <li><a href="#model">model</a></li>
-      <li><a href="#event">event</a></li>
+      <li><a>sensor</a></li>
+      <li><a>model</a></li>
+      <li><a>event</a></li>
     </ul>
   </div>
 
@@ -62,11 +62,11 @@ module.exports = function designStateUI () {
       </svg>
     </button>
     <ul class="dropdown-menu">
-      <li><a href="#cose">cose</a></li>
-      <li><a href="#breadthfirst">breadthfirst</a></li>
-      <li><a href="#breadthfirst(circle)">breadthfirst(circle)</a></li>
-      <li><a href="#circle">circle</a></li>
-      <li><a href="#grid">grid</a></li>
+      <li><a>cose</a></li>
+      <li><a>breadthfirst</a></li>
+      <li><a>breadthfirst(circle)</a></li>
+      <li><a>circle</a></li>
+      <li><a>grid</a></li>
     </ul>
   </div>
 
