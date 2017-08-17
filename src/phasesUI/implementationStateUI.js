@@ -73,6 +73,7 @@ module.exports = function implementationStateUI () {
       <li><a>breadthfirst(circle)</a></li>
       <li><a>circle</a></li>
       <li><a>grid</a></li>
+      <li><a>concentric</a></li>
     </ul>
   </div>
 

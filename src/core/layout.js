@@ -4,6 +4,7 @@
 
 // changes the layout of the graph
 module.exports = function layout (cy, selection) {
+  // cose layout
   const coseLayout = cy.layout({
     name: 'cose',
     // Called on `layoutready`
@@ -57,6 +58,8 @@ module.exports = function layout (cy, selection) {
     // Pass a reference to weaver to use threads for calculations
     weaver: false
   })
+
+  // breadthfirst layout
   const breadLayout = cy.layout({
     name: 'breadthfirst',
     fit: true,
@@ -75,6 +78,8 @@ module.exports = function layout (cy, selection) {
     ready: undefined, // callback on layoutready
     stop: undefined // callback on layoutstop
   })
+
+  // breadthfirst in circle layout
   const breadLayoutCircle = cy.layout({
     name: 'breadthfirst',
     fit: true,
@@ -93,6 +98,8 @@ module.exports = function layout (cy, selection) {
     ready: undefined, // callback on layoutready
     stop: undefined // callback on layoutstop
   })
+
+  // circular layout
   const circle = cy.layout({
     name: 'circle',
     fit: true,
@@ -112,6 +119,8 @@ module.exports = function layout (cy, selection) {
     ready: undefined, // callback on layoutready
     stop: undefined // callback on layoutstop
   })
+
+  // grid layout
   const grid = cy.layout({
     name: 'grid',
     fit: true,
@@ -133,6 +142,43 @@ module.exports = function layout (cy, selection) {
     stop: undefined // callback on layoutstop
   })
 
+  const concentric = cy.layout({
+    name: 'concentric',
+
+    fit: true, // whether to fit the viewport to the graph
+    padding: 30, // the padding on fit
+    startAngle: 3 / 2 * Math.PI, // where nodes start in radians
+    sweep: undefined, // how many radians should be between the first and last
+    clockwise: true, // whether the layout should go clockwise (true)
+    equidistant: true, // whether levels have an equal radial distance betwen them, may cause bounding box overflow
+    minNodeSpacing: 90, // min spacing between outside of nodes
+    boundingBox: undefined, // constrain layout bounds;
+    avoidOverlap: true, // prevents node overlap
+    nodeDimensionsIncludeLabels: false, // Excludes the label when calculating node bounding boxes for the layout algorithm
+    height: undefined, // height of layout area (overrides container height)
+    width: undefined, // width of layout area (overrides container width)
+    spacingFactor: undefined, // Applies a multiplicative factor (>0) to expand or compress the overall area that the nodes take up
+    concentric: node => {
+      // returns numeric value for each node, placing higher nodes in levels towards the centre
+      return node.degree()
+    },
+    levelWidth: nodes => {
+      // the letiation of concentric values in each level
+      return nodes.maxDegree() / 2
+    },
+    animate: false, // whether to transition the node positions
+    animationDuration: 500, // duration of animation in ms if enabled
+    animationEasing: undefined, // easing of animation if enabled
+    animateFilter: (node, i) => {
+      return true
+    }, // a function that determines whether the node should be animated.  All nodes animated by default on animate enabled.  Non-animated nodes are positioned immediately when the layout starts
+    ready: undefined, // callback on layoutready
+    stop: undefined, // callback on layoutstop
+    transform: (node, position) => {
+      return position
+    }
+  })
+
   switch (selection) {
     case 'cose':
       coseLayout.run()
@@ -148,6 +194,9 @@ module.exports = function layout (cy, selection) {
       break
     case 'breadthfirst(circle)':
       breadLayoutCircle.run()
+      break
+    case 'concentric':
+      concentric.run()
       break
     default:
       console.error('error in layout.js')
