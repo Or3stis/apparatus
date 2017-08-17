@@ -41,7 +41,7 @@ module.exports = function (
 • keyword search for attributes`
 
   // adds the url of the github wiki
-  const wikiURLButton = `click to view <button id='url-button' class='startButtons' style='background-color:#3b4251; width: 40px; height: 25px;'>wiki</button>`
+  const wikiURLButton = `click to view <button id='url-button' class='startButtons' style='color: ${config.text}; background-color:${config.background}; width: 40px; height: 25px;'>wiki</button>`
   const url = 'https://github.com/Or3stis/apparatus/wiki'
 
   const consoleId = document.getElementById('console-id')
