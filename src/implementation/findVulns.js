@@ -64,8 +64,9 @@ const requestVulnData = nodesKeywords => {
 
         // whole response has been received
         resp.on('end', () => {
-          // write the results
-          fs.writeFile(`analysis/vulnerability-${file}`, data, err => {
+          // write the results in a .json file
+          // ${file} has the .js extension, the ${file}on has the .json
+          fs.writeFile(`analysis/vulnerability-${file}on`, data, err => {
             if (err) console.error(`Error: ${err.message}`)
           })
 
@@ -90,6 +91,6 @@ const requestVulnData = nodesKeywords => {
       })
   })
   printChatHTML(
-    `analysis results will be stored at\n<strong>./analysis/vulnerability-${file}</strong>`
+    `analysis results will be stored at\n<strong>./analysis/vulnerability-${file}on</strong>`
   )
 }
