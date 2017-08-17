@@ -15,18 +15,17 @@ config.magenta = '#c678dd'
 config.cyan = '#56b6c2'
 config.background = '#282c34'
 
-// Gloom color theme
+// Atom's One Light color theme
 
-// config.text = '#dcdcdc'
+// config.text = '#383a42'
 // config.black = '#2d3e4f'
-// config.lightBlue = '#66d9ef'
-// config.blue = '#6d94e5'
-// config.red = '#ed4781'
+// config.blue = '#3399cd'
+// config.red = '#e45649'
 // config.orange = '#cf8772'
-// config.green = '#2de0a7'
-// config.yellow = '#ffbc69'
+// config.green = '#50a14f'
+// config.yellow = '#986901'
 // config.magenta = '#a381ff'
-// config.cyan = '#6dfedf'
-// config.background = '#292a44'
+// config.cyan = '#a626a4'
+// config.background = '#fafafa'
 
 module.exports = config
