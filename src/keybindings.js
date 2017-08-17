@@ -70,6 +70,7 @@ module.exports = function (
           : printChat(helpMenu)
 
         printChatHTML(wikiURLButton)
+        // opens the wiki page with the default browser
         document.getElementById('url-button').addEventListener('click', () => {
           require('electron').shell.openExternal(url)
         })
