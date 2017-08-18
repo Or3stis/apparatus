@@ -42,7 +42,6 @@ module.exports = function (
 
   // adds the url of the github wiki
   const wikiURLButton = `click to view <button id='url-button' class='startButtons' style='color: ${config.text}; background-color:${config.background}; width: 40px; height: 25px;'>wiki</button>`
-  const url = 'https://github.com/Or3stis/apparatus/wiki'
 
   const consoleId = document.getElementById('console-id')
   const labelId = document.getElementById('input-label-id')
@@ -72,7 +71,7 @@ module.exports = function (
         printChatHTML(wikiURLButton)
         // opens the wiki page with the default browser
         document.getElementById('url-button').addEventListener('click', () => {
-          require('electron').shell.openExternal(url)
+          require('electron').shell.openExternal(config.wikiUrl)
         })
         break
       case '':

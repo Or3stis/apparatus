@@ -1,9 +1,11 @@
 // finds vulnerabilities from CVE database
 
-const printChat = require('../helpers/printChat.js')
-const printChatHTML = require('../helpers/printChatHTML.js')
 const http = require('http')
 const fs = require('fs')
+
+const config = require('../../config/config.js')
+const printChat = require('../helpers/printChat.js')
+const printChatHTML = require('../helpers/printChatHTML.js')
 
 // only checks for the concepts of device and application
 module.exports = function findVuln (cy) {
@@ -38,7 +40,7 @@ module.exports = function findVuln (cy) {
       keywordsPrint += `• ${keyword}\n`
     })
 
-    printChat('sending request to http://cve.circl.lu/api/')
+    printChat(`sending request to ${config.cveSearchUrl}`)
     printChat(`☛ keywords used:\n\n${keywordsPrint}`)
     requestVulnData(uniqueKeywords)
   }
@@ -54,7 +56,7 @@ const requestVulnData = nodesKeywords => {
   let totalVuln = []
   nodesKeywords.map(vuln => {
     http
-      .get(`http://cve.circl.lu/api/search/${vuln}`, resp => {
+      .get(`${config.cveSearchUrl}${vuln}`, resp => {
         let data = ''
 
         // add each received chunk of data

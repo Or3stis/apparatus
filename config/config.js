@@ -28,4 +28,11 @@ config.background = '#282c34'
 // config.cyan = '#a626a4'
 // config.background = '#fafafa'
 
+// urls
+
+// url for the ASTo wiki
+config.wikiUrl = 'https://github.com/Or3stis/apparatus/wiki'
+// url for searching vulnerabilities
+config.cveSearchUrl = 'http://cve.circl.lu/api/search/'
+
 module.exports = config
