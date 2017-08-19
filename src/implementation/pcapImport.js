@@ -42,7 +42,9 @@ const storeConnections = txtData => {
       connection.push(`${row[1]} ${row[3].replace(':', '')} ${row[4]}`)
     }
   })
+  // stores the unique devices concepts based on the IPs addresses
   deviceNodes = [...new Set(srcNodes.concat(trgNodes))]
+  // stores the unique transmissions between source and target devices
   allConnections = [...new Set(connection)]
 }
 
@@ -63,6 +65,9 @@ const removeServices = allConnections => {
     trg.pop()
     let trgIP = trg.join('.')
 
+    // attempt to remove the duplicate connections
+    // some connections have the same nodes but in opposite directions
+    // src -> trg to trg -> src, this cause the srcipt to render them twice
     if (counter % 2 === 1) {
       uniqueLine.push(`${srcIP} ${trgIP} ${element[2]}`)
     } else if (counter % 2 === 0) {
@@ -70,7 +75,7 @@ const removeServices = allConnections => {
     }
     counter += 1
   })
-
+  // stores the unique transmissions between source and target devices
   uniqueConnections = [...new Set(uniqueLine)]
 }
 
@@ -93,13 +98,13 @@ const storeUniqueDevicesServices = devices => {
       uniqueDevices.push(nodeIP)
     }
   })
+  // store the unique nodes with the device concept
   uniqueDevices = [...new Set(uniqueDevices)]
 }
 
 // unified counter to create the nodes
 let idCounter = 0
 const createDevices = uniqueDevicesServices => {
-  // let idCounterDevice = 0
   Object.keys(uniqueDevicesServices).map(deviceIp => {
     nodeContentJs += `
   {
