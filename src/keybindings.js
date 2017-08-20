@@ -31,8 +31,8 @@ module.exports = function (
 • restore node: ⌘Z
 • save as: ⇧⌘S
 • clear sidebar: clear
-• type 'toggle' to change color theme
-• type any attribute 'keyword' to search nodes`
+• change color theme: toggle
+• search for attribures: keyword`
 
   // help menu for Linux and Windows
   const helpMenu = `• focus on console: ctrl+L
@@ -41,8 +41,8 @@ module.exports = function (
 • restore node: ctrl+Z
 • save as: shift+ctrl+S
 • clear sidebar: clear
-• type 'toggle' to change color theme
-• type any attribute 'keyword' to search nodes`
+• change color theme: toggle
+• search for attribures: keyword`
 
   // adds the url of the github wiki
   const wikiURLButton = `click to view <button id='url-button' class='startButtons' style='color: ${config.text}; background-color:${config.background}; width: 40px; height: 25px;'>wiki</button>`
