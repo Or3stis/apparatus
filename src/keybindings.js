@@ -45,7 +45,7 @@ module.exports = function (
 • search for attribures: keyword`
 
   // adds the url of the github wiki
-  const wikiURLButton = `click to view <button id='url-button' class='startButtons' style='color: ${config.text}; background-color:${config.background}; width: 40px; height: 25px;'>wiki</button>`
+  const wikiURLButton = `click to view <button id='url-button' class='startButtons' style='color: var(--main-tx-color); background-color: var(--main-bg-color); width: 40px; height: 25px;'>wiki</button>`
 
   const consoleId = document.getElementById('console-id')
   const labelId = document.getElementById('input-label-id')
