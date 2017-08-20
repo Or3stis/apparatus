@@ -5,8 +5,10 @@ const designStateUI = require('./src/phasesUI/designStateUI.js')
 const implementationUI = require('./src/phasesUI/implementationUI.js')
 const implementationStateUI = require('./src/phasesUI/implementationStateUI.js')
 
-// creater wrapper for the phase buttons
+// get the graph container
 const graph = document.getElementById('graph-container')
+
+// creater wrapper for the phase buttons
 const wrapper = document.createElement('wrapper')
 wrapper.id = 'wrapper-id'
 wrapper.className = 'wrapper'
