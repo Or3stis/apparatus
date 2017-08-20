@@ -2,7 +2,10 @@ const config = require('../../config/config.js')
 const graphStyle = require('../../config/graphStyle.js')
 
 const setTheme = (cy, color) => {
+  // update color variables
   config.setColors(color)
+
+  // update CSS root values
   document.documentElement.style.setProperty('--main-tx-color', config.text)
   document.documentElement.style.setProperty(
     '--main-bg-color',
@@ -16,6 +19,7 @@ const setTheme = (cy, color) => {
   document.documentElement.style.setProperty('--black-color', config.black)
   document.documentElement.style.setProperty('--gray-color', config.gray)
 
+  // update graph colors
   graphStyle.setStyle(color)
   cy.style(graphStyle.style)
 }
