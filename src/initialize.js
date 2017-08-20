@@ -16,6 +16,7 @@ const menu = require('../src/core/menu.js')
 // require helper functions
 const printChat = require('../src/helpers/printChat.js')
 const rmElement = require('../src/helpers/rmElement.js')
+const theme = require('../src/helpers/theme.js')
 
 // require design modules
 const dgn = require('../src/design/design.js')
@@ -211,10 +212,18 @@ module.exports = function initialize (cy, phase) {
   keybindings(cy, selectedNode, selectedEdge, srcNode, trgNode, phase)
 
   // test function
+  let colorToken = false
   const buttonTest = document.getElementById('test-button')
   buttonTest.addEventListener('click', () => {
     // test code goes here
-    printChat('test function\nused for debugging')
+    printChat('testing light color theme')
+    if (colorToken === false) {
+      theme.setTheme(cy, 'light')
+      colorToken = true
+    } else {
+      theme.setTheme(cy, 'dark')
+      colorToken = false
+    }
   })
 }
 

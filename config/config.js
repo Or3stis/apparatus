@@ -2,31 +2,39 @@
 
 const config = {}
 
-// Atom's One Dark color theme
+config.setColors = color => {
+  // Atom's dark color theme
+  if (color === 'dark') {
+    config.text = '#abb2bf'
+    config.background = '#282c34'
+    config.darkBackground = '#21252b'
+    config.black = '#3b4251'
+    config.gray = '#abb2bf'
+    config.blue = '#61afef'
+    config.red = '#be5046'
+    config.orange = '#cf8772'
+    config.green = '#98c379'
+    config.yellow = '#d19a66'
+    config.magenta = '#c678dd'
+    config.cyan = '#56b6c2'
+  // Atom's light color theme
+  } else if (color === 'light') {
+    config.text = '#383a42'
+    config.background = '#fafafa'
+    config.darkBackground = '#eaeaeb'
+    config.black = '#a0a1a7'
+    config.gray = '#abb2bf'
+    config.blue = '#3399cd'
+    config.red = '#e45649'
+    config.orange = '#cf8772'
+    config.green = '#50a14f'
+    config.yellow = '#986901'
+    config.magenta = '#a381ff'
+    config.cyan = '#a626a4'
+  }
+}
 
-config.text = '#abb2bf'
-config.black = '#3b4251'
-config.blue = '#61afef'
-config.red = '#be5046'
-config.orange = '#cf8772'
-config.green = '#98c379'
-config.yellow = '#d19a66'
-config.magenta = '#c678dd'
-config.cyan = '#56b6c2'
-config.background = '#282c34'
-
-// Atom's One Light color theme
-
-// config.text = '#383a42'
-// config.black = '#2d3e4f'
-// config.blue = '#3399cd'
-// config.red = '#e45649'
-// config.orange = '#cf8772'
-// config.green = '#50a14f'
-// config.yellow = '#986901'
-// config.magenta = '#a381ff'
-// config.cyan = '#a626a4'
-// config.background = '#fafafa'
+config.setColors('dark') // first render uses the dark theme
 
 // urls
 
