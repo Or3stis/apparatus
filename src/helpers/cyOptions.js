@@ -1,10 +1,14 @@
 'use strict'
 
 const cytoscape = require('cytoscape')
+const config = require('../../config/config.js')
 const graphStyle = require('../../config/graphStyle.js')
 
 module.exports = function cyOptions (cy, file) {
   const model = require(file)
+  config.setColors('dark') // first render uses the dark theme
+  graphStyle.setStyle('dark')
+
   cy.out = cytoscape({
     container: document.getElementById('graph-container'),
     autounselectify: true,

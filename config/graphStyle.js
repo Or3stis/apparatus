@@ -100,5 +100,4 @@ graphStyle.setStyle = color => {
   ]
 }
 
-graphStyle.setStyle('dark') // initial render is dark theme
 module.exports = graphStyle
