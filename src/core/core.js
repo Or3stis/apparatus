@@ -79,6 +79,19 @@ const findPattern = cy => {
   buttonPattern.addEventListener('click', () => patterns(cy))
 }
 
+// save the graph using the save.js module
+const saveGraph = cy => {
+  const buttonSave = document.getElementById('save-button')
+  buttonSave.addEventListener('click', () => save(cy))
+}
+// loads a graph
+// const loadGraph = (cy) => {
+//   const buttonLoad = document.getElementById('load-button')
+//   buttonLoad.addEventListener('click', () => {
+//     load(cy)
+//   })
+// }
+
 // enable label buttons
 const labels = cy => {
   const hideLabelsButton = document.getElementById('hide-label')
@@ -112,19 +125,6 @@ const labels = cy => {
   })
 }
 
-// save the graph using the save.js module
-const saveGraph = cy => {
-  const buttonSave = document.getElementById('save-button')
-  buttonSave.addEventListener('click', () => save(cy))
-}
-// loads a graph
-// const loadGraph = (cy) => {
-//   const buttonLoad = document.getElementById('load-button')
-//   buttonLoad.addEventListener('click', () => {
-//     load(cy)
-//   })
-// }
-
 module.exports = {
   selectionNode: selectionNode,
   graphLayout: graphLayout,
@@ -134,7 +134,7 @@ module.exports = {
   showNeighbor: showNeighbor,
   getNeighbors: getNeighbors,
   findPattern: findPattern,
-  labels: labels,
-  saveGraph: saveGraph
-  // loadGraph: loadGraph
+  saveGraph: saveGraph,
+  // loadGraph: loadGraph,
+  labels: labels
 }

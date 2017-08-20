@@ -173,7 +173,8 @@ module.exports = function implementationUI () {
 
   <form>
     <button class="button-icon" id="home-button-id" type="submit" formaction="index.html" title="home">
-      <svg width="24" height="24"><use xlink:href="icons/home.svg#home" class="icon"></use>
+      <svg width="24" height="24">
+        <use xlink:href="icons/home.svg#home" class="icon"></use>
       </svg>
     </button>
   </form>
