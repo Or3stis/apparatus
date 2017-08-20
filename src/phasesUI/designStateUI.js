@@ -1,6 +1,6 @@
 'use strict'
 
-const phaseMenu = require('../../src/../src/phaseMenu.js')
+const phaseMenu = require('../../src/phaseMenu.js')
 
 module.exports = function designStateUI () {
   // shows design phase on the title
