@@ -1,3 +1,5 @@
+// module to change color themes between light and dark themes
+
 const config = require('../../config/config.js')
 const graphStyle = require('../../config/graphStyle.js')
 
