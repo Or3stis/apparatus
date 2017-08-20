@@ -8,6 +8,7 @@ const searchAttribute = require('./core/searchAttribute.js')
 const printChat = require('./helpers/printChat.js')
 const printChatHTML = require('./helpers/printChatHTML.js')
 const save = require('./helpers/save.js')
+const theme = require('./helpers/theme.js')
 
 const addDgnEdge = require('./design/addDgnEdge.js')
 const addDgnStateEdge = require('./design-state/addDgnStateEdge.js')
@@ -20,7 +21,8 @@ module.exports = function (
   selectedEdge,
   srcNode,
   trgNode,
-  phase
+  phase,
+  colorToken
 ) {
   // help menu for macOs
   const helpMenuDarwin = `• focus on console: ⌘L
@@ -29,7 +31,8 @@ module.exports = function (
 • restore node: ⌘Z
 • save as: ⇧⌘S
 • clear sidebar: clear
-• keyword search for attributes`
+• type 'toggle' to change color theme
+• type any attribute 'keyword' to search nodes`
 
   // help menu for Linux and Windows
   const helpMenu = `• focus on console: ctrl+L
@@ -38,7 +41,8 @@ module.exports = function (
 • restore node: ctrl+Z
 • save as: shift+ctrl+S
 • clear sidebar: clear
-• keyword search for attributes`
+• type 'toggle' to change color theme
+• type any attribute 'keyword' to search nodes`
 
   // adds the url of the github wiki
   const wikiURLButton = `click to view <button id='url-button' class='startButtons' style='color: ${config.text}; background-color:${config.background}; width: 40px; height: 25px;'>wiki</button>`
@@ -73,6 +77,15 @@ module.exports = function (
         document.getElementById('url-button').addEventListener('click', () => {
           require('electron').shell.openExternal(config.wikiUrl)
         })
+        break
+      case 'toggle':
+        if (colorToken === false) {
+          theme.setTheme(cy, 'light')
+          colorToken = true
+        } else {
+          theme.setTheme(cy, 'dark')
+          colorToken = false
+        }
         break
       case '':
         break

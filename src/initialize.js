@@ -206,11 +206,6 @@ module.exports = function initialize (cy, phase) {
 
   core.deleteButton(cy, selectedNode, selectedEdge) // delete elements
 
-  totalNodes(cy) // initial node count
-
-  // enable keybindings
-  keybindings(cy, selectedNode, selectedEdge, srcNode, trgNode, phase)
-
   // test function
   let colorToken = false
   const buttonTest = document.getElementById('test-button')
@@ -225,6 +220,11 @@ module.exports = function initialize (cy, phase) {
       colorToken = false
     }
   })
+
+  totalNodes(cy) // initial node count
+
+  // enable keybindings
+  keybindings(cy, selectedNode, selectedEdge, srcNode, trgNode, phase, colorToken)
 }
 
 // toggles side panels
