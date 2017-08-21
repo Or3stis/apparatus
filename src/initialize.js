@@ -226,16 +226,3 @@ module.exports = function initialize (cy, phase) {
   // enable keybindings
   keybindings(cy, selectedNode, selectedEdge, srcNode, trgNode, phase, colorToken)
 }
-
-// toggles side panels
-// const toggleUI = () => {
-//   const sidebarStatus = document.getElementById('sidebar-id')
-//   const actionBarStatus = document.getElementById('action-bar-id')
-//   if (sidebarStatus.style.display === 'block') {
-//     sidebarStatus.style.display = 'none'
-//     actionBarStatus.style.display = 'none'
-//   } else {
-//     sidebarStatus.style.display = 'block'
-//     actionBarStatus.style.display = 'block'
-//   }
-// }
