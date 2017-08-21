@@ -34,6 +34,8 @@ config.setColors = color => {
   }
 }
 
+config.colorTheme = 'dark'
+
 // urls
 
 // url for the ASTo wiki

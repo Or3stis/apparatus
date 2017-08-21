@@ -3,7 +3,7 @@
 const config = require('../../config/config.js')
 const graphStyle = require('../../config/graphStyle.js')
 
-const setTheme = (cy, color) => {
+const setTheme = (color) => {
   // update color variables
   config.setColors(color)
 
@@ -20,12 +20,18 @@ const setTheme = (cy, color) => {
   document.documentElement.style.setProperty('--blue-color', config.blue)
   document.documentElement.style.setProperty('--black-color', config.black)
   document.documentElement.style.setProperty('--gray-color', config.gray)
+}
 
-  // update graph colors
+// changes the UI and graph colors
+const setThemeGraph = (cy, color) => {
+  // update color variables
+  setTheme(color)
+
   graphStyle.setStyle(color)
   cy.style(graphStyle.style)
 }
 
 module.exports = {
-  setTheme: setTheme
+  setTheme: setTheme,
+  setThemeGraph: setThemeGraph
 }

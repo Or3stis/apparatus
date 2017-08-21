@@ -21,8 +21,7 @@ module.exports = function (
   selectedEdge,
   srcNode,
   trgNode,
-  phase,
-  colorToken
+  phase
 ) {
   // help menu for macOs
   const helpMenuDarwin = `• focus on console: ⌘L
@@ -79,12 +78,12 @@ module.exports = function (
         })
         break
       case 'toggle':
-        if (colorToken === false) {
-          theme.setTheme(cy, 'light')
-          colorToken = true
+        if (config.colorTheme === 'dark') {
+          theme.setThemeGraph(cy, 'light')
+          config.colorTheme = 'light'
         } else {
-          theme.setTheme(cy, 'dark')
-          colorToken = false
+          theme.setThemeGraph(cy, 'dark')
+          config.colorTheme = 'dark'
         }
         break
       case '':
