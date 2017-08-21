@@ -26,6 +26,10 @@ Some screenshots..
 
 ![](https://raw.githubusercontent.com/Or3stis/apparatus/master/assets/screenShot4.png)
 
+## Color themes
+
+ASTo supports a light and a dark color theme. The colors themes are based on Atom's [One Dark](https://github.com/atom/one-dark-syntax) and [One Light](https://github.com/atom/one-light-syntax). You can switch between the themes by typing `toggle` in ASTo's console (bottom right corner, cmd/ctrl + l). To make the change persistent between startups you need to modify the `config.colorTheme` variable in the `./config/config.js` file. The value can either be `dark` or `light`.
+
 ## Experimental features
 
 ASTo can generate graph files from network captures files (.pcapng). This is part of an ongoing process to automate certain parts of the plebeian and time consuming task of graph creation. The `pcapng` import feature is only available from the implementation phase menu. It uses `tcpdump` to create a `txt` with the current timestamp and then uses the `txt` to create the `js` file of the graph. The `txt` file is created for debugging purposes and will be deprecated in later commits. The generated files are stored in the `graphs/implementation` directory.
