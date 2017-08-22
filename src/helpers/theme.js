@@ -3,6 +3,7 @@
 const config = require('../../config/config.js')
 const graphStyle = require('../../config/graphStyle.js')
 
+// changes only the UI color values
 const setTheme = (color) => {
   // update color variables
   config.setColors(color)
@@ -24,9 +25,10 @@ const setTheme = (color) => {
 
 // changes the UI and graph colors
 const setThemeGraph = (cy, color) => {
-  // update color variables
+  // changes the UI theme
   setTheme(color)
 
+  // changes the colors on the graph
   graphStyle.setStyle(color)
   cy.style(graphStyle.style)
 }
