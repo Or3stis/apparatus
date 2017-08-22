@@ -24,7 +24,7 @@ module.exports = function (
   phase
 ) {
   // help menu for macOs
-  const helpMenuDarwin = `• focus on console: ⌘L
+  const helpMenuMacOS = `• focus on console: ⌘L
 • add Edge: ⌘E
 • delete element: ⌘⌫
 • restore node: ⌘Z
@@ -68,7 +68,7 @@ module.exports = function (
       case 'help':
         // checks the platform to display the corrent help menu
         process.platform === 'darwin'
-          ? printChat(helpMenuDarwin)
+          ? printChat(helpMenuMacOS)
           : printChat(helpMenu)
 
         printChatHTML(wikiURLButton)
