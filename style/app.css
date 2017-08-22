@@ -114,9 +114,8 @@ body {
 /*.tool {
   background-color: var(--gray-color);
   color: var(--main-bg-color);
-}
-.user {
-  left: 50px;
+}*/
+/*.user {
   background-color: var(--black-color);
   color: var(--main-tx-color);
   -webkit-animation: fadein 0.3s;
