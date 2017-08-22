@@ -209,7 +209,7 @@ module.exports = function initialize (cy, phase) {
   const buttonTest = document.getElementById('test-button')
   buttonTest.addEventListener('click', () => {
     // test code goes here
-    printChat('testing light color theme')
+    printChat('button for code testing')
   })
 
   totalNodes(cy) // initial node count
