@@ -274,8 +274,8 @@ module.exports = function pcapImport (cy, phase) {
   if (testTcpdump === true) {
     let dialogOptions = []
     process.platform === 'darwin'
-      ? dialogOptions = ['openFile', 'openDirectory']
-      : dialogOptions = ['openFile']
+      ? (dialogOptions = ['openFile', 'openDirectory'])
+      : (dialogOptions = ['openFile'])
 
     dialog.showOpenDialog(
       {

@@ -4,7 +4,7 @@ const config = require('../../config/config.js')
 const graphStyle = require('../../config/graphStyle.js')
 
 // changes only the UI color values
-const setTheme = (color) => {
+const setTheme = color => {
   // update color variables
   config.setColors(color)
 

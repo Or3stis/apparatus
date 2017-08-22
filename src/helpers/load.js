@@ -10,8 +10,8 @@ module.exports = function load (cy, phase) {
   let dialogOptions = []
   // check the platform
   process.platform === 'darwin'
-    ? dialogOptions = ['openFile', 'openDirectory']
-    : dialogOptions = ['openFile']
+    ? (dialogOptions = ['openFile', 'openDirectory'])
+    : (dialogOptions = ['openFile'])
 
   dialog.showOpenDialog(
     {
