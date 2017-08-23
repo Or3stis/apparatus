@@ -4,6 +4,7 @@ const config = require('../config/config.js')
 
 const core = require('./core/core.js')
 const searchAttribute = require('./core/searchAttribute.js')
+const showMetamodel = require('./core/showMetamodel.js')
 
 const printChat = require('./helpers/printChat.js')
 const printChatHTML = require('./helpers/printChatHTML.js')
@@ -29,8 +30,9 @@ module.exports = function (
 • delete element: ⌘⌫
 • restore node: ⌘Z
 • save as: ⇧⌘S
-• clear sidebar: clear
+• view phase metamodel: metamodel
 • change color theme: toggle
+• clear sidebar: clear
 • search for attribures: keyword`
 
   // help menu for Linux and Windows
@@ -39,8 +41,9 @@ module.exports = function (
 • delete element: ctrl+backspace
 • restore node: ctrl+Z
 • save as: shift+ctrl+S
-• clear sidebar: clear
+• view phase metamodel: metamodel
 • change color theme: toggle
+• clear sidebar: clear
 • search for attribures: keyword`
 
   // adds the url of the github wiki
@@ -76,6 +79,9 @@ module.exports = function (
         document.getElementById('url-button').addEventListener('click', () => {
           require('electron').shell.openExternal(config.wikiUrl)
         })
+        break
+      case 'metamodel':
+        showMetamodel(phase)
         break
       case 'toggle':
         if (config.colorTheme === 'dark') {
