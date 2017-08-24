@@ -12,9 +12,7 @@ ASTo is security analysis tool for IoT networks. It is developed to support the 
 [electron](http://electron.atom.io/) and
 [cytoscape.js](http://js.cytoscape.org/). The icons are provided by Google's [Material Design](https://material.io/icons/).
 
-The application is still in prototyping stage, which means a lot of
-functionality is being added with each commit, along with massive changes in
-almost everything.
+The application is in alpha stage. The focus now is to improve the core functionality of the application along with the introduction of additional features, in order to reach beta stage.
 
 Some screenshots..
 
