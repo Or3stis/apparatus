@@ -32,14 +32,10 @@ const addEdge = (cy, srcNode, trgNode) => {
 }
 
 // validate model using the impStateModelValidation.js
-const validate = cy => {
-  impStateModelValidation(cy) // imp-state module
-}
+const validate = cy => impStateModelValidation(cy)
 
 // model overview using impStateOverview.js
-const overview = cy => {
-  impStateOverview(cy) // imp-state module
-}
+const overview = cy => impStateOverview(cy)
 
 module.exports = {
   addNode: addNode,

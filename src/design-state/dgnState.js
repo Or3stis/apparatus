@@ -32,14 +32,10 @@ const addEdge = (cy, srcNode, trgNode) => {
 }
 
 // validate model
-const validate = cy => {
-  dgnStateModelValidation(cy)
-}
+const validate = cy => dgnStateModelValidation(cy)
 
 // model overview
-const overview = cy => {
-  dgnStateOverview(cy)
-}
+const overview = cy => dgnStateOverview(cy)
 
 module.exports = {
   addNode: addNode,

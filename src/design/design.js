@@ -34,9 +34,7 @@ const addEdge = (cy, srcNode, trgNode) => {
 }
 
 // validate model
-const validate = cy => {
-  dgnModelValidation(cy)
-}
+const validate = cy => dgnModelValidation(cy)
 
 // verify threats
 const threatVerify = cy => {
@@ -47,9 +45,7 @@ const threatVerify = cy => {
 }
 
 // model overview
-const overview = cy => {
-  dgnOverview(cy)
-}
+const overview = cy => dgnOverview(cy)
 
 // module selection
 const moduleGroup = cy => {

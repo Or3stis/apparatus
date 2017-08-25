@@ -35,9 +35,7 @@ const addEdge = (cy, srcNode, trgNode) => {
 }
 
 // validate model
-const validate = cy => {
-  impModelValidation(cy)
-}
+const validate = cy => impModelValidation(cy)
 
 // verify threats
 const threatVerify = cy => {
@@ -62,9 +60,8 @@ const findVulnerabilities = cy => {
 }
 
 // model overview
-const overview = cy => {
-  impOverview(cy)
-}
+const overview = cy => impOverview(cy)
+
 // module selection
 const moduleGroup = cy => {
   const group = document.getElementById('module-group')
