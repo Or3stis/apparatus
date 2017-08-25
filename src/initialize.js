@@ -194,11 +194,9 @@ module.exports = function initialize (cy, phase) {
   // load graph - TODO doesn't work properly
   // core.loadGraph(cy)
 
-  // phase model validation
-  core.validate(cy, phase)
+  core.validate(cy, phase) // phase model validation
 
-  // phases model overview
-  core.overview(cy, phase)
+  core.overview(cy, phase) // phases model overview
 
   core.showNeighbor(cy, selectedNode) // show the neighbors of a tapped node
 
