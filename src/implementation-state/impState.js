@@ -33,10 +33,7 @@ const addEdge = (cy, srcNode, trgNode) => {
 
 // validate model using the impStateModelValidation.js
 const validate = cy => {
-  const buttonModelValidate = document.getElementById('model-validate-button')
-  buttonModelValidate.addEventListener('click', () => {
-    impStateModelValidation(cy) // imp-state module
-  })
+  impStateModelValidation(cy) // imp-state module
 }
 
 // model overview using impStateOverview.js

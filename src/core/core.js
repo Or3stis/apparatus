@@ -85,6 +85,22 @@ const graphLayout = cy => {
   buttonLayout.addEventListener('click', e => layout(cy, e.target.textContent))
 }
 
+// phases model validation
+const validate = (cy, phase) => {
+  const buttonModelValidate = document.getElementById('model-validate-button')
+  buttonModelValidate.addEventListener('click', () => {
+    if (phase === 'design') {
+      dgn.validate(cy)
+    } else if (phase === 'design-state') {
+      dgnState.validate(cy)
+    } else if (phase === 'implementation') {
+      imp.validate(cy)
+    } else if (phase === 'implementation-state') {
+      impState.validate(cy)
+    }
+  })
+}
+
 // phases model overview
 const overview = (cy, phase) => {
   const buttonOverview = document.getElementById('overview-button')
@@ -161,6 +177,7 @@ module.exports = {
   restoreNode: restoreNode,
   showNeighbor: showNeighbor,
   getNeighbors: getNeighbors,
+  validate: validate,
   overview: overview,
   findPattern: findPattern,
   saveGraph: saveGraph,

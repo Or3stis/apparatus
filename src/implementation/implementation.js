@@ -33,13 +33,12 @@ const addEdge = (cy, srcNode, trgNode) => {
     cy.edges().addClass('label-edges')
   })
 }
+
 // validate model
 const validate = cy => {
-  const buttonModelValidate = document.getElementById('model-validate-button')
-  buttonModelValidate.addEventListener('click', () => {
-    impModelValidation(cy)
-  })
+  impModelValidation(cy)
 }
+
 // verify threats
 const threatVerify = cy => {
   const buttonThreatVefiry = document.getElementById('threat-verify-button')

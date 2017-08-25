@@ -33,10 +33,7 @@ const addEdge = (cy, srcNode, trgNode) => {
 
 // validate model
 const validate = cy => {
-  const buttonModelValidate = document.getElementById('model-validate-button')
-  buttonModelValidate.addEventListener('click', () => {
-    dgnStateModelValidation(cy)
-  })
+  dgnStateModelValidation(cy)
 }
 
 // model overview
