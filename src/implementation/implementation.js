@@ -64,10 +64,7 @@ const findVulnerabilities = cy => {
 
 // model overview
 const overview = cy => {
-  const buttonOverview = document.getElementById('overview-button')
-  buttonOverview.addEventListener('click', () => {
-    impOverview(cy)
-  })
+  impOverview(cy)
 }
 // module selection
 const moduleGroup = cy => {

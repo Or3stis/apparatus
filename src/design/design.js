@@ -51,10 +51,7 @@ const threatVerify = cy => {
 
 // model overview
 const overview = cy => {
-  const buttonOverview = document.getElementById('overview-button')
-  buttonOverview.addEventListener('click', () => {
-    dgnOverview(cy)
-  })
+  dgnOverview(cy)
 }
 
 // module selection

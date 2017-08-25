@@ -159,7 +159,6 @@ module.exports = function initialize (cy, phase) {
   if (phase === 'design') {
     dgn.addNode(cy, initialCount)
     dgn.threatVerify(cy)
-    dgn.overview(cy)
     dgn.validate(cy)
     dgn.moduleGroup(cy)
     dgn.addEdge(cy, srcNode, trgNode)
@@ -167,13 +166,11 @@ module.exports = function initialize (cy, phase) {
     // load design-state buttons
   } else if (phase === 'design-state') {
     dgnState.addNode(cy, initialCount)
-    dgnState.overview(cy)
     dgnState.validate(cy)
     dgnState.addEdge(cy, srcNode, trgNode)
     // loads implementation phase buttons
   } else if (phase === 'implementation') {
     imp.addNode(cy, initialCount)
-    imp.overview(cy)
     imp.validate(cy)
     imp.threatVerify(cy)
     imp.vulnVerify(cy)
@@ -184,7 +181,6 @@ module.exports = function initialize (cy, phase) {
     // loads implementation-state buttons
   } else if (phase === 'implementation-state') {
     impState.addNode(cy, initialCount)
-    impState.overview(cy)
     impState.validate(cy)
     impState.addEdge(cy, srcNode, trgNode)
   }
@@ -200,6 +196,9 @@ module.exports = function initialize (cy, phase) {
   core.saveGraph(cy) // save graph
   // load graph - TODO doesn't work properly
   // core.loadGraph(cy)
+
+  // phases model overview
+  core.overview(cy, phase)
 
   core.showNeighbor(cy, selectedNode) // show the neighbors of a tapped node
 

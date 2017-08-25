@@ -9,6 +9,18 @@ const patterns = require('./patterns.js')
 const save = require('../helpers/save.js')
 // const load = require('../helpers/load.js')
 
+// require design modules
+const dgn = require('../design/design.js')
+
+// require design-state Models
+const dgnState = require('../design-state/dgnState.js')
+
+// reguire implementation modules
+const imp = require('../implementation/implementation.js')
+
+// require implementation-state modules
+const impState = require('../implementation-state/impState.js')
+
 // highlights only the selected node class
 const selectionNode = cy => {
   const select = document.getElementById('selection-id')
@@ -73,6 +85,22 @@ const graphLayout = cy => {
   buttonLayout.addEventListener('click', e => layout(cy, e.target.textContent))
 }
 
+// phases model overview
+const overview = (cy, phase) => {
+  const buttonOverview = document.getElementById('overview-button')
+  buttonOverview.addEventListener('click', () => {
+    if (phase === 'design') {
+      dgn.overview(cy)
+    } else if (phase === 'design-state') {
+      dgnState.overview(cy)
+    } else if (phase === 'implementation') {
+      imp.overview(cy)
+    } else if (phase === 'implementation-state') {
+      impState.overview(cy)
+    }
+  })
+}
+
 // find patterns using the findPattern.js module
 const findPattern = cy => {
   const buttonPattern = document.getElementById('pattern-button')
@@ -133,6 +161,7 @@ module.exports = {
   restoreNode: restoreNode,
   showNeighbor: showNeighbor,
   getNeighbors: getNeighbors,
+  overview: overview,
   findPattern: findPattern,
   saveGraph: saveGraph,
   // loadGraph: loadGraph,

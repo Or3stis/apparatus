@@ -41,10 +41,7 @@ const validate = cy => {
 
 // model overview using impStateOverview.js
 const overview = cy => {
-  const buttonOverview = document.getElementById('overview-button')
-  buttonOverview.addEventListener('click', () => {
-    impStateOverview(cy) // imp-state module
-  })
+  impStateOverview(cy) // imp-state module
 }
 
 module.exports = {

@@ -41,10 +41,7 @@ const validate = cy => {
 
 // model overview
 const overview = cy => {
-  const buttonOverview = document.getElementById('overview-button')
-  buttonOverview.addEventListener('click', () => {
-    dgnStateOverview(cy)
-  })
+  dgnStateOverview(cy)
 }
 
 module.exports = {
