@@ -86,34 +86,42 @@ const graphLayout = cy => {
 }
 
 // phases model validation
+const validateFunc = (cy, phase) => {
+  if (phase === 'design') {
+    dgn.validate(cy)
+  } else if (phase === 'design-state') {
+    dgnState.validate(cy)
+  } else if (phase === 'implementation') {
+    imp.validate(cy)
+  } else if (phase === 'implementation-state') {
+    impState.validate(cy)
+  }
+}
+// phases model button
 const validate = (cy, phase) => {
   const buttonModelValidate = document.getElementById('model-validate-button')
   buttonModelValidate.addEventListener('click', () => {
-    if (phase === 'design') {
-      dgn.validate(cy)
-    } else if (phase === 'design-state') {
-      dgnState.validate(cy)
-    } else if (phase === 'implementation') {
-      imp.validate(cy)
-    } else if (phase === 'implementation-state') {
-      impState.validate(cy)
-    }
+    validateFunc(cy, phase)
   })
 }
 
 // phases model overview
+const overviewFunc = (cy, phase) => {
+  if (phase === 'design') {
+    dgn.overview(cy)
+  } else if (phase === 'design-state') {
+    dgnState.overview(cy)
+  } else if (phase === 'implementation') {
+    imp.overview(cy)
+  } else if (phase === 'implementation-state') {
+    impState.overview(cy)
+  }
+}
+// phases model button
 const overview = (cy, phase) => {
   const buttonOverview = document.getElementById('overview-button')
   buttonOverview.addEventListener('click', () => {
-    if (phase === 'design') {
-      dgn.overview(cy)
-    } else if (phase === 'design-state') {
-      dgnState.overview(cy)
-    } else if (phase === 'implementation') {
-      imp.overview(cy)
-    } else if (phase === 'implementation-state') {
-      impState.overview(cy)
-    }
+    overviewFunc(cy, phase)
   })
 }
 
@@ -178,7 +186,9 @@ module.exports = {
   showNeighbor: showNeighbor,
   getNeighbors: getNeighbors,
   validate: validate,
+  validateFunc: validateFunc,
   overview: overview,
+  overviewFunc: overviewFunc,
   findPattern: findPattern,
   saveGraph: saveGraph,
   // loadGraph: loadGraph,

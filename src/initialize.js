@@ -194,7 +194,8 @@ module.exports = function initialize (cy, phase) {
   // load graph - TODO doesn't work properly
   // core.loadGraph(cy)
 
-  core.validate(cy, phase) // phase model validation
+  // phase model validation
+  core.validate(cy, phase)
 
   core.overview(cy, phase) // phases model overview
 

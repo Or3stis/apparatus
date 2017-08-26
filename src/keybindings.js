@@ -33,6 +33,8 @@ module.exports = function (
 • view phase metamodel: metamodel
 • change color theme: toggle
 • clear sidebar: clear
+• model overview: overview
+• model validation: validate
 • search for attribures: keyword`
 
   // help menu for Linux and Windows
@@ -44,6 +46,8 @@ module.exports = function (
 • view phase metamodel: metamodel
 • change color theme: toggle
 • clear sidebar: clear
+• model overview: overview
+• model validation: validate
 • search for attribures: keyword`
 
   // adds the url of the github wiki
@@ -79,6 +83,12 @@ module.exports = function (
         document.getElementById('url-button').addEventListener('click', () => {
           require('electron').shell.openExternal(config.wikiUrl)
         })
+        break
+      case 'overview':
+        core.overviewFunc(cy, phase)
+        break
+      case 'validate':
+        core.validateFunc(cy, phase)
         break
       case 'metamodel':
         showMetamodel(phase)
