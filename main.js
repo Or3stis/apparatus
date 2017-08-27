@@ -1,4 +1,5 @@
 const electron = require('electron')
+const config = require('./config/config.js')
 // Module to control application life.
 const app = electron.app
 // Module to create native browser window.
@@ -13,6 +14,8 @@ let mainWindow
 function createWindow () {
   // Create the browser window.
   mainWindow = new BrowserWindow({
+    // backgroundColor: '#282c34',
+    backgroundColor: config.background,
     width: 1200,
     height: 745,
     titleBarStyle: 'hidden',

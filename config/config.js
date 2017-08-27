@@ -35,6 +35,7 @@ config.setColors = color => {
 }
 
 config.colorTheme = 'dark'
+config.setColors(config.colorTheme) // initial color paint
 
 // urls
 
