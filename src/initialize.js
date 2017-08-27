@@ -11,7 +11,7 @@ const keybindings = require('../src/keybindings.js')
 const coreButtons = require('../src/core/coreButtons.js')
 const hoverNodeInfo = require('../src/core/hoverNodeInfo.js')
 const totalNodes = require('../src/core/totalNodes.js')
-const menu = require('../src/core/menu.js')
+const editMenu = require('../src/core/editMenu.js')
 
 // require helper functions
 const printChat = require('../src/helpers/printChat.js')
@@ -125,7 +125,7 @@ module.exports = function initialize (cy, phase) {
   // right clicking
   cy.on('cxttapend', 'node', selection => {
     selectedNode.out = selection.target[0]
-    menu.nodeMenu(cy, selection, selectedNode.out)
+    editMenu.nodeMenu(cy, selection, selectedNode.out)
 
     // clear tokens
     selectedNode.out = {}
@@ -140,7 +140,7 @@ module.exports = function initialize (cy, phase) {
     if (selection.target === cy) {
       // removes the stage menu if it exists
       rmElement('window-id', 'stageMenu-id')
-      menu.stageMenu(cy, selection)
+      editMenu.stageMenu(cy, selection)
     }
   })
   // actions when hovering over a node
