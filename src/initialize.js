@@ -178,7 +178,6 @@ module.exports = function initialize (cy, phase) {
     // loads implementation-state buttons
   } else if (phase === 'implementation-state') {
     impState.addNode(cy, initialCount)
-    // impState.validate(cy)
     impState.addEdge(cy, srcNode, trgNode)
   }
 
@@ -191,8 +190,6 @@ module.exports = function initialize (cy, phase) {
   coreButtons.labels(cy) // enable label buttons
 
   coreButtons.saveGraph(cy) // save graph
-  // load graph - TODO doesn't work properly
-  // coreButtons.loadGraph(cy)
 
   // phase model validation
   coreButtons.validate(cy, phase)
