@@ -2,6 +2,7 @@
 
 const editNode = require('./editNode.js')
 const coreFunctions = require('./coreFunctions.js')
+const getNeighbors = require('./getNeighbors.js')
 const rmElement = require('../helpers/rmElement.js')
 
 let posY = ''
@@ -37,7 +38,7 @@ const nodeMenu = (cy, selection, selectedNode) => {
       const event = e.target.textContent
 
       if (event === 'show neighbors') {
-        coreFunctions.getNeighbors(cy, selectedNode)
+        getNeighbors(cy, selectedNode)
       } else if (event === 'edit node') {
         editNode.formNode(selectedNode)
       } else if (event === 'delete') {

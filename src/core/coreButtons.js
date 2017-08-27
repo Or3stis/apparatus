@@ -3,7 +3,9 @@
 // core modules, shared between all phases
 const coreFunctions = require('./coreFunctions.js')
 const nodeSelection = require('./nodeSelection.js')
+const getNeighbors = require('./getNeighbors.js')
 const layout = require('./layout.js')
+const deleteRestoreConcepts = require('./deleteRestoreConcepts.js')
 
 const patterns = require('./patterns.js')
 
@@ -20,7 +22,7 @@ const selectionNode = cy => {
 const showNeighbor = (cy, selectedNode) => {
   const buttonNeighbor = document.getElementById('neighbors-button')
   buttonNeighbor.addEventListener('click', () => {
-    coreFunctions.getNeighbors(cy, selectedNode.out)
+    getNeighbors(cy, selectedNode.out)
   })
 }
 
@@ -28,7 +30,7 @@ const showNeighbor = (cy, selectedNode) => {
 const deleteButton = (cy, selectedNode, selectedEdge) => {
   const buttonDelete = document.getElementById('delete')
   buttonDelete.addEventListener('click', () => {
-    coreFunctions.deleteEl(cy, selectedNode.out, selectedEdge.out)
+    deleteRestoreConcepts.deleteEl(cy, selectedNode.out, selectedEdge.out)
   })
 }
 

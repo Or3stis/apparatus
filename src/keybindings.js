@@ -5,6 +5,7 @@ const config = require('../config/config.js')
 const coreFunctions = require('./core/coreFunctions.js')
 const searchAttribute = require('./core/searchAttribute.js')
 const showMetamodel = require('./core/showMetamodel.js')
+const deleteRestoreConcepts = require('./core/deleteRestoreConcepts.js')
 
 const printChat = require('./helpers/printChat.js')
 const printChatHTML = require('./helpers/printChatHTML.js')
@@ -144,12 +145,12 @@ module.exports = function (
 
     // delete elements
     if (key === true && event.code === 'Backspace') {
-      coreFunctions.deleteEl(cy, selectedNode.out, selectedEdge.out)
+      deleteRestoreConcepts.deleteEl(cy, selectedNode.out, selectedEdge.out)
     }
 
     if (key === true && event.code === 'KeyZ') {
       // restore elements with meta + z
-      coreFunctions.restoreNode()
+      deleteRestoreConcepts.restoreNode()
     }
 
     if (event.shiftKey === true && key === true && event.code === 'KeyS') {
