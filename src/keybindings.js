@@ -2,7 +2,7 @@
 
 const config = require('../config/config.js')
 
-const core = require('./core/core.js')
+const coreFunctions = require('./core/coreFunctions.js')
 const searchAttribute = require('./core/searchAttribute.js')
 const showMetamodel = require('./core/showMetamodel.js')
 
@@ -85,10 +85,10 @@ module.exports = function (
         })
         break
       case 'overview':
-        core.overviewFunc(cy, phase)
+        coreFunctions.overviewFunc(cy, phase)
         break
       case 'validate':
-        core.validateFunc(cy, phase)
+        coreFunctions.validateFunc(cy, phase)
         break
       case 'metamodel':
         showMetamodel(phase)
@@ -144,12 +144,12 @@ module.exports = function (
 
     // delete elements
     if (key === true && event.code === 'Backspace') {
-      core.deleteEl(cy, selectedNode.out, selectedEdge.out)
+      coreFunctions.deleteEl(cy, selectedNode.out, selectedEdge.out)
     }
 
     if (key === true && event.code === 'KeyZ') {
       // restore elements with meta + z
-      core.restoreNode()
+      coreFunctions.restoreNode()
     }
 
     if (event.shiftKey === true && key === true && event.code === 'KeyS') {

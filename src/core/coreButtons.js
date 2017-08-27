@@ -1,25 +1,14 @@
 'use strict'
 
 // core modules, shared between all phases
+const coreFunctions = require('./coreFunctions.js')
 const nodeSelection = require('./nodeSelection.js')
 const layout = require('./layout.js')
-const totalNodes = require('./totalNodes.js')
+
 const patterns = require('./patterns.js')
 
 const save = require('../helpers/save.js')
 // const load = require('../helpers/load.js')
-
-// require design modules
-const dgn = require('../design/design.js')
-
-// require design-state Models
-const dgnState = require('../design-state/dgnState.js')
-
-// reguire implementation modules
-const imp = require('../implementation/implementation.js')
-
-// require implementation-state modules
-const impState = require('../implementation-state/impState.js')
 
 // highlights only the selected node class
 const selectionNode = cy => {
@@ -27,54 +16,19 @@ const selectionNode = cy => {
   select.addEventListener('click', e => nodeSelection(cy, e.target.textContent))
 }
 
-// show the neighbors of a tapped node
-const getNeighbors = (cy, selectedNode) => {
-  // selectedNode from cy.on tap node function
-  const neighborhood = selectedNode.neighborhood().add(selectedNode)
-  cy.elements().addClass('faded')
-  neighborhood.removeClass('faded')
-}
-
 // links the showNeighbor button
 const showNeighbor = (cy, selectedNode) => {
   const buttonNeighbor = document.getElementById('neighbors-button')
   buttonNeighbor.addEventListener('click', () => {
-    getNeighbors(cy, selectedNode.out)
+    coreFunctions.getNeighbors(cy, selectedNode.out)
   })
-}
-
-// holds the deleted nodes
-let deletedNodes = []
-// used as module
-const deleteEl = (cy, selectedNode, selectedEdge) => {
-  // removes edges
-  if (
-    Object.keys(selectedNode).length === 0 &&
-    Object.keys(selectedEdge).length !== 0
-  ) {
-    selectedEdge.remove()
-  }
-  // removes nodes and adds them to deletedNodes array
-  if (
-    Object.keys(selectedEdge).length === 0 &&
-    Object.keys(selectedNode).length !== 0
-  ) {
-    deletedNodes.push(selectedNode)
-    selectedNode.remove()
-  }
-  totalNodes(cy)
-}
-
-// restores deleted nodes from the deleteNodes array
-const restoreNode = () => {
-  if (deletedNodes.length !== 0) deletedNodes.pop().restore()
 }
 
 // bind the delete Button
 const deleteButton = (cy, selectedNode, selectedEdge) => {
   const buttonDelete = document.getElementById('delete')
   buttonDelete.addEventListener('click', () => {
-    deleteEl(cy, selectedNode.out, selectedEdge.out)
+    coreFunctions.deleteEl(cy, selectedNode.out, selectedEdge.out)
   })
 }
 
@@ -85,43 +39,19 @@ const graphLayout = cy => {
   buttonLayout.addEventListener('click', e => layout(cy, e.target.textContent))
 }
 
-// phases model validation
-const validateFunc = (cy, phase) => {
-  if (phase === 'design') {
-    dgn.validate(cy)
-  } else if (phase === 'design-state') {
-    dgnState.validate(cy)
-  } else if (phase === 'implementation') {
-    imp.validate(cy)
-  } else if (phase === 'implementation-state') {
-    impState.validate(cy)
-  }
-}
 // phases model button
 const validate = (cy, phase) => {
   const buttonModelValidate = document.getElementById('model-validate-button')
   buttonModelValidate.addEventListener('click', () => {
-    validateFunc(cy, phase)
+    coreFunctions.validateFunc(cy, phase)
   })
 }
 
-// phases model overview
-const overviewFunc = (cy, phase) => {
-  if (phase === 'design') {
-    dgn.overview(cy)
-  } else if (phase === 'design-state') {
-    dgnState.overview(cy)
-  } else if (phase === 'implementation') {
-    imp.overview(cy)
-  } else if (phase === 'implementation-state') {
-    impState.overview(cy)
-  }
-}
 // phases model button
 const overview = (cy, phase) => {
   const buttonOverview = document.getElementById('overview-button')
   buttonOverview.addEventListener('click', () => {
-    overviewFunc(cy, phase)
+    coreFunctions.overviewFunc(cy, phase)
   })
 }
 
@@ -181,14 +111,9 @@ module.exports = {
   selectionNode: selectionNode,
   graphLayout: graphLayout,
   deleteButton: deleteButton,
-  deleteEl: deleteEl,
-  restoreNode: restoreNode,
   showNeighbor: showNeighbor,
-  getNeighbors: getNeighbors,
   validate: validate,
-  validateFunc: validateFunc,
   overview: overview,
-  overviewFunc: overviewFunc,
   findPattern: findPattern,
   saveGraph: saveGraph,
   // loadGraph: loadGraph,

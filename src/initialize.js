@@ -8,7 +8,7 @@ const keybindings = require('../src/keybindings.js')
 
 // require core modules
 // const nodeInfo = require('./src/core/nodeInfo.js')
-const core = require('../src/core/core.js')
+const coreButtons = require('../src/core/coreButtons.js')
 const hoverNodeInfo = require('../src/core/hoverNodeInfo.js')
 const totalNodes = require('../src/core/totalNodes.js')
 const menu = require('../src/core/menu.js')
@@ -161,7 +161,7 @@ module.exports = function initialize (cy, phase) {
     dgn.threatVerify(cy)
     dgn.moduleGroup(cy)
     dgn.addEdge(cy, srcNode, trgNode)
-    core.findPattern(cy)
+    coreButtons.findPattern(cy)
     // load design-state buttons
   } else if (phase === 'design-state') {
     dgnState.addNode(cy, initialCount)
@@ -174,7 +174,7 @@ module.exports = function initialize (cy, phase) {
     imp.findVulnerabilities(cy)
     imp.moduleGroup(cy)
     imp.addEdge(cy, srcNode, trgNode)
-    core.findPattern(cy)
+    coreButtons.findPattern(cy)
     // loads implementation-state buttons
   } else if (phase === 'implementation-state') {
     impState.addNode(cy, initialCount)
@@ -184,24 +184,24 @@ module.exports = function initialize (cy, phase) {
 
   // declaration of global buttons
 
-  core.selectionNode(cy) // highlights only the selected node class
+  coreButtons.selectionNode(cy) // highlights only the selected node class
 
-  core.graphLayout(cy) // applies the selected layout
+  coreButtons.graphLayout(cy) // applies the selected layout
 
-  core.labels(cy) // enable label buttons
+  coreButtons.labels(cy) // enable label buttons
 
-  core.saveGraph(cy) // save graph
+  coreButtons.saveGraph(cy) // save graph
   // load graph - TODO doesn't work properly
-  // core.loadGraph(cy)
+  // coreButtons.loadGraph(cy)
 
   // phase model validation
-  core.validate(cy, phase)
+  coreButtons.validate(cy, phase)
 
-  core.overview(cy, phase) // phases model overview
+  coreButtons.overview(cy, phase) // phases model overview
 
-  core.showNeighbor(cy, selectedNode) // show the neighbors of a tapped node
+  coreButtons.showNeighbor(cy, selectedNode) // show the neighbors of a tapped node
 
-  core.deleteButton(cy, selectedNode, selectedEdge) // delete elements
+  coreButtons.deleteButton(cy, selectedNode, selectedEdge) // delete elements
 
   // test function
   const buttonTest = document.getElementById('test-button')
