@@ -1,7 +1,7 @@
 'use strict'
 
 // core modules, shared between all phases
-const coreFunctions = require('./coreFunctions.js')
+const coreHelpers = require('./coreHelpers.js')
 const nodeSelection = require('./nodeSelection.js')
 const getNeighbors = require('./getNeighbors.js')
 const layout = require('./layout.js')
@@ -45,7 +45,7 @@ const graphLayout = cy => {
 const validate = (cy, phase) => {
   const buttonModelValidate = document.getElementById('model-validate-button')
   buttonModelValidate.addEventListener('click', () => {
-    coreFunctions.validateFunc(cy, phase)
+    coreHelpers.validateFunc(cy, phase)
   })
 }
 
@@ -53,7 +53,7 @@ const validate = (cy, phase) => {
 const overview = (cy, phase) => {
   const buttonOverview = document.getElementById('overview-button')
   buttonOverview.addEventListener('click', () => {
-    coreFunctions.overviewFunc(cy, phase)
+    coreHelpers.overviewFunc(cy, phase)
   })
 }
 

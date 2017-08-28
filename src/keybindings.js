@@ -2,7 +2,7 @@
 
 const config = require('../config/config.js')
 
-const coreFunctions = require('./core/coreFunctions.js')
+const coreHelpers = require('./core/coreHelpers.js')
 const searchAttribute = require('./core/searchAttribute.js')
 const showMetamodel = require('./core/showMetamodel.js')
 const deleteRestoreConcepts = require('./core/deleteRestoreConcepts.js')
@@ -86,10 +86,10 @@ module.exports = function (
         })
         break
       case 'overview':
-        coreFunctions.overviewFunc(cy, phase)
+        coreHelpers.overviewFunc(cy, phase)
         break
       case 'validate':
-        coreFunctions.validateFunc(cy, phase)
+        coreHelpers.validateFunc(cy, phase)
         break
       case 'metamodel':
         showMetamodel(phase)

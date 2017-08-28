@@ -1,7 +1,7 @@
 'use strict'
 
 const editNode = require('./editNode.js')
-const coreFunctions = require('./coreFunctions.js')
+const coreHelpers = require('./coreHelpers.js')
 const getNeighbors = require('./getNeighbors.js')
 const rmElement = require('../helpers/rmElement.js')
 
@@ -42,7 +42,7 @@ const nodeMenu = (cy, selection, selectedNode) => {
       } else if (event === 'edit node') {
         editNode.formNode(selectedNode)
       } else if (event === 'delete') {
-        coreFunctions.deleteEl(cy, selectedNode, 0)
+        coreHelpers.deleteEl(cy, selectedNode, 0)
       }
       // removes the menu on selection
       rmElement('window-id', 'nodeMenu-id')
@@ -79,7 +79,7 @@ const stageMenu = (cy, selection) => {
       const event = e.target.textContent
 
       if (event === 'restore node') {
-        coreFunctions.restoreNode()
+        coreHelpers.restoreNode()
       }
       // removes the menu on selection
       rmElement('window-id', 'stageMenu-id')
