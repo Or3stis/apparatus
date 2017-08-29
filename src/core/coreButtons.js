@@ -110,14 +110,14 @@ const labels = cy => {
 }
 
 module.exports = {
-  selectionNode: selectionNode,
-  graphLayout: graphLayout,
-  deleteButton: deleteButton,
-  showNeighbor: showNeighbor,
-  validate: validate,
-  overview: overview,
-  findPattern: findPattern,
-  saveGraph: saveGraph,
-  // loadGraph: loadGraph,
-  labels: labels
+  selectionNode,
+  graphLayout,
+  deleteButton,
+  showNeighbor,
+  validate,
+  overview,
+  findPattern,
+  saveGraph,
+  // loadGraph,
+  labels
 }
