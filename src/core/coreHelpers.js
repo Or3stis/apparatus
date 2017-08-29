@@ -39,6 +39,5 @@ const overviewFunc = (cy, phase) => {
 }
 
 module.exports = {
-  validateFunc: validateFunc,
-  overviewFunc: overviewFunc
+  corehelpers: validateFunc, overviewFunc
 }
