@@ -1,6 +1,6 @@
 // deletes and restores elements in the graphLayout
 
-const totalNodes = require('./totalNodes.js')
+const coreHelpers = require('./coreHelpers.js')
 
 // holds the deleted nodes
 let deletedNodes = []
@@ -21,7 +21,7 @@ const deleteEl = (cy, selectedNode, selectedEdge) => {
     deletedNodes.push(selectedNode)
     selectedNode.remove()
   }
-  totalNodes(cy)
+  coreHelpers.totalNodes(cy)
 }
 
 // restores deleted nodes from the deleteNodes array
