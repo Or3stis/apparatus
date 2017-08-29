@@ -70,6 +70,7 @@ const stageMenu = (cy, selection) => {
 
     stageMenu.innerHTML = `<div class="dropdown" style='display: block; position: absolute; top:${posY}px; left: ${posX}px;'>
       <ul class="dropdown-menu" style='display:block;'>
+        <li><a>center graph</a></li>
         <li><a>restore node</a></li>
       </ul>
     </div>`
@@ -79,7 +80,9 @@ const stageMenu = (cy, selection) => {
     stageMenu.addEventListener('click', e => {
       const event = e.target.textContent
 
-      if (event === 'restore node') {
+      if (event === 'center graph') {
+        cy.center()
+      } else if (event === 'restore node') {
         coreHelpers.restoreNode()
       }
       // removes the menu on selection
