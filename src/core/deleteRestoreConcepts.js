@@ -28,7 +28,6 @@ const deleteEl = (cy, selectedNode, selectedEdge) => {
 const restoreNode = cy => {
   if (deletedNodes.length !== 0) {
     deletedNodes.pop().restore()
-    // printTotalNodes(cy)
     printTotalNodes(cy)
   }
 }
