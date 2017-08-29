@@ -10,9 +10,9 @@ const impStateMeta = 'metamodels/imp-state-model.png'
 
 module.exports = function showMetamodel (phase) {
   // create the path to the metamodels
-  const figurePath = __dirname.split('/')
-  figurePath.pop() // removes the core directory
-  figurePath.pop() // removes the src directory
+  const metamodePath = __dirname.split('/')
+  metamodePath.pop() // removes the core directory
+  metamodePath.pop() // removes the src directory
 
   let url = ''
   // checks for the phase
@@ -27,5 +27,5 @@ module.exports = function showMetamodel (phase) {
   }
   // creates the window
   let win = new BrowserWindow({ width: 900, height: 700 })
-  win.loadURL(`file://${figurePath.join('/')}/${url}`)
+  win.loadURL(`file://${metamodePath.join('/')}/${url}`)
 }
