@@ -25,7 +25,7 @@ const deleteEl = (cy, selectedNode, selectedEdge) => {
 }
 
 // restores deleted nodes from the deleteNodes array
-const restoreNode = (cy) => {
+const restoreNode = cy => {
   if (deletedNodes.length !== 0) {
     deletedNodes.pop().restore()
     // printTotalNodes(cy)
@@ -34,6 +34,6 @@ const restoreNode = (cy) => {
 }
 
 module.exports = {
-  deleteEl: deleteEl,
-  restoreNode: restoreNode
+  deleteEl,
+  restoreNode
 }
