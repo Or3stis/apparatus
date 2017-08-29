@@ -31,7 +31,6 @@ const nodeMenu = (cy, selection, selectedNode) => {
         <li><a>edit node</a></li>
         <li><a>show neighbors</a></li>
         <li><a>delete</a></li>
-        <li><a>delete</a></li>
       </ul>
     </div>`
 
