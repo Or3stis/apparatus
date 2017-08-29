@@ -45,7 +45,7 @@ const graphLayout = cy => {
 const validate = (cy, phase) => {
   const buttonModelValidate = document.getElementById('model-validate-button')
   buttonModelValidate.addEventListener('click', () => {
-    coreHelpers.validateFunc(cy, phase)
+    coreHelpers.validateHelper(cy, phase)
   })
 }
 
@@ -53,7 +53,7 @@ const validate = (cy, phase) => {
 const overview = (cy, phase) => {
   const buttonOverview = document.getElementById('overview-button')
   buttonOverview.addEventListener('click', () => {
-    coreHelpers.overviewFunc(cy, phase)
+    coreHelpers.overviewHelper(cy, phase)
   })
 }
 

@@ -86,10 +86,10 @@ module.exports = function (
         })
         break
       case 'overview':
-        coreHelpers.overviewFunc(cy, phase)
+        coreHelpers.overviewHelper(cy, phase)
         break
       case 'validate':
-        coreHelpers.validateFunc(cy, phase)
+        coreHelpers.validateHelper(cy, phase)
         break
       case 'metamodel':
         showMetamodel(phase)

@@ -13,7 +13,7 @@ const imp = require('../implementation/implementation.js')
 const impState = require('../implementation-state/impState.js')
 
 // phases model validation
-const validateFunc = (cy, phase) => {
+const validateHelper = (cy, phase) => {
   if (phase === 'design') {
     dgn.validate(cy)
   } else if (phase === 'design-state') {
@@ -26,7 +26,7 @@ const validateFunc = (cy, phase) => {
 }
 
 // phases model overview
-const overviewFunc = (cy, phase) => {
+const overviewHelper = (cy, phase) => {
   if (phase === 'design') {
     dgn.overview(cy)
   } else if (phase === 'design-state') {
@@ -39,6 +39,6 @@ const overviewFunc = (cy, phase) => {
 }
 
 module.exports = {
-  validateFunc,
-  overviewFunc
+  validateHelper,
+  overviewHelper
 }
