@@ -83,7 +83,7 @@ const stageMenu = (cy, selection) => {
       if (event === 'center graph') {
         cy.center()
       } else if (event === 'restore node') {
-        deleteRestoreConcepts.restoreNode()
+        deleteRestoreConcepts.restoreNode(cy)
       }
       // removes the menu on selection
       rmElement('window-id', 'stageMenu-id')

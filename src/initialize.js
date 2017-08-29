@@ -9,7 +9,7 @@ const keybindings = require('../src/keybindings.js')
 // require core modules
 // const nodeInfo = require('./src/core/nodeInfo.js')
 const coreButtons = require('../src/core/coreButtons.js')
-const coreHelpers = require('../src/core/coreHelpers.js')
+const printTotalNodes = require('../src/core/printTotalNodes.js')
 const hoverNodeInfo = require('../src/core/hoverNodeInfo.js')
 const editMenu = require('../src/core/editMenu.js')
 
@@ -73,8 +73,6 @@ module.exports = function initialize (cy, phase) {
 
     selectedEdge.out = {} // clear token
 
-    coreHelpers.totalNodes(cy) // global module
-
     rmElement('info-nodes-id', 'form-id') // remove the edit node element
     rmElement('window-id', 'nodeMenu-id') // remove node menu element
     rmElement('window-id', 'stageMenu-id') // remove stage menu element
@@ -92,8 +90,6 @@ module.exports = function initialize (cy, phase) {
     oldSelectedNode.out = {} // clear token
 
     selectedEdge.out = selection.target[0]
-
-    coreHelpers.totalNodes(cy) // global module
 
     rmElement('info-nodes-id', 'form-id') // remove the edit node element
     rmElement('window-id', 'nodeMenu-id') // remove node menu element
@@ -114,8 +110,6 @@ module.exports = function initialize (cy, phase) {
       selectedNode.out = {}
       oldSelectedNode.out = {}
       selectedEdge.out = {}
-
-      coreHelpers.totalNodes(cy) // global module
 
       rmElement('info-nodes-id', 'form-id') // remove the edit node element
       rmElement('window-id', 'nodeMenu-id') // remove node menu element
@@ -207,7 +201,7 @@ module.exports = function initialize (cy, phase) {
     printChat('button for code testing')
   })
 
-  coreHelpers.totalNodes(cy) // initial node count
+  printTotalNodes(cy) // initial node count
 
   // enable keybindings
   keybindings(cy, selectedNode, selectedEdge, srcNode, trgNode, phase)

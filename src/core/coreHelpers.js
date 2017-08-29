@@ -12,8 +12,6 @@ const imp = require('../implementation/implementation.js')
 // require implementation-state modules
 const impState = require('../implementation-state/impState.js')
 
-// const count = cy => totalNodes(cy)
-
 // phases model validation
 const validateFunc = (cy, phase) => {
   if (phase === 'design') {
@@ -41,7 +39,6 @@ const overviewFunc = (cy, phase) => {
 }
 
 module.exports = {
-  totalNodes: require('./totalNodes.js'),
   validateFunc: validateFunc,
   overviewFunc: overviewFunc
 }

@@ -9,7 +9,7 @@ const addImpStateComponent = require('./addImpStateComponent.js')
 const addImpStateEdge = require('./addImpStateEdge.js')
 
 // require global modules
-const totalNodes = require('../core/totalNodes.js')
+const printTotalNodes = require('../core/printTotalNodes.js')
 
 // adds implementation-state nodes using addImpStateComponent.js
 const addNode = (cy, nodeCounter) => {
@@ -18,7 +18,7 @@ const addNode = (cy, nodeCounter) => {
     nodeCounter += 1 // used for the id of new node
     addImpStateComponent(cy, event, nodeCounter)
     cy.nodes().addClass('label-nodes')
-    totalNodes(cy) // global module
+    printTotalNodes(cy) // global module
   })
 }
 

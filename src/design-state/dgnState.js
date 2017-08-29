@@ -9,7 +9,7 @@ const addDgnStateComponent = require('./addDgnStateComponent.js')
 const addDgnStateEdge = require('./addDgnStateEdge.js')
 
 // require global modules
-const totalNodes = require('../core/totalNodes.js')
+const printTotalNodes = require('../core/printTotalNodes.js')
 
 // add desing node
 const addNode = (cy, nodeCounter) => {
@@ -18,7 +18,7 @@ const addNode = (cy, nodeCounter) => {
     nodeCounter += 1
     addDgnStateComponent(cy, event, nodeCounter)
     cy.nodes().addClass('label-nodes')
-    totalNodes(cy) // global module
+    printTotalNodes(cy) // global module
   })
 }
 

@@ -150,7 +150,7 @@ module.exports = function (
 
     if (key === true && event.code === 'KeyZ') {
       // restore elements with meta + z
-      deleteRestoreConcepts.restoreNode()
+      deleteRestoreConcepts.restoreNode(cy)
     }
 
     if (event.shiftKey === true && key === true && event.code === 'KeyS') {

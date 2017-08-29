@@ -11,7 +11,7 @@ const vulnVerification = require('./vulnVerification.js')
 const findVulns = require('./findVulns.js')
 
 // require global modules
-const totalNodes = require('../core/totalNodes.js')
+const printTotalNodes = require('../core/printTotalNodes.js')
 const threatVerification = require('../core/threatVerification.js')
 const moduleSelection = require('../core/moduleSelection.js')
 
@@ -21,7 +21,7 @@ const addNode = (cy, nodeCounter) => {
     nodeCounter += 1
     addImpComponent(cy, event, nodeCounter)
     cy.nodes().addClass('label-nodes')
-    totalNodes(cy) // global module
+    printTotalNodes(cy) // global module
   })
 }
 

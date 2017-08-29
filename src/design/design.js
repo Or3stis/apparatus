@@ -9,7 +9,7 @@ const addDgnComponent = require('./addDgnComponent.js')
 const addDgnEdge = require('./addDgnEdge.js')
 
 // require global modules
-const totalNodes = require('../core/totalNodes.js')
+const printTotalNodes = require('../core/printTotalNodes.js')
 const threatVerification = require('../core/threatVerification.js')
 const moduleSelection = require('../core/moduleSelection.js')
 
@@ -20,7 +20,8 @@ const addNode = (cy, nodeCounter) => {
     nodeCounter += 1 // used for the id of the node
     addDgnComponent(cy, event, nodeCounter)
     cy.nodes().addClass('label-nodes')
-    totalNodes(cy) // global module
+    // totalNodes(cy) // global module
+    printTotalNodes(cy)
   })
 }
 
