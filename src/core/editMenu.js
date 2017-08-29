@@ -28,9 +28,10 @@ const nodeMenu = (cy, selection, selectedNode) => {
 
     nodeMenu.innerHTML = `<div class="dropdown" style='display: block; position: absolute; top:${posY}px; left: ${posX}px;'>
       <ul class="dropdown-menu" style='display:block;'>
-        <li><a href="#edit-node">edit node</a></li>
-        <li><a href="#show-neighbors">show neighbors</a></li>
-        <li><a href="#delete">delete</a></li>
+        <li><a>edit node</a></li>
+        <li><a>show neighbors</a></li>
+        <li><a>delete</a></li>
+        <li><a>delete</a></li>
       </ul>
     </div>`
 
@@ -69,7 +70,7 @@ const stageMenu = (cy, selection) => {
 
     stageMenu.innerHTML = `<div class="dropdown" style='display: block; position: absolute; top:${posY}px; left: ${posX}px;'>
       <ul class="dropdown-menu" style='display:block;'>
-        <li><a href="#restore-node">restore node</a></li>
+        <li><a>restore node</a></li>
       </ul>
     </div>`
 
