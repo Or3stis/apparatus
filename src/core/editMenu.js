@@ -43,7 +43,7 @@ const nodeMenu = (cy, selection, selectedNode) => {
       } else if (event === 'edit node') {
         editNode.formNode(selectedNode)
       } else if (event === 'delete') {
-        deleteRestoreConcepts.deleteEl(cy, selectedNode, 0)
+        deleteRestoreConcepts.deleteConcept(cy, selectedNode, 0)
       }
       // removes the menu on selection
       rmElement('window-id', 'nodeMenu-id')

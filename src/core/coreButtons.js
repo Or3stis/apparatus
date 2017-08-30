@@ -30,7 +30,7 @@ const showNeighbor = (cy, selectedNode) => {
 const deleteButton = (cy, selectedNode, selectedEdge) => {
   const buttonDelete = document.getElementById('delete')
   buttonDelete.addEventListener('click', () => {
-    deleteRestoreConcepts.deleteEl(cy, selectedNode.out, selectedEdge.out)
+    deleteRestoreConcepts.deleteConcept(cy, selectedNode.out, selectedEdge.out)
   })
 }
 

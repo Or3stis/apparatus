@@ -5,7 +5,7 @@ const printTotalNodes = require('./printTotalNodes.js')
 // holds the deleted nodes
 let deletedNodes = []
 // used as module
-const deleteEl = (cy, selectedNode, selectedEdge) => {
+const deleteConcept = (cy, selectedNode, selectedEdge) => {
   // removes edges
   if (
     Object.keys(selectedNode).length === 0 &&
@@ -33,6 +33,6 @@ const restoreNode = cy => {
 }
 
 module.exports = {
-  deleteEl,
+  deleteConcept,
   restoreNode
 }
