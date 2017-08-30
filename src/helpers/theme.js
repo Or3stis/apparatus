@@ -34,6 +34,6 @@ const setThemeGraph = (cy, color) => {
 }
 
 module.exports = {
-  setTheme: setTheme,
-  setThemeGraph: setThemeGraph
+  setTheme,
+  setThemeGraph
 }
