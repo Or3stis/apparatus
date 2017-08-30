@@ -71,12 +71,12 @@ const moduleGroup = cy => {
 }
 
 module.exports = {
-  addNode: addNode,
-  addEdge: addEdge,
-  validate: validate,
-  overview: overview,
-  threatVerify: threatVerify,
-  vulnVerify: vulnVerify,
-  findVulnerabilities: findVulnerabilities,
-  moduleGroup: moduleGroup
+  addNode,
+  addEdge,
+  validate,
+  overview,
+  threatVerify,
+  vulnVerify,
+  findVulnerabilities,
+  moduleGroup
 }
