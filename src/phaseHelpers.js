@@ -17,8 +17,6 @@ const impModelValidation = require('./implementation/impModelValidation.js')
 const impOverview = require('./implementation/impOverview.js')
 const addImpComponent = require('./implementation/addImpComponent.js')
 const addImpEdge = require('./implementation/addImpEdge.js')
-const vulnVerification = require('./implementation/vulnVerification.js')
-const findVulns = require('./implementation/findVulns.js')
 
 // require implementation-state modules
 const impStateModelValidation = require('./implementation-state/impStateModelValidation.js')
