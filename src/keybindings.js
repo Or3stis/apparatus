@@ -2,7 +2,7 @@
 
 const config = require('../config/config.js')
 
-const coreHelpers = require('./core/coreHelpers.js')
+const phaseHelpers = require('./phaseHelpers.js')
 const searchAttribute = require('./core/searchAttribute.js')
 const showMetamodel = require('./core/showMetamodel.js')
 const deleteRestoreConcepts = require('./core/deleteRestoreConcepts.js')
@@ -11,11 +11,6 @@ const printChat = require('./helpers/printChat.js')
 const printChatHTML = require('./helpers/printChatHTML.js')
 const save = require('./helpers/save.js')
 const theme = require('./helpers/theme.js')
-
-const addDgnEdge = require('./design/addDgnEdge.js')
-const addDgnStateEdge = require('./design-state/addDgnStateEdge.js')
-const addImpEdge = require('./implementation/addImpEdge.js')
-const addImpStateEdge = require('./implementation-state/addImpStateEdge.js')
 
 module.exports = function (
   cy,
@@ -86,10 +81,10 @@ module.exports = function (
         })
         break
       case 'overview':
-        coreHelpers.overviewHelper(cy, phase)
+        phaseHelpers.overviewHelper(cy, phase)
         break
       case 'validate':
-        coreHelpers.validateHelper(cy, phase)
+        phaseHelpers.validateHelper(cy, phase)
         break
       case 'metamodel':
         showMetamodel(phase)
@@ -130,15 +125,7 @@ module.exports = function (
     if (key === true && event.code === 'KeyE') {
       // checks for undefined selections
       if (Object.keys(srcNode.out).length !== 0) {
-        if (phase === 'design') {
-          addDgnEdge(cy, srcNode.out, trgNode.out)
-        } else if (phase === 'design-state') {
-          addDgnStateEdge(cy, srcNode.out, trgNode.out)
-        } else if (phase === 'implementation') {
-          addImpEdge(cy, srcNode.out, trgNode.out)
-        } else if (phase === 'implementation-state') {
-          addImpStateEdge(cy, srcNode.out, trgNode.out)
-        }
+        phaseHelpers.addEdge(cy, srcNode.out, trgNode.out, phase)
         cy.edges().addClass('label-edges')
       }
     }

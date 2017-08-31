@@ -8,26 +8,14 @@ const keybindings = require('../src/keybindings.js')
 
 // require core modules
 // const nodeInfo = require('./src/core/nodeInfo.js')
-const coreButtons = require('../src/core/coreButtons.js')
 const printTotalNodes = require('../src/core/printTotalNodes.js')
 const hoverNodeInfo = require('../src/core/hoverNodeInfo.js')
 const editMenu = require('../src/core/editMenu.js')
 
+const buttons = require('./buttons.js')
+
 // require helper functions
-const printChat = require('../src/helpers/printChat.js')
 const rmElement = require('../src/helpers/rmElement.js')
-
-// require design modules
-const dgn = require('../src/design/design.js')
-
-// require design-state Models
-const dgnState = require('../src/design-state/dgnState.js')
-
-// reguire implementation modules
-const imp = require('../src/implementation/implementation.js')
-
-// require implementation-state modules
-const impState = require('../src/implementation-state/impState.js')
 
 module.exports = function initialize (cy, phase) {
   // initial label render
@@ -155,57 +143,8 @@ module.exports = function initialize (cy, phase) {
 
   // load the buttons for each phase
 
-  // load design phase buttons
-  if (phase === 'design') {
-    dgn.addNode(cy, initialCount)
-    dgn.threatVerify(cy)
-    dgn.moduleGroup(cy)
-    dgn.addEdge(cy, srcNode, trgNode)
-    coreButtons.findPattern(cy)
-    // load design-state buttons
-  } else if (phase === 'design-state') {
-    dgnState.addNode(cy, initialCount)
-    dgnState.addEdge(cy, srcNode, trgNode)
-    // loads implementation phase buttons
-  } else if (phase === 'implementation') {
-    imp.addNode(cy, initialCount)
-    imp.threatVerify(cy)
-    imp.vulnVerify(cy)
-    imp.findVulnerabilities(cy)
-    imp.moduleGroup(cy)
-    imp.addEdge(cy, srcNode, trgNode)
-    coreButtons.findPattern(cy)
-    // loads implementation-state buttons
-  } else if (phase === 'implementation-state') {
-    impState.addNode(cy, initialCount)
-    impState.addEdge(cy, srcNode, trgNode)
-  }
-
   // declaration of global buttons
-
-  coreButtons.selectionNode(cy) // highlights only the selected node class
-
-  coreButtons.graphLayout(cy) // applies the selected layout
-
-  coreButtons.labels(cy) // enable label buttons
-
-  coreButtons.saveGraph(cy) // save graph
-
-  // phase model validation
-  coreButtons.validate(cy, phase)
-
-  coreButtons.overview(cy, phase) // phases model overview
-
-  coreButtons.showNeighbor(cy, selectedNode) // show the neighbors of a tapped node
-
-  coreButtons.deleteButton(cy, selectedNode, selectedEdge) // delete elements
-
-  // test function
-  const buttonTest = document.getElementById('test-button')
-  buttonTest.addEventListener('click', () => {
-    // test code goes here
-    printChat('button for code testing')
-  })
+  buttons(cy, selectedNode, selectedEdge, srcNode, trgNode, initialCount, phase) // delete elements
 
   printTotalNodes(cy) // initial node count
 
