@@ -132,7 +132,11 @@ module.exports = function (
 
     // delete elements
     if (key === true && event.code === 'Backspace') {
-      deleteRestoreConcepts.deleteConcept(cy, selectedNode.out, selectedEdge.out)
+      deleteRestoreConcepts.deleteConcept(
+        cy,
+        selectedNode.out,
+        selectedEdge.out
+      )
     }
 
     if (key === true && event.code === 'KeyZ') {
