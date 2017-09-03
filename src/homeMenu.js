@@ -71,4 +71,10 @@ module.exports = function homeMenu () {
     implementationStateUI()
     graph.removeChild(wrapper)
   })
+
+  const ack = document.createElement('ack')
+  ack.id = 'ack-id'
+  ack.innerHTML =
+    '<span style="position: absolute; bottom: 10px; right: 50%;">❮❯ with ♥︎ by <strong>or3stis</strong></span>'
+  graph.appendChild(ack)
 }
