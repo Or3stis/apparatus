@@ -6,6 +6,7 @@ const graphStyle = {}
 
 graphStyle.setStyle = color => {
   config.setColors(color) // set the theme's color values
+
   graphStyle.style = [
     {
       selector: 'node',
