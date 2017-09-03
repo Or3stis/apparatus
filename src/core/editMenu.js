@@ -95,6 +95,6 @@ const stageMenu = (cy, selection) => {
 }
 
 module.exports = {
-  nodeMenu: nodeMenu,
-  stageMenu: stageMenu
+  nodeMenu,
+  stageMenu
 }
