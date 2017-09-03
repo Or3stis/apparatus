@@ -75,5 +75,5 @@ const formNode = selectedNode => {
 }
 
 module.exports = {
-  formNode: formNode
+  formNode
 }
