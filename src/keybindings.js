@@ -2,7 +2,6 @@
 
 const config = require('../config/config.js')
 
-const phaseHelpers = require('./phaseHelpers.js')
 const searchAttribute = require('./core/searchAttribute.js')
 const showMetamodel = require('./core/showMetamodel.js')
 const deleteRestoreConcepts = require('./core/deleteRestoreConcepts.js')
@@ -11,6 +10,8 @@ const printChat = require('./helpers/printChat.js')
 const printChatHTML = require('./helpers/printChatHTML.js')
 const save = require('./helpers/save.js')
 const theme = require('./helpers/theme.js')
+
+const phaseHelpers = require('./buttonHelpers.js')
 
 module.exports = function (
   cy,
