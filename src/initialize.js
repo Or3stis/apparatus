@@ -111,7 +111,7 @@ module.exports = function initialize (cy, phase) {
     }
   })
   // right clicking
-  cy.on('cxttapend', 'node', selection => {
+  cy.on('cxttap', 'node', selection => {
     selectedNode.out = selection.target[0]
     editMenu.nodeMenu(cy, selection, selectedNode.out)
 
@@ -123,7 +123,7 @@ module.exports = function initialize (cy, phase) {
     rmElement('window-id', 'stageMenu-id') // remove stage menu element
   })
   // right clicking on stage
-  cy.on('cxttapend', selection => {
+  cy.on('cxttap', selection => {
     // checks if only the stage was clicked
     if (selection.target === cy) {
       // removes the stage menu if it exists
