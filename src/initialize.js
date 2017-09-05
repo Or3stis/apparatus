@@ -144,7 +144,7 @@ module.exports = function initialize (cy, phase) {
   // load the buttons for each phase
 
   // declaration of global buttons
-  buttons(cy, selectedNode, selectedEdge, srcNode, trgNode, initialCount, phase) // delete elements
+  buttons(cy, selectedNode, selectedEdge, srcNode, trgNode, initialCount, phase)
 
   printTotalNodes(cy) // initial node count
 
