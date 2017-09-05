@@ -1,7 +1,7 @@
 'use strict'
 
 const dgnMetamodel = require('./dgnSchema.js')
-const printChat = require('../helpers/printChat.js')
+const printChatText = require('../helpers/printChatText.js')
 // checks if the instance is correct
 
 module.exports = function moduleValidation (cy) {
@@ -43,7 +43,7 @@ module.exports = function moduleValidation (cy) {
     // if the string is empty, the module is correct
     if (result !== '') {
       result = `• ${component} has wrong connections`
-      printChat(result)
+      printChatText(result)
     }
   }
 
@@ -59,6 +59,6 @@ module.exports = function moduleValidation (cy) {
   componentValidation(cy, 'sensor', sensorArray)
 
   if (result === '') {
-    printChat('model instance is valid\n👍')
+    printChatText('model instance is valid\n👍')
   }
 }

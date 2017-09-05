@@ -1,6 +1,6 @@
 'use strict'
 
-const printChat = require('../helpers/printChat.js')
+const printChatText = require('../helpers/printChatText.js')
 const addEdge = require('../core/addEdge.js')
 
 module.exports = function addComponent (cy, srcNode, trgNode) {
@@ -65,6 +65,6 @@ module.exports = function addComponent (cy, srcNode, trgNode) {
       addEdge(cy, srcNodeId, trgNodeId, 'connects')
       break
     default:
-      printChat(`${srcNodeCpt} → ${trgNodeCpt}\nnot allowed 😔`)
+      printChatText(`${srcNodeCpt} → ${trgNodeCpt}\nnot allowed 😔`)
   }
 }

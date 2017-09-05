@@ -4,7 +4,7 @@ const http = require('http')
 const fs = require('fs')
 
 const config = require('../../config/config.js')
-const printChat = require('../helpers/printChat.js')
+const printChatText = require('../helpers/printChatText.js')
 const printChatHTML = require('../helpers/printChatHTML.js')
 
 // only checks for the concepts of device and application
@@ -29,7 +29,7 @@ module.exports = function findVuln (cy) {
   })
 
   if (nodesKeywords.length === 0) {
-    printChat('no vulnerabilities were found')
+    printChatText('no vulnerabilities were found')
   } else {
     // removes duplicate keywords
     const uniqueKeywords = [...new Set(nodesKeywords)]
@@ -40,8 +40,8 @@ module.exports = function findVuln (cy) {
       keywordsPrint += `• ${keyword}\n`
     })
 
-    printChat(`sending request to ${config.cveSearchUrl}`)
-    printChat(`☛ keywords used:\n\n${keywordsPrint}`)
+    printChatText(`sending request to ${config.cveSearchUrl}`)
+    printChatText(`☛ keywords used:\n\n${keywordsPrint}`)
     requestVulnData(uniqueKeywords)
   }
 }

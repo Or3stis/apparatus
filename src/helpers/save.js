@@ -2,7 +2,7 @@
 
 const jsonfile = require('jsonfile')
 const { dialog } = require('electron').remote
-const printChat = require('./printChat.js')
+const printChatText = require('./printChatText.js')
 
 // saves graph
 module.exports = function save (cy) {
@@ -23,7 +23,7 @@ module.exports = function save (cy) {
         if (err) {
           console.error(err.message)
         } else {
-          printChat('graph saved\n👍')
+          printChatText('graph saved\n👍')
         }
       })
     }

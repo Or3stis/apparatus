@@ -6,7 +6,7 @@ const searchAttribute = require('./core/searchAttribute.js')
 const showMetamodel = require('./core/showMetamodel.js')
 const deleteRestoreConcepts = require('./core/deleteRestoreConcepts.js')
 
-const printChat = require('./helpers/printChat.js')
+const printChatText = require('./helpers/printChatText.js')
 const printChatHTML = require('./helpers/printChatHTML.js')
 const save = require('./helpers/save.js')
 const theme = require('./helpers/theme.js')
@@ -72,8 +72,8 @@ module.exports = function (
       case 'help':
         // checks the platform to display the corrent help menu
         process.platform === 'darwin'
-          ? printChat(helpMenuMacOS)
-          : printChat(helpMenu)
+          ? printChatText(helpMenuMacOS)
+          : printChatText(helpMenu)
 
         printChatHTML(wikiURLButton)
         // opens the wiki page with the default browser

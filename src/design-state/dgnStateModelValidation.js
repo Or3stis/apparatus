@@ -1,7 +1,7 @@
 'use strict'
 
 const dgnStateMetamodel = require('./dgnStateSchema.js')
-const printChat = require('../helpers/printChat.js')
+const printChatText = require('../helpers/printChatText.js')
 // checks if the instance is correct
 
 module.exports = function moduleValidation (cy) {
@@ -31,7 +31,7 @@ module.exports = function moduleValidation (cy) {
     // if result is not empty print the wrong component
     if (result !== '') {
       result = `• ${component} has wrong connections`
-      printChat(result)
+      printChatText(result)
     }
   }
   // decleration of arrays
@@ -44,6 +44,6 @@ module.exports = function moduleValidation (cy) {
 
   // if the string is empty, the module is correct
   if (result === '') {
-    printChat('model instance is valid\n👍')
+    printChatText('model instance is valid\n👍')
   }
 }

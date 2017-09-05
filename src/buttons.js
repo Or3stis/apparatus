@@ -13,7 +13,7 @@ const printTotalNodes = require('./core/printTotalNodes.js')
 const findVulns = require('./implementation/findVulns.js')
 const vulnVerification = require('./implementation/vulnVerification.js')
 
-const printChat = require('./helpers/printChat.js')
+const printChatText = require('./helpers/printChatText.js')
 const save = require('./helpers/save.js')
 
 const phaseHelpers = require('./buttonHelpers.js')
@@ -98,7 +98,7 @@ module.exports = function buttons (
   const buttonTest = document.getElementById('test-button')
   buttonTest.addEventListener('click', () => {
     // test code goes here
-    printChat('button for code testing')
+    printChatText('button for code testing')
   })
 
   // enable label buttons

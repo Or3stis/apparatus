@@ -1,6 +1,6 @@
 'use strict'
 
-const printChat = require('../helpers/printChat.js')
+const printChatText = require('../helpers/printChatText.js')
 
 module.exports = function threatVerification (cy) {
   let threatArray = []
@@ -37,9 +37,9 @@ module.exports = function threatVerification (cy) {
   })
   result = `${result}\n • Threats total: ${threatArray.length}\n`
   result = `${result} • Mitigated total: ${mitigatedThreats}\n`
-  printChat(result)
+  printChatText(result)
 
   if (threatArray.length <= mitigatedThreats) {
-    printChat('all threats mitigated 🎉')
+    printChatText('all threats mitigated 🎉')
   }
 }

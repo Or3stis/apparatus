@@ -1,6 +1,6 @@
 'use strict'
 
-const printChat = require('../helpers/printChat.js')
+const printChatText = require('../helpers/printChatText.js')
 
 module.exports = function flag (cy, term) {
   let searchNodes = ''
@@ -19,5 +19,5 @@ module.exports = function flag (cy, term) {
       }
     })
   })
-  printChat(searchNodes)
+  printChatText(searchNodes)
 }

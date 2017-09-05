@@ -1,6 +1,6 @@
 'use strict'
 
-const printChat = require('../helpers/printChat.js')
+const printChatText = require('../helpers/printChatText.js')
 
 module.exports = function vulnVerification (cy) {
   let vulnArray = []
@@ -38,9 +38,9 @@ module.exports = function vulnVerification (cy) {
 
   result = `${result}\n • Vulnerabilities total: ${vulnArray.length}\n`
   result = `${result} • Mitigated total: ${mitigatedVulns}\n`
-  printChat(result)
+  printChatText(result)
 
   if (vulnArray.length <= mitigatedVulns) {
-    printChat('all vulnerabilities mitigated 🎉')
+    printChatText('all vulnerabilities mitigated 🎉')
   }
 }

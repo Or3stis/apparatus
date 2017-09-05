@@ -1,6 +1,6 @@
 'use strict'
 
-const printChat = require('../helpers/printChat.js')
+const printChatText = require('../helpers/printChatText.js')
 const impMetamodel = require('./impSchema.js')
 
 module.exports = function overview (cy) {
@@ -111,5 +111,5 @@ module.exports = function overview (cy) {
   result = `${result}• report sensor nodes: ${reportSensorNode}\n`
   result = `${result}• control sensor nodes: ${controlSensorNode}\n`
 
-  printChat(result)
+  printChatText(result)
 }

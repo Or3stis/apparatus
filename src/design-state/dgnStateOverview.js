@@ -1,6 +1,6 @@
 'use strict'
 
-const printChat = require('../helpers/printChat.js')
+const printChatText = require('../helpers/printChatText.js')
 
 module.exports = function overview (cy) {
   let result = ''
@@ -26,5 +26,5 @@ module.exports = function overview (cy) {
   result = `${result}• model nodes: ${modelNode}\n`
   result = `${result}• event nodes: ${eventNode}\n`
 
-  printChat(result)
+  printChatText(result)
 }

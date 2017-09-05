@@ -1,6 +1,6 @@
 'use strict'
 
-const printChat = require('../helpers/printChat.js')
+const printChatText = require('../helpers/printChatText.js')
 const dgnMetamodel = require('./dgnSchema.js')
 
 module.exports = function overview (cy) {
@@ -83,5 +83,5 @@ module.exports = function overview (cy) {
   result = `${result}• actor nodes: ${actorNode}\n`
   result = `${result}• sensor nodes: ${sensorNode}\n`
 
-  printChat(result)
+  printChatText(result)
 }

@@ -1,6 +1,6 @@
 'use strict'
 
-const printChat = require('../helpers/printChat.js')
+const printChatText = require('../helpers/printChatText.js')
 const rmElement = require('../helpers/rmElement.js')
 
 module.exports = function patterns (cy) {
@@ -25,7 +25,7 @@ module.exports = function patterns (cy) {
       })
     })
 
-    printChat(flaggedNodes)
+    printChatText(flaggedNodes)
   }
 
   const htmlElement = document.getElementById('info-nodes-id')
