@@ -71,23 +71,23 @@ module.exports = function phaseMenu (phase) {
     wrapper.appendChild(buttonImport)
 
     buttonImport.addEventListener('click', () => {
-      pcapImport(cy, phase)
       graph.removeChild(wrapper)
+      pcapImport(cy, phase)
     })
   }
 
   graph.appendChild(wrapper)
 
   buttonNew.addEventListener('click', () => {
-    newGraph(cy, phase)
     graph.removeChild(wrapper)
+    newGraph(cy, phase)
   })
   buttonLoad.addEventListener('click', () => {
-    load(cy, phase)
     graph.removeChild(wrapper)
+    load(cy, phase)
   })
   buttonDebug.addEventListener('click', () => {
-    debugGraph(cy, phase)
     graph.removeChild(wrapper)
+    debugGraph(cy, phase)
   })
 }
