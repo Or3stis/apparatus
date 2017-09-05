@@ -58,18 +58,22 @@ module.exports = function homeMenu () {
   buttonDgn.addEventListener('click', () => {
     designUI()
     graph.removeChild(wrapper)
+    graph.removeChild(ack)
   })
   buttonDgnState.addEventListener('click', () => {
     designStateUI()
     graph.removeChild(wrapper)
+    graph.removeChild(ack)
   })
   buttonImp.addEventListener('click', () => {
     implementationUI()
     graph.removeChild(wrapper)
+    graph.removeChild(ack)
   })
   buttonImpState.addEventListener('click', () => {
     implementationStateUI()
     graph.removeChild(wrapper)
+    graph.removeChild(ack)
   })
 
   const ack = document.createElement('ack')
