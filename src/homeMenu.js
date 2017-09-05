@@ -56,24 +56,24 @@ module.exports = function homeMenu () {
   // add events listeners to the buttons, each event listener loads a
   // specific UI and then removes the wrapper
   buttonDgn.addEventListener('click', () => {
-    designUI()
     graph.removeChild(wrapper)
     graph.removeChild(ack)
+    designUI()
   })
   buttonDgnState.addEventListener('click', () => {
-    designStateUI()
     graph.removeChild(wrapper)
     graph.removeChild(ack)
+    designStateUI()
   })
   buttonImp.addEventListener('click', () => {
-    implementationUI()
     graph.removeChild(wrapper)
     graph.removeChild(ack)
+    implementationUI()
   })
   buttonImpState.addEventListener('click', () => {
-    implementationStateUI()
     graph.removeChild(wrapper)
     graph.removeChild(ack)
+    implementationStateUI()
   })
 
   const ack = document.createElement('ack')
