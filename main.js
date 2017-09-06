@@ -17,6 +17,8 @@ function createWindow () {
     backgroundColor: config.background,
     width: 1200,
     height: 745,
+    minWidth: 800,
+    minHeight: 600,
     titleBarStyle: 'hidden',
     show: false
   })
