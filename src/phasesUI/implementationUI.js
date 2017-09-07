@@ -117,12 +117,6 @@ module.exports = function implementationUI () {
     </ul>
   </div>
 
-  <button class="button-icon" id="neighbors-button" title="show neighbors">
-    <svg width="24" height="24">
-      <use xlink:href="icons/share.svg#share" class="icon"></use>
-    </svg>
-  </button>
-
   <button class="button-icon" id="threat-verify-button" title="threat verification">
     <svg width="24" height="24">
       <use xlink:href="icons/security.svg#security" class="icon"></use>

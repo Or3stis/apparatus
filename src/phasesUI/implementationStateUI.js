@@ -77,12 +77,6 @@ module.exports = function implementationStateUI () {
     </ul>
   </div>
 
-  <button class="button-icon" id="neighbors-button" title="show neighbors">
-    <svg width="24" height="24">
-      <use xlink:href="icons/share.svg#share" class="icon"></use>
-    </svg>
-  </button>
-
   <button class="button-icon" id="model-validate-button" title="model validation">
     <svg width="24" height="24">
       <use xlink:href="icons/check.svg#check" class="icon"></use>

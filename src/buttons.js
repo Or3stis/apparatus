@@ -2,7 +2,6 @@
 
 // core modules, shared between all phases
 const nodeSelection = require('./core/nodeSelection.js')
-const getNeighbors = require('./core/getNeighbors.js')
 const layout = require('./core/layout.js')
 const moduleSelection = require('./core/moduleSelection.js')
 const threatVerification = require('./core/threatVerification.js')
@@ -47,12 +46,6 @@ module.exports = function buttons (
   // highlights only the selected node class
   const select = document.getElementById('selection-id')
   select.addEventListener('click', e => nodeSelection(cy, e.target.textContent))
-
-  // links the showNeighbor button
-  const buttonNeighbor = document.getElementById('neighbors-button')
-  buttonNeighbor.addEventListener('click', () => {
-    getNeighbors(cy, selectedNode.out)
-  })
 
   // bind the delete Button
   const buttonDelete = document.getElementById('delete')
