@@ -1,14 +1,18 @@
 'use strict'
 
+// checks if the instance is correct
+
 const dgnStateMetamodel = require('./dgnStateSchema.js')
 const printChatText = require('../helpers/printChatText.js')
-// checks if the instance is correct
 
 module.exports = function moduleValidation (cy) {
   // valid component connections
   const sensorArray = dgnStateMetamodel.sensorArray
   const modelArray = dgnStateMetamodel.modelArray
   const eventArray = dgnStateMetamodel.eventArray
+
+  let result = '' // posted on the nodeInfo div
+  let arrWrong = [] // stores wrong connection of nodes
 
   function componentValidation (cy, component, componentArray) {
     cy.nodes().map(node => {
@@ -17,6 +21,7 @@ module.exports = function moduleValidation (cy) {
         // stores the neighboring nodes of the component
         const neighborNodes = node.neighborhood().add(node)
         const neigborObject = neighborNodes.data().info.concept
+
         Object.keys(neigborObject).map(() => {
           // every neighbor node is added to the array arrWrong
           arrWrong.push(neigborObject)
@@ -27,16 +32,15 @@ module.exports = function moduleValidation (cy) {
         })
       }
     })
+
     result = `${arrWrong}`
+
     // if result is not empty print the wrong component
     if (result !== '') {
       result = `• ${component} has wrong connections`
       printChatText(result)
     }
   }
-  // decleration of arrays
-  let result = '' // posted on the nodeInfo div
-  let arrWrong = [] // stores wrong connection of nodes
 
   componentValidation(cy, 'sensor', sensorArray)
   componentValidation(cy, 'model', modelArray)
