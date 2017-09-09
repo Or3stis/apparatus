@@ -1,8 +1,9 @@
 'use strict'
 
+// checks if the instance is correct
+
 const dgnMetamodel = require('./dgnSchema.js')
 const printChatText = require('../helpers/printChatText.js')
-// checks if the instance is correct
 
 module.exports = function moduleValidation (cy) {
   // valid component connections
@@ -28,6 +29,7 @@ module.exports = function moduleValidation (cy) {
         // stores the neighboring nodes of the component
         const neighborNodes = node.neighborhood().add(node)
         const neigborObject = neighborNodes.data().info.concept
+
         Object.keys(neigborObject).map(() => {
           // every neighbor node is added to the array arrWrong
           arrWrong.push(neigborObject)
@@ -40,7 +42,8 @@ module.exports = function moduleValidation (cy) {
     })
 
     result = `${arrWrong}`
-    // if the string is empty, the module is correct
+
+    // if the string not empty, show the concepts with wrong connections
     if (result !== '') {
       result = `• ${component} has wrong connections`
       printChatText(result)
