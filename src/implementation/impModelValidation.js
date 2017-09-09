@@ -1,8 +1,9 @@
 'use strict'
 
+// checks if the instance is correct
+
 const impMetamodel = require('./impSchema.js')
 const printChatText = require('../helpers/printChatText.js')
-// checks if the instance is correct
 
 module.exports = function moduleValidation (cy) {
   // valid component connections
@@ -24,7 +25,6 @@ module.exports = function moduleValidation (cy) {
   const reportSensorArray = impMetamodel.reportSensorArray
   const controlSensorArray = impMetamodel.controlSensorArray
 
-  // decleration of arrays
   let result = '' // posted on the nodeInfo div
   let arrWrong = [] // stores wrong connection of nodes
 
@@ -35,9 +35,11 @@ module.exports = function moduleValidation (cy) {
         // stores the neighboring nodes of the component
         const neighborNodes = node.neighborhood().add(node)
         const neigborObject = neighborNodes.data().info.concept
+
         Object.keys(neigborObject).map(() => {
           // every neighbor node is added to the array arrWrong
           arrWrong.push(neigborObject)
+
           // if the neighbor is a valid connection it is removed from the array
           if (componentArray.includes(neigborObject) === true) {
             arrWrong.pop(neigborObject)
@@ -45,7 +47,9 @@ module.exports = function moduleValidation (cy) {
         })
       }
     })
+
     result = `${arrWrong}`
+
     // if result is not empty print the wrong component
     if (result !== '') {
       result = `• ${component} has wrong connections`
