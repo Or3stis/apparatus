@@ -1,8 +1,9 @@
 'use strict'
 
+// checks if the model is correct
+
 const impStateMetamodel = require('./impStateSchema.js')
 const printChatText = require('../helpers/printChatText.js')
-// checks if the model is correct
 
 module.exports = function moduleValidation (cy) {
   // valid component connections
@@ -11,6 +12,9 @@ module.exports = function moduleValidation (cy) {
   const controlSensorArray = impStateMetamodel.controlSensorArray
   const modelArray = impStateMetamodel.modelArray
   const eventArray = impStateMetamodel.eventArray
+
+  let result = '' // posted on the nodeInfo div
+  let arrWrong = [] // stores wrong connection of nodes
 
   function componentValidation (cy, component, componentArray) {
     cy.nodes().map(node => {
@@ -30,16 +34,15 @@ module.exports = function moduleValidation (cy) {
         })
       }
     })
+
     result = `${arrWrong}`
+
     // if result is not empty print the wrong component
     if (result !== '') {
       result = `• ${component} has wrong connections`
       printChatText(result)
     }
   }
-  // decleration of arrays
-  let result = '' // posted on the nodeInfo div
-  let arrWrong = [] // stores wrong connection of nodes
 
   componentValidation(cy, 'event sensor', eventSensorArray)
   componentValidation(cy, 'report sensor', reportSensorArray)
