@@ -43,7 +43,7 @@ module.exports = function moduleValidation (cy) {
 
     result = `${arrWrong}`
 
-    // if the string not empty, show the concepts with wrong connections
+    // if string not empty, show concepts with wrong connections
     if (result !== '') {
       result = `• ${component} has wrong connections`
       printChatText(result)
@@ -61,6 +61,7 @@ module.exports = function moduleValidation (cy) {
   componentValidation(cy, 'threat', threatArray)
   componentValidation(cy, 'sensor', sensorArray)
 
+  // if string is empty, the model is correct
   if (result === '') {
     printChatText('model instance is valid\n👍')
   }

@@ -50,7 +50,7 @@ module.exports = function moduleValidation (cy) {
   componentValidation(cy, 'model', modelArray)
   componentValidation(cy, 'event', eventArray)
 
-  // if the string is empty, the module is correct
+  // if string is empty, the model is correct
   if (result === '') {
     printChatText('model instance is valid\n👍')
   }
