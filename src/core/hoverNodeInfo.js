@@ -1,4 +1,5 @@
 'use strict'
+// helper function to  highlight the attributes of nodes on hover
 
 module.exports = function nodeInfo (node) {
   const containerNode = document.getElementById('container-node-id')

@@ -1,4 +1,4 @@
-'use strict'
+// helper function to add simple edges
 
 module.exports = function addEdge (cy, srcNode, trgNode, label) {
   cy.add({

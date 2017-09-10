@@ -1,6 +1,6 @@
 'use strict'
 
-// when buton class is clicked the corresponing nodes are highlighted
+// when button class is clicked the corresponing nodes are highlighted
 module.exports = function nodeSelection (cy, classification) {
   cy.elements().addClass('faded')
 

@@ -1,7 +1,7 @@
 'use strict'
+// edit menu for nodes on right click
 
 const editNode = require('./editNode.js')
-// const coreHelpers = require('./coreHelpers.js')
 const deleteRestoreConcepts = require('./deleteRestoreConcepts.js')
 const getNeighbors = require('./getNeighbors.js')
 const rmElement = require('../helpers/rmElement.js')
