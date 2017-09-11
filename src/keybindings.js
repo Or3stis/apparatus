@@ -6,7 +6,6 @@ const searchAttribute = require('./core/searchAttribute.js')
 const showMetamodel = require('./core/showMetamodel.js')
 const deleteRestoreConcepts = require('./core/deleteRestoreConcepts.js')
 
-const printChatText = require('./helpers/printChatText.js')
 const printChatHTML = require('./helpers/printChatHTML.js')
 const save = require('./helpers/save.js')
 const theme = require('./helpers/theme.js')
@@ -27,12 +26,12 @@ module.exports = function (
 • delete element: ⌘⌫
 • restore node: ⌘Z
 • save as: ⇧⌘S
-• view phase metamodel: metamodel
-• change color theme: toggle
-• clear sidebar: clear
-• model overview: overview
-• model validation: validate
-• search for attribures: keyword`
+• view phase metamodel: <b>metamodel</b>
+• change color theme: <b>toggle</b>
+• clear sidebar: <b>clear</b>
+• model overview: <b>overview</b>
+• model validation: <b>validate</b>
+• search for attribures: <b>keyword</b>`
 
   // help menu for Linux and Windows
   const helpMenu = `• focus on console: ctrl+L
@@ -40,12 +39,12 @@ module.exports = function (
 • delete element: ctrl+backspace
 • restore node: ctrl+Z
 • save as: shift+ctrl+S
-• view phase metamodel: metamodel
-• change color theme: toggle
-• clear sidebar: clear
-• model overview: overview
-• model validation: validate
-• search for attribures: keyword`
+• view phase metamodel: <b>metamodel</b>
+• change color theme: <b>toggle</b>
+• clear sidebar: <b>clear</b>
+• model overview: <b>overview</b>
+• model validation: <b>validate</b>
+• search for attribures: <b>keyword</b>`
 
   // adds the url of the github wiki
   const wikiURLButton = `click to view <button id='url-button' class='startButtons' style='color: var(--main-tx-color); background-color: var(--main-bg-color); width: 40px; height: 25px;'>wiki</button>`
@@ -72,8 +71,8 @@ module.exports = function (
       case 'help':
         // checks the platform to display the corrent help menu
         process.platform === 'darwin'
-          ? printChatText(helpMenuMacOS)
-          : printChatText(helpMenu)
+          ? printChatHTML(helpMenuMacOS)
+          : printChatHTML(helpMenu)
 
         printChatHTML(wikiURLButton)
         // opens the wiki page with the default browser
