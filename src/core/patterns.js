@@ -1,5 +1,7 @@
 'use strict'
 
+// highlights attribute patterns of nodes
+
 const printChatText = require('../helpers/printChatText.js')
 const rmElement = require('../helpers/rmElement.js')
 
@@ -63,6 +65,6 @@ module.exports = function patterns (cy) {
     return false
   }
 
-  // focus on the input of the form
+  // focus on the user input form
   document.getElementById('pattern-id').focus()
 }
