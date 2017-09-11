@@ -2,7 +2,7 @@
 
 // add components in the graph
 
-// TODO needs refactoring
+// TODO not DRY
 module.exports = function addDgnComponent (cy, event, nodeCounter) {
   // get mouse position on click
   // display new node on the left of the menu

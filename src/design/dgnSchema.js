@@ -1,3 +1,5 @@
+// design phase concept schema
+
 const dgnMetamodel = {}
 
 // metamodel group concepts

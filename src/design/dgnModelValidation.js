@@ -1,6 +1,6 @@
 'use strict'
 
-// checks if the instance is correct
+// checks if the model is correct
 
 const dgnMetamodel = require('./dgnSchema.js')
 const printChatText = require('../helpers/printChatText.js')
