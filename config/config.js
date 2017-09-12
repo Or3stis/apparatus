@@ -1,7 +1,8 @@
-// graph color values
+// configuration values of the app
 
 const config = {}
 
+// graph color values
 config.setColors = color => {
   // Atom's dark color theme
   if (color === 'dark') {
@@ -34,8 +35,10 @@ config.setColors = color => {
   }
 }
 
+// default color theme
 config.colorTheme = 'dark'
-config.setColors(config.colorTheme) // initial colors
+// first theme paint
+config.setColors(config.colorTheme)
 
 // urls
 

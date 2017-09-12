@@ -5,8 +5,10 @@ const config = require(`./config.js`)
 const graphStyle = {}
 
 graphStyle.setStyle = color => {
-  config.setColors(color) // set the theme's color values
+  // set the graph's color values based on the app theme
+  config.setColors(color)
 
+  // graph style rules
   graphStyle.style = [
     {
       selector: 'node',
