@@ -111,12 +111,12 @@ module.exports = function (
   // keydown listeners
   document.addEventListener('keydown', event => {
     let key = ''
-    // checks the platform to assing the meta key
+    // checks the platform to assign the correct meta key
     process.platform === 'darwin'
       ? (key = event.metaKey)
       : (key = event.ctrlKey)
 
-    // focus on the consoleId
+    // focus on consoleId
     if (key === true && event.code === 'KeyL') {
       consoleId.focus()
     }
@@ -130,7 +130,7 @@ module.exports = function (
       }
     }
 
-    // delete elements
+    // delete nodes or edges with meta + Backspace
     if (key === true && event.code === 'Backspace') {
       deleteRestoreConcepts.deleteConcept(
         cy,
@@ -139,11 +139,12 @@ module.exports = function (
       )
     }
 
+    // restore elements with meta + z
     if (key === true && event.code === 'KeyZ') {
-      // restore elements with meta + z
       deleteRestoreConcepts.restoreNode(cy)
     }
 
+    // save graph on meta + s
     if (event.shiftKey === true && key === true && event.code === 'KeyS') {
       save(cy)
     }
