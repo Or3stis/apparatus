@@ -1,6 +1,6 @@
 'use strict'
 
-// add components in the graph
+// add nodes in the graph
 
 // TODO needs refactoring
 module.exports = function addDgnComponent (cy, event, nodeCounter) {

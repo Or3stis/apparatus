@@ -1,3 +1,5 @@
+// design-state phase concept schema
+
 const dgnStateMetamodel = {}
 
 // allowed concepts connections
