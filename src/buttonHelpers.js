@@ -1,4 +1,4 @@
-// defines the phase specific functions
+// assigns specific functions to each
 
 // require design modules
 const dgnModelValidation = require('./design/dgnModelValidation.js')
@@ -6,7 +6,7 @@ const dgnOverview = require('./design/dgnOverview.js')
 const addDgnComponent = require('./design/addDgnComponent.js')
 const addDgnEdge = require('./design/addDgnEdge.js')
 
-// require design-state Models
+// require design-state modules
 const dgnStateModelValidation = require('./design-state/dgnStateModelValidation.js')
 const dgnStateOverview = require('./design-state/dgnStateOverview.js')
 const addDgnStateComponent = require('./design-state/addDgnStateComponent.js')
@@ -24,6 +24,7 @@ const impStateOverview = require('./implementation-state/impStateOverview.js')
 const addImpStateComponent = require('./implementation-state/addImpStateComponent.js')
 const addImpStateEdge = require('./implementation-state/addImpStateEdge.js')
 
+// phases add component module
 const addComponents = (cy, event, nodeCounter, phase) => {
   if (phase === 'design') {
     addDgnComponent(cy, event, nodeCounter)
@@ -36,6 +37,7 @@ const addComponents = (cy, event, nodeCounter, phase) => {
   }
 }
 
+// phases add edge module
 const addEdge = (cy, srcNode, trgNode, phase) => {
   if (phase === 'design') {
     addDgnEdge(cy, srcNode, trgNode)
