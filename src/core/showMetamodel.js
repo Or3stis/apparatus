@@ -26,6 +26,9 @@ module.exports = function showMetamodel (phase) {
     url = impStateMeta
   }
   // creates the window
-  let win = new BrowserWindow({ width: 900, height: 700 })
+  let win = new BrowserWindow({ width: 900, height: 700, show: false })
   win.loadURL(`file://${metamodePath.join('/')}/${url}`)
+  win.on('ready-to-show', () => {
+    win.show()
+  })
 }
