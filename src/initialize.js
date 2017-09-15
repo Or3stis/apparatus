@@ -4,18 +4,18 @@
 'use strict'
 
 // require keybindings
-const keybindings = require('../src/keybindings.js')
+const keybindings = require('./keybindings.js')
 
 // require core modules
 // const nodeInfo = require('./src/core/nodeInfo.js')
-const printTotalNodes = require('../src/core/printTotalNodes.js')
-const hoverNodeInfo = require('../src/core/hoverNodeInfo.js')
-const editMenu = require('../src/core/editMenu.js')
+const printTotalNodes = require('./core/printTotalNodes.js')
+const hoverNodeInfo = require('./core/hoverNodeInfo.js')
+const editMenu = require('./core/editMenu.js')
 
 const buttons = require('./buttons.js')
 
 // require helper functions
-const rmElement = require('../src/helpers/rmElement.js')
+const rmElement = require('./helpers/rmElement.js')
 
 module.exports = function initialize (cy, phase) {
   // initial label render
