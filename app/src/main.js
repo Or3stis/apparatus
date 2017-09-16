@@ -1,5 +1,5 @@
 const electron = require('electron')
-const config = require('./config/config.js')
+const config = require('../config/config.js')
 // Module to control application life.
 const app = electron.app
 // Module to create native browser window.
