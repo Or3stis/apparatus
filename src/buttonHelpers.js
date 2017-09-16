@@ -7,10 +7,10 @@ const addDgnComponent = require('./dgn/addDgnComponent.js')
 const addDgnEdge = require('./dgn/addDgnEdge.js')
 
 // require design-state modules
-const dgnStateModelValidation = require('./design-state/dgnStateModelValidation.js')
-const dgnStateOverview = require('./design-state/dgnStateOverview.js')
-const addDgnStateComponent = require('./design-state/addDgnStateComponent.js')
-const addDgnStateEdge = require('./design-state/addDgnStateEdge.js')
+const dgnStateModelValidation = require('./dgn-state/dgnStateModelValidation.js')
+const dgnStateOverview = require('./dgn-state/dgnStateOverview.js')
+const addDgnStateComponent = require('./dgn-state/addDgnStateComponent.js')
+const addDgnStateEdge = require('./dgn-state/addDgnStateEdge.js')
 
 // reguire implementation modules
 const impModelValidation = require('./implementation/impModelValidation.js')

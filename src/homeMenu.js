@@ -3,7 +3,7 @@
 'use strict'
 
 const designUI = require('./phasesUI/dgnUI.js')
-const designStateUI = require('./phasesUI/designStateUI.js')
+const designStateUI = require('./phasesUI/dgnStateUI.js')
 const implementationUI = require('./phasesUI/implementationUI.js')
 const implementationStateUI = require('./phasesUI/implementationStateUI.js')
 
