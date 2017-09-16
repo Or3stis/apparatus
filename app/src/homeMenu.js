@@ -5,7 +5,7 @@
 const designUI = require('./phaseUI/dgnUI.js')
 const designStateUI = require('./phaseUI/dgnStateUI.js')
 const implementationUI = require('./phaseUI/impUI.js')
-const implementationStateUI = require('./phaseUI/implementationStateUI.js')
+const implementationStateUI = require('./phaseUI/impStateUI.js')
 
 module.exports = function homeMenu () {
   // get the graph container

@@ -19,10 +19,10 @@ const addImpComponent = require('./imp/addImpComponent.js')
 const addImpEdge = require('./imp/addImpEdge.js')
 
 // require implementation-state modules
-const impStateModelValidation = require('./implementation-state/impStateModelValidation.js')
-const impStateOverview = require('./implementation-state/impStateOverview.js')
-const addImpStateComponent = require('./implementation-state/addImpStateComponent.js')
-const addImpStateEdge = require('./implementation-state/addImpStateEdge.js')
+const impStateModelValidation = require('./imp-state/impStateModelValidation.js')
+const impStateOverview = require('./imp-state/impStateOverview.js')
+const addImpStateComponent = require('./imp-state/addImpStateComponent.js')
+const addImpStateEdge = require('./imp-state/addImpStateEdge.js')
 
 // phases add component module
 const addComponents = (cy, event, nodeCounter, phase) => {
