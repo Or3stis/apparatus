@@ -9,8 +9,8 @@ const deleteRestoreConcepts = require('./core/deleteRestoreConcepts.js')
 const patterns = require('./core/patterns.js')
 const printTotalNodes = require('./core/printTotalNodes.js')
 
-const findVulns = require('./implementation/findVulns.js')
-const vulnVerification = require('./implementation/vulnVerification.js')
+const findVulns = require('./imp/findVulns.js')
+const vulnVerification = require('./imp/vulnVerification.js')
 
 const printChatText = require('./helpers/printChatText.js')
 const save = require('./helpers/save.js')

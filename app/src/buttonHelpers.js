@@ -13,10 +13,10 @@ const addDgnStateComponent = require('./dgn-state/addDgnStateComponent.js')
 const addDgnStateEdge = require('./dgn-state/addDgnStateEdge.js')
 
 // reguire implementation modules
-const impModelValidation = require('./implementation/impModelValidation.js')
-const impOverview = require('./implementation/impOverview.js')
-const addImpComponent = require('./implementation/addImpComponent.js')
-const addImpEdge = require('./implementation/addImpEdge.js')
+const impModelValidation = require('./imp/impModelValidation.js')
+const impOverview = require('./imp/impOverview.js')
+const addImpComponent = require('./imp/addImpComponent.js')
+const addImpEdge = require('./imp/addImpEdge.js')
 
 // require implementation-state modules
 const impStateModelValidation = require('./implementation-state/impStateModelValidation.js')

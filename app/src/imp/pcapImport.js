@@ -248,7 +248,7 @@ const writeGraph = (cy, devices, connections) => {
     if (err) throw err
 
     // loads the created graph on the tool
-    cyOptions(cy, `../../graphs/implementation/${timeStamp}.js`)
+    cyOptions(cy, `../../../graphs/implementation/${timeStamp}.js`)
     initialize(cy.out, 'implementation')
   })
 }
