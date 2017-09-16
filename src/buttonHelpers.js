@@ -1,10 +1,10 @@
 // assigns specific functions to each
 
 // require design modules
-const dgnModelValidation = require('./design/dgnModelValidation.js')
-const dgnOverview = require('./design/dgnOverview.js')
-const addDgnComponent = require('./design/addDgnComponent.js')
-const addDgnEdge = require('./design/addDgnEdge.js')
+const dgnModelValidation = require('./dgn/dgnModelValidation.js')
+const dgnOverview = require('./dgn/dgnOverview.js')
+const addDgnComponent = require('./dgn/addDgnComponent.js')
+const addDgnEdge = require('./dgn/addDgnEdge.js')
 
 // require design-state modules
 const dgnStateModelValidation = require('./design-state/dgnStateModelValidation.js')
