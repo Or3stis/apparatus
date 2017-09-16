@@ -2,10 +2,10 @@
 
 // initial options menu for each phase
 
-const load = require('../src/helpers/load.js')
-const cyOptions = require('../src/helpers/cyOptions.js')
-const initialize = require('../src/initialize.js')
-const pcapImport = require('../src/implementation/pcapImport.js')
+const load = require('./helpers/load.js')
+const cyOptions = require('./helpers/cyOptions.js')
+const initialize = require('./initialize.js')
+const pcapImport = require('./implementation/pcapImport.js')
 
 const template = '../../graphs/modelTemplate.js'
 const testGraph = '../../graphs/implementation/smartHome.js'
