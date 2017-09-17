@@ -3,7 +3,7 @@
 const http = require('http')
 const fs = require('fs')
 
-const config = require('../../config/config.js')
+const config = require('../../settings/config.js')
 const printChatText = require('../helpers/printChatText.js')
 const printChatHTML = require('../helpers/printChatHTML.js')
 

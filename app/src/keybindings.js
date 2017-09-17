@@ -1,6 +1,6 @@
 'use strict'
 
-const config = require('../config/config.js')
+const config = require('../settings/config.js')
 
 const searchAttribute = require('./core/searchAttribute.js')
 const showMetamodel = require('./core/showMetamodel.js')

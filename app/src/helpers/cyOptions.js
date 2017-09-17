@@ -1,8 +1,8 @@
 'use strict'
 
 const cytoscape = require('cytoscape')
-const config = require('../../config/config.js')
-const graphStyle = require('../../config/graphStyle.js')
+const config = require('../../settings/config.js')
+const graphStyle = require('../../settings/graphStyle.js')
 
 module.exports = function cyOptions (cy, file) {
   const model = require(file)

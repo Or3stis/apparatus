@@ -1,7 +1,7 @@
 // module to change color themes between light and dark themes
 
-const config = require('../../config/config.js')
-const graphStyle = require('../../config/graphStyle.js')
+const config = require('../../settings/config.js')
+const graphStyle = require('../../settings/graphStyle.js')
 
 // changes only the UI color values
 const setTheme = color => {
