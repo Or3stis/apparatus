@@ -12,11 +12,11 @@ const printTotalNodes = require('./core/printTotalNodes.js')
 const findVulns = require('./imp/findVulns.js')
 const vulnVerification = require('./imp/vulnVerification.js')
 
-const printChatText = require('./helpers/printChatText.js')
 const save = require('./helpers/save.js')
 
 const phaseHelpers = require('./buttonHelpers.js')
 
+// const printChatText = require('./helpers/printChatText.js')
 // const load = require('../helpers/load.js')
 
 module.exports = function buttons (
@@ -88,11 +88,11 @@ module.exports = function buttons (
   //   })
 
   // test function
-  const buttonTest = document.getElementById('test-button')
-  buttonTest.addEventListener('click', () => {
-    // test code goes here
-    printChatText('button for code testing')
-  })
+  // const buttonTest = document.getElementById('test-button')
+  // buttonTest.addEventListener('click', () => {
+  //   // test code goes here
+  //   printChatText('button for code testing')
+  // })
 
   // enable label buttons
   const hideLabelsButton = document.getElementById('hide-label')

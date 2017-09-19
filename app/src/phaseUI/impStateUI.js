@@ -115,11 +115,11 @@ module.exports = function implementationStateUI () {
     </button>
   </form>
 
-  <button class="button-icon" id="test-button" title="test">
+  <!-- <button class="button-icon" id="test-button" title="test">
     <svg width="24" height="24">
       <use xlink:href="icons/bug.svg#bug" class="icon"></use>
     </svg>
-  </button>
+  </button> -->
 
   <div class="label-wrapper" id="label-wrapper-id">
     <button class="label-button" id="hide-label" title="hide labels">1</button>
