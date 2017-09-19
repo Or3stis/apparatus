@@ -1,6 +1,5 @@
 'use strict'
 
-// TODO pair common port with services in the map function that creates devices
 // TODO code is incompehensible, make it better
 
 const { dialog } = require('electron').remote
@@ -294,6 +293,8 @@ module.exports = function pcapImport (cy, phase) {
         // reads data from the created txt file
         // also creates the js file of the graph using the writeGraph
         readTxtFile(cy)
+
+        // TODO delete the txt file
       }
     )
   } else {
