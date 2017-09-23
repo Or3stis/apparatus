@@ -16,6 +16,7 @@ const save = require('./helpers/save.js')
 
 const phaseHelpers = require('./buttonHelpers.js')
 
+// const dgnState2ImpState = require('./tranformation/dgnState2ImpState.js')
 // const printChatText = require('./helpers/printChatText.js')
 // const load = require('../helpers/load.js')
 
@@ -91,7 +92,8 @@ module.exports = function buttons (
   // const buttonTest = document.getElementById('test-button')
   // buttonTest.addEventListener('click', () => {
   //   // test code goes here
-  //   printChatText('button for code testing')
+  //   // printChatText('button for code testing')
+  //   dgnState2ImpState(cy)
   // })
 
   // enable label buttons
