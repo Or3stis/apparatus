@@ -9,6 +9,8 @@ const deleteRestoreConcepts = require('./core/deleteRestoreConcepts.js')
 const patterns = require('./core/patterns.js')
 const printTotalNodes = require('./core/printTotalNodes.js')
 
+const dgnState2ImpState = require('./tranformation/dgnState2ImpState.js')
+
 const findVulns = require('./imp/findVulns.js')
 const vulnVerification = require('./imp/vulnVerification.js')
 
@@ -139,6 +141,12 @@ module.exports = function buttons (
     const group = document.getElementById('module-group')
     group.addEventListener('click', e => {
       moduleSelection(cy, e.target.textContent) // global module
+    })
+  } else if (phase === 'design-state') {
+    // transform design-state model to implementation-state
+    const buttonTransform = document.getElementById('transform-button')
+    buttonTransform.addEventListener('click', () => {
+      dgnState2ImpState(cy)
     })
   } else if (phase === 'implementation') {
     // verify threats
