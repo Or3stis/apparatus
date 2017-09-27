@@ -21,7 +21,7 @@ module.exports = function addComponent (cy, srcNode, trgNode) {
       addEdge(cy, srcNodeId, trgNodeId, 'connects')
       break
     case srcNodeCpt === 'thing' && trgNodeCpt === 'information':
-      addEdge(cy, srcNodeId, trgNodeId, srcNodeCpt, trgNodeCpt, 'has')
+      addEdge(cy, srcNodeId, trgNodeId, 'has')
       break
     case srcNodeCpt === 'constraint' && trgNodeCpt === 'micronet':
       addEdge(cy, srcNodeId, trgNodeId, 'imposes')
@@ -42,7 +42,7 @@ module.exports = function addComponent (cy, srcNode, trgNode) {
       addEdge(cy, srcNodeId, trgNodeId, 'use')
       break
     case srcNodeCpt === 'actor' && trgNodeCpt === 'information':
-      addEdge(cy, srcNodeId, trgNodeId, srcNodeCpt, trgNodeCpt, 'knows')
+      addEdge(cy, srcNodeId, trgNodeId, 'knows')
       break
     case srcNodeCpt === 'thing' && trgNodeCpt === 'net':
       addEdge(cy, srcNodeId, trgNodeId, 'belongs')
