@@ -28,7 +28,7 @@
     "jsonfile": "^4.0.0"
   },
   "devDependencies": {
-    "prettier": "^1.7.0",
+    "prettier": "^1.7.2",
     "standard": "^10.0.3"
   }
 }
