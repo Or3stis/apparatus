@@ -1,4 +1,4 @@
-'use strict'
+// keybindings
 
 const config = require('../settings/config.js')
 

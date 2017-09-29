@@ -1,8 +1,6 @@
 // initializes the application
 // and links it with the GUI
 
-'use strict'
-
 // require keybindings
 const keybindings = require('./keybindings.js')
 

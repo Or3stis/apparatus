@@ -1,7 +1,5 @@
 // creates the home page menu, used to access the phases
 
-'use strict'
-
 const designUI = require('./phaseUI/dgnUI.js')
 const designStateUI = require('./phaseUI/dgnStateUI.js')
 const implementationUI = require('./phaseUI/impUI.js')

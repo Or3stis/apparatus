@@ -1,5 +1,3 @@
-'use strict'
-
 // initial options menu for each phase
 
 const load = require('./helpers/load.js')
