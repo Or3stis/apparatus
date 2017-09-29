@@ -1,5 +1,3 @@
-'use strict'
-
 // dynamically edit nodes
 
 const rmElement = require('../helpers/rmElement.js')

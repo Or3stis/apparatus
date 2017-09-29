@@ -1,4 +1,3 @@
-'use strict'
 // edit menu for nodes on right click
 
 const editNode = require('./editNode.js')

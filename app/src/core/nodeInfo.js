@@ -1,5 +1,3 @@
-'use strict'
-
 const printChatText = require('./printChatText.js')
 
 // shows info of node in the div 'info-for-nodes'

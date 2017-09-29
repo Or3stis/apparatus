@@ -1,5 +1,3 @@
-'use strict'
-
 // source: http://js.cytoscape.org/#layouts/cose
 
 // changes the layout of the graph
