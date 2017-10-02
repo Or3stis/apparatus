@@ -3,7 +3,7 @@
 ## An 5G security analysis and visualization tool
 
 [![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](http://standardjs.com/)
-<!-- [![styled with prettier](https://img.shields.io/badge/styled_with-prettier-ff69b4.svg)](https://github.com/prettier/prettier) ![](https://travis-ci.org/Or3stis/apparatus.svg?branch=master) -->
+[![styled with prettier](https://img.shields.io/badge/styled_with-prettier-ff69b4.svg)](https://github.com/prettier/prettier)
 [![dependencies Status](https://david-dm.org/or3stis/apparatus.svg)]()
 [![devDependencies Status](https://david-dm.org/or3stis/apparatus/dev-status.svg)]()
 
