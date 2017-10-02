@@ -39,7 +39,7 @@ To clone and run this repository you'll need [Git](https://git-scm.com) and [Nod
 # Clone this repository
 git clone https://github.com/CapriTechLimited/5G-SAT.git
 # Go into the repository
-cd apparatus
+cd 5G-SAT
 # Install dependencies
 npm install
 # to run the app
@@ -49,7 +49,7 @@ npm start
 Because the app is still in prototype stage, it is best to keep up to date with the most recent commits. To do so, before starting the app, type:
 
 ```bash
-# inside the apparatus directory
+# inside the 5G-SAT directory
 
 # update to latest
 git pull
