@@ -1,10 +1,9 @@
-'use strict'
+// saves graph
 
 const jsonfile = require('jsonfile')
 const { dialog } = require('electron').remote
 const printChatText = require('./printChatText.js')
 
-// saves graph
 module.exports = function save (cy) {
   // parses graph and stores it as an object
   const fullgraph = cy.json()

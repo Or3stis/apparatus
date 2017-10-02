@@ -13,7 +13,7 @@ module.exports = function addDgnComponent (cy, event, nodeCounter) {
   let component = event.target.textContent
 
   switch (component) {
-    case 'thing':
+    case 'service provider':
       cy.add({
         group: 'nodes',
         data: {
@@ -21,8 +21,7 @@ module.exports = function addDgnComponent (cy, event, nodeCounter) {
           label: `${component}`,
           info: {
             description: '',
-            component: '',
-            concept: 'thing'
+            concept: 'service provider'
           }
         },
         renderedPosition: {
@@ -31,7 +30,7 @@ module.exports = function addDgnComponent (cy, event, nodeCounter) {
         }
       })
       break
-    case 'micronet':
+    case 'infrastrure provider':
       cy.add({
         group: 'nodes',
         data: {
@@ -40,7 +39,7 @@ module.exports = function addDgnComponent (cy, event, nodeCounter) {
           info: {
             description: '',
             purpose: '',
-            concept: 'micronet'
+            concept: 'infrastrure provider'
           }
         },
         renderedPosition: {
@@ -49,7 +48,7 @@ module.exports = function addDgnComponent (cy, event, nodeCounter) {
         }
       })
       break
-    case 'information':
+    case 'cesm':
       cy.add({
         group: 'nodes',
         data: {
@@ -57,7 +56,7 @@ module.exports = function addDgnComponent (cy, event, nodeCounter) {
           label: `${component}`,
           info: {
             description: '',
-            concept: 'information'
+            concept: 'cesm'
           }
         },
         renderedPosition: {
@@ -66,7 +65,7 @@ module.exports = function addDgnComponent (cy, event, nodeCounter) {
         }
       })
       break
-    case 'net':
+    case 'vim':
       cy.add({
         group: 'nodes',
         data: {
@@ -74,7 +73,7 @@ module.exports = function addDgnComponent (cy, event, nodeCounter) {
           label: `${component}`,
           info: {
             description: '',
-            concept: 'net'
+            concept: 'vim'
           }
         },
         renderedPosition: {
@@ -83,7 +82,24 @@ module.exports = function addDgnComponent (cy, event, nodeCounter) {
         }
       })
       break
-    case 'actor':
+    case 'main dc':
+      cy.add({
+        group: 'nodes',
+        data: {
+          id: `n${nodeCounter}`,
+          label: `${component}`,
+          info: {
+            description: '',
+            concept: 'main dc'
+          }
+        },
+        renderedPosition: {
+          x: posX,
+          y: posY
+        }
+      })
+      break
+    case 'light dc':
       cy.add({
         group: 'nodes',
         data: {
@@ -92,7 +108,7 @@ module.exports = function addDgnComponent (cy, event, nodeCounter) {
           info: {
             description: '',
             intent: '',
-            concept: 'actor'
+            concept: 'light dc'
           }
         },
         renderedPosition: {
@@ -101,7 +117,7 @@ module.exports = function addDgnComponent (cy, event, nodeCounter) {
         }
       })
       break
-    case 'malicious actor':
+    case 'vnf':
       cy.add({
         group: 'nodes',
         data: {
@@ -109,8 +125,60 @@ module.exports = function addDgnComponent (cy, event, nodeCounter) {
           label: `${component}`,
           info: {
             description: '',
-            intent: '',
-            concept: 'malicious actor'
+            concept: 'vnf'
+          }
+        },
+        renderedPosition: {
+          x: posX,
+          y: posY
+        }
+      })
+      break
+    case 'storage':
+      cy.add({
+        group: 'nodes',
+        data: {
+          id: `n${nodeCounter}`,
+          label: `${component}`,
+          info: {
+            description: '',
+            property: '',
+            concept: 'storage'
+          }
+        },
+        renderedPosition: {
+          x: posX,
+          y: posY
+        }
+      })
+      break
+    case 'process':
+      cy.add({
+        group: 'nodes',
+        data: {
+          id: `n${nodeCounter}`,
+          label: `${component}`,
+          info: {
+            description: '',
+            type: '',
+            concept: 'process'
+          }
+        },
+        renderedPosition: {
+          x: posX,
+          y: posY
+        }
+      })
+      break
+    case 'constraint':
+      cy.add({
+        group: 'nodes',
+        data: {
+          id: `n${nodeCounter}`,
+          label: `${component}`,
+          info: {
+            description: '',
+            concept: 'constraint'
           }
         },
         renderedPosition: {
@@ -136,7 +204,7 @@ module.exports = function addDgnComponent (cy, event, nodeCounter) {
         }
       })
       break
-    case 'constraint':
+    case 'end user':
       cy.add({
         group: 'nodes',
         data: {
@@ -144,8 +212,7 @@ module.exports = function addDgnComponent (cy, event, nodeCounter) {
           label: `${component}`,
           info: {
             description: '',
-            property: '',
-            concept: 'constraint'
+            concept: 'end user'
           }
         },
         renderedPosition: {
@@ -162,7 +229,6 @@ module.exports = function addDgnComponent (cy, event, nodeCounter) {
           label: `${component}`,
           info: {
             description: '',
-            type: '',
             concept: 'threat'
           }
         },
@@ -172,7 +238,7 @@ module.exports = function addDgnComponent (cy, event, nodeCounter) {
         }
       })
       break
-    case 'sensor':
+    case 'malicious actor':
       cy.add({
         group: 'nodes',
         data: {
@@ -180,7 +246,7 @@ module.exports = function addDgnComponent (cy, event, nodeCounter) {
           label: `${component}`,
           info: {
             description: '',
-            concept: 'sensor'
+            concept: 'malicious actor'
           }
         },
         renderedPosition: {

@@ -7,7 +7,7 @@ const printChatText = require('../helpers/printChatText.js')
 
 module.exports = function moduleValidation (cy) {
   // valid component connections
-  const sensorArray = dgnStateMetamodel.sensorArray
+  const cesmArray = dgnStateMetamodel.cesmArray
   const modelArray = dgnStateMetamodel.modelArray
   const eventArray = dgnStateMetamodel.eventArray
 
@@ -42,7 +42,7 @@ module.exports = function moduleValidation (cy) {
     }
   }
 
-  componentValidation(cy, 'sensor', sensorArray)
+  componentValidation(cy, 'cesm', cesmArray)
   componentValidation(cy, 'model', modelArray)
   componentValidation(cy, 'event', eventArray)
 

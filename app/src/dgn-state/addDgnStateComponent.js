@@ -13,7 +13,7 @@ module.exports = function addDgnComponent (cy, event, nodeCounter) {
   let component = event.target.textContent
 
   switch (component) {
-    case 'sensor':
+    case 'cesm':
       cy.add({
         group: 'nodes',
         data: {
@@ -21,7 +21,7 @@ module.exports = function addDgnComponent (cy, event, nodeCounter) {
           label: `${component}`,
           info: {
             description: '',
-            concept: 'sensor'
+            concept: 'cesm'
           }
         },
         renderedPosition: {
@@ -55,8 +55,6 @@ module.exports = function addDgnComponent (cy, event, nodeCounter) {
           label: `${component}`,
           info: {
             description: '',
-            trigger: '',
-            constraint: '',
             concept: 'event'
           }
         },

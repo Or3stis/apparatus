@@ -1,4 +1,4 @@
-'use strict'
+// configures the initial option of the cytoscape model
 
 const cytoscape = require('cytoscape')
 const config = require('../../settings/config.js')

@@ -3,10 +3,9 @@
 const load = require('./helpers/load.js')
 const cyOptions = require('./helpers/cyOptions.js')
 const initialize = require('./initialize.js')
-const pcapImport = require('./imp/pcapImport.js')
 
 const template = '../../../graphs/modelTemplate.js'
-const testGraph = '../../../graphs/implementation/smartHome.js'
+const testGraph = '../../../graphs/test.json'
 
 let cy = {}
 
@@ -54,25 +53,6 @@ module.exports = function phaseMenu (phase) {
   wrapper.appendChild(buttonNew)
   wrapper.appendChild(buttonLoad)
   wrapper.appendChild(buttonDebug)
-
-  // loads the pcapImport module during the implementation phase
-  if (phase === 'implementation') {
-    const buttonImport = document.createElement('button')
-    buttonImport.id = 'import-id'
-    buttonImport.className = 'startButtons'
-    buttonImport.type = 'button'
-    buttonImport.value = 'import'
-    buttonImport.innerHTML =
-      'import .pcapng file <small style="color: #d19a66;">beta</small>'
-    // buttonImport.textContent = 'import pcang file'
-
-    wrapper.appendChild(buttonImport)
-
-    buttonImport.addEventListener('click', () => {
-      graph.removeChild(wrapper)
-      pcapImport(cy, phase)
-    })
-  }
 
   graph.appendChild(wrapper)
 

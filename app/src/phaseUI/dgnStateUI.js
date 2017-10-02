@@ -25,7 +25,7 @@ module.exports = function designStateUI () {
     </button>
     <ul class="dropdown-menu">
       <li><a>model</a></li>
-      <li><a>sensor</a></li>
+      <li><a>cesm</a></li>
       <li><a>event</a></li>
     </ul>
   </div>
@@ -50,7 +50,7 @@ module.exports = function designStateUI () {
     </button>
     <ul class="dropdown-menu">
       <li><a>model</a></li>
-      <li><a>sensor</a></li>
+      <li><a>cesm</a></li>
       <li><a>event</a></li>
     </ul>
   </div>
@@ -86,12 +86,6 @@ module.exports = function designStateUI () {
   <button class="button-icon" id="pattern-button" title="patterns">
     <svg width="24" height="24">
       <use xlink:href="icons/search.svg#search" class="icon"></use>
-    </svg>
-  </button>
-
-  <button class="button-icon" id="transform-button" title="transform">
-    <svg width="24" height="24">
-      <use xlink:href="icons/forward.svg#forward" class="icon"></use>
     </svg>
   </button>
 

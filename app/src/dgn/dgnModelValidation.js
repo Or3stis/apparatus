@@ -7,16 +7,20 @@ const printChatText = require('../helpers/printChatText.js')
 
 module.exports = function moduleValidation (cy) {
   // valid component connections
-  const thingArray = dgnMetamodel.thingArray
-  const micronetArray = dgnMetamodel.micronetArray
-  const netArray = dgnMetamodel.netArray
-  const informationArray = dgnMetamodel.informationArray
-  const actorArray = dgnMetamodel.actorArray
-  const maliciousActorArray = dgnMetamodel.maliciousActorArray
+  const serviceProvArray = dgnMetamodel.serviceProvArray
+  const infrastructureProvArray = dgnMetamodel.infrastructureProvArray
+  const cesmArray = dgnMetamodel.cesmArray
+  const vimArray = dgnMetamodel.vimArray
+  const mainDcArray = dgnMetamodel.mainDcArray
+  const lightDcArray = dgnMetamodel.lightDcArray
+  const vnfArray = dgnMetamodel.vnfArray
+  const storageArray = dgnMetamodel.storageArray
+  const processArray = dgnMetamodel.processArray
   const assetArray = dgnMetamodel.assetArray
   const constraintArray = dgnMetamodel.constraintArray
+  const endUserArray = dgnMetamodel.endUserArray
   const threatArray = dgnMetamodel.threatArray
-  const sensorArray = dgnMetamodel.sensorArray
+  const maliciousActorArray = dgnMetamodel.maliciousActorArray
 
   // decleration of arrays
   let result = '' // posted on the nodeInfo div
@@ -50,16 +54,20 @@ module.exports = function moduleValidation (cy) {
     }
   }
 
-  componentValidation(cy, 'thing', thingArray)
-  componentValidation(cy, 'micronet', micronetArray)
-  componentValidation(cy, 'net', netArray)
-  componentValidation(cy, 'information', informationArray)
-  componentValidation(cy, 'actor', actorArray)
-  componentValidation(cy, 'malicious actor', maliciousActorArray)
-  componentValidation(cy, 'asset', assetArray)
+  componentValidation(cy, 'service provider', serviceProvArray)
+  componentValidation(cy, 'infrastrure provider', infrastructureProvArray)
+  componentValidation(cy, 'cesm', cesmArray)
+  componentValidation(cy, 'vim', vimArray)
+  componentValidation(cy, 'main dc', mainDcArray)
+  componentValidation(cy, 'light dc', lightDcArray)
+  componentValidation(cy, 'vnf', vnfArray)
+  componentValidation(cy, 'storage', storageArray)
+  componentValidation(cy, 'process', processArray)
   componentValidation(cy, 'constraint', constraintArray)
+  componentValidation(cy, 'asset', assetArray)
+  componentValidation(cy, 'end user', endUserArray)
   componentValidation(cy, 'threat', threatArray)
-  componentValidation(cy, 'sensor', sensorArray)
+  componentValidation(cy, 'malicious actor', maliciousActorArray)
 
   // if string is empty, the model is correct
   if (result === '') {

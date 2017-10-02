@@ -1,4 +1,4 @@
-'use strict'
+// renders the design phase UI
 
 const phaseMenu = require('../../src/phaseMenu.js')
 
@@ -24,16 +24,20 @@ module.exports = function designUI () {
     </svg>
   </button>
   <ul class="dropdown-menu">
-    <li><a>thing</a></li>
-    <li><a>information</a></li>
-    <li><a>micronet</a></li>
-    <li><a>threat</a></li>
-    <li><a>asset</a></li>
+    <li><a>service provider</a></li>
+    <li><a>infrastrure provider</a></li>
+    <li><a>cesm</a></li>
+    <li><a>vim</a></li>
+    <li><a>main dc</a></li>
+    <li><a>light dc</a></li>
+    <li><a>vnf</a></li>
+    <li><a>storage</a></li>
+    <li><a>process</a></li>
     <li><a>constraint</a></li>
-    <li><a>actor</a></li>
+    <li><a>asset</a></li>
+    <li><a>end user</a></li>
+    <li><a>threat</a></li>
     <li><a>malicious actor</a></li>
-    <li><a>net</a></li>
-    <li><a>sensor</a></li>
   </ul>
 </div>
 
@@ -56,16 +60,20 @@ module.exports = function designUI () {
     </svg>
   </button>
   <ul class="dropdown-menu">
-    <li><a>thing</a></li>
-    <li><a>information</a></li>
-    <li><a>micronet</a></li>
-    <li><a>threat</a></li>
-    <li><a>asset</a></li>
+    <li><a>service provider</a></li>
+    <li><a>infrastrure provider</a></li>
+    <li><a>cesm</a></li>
+    <li><a>vim</a></li>
+    <li><a>main dc</a></li>
+    <li><a>light dc</a></li>
+    <li><a>vnf</a></li>
+    <li><a>storage</a></li>
+    <li><a>process</a></li>
     <li><a>constraint</a></li>
-    <li><a>actor</a></li>
+    <li><a>asset</a></li>
+    <li><a>end user</a></li>
+    <li><a>threat</a></li>
     <li><a>malicious actor</a></li>
-    <li><a>net</a></li>
-    <li><a>sensor</a></li>
   </ul>
 </div>
 

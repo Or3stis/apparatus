@@ -1,5 +1,3 @@
-'use strict'
-
 // highlights attribute patterns of nodes
 
 const printChatText = require('../helpers/printChatText.js')

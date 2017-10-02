@@ -1,6 +1,5 @@
-'use strict'
-
 // helper function to remove elements from the dom
+
 module.exports = function (parentElement, childElement) {
   const parentEl = document.getElementById(parentElement)
   const formEl = document.getElementById(childElement)
