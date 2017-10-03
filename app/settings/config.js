@@ -31,7 +31,7 @@ config.setColors = color => {
     config.green = '#50a14f'
     config.yellow = '#986901'
     config.magenta = '#a381ff'
-    config.cyan = '#a626a4'
+    config.cyan = '#0184bc'
   }
 }
 
