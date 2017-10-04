@@ -112,7 +112,6 @@ const createDevices = uniqueDevicesServices => {
       label: 'device',
       info: {
         description: '${deviceIp}',
-        aspect: '',
         layer: '',
         type: '',
         service: '',
