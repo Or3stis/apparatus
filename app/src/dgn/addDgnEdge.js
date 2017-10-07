@@ -1,4 +1,3 @@
-'use strict'
 // adds design phase edge types based on the source and target nodes
 
 const printChatText = require('../helpers/printChatText.js')

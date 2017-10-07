@@ -1,5 +1,3 @@
-'use strict'
-
 // add components in the graph
 
 // TODO not DRY

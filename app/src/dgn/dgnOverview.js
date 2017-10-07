@@ -1,4 +1,3 @@
-'use strict'
 // prints the total number of nodes along with their concept type and module
 
 const printChatText = require('../helpers/printChatText.js')
