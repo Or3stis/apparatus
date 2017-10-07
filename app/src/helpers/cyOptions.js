@@ -1,4 +1,4 @@
-'use strict'
+// helper to create cytoscape graphs based on specific options
 
 const cytoscape = require('cytoscape')
 const config = require('../../settings/config.js')

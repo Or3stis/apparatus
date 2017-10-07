@@ -1,4 +1,4 @@
-'use strict'
+// helper for loading saved graphs
 
 const { dialog } = require('electron').remote
 const initialize = require('../initialize.js')

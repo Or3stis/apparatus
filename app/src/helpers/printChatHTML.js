@@ -1,6 +1,5 @@
-'use strict'
+// helper to print HTML formatted text
 
-// prints html formatted text
 module.exports = function printChatText (toPrint) {
   const htmlElement = document.getElementById('info-nodes-id')
   const span = document.createElement('span')

@@ -1,4 +1,4 @@
-'use strict'
+// helper function to save graphs
 
 const jsonfile = require('jsonfile')
 const { dialog } = require('electron').remote
