@@ -1,4 +1,4 @@
-'use strict'
+// shows an overview of an implementation phase model
 
 const printChatText = require('../helpers/printChatText.js')
 const impMetamodel = require('./impSchema.js')

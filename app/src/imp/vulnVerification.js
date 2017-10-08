@@ -1,4 +1,4 @@
-'use strict'
+// checks if the vulnerabilities are mitigated
 
 const printChatText = require('../helpers/printChatText.js')
 

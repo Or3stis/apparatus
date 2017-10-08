@@ -1,5 +1,5 @@
 // common network Ports
-// used by the pcapImport
+// used by the pcapImport.js
 
 const commonPorts = {
   20: 'FTP Data',

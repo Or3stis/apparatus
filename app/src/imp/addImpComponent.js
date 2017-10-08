@@ -1,6 +1,4 @@
-'use strict'
-
-// add components in the graph
+// add implementation phase components in the graph
 
 // TODO needs refactoring
 module.exports = function addImpComponent (cy, event, nodeCounter) {

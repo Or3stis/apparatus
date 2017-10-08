@@ -1,6 +1,4 @@
-'use strict'
-
-// checks if the instance is correct
+// checks if an implementation phase model is complaint with the metamodel
 
 const impMetamodel = require('./impSchema.js')
 const printChatText = require('../helpers/printChatText.js')

@@ -1,7 +1,6 @@
-'use strict'
+// creates models from pcap-ng files
 
 // TODO code is incompehensible, make it better
-
 const { dialog } = require('electron').remote
 const fs = require('fs')
 const child = require('child_process')
