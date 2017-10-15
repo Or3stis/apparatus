@@ -1,6 +1,7 @@
+// shows info of node in the div 'info-for-nodes'
+
 const printChatText = require('./printChatText.js')
 
-// shows info of node in the div 'info-for-nodes'
 module.exports = function nodeInfo (node) {
   let nodeInfo = ''
   const nodeData = node.data().info

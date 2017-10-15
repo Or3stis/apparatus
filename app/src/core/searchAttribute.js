@@ -1,4 +1,3 @@
-'use strict'
 // highlights the nodes that have the search term
 
 const printChatText = require('../helpers/printChatText.js')

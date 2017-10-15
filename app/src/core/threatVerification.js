@@ -1,5 +1,4 @@
-'use strict'
-// checks if threats are mitigated with constraints
+// checks if threats are mitigated by constraints
 
 const printChatText = require('../helpers/printChatText.js')
 

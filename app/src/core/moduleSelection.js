@@ -1,4 +1,4 @@
-// when button module selection is clicked, corresponing nodes are highlighted
+// highlights all the nodes of a specific module
 
 module.exports = function moduleSelection (cy, input) {
   // grouping of the module components

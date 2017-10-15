@@ -1,4 +1,5 @@
-// shows the current phase metamodel in a separate window
+// shows the current phase's metamodel in a separate window
+
 const remote = require('electron').remote
 const BrowserWindow = remote.BrowserWindow
 
