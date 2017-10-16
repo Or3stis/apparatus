@@ -1,7 +1,6 @@
 // watch the graph for changes
 
 const nodes = (graphNodes, cy) => {
-
   const titleBar = document.getElementById('title-bar-id')
 
   if (graphNodes.same(cy.nodes()) === false) {
