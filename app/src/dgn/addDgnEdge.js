@@ -77,6 +77,12 @@ module.exports = function addComponent (cy, srcNode, trgNode) {
     case srcNodeCpt === 'constraint' && trgNodeCpt === 'vnf':
       addEdge(cy, srcNodeId, trgNodeId, 'is')
       break
+    case srcNodeCpt === 'constraint' && trgNodeCpt === 'main dc':
+      addEdge(cy, srcNodeId, trgNodeId, 'imposes')
+      break
+    case srcNodeCpt === 'constraint' && trgNodeCpt === 'light dc':
+      addEdge(cy, srcNodeId, trgNodeId, 'imposes')
+      break
     case srcNodeCpt === 'constraint' && trgNodeCpt === 'threat':
       addEdge(cy, srcNodeId, trgNodeId, 'mitigates')
       break
