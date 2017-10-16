@@ -1,4 +1,4 @@
-# 5G-SAT - 5G Software Analysis Tool
+# 5G-SAT - 5G Security Analysis Tool
 
 ## An 5G security analysis and visualization tool
 
