@@ -1,10 +1,9 @@
 // watch the graph for changes
 
 const nodes = (graphNodes, cy) => {
-  console.log(graphNodes.same(cy.nodes()))
-  // add the files location to the title bar
 
   const titleBar = document.getElementById('title-bar-id')
+
   if (graphNodes.same(cy.nodes()) === false) {
     // add the files location to the title bar
     titleBar.innerHTML += ` *`
