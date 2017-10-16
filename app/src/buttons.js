@@ -7,6 +7,7 @@ const threatVerification = require('./core/threatVerification.js')
 const deleteRestoreConcepts = require('./core/deleteRestoreConcepts.js')
 const patterns = require('./core/patterns.js')
 const printTotalNodes = require('./core/printTotalNodes.js')
+const watcher = require('./core/watcher.js')
 
 const dgnState2ImpState = require('./tranformation/dgnState2ImpState.js')
 
@@ -28,7 +29,8 @@ module.exports = function buttons (
   srcNode,
   trgNode,
   nodeCounter,
-  phase
+  phase,
+  graphNodes
 ) {
   // adds nodes
   const addNode = document.getElementById('add-component-id')
@@ -37,6 +39,9 @@ module.exports = function buttons (
     phaseHelpers.addComponents(cy, event, nodeCounter, phase)
     cy.nodes().addClass('label-nodes')
     printTotalNodes(cy)
+
+    // watch for changes in the nodes of the graph
+    watcher.nodes(graphNodes, cy)
   })
 
   const buttonAddEdge = document.getElementById('add-edge')
@@ -53,6 +58,9 @@ module.exports = function buttons (
   const buttonDelete = document.getElementById('delete')
   buttonDelete.addEventListener('click', () => {
     deleteRestoreConcepts.deleteConcept(cy, selectedNode.out, selectedEdge.out)
+
+    // watch for changes in the nodes of the graph
+    watcher.nodes(graphNodes, cy)
   })
 
   // applies the selected layout to the graph
@@ -93,8 +101,7 @@ module.exports = function buttons (
   // const buttonTest = document.getElementById('test-button')
   // buttonTest.addEventListener('click', () => {
   //   // test code goes here
-  //   // printChatText('button for code testing')
-  //   dgnState2ImpState(cy)
+  //   printChatText('button for code testing')
   // })
 
   // enable label buttons

@@ -5,6 +5,7 @@ const config = require('../settings/config.js')
 const searchAttribute = require('./core/searchAttribute.js')
 const showMetamodel = require('./core/showMetamodel.js')
 const deleteRestoreConcepts = require('./core/deleteRestoreConcepts.js')
+const watcher = require('./core/watcher.js')
 
 const printChatHTML = require('./helpers/printChatHTML.js')
 const save = require('./helpers/save.js')
@@ -18,7 +19,8 @@ module.exports = function (
   selectedEdge,
   srcNode,
   trgNode,
-  phase
+  phase,
+  graphNodes
 ) {
   // help menu for macOs
   const helpMenuMacOS = `• focus on console: ⌘L
@@ -137,11 +139,15 @@ module.exports = function (
         selectedNode.out,
         selectedEdge.out
       )
+
+      watcher.nodes(graphNodes, cy)
     }
 
     // restore elements with meta + z
     if (key === true && event.code === 'KeyZ') {
       deleteRestoreConcepts.restoreNode(cy)
+
+      watcher.nodes(graphNodes, cy)
     }
 
     // save graph on meta + s

@@ -36,6 +36,7 @@ module.exports = function initialize (cy, phase) {
 
   // counter variable to create unique sequential node ids in addComponents.js
   const initialCount = cy.nodes().length
+  const graphNodes = cy.nodes()
 
   // cy.on does stuff when intrecting with the graph
   // actions when tapping on node
@@ -148,10 +149,27 @@ module.exports = function initialize (cy, phase) {
   // load the buttons for each phase
 
   // declaration of global buttons
-  buttons(cy, selectedNode, selectedEdge, srcNode, trgNode, initialCount, phase)
+  buttons(
+    cy,
+    selectedNode,
+    selectedEdge,
+    srcNode,
+    trgNode,
+    initialCount,
+    phase,
+    graphNodes
+  )
 
   printTotalNodes(cy) // initial node count
 
   // enable keybindings
-  keybindings(cy, selectedNode, selectedEdge, srcNode, trgNode, phase)
+  keybindings(
+    cy,
+    selectedNode,
+    selectedEdge,
+    srcNode,
+    trgNode,
+    phase,
+    graphNodes
+  )
 }
