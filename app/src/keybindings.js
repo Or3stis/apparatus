@@ -5,11 +5,11 @@ const config = require('../settings/config.js')
 const searchAttribute = require('./core/searchAttribute.js')
 const showMetamodel = require('./core/showMetamodel.js')
 const deleteRestoreConcepts = require('./core/deleteRestoreConcepts.js')
-const watcher = require('./core/watcher.js')
 
 const printChatHTML = require('./helpers/printChatHTML.js')
 const save = require('./helpers/save.js')
 const theme = require('./helpers/theme.js')
+const watcher = require('./helpers/watcher.js')
 
 const phaseHelpers = require('./buttonHelpers.js')
 

@@ -7,7 +7,6 @@ const threatVerification = require('./core/threatVerification.js')
 const deleteRestoreConcepts = require('./core/deleteRestoreConcepts.js')
 const patterns = require('./core/patterns.js')
 const printTotalNodes = require('./core/printTotalNodes.js')
-const watcher = require('./core/watcher.js')
 
 const dgnState2ImpState = require('./tranformation/dgnState2ImpState.js')
 
@@ -15,6 +14,7 @@ const findVulns = require('./imp/findVulns.js')
 const vulnVerification = require('./imp/vulnVerification.js')
 
 const save = require('./helpers/save.js')
+const watcher = require('./helpers/watcher.js')
 
 const phaseHelpers = require('./buttonHelpers.js')
 
