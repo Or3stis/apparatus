@@ -2,10 +2,10 @@
 
 const phaseMenu = require('../../src/phaseMenu.js')
 
-module.exports = function implementationStateUI () {
+module.exports = function stateUI () {
   // shows design phase on the title
   const title = document.getElementById('title-bar-id')
-  title.innerHTML = `implementation state phase`
+  title.innerHTML = `state diagram`
 
   // show sidebars
   const actionBar = document.getElementById('action-bar-id')
@@ -14,9 +14,9 @@ module.exports = function implementationStateUI () {
   sidebar.style.display = 'block'
 
   // binds the design phase buttons on the UI
-  const dgnComponents = document.getElementById('components-id')
+  const dgnStateComponents = document.getElementById('components-id')
 
-  dgnComponents.innerHTML = `
+  dgnStateComponents.innerHTML = `
   <div class="dropdown" id="add-component-id">
     <button class="button-icon dropbtn">
       <svg width="24" height="24">
@@ -25,11 +25,6 @@ module.exports = function implementationStateUI () {
     </button>
     <ul class="dropdown-menu">
       <li><a>model</a></li>
-      <li><a>event sensor</a></li>
-      <li><a>report sensor</a></li>
-      <li><a>control sensor</a></li>
-      <li><a>high-level event</a></li>
-      <li><a>low-level event</a></li>
     </ul>
   </div>
 
@@ -53,11 +48,6 @@ module.exports = function implementationStateUI () {
     </button>
     <ul class="dropdown-menu">
       <li><a>model</a></li>
-      <li><a>event sensor</a></li>
-      <li><a>report sensor</a></li>
-      <li><a>control sensor</a></li>
-      <li><a>high-level event</a></li>
-      <li><a>low-level event</a></li>
     </ul>
   </div>
 
@@ -77,11 +67,11 @@ module.exports = function implementationStateUI () {
     </ul>
   </div>
 
-  <button class="button-icon" id="model-validate-button" title="model validation">
+  <!-- <button class="button-icon" id="model-validate-button" title="model validation">
     <svg width="24" height="24">
       <use xlink:href="icons/check.svg#check" class="icon"></use>
     </svg>
-  </button>
+  </button> -->
 
   <button class="button-icon" id="overview-button" title="overview">
     <svg width="24" height="24">
@@ -102,10 +92,10 @@ module.exports = function implementationStateUI () {
   </button>
 
   <!-- <button class="button-icon" id="load-button">
-      <svg width="24" height="24">
-        <use xlink:href="icons/folder.svg#folder" class="icon"></use>
-      </svg>
-    </button> -->
+    <svg width="24" height="24">
+      <use xlink:href="icons/folder.svg#folder" class="icon"></use>
+    </svg>
+  </button> -->
 
   <form>
     <button class="button-icon" id="home-button-id" type="submit" formaction="index.html" title="home">
@@ -131,6 +121,6 @@ module.exports = function implementationStateUI () {
 
 </div>`
 
-  // linkes the implementation-state UI with the rest of the app
-  phaseMenu('implementation-state')
+  // links the design-state UI with the rest of the app
+  phaseMenu('state')
 }

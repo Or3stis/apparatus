@@ -1,9 +1,10 @@
 // creates the home page menu, used to access the phases
 
 const designUI = require('./phaseUI/dgnUI.js')
-const designStateUI = require('./phaseUI/dgnStateUI.js')
+// const designStateUI = require('./phaseUI/dgnStateUI.js')
 const implementationUI = require('./phaseUI/impUI.js')
-const implementationStateUI = require('./phaseUI/impStateUI.js')
+const stateUI = require('./phaseUI/stateUI.js')
+// const implementationStateUI = require('./phaseUI/impStateUI.js')
 
 module.exports = function homeMenu () {
   // get the graph container
@@ -23,11 +24,11 @@ module.exports = function homeMenu () {
   buttonDgn.textContent = 'design phase'
 
   // create the design state phase button
-  const buttonDgnState = document.createElement('button')
-  buttonDgnState.id = 'dgn-state-id'
-  buttonDgnState.className = 'startButtons'
-  buttonDgnState.type = 'button'
-  buttonDgnState.textContent = 'design state phase'
+  // const buttonDgnState = document.createElement('button')
+  // buttonDgnState.id = 'dgn-state-id'
+  // buttonDgnState.className = 'startButtons'
+  // buttonDgnState.type = 'button'
+  // buttonDgnState.textContent = 'design state phase'
 
   // create the implementation phase button
   const buttonImp = document.createElement('button')
@@ -37,17 +38,17 @@ module.exports = function homeMenu () {
   buttonImp.textContent = 'implementation phase'
 
   // create the implementation state button
-  const buttonImpState = document.createElement('button')
-  buttonImpState.id = 'imp-state-id'
-  buttonImpState.className = 'startButtons'
-  buttonImpState.type = 'button'
-  buttonImpState.textContent = 'implementation state phase'
+  const buttonState = document.createElement('button')
+  buttonState.id = 'state-id'
+  buttonState.className = 'startButtons'
+  buttonState.type = 'button'
+  buttonState.textContent = 'state diagram'
 
   // append buttons to the wrapper
   wrapper.appendChild(buttonDgn)
-  wrapper.appendChild(buttonDgnState)
+  // wrapper.appendChild(buttonDgnState)
   wrapper.appendChild(buttonImp)
-  wrapper.appendChild(buttonImpState)
+  wrapper.appendChild(buttonState)
 
   graph.appendChild(wrapper)
 
@@ -58,20 +59,20 @@ module.exports = function homeMenu () {
     graph.removeChild(ack)
     designUI()
   })
-  buttonDgnState.addEventListener('click', () => {
-    graph.removeChild(wrapper)
-    graph.removeChild(ack)
-    designStateUI()
-  })
+  // buttonDgnState.addEventListener('click', () => {
+  //   graph.removeChild(wrapper)
+  //   graph.removeChild(ack)
+  //   designStateUI()
+  // })
   buttonImp.addEventListener('click', () => {
     graph.removeChild(wrapper)
     graph.removeChild(ack)
     implementationUI()
   })
-  buttonImpState.addEventListener('click', () => {
+  buttonState.addEventListener('click', () => {
     graph.removeChild(wrapper)
     graph.removeChild(ack)
-    implementationStateUI()
+    stateUI()
   })
 
   const ack = document.createElement('ack')

@@ -71,12 +71,6 @@ module.exports = function buttons (
   })
 
   // phases model button
-  const buttonModelValidate = document.getElementById('model-validate-button')
-  buttonModelValidate.addEventListener('click', () => {
-    phaseHelpers.validateHelper(cy, phase)
-  })
-
-  // phases model button
   const buttonOverview = document.getElementById('overview-button')
   buttonOverview.addEventListener('click', () => {
     phaseHelpers.overviewHelper(cy, phase)
@@ -148,6 +142,12 @@ module.exports = function buttons (
     group.addEventListener('click', e => {
       moduleSelection(cy, e.target.textContent) // global module
     })
+
+    // phases model validation button
+    const buttonModelValidate = document.getElementById('model-validate-button')
+    buttonModelValidate.addEventListener('click', () => {
+      phaseHelpers.validateHelper(cy, phase)
+    })
   } else if (phase === 'design-state') {
     // transform design-state model to implementation-state
     const buttonTransform = document.getElementById('transform-button')
@@ -169,6 +169,11 @@ module.exports = function buttons (
     const buttonFindVuln = document.getElementById('find-vuln-button')
     buttonFindVuln.addEventListener('click', () => {
       findVulns(cy)
+    })
+    // phases model validation button
+    const buttonModelValidate = document.getElementById('model-validate-button')
+    buttonModelValidate.addEventListener('click', () => {
+      phaseHelpers.validateHelper(cy, phase)
     })
 
     // module selection

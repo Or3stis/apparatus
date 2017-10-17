@@ -9,7 +9,7 @@ const keybindings = require('./keybindings.js')
 const printTotalNodes = require('./core/printTotalNodes.js')
 const hoverNodeInfo = require('./core/hoverNodeInfo.js')
 const editMenu = require('./core/editMenu.js')
-// const editEdge = require('./core/editEdge.js')
+const editEdge = require('./core/editEdge.js')
 
 const buttons = require('./buttons.js')
 
@@ -122,11 +122,13 @@ module.exports = function initialize (cy, phase) {
 
     rmElement('window-id', 'stageMenu-id') // remove stage menu element
   })
-  // right click on edge
-  // cy.on('cxttap', 'edge', selection => {
-  //   console.log(selection.target[0].data().label)
-  //   editEdge.formEdge(selection.target[0])
-  // })
+  // right click on edge to edit
+  // only available in state diagrams
+  if (phase === 'state') {
+    cy.on('cxttap', 'edge', selection => {
+      editEdge.formEdge(selection.target[0])
+    })
+  }
   // right clicking on stage
   cy.on('cxttap', selection => {
     // checks if only the stage was clicked
