@@ -5,9 +5,9 @@ const nodes = (graphNodes, cy) => {
 
   if (graphNodes.same(cy.nodes()) === false) {
     // add the files location to the title bar
-    titleBar.innerHTML += ` *`
+    titleBar.innerHTML += `<span style='color: var(--blue-color);'> •</span>`
   } else {
-    titleBar.innerHTML = titleBar.innerHTML.replace(' *', ' ')
+    titleBar.innerHTML = titleBar.innerHTML.replace(' •', ' ')
   }
 }
 
