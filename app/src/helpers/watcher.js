@@ -1,13 +1,16 @@
 // watch the graph for changes
 
+let changeToken = false
+
 const nodes = (graphNodes, cy) => {
   const titleBar = document.getElementById('title-bar-id')
 
-  if (graphNodes.same(cy.nodes()) === false) {
-    // add the files location to the title bar
+  if (graphNodes.same(cy.nodes()) === false && changeToken === false) {
     titleBar.innerHTML += `<span style='color: var(--blue-color);'> •</span>`
-  } else {
+    changeToken = true
+  } else if (graphNodes.same(cy.nodes()) === true) {
     titleBar.innerHTML = titleBar.innerHTML.replace(' •', ' ')
+    changeToken = false
   }
 }
 
