@@ -14,7 +14,7 @@ ASTo is security analysis tool for IoT networks. It is developed to support the 
 
 The application is in alpha stage. The focus now is to improve the core functionality of the application along with the introduction of additional features, in order to reach beta stage.
 
-Some screenshots..
+Some screenshots
 
 ![](https://raw.githubusercontent.com/Or3stis/apparatus/master/assets/screenShot1.png)
 
@@ -30,11 +30,9 @@ ASTo supports a light and a dark color theme. The colors themes are based on Ato
 
 ## Experimental features
 
-ASTo can generate graph files from network captures files (.pcapng). This is part of an ongoing process to automate certain parts of the plebeian and time consuming task of graph creation. The `pcapng` import feature is only available from the implementation phase menu. It uses `tcpdump` to create a `txt` with the current timestamp and then uses the `txt` to create the `js` file of the graph. The `txt` file is created for debugging purposes and will be deprecated in later commits. The generated files are stored in the `graphs/implementation` directory.
+ASTo can generate graph files from network captures files (.pcapng). This is part of an ongoing process to automate certain parts of the plebeian and time-consuming task of graph creation. The `pcapng` import feature is only available from the implementation phase menu. It uses `tcpdump` to create a `txt` with the current timestamp and then uses the `txt` to create the `js` file of the graph. The `txt` file is created for debugging purposes and will be deprecated in later commits. The generated files are stored in the `graphs/implementation` directory. If you want to know more about how this feature works, visit the [wiki](https://github.com/Or3stis/apparatus/wiki#generate-graphs-from-pcapng-files-experimental-feature).
 
 Tcpdump is installed by default on Unix based systems. If `tcpdump` is not installed in your system, the tool will display an error message.
-
-Currently, there are a few issues, depending on the `pcapng` file. There might be some duplicate network connections. IPs that run more than one services will be rendered as separate devices instead of a single device with multiple applications. I am still experimenting with the code and tcpdump filters. If you want to know more about how this feature works, visit the [wiki](https://github.com/Or3stis/apparatus/wiki#generate-graphs-from-pcapng-files-experimental-feature).
 
 \- _Note in performance_. If you render a graph with more than a thousand nodes, depending on your hardware, you might detect some performance issues. The reason is that the default label rendering of nodes and edges in ASTo is quite expensive. Rendering label on nodes and edges along with directional arrows is expensive. To improve performance you can hide the labels and the directional arrows by pressing the `1` button in the bottom right corner. The `1` button hides all the specific styles imposed by ASTo and leaves a default graph. Button `2` restores the labels on both the nodes and the edges, along with the directional arrows. Buttons `3` (node label) `4`(node id) `5`(node description) replace the labels on the nodes with different information. A trick to improve performance while retaining some information is to only hide the directional arrows (which are the most expensive) and the labels on the edges. To do so, press `1` to hide everything and then either `3` `4` or `5` to only show the labels on the nodes.
 
@@ -70,7 +68,7 @@ You will find some example graphs in the `graphs` folder.
 
 ## Instructions
 
-If you want to contribute that's great news 😃. Check the [contributing](https://github.com/Or3stis/apparatus/blob/master/CONTRIBUTING.md) guide. The application is being developed on Mac. That means that new commits might introduce breaking changes in other platforms. Especially commits that involve access to the file system. If something is not working, don't hesitate to create an [issue](https://github.com/Or3stis/apparatus/issues).
+If you want to contribute that's great 😃. Check the [contributing](https://github.com/Or3stis/apparatus/blob/master/CONTRIBUTING.md) guide. The application is being developed on Mac. That means that new commits might introduce breaking changes in other platforms. Especially commits that involve access to the file system. If something is not working, don't hesitate to create an [issue](https://github.com/Or3stis/apparatus/issues).
 
 If you want to find out how the app works check the [wiki](https://github.com/Or3stis/apparatus/wiki).
 
