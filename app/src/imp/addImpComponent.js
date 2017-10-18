@@ -221,6 +221,7 @@ module.exports = function addImpComponent (cy, event, nodeCounter) {
           label: `${component}`,
           info: {
             description: '',
+            trigger: '',
             concept: 'mechanism'
           }
         },
