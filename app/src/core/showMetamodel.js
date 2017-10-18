@@ -5,9 +5,7 @@ const BrowserWindow = remote.BrowserWindow
 
 // metomdels figures
 const dgnMeta = 'metamodels/dgn-model.png'
-const dgnStateMeta = 'metamodels/dgn-state-model.png'
 const impMeta = 'metamodels/imp-model.png'
-const impStateMeta = 'metamodels/imp-state-model.png'
 
 module.exports = function showMetamodel (phase) {
   // create the path to the metamodels
@@ -15,21 +13,18 @@ module.exports = function showMetamodel (phase) {
   metamodePath.pop() // removes the core directory
   metamodePath.pop() // removes the src directory
 
-  let url = ''
+  // creates the window
+  const createWindow = url => {
+    let win = new BrowserWindow({ width: 900, height: 700, show: false })
+    win.loadURL(`file://${metamodePath.join('/')}/${url}`)
+    win.on('ready-to-show', () => {
+      win.show()
+    })
+  }
   // checks for the phase
   if (phase === 'design') {
-    url = dgnMeta
-  } else if (phase === 'design-state') {
-    url = dgnStateMeta
+    createWindow(dgnMeta)
   } else if (phase === 'implementation') {
-    url = impMeta
-  } else if (phase === 'implementation-state') {
-    url = impStateMeta
+    createWindow(impMeta)
   }
-  // creates the window
-  let win = new BrowserWindow({ width: 900, height: 700, show: false })
-  win.loadURL(`file://${metamodePath.join('/')}/${url}`)
-  win.on('ready-to-show', () => {
-    win.show()
-  })
 }
