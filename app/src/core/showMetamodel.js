@@ -13,7 +13,7 @@ module.exports = function showMetamodel (phase) {
   metamodePath.pop() // removes the core directory
   metamodePath.pop() // removes the src directory
 
-  // creates the window
+  // creates the window for the metamodel
   const createWindow = url => {
     let win = new BrowserWindow({ width: 900, height: 700, show: false })
     win.loadURL(`file://${metamodePath.join('/')}/${url}`)
@@ -21,7 +21,7 @@ module.exports = function showMetamodel (phase) {
       win.show()
     })
   }
-  // checks for the phase
+  // checks for the phase to show the correct metamodel
   if (phase === 'design') {
     createWindow(dgnMeta)
   } else if (phase === 'implementation') {
