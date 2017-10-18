@@ -279,12 +279,12 @@ module.exports = function pcapImport (cy, phase) {
         properties: [...dialogOptions],
         filters: [{ name: 'pcap', extensions: ['pcapng'] }]
       },
-      fileNames => {
-        if (fileNames === undefined) return
+      pcapngFiles => {
+        if (pcapngFiles === undefined) return
 
-        const fileName = fileNames[0]
+        const pcapngFile = pcapngFiles[0]
         // tcpdump command to be executed
-        const tcpDumpCommand = `tcpdump -qtn -r ${fileName} > graphs/implementation/${timeStamp}.txt`
+        const tcpDumpCommand = `tcpdump -qtn -r ${pcapngFile} > graphs/implementation/${timeStamp}.txt`
 
         child.execSync(tcpDumpCommand)
 
