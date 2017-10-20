@@ -18,10 +18,6 @@ const watcher = require('./helpers/watcher.js')
 
 const phaseHelpers = require('./buttonHelpers.js')
 
-// const dgnState2ImpState = require('./tranformation/dgnState2ImpState.js')
-// const printChatText = require('./helpers/printChatText.js')
-// const load = require('../helpers/load.js')
-
 module.exports = function buttons (
   cy,
   selectedNode,
@@ -32,7 +28,7 @@ module.exports = function buttons (
   phase,
   graphNodes
 ) {
-  // adds nodes
+  // adds nodes specific to each phase
   const addNode = document.getElementById('add-component-id')
   addNode.addEventListener('click', event => {
     nodeCounter += 1 // used for the id of the node
@@ -44,6 +40,7 @@ module.exports = function buttons (
     watcher.nodes(graphNodes, cy)
   })
 
+  // add edges specific to each edge
   const buttonAddEdge = document.getElementById('add-edge')
   buttonAddEdge.addEventListener('click', () => {
     phaseHelpers.addEdge(cy, srcNode.out, trgNode.out, phase)
@@ -63,14 +60,13 @@ module.exports = function buttons (
     watcher.nodes(graphNodes, cy)
   })
 
-  // applies the selected layout to the graph
-  // uses the layout.js module
+  // applies the selected layout to the graph, uses the layout.js module
   const buttonLayout = document.getElementById('layout-button')
   buttonLayout.addEventListener('click', e => {
     layout(cy, e.target.textContent)
   })
 
-  // phases model button
+  // binds the model overview button
   const buttonOverview = document.getElementById('overview-button')
   buttonOverview.addEventListener('click', () => {
     phaseHelpers.overviewHelper(cy, phase)
@@ -98,7 +94,7 @@ module.exports = function buttons (
   //   printChatText('button for code testing')
   // })
 
-  // enable label buttons
+  // bind label buttons
   const hideLabelsButton = document.getElementById('hide-label')
   hideLabelsButton.addEventListener('click', () => {
     cy.nodes().removeClass('label-nodes')
@@ -129,7 +125,7 @@ module.exports = function buttons (
     cy.nodes().addClass('label-dsc')
   })
 
-  // phase only buttons
+  // buttons specific to each phase
   if (phase === 'design') {
     // verify threats
     const buttonThreatVefiry = document.getElementById('threat-verify-button')
