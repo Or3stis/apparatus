@@ -17,7 +17,7 @@ const stateOverview = require('./state/stateOverview.js')
 const addStateComponent = require('./state/addStateComponent.js')
 const addStateEdge = require('./state/addStateEdge.js')
 
-// phases add component module
+// helper function to add specific nodes for each phase
 const addComponents = (cy, event, nodeCounter, phase) => {
   if (phase === 'design') {
     addDgnComponent(cy, event, nodeCounter)
@@ -28,7 +28,7 @@ const addComponents = (cy, event, nodeCounter, phase) => {
   }
 }
 
-// phases add edge module
+// helper to export function to add specific edges for each phase
 const addEdge = (cy, srcNode, trgNode, phase) => {
   if (phase === 'design') {
     addDgnEdge(cy, srcNode, trgNode)
@@ -39,7 +39,7 @@ const addEdge = (cy, srcNode, trgNode, phase) => {
   }
 }
 
-// phases model validation
+// helper to export function to validate the model of each phase
 const validateHelper = (cy, phase) => {
   if (phase === 'design') {
     dgnModelValidation(cy)
@@ -48,7 +48,7 @@ const validateHelper = (cy, phase) => {
   }
 }
 
-// phases model overview
+// helper to export function for the overview of the model of each phase
 const overviewHelper = (cy, phase) => {
   if (phase === 'design') {
     dgnOverview(cy)
