@@ -61,7 +61,7 @@ module.exports = function (
     labelId.style.color = config.text
   })
 
-  // loses the focus from the console when tapping
+  // removes the focus from the console when tapping on the graph container
   cy.on('tap', selection => consoleId.blur())
 
   // console commands
@@ -100,10 +100,10 @@ module.exports = function (
           config.colorTheme = 'dark'
         }
         break
-      case '':
-        break
       case 'clear':
         document.getElementById('info-nodes-id').textContent = ''
+        break
+      case '':
         break
       default:
         searchAttribute(cy, input)
@@ -118,12 +118,12 @@ module.exports = function (
       ? (key = event.metaKey)
       : (key = event.ctrlKey)
 
-    // focus on consoleId
+    // focus on the app console
     if (key === true && event.code === 'KeyL') {
       consoleId.focus()
     }
 
-    // add edge
+    // add an edge specific to each phase
     if (key === true && event.code === 'KeyE') {
       // checks for undefined selections
       if (Object.keys(srcNode.out).length !== 0) {
@@ -143,7 +143,7 @@ module.exports = function (
       watcher.nodes(graphNodes, cy)
     }
 
-    // restore elements with meta + z
+    // restore nodes with meta + z
     if (key === true && event.code === 'KeyZ') {
       deleteRestoreConcepts.restoreNode(cy)
 
