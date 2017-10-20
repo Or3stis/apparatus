@@ -8,8 +8,6 @@ const deleteRestoreConcepts = require('./core/deleteRestoreConcepts.js')
 const patterns = require('./core/patterns.js')
 const printTotalNodes = require('./core/printTotalNodes.js')
 
-const dgnState2ImpState = require('./tranformation/dgnState2ImpState.js')
-
 const findVulns = require('./imp/findVulns.js')
 const vulnVerification = require('./imp/vulnVerification.js')
 
