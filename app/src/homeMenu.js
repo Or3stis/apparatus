@@ -1,10 +1,8 @@
 // creates the home page menu, used to access the phases
 
 const designUI = require('./phaseUI/dgnUI.js')
-// const designStateUI = require('./phaseUI/dgnStateUI.js')
 const implementationUI = require('./phaseUI/impUI.js')
 const stateUI = require('./phaseUI/stateUI.js')
-// const implementationStateUI = require('./phaseUI/impStateUI.js')
 
 module.exports = function homeMenu () {
   // get the graph container
@@ -23,13 +21,6 @@ module.exports = function homeMenu () {
   buttonDgn.type = 'button'
   buttonDgn.textContent = 'design phase'
 
-  // create the design state phase button
-  // const buttonDgnState = document.createElement('button')
-  // buttonDgnState.id = 'dgn-state-id'
-  // buttonDgnState.className = 'startButtons'
-  // buttonDgnState.type = 'button'
-  // buttonDgnState.textContent = 'design state phase'
-
   // create the implementation phase button
   const buttonImp = document.createElement('button')
   buttonImp.id = 'imp-id'
@@ -37,7 +28,7 @@ module.exports = function homeMenu () {
   buttonImp.type = 'button'
   buttonImp.textContent = 'implementation phase'
 
-  // create the implementation state button
+  // create the state transition phase button
   const buttonState = document.createElement('button')
   buttonState.id = 'state-id'
   buttonState.className = 'startButtons'
@@ -46,7 +37,6 @@ module.exports = function homeMenu () {
 
   // append buttons to the wrapper
   wrapper.appendChild(buttonDgn)
-  // wrapper.appendChild(buttonDgnState)
   wrapper.appendChild(buttonImp)
   wrapper.appendChild(buttonState)
 
@@ -59,11 +49,6 @@ module.exports = function homeMenu () {
     graph.removeChild(ack)
     designUI()
   })
-  // buttonDgnState.addEventListener('click', () => {
-  //   graph.removeChild(wrapper)
-  //   graph.removeChild(ack)
-  //   designStateUI()
-  // })
   buttonImp.addEventListener('click', () => {
     graph.removeChild(wrapper)
     graph.removeChild(ack)
