@@ -1,8 +1,4 @@
-// initializes the application
-// and links it with the GUI
-
-// require keybindings
-const keybindings = require('./keybindings.js')
+// initializes the application and links it with the GUI
 
 // require core modules
 // const nodeInfo = require('./src/core/nodeInfo.js')
@@ -11,10 +7,11 @@ const hoverNodeInfo = require('./core/hoverNodeInfo.js')
 const editMenu = require('./core/editMenu.js')
 const editEdge = require('./core/editEdge.js')
 
-const buttons = require('./buttons.js')
-
 // require helper functions
 const rmElement = require('./helpers/rmElement.js')
+// require buttons and keybindings
+const buttons = require('./buttons.js')
+const keybindings = require('./keybindings.js')
 
 module.exports = function initialize (cy, phase) {
   // initial label render
@@ -34,14 +31,15 @@ module.exports = function initialize (cy, phase) {
   srcNode.out = {}
   trgNode.out = {}
 
+  // stores the initial state of the nodes in the graph
+  const graphNodes = cy.nodes()
   // counter variable to create unique sequential node ids in addComponents.js
   const initialCount = cy.nodes().length
-  const graphNodes = cy.nodes()
 
-  // cy.on does stuff when intrecting with the graph
+  // cy.on performs actions on intrection with the graph
   // actions when tapping on node
   cy.on('tap', 'node', selection => {
-    // removes previous selections
+    // removes previous selections classes
     cy.elements().removeClass('selection')
     cy.elements().removeClass('attention')
     cy.elements().removeClass('protect')
@@ -57,11 +55,11 @@ module.exports = function initialize (cy, phase) {
     }
 
     srcNode.out = trgNode.out // second selection
-    trgNode.out = selectedNode.out.data()
+    trgNode.out = selectedNode.out.data() // first selection
 
     selectedEdge.out = {} // clear token
 
-    printTotalNodes(cy) // initial node count
+    printTotalNodes(cy) // show number of nodes
 
     rmElement('info-nodes-id', 'form-id') // remove the edit node element
     rmElement('window-id', 'nodeMenu-id') // remove node menu element
@@ -76,12 +74,13 @@ module.exports = function initialize (cy, phase) {
     cy.nodes().removeClass('old-selection')
     selection.target.addClass('selection')
 
-    selectedNode.out = {} // clear token
-    oldSelectedNode.out = {} // clear token
+    // clear tokens
+    selectedNode.out = {}
+    oldSelectedNode.out = {}
 
     selectedEdge.out = selection.target[0]
 
-    printTotalNodes(cy) // initial node count
+    printTotalNodes(cy) // show number of nodes
 
     rmElement('info-nodes-id', 'form-id') // remove the edit node element
     rmElement('window-id', 'nodeMenu-id') // remove node menu element
@@ -103,7 +102,7 @@ module.exports = function initialize (cy, phase) {
       oldSelectedNode.out = {}
       selectedEdge.out = {}
 
-      printTotalNodes(cy) // initial node count
+      printTotalNodes(cy) // show nubmer of nodes
 
       rmElement('info-nodes-id', 'form-id') // remove the edit node element
       rmElement('window-id', 'nodeMenu-id') // remove node menu element
@@ -161,9 +160,6 @@ module.exports = function initialize (cy, phase) {
     phase,
     graphNodes
   )
-
-  printTotalNodes(cy) // initial node count
-
   // enable keybindings
   keybindings(
     cy,
@@ -174,4 +170,5 @@ module.exports = function initialize (cy, phase) {
     phase,
     graphNodes
   )
+  printTotalNodes(cy) // initial node count
 }
