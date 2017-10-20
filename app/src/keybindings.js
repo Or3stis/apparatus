@@ -53,10 +53,11 @@ module.exports = function (
 
   const consoleId = document.getElementById('console-id')
   const labelId = document.getElementById('input-label-id')
-  // indicate focus on console
+  // indicate focus on the console by making the > blue
   consoleId.addEventListener('focus', e => {
     labelId.style.color = config.blue
   })
+  // indicate loss of focus on the console by making the > default color
   consoleId.addEventListener('blur', () => {
     labelId.style.color = config.text
   })
@@ -69,6 +70,7 @@ module.exports = function (
     const input = document.getElementById('console-id').value
     document.getElementById('console-id').value = ''
 
+    // declare input of console commmands
     switch (input) {
       case 'help':
         // checks the platform to display the corrent help menu
@@ -110,7 +112,7 @@ module.exports = function (
     }
   }
 
-  // keydown listeners
+  // declare keydown listeners
   document.addEventListener('keydown', event => {
     let key = ''
     // checks the platform to assign the correct meta key
@@ -122,7 +124,6 @@ module.exports = function (
     if (key === true && event.code === 'KeyL') {
       consoleId.focus()
     }
-
     // add an edge specific to each phase
     if (key === true && event.code === 'KeyE') {
       // checks for undefined selections
@@ -131,7 +132,6 @@ module.exports = function (
         cy.edges().addClass('label-edges')
       }
     }
-
     // delete nodes or edges with meta + Backspace
     if (key === true && event.code === 'Backspace') {
       deleteRestoreConcepts.deleteConcept(
@@ -142,19 +142,16 @@ module.exports = function (
 
       watcher.nodes(graphNodes, cy)
     }
-
     // restore nodes with meta + z
     if (key === true && event.code === 'KeyZ') {
       deleteRestoreConcepts.restoreNode(cy)
 
       watcher.nodes(graphNodes, cy)
     }
-
     // save graph on meta + s
     if (event.shiftKey === true && key === true && event.code === 'KeyS') {
       save(cy)
     }
-
     // listens for the ENTER key when focus is on the console
     if (document.activeElement === consoleId && event.code === 'Enter') {
       commands()
