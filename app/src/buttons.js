@@ -130,7 +130,7 @@ module.exports = function buttons (
     // verify threats
     const buttonThreatVefiry = document.getElementById('threat-verify-button')
     buttonThreatVefiry.addEventListener('click', () => {
-      threatVerification(cy) // global module
+      threatVerification(cy) // core module
     })
 
     // module selection
@@ -144,17 +144,11 @@ module.exports = function buttons (
     buttonModelValidate.addEventListener('click', () => {
       phaseHelpers.validateHelper(cy, phase)
     })
-  } else if (phase === 'design-state') {
-    // transform design-state model to implementation-state
-    const buttonTransform = document.getElementById('transform-button')
-    buttonTransform.addEventListener('click', () => {
-      dgnState2ImpState(cy)
-    })
   } else if (phase === 'implementation') {
     // verify threats
     const buttonThreatVefiry = document.getElementById('threat-verify-button')
     buttonThreatVefiry.addEventListener('click', () => {
-      threatVerification(cy) // global module
+      threatVerification(cy) // core module
     })
     // verify vulnerabilities
     const buttonVulnVefiry = document.getElementById('vuln-verify-button')
@@ -175,7 +169,7 @@ module.exports = function buttons (
     // module selection
     const group = document.getElementById('module-group')
     group.addEventListener('click', e => {
-      moduleSelection(cy, e.target.textContent) // global module
+      moduleSelection(cy, e.target.textContent) // core module
     })
   }
 }
