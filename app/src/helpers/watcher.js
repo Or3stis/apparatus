@@ -15,8 +15,6 @@ const nodes = (graphNodes, cy) => {
 }
 
 const edges = (graphEdges, cy) => {
-  console.log(graphEdges.same(cy.edges()))
-
   const titleBar = document.getElementById('title-bar-id')
 
   if (
