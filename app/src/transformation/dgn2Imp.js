@@ -1,6 +1,9 @@
 // applies tranformation rules from design phase to implementation phase
 
+// TODO change the relations as well
+
 const save = require('../helpers/save.js')
+const printChatText = require('../helpers/printChatText.js')
 
 module.exports = function dgnState2ImpState (cy) {
   cy.nodes().map(node => {
@@ -29,4 +32,5 @@ module.exports = function dgnState2ImpState (cy) {
     }
   })
   save(cy)
+  printChatText('transformation successful')
 }

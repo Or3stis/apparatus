@@ -17,7 +17,7 @@ const printChatText = require('./helpers/printChatText.js')
 
 const phaseHelpers = require('./buttonHelpers.js')
 
-// const transform = require('./tranformation/dgn2Imp.js')
+// const transform = require('./transformation/dgn2Imp.js')
 
 module.exports = function buttons (
   cy,
