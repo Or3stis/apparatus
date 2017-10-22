@@ -9,7 +9,6 @@ module.exports = function save (cy) {
   // parses graph and stores it as an object
   const fullgraph = cy.json()
 
-  const titleBar = document.getElementById('title-bar-id')
 
   dialog.showSaveDialog(
     {
@@ -27,6 +26,7 @@ module.exports = function save (cy) {
         } else {
           printChatText('graph saved\n👍')
           // remove the change indicator on save
+          const titleBar = document.getElementById('title-bar-id')
           titleBar.innerHTML = titleBar.innerHTML.replace(' •', ' ')
         }
       })
