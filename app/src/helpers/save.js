@@ -9,6 +9,8 @@ module.exports = function save (cy) {
   // parses graph and stores it as an object
   const fullgraph = cy.json()
 
+  const titleBar = document.getElementById('title-bar-id')
+
   dialog.showSaveDialog(
     {
       filters: [
@@ -24,6 +26,8 @@ module.exports = function save (cy) {
           console.error(err.message)
         } else {
           printChatText('graph saved\n👍')
+          // remove the change indicator on save
+          titleBar.innerHTML = titleBar.innerHTML.replace(' •', ' ')
         }
       })
     }
