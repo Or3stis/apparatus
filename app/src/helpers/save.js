@@ -2,7 +2,6 @@
 
 const jsonfile = require('jsonfile')
 const { dialog } = require('electron').remote
-const printChatText = require('./printChatText.js')
 
 // saves graph
 module.exports = function save (cy) {
@@ -23,7 +22,6 @@ module.exports = function save (cy) {
         if (err) {
           console.error(err.message)
         } else {
-          printChatText('graph saved\n👍')
           // remove the change indicator on save
           const titleBar = document.getElementById('title-bar-id')
           titleBar.innerHTML = titleBar.innerHTML.replace(' •', ' ')

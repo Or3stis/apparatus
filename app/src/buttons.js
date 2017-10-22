@@ -13,8 +13,11 @@ const vulnVerification = require('./imp/vulnVerification.js')
 
 const save = require('./helpers/save.js')
 const watcher = require('./helpers/watcher.js')
+const printChatText = require('./helpers/printChatText.js')
 
 const phaseHelpers = require('./buttonHelpers.js')
+
+// const transform = require('./tranformation/dgn2Imp.js')
 
 module.exports = function buttons (
   cy,
@@ -76,7 +79,10 @@ module.exports = function buttons (
 
   // save the graph using the save.js module
   const buttonSave = document.getElementById('save-button')
-  buttonSave.addEventListener('click', () => save(cy))
+  buttonSave.addEventListener('click', () => {
+    save(cy)
+    printChatText('graph saved\n👍')
+  })
 
   // loads a graph
   // const loadGraph = (cy) => {
@@ -89,7 +95,8 @@ module.exports = function buttons (
   // const buttonTest = document.getElementById('test-button')
   // buttonTest.addEventListener('click', () => {
   //   // test code goes here
-  //   printChatText('button for code testing')
+  //   // printChatText('button for code testing')
+  //   transform(cy)
   // })
 
   // bind label buttons
