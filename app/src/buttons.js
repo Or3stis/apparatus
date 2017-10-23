@@ -137,13 +137,16 @@ module.exports = function buttons (
     buttonThreatVefiry.addEventListener('click', () => {
       threatVerification(cy) // core module
     })
-
+    // model transformation
+    const buttonTransform = document.getElementById('transform-button')
+    buttonTransform.addEventListener('click', () => {
+      printChatText('model transformation\nunder development 🚧')
+    })
     // module selection
     const group = document.getElementById('module-group')
     group.addEventListener('click', e => {
       moduleSelection(cy, e.target.textContent) // global module
     })
-
     // phases model validation button
     const buttonModelValidate = document.getElementById('model-validate-button')
     buttonModelValidate.addEventListener('click', () => {
@@ -154,6 +157,11 @@ module.exports = function buttons (
     const buttonThreatVefiry = document.getElementById('threat-verify-button')
     buttonThreatVefiry.addEventListener('click', () => {
       threatVerification(cy) // core module
+    })
+    // model transformation
+    const buttonTransform = document.getElementById('transform-button')
+    buttonTransform.addEventListener('click', () => {
+      printChatText('model transformation\nunder development 🚧')
     })
     // verify vulnerabilities
     const buttonVulnVefiry = document.getElementById('vuln-verify-button')
@@ -170,7 +178,6 @@ module.exports = function buttons (
     buttonModelValidate.addEventListener('click', () => {
       phaseHelpers.validateHelper(cy, phase)
     })
-
     // module selection
     const group = document.getElementById('module-group')
     group.addEventListener('click', e => {
