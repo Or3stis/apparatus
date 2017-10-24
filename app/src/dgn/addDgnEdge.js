@@ -38,12 +38,15 @@ module.exports = function addComponent (cy, srcNode, trgNode) {
       addEdge(cy, srcNodeId, trgNodeId, 'requires')
       break
     case srcNodeCpt === 'actor' && trgNodeCpt === 'thing':
-      addEdge(cy, srcNodeId, trgNodeId, 'use')
+      addEdge(cy, srcNodeId, trgNodeId, 'uses')
+      break
+    case srcNodeCpt === 'actor' && trgNodeCpt === 'unidentified node':
+      addEdge(cy, srcNodeId, trgNodeId, 'uses')
       break
     case srcNodeCpt === 'actor' && trgNodeCpt === 'information':
       addEdge(cy, srcNodeId, trgNodeId, 'knows')
       break
-    case srcNodeCpt === 'thing' && trgNodeCpt === 'net':
+    case srcNodeCpt === 'unidentified node' && trgNodeCpt === 'net':
       addEdge(cy, srcNodeId, trgNodeId, 'belongs')
       break
     case srcNodeCpt === 'threat' && trgNodeCpt === 'asset':
@@ -53,6 +56,9 @@ module.exports = function addComponent (cy, srcNode, trgNode) {
       addEdge(cy, srcNodeId, trgNodeId, 'poses')
       break
     case srcNodeCpt === 'malicious actor' && trgNodeCpt === 'thing':
+      addEdge(cy, srcNodeId, trgNodeId, 'uses')
+      break
+    case srcNodeCpt === 'malicious actor' && trgNodeCpt === 'unidentified node':
       addEdge(cy, srcNodeId, trgNodeId, 'uses')
       break
     case srcNodeCpt === 'malicious actor' && trgNodeCpt === 'information':

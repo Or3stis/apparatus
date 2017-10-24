@@ -25,15 +25,16 @@ module.exports = function designUI () {
   </button>
   <ul class="dropdown-menu">
     <li><a>thing</a></li>
+    <li><a>sensor</a></li>
+    <li><a>unidentified node</a></li>
     <li><a>information</a></li>
     <li><a>micronet</a></li>
-    <li><a>threat</a></li>
-    <li><a>asset</a></li>
-    <li><a>constraint</a></li>
-    <li><a>actor</a></li>
-    <li><a>malicious actor</a></li>
     <li><a>net</a></li>
-    <li><a>sensor</a></li>
+    <li><a>actor</a></li>
+    <li><a>asset</a></li>
+    <li><a>threat</a></li>
+    <li><a>constraint</a></li>
+    <li><a>malicious actor</a></li>
   </ul>
 </div>
 
@@ -57,15 +58,16 @@ module.exports = function designUI () {
   </button>
   <ul class="dropdown-menu">
     <li><a>thing</a></li>
+    <li><a>sensor</a></li>
+    <li><a>unidentified node</a></li>
     <li><a>information</a></li>
     <li><a>micronet</a></li>
-    <li><a>threat</a></li>
-    <li><a>asset</a></li>
-    <li><a>constraint</a></li>
-    <li><a>actor</a></li>
-    <li><a>malicious actor</a></li>
     <li><a>net</a></li>
-    <li><a>sensor</a></li>
+    <li><a>actor</a></li>
+    <li><a>asset</a></li>
+    <li><a>threat</a></li>
+    <li><a>constraint</a></li>
+    <li><a>malicious actor</a></li>
   </ul>
 </div>
 

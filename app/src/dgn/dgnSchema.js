@@ -3,7 +3,13 @@
 const dgnMetamodel = {}
 
 // metamodel group concepts
-dgnMetamodel.network = ['micronet', 'net', 'information', 'thing']
+dgnMetamodel.network = [
+  'micronet',
+  'net',
+  'information',
+  'thing',
+  'unidentified node'
+]
 dgnMetamodel.security = ['asset', 'threat', 'constraint', 'malicious actor']
 dgnMetamodel.social = ['actor']
 dgnMetamodel.sensing = ['sensor']
@@ -18,9 +24,10 @@ dgnMetamodel.thingArray = [
   'thing'
 ]
 dgnMetamodel.micronetArray = ['thing', 'net', 'micronet']
-dgnMetamodel.netArray = ['micronet', 'thing', 'threat']
+dgnMetamodel.netArray = ['micronet', 'threat', 'unidentified node']
+dgnMetamodel.undentifiedNodeArray = ['net', 'actor', 'malicious actor']
 dgnMetamodel.informationArray = ['asset', 'thing', 'actor']
-dgnMetamodel.actorArray = ['thing', 'information']
+dgnMetamodel.actorArray = ['thing', 'information', 'unidentified node']
 dgnMetamodel.maliciousActorArray = dgnMetamodel.actorArray.concat('threat')
 dgnMetamodel.assetArray = ['information', 'threat', 'actor', 'thing']
 dgnMetamodel.constraintArray = ['threat', 'micronet']
