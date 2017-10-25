@@ -133,6 +133,9 @@ module.exports = function addImpComponent (cy, event, nodeCounter) {
           label: `${component}`,
           info: {
             description: '',
+            service: '',
+            input: '',
+            output: '',
             concept: 'unidentified node'
           }
         },
