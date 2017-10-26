@@ -76,24 +76,6 @@ module.exports = function addComponent (cy, srcNode, trgNode) {
     case srcNodeCpt === 'malicious actor' && trgNodeCpt === 'threat':
       addEdge(cy, srcNodeId, trgNodeId, 'poses')
       break
-    case srcNodeCpt === 'application' && trgNodeCpt === 'report sensor':
-      addEdge(cy, srcNodeId, trgNodeId, 'report sensor')
-      break
-    case srcNodeCpt === 'application' && trgNodeCpt === 'contorl sensor':
-      addEdge(cy, srcNodeId, trgNodeId, 'is')
-      break
-    case srcNodeCpt === 'application' && trgNodeCpt === 'event sensor':
-      addEdge(cy, srcNodeId, trgNodeId, 'is')
-      break
-    case srcNodeCpt === 'report sensor' && trgNodeCpt === 'control sensor':
-      addEdge(cy, srcNodeId, trgNodeId, 'notifies')
-      break
-    case srcNodeCpt === 'control sensor' && trgNodeCpt === 'event sensor':
-      addEdge(cy, srcNodeId, trgNodeId, 'listens')
-      break
-    case srcNodeCpt === 'control sensor' && trgNodeCpt === 'mechanism':
-      addEdge(cy, srcNodeId, trgNodeId, 'triggers')
-      break
     case srcNodeCpt === 'constraint' && trgNodeCpt === 'threat':
       addEdge(cy, srcNodeId, trgNodeId, 'mitigates')
       break

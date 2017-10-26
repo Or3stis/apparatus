@@ -19,7 +19,6 @@ impMetamodel.security = [
   'malicious actor'
 ]
 impMetamodel.social = ['actor']
-impMetamodel.sensing = ['event sensor', 'report sensor', 'control sensor']
 
 // allowed concept connections
 impMetamodel.deviceArray = [
@@ -38,10 +37,7 @@ impMetamodel.applicationArray = [
   'information',
   'vulnerability',
   'actor',
-  'malicious actor',
-  'event sensor',
-  'report sensor',
-  'control sensor'
+  'malicious actor'
 ]
 impMetamodel.networkArray = ['device', 'actor', 'information']
 impMetamodel.micronetArray = [
@@ -92,14 +88,6 @@ impMetamodel.vulnerabilityArray = [
   'device',
   'network connection',
   'application'
-]
-impMetamodel.eventSensorArray = ['application', 'control sensor']
-impMetamodel.reportSensorArray = ['application', 'control sensor']
-impMetamodel.controlSensorArray = [
-  'application',
-  'event sensor',
-  'report sensor',
-  'mechanism'
 ]
 
 module.exports = impMetamodel

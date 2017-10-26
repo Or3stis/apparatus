@@ -7,7 +7,6 @@ module.exports = function overview (cy) {
   const networkArray = impMetamodel.network
   const securityArray = impMetamodel.security
   const socialArray = impMetamodel.social
-  const sensingArray = impMetamodel.sensing
 
   let result = ''
 
@@ -17,7 +16,6 @@ module.exports = function overview (cy) {
   let networkNode = 0
   let securityNode = 0
   let socialNode = 0
-  let sensingNode = 0
 
   cy.nodes().map(node => {
     const nodeConcept = node.data().info.concept
@@ -27,14 +25,11 @@ module.exports = function overview (cy) {
       securityNode += 1
     } else if (socialArray.includes(nodeConcept) === true) {
       socialNode += 1
-    } else if (sensingArray.includes(nodeConcept) === true) {
-      sensingNode += 1
     }
   })
   result = `${result}• network nodes: ${networkNode}\n`
   result = `${result}• social nodes: ${socialNode}\n`
-  result = `${result}• security nodes: ${securityNode}\n`
-  result = `${result}• sensing nodes: ${sensingNode}\n\n`
+  result = `${result}• security nodes: ${securityNode}\n\n`
 
   let deviceNode = 0
   let connectionNode = 0
@@ -50,9 +45,6 @@ module.exports = function overview (cy) {
   let constraintNode = 0
   let malActorNode = 0
   let actorNode = 0
-  let eventSensorNode = 0
-  let reportSensorNode = 0
-  let controlSensorNode = 0
 
   cy.nodes().map(node => {
     const nodeConcept = node.data().info.concept
@@ -84,12 +76,6 @@ module.exports = function overview (cy) {
       malActorNode += 1
     } else if (nodeConcept === 'actor') {
       actorNode += 1
-    } else if (nodeConcept === 'event sensor') {
-      eventSensorNode += 1
-    } else if (nodeConcept === 'report sensor') {
-      reportSensorNode += 1
-    } else if (nodeConcept === 'control sensor') {
-      controlSensorNode += 1
     }
   })
 
@@ -107,9 +93,6 @@ module.exports = function overview (cy) {
   result = `${result}• constraint nodes: ${constraintNode}\n`
   result = `${result}• malicious actor nodes: ${malActorNode}\n`
   result = `${result}• actor nodes: ${actorNode}\n`
-  result = `${result}• event sensor nodes: ${eventSensorNode}\n`
-  result = `${result}• report sensor nodes: ${reportSensorNode}\n`
-  result = `${result}• control sensor nodes: ${controlSensorNode}\n`
 
   printChatText(result)
 }

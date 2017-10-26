@@ -27,20 +27,17 @@ module.exports = function implementationUI () {
       <li><a>device</a></li>
       <li><a>network connection</a></li>
       <li><a>application</a></li>
-      <li><a>information</a></li>
       <li><a>micronet</a></li>
+      <li><a>net</a></li>
+      <li><a>unidentified node</a></li>
+      <li><a>information</a></li>
+      <li><a>actor</a></li>
+      <li><a>asset</a></li>
       <li><a>threat</a></li>
       <li><a>vulnerability</a></li>
-      <li><a>asset</a></li>
+      <li><a>malicious actor</a></li>
       <li><a>constraint</a></li>
       <li><a>mechanism</a></li>
-      <li><a>actor</a></li>
-      <li><a>malicious actor</a></li>
-      <li><a>unidentified node</a></li>
-      <li><a>net</a></li>
-      <li><a>event sensor</a></li>
-      <li><a>report sensor</a></li>
-      <li><a>control sensor</a></li>
     </ul>
   </div>
 
@@ -66,20 +63,17 @@ module.exports = function implementationUI () {
       <li><a>device</a></li>
       <li><a>network connection</a></li>
       <li><a>application</a></li>
-      <li><a>information</a></li>
       <li><a>micronet</a></li>
+      <li><a>net</a></li>
+      <li><a>unidentified node</a></li>
+      <li><a>information</a></li>
+      <li><a>actor</a></li>
+      <li><a>asset</a></li>
       <li><a>threat</a></li>
       <li><a>vulnerability</a></li>
-      <li><a>asset</a></li>
+      <li><a>malicious actor</a></li>
       <li><a>constraint</a></li>
       <li><a>mechanism</a></li>
-      <li><a>actor</a></li>
-      <li><a>malicious actor</a></li>
-      <li><a>unidentified node</a></li>
-      <li><a>net</a></li>
-      <li><a>event sensor</a></li>
-      <li><a>report sensor</a></li>
-      <li><a>control sensor</a></li>
     </ul>
   </div>
 
@@ -93,10 +87,7 @@ module.exports = function implementationUI () {
       <li><a>network</a></li>
       <li><a>security</a></li>
       <li><a>social</a></li>
-      <li><a>sensing</a></li>
       <li><a>network-security</a></li>
-      <li><a>network-sensing</a></li>
-      <li><a>security-sensing</a></li>
       <li><a>network-social</a></li>
     </ul>
   </div>

@@ -19,9 +19,6 @@ module.exports = function moduleValidation (cy) {
   const mechanismArray = impMetamodel.mechanismArray
   const threatArray = impMetamodel.threatArray
   const vulnerabilityArray = impMetamodel.vulnerabilityArray
-  const eventSensorArray = impMetamodel.eventSensorArray
-  const reportSensorArray = impMetamodel.reportSensorArray
-  const controlSensorArray = impMetamodel.controlSensorArray
 
   let result = '' // posted on the nodeInfo div
   let arrWrong = [] // stores wrong connection of nodes
@@ -69,9 +66,6 @@ module.exports = function moduleValidation (cy) {
   componentValidation(cy, 'mechanism', mechanismArray)
   componentValidation(cy, 'threat', threatArray)
   componentValidation(cy, 'vulnerability', vulnerabilityArray)
-  componentValidation(cy, 'event sensor', eventSensorArray)
-  componentValidation(cy, 'report sensor', reportSensorArray)
-  componentValidation(cy, 'control sensor', controlSensorArray)
 
   // if string is empty, the model is correct
   if (result === '') {
