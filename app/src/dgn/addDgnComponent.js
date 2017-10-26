@@ -187,23 +187,6 @@ module.exports = function addDgnComponent (cy, event, nodeCounter) {
         }
       })
       break
-    case 'sensor':
-      cy.add({
-        group: 'nodes',
-        data: {
-          id: `n${nodeCounter}`,
-          label: `${component}`,
-          info: {
-            description: '',
-            concept: 'sensor'
-          }
-        },
-        renderedPosition: {
-          x: posX,
-          y: posY
-        }
-      })
-      break
     default:
       console.error('error in addDgnComponent.js')
   }

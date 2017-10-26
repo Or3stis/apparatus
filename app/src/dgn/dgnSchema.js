@@ -12,7 +12,6 @@ dgnMetamodel.network = [
 ]
 dgnMetamodel.security = ['asset', 'threat', 'constraint', 'malicious actor']
 dgnMetamodel.social = ['actor']
-dgnMetamodel.sensing = ['sensor']
 
 // allowed concepts connections
 dgnMetamodel.thingArray = [
@@ -32,6 +31,5 @@ dgnMetamodel.maliciousActorArray = dgnMetamodel.actorArray.concat('threat')
 dgnMetamodel.assetArray = ['information', 'threat', 'actor', 'thing']
 dgnMetamodel.constraintArray = ['threat', 'micronet']
 dgnMetamodel.threatArray = ['asset', 'malicious actor', 'constraint', 'net']
-dgnMetamodel.sensorArray = ['thing']
 
 module.exports = dgnMetamodel
