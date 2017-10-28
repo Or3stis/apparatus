@@ -228,6 +228,13 @@ input::-webkit-input-placeholder {
 .button-icon:focus {
   fill: var(--blue-color);
 }
+.active-button {
+  background-color: var(--blue-color);
+  margin: 2px;
+  color: var(--main-tx-color);
+  border: 1px solid;
+  border-color: var(--main-dark-bg-color);
+}
 
 /*dropdown buttons*/
 .dropdown {
