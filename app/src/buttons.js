@@ -15,7 +15,7 @@ const save = require('./helpers/save.js')
 const watcher = require('./helpers/watcher.js')
 const printChatText = require('./helpers/printChatText.js')
 
-const phaseHelpers = require('./buttonHelpers.js')
+const buttonHelpers = require('./buttonHelpers.js')
 
 // const transformDgn2Imp = require('./transformation/dgn2Imp.js')
 // const transformImp2Dgn = require('./transformation/imp2Dgn.js')
@@ -34,7 +34,7 @@ module.exports = function buttons (
   const addNode = document.getElementById('add-component-id')
   addNode.addEventListener('click', event => {
     nodeCounter += 1 // used for the id of the node
-    phaseHelpers.addComponents(cy, event, nodeCounter, phase)
+    buttonHelpers.addComponents(cy, event, nodeCounter, phase)
     cy.nodes().addClass('label-nodes')
     printTotalNodes(cy)
 
@@ -45,7 +45,7 @@ module.exports = function buttons (
   // add edges specific to each edge
   const buttonAddEdge = document.getElementById('add-edge')
   buttonAddEdge.addEventListener('click', () => {
-    phaseHelpers.addEdge(cy, srcNode.out, trgNode.out, phase)
+    buttonHelpers.addEdge(cy, srcNode.out, trgNode.out, phase)
     cy.edges().addClass('label-edges')
   })
 
@@ -71,7 +71,7 @@ module.exports = function buttons (
   // binds the model overview button
   const buttonOverview = document.getElementById('overview-button')
   buttonOverview.addEventListener('click', () => {
-    phaseHelpers.overviewHelper(cy, phase)
+    buttonHelpers.overviewHelper(cy, phase)
   })
 
   // find patterns using the findPattern.js module
@@ -152,7 +152,7 @@ module.exports = function buttons (
     // phases model validation button
     const buttonModelValidate = document.getElementById('model-validate-button')
     buttonModelValidate.addEventListener('click', () => {
-      phaseHelpers.validateHelper(cy, phase)
+      buttonHelpers.validateHelper(cy, phase)
     })
   } else if (phase === 'implementation') {
     // verify threats
@@ -179,7 +179,7 @@ module.exports = function buttons (
     // phases model validation button
     const buttonModelValidate = document.getElementById('model-validate-button')
     buttonModelValidate.addEventListener('click', () => {
-      phaseHelpers.validateHelper(cy, phase)
+      buttonHelpers.validateHelper(cy, phase)
     })
     // module selection
     const group = document.getElementById('module-group')
