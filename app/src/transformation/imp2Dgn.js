@@ -1,6 +1,7 @@
 // applies tranformation rules from implementation to design phase
 
-const save = require('../helpers/save.js')
+// const save = require('../helpers/save.js')
+const printChatText = require('../helpers/printChatText.js')
 
 module.exports = function imp2Dgn (cy) {
   cy.nodes().map(node => {
@@ -30,5 +31,6 @@ module.exports = function imp2Dgn (cy) {
       delete node.data().info.state
     }
   })
-  save(cy)
+  // save(cy)
+  printChatText('transformation successful')
 }

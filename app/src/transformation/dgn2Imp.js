@@ -2,7 +2,7 @@
 
 // TODO change the relations as well
 
-const save = require('../helpers/save.js')
+// const save = require('../helpers/save.js')
 const printChatText = require('../helpers/printChatText.js')
 
 module.exports = function dgnState2ImpState (cy) {
@@ -16,7 +16,19 @@ module.exports = function dgnState2ImpState (cy) {
       node.data().info.output = ''
       node.data().info.concept = 'unidentified node'
     } else if (node.data().info.concept === 'thing') {
+      // adds a network connection concept between hardware things
       if (node.data().info.component === 'hardware') {
+        const neighbor = node.neighborhood()
+        neighbor.map(type => {
+          if (type.data().hasOwnProperty('info') === true) {
+            if (
+              type.data().info.concept === 'thing' &&
+              type.data().info.component === 'hardware'
+            ) {
+              console.log(type.data().info.description)
+            }
+          }
+        })
         node.data().label = 'device'
         node.data().info.layer = ''
         node.data().info.type = ''
@@ -25,16 +37,18 @@ module.exports = function dgnState2ImpState (cy) {
         node.data().info.output = ''
         node.data().info.update = ''
         node.data().info.concept = 'device'
+        delete node.data().info.component
       } else if (node.data().info.component === 'software') {
         node.data().label = 'application'
         node.data().info.version = ''
         node.data().info.update = ''
         node.data().info.concept = 'application'
+        delete node.data().info.component
       }
     } else if (node.data().info.concept === 'information') {
       node.data().info.location = ''
     }
   })
-  save(cy)
+  // save(cy)
   printChatText('transformation successful')
 }

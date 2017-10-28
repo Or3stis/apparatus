@@ -17,7 +17,7 @@ const printChatText = require('./helpers/printChatText.js')
 
 const phaseHelpers = require('./buttonHelpers.js')
 
-// const transformDgn2Imp = require('./transformation/dgn2Imp.js')
+const transformDgn2Imp = require('./transformation/dgn2Imp.js')
 // const transformImp2Dgn = require('./transformation/imp2Dgn.js')
 
 module.exports = function buttons (
@@ -142,6 +142,7 @@ module.exports = function buttons (
     const buttonTransform = document.getElementById('transform-button')
     buttonTransform.addEventListener('click', () => {
       printChatText('model transformation\nunder development 🚧')
+      // transformDgn2Imp(cy)
     })
     // module selection
     const group = document.getElementById('module-group')
@@ -163,6 +164,7 @@ module.exports = function buttons (
     const buttonTransform = document.getElementById('transform-button')
     buttonTransform.addEventListener('click', () => {
       printChatText('model transformation\nunder development 🚧')
+      // transformImp2Dgn(cy)
     })
     // verify vulnerabilities
     const buttonVulnVefiry = document.getElementById('vuln-verify-button')
