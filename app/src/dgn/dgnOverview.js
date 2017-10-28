@@ -1,6 +1,5 @@
 // prints the total number of nodes along with their concept type and module
 
-const printChatText = require('../helpers/printChatText.js')
 const dgnMetamodel = require('./dgnSchema.js')
 
 module.exports = function overview (cy) {
@@ -78,5 +77,10 @@ module.exports = function overview (cy) {
   result = `${result}• malicious actor nodes: ${malActorNode}\n`
   result = `${result}• actor nodes: ${actorNode}\n`
 
-  printChatText(result)
+  // show result in the graph container
+  const containerNode = document.getElementById('container-node-id')
+  const containerNodeInfo = document.getElementById('container-node-info-id')
+  // appends info to the div
+  containerNode.style.display = 'block'
+  containerNodeInfo.textContent = result
 }

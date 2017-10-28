@@ -7,6 +7,7 @@ const threatVerification = require('./core/threatVerification.js')
 const deleteRestoreConcepts = require('./core/deleteRestoreConcepts.js')
 const patterns = require('./core/patterns.js')
 const printTotalNodes = require('./core/printTotalNodes.js')
+// const expose = require('./core/expose.js')
 
 const findVulns = require('./imp/findVulns.js')
 const vulnVerification = require('./imp/vulnVerification.js')
@@ -71,7 +72,7 @@ module.exports = function buttons (
   // binds the model overview button
   const buttonOverview = document.getElementById('overview-button')
   buttonOverview.addEventListener('click', () => {
-    buttonHelpers.overviewHelper(cy, phase)
+    // expose(cy)
   })
 
   // find patterns using the findPattern.js module
@@ -83,6 +84,14 @@ module.exports = function buttons (
   buttonSave.addEventListener('click', () => {
     save(cy)
     printChatText('graph saved\n👍')
+  })
+
+  const totalNodes = document.getElementById('legend-id')
+  totalNodes.addEventListener('mouseover', (event) => {
+    buttonHelpers.overviewHelper(cy, phase)
+  })
+  totalNodes.addEventListener('mouseout', (event) => {
+    document.getElementById('container-node-id').style.display = 'none'
   })
 
   // loads a graph
