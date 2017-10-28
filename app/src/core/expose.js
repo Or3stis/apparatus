@@ -1,5 +1,5 @@
 // expose the attribures of the nodes
-const config = require('../../settings/config.js')
+
 const rmElement = require('../helpers/rmElement.js')
 
 let buttonToken = false
@@ -34,7 +34,6 @@ module.exports = function expose (cy) {
 
     // show active expose with colored button
     exposeButton.setAttribute('class', 'active-button')
-    // exposeButton.style.backgroundColor = config.blue
     buttonToken = true
   } else {
     // removes the exposed containers
@@ -43,7 +42,6 @@ module.exports = function expose (cy) {
     })
 
     // restores the original button color
-    // exposeButton.style.backgroundColor = config.darkBackground
     exposeButton.setAttribute('class', 'button-icon')
     buttonToken = false
   }
