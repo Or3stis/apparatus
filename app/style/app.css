@@ -228,6 +228,7 @@ input::-webkit-input-placeholder {
 .button-icon:focus {
   fill: var(--blue-color);
 }
+/*used by expose.js*/
 .active-button {
   background-color: var(--blue-color);
   margin: 2px;
