@@ -190,8 +190,9 @@ input::-webkit-input-placeholder {
 /*displays node number*/
 .legend {
   bottom: 0;
+  left: 50px;
   margin: 5px;
-  position: fixed;
+  position: absolute;
   white-space: pre-wrap;
   font-size: 12px;
   overflow: auto;
