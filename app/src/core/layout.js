@@ -18,11 +18,11 @@ module.exports = function layout (cy, selection) {
     // (0 -> only updated on the end)
     refresh: 20,
     fit: true,
-    padding: 30,
+    padding: 10,
     // Constrain layout bounds; { x1, y1, x2, y2 } or { x1, y1, w, h }
     boundingBox: undefined,
     // Excludes the label when calculating node bounding boxes for the layout algorithm
-    nodeDimensionsIncludeLabels: false,
+    nodeDimensionsIncludeLabels: true,
     // Randomize the initial positions of the nodes (true) or use existing positions (false)
     randomize: false,
     // Extra spacing between components in non-compound graphs
@@ -32,7 +32,7 @@ module.exports = function layout (cy, selection) {
       return 400000
     },
     // Node repulsion (overlapping) multiplier
-    nodeOverlap: 10,
+    nodeOverlap: 1,
     // Ideal edge (non nested) length
     idealEdgeLength: edge => {
       return 10
@@ -42,9 +42,9 @@ module.exports = function layout (cy, selection) {
       return 100
     },
     // Nesting factor (multiplier) to compute ideal edge length for nested edges
-    nestingFactor: 5,
+    nestingFactor: 10,
     // Gravity force (constant)
-    gravity: 80,
+    gravity: 10,
     // Maximum number of iterations to perform
     numIter: 1000,
     // Initial temperature (maximum node displacement)
