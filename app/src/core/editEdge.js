@@ -4,7 +4,7 @@ const rmElement = require('../helpers/rmElement.js')
 
 // create the form
 const createForm = selectedEdge => {
-  const htmlElement = document.getElementById('info-nodes-id')
+  const htmlElement = document.getElementById('chat-area-id')
   const form = document.createElement('form')
   form.className = 'bubble'
   form.id = 'form-id'
@@ -42,7 +42,7 @@ const createForm = selectedEdge => {
     selectedEdge.data().label = id.value
 
     // remove elements once the submit is clicked
-    rmElement('info-nodes-id', 'form-id')
+    rmElement('chat-area-id', 'form-id')
     // return false to prevent the default form behavior
     return false
   }
@@ -55,7 +55,7 @@ const createForm = selectedEdge => {
 const formEdge = selectedEdge => {
   const form = document.getElementById('form-id')
   if (form !== null) {
-    rmElement('info-nodes-id', 'form-id')
+    rmElement('chat-area-id', 'form-id')
     createForm(selectedEdge)
   } else if (form === null) {
     createForm(selectedEdge)

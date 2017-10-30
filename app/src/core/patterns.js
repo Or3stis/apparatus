@@ -28,7 +28,7 @@ module.exports = function patterns (cy) {
     printChatText(flaggedNodes)
   }
 
-  const htmlElement = document.getElementById('info-nodes-id')
+  const htmlElement = document.getElementById('chat-area-id')
 
   // create the patter element
   const form = document.createElement('form')
@@ -56,7 +56,7 @@ module.exports = function patterns (cy) {
     let keywords = document.getElementById('pattern-id')
     let pattern = `${keywords.value}`.split(' ')
 
-    rmElement('info-nodes-id', 'form-id')
+    rmElement('chat-area-id', 'form-id')
 
     searchPattern(pattern)
     // return false to prevent the default form behavior

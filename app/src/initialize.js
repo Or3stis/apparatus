@@ -61,7 +61,7 @@ module.exports = function initialize (cy, phase) {
 
     printTotalNodes(cy) // show number of nodes
 
-    rmElement('info-nodes-id', 'form-id') // remove the edit node element
+    rmElement('chat-area-id', 'form-id') // remove the edit node element
     rmElement('window-id', 'nodeMenu-id') // remove node menu element
     rmElement('window-id', 'stageMenu-id') // remove stage menu element
   })
@@ -82,7 +82,7 @@ module.exports = function initialize (cy, phase) {
 
     printTotalNodes(cy) // show number of nodes
 
-    rmElement('info-nodes-id', 'form-id') // remove the edit node element
+    rmElement('chat-area-id', 'form-id') // remove the edit node element
     rmElement('window-id', 'nodeMenu-id') // remove node menu element
     rmElement('window-id', 'stageMenu-id') // remove stage menu element
   })
@@ -104,7 +104,7 @@ module.exports = function initialize (cy, phase) {
 
       printTotalNodes(cy) // show nubmer of nodes
 
-      rmElement('info-nodes-id', 'form-id') // remove the edit node element
+      rmElement('chat-area-id', 'form-id') // remove the edit node element
       rmElement('window-id', 'nodeMenu-id') // remove node menu element
       rmElement('window-id', 'stageMenu-id') // remove stage menu element
     }

@@ -98,7 +98,7 @@ module.exports = function (
         }
         break
       case 'clear':
-        document.getElementById('info-nodes-id').textContent = ''
+        document.getElementById('chat-area-id').textContent = ''
         break
       case '':
         break
