@@ -11,7 +11,7 @@ const save = require('./helpers/save.js')
 const theme = require('./helpers/theme.js')
 const watcher = require('./helpers/watcher.js')
 
-const phaseHelpers = require('./buttonHelpers.js')
+const buttonHelpers = require('./buttonHelpers.js')
 
 module.exports = function (
   cy,
@@ -31,7 +31,6 @@ module.exports = function (
 • view phase metamodel: <b>metamodel</b>
 • change color theme: <b>toggle</b>
 • clear sidebar: <b>clear</b>
-• model overview: <b>overview</b>
 • model validation: <b>validate</b>
 • search for attribures: <b>keyword</b>`
 
@@ -44,7 +43,6 @@ module.exports = function (
 • view phase metamodel: <b>metamodel</b>
 • change color theme: <b>toggle</b>
 • clear sidebar: <b>clear</b>
-• model overview: <b>overview</b>
 • model validation: <b>validate</b>
 • search for attribures: <b>keyword</b>`
 
@@ -84,11 +82,8 @@ module.exports = function (
           require('electron').shell.openExternal(config.wikiUrl)
         })
         break
-      case 'overview':
-        phaseHelpers.overviewHelper(cy, phase)
-        break
       case 'validate':
-        phaseHelpers.validateHelper(cy, phase)
+        buttonHelpers.validateHelper(cy, phase)
         break
       case 'metamodel':
         showMetamodel(phase)
@@ -128,7 +123,7 @@ module.exports = function (
     if (key === true && event.code === 'KeyE') {
       // checks for undefined selections
       if (Object.keys(srcNode.out).length !== 0) {
-        phaseHelpers.addEdge(cy, srcNode.out, trgNode.out, phase)
+        buttonHelpers.addEdge(cy, srcNode.out, trgNode.out, phase)
         cy.edges().addClass('label-edges')
       }
     }
