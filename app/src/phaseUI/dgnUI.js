@@ -24,7 +24,8 @@ module.exports = function designUI () {
     </svg>
   </button>
   <ul class="dropdown-menu">
-    <li><a>thing</a></li>
+    <li><a>device</a></li>
+    <li><a>application</a></li>
     <li><a>information</a></li>
     <li><a>micronet</a></li>
     <li><a>unidentified node</a></li>
@@ -56,7 +57,8 @@ module.exports = function designUI () {
     </svg>
   </button>
   <ul class="dropdown-menu">
-    <li><a>thing</a></li>
+    <li><a>device</a></li>
+    <li><a>application</a></li>
     <li><a>information</a></li>
     <li><a>micronet</a></li>
     <li><a>unidentified node</a></li>

@@ -30,7 +30,8 @@ module.exports = function overview (cy) {
   result = `${result}• social nodes: ${socialNode}\n`
   result = `${result}• security nodes: ${securityNode}\n\n`
 
-  let thingNode = 0
+  let deviceNode = 0
+  let applicationNode = 0
   let micronetNode = 0
   let unidentifiedNode = 0
   let netNode = 0
@@ -43,8 +44,10 @@ module.exports = function overview (cy) {
 
   cy.nodes().map(node => {
     const nodeConcept = node.data().info.concept
-    if (nodeConcept === 'thing') {
-      thingNode += 1
+    if (nodeConcept === 'device') {
+      deviceNode += 1
+    } else if (nodeConcept === 'application') {
+      applicationNode += 1
     } else if (nodeConcept === 'micronet') {
       micronetNode += 1
     } else if (nodeConcept === 'net') {
@@ -66,7 +69,8 @@ module.exports = function overview (cy) {
     }
   })
 
-  result = `${result}• thing nodes: ${thingNode}\n`
+  result = `${result}• device nodes: ${deviceNode}\n`
+  result = `${result}• application nodes: ${applicationNode}\n`
   result = `${result}• micronet nodes: ${micronetNode}\n`
   result = `${result}• net nodes: ${netNode}\n`
   result = `${result}• unidentified nodes: ${unidentifiedNode}\n`

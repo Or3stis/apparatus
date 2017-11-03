@@ -7,28 +7,42 @@ dgnMetamodel.network = [
   'micronet',
   'net',
   'information',
-  'thing',
+  'device',
+  'application',
   'unidentified node'
 ]
 dgnMetamodel.security = ['asset', 'threat', 'constraint', 'malicious actor']
 dgnMetamodel.social = ['actor']
 
 // allowed concepts connections
-dgnMetamodel.thingArray = [
+dgnMetamodel.deviceArray = [
   'micronet',
   'information',
   'actor',
   'malicious actor',
   'asset',
-  'thing'
+  'device',
+  'application'
 ]
-dgnMetamodel.micronetArray = ['thing', 'net', 'micronet']
+dgnMetamodel.applicationArray = ['device', 'information', 'asset', 'actor']
+dgnMetamodel.micronetArray = ['device', 'net', 'micronet']
 dgnMetamodel.netArray = ['micronet', 'threat', 'unidentified node']
 dgnMetamodel.undentifiedNodeArray = ['net', 'actor', 'malicious actor']
-dgnMetamodel.informationArray = ['asset', 'thing', 'actor']
-dgnMetamodel.actorArray = ['thing', 'information', 'unidentified node']
+dgnMetamodel.informationArray = ['asset', 'application', 'device', 'actor']
+dgnMetamodel.actorArray = [
+  'device',
+  'application',
+  'information',
+  'unidentified node'
+]
 dgnMetamodel.maliciousActorArray = dgnMetamodel.actorArray.concat('threat')
-dgnMetamodel.assetArray = ['information', 'threat', 'actor', 'thing']
+dgnMetamodel.assetArray = [
+  'information',
+  'application',
+  'threat',
+  'actor',
+  'device'
+]
 dgnMetamodel.constraintArray = ['threat', 'micronet']
 dgnMetamodel.threatArray = ['asset', 'malicious actor', 'constraint', 'net']
 

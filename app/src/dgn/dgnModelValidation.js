@@ -5,7 +5,8 @@ const printChatText = require('../helpers/printChatText.js')
 
 module.exports = function moduleValidation (cy) {
   // valid component connections
-  const thingArray = dgnMetamodel.thingArray
+  const deviceArray = dgnMetamodel.deviceArray
+  const applicationArray = dgnMetamodel.applicationArray
   const micronetArray = dgnMetamodel.micronetArray
   const netArray = dgnMetamodel.netArray
   const undentifiedNodeArray = dgnMetamodel.undentifiedNodeArray
@@ -48,7 +49,8 @@ module.exports = function moduleValidation (cy) {
     }
   }
 
-  componentValidation(cy, 'thing', thingArray)
+  componentValidation(cy, 'device', deviceArray)
+  componentValidation(cy, 'application', applicationArray)
   componentValidation(cy, 'micronet', micronetArray)
   componentValidation(cy, 'net', netArray)
   componentValidation(cy, 'undentified node', undentifiedNodeArray)

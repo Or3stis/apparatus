@@ -11,7 +11,7 @@ module.exports = function addDgnComponent (cy, event, nodeCounter) {
   let component = event.target.textContent
 
   switch (component) {
-    case 'thing':
+    case 'device':
       cy.add({
         group: 'nodes',
         data: {
@@ -19,8 +19,24 @@ module.exports = function addDgnComponent (cy, event, nodeCounter) {
           label: `${component}`,
           info: {
             description: '',
-            component: '',
-            concept: 'thing'
+            concept: 'device'
+          }
+        },
+        renderedPosition: {
+          x: posX,
+          y: posY
+        }
+      })
+      break
+    case 'application':
+      cy.add({
+        group: 'nodes',
+        data: {
+          id: `n${nodeCounter}`,
+          label: `${component}`,
+          info: {
+            description: '',
+            concept: 'application'
           }
         },
         renderedPosition: {

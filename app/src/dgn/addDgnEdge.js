@@ -13,31 +13,28 @@ module.exports = function addComponent (cy, srcNode, trgNode) {
     case srcNodeCpt === 'net' && trgNodeCpt === 'micronet':
       addEdge(cy, srcNodeId, trgNodeId, 'requests')
       break
-    case srcNodeCpt === 'thing' && trgNodeCpt === 'micronet':
+    case srcNodeCpt === 'device' && trgNodeCpt === 'micronet':
       addEdge(cy, srcNodeId, trgNodeId, 'belongs')
       break
-    case srcNodeCpt === 'thing' && trgNodeCpt === 'thing':
+    case srcNodeCpt === 'device' && trgNodeCpt === 'device':
       addEdge(cy, srcNodeId, trgNodeId, 'connects')
       break
-    case srcNodeCpt === 'thing' && trgNodeCpt === 'information':
+    case srcNodeCpt === 'device' && trgNodeCpt === 'information':
       addEdge(cy, srcNodeId, trgNodeId, 'has')
       break
     case srcNodeCpt === 'constraint' && trgNodeCpt === 'micronet':
       addEdge(cy, srcNodeId, trgNodeId, 'imposes')
       break
-    case srcNodeCpt === 'threat' && trgNodeCpt === 'thing':
-      addEdge(cy, srcNodeId, trgNodeId, 'poses')
-      break
-    case srcNodeCpt === 'asset' && trgNodeCpt === 'thing':
+    case srcNodeCpt === 'asset' && trgNodeCpt === 'device':
       addEdge(cy, srcNodeId, trgNodeId, 'is')
       break
     case srcNodeCpt === 'asset' && trgNodeCpt === 'information':
       addEdge(cy, srcNodeId, trgNodeId, 'is')
       break
-    case srcNodeCpt === 'information' && trgNodeCpt === 'thing':
+    case srcNodeCpt === 'information' && trgNodeCpt === 'device':
       addEdge(cy, srcNodeId, trgNodeId, 'requires')
       break
-    case srcNodeCpt === 'actor' && trgNodeCpt === 'thing':
+    case srcNodeCpt === 'actor' && trgNodeCpt === 'device':
       addEdge(cy, srcNodeId, trgNodeId, 'uses')
       break
     case srcNodeCpt === 'actor' && trgNodeCpt === 'unidentified node':
@@ -55,7 +52,7 @@ module.exports = function addComponent (cy, srcNode, trgNode) {
     case srcNodeCpt === 'malicious actor' && trgNodeCpt === 'threat':
       addEdge(cy, srcNodeId, trgNodeId, 'poses')
       break
-    case srcNodeCpt === 'malicious actor' && trgNodeCpt === 'thing':
+    case srcNodeCpt === 'malicious actor' && trgNodeCpt === 'device':
       addEdge(cy, srcNodeId, trgNodeId, 'uses')
       break
     case srcNodeCpt === 'malicious actor' && trgNodeCpt === 'unidentified node':
@@ -69,6 +66,21 @@ module.exports = function addComponent (cy, srcNode, trgNode) {
       break
     case srcNodeCpt === 'micronet' && trgNodeCpt === 'micronet':
       addEdge(cy, srcNodeId, trgNodeId, 'connects')
+      break
+    case srcNodeCpt === 'actor' && trgNodeCpt === 'application':
+      addEdge(cy, srcNodeId, trgNodeId, 'uses')
+      break
+    case srcNodeCpt === 'asset' && trgNodeCpt === 'application':
+      addEdge(cy, srcNodeId, trgNodeId, 'is')
+      break
+    case srcNodeCpt === 'application' && trgNodeCpt === 'device':
+      addEdge(cy, srcNodeId, trgNodeId, 'runs')
+      break
+    case srcNodeCpt === 'application' && trgNodeCpt === 'information':
+      addEdge(cy, srcNodeId, trgNodeId, 'has')
+      break
+    case srcNodeCpt === 'information' && trgNodeCpt === 'application':
+      addEdge(cy, srcNodeId, trgNodeId, 'requires')
       break
     default:
       printChatText(`${srcNodeCpt} → ${trgNodeCpt}\nnot allowed 😔`)
