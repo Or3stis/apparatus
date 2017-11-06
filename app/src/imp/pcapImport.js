@@ -14,19 +14,17 @@ const time = new Date()
 // const timeStamp = 'test'
 const timeStamp = `${time.getDate()}.${time.getMonth()}.${time.getFullYear()}at${time.getHours()}.${time.getMinutes()}.${time.getSeconds()}`
 
-// node content of the file
+// stores the node content of the file
 let nodeContentJs = ''
-// edge content of the file
+// stores the edge content of the file
 let edgeContentJs = ''
-
-// stores the connections in the following format
-// source, target, network protocol
+// stores the connections in the following format source, target, network protocol
 let connection = []
-// stores the total device nodes
+// stores the total number device nodes
 let deviceNodes = []
-// stores all the connections
-// many are reversed src -> trg to trg -> src
+// stores all the connections (even duplicates src -> trg to trg -> src)
 let allConnections = []
+
 const storeConnections = txtData => {
   let srcNodes = []
   // store the target concepts
@@ -77,11 +75,11 @@ const removeServices = allConnections => {
   uniqueConnections = [...new Set(uniqueLine)]
 }
 
-// object of arrays
 // to store the unique devices IP [key] and services [array]
 let uniqueDevicesServices = {}
 // to store the unique devices IP
 let uniqueDevices = []
+
 const storeUniqueDevicesServices = devices => {
   Object.keys(devices).map(key => {
     let nodeInformation = devices[key].split('.')
@@ -102,6 +100,7 @@ const storeUniqueDevicesServices = devices => {
 
 // unified counter to create the nodes
 let idCounter = 0
+
 const createDevices = uniqueDevicesServices => {
   Object.keys(uniqueDevicesServices).map(deviceIp => {
     nodeContentJs += `
@@ -110,7 +109,7 @@ const createDevices = uniqueDevicesServices => {
       id: '${idCounter}',
       label: 'device',
       asto: {
-        description: '${deviceIp}',
+        description: 'ip ${deviceIp}',
         layer: '',
         type: '',
         service: '',
@@ -135,7 +134,7 @@ const createDevicesApplications = devices => {
         // checks if port service is known
         Object.keys(commonPorts).map(port => {
           if (port === service) {
-            service += ` ${commonPorts[port]}`
+            service = `${port} ${commonPorts[port]}`
           }
         })
         nodeContentJs += ` {
@@ -144,7 +143,7 @@ const createDevicesApplications = devices => {
       label: 'application',
       asto: {
         description: 'port ${service}',
-        version: '${service}',
+        version: 'port ${service}',
         update: '',
         concept: 'application'
       }
@@ -266,6 +265,7 @@ const readTxtFile = cy => {
 }
 
 module.exports = function pcapImport (cy, phase) {
+  // checks if tcpdump is installed, returns a boolean
   const testTcpdump = child.spawnSync('type', ['tcpdump']).status === 0
 
   if (testTcpdump === true) {
@@ -283,13 +283,13 @@ module.exports = function pcapImport (cy, phase) {
         if (pcapngFiles === undefined) return
 
         const pcapngFile = pcapngFiles[0]
+
         // tcpdump command to be executed
         const tcpDumpCommand = `tcpdump -qtn -r ${pcapngFile} > graphs/implementation/${timeStamp}.txt`
 
         child.execSync(tcpDumpCommand)
 
-        // reads data from the created txt file
-        // also creates the js file of the graph using the writeGraph
+        // reads data from the created txt file and creates the js file of the graph using the writeGraph
         readTxtFile(cy)
 
         // TODO delete the txt file
