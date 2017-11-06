@@ -273,6 +273,7 @@ module.exports = function pcapImport (cy, phase) {
       ? (dialogOptions = ['openFile', 'openDirectory'])
       : (dialogOptions = ['openFile'])
 
+    // request pcapng file to load
     dialog.showOpenDialog(
       {
         properties: [...dialogOptions],
@@ -283,6 +284,7 @@ module.exports = function pcapImport (cy, phase) {
 
         const pcapngFile = pcapngFiles[0]
 
+        // ask for save location for the new file
         dialog.showSaveDialog(filename => {
           // tcpdump command to be executed
           const tcpDumpCommand = `tcpdump -qtn -r ${pcapngFile} > ${filename}`
