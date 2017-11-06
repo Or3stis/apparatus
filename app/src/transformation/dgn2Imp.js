@@ -7,46 +7,46 @@ const printChatText = require('../helpers/printChatText.js')
 
 module.exports = function dgnState2ImpState (cy) {
   cy.nodes().map(node => {
-    if (node.data().info.concept === 'micronet') {
-      node.data().info.state = ''
-    } else if (node.data().info.concept === 'unidentified node') {
+    if (node.data().asto.concept === 'micronet') {
+      node.data().asto.state = ''
+    } else if (node.data().asto.concept === 'unidentified node') {
       node.data().label = 'unidentified node'
-      node.data().info.service = ''
-      node.data().info.input = ''
-      node.data().info.output = ''
-      node.data().info.concept = 'unidentified node'
-    } else if (node.data().info.concept === 'thing') {
+      node.data().asto.service = ''
+      node.data().asto.input = ''
+      node.data().asto.output = ''
+      node.data().asto.concept = 'unidentified node'
+    } else if (node.data().asto.concept === 'thing') {
       // adds a network connection concept between hardware things
-      if (node.data().info.component === 'hardware') {
+      if (node.data().asto.component === 'hardware') {
         const neighbor = node.neighborhood()
         neighbor.map(type => {
-          if (type.data().hasOwnProperty('info') === true) {
+          if (type.data().hasOwnProperty('asto') === true) {
             if (
-              type.data().info.concept === 'thing' &&
-              type.data().info.component === 'hardware'
+              type.data().asto.concept === 'thing' &&
+              type.data().asto.component === 'hardware'
             ) {
-              console.log(type.data().info.description)
+              console.log(type.data().asto.description)
             }
           }
         })
         node.data().label = 'device'
-        node.data().info.layer = ''
-        node.data().info.type = ''
-        node.data().info.service = ''
-        node.data().info.input = ''
-        node.data().info.output = ''
-        node.data().info.update = ''
-        node.data().info.concept = 'device'
-        delete node.data().info.component
-      } else if (node.data().info.component === 'software') {
+        node.data().asto.layer = ''
+        node.data().asto.type = ''
+        node.data().asto.service = ''
+        node.data().asto.input = ''
+        node.data().asto.output = ''
+        node.data().asto.update = ''
+        node.data().asto.concept = 'device'
+        delete node.data().asto.component
+      } else if (node.data().asto.component === 'software') {
         node.data().label = 'application'
-        node.data().info.version = ''
-        node.data().info.update = ''
-        node.data().info.concept = 'application'
-        delete node.data().info.component
+        node.data().asto.version = ''
+        node.data().asto.update = ''
+        node.data().asto.concept = 'application'
+        delete node.data().asto.component
       }
-    } else if (node.data().info.concept === 'information') {
-      node.data().info.location = ''
+    } else if (node.data().asto.concept === 'information') {
+      node.data().asto.location = ''
     }
   })
   // save(cy)

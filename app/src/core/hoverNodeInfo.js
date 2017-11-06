@@ -5,7 +5,7 @@ module.exports = function nodeInfo (node) {
   const containerNodeInfo = document.getElementById('container-node-info-id')
 
   let nodeInfo = ''
-  const nodeData = node.data().info
+  const nodeData = node.data().asto
   Object.keys(nodeData).map(i => {
     // adds the keys of the object to the string
     if (nodeData.hasOwnProperty(i) === true) {

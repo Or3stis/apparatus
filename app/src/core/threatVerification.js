@@ -11,12 +11,12 @@ module.exports = function threatVerification (cy) {
 
   // highlights threat and constraint nodes
   cy.nodes().map(node => {
-    if (node.data().info.concept === 'threat') {
+    if (node.data().asto.concept === 'threat') {
       node.removeClass('faded')
       node.addClass('attention')
       threatArray.push(node)
     }
-    if (node.data().info.concept === 'constraint') {
+    if (node.data().asto.concept === 'constraint') {
       node.removeClass('faded')
       node.addClass('protect')
     }
@@ -26,8 +26,8 @@ module.exports = function threatVerification (cy) {
   threatArray.map(threat => {
     const neighbor = threat.neighborhood()
     neighbor.map(type => {
-      if (type.data().hasOwnProperty('info') === true) {
-        if (type.data().info.concept === 'constraint') {
+      if (type.data().hasOwnProperty('asto') === true) {
+        if (type.data().asto.concept === 'constraint') {
           result = `${result} • Threat ${threat.data()
             .id} mitigated by Constraint ${type.data().id}\n`
           mitigatedThreats += 1

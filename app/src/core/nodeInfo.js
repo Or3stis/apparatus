@@ -4,7 +4,7 @@ const printChatText = require('./printChatText.js')
 
 module.exports = function nodeInfo (node) {
   let nodeInfo = ''
-  const nodeData = node.data().info
+  const nodeData = node.data().asto
   Object.keys(nodeData).map(i => {
     // adds the keys of the object to the string
     if (nodeData.hasOwnProperty(i) === true) {

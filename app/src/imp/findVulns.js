@@ -16,15 +16,15 @@ module.exports = function findVuln (cy) {
   let nodesKeywords = []
   // fills the nodesKeywords with the values
   cy.nodes().map(node => {
-    if (node.data().info.concept === 'device') {
+    if (node.data().asto.concept === 'device') {
       // check the 'type' attribute for vulnerabilities
-      nodesKeywords.push(node.data().info.type)
+      nodesKeywords.push(node.data().asto.type)
 
       node.removeClass('faded')
       node.addClass('attention')
-    } else if (node.data().info.concept === 'application') {
+    } else if (node.data().asto.concept === 'application') {
       // check the 'version' attribute for vulnerabilities
-      nodesKeywords.push(node.data().info.version)
+      nodesKeywords.push(node.data().asto.version)
 
       node.removeClass('faded')
       node.addClass('attention')

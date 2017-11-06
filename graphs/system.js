@@ -6,7 +6,7 @@ graphModel.elements = [
     data: {
       id: '1',
       label: 'laptop',
-      info: {
+      asto: {
         description: 'laptop',
         aspect: 'physical',
         layer: 'perception',
@@ -22,7 +22,7 @@ graphModel.elements = [
     data: {
       id: '2',
       label: 'router',
-      info: {
+      asto: {
         description: 'router',
         aspect: 'physical',
         layer: 'gateway',
@@ -38,7 +38,7 @@ graphModel.elements = [
     data: {
       id: '3',
       label: 'baby camera',
-      info: {
+      asto: {
         description: 'baby camera',
         aspect: 'physical',
         layer: 'perception',
@@ -53,7 +53,7 @@ graphModel.elements = [
     data: {
       id: '4',
       label: 'network connection',
-      info: {
+      asto: {
         description: 'wireless',
         listOfProtocols: 'HTTP, TELNET, SHH',
         concept: 'network connection'
@@ -63,7 +63,7 @@ graphModel.elements = [
     data: {
       id: '5',
       label: 'network connection',
-      info: {
+      asto: {
         description: 'wireless',
         listOfProtocols: 'HTTP, TELNET, SHH',
         concept: 'network connection'
@@ -73,7 +73,7 @@ graphModel.elements = [
     data: {
       id: '6',
       label: 'actor',
-      info: {
+      asto: {
         description: 'user',
         intent: 'view camera feed',
         concept: 'actor'
@@ -83,7 +83,7 @@ graphModel.elements = [
     data: {
       id: '7',
       label: 'data',
-      info: {
+      asto: {
         description: 'data in transit',
         intent: 'local',
         concept: 'data'
@@ -93,7 +93,7 @@ graphModel.elements = [
     data: {
       id: '8',
       label: 'asset',
-      info: {
+      asto: {
         description: 'camera feed',
         concept: 'asset'
       }
@@ -102,7 +102,7 @@ graphModel.elements = [
     data: {
       id: '9',
       label: 'constraint',
-      info: {
+      asto: {
         description: 'secure camera feed',
         property: 'authorization',
         concept: 'constraint'
@@ -112,7 +112,7 @@ graphModel.elements = [
     data: {
       id: '10',
       label: 'threat',
-      info: {
+      asto: {
         description: 'direct browsing',
         type: 'spoofing',
         concept: 'threat'
@@ -122,7 +122,7 @@ graphModel.elements = [
     data: {
       id: '27',
       label: 'micronet',
-      info: {
+      asto: {
         description: 'smart home',
         state: 'static',
         concept: 'micronet'

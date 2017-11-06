@@ -7,7 +7,7 @@ module.exports = function nodeSelection (cy, classification) {
   // removes the faded class from the selected nodes
   // and adds them to node count
   cy.nodes().map(node => {
-    if (node.data().info.concept === classification) {
+    if (node.data().asto.concept === classification) {
       node.removeClass('faded')
       totalNodes += 1
     }

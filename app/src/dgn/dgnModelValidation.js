@@ -24,10 +24,10 @@ module.exports = function moduleValidation (cy) {
   function componentValidation (cy, component, componentArray) {
     cy.nodes().map(node => {
       // checks if node is the desired component
-      if (node.data().info.concept === component) {
+      if (node.data().asto.concept === component) {
         // stores the neighboring nodes of the component
         const neighborNodes = node.neighborhood().add(node)
-        const neigborObject = neighborNodes.data().info.concept
+        const neigborObject = neighborNodes.data().asto.concept
 
         Object.keys(neigborObject).map(() => {
           // every neighbor node is added to the array arrWrong

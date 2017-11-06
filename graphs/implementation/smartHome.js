@@ -6,7 +6,7 @@ graphModel.elements = [
     data: {
       id: '1',
       label: 'device',
-      info: {
+      asto: {
         description: 'laptop',
         aspect: 'physical',
         layer: 'perception',
@@ -22,7 +22,7 @@ graphModel.elements = [
     data: {
       id: '2',
       label: 'device',
-      info: {
+      asto: {
         description: 'router',
         aspect: 'physical',
         layer: 'gateway',
@@ -38,7 +38,7 @@ graphModel.elements = [
     data: {
       id: '3',
       label: 'device',
-      info: {
+      asto: {
         description: 'baby camera',
         aspect: 'physical',
         layer: 'perception',
@@ -53,7 +53,7 @@ graphModel.elements = [
     data: {
       id: '4',
       label: 'network connection',
-      info: {
+      asto: {
         description: 'wireless',
         listOfProtocols: 'HTTP, TELNET, SHH',
         concept: 'network connection'
@@ -63,7 +63,7 @@ graphModel.elements = [
     data: {
       id: '5',
       label: 'network connection',
-      info: {
+      asto: {
         description: 'wireless',
         listOfProtocols: 'HTTP, TELNET, SHH',
         concept: 'network connection'
@@ -73,7 +73,7 @@ graphModel.elements = [
     data: {
       id: '6',
       label: 'actor',
-      info: {
+      asto: {
         description: 'user',
         intent: 'view camera feed',
         concept: 'actor'
@@ -83,7 +83,7 @@ graphModel.elements = [
     data: {
       id: '7',
       label: 'information',
-      info: {
+      asto: {
         description: 'data in transit',
         intent: 'local',
         concept: 'information'
@@ -94,7 +94,7 @@ graphModel.elements = [
     data: {
       id: '8',
       label: 'asset',
-      info: {
+      asto: {
         description: 'camera feed',
         concept: 'asset'
       }
@@ -103,7 +103,7 @@ graphModel.elements = [
     data: {
       id: '9',
       label: 'constraint',
-      info: {
+      asto: {
         description: 'secure camera feed',
         property: 'authorization',
         concept: 'constraint'
@@ -113,7 +113,7 @@ graphModel.elements = [
     data: {
       id: '10',
       label: 'threat',
-      info: {
+      asto: {
         description: 'direct browsing',
         type: 'spoofing',
         concept: 'threat'
@@ -123,7 +123,7 @@ graphModel.elements = [
     data: {
       id: '11',
       label: 'vulnerability',
-      info: {
+      asto: {
         description: 'CVE-2015-2884',
         concept: 'vulnerability'
       }
@@ -132,7 +132,7 @@ graphModel.elements = [
     data: {
       id: '12',
       label: 'malicious actor',
-      info: {
+      asto: {
         description: 'attacker',
         intent: 'view camera feed',
         concept: 'malicious actor'
@@ -142,7 +142,7 @@ graphModel.elements = [
     data: {
       id: '13',
       label: 'mechanism',
-      info: {
+      asto: {
         description: 'whitelist authorized users',
         concept: 'mechanism'
       }
@@ -151,7 +151,7 @@ graphModel.elements = [
     data: {
       id: '14',
       label: 'asset',
-      info: {
+      asto: {
         description: 'device credentials',
         concept: 'asset'
       }
@@ -160,7 +160,7 @@ graphModel.elements = [
     data: {
       id: '15',
       label: 'constraint',
-      info: {
+      asto: {
         description: 'protect Device credentials',
         property: 'confidentiality',
         concept: 'constraint'
@@ -170,7 +170,7 @@ graphModel.elements = [
     data: {
       id: '16',
       label: 'mechanism',
-      info: {
+      asto: {
         description: 'update Device firmware',
         concept: 'mechanism'
       }
@@ -179,7 +179,7 @@ graphModel.elements = [
     data: {
       id: '17',
       label: 'malicious actor',
-      info: {
+      asto: {
         description: 'attacker',
         intent: 'access router',
         concept: 'malicious actor'
@@ -189,7 +189,7 @@ graphModel.elements = [
     data: {
       id: '18',
       label: 'threat',
-      info: {
+      asto: {
         description: 'password credentials',
         type: 'informationDisclosure',
         concept: 'threat'
@@ -199,7 +199,7 @@ graphModel.elements = [
     data: {
       id: '19',
       label: 'vulnerability',
-      info: {
+      asto: {
         description: 'CVE-2017-5521',
         concept: 'vulnerability'
       }
@@ -208,7 +208,7 @@ graphModel.elements = [
     data: {
       id: '20',
       label: 'constraint',
-      info: {
+      asto: {
         description: 'Device physical protection',
         property: 'integrity',
         concept: 'constraint'
@@ -218,7 +218,7 @@ graphModel.elements = [
     data: {
       id: '21',
       label: 'asset',
-      info: {
+      asto: {
         description: 'physical devices',
         concept: 'asset'
       }
@@ -227,7 +227,7 @@ graphModel.elements = [
     data: {
       id: '22',
       label: 'threat',
-      info: {
+      asto: {
         description: 'physical tampering',
         type: 'integrity',
         concept: 'threat'
@@ -237,7 +237,7 @@ graphModel.elements = [
     data: {
       id: '23',
       label: 'mechanism',
-      info: {
+      asto: {
         description: 'physically secure acces',
         concept: 'mechanism'
       }
@@ -246,7 +246,7 @@ graphModel.elements = [
     data: {
       id: '24',
       label: 'vulnerability',
-      info: {
+      asto: {
         description: 'physically accessible',
         concept: 'vulnerability'
       }
@@ -255,7 +255,7 @@ graphModel.elements = [
     data: {
       id: '25',
       label: 'net',
-      info: {
+      asto: {
         description: 'internet',
         concept: 'net'
       }
@@ -264,7 +264,7 @@ graphModel.elements = [
     data: {
       id: '26',
       label: 'unidentified node',
-      info: {
+      asto: {
         description: 'server',
         concept: 'unidentified node'
       }
@@ -273,7 +273,7 @@ graphModel.elements = [
     data: {
       id: '27',
       label: 'micronet',
-      info: {
+      asto: {
         description: 'smart home',
         state: 'static',
         concept: 'micronet'
@@ -283,7 +283,7 @@ graphModel.elements = [
     data: {
       id: '28',
       label: 'malicious actor',
-      info: {
+      asto: {
         description: 'attacker',
         intent: 'steal Devices',
         concept: 'malicious actor'

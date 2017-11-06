@@ -17,7 +17,7 @@ module.exports = function overview (cy) {
   let socialNode = 0
 
   cy.nodes().map(node => {
-    const nodeConcept = node.data().info.concept
+    const nodeConcept = node.data().asto.concept
     if (networkArray.includes(nodeConcept) === true) {
       networkNode += 1
     } else if (securityArray.includes(nodeConcept) === true) {
@@ -46,7 +46,7 @@ module.exports = function overview (cy) {
   let actorNode = 0
 
   cy.nodes().map(node => {
-    const nodeConcept = node.data().info.concept
+    const nodeConcept = node.data().asto.concept
     if (nodeConcept === 'device') {
       deviceNode += 1
     } else if (nodeConcept === 'application') {

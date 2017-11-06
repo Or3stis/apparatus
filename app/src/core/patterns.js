@@ -13,7 +13,7 @@ module.exports = function patterns (cy) {
 
     // check all the nodes in graph for the search terms
     cy.nodes().map(node => {
-      const nodeData = node.data().info
+      const nodeData = node.data().asto
       Object.keys(nodeData).map(value => {
         pattern.map(i => {
           if (nodeData[value] === i) {

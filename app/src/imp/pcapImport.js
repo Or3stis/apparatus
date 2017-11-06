@@ -109,7 +109,7 @@ const createDevices = uniqueDevicesServices => {
     data: {
       id: '${idCounter}',
       label: 'device',
-      info: {
+      asto: {
         description: '${deviceIp}',
         layer: '',
         type: '',
@@ -142,7 +142,7 @@ const createDevicesApplications = devices => {
     data: {
       id: '${idCounter}',
       label: 'application',
-      info: {
+      asto: {
         description: 'port ${service}',
         version: '${service}',
         update: '',
@@ -179,7 +179,7 @@ const createConnections = (devices, connections) => {
     data: {
       id: '${idCounter}',
       label: 'network connection',
-      info: {
+      asto: {
         description: '${element[2]}',
         listOfProtocols: '${element[2]}',
         concept: 'network connection'

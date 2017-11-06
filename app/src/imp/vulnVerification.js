@@ -11,12 +11,12 @@ module.exports = function vulnVerification (cy) {
 
   // highlights all vulnerability and mechanism nodes
   cy.nodes().map(node => {
-    if (node.data().info.concept === 'vulnerability') {
+    if (node.data().asto.concept === 'vulnerability') {
       node.removeClass('faded')
       node.addClass('attention')
       vulnArray.push(node)
     }
-    if (node.data().info.concept === 'mechanism') {
+    if (node.data().asto.concept === 'mechanism') {
       node.removeClass('faded')
       node.addClass('protect')
     }
@@ -26,8 +26,8 @@ module.exports = function vulnVerification (cy) {
   vulnArray.map(vuln => {
     const neighbor = vuln.neighborhood()
     neighbor.map(type => {
-      if (type.data().hasOwnProperty('info') === true) {
-        if (type.data().info.concept === 'mechanism') {
+      if (type.data().hasOwnProperty('asto') === true) {
+        if (type.data().asto.concept === 'mechanism') {
           result = `${result} • Vulnerability ${vuln.data()
             .id} mitigated by Mechanism ${type.data().id}\n`
           mitigatedVulns += 1

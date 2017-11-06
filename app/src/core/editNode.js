@@ -13,7 +13,7 @@ const createForm = selectedNode => {
   let input = ''
   let inputIds = []
 
-  const nodeData = selectedNode.data().info
+  const nodeData = selectedNode.data().asto
   Object.keys(nodeData).map(key => {
     // won't display the concept attribute
     if (key !== 'concept') {
@@ -49,7 +49,7 @@ const createForm = selectedNode => {
   formId.onsubmit = () => {
     inputIds.map(keyValue => {
       let id = document.getElementById(keyValue)
-      selectedNode.data().info[keyValue] = id.value
+      selectedNode.data().asto[keyValue] = id.value
     })
     // remove elements once the submit is clicked
     rmElement('chat-area-id', 'form-id')

@@ -6,7 +6,7 @@ graphModel.elements = [
     data: {
       id: '1',
       label: 'Net',
-      info: {
+      asto: {
         description: 'laptop',
         concept: 'net'
       }
@@ -15,7 +15,7 @@ graphModel.elements = [
     data: {
       id: '2',
       label: 'Micronet',
-      info: {
+      asto: {
         description: 'laptop',
         concept: 'micronet'
       }
@@ -24,7 +24,7 @@ graphModel.elements = [
     data: {
       id: '3',
       label: 'Device',
-      info: {
+      asto: {
         description: 'laptop',
         aspect: 'physical',
         layer: 'perception',
@@ -40,7 +40,7 @@ graphModel.elements = [
     data: {
       id: '4',
       label: 'Device',
-      info: {
+      asto: {
         description: 'laptop',
         aspect: 'physical',
         layer: 'perception',
@@ -56,7 +56,7 @@ graphModel.elements = [
     data: {
       id: '5',
       label: 'Device',
-      info: {
+      asto: {
         description: 'laptop',
         aspect: 'physical',
         layer: 'perception',
@@ -72,7 +72,7 @@ graphModel.elements = [
     data: {
       id: '6',
       label: 'Actor',
-      info: {
+      asto: {
         description: 'laptop',
         concept: 'actor'
       }
@@ -81,7 +81,7 @@ graphModel.elements = [
     data: {
       id: '7',
       label: 'Data',
-      info: {
+      asto: {
         description: 'laptop',
         concept: 'data'
       }
@@ -90,7 +90,7 @@ graphModel.elements = [
     data: {
       id: '8',
       label: 'Data',
-      info: {
+      asto: {
         description: 'laptop',
         concept: 'data'
       }
@@ -99,7 +99,7 @@ graphModel.elements = [
     data: {
       id: '9',
       label: 'Threat',
-      info: {
+      asto: {
         description: 'laptop',
         concept: 'threat'
       }
@@ -108,7 +108,7 @@ graphModel.elements = [
     data: {
       id: '10',
       label: 'Constraint',
-      info: {
+      asto: {
         description: 'laptop',
         concept: 'constraint'
       }
@@ -117,7 +117,7 @@ graphModel.elements = [
     data: {
       id: '11',
       label: 'Threat',
-      info: {
+      asto: {
         description: 'laptop',
         concept: 'threat'
       }
@@ -126,7 +126,7 @@ graphModel.elements = [
     data: {
       id: '12',
       label: 'Constraint',
-      info: {
+      asto: {
         description: 'laptop',
         concept: 'constraint'
       }
@@ -135,7 +135,7 @@ graphModel.elements = [
     data: {
       id: '13',
       label: 'Constraint',
-      info: {
+      asto: {
         description: 'laptop',
         concept: 'constraint'
       }
@@ -144,7 +144,7 @@ graphModel.elements = [
     data: {
       id: '15',
       label: 'Asset',
-      info: {
+      asto: {
         description: 'laptop',
         concept: 'asset'
       }
@@ -153,7 +153,7 @@ graphModel.elements = [
     data: {
       id: '16',
       label: 'Asset',
-      info: {
+      asto: {
         description: 'laptop',
         concept: 'asset'
       }
@@ -162,7 +162,7 @@ graphModel.elements = [
     data: {
       id: '17',
       label: 'Device',
-      info: {
+      asto: {
         description: 'laptop',
         concept: 'device'
       }
@@ -171,7 +171,7 @@ graphModel.elements = [
     data: {
       id: '18',
       label: 'Network Connection',
-      info: {
+      asto: {
         description: 'laptop',
         concept: 'network connection'
       }
@@ -180,7 +180,7 @@ graphModel.elements = [
     data: {
       id: '19',
       label: 'Network Connection',
-      info: {
+      asto: {
         description: 'laptop',
         concept: 'network connection'
       }

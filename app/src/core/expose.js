@@ -12,7 +12,7 @@ module.exports = function expose (cy) {
 
     cy.nodes().map(node => {
       let nodeInfo = ''
-      const nodeData = node.data().info
+      const nodeData = node.data().asto
       Object.keys(nodeData).map(i => {
         // adds the keys of the object to the string
         if (nodeData.hasOwnProperty(i) === true) {
