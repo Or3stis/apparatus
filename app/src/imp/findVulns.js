@@ -7,20 +7,23 @@ const config = require('../../settings/config.js')
 const printChatText = require('../helpers/printChatText.js')
 const printChatHTML = require('../helpers/printChatHTML.js')
 
-// only checks for the concepts of device and application
+// only checks vulnerabilities for the concepts of device and application
 module.exports = function findVuln (cy) {
-  // stores the nodes keywords
-  let nodesKeywords = []
-
+  // fades out the graph elements
   cy.elements().addClass('faded')
 
+  // stores the values of the nodes that will be used as keywords
+  let nodesKeywords = []
+  // fills the nodesKeywords with the values
   cy.nodes().map(node => {
     if (node.data().info.concept === 'device') {
+      // check the 'type' attribute for vulnerabilities
       nodesKeywords.push(node.data().info.type)
 
       node.removeClass('faded')
       node.addClass('attention')
     } else if (node.data().info.concept === 'application') {
+      // check the 'version' attribute for vulnerabilities
       nodesKeywords.push(node.data().info.version)
 
       node.removeClass('faded')
@@ -28,13 +31,15 @@ module.exports = function findVuln (cy) {
     }
   })
 
+  // check whether the nodesKeywords is empty before sending the request to
+  // a vulnerability database
   if (nodesKeywords.length === 0) {
     printChatText('no vulnerabilities were found')
   } else {
     // removes duplicate keywords
     const uniqueKeywords = [...new Set(nodesKeywords)]
 
-    // stores the keywords for print
+    // stores the keywords for display
     let keywordsPrint = ''
     uniqueKeywords.map(keyword => {
       keywordsPrint += `• ${keyword}\n`
