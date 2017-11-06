@@ -2,10 +2,60 @@
 
 const http = require('http')
 const fs = require('fs')
+const { dialog } = require('electron').remote
 
 const config = require('../../settings/config.js')
 const printChatText = require('../helpers/printChatText.js')
 const printChatHTML = require('../helpers/printChatHTML.js')
+
+// request vulnerability information from cve
+const requestVulnData = (filename, nodesKeywords) => {
+  // stores the CVE list
+  let totalVuln = []
+  nodesKeywords.map(vuln => {
+    http
+      .get(`${config.cveSearchUrl}${vuln}`, resp => {
+        let data = ''
+        // add each received chunk of data
+        resp.on('data', chunk => {
+          data += chunk
+        })
+        // once the whole response has been received
+        resp.on('end', () => {
+          // write the results in a json file
+          fs.writeFile(filename, data, err => {
+            if (err) console.error(`Error: ${err.message}`)
+          })
+          // this works for single keywords
+          Object.values(JSON.parse(data)).map(key => {
+            // array with the CVE ids
+            key.map(info => totalVuln.push(info.id))
+          })
+          // this works for double keywords -> vendor/product
+          // JSON.parse(data).map((key) => {
+          // console.log(key)
+          // })
+
+          // displays the total amount of vulnerabilities
+          printChatHTML(
+            `${vuln} vulnerabilities found: <strong>${totalVuln.length}</strong>`
+          )
+        })
+      })
+      .on('error', err => {
+        console.log(`Error: ${err.message}`)
+      })
+  })
+}
+
+const saveFile = nodesKeywords => {
+  dialog.showSaveDialog(
+    { filters: [{ name: 'javascript', extensions: ['json'] }] },
+    filename => {
+      requestVulnData(filename, nodesKeywords)
+    }
+  )
+}
 
 // only checks vulnerabilities for the concepts of device and application
 const findVuln = cy => {
@@ -45,62 +95,13 @@ const findVuln = cy => {
       keywordsPrint += `• ${keyword}\n`
     })
 
+    // requestVulnData(uniqueKeywords)
+    saveFile(nodesKeywords)
+
     printChatText(`sending request to ${config.cveSearchUrl}`)
     printChatText(`☛ keywords used:\n\n${keywordsPrint}`)
-    requestVulnData(uniqueKeywords)
   }
 }
 
-// request vulnerability information from cve
-const requestVulnData = nodesKeywords => {
-  // get the name of the fileNames
-  const title = document.getElementById('title-bar-id')
-  const file = title.textContent.split('/').pop()
-
-  // stores the CVE list
-  let totalVuln = []
-  nodesKeywords.map(vuln => {
-    http
-      .get(`${config.cveSearchUrl}${vuln}`, resp => {
-        let data = ''
-
-        // add each received chunk of data
-        resp.on('data', chunk => {
-          data += chunk
-        })
-
-        // whole response has been received
-        resp.on('end', () => {
-          // write the results in a .json file
-          // ${file} has the .js extension, the ${file}on has the .json
-          fs.writeFile(`analysis/vulnerability-${file}on`, data, err => {
-            if (err) console.error(`Error: ${err.message}`)
-          })
-
-          // this works for single keywords
-          Object.values(JSON.parse(data)).map(key => {
-            // arry with the CVE ids
-            key.map(info => totalVuln.push(info.id))
-          })
-          // this works for double keywords -> vendor/product
-          // JSON.parse(data).map((key) => {
-          // console.log(key)
-          // })
-
-          // displays the total amount of vulnerabilities
-          printChatHTML(
-            `${vuln} vulnerabilities found: <strong>${totalVuln.length}</strong>`
-          )
-        })
-      })
-      .on('error', err => {
-        console.log(`Error: ${err.message}`)
-      })
-  })
-  printChatHTML(
-    `analysis results will be stored at\n<strong>./analysis/vulnerability-${file}on</strong>`
-  )
-}
-
-// // only checks vulnerabilities for the concepts of device and application
+// only checks vulnerabilities for the concepts of device and application
 module.exports = findVuln
