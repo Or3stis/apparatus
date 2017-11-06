@@ -9,11 +9,6 @@ const commonPorts = require('./commonPorts.js')
 const initialize = require('../initialize.js')
 const cyOptions = require('../helpers/cyOptions.js')
 
-// // create timeStamp to name the files
-const time = new Date()
-// const timeStamp = 'test'
-const timeStamp = `${time.getDate()}.${time.getMonth()}.${time.getFullYear()}at${time.getHours()}.${time.getMinutes()}.${time.getSeconds()}`
-
 // stores the node content of the file
 let nodeContentJs = ''
 // stores the edge content of the file
@@ -221,7 +216,7 @@ const createConnections = (devices, connections) => {
 
 // writes the data from the read function
 // the data are read from the txt created in readFile function
-const writeGraph = (cy, devices, connections) => {
+const writeGraph = (cy, filename, devices, connections) => {
   storeUniqueDevicesServices(devices)
   createDevices(uniqueDevicesServices)
   createDevicesApplications(devices)
@@ -239,18 +234,18 @@ const writeGraph = (cy, devices, connections) => {
     .concat(fileEnd)
 
   // writes the graph on file
-  fs.writeFile(`graphs/implementation/${timeStamp}.js`, toWrite, err => {
+  fs.writeFile(`${filename}.js`, toWrite, err => {
     if (err) throw err
 
     // loads the created graph on the tool
-    cyOptions(cy, `../../../graphs/implementation/${timeStamp}.js`)
+    cyOptions(cy, `${filename}.js`)
     initialize(cy.out, 'implementation')
   })
 }
 
 // reads the .txt file that was created by the tcpdump command
-const readTxtFile = cy => {
-  fs.readFile(`graphs/implementation/${timeStamp}.txt`, (err, data) => {
+const readTxtFile = (cy, filename) => {
+  fs.readFile(`${filename}`, (err, data) => {
     if (err) throw err
 
     const txtData = data.toString().split('\n')
@@ -259,10 +254,12 @@ const readTxtFile = cy => {
     removeServices(allConnections)
 
     // writes graph data on as .js file
-    writeGraph(cy, deviceNodes, uniqueConnections)
+    writeGraph(cy, filename, deviceNodes, uniqueConnections)
 
     // deletes the text file
-    fs.unlink(`graphs/implementation/${timeStamp}.txt`)
+    fs.unlink(`${filename}`, err => {
+      if (err) throw err
+    })
   })
 }
 
@@ -286,13 +283,15 @@ module.exports = function pcapImport (cy, phase) {
 
         const pcapngFile = pcapngFiles[0]
 
-        // tcpdump command to be executed
-        const tcpDumpCommand = `tcpdump -qtn -r ${pcapngFile} > graphs/implementation/${timeStamp}.txt`
+        dialog.showSaveDialog(filename => {
+          // tcpdump command to be executed
+          const tcpDumpCommand = `tcpdump -qtn -r ${pcapngFile} > ${filename}`
 
-        child.execSync(tcpDumpCommand)
+          child.execSync(tcpDumpCommand)
 
-        // reads data from the txt file, creates a js file and delete the txt
-        readTxtFile(cy)
+          // reads data from the txt file, creates a js file and delete the txt
+          readTxtFile(cy, filename)
+        })
       }
     )
   } else {
