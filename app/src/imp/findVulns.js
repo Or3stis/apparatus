@@ -8,7 +8,7 @@ const printChatText = require('../helpers/printChatText.js')
 const printChatHTML = require('../helpers/printChatHTML.js')
 
 // only checks vulnerabilities for the concepts of device and application
-module.exports = function findVuln (cy) {
+const findVuln = cy => {
   // fades out the graph elements
   cy.elements().addClass('faded')
 
@@ -101,3 +101,6 @@ const requestVulnData = nodesKeywords => {
     `analysis results will be stored at\n<strong>./analysis/vulnerability-${file}on</strong>`
   )
 }
+
+// // only checks vulnerabilities for the concepts of device and application
+module.exports = findVuln
