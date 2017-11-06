@@ -223,7 +223,7 @@ const writeGraph = (cy, filename, devices, connections) => {
   createConnections(uniqueDevices, connections)
 
   // creates the first line of the file
-  const fileStart = 'const graphModel = {}\ngraphModel.elements = [\n// nodes'
+  const fileStart = 'const graphModel = {}\n\ngraphModel.elements = [\n// nodes'
   // end of written file
   const fileEnd = '\n]\nmodule.exports = graphModel\n'
 
