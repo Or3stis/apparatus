@@ -289,7 +289,7 @@ module.exports = function pcapImport (cy, phase) {
 
           child.execSync(tcpDumpCommand)
 
-          // reads data from the txt file, creates a js file and delete the txt
+          // reads data from the txt file, creates a js file and deletes the txt
           readTxtFile(cy, filename)
         })
       }
