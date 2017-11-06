@@ -18,13 +18,13 @@ const timeStamp = `${time.getDate()}.${time.getMonth()}.${time.getFullYear()}at$
 let nodeContentJs = ''
 // stores the edge content of the file
 let edgeContentJs = ''
+
 // stores the connections in the following format source, target, network protocol
 let connection = []
 // stores the total number device nodes
 let deviceNodes = []
 // stores all the connections (even duplicates src -> trg to trg -> src)
 let allConnections = []
-
 const storeConnections = txtData => {
   let srcNodes = []
   // store the target concepts
@@ -45,7 +45,7 @@ const storeConnections = txtData => {
 }
 
 // stores the information to create network connections
-// each row format srcNode tgtNode protocol
+// each row format -> srcNode tgtNode protocol
 let uniqueConnections = []
 const removeServices = allConnections => {
   let counter = 0
@@ -79,7 +79,6 @@ const removeServices = allConnections => {
 let uniqueDevicesServices = {}
 // to store the unique devices IP
 let uniqueDevices = []
-
 const storeUniqueDevicesServices = devices => {
   Object.keys(devices).map(key => {
     let nodeInformation = devices[key].split('.')
@@ -261,6 +260,9 @@ const readTxtFile = cy => {
 
     // writes graph data on as .js file
     writeGraph(cy, deviceNodes, uniqueConnections)
+
+    // deletes the text file
+    fs.unlink(`graphs/implementation/${timeStamp}.txt`)
   })
 }
 
@@ -289,10 +291,8 @@ module.exports = function pcapImport (cy, phase) {
 
         child.execSync(tcpDumpCommand)
 
-        // reads data from the created txt file and creates the js file of the graph using the writeGraph
+        // reads data from the txt file, creates a js file and delete the txt
         readTxtFile(cy)
-
-        // TODO delete the txt file
       }
     )
   } else {
