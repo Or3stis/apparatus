@@ -48,6 +48,7 @@ const requestVulnData = (filename, nodesKeywords) => {
   })
 }
 
+// saves the vulnerabilities in a json file
 const saveFile = nodesKeywords => {
   dialog.showSaveDialog(
     { filters: [{ name: 'javascript', extensions: ['json'] }] },
@@ -57,13 +58,12 @@ const saveFile = nodesKeywords => {
   )
 }
 
-// only checks vulnerabilities for the concepts of device and application
-const findVuln = cy => {
+let nodesKeywords = []
+const findVulnNodes = cy => {
   // fades out the graph elements
   cy.elements().addClass('faded')
 
   // stores the values of the nodes that will be used as keywords
-  let nodesKeywords = []
   // fills the nodesKeywords with the values
   cy.nodes().map(node => {
     if (node.data().asto.concept === 'device') {
@@ -80,6 +80,13 @@ const findVuln = cy => {
       node.addClass('attention')
     }
   })
+}
+
+// sends a request to a CVE database using keywords
+// only checks vulnerabilities for the concepts of device and application
+const findVuln = cy => {
+  // highlights the vulnerable nodes and fills the nodesKeywords array
+  findVulnNodes(cy)
 
   // check whether the nodesKeywords is empty before sending the request to
   // a vulnerability database
