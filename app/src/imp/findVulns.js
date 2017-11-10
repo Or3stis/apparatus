@@ -58,6 +58,7 @@ const saveFile = nodesKeywords => {
   )
 }
 
+// highlights the vulnerable nodes and fills the nodesKeywords array
 let nodesKeywords = []
 const findVulnNodes = cy => {
   // fades out the graph elements
@@ -82,10 +83,20 @@ const findVulnNodes = cy => {
   })
 }
 
+// removes duplicate keywords
+let keywordsPrint = ''
+const getUniqueKeywords = (nodesKeywords) => {
+  const uniqueKeywords = [...new Set(nodesKeywords)]
+
+  // stores the unique keywords for display
+  uniqueKeywords.map(keyword => {
+    keywordsPrint += `• ${keyword}\n`
+  })
+}
+
 // sends a request to a CVE database using keywords
 // only checks vulnerabilities for the concepts of device and application
 const findVuln = cy => {
-  // highlights the vulnerable nodes and fills the nodesKeywords array
   findVulnNodes(cy)
 
   // check whether the nodesKeywords is empty before sending the request to
@@ -93,17 +104,8 @@ const findVuln = cy => {
   if (nodesKeywords.length === 0) {
     printChatText('no vulnerabilities were found')
   } else {
-    // removes duplicate keywords
-    const uniqueKeywords = [...new Set(nodesKeywords)]
-
-    // stores the keywords for display
-    let keywordsPrint = ''
-    uniqueKeywords.map(keyword => {
-      keywordsPrint += `• ${keyword}\n`
-    })
-
-    // requestVulnData(uniqueKeywords)
-    saveFile(nodesKeywords)
+    getUniqueKeywords(nodesKeywords)
+    saveFile(nodesKeywords) // runs the requestVulnData()
 
     printChatText(`sending request to ${config.cveSearchUrl}`)
     printChatText(`☛ keywords used:\n\n${keywordsPrint}`)
