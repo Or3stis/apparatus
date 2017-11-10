@@ -43,7 +43,7 @@ const requestVulnData = (filename, nodesKeywords) => {
         })
       })
       .on('error', err => {
-        console.log(`Error: ${err.message}`)
+        printChatText(err.message)
       })
   })
 }
