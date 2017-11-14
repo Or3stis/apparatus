@@ -255,11 +255,10 @@ const readTxtFile = (cy, filename) => {
 
     // writes graph data on as .js file
     writeGraph(cy, filename, deviceNodes, uniqueConnections)
-
-    // deletes the text file
-    fs.unlink(`${filename}`, err => {
-      if (err) throw err
-    })
+  })
+  // deletes the text file
+  fs.unlink(`${filename}`, err => {
+    if (err) throw err
   })
 }
 
