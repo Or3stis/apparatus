@@ -61,6 +61,8 @@ module.exports = function addImpComponent (cy, event, nodeCounter) {
           info: {
             description: '',
             version: '',
+            input: '',
+            output: '',
             update: '',
             concept: 'application'
           }
