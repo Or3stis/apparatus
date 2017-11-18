@@ -17,7 +17,7 @@ module.exports = function addDgnComponent (cy, event, nodeCounter) {
         data: {
           id: `n${nodeCounter}`,
           label: `${component}`,
-          info: {
+          asto: {
             description: '',
             concept: 'device'
           }
@@ -34,7 +34,7 @@ module.exports = function addDgnComponent (cy, event, nodeCounter) {
         data: {
           id: `n${nodeCounter}`,
           label: `${component}`,
-          info: {
+          asto: {
             description: '',
             concept: 'application'
           }
@@ -51,7 +51,7 @@ module.exports = function addDgnComponent (cy, event, nodeCounter) {
         data: {
           id: `n${nodeCounter}`,
           label: `${component}`,
-          info: {
+          asto: {
             description: '',
             concept: 'unidentified node'
           }
@@ -68,7 +68,7 @@ module.exports = function addDgnComponent (cy, event, nodeCounter) {
         data: {
           id: `n${nodeCounter}`,
           label: `${component}`,
-          info: {
+          asto: {
             description: '',
             purpose: '',
             concept: 'micronet'
@@ -86,7 +86,7 @@ module.exports = function addDgnComponent (cy, event, nodeCounter) {
         data: {
           id: `n${nodeCounter}`,
           label: `${component}`,
-          info: {
+          asto: {
             description: '',
             concept: 'information'
           }
@@ -103,7 +103,7 @@ module.exports = function addDgnComponent (cy, event, nodeCounter) {
         data: {
           id: `n${nodeCounter}`,
           label: `${component}`,
-          info: {
+          asto: {
             description: '',
             concept: 'net'
           }
@@ -120,7 +120,7 @@ module.exports = function addDgnComponent (cy, event, nodeCounter) {
         data: {
           id: `n${nodeCounter}`,
           label: `${component}`,
-          info: {
+          asto: {
             description: '',
             intent: '',
             concept: 'actor'
@@ -138,7 +138,7 @@ module.exports = function addDgnComponent (cy, event, nodeCounter) {
         data: {
           id: `n${nodeCounter}`,
           label: `${component}`,
-          info: {
+          asto: {
             description: '',
             intent: '',
             concept: 'malicious actor'
@@ -156,7 +156,7 @@ module.exports = function addDgnComponent (cy, event, nodeCounter) {
         data: {
           id: `n${nodeCounter}`,
           label: `${component}`,
-          info: {
+          asto: {
             description: '',
             concept: 'asset'
           }
@@ -173,7 +173,7 @@ module.exports = function addDgnComponent (cy, event, nodeCounter) {
         data: {
           id: `n${nodeCounter}`,
           label: `${component}`,
-          info: {
+          asto: {
             description: '',
             property: '',
             concept: 'constraint'
@@ -191,7 +191,7 @@ module.exports = function addDgnComponent (cy, event, nodeCounter) {
         data: {
           id: `n${nodeCounter}`,
           label: `${component}`,
-          info: {
+          asto: {
             description: '',
             type: '',
             concept: 'threat'

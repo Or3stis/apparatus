@@ -17,7 +17,7 @@ module.exports = function addImpComponent (cy, event, nodeCounter) {
         data: {
           id: `n${nodeCounter}`,
           label: `${component}`,
-          info: {
+          asto: {
             description: '',
             layer: '',
             type: '',
@@ -40,7 +40,7 @@ module.exports = function addImpComponent (cy, event, nodeCounter) {
         data: {
           id: `n${nodeCounter}`,
           label: `${component}`,
-          info: {
+          asto: {
             description: '',
             listOfProtocols: '',
             concept: 'network connection'
@@ -58,7 +58,7 @@ module.exports = function addImpComponent (cy, event, nodeCounter) {
         data: {
           id: `n${nodeCounter}`,
           label: `${component}`,
-          info: {
+          asto: {
             description: '',
             version: '',
             input: '',
@@ -79,7 +79,7 @@ module.exports = function addImpComponent (cy, event, nodeCounter) {
         data: {
           id: `n${nodeCounter}`,
           label: `${component}`,
-          info: {
+          asto: {
             description: '',
             state: '',
             purpose: '',
@@ -98,7 +98,7 @@ module.exports = function addImpComponent (cy, event, nodeCounter) {
         data: {
           id: `n${nodeCounter}`,
           label: `${component}`,
-          info: {
+          asto: {
             description: '',
             location: '',
             concept: 'information'
@@ -116,7 +116,7 @@ module.exports = function addImpComponent (cy, event, nodeCounter) {
         data: {
           id: `n${nodeCounter}`,
           label: `${component}`,
-          info: {
+          asto: {
             description: '',
             concept: 'net'
           }
@@ -133,7 +133,7 @@ module.exports = function addImpComponent (cy, event, nodeCounter) {
         data: {
           id: `n${nodeCounter}`,
           label: `${component}`,
-          info: {
+          asto: {
             description: '',
             service: '',
             input: '',
@@ -153,7 +153,7 @@ module.exports = function addImpComponent (cy, event, nodeCounter) {
         data: {
           id: `n${nodeCounter}`,
           label: `${component}`,
-          info: {
+          asto: {
             description: '',
             intent: '',
             concept: 'actor'
@@ -171,7 +171,7 @@ module.exports = function addImpComponent (cy, event, nodeCounter) {
         data: {
           id: `n${nodeCounter}`,
           label: `${component}`,
-          info: {
+          asto: {
             description: '',
             intent: '',
             concept: 'malicious actor'
@@ -189,7 +189,7 @@ module.exports = function addImpComponent (cy, event, nodeCounter) {
         data: {
           id: `n${nodeCounter}`,
           label: `${component}`,
-          info: {
+          asto: {
             description: '',
             concept: 'asset'
           }
@@ -206,7 +206,7 @@ module.exports = function addImpComponent (cy, event, nodeCounter) {
         data: {
           id: `n${nodeCounter}`,
           label: `${component}`,
-          info: {
+          asto: {
             description: '',
             property: '',
             concept: 'constraint'
@@ -224,7 +224,7 @@ module.exports = function addImpComponent (cy, event, nodeCounter) {
         data: {
           id: `n${nodeCounter}`,
           label: `${component}`,
-          info: {
+          asto: {
             description: '',
             trigger: '',
             concept: 'mechanism'
@@ -242,7 +242,7 @@ module.exports = function addImpComponent (cy, event, nodeCounter) {
         data: {
           id: `n${nodeCounter}`,
           label: `${component}`,
-          info: {
+          asto: {
             description: '',
             type: '',
             concept: 'threat'
@@ -260,7 +260,7 @@ module.exports = function addImpComponent (cy, event, nodeCounter) {
         data: {
           id: `n${nodeCounter}`,
           label: `${component}`,
-          info: {
+          asto: {
             description: '',
             concept: 'vulnerability'
           }
