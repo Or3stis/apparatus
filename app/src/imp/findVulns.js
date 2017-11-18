@@ -38,7 +38,9 @@ const requestVulnData = (filename, nodesKeywords) => {
 
           // displays the total amount of vulnerabilities
           printChatHTML(
-            `${vuln} vulnerabilities found: <strong>${totalVuln.length}</strong>`
+            `${vuln} vulnerabilities found: <strong>${
+              totalVuln.length
+            }</strong>`
           )
         })
       })
@@ -85,7 +87,7 @@ const findVulnNodes = cy => {
 
 // removes duplicate keywords
 let keywordsPrint = ''
-const getUniqueKeywords = (nodesKeywords) => {
+const getUniqueKeywords = nodesKeywords => {
   const uniqueKeywords = [...new Set(nodesKeywords)]
 
   // stores the unique keywords for display

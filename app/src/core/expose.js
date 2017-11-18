@@ -25,9 +25,13 @@ module.exports = function expose (cy) {
       // create a container for each node
       const container = document.createElement('span')
       container.id = node.data().id
-      container.innerHTML = `<div class="container-node" style='display: block; margin:0; opacity: 1; left: ${node.renderedPosition()
-        .x}px; top: ${node.renderedPosition()
-        .y}px;'><div class="container-node-info" style='margin: 0;'><span>${nodeInfo}</span></div></div>`
+      container.innerHTML = `<div class="container-node" style='display: block; margin:0; opacity: 1; left: ${
+        node.renderedPosition().x
+      }px; top: ${
+        node.renderedPosition().y
+      }px;'><div class="container-node-info" style='margin: 0;'><span>${
+        nodeInfo
+      }</span></div></div>`
 
       graph.appendChild(container)
     })

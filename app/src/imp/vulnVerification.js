@@ -28,8 +28,9 @@ module.exports = function vulnVerification (cy) {
     neighbor.map(type => {
       if (type.data().hasOwnProperty('asto') === true) {
         if (type.data().asto.concept === 'mechanism') {
-          result = `${result} • Vulnerability ${vuln.data()
-            .id} mitigated by Mechanism ${type.data().id}\n`
+          result = `${result} • Vulnerability ${
+            vuln.data().id
+          } mitigated by Mechanism ${type.data().id}\n`
           mitigatedVulns += 1
         }
       }
