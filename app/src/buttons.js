@@ -18,7 +18,7 @@ const printChatText = require('./helpers/printChatText.js')
 
 const buttonHelpers = require('./buttonHelpers.js')
 
-// const transformDgn2Imp = require('./transformation/dgn2Imp.js')
+const transformDgn2Imp = require('./transformation/dgn2Imp.js')
 // const transformImp2Dgn = require('./transformation/imp2Dgn.js')
 
 module.exports = function buttons (
@@ -150,8 +150,8 @@ module.exports = function buttons (
     // model transformation
     const buttonTransform = document.getElementById('transform-button')
     buttonTransform.addEventListener('click', () => {
-      printChatText('model transformation\nunder development 🚧')
-      // transformDgn2Imp(cy)
+      // printChatText('model transformation\nunder development 🚧')
+      transformDgn2Imp(cy, nodeCounter)
     })
     // module selection
     const group = document.getElementById('module-group')
