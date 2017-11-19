@@ -315,29 +315,29 @@ graphModel.elements = [
   }, {
     data: {
       id: 'e14',
-      source: '1',
-      target: '4',
+      source: '4',
+      target: '1',
       label: 'connects'
     }
   }, {
     data: {
       id: 'e24',
-      source: '2',
-      target: '4',
+      source: '4',
+      target: '2',
       label: 'connects'
     }
   }, {
     data: {
       id: 'e35',
-      source: '3',
-      target: '5',
+      source: '5',
+      target: '3',
       label: 'connects'
     }
   }, {
     data: {
       id: 'e25',
-      source: '2',
-      target: '5',
+      source: '5',
+      target: '2',
       label: 'connects'
     }
   }, {
