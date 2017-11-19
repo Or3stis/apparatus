@@ -19,7 +19,7 @@ const printChatText = require('./helpers/printChatText.js')
 const buttonHelpers = require('./buttonHelpers.js')
 
 const transformDgn2Imp = require('./transformation/dgn2Imp.js')
-// const transformImp2Dgn = require('./transformation/imp2Dgn.js')
+const transformImp2Dgn = require('./transformation/imp2Dgn.js')
 
 module.exports = function buttons (
   cy,
@@ -101,14 +101,6 @@ module.exports = function buttons (
   //     load(cy)
   //   })
 
-  // test function
-  // const buttonTest = document.getElementById('test-button')
-  // buttonTest.addEventListener('click', () => {
-  //   // test code goes here
-  //   // printChatText('button for code testing')
-  //   transform(cy)
-  // })
-
   // bind label buttons
   const hideLabelsButton = document.getElementById('hide-label')
   hideLabelsButton.addEventListener('click', () => {
@@ -172,8 +164,7 @@ module.exports = function buttons (
     // model transformation
     const buttonTransform = document.getElementById('transform-button')
     buttonTransform.addEventListener('click', () => {
-      printChatText('model transformation\nunder development 🚧')
-      // transformImp2Dgn(cy)
+      transformImp2Dgn(cy)
     })
     // verify vulnerabilities
     const buttonVulnVefiry = document.getElementById('vuln-verify-button')
