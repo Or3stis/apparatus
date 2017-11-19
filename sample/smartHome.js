@@ -4,7 +4,7 @@ graphModel.elements = [
   // nodes
   {
     data: {
-      id: '1',
+      id: 'n1',
       label: 'device',
       asto: {
         description: 'laptop',
@@ -20,7 +20,7 @@ graphModel.elements = [
     }
   }, {
     data: {
-      id: '2',
+      id: 'n2',
       label: 'device',
       asto: {
         description: 'router',
@@ -36,7 +36,7 @@ graphModel.elements = [
     }
   }, {
     data: {
-      id: '3',
+      id: 'n3',
       label: 'device',
       asto: {
         description: 'baby camera',
@@ -51,7 +51,7 @@ graphModel.elements = [
     }
   }, {
     data: {
-      id: '4',
+      id: 'n4',
       label: 'network connection',
       asto: {
         description: 'wireless',
@@ -61,7 +61,7 @@ graphModel.elements = [
     }
   }, {
     data: {
-      id: '5',
+      id: 'n5',
       label: 'network connection',
       asto: {
         description: 'wireless',
@@ -71,7 +71,7 @@ graphModel.elements = [
     }
   }, {
     data: {
-      id: '6',
+      id: 'n6',
       label: 'actor',
       asto: {
         description: 'user',
@@ -81,7 +81,7 @@ graphModel.elements = [
     }
   }, {
     data: {
-      id: '7',
+      id: 'n7',
       label: 'information',
       asto: {
         description: 'data in transit',
@@ -92,7 +92,7 @@ graphModel.elements = [
   },
   {
     data: {
-      id: '8',
+      id: 'n8',
       label: 'asset',
       asto: {
         description: 'camera feed',
@@ -101,7 +101,7 @@ graphModel.elements = [
     }
   }, {
     data: {
-      id: '9',
+      id: 'n9',
       label: 'constraint',
       asto: {
         description: 'secure camera feed',
@@ -111,7 +111,7 @@ graphModel.elements = [
     }
   }, {
     data: {
-      id: '10',
+      id: 'n10',
       label: 'threat',
       asto: {
         description: 'direct browsing',
@@ -121,7 +121,7 @@ graphModel.elements = [
     }
   }, {
     data: {
-      id: '11',
+      id: 'n11',
       label: 'vulnerability',
       asto: {
         description: 'CVE-2015-2884',
@@ -130,7 +130,7 @@ graphModel.elements = [
     }
   }, {
     data: {
-      id: '12',
+      id: 'n12',
       label: 'malicious actor',
       asto: {
         description: 'attacker',
@@ -140,7 +140,7 @@ graphModel.elements = [
     }
   }, {
     data: {
-      id: '13',
+      id: 'n13',
       label: 'mechanism',
       asto: {
         description: 'whitelist authorized users',
@@ -149,7 +149,7 @@ graphModel.elements = [
     }
   }, {
     data: {
-      id: '14',
+      id: 'n14',
       label: 'asset',
       asto: {
         description: 'device credentials',
@@ -158,7 +158,7 @@ graphModel.elements = [
     }
   }, {
     data: {
-      id: '15',
+      id: 'n15',
       label: 'constraint',
       asto: {
         description: 'protect Device credentials',
@@ -168,7 +168,7 @@ graphModel.elements = [
     }
   }, {
     data: {
-      id: '16',
+      id: 'n16',
       label: 'mechanism',
       asto: {
         description: 'update Device firmware',
@@ -177,7 +177,7 @@ graphModel.elements = [
     }
   }, {
     data: {
-      id: '17',
+      id: 'n17',
       label: 'malicious actor',
       asto: {
         description: 'attacker',
@@ -187,7 +187,7 @@ graphModel.elements = [
     }
   }, {
     data: {
-      id: '18',
+      id: 'n18',
       label: 'threat',
       asto: {
         description: 'password credentials',
@@ -197,7 +197,7 @@ graphModel.elements = [
     }
   }, {
     data: {
-      id: '19',
+      id: 'n19',
       label: 'vulnerability',
       asto: {
         description: 'CVE-2017-5521',
@@ -206,7 +206,7 @@ graphModel.elements = [
     }
   }, {
     data: {
-      id: '20',
+      id: 'n20',
       label: 'constraint',
       asto: {
         description: 'Device physical protection',
@@ -216,7 +216,7 @@ graphModel.elements = [
     }
   }, {
     data: {
-      id: '21',
+      id: 'n21',
       label: 'asset',
       asto: {
         description: 'physical devices',
@@ -225,7 +225,7 @@ graphModel.elements = [
     }
   }, {
     data: {
-      id: '22',
+      id: 'n22',
       label: 'threat',
       asto: {
         description: 'physical tampering',
@@ -235,7 +235,7 @@ graphModel.elements = [
     }
   }, {
     data: {
-      id: '23',
+      id: 'n23',
       label: 'mechanism',
       asto: {
         description: 'physically secure acces',
@@ -244,7 +244,7 @@ graphModel.elements = [
     }
   }, {
     data: {
-      id: '24',
+      id: 'n24',
       label: 'vulnerability',
       asto: {
         description: 'physically accessible',
@@ -253,7 +253,7 @@ graphModel.elements = [
     }
   }, {
     data: {
-      id: '25',
+      id: 'n25',
       label: 'net',
       asto: {
         description: 'internet',
@@ -262,7 +262,7 @@ graphModel.elements = [
     }
   }, {
     data: {
-      id: '26',
+      id: 'n26',
       label: 'unidentified node',
       asto: {
         description: 'server',
@@ -271,7 +271,7 @@ graphModel.elements = [
     }
   }, {
     data: {
-      id: '27',
+      id: 'n27',
       label: 'micronet',
       asto: {
         description: 'smart home',
@@ -281,7 +281,7 @@ graphModel.elements = [
     }
   }, {
     data: {
-      id: '28',
+      id: 'n28',
       label: 'malicious actor',
       asto: {
         description: 'attacker',
@@ -293,282 +293,282 @@ graphModel.elements = [
   // edges
   {
     data: {
-      id: 'e271',
-      source: '1',
-      target: '27',
+      id: 'en27n1',
+      source: 'n1',
+      target: 'n27',
       label: 'belongs'
     }
   }, {
     data: {
-      id: 'e272',
-      source: '2',
-      target: '27',
+      id: 'en27n2',
+      source: 'n2',
+      target: 'n27',
       label: 'belongs'
     }
   }, {
     data: {
-      id: 'e273',
-      source: '3',
-      target: '27',
+      id: 'en27n3',
+      source: 'n3',
+      target: 'n27',
       label: 'belongs'
     }
   }, {
     data: {
-      id: 'e14',
-      source: '4',
-      target: '1',
+      id: 'en1n4',
+      source: 'n4',
+      target: 'n1',
       label: 'connects'
     }
   }, {
     data: {
-      id: 'e24',
-      source: '4',
-      target: '2',
+      id: 'en2n4',
+      source: 'n4',
+      target: 'n2',
       label: 'connects'
     }
   }, {
     data: {
-      id: 'e35',
-      source: '5',
-      target: '3',
+      id: 'en3n5',
+      source: 'n5',
+      target: 'n3',
       label: 'connects'
     }
   }, {
     data: {
-      id: 'e25',
-      source: '5',
-      target: '2',
+      id: 'en2n5',
+      source: 'n5',
+      target: 'n2',
       label: 'connects'
     }
   }, {
     data: {
-      id: 'e61',
-      source: '6',
-      target: '1',
+      id: 'en6n1',
+      source: 'n6',
+      target: 'n1',
       label: 'uses'
     }
   }, {
     data: {
-      id: 'e121',
-      source: '1',
-      target: '21',
+      id: 'en21n1',
+      source: 'n1',
+      target: 'n21',
       label: 'is'
     }
   }, {
     data: {
-      id: 'e321',
-      source: '3',
-      target: '21',
+      id: 'en3n21',
+      source: 'n3',
+      target: 'n21',
       label: 'is'
     }
   }, {
     data: {
-      id: 'e2221',
-      source: '22',
-      target: '21',
+      id: 'en22n21',
+      source: 'n22',
+      target: 'n21',
       label: 'targets'
     }
   }, {
     data: {
-      id: 'e2224',
-      source: '22',
-      target: '24',
+      id: 'en22n24',
+      source: 'n22',
+      target: 'n24',
       label: 'exploits'
     }
   }, {
     data: {
-      id: 'e2324',
-      source: '23',
-      target: '24',
+      id: 'en23n24',
+      source: 'n23',
+      target: 'n24',
       label: 'protects'
     }
   }, {
     data: {
-      id: 'e2320',
-      source: '23',
-      target: '20',
+      id: 'en23n20',
+      source: 'n23',
+      target: 'n20',
       label: 'satisfies'
     }
   }, {
     data: {
-      id: 'e2022',
-      source: '20',
-      target: '22',
+      id: 'en20n22',
+      source: 'n20',
+      target: 'n22',
       label: 'mitigates'
     }
   }, {
     data: {
-      id: 'e2027',
-      source: '20',
-      target: '27',
+      id: 'en20n27',
+      source: 'n20',
+      target: 'n27',
       label: 'imposes'
     }
   }, {
     data: {
-      id: 'e2822',
-      source: '28',
-      target: '22',
+      id: 'en28n22',
+      source: 'n28',
+      target: 'n22',
       label: 'poses'
     }
   }, {
     data: {
-      id: 'e2527',
-      source: '25',
-      target: '27',
+      id: 'en25n27',
+      source: 'n25',
+      target: 'n27',
       label: 'requests'
     }
   }, {
     data: {
-      id: 'e241',
-      source: '24',
-      target: '1',
+      id: 'en24n1',
+      source: 'n24',
+      target: 'n1',
       label: 'affects'
     }
   }, {
     data: {
-      id: 'e243',
-      source: '23',
-      target: '3',
+      id: 'en23n3',
+      source: 'n23',
+      target: 'n3',
       label: 'affects'
     }
   }, {
     data: {
-      id: 'e37',
-      source: '3',
-      target: '7',
+      id: 'en3n7',
+      source: 'n3',
+      target: 'n7',
       label: 'has'
     }
   }, {
     data: {
-      id: 'e78',
-      source: '7',
-      target: '8',
+      id: 'en7n8',
+      source: 'n7',
+      target: 'n8',
       label: 'is'
     }
   }, {
     data: {
-      id: 'e927',
-      source: '9',
-      target: '27',
+      id: 'en9n27',
+      source: 'n9',
+      target: 'n27',
       label: 'imposes'
     }
   }, {
     data: {
-      id: 'e910',
-      source: '9',
-      target: '10',
+      id: 'en9n10',
+      source: 'n9',
+      target: 'n10',
       label: 'mitigates'
     }
   }, {
     data: {
-      id: 'e108',
-      source: '10',
-      target: '8',
+      id: 'en10n8',
+      source: 'n10',
+      target: 'n8',
       label: 'targets'
     }
   }, {
     data: {
-      id: 'e1011',
-      source: '10',
-      target: '11',
+      id: 'en10n11',
+      source: 'n10',
+      target: 'n11',
       label: 'exploits'
     }
   }, {
     data: {
-      id: 'e1210',
-      source: '12',
-      target: '10',
+      id: 'en12n10',
+      source: 'n12',
+      target: 'n10',
       label: 'poses'
     }
   }, {
     data: {
-      id: 'e139',
-      source: '13',
-      target: '9',
+      id: 'en13n9',
+      source: 'n13',
+      target: 'n9',
       label: 'satisfies'
     }
   }, {
     data: {
-      id: 'e1311',
-      source: '13',
-      target: '11',
+      id: 'en13n11',
+      source: 'n13',
+      target: 'n11',
       label: 'protects'
     }
   }, {
     data: {
-      id: 'e113',
-      source: '11',
-      target: '3',
+      id: 'en11n3',
+      source: 'n11',
+      target: 'n3',
       label: 'affects'
     }
   }, {
     data: {
-      id: 'e214',
-      source: '2',
-      target: '14',
+      id: 'en2n14',
+      source: 'n2',
+      target: 'n14',
       label: 'is'
     }
   }, {
     data: {
-      id: 'e1814',
-      source: '18',
-      target: '14',
+      id: 'en18n14',
+      source: 'n18',
+      target: 'n14',
       label: 'targets'
     }
   }, {
     data: {
-      id: 'e1527',
-      source: '15',
-      target: '27',
+      id: 'en15n27',
+      source: 'n15',
+      target: 'n27',
       label: 'imposes'
     }
   }, {
     data: {
-      id: 'e1615',
-      source: '16',
-      target: '15',
+      id: 'en16n15',
+      source: 'n16',
+      target: 'n15',
       label: 'satisfies'
     }
   }, {
     data: {
-      id: 'e1518',
-      source: '15',
-      target: '18',
+      id: 'en15n18',
+      source: 'n15',
+      target: 'n18',
       label: 'mitigates'
     }
   }, {
     data: {
-      id: 'e1819',
-      source: '18',
-      target: '19',
+      id: 'en18n19',
+      source: 'n18',
+      target: 'n19',
       label: 'exploits'
     }
   }, {
     data: {
-      id: 'e192',
-      source: '19',
-      target: '2',
+      id: 'en19n2',
+      source: 'n19',
+      target: 'n2',
       label: 'affects'
     }
   }, {
     data: {
-      id: 'e1718',
-      source: '17',
-      target: '18',
+      id: 'en17n18',
+      source: 'n17',
+      target: 'n18',
       label: 'poses'
     }
   }, {
     data: {
-      id: 'e1619',
-      source: '16',
-      target: '19',
+      id: 'en16n19',
+      source: 'n16',
+      target: 'n19',
       label: 'protects'
     }
   }, {
     data: {
-      id: 'e2625',
-      source: '26',
-      target: '25',
+      id: 'en26n25',
+      source: 'n26',
+      target: 'n25',
       label: 'belongs'
     }
   }
