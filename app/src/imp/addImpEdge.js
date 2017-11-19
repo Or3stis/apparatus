@@ -13,8 +13,8 @@ module.exports = function addComponent (cy, srcNode, trgNode) {
     case srcNodeCpt === 'micronet' && trgNodeCpt === 'micronet':
       addEdge(cy, srcNodeId, trgNodeId, 'connects')
       break
-    case srcNodeCpt === 'device' && trgNodeCpt === 'device':
-      addEdge(cy, srcNodeId, trgNodeId, 'composed')
+    case srcNodeCpt === 'device' && trgNodeCpt === 'network connection':
+      addEdge(cy, srcNodeId, trgNodeId, 'connects')
       break
     case srcNodeCpt === 'device' && trgNodeCpt === 'micronet':
       addEdge(cy, srcNodeId, trgNodeId, 'belongs')
@@ -30,9 +30,6 @@ module.exports = function addComponent (cy, srcNode, trgNode) {
       break
     case srcNodeCpt === 'unidentified node' && trgNodeCpt === 'net':
       addEdge(cy, srcNodeId, trgNodeId, 'belongs')
-      break
-    case srcNodeCpt === 'network connection' && trgNodeCpt === 'device':
-      addEdge(cy, srcNodeId, trgNodeId, 'connects')
       break
     case srcNodeCpt === 'network connection' && trgNodeCpt === 'information':
       addEdge(cy, srcNodeId, trgNodeId, 'has')
