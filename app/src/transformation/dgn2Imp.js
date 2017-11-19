@@ -54,7 +54,7 @@ const transform = (cy, nodeCounter) => {
       // network connection the first device
       edge.data().target = source
       edge.data().source = `n${nodeCounter}`
-      // edge.data().id = `en${nodeCounter}${source}`
+      edge.data().id = `en${nodeCounter}${source}`
 
       // create an edge to connect the network connection to the other device
       cy.add({
