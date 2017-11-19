@@ -68,8 +68,6 @@ const transform = (cy, nodeCounter) => {
       })
     }
   })
-  save(cy)
-  printChatText('transformation successful')
 }
 
 const userInput = `the current model will <strong>brake</strong>\n\ndo you want to continue? <button id='yes-button' class='startButtons' style='color: var(--main-tx-color); background-color: var(--main-bg-color); width: 45px; height: 25px;'>yes</button> <button id='no-button' class='startButtons' style='color: var(--main-tx-color); background-color: var(--main-bg-color); width: 45px; height: 25px;'>no</button>`
@@ -83,6 +81,8 @@ module.exports = function dgnState2ImpState (cy, nodeCounter) {
   const buttonYes = document.getElementById('yes-button')
   buttonYes.addEventListener('click', () => {
     transform(cy, nodeCounter)
+    save(cy)
+    printChatText('transformation successful')
   })
   const buttonNo = document.getElementById('no-button')
   buttonNo.addEventListener('click', () => {
