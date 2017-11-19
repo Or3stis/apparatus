@@ -44,7 +44,7 @@ module.exports = function addComponent (cy, srcNode, trgNode) {
       addEdge(cy, srcNodeId, trgNodeId, 'runs')
       break
     case srcNodeCpt === 'application' && trgNodeCpt === 'information':
-      addEdge(cy, 'has')
+      addEdge(cy, srcNodeId, trgNodeId, 'has')
       break
     case srcNodeCpt === 'actor' && trgNodeCpt === 'application':
       addEdge(cy, srcNodeId, trgNodeId, 'uses')
