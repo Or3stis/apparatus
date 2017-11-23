@@ -14,7 +14,7 @@ const vulnVerification = require('./imp/vulnVerification.js')
 
 const save = require('./helpers/save.js')
 const watcher = require('./helpers/watcher.js')
-const printChatText = require('./helpers/printChatText.js')
+const printMessageText = require('./helpers/printMessageText.js')
 
 const buttonHelpers = require('./buttonHelpers.js')
 
@@ -83,7 +83,7 @@ module.exports = function buttons (
   const buttonSave = document.getElementById('save-button')
   buttonSave.addEventListener('click', () => {
     save(cy)
-    printChatText('graph saved\n👍')
+    printMessageText('graph saved\n👍')
   })
 
   const totalNodes = document.getElementById('legend-id')
@@ -142,7 +142,6 @@ module.exports = function buttons (
     // model transformation
     const buttonTransform = document.getElementById('transform-button')
     buttonTransform.addEventListener('click', () => {
-      // printChatText('model transformation\nunder development 🚧')
       transformDgn2Imp(cy, nodeCounter)
     })
     // module selection

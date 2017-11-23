@@ -6,7 +6,7 @@ const searchAttribute = require('./core/searchAttribute.js')
 const showMetamodel = require('./core/showMetamodel.js')
 const deleteRestoreConcepts = require('./core/deleteRestoreConcepts.js')
 
-const printChatHTML = require('./helpers/printChatHTML.js')
+const printMessageHTML = require('./helpers/printMessageHTML.js')
 const save = require('./helpers/save.js')
 const theme = require('./helpers/theme.js')
 const watcher = require('./helpers/watcher.js')
@@ -73,10 +73,10 @@ module.exports = function (
       case 'help':
         // checks the platform to display the corrent help menu
         process.platform === 'darwin'
-          ? printChatHTML(helpMenuMacOS)
-          : printChatHTML(helpMenu)
+          ? printMessageHTML(helpMenuMacOS)
+          : printMessageHTML(helpMenu)
 
-        printChatHTML(wikiURLButton)
+        printMessageHTML(wikiURLButton)
         // opens the wiki page with the default browser
         document.getElementById('url-button').addEventListener('click', () => {
           require('electron').shell.openExternal(config.wikiUrl)
@@ -98,7 +98,7 @@ module.exports = function (
         }
         break
       case 'clear':
-        document.getElementById('chat-area-id').textContent = ''
+        document.getElementById('message-area-id').textContent = ''
         break
       case '':
         break

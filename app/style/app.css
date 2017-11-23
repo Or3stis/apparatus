@@ -88,14 +88,14 @@ body {
   flex-direction: column;
   overflow-y: scroll;
 }
-.chat-area {
+.message-area {
   display: flex;
   flex: 1 1 92vh;
   flex-wrap: wrap;
   align-items: flex-start;
   align-content: flex-start;
 }
-/*data in chat-area is shown as a bubble*/
+/*data in message-area is shown as a bubble*/
 .bubble {
   position: relative;
   background-color: var(--main-dark-bg-color);

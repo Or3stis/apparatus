@@ -1,6 +1,6 @@
 // highlights the nodes that have the search term
 
-const printChatText = require('../helpers/printChatText.js')
+const printMessageText = require('../helpers/printMessageText.js')
 
 module.exports = function flag (cy, term) {
   let searchNodes = ''
@@ -19,5 +19,5 @@ module.exports = function flag (cy, term) {
       }
     })
   })
-  printChatText(searchNodes)
+  printMessageText(searchNodes)
 }

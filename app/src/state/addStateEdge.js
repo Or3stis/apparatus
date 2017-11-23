@@ -1,6 +1,6 @@
 // adds state diagram edge types based on the source and target nodes
 
-const printChatText = require('../helpers/printChatText.js')
+const printMessageText = require('../helpers/printMessageText.js')
 const addEdge = require('../core/addEdge.js')
 
 module.exports = function addComponent (cy, srcNode, trgNode) {
@@ -14,6 +14,6 @@ module.exports = function addComponent (cy, srcNode, trgNode) {
       addEdge(cy, srcNodeId, trgNodeId, 'description')
       break
     default:
-      printChatText(`${srcNodeCpt} → ${trgNodeCpt}\nnot allowed 😔`)
+      printMessageText(`${srcNodeCpt} → ${trgNodeCpt}\nnot allowed 😔`)
   }
 }

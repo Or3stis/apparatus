@@ -1,8 +1,8 @@
 // applies tranformation rules from design phase to implementation phase
 
 const save = require('../helpers/save.js')
-const printChatText = require('../helpers/printChatText.js')
-const printChatHTML = require('../helpers/printChatHTML.js')
+const printMessageText = require('../helpers/printMessageText.js')
+const printMessageHTML = require('../helpers/printMessageHTML.js')
 
 const transform = (cy, nodeCounter) => {
   // make the changes in the node components
@@ -76,17 +76,17 @@ const warning =
   'to access the new implementation phase model you will need to manually load it'
 
 module.exports = function dgnState2ImpState (cy, nodeCounter) {
-  printChatHTML(userInput)
-  printChatText(warning)
+  printMessageHTML(userInput)
+  printMessageText(warning)
 
   const buttonYes = document.getElementById('yes-button')
   buttonYes.addEventListener('click', () => {
     transform(cy, nodeCounter)
     save(cy)
-    printChatText('transformation successful')
+    printMessageText('transformation successful')
   })
   const buttonNo = document.getElementById('no-button')
   buttonNo.addEventListener('click', () => {
-    document.getElementById('chat-area-id').textContent = ''
+    document.getElementById('message-area-id').textContent = ''
   })
 }

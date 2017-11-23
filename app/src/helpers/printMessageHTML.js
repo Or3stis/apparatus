@@ -1,7 +1,7 @@
-// helper to print text-only formatted text
+// helper to print HTML formatted text
 
-module.exports = function printChatText (toPrint) {
-  const htmlElement = document.getElementById('chat-area-id')
+module.exports = function printMessageText (toPrint) {
+  const htmlElement = document.getElementById('message-area-id')
   const span = document.createElement('span')
   // if (from === 'user') {
   //   span.className = 'bubble user'
@@ -9,8 +9,7 @@ module.exports = function printChatText (toPrint) {
   //   span.className = 'bubble tool'
   // }
   span.className = 'bubble'
-  const result = document.createTextNode(toPrint)
-  span.appendChild(result)
+  span.innerHTML = toPrint
   htmlElement.appendChild(span)
   htmlElement.lastChild.scrollIntoView(false)
 }

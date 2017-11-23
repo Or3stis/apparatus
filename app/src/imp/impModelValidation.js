@@ -1,7 +1,7 @@
 // checks if an implementation phase model is complaint with the metamodel
 
 const impMetamodel = require('./impSchema.js')
-const printChatText = require('../helpers/printChatText.js')
+const printMessageText = require('../helpers/printMessageText.js')
 
 module.exports = function moduleValidation (cy) {
   // valid component connections
@@ -48,7 +48,7 @@ module.exports = function moduleValidation (cy) {
     // if string not empty, show concepts with wrong connections
     if (result !== '') {
       result = `• ${component} has wrong connections`
-      printChatText(result)
+      printMessageText(result)
     }
   }
 
@@ -69,6 +69,6 @@ module.exports = function moduleValidation (cy) {
 
   // if string is empty, the model is correct
   if (result === '') {
-    printChatText('model instance is valid\n👍')
+    printMessageText('model instance is valid\n👍')
   }
 }
