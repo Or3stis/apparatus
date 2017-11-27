@@ -9,7 +9,7 @@ module.exports = function stateOverview (cy) {
   let modelNode = 0
 
   cy.nodes().map(node => {
-    const nodeConcept = node.data().info.concept
+    const nodeConcept = node.data().asto.concept
     if (nodeConcept === 'model') {
       modelNode += 1
     }
