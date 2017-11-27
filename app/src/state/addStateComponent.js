@@ -1,7 +1,7 @@
 // add state diagram nodes in the graph
 
 // TODO needs refactoring
-module.exports = function addComponent (cy, event, nodeCounter) {
+module.exports = function addStateComponent (cy, event, nodeCounter) {
   // get mouse position on click
   // display new node on the left of the menu
   let posX = event.x + 50
@@ -17,7 +17,7 @@ module.exports = function addComponent (cy, event, nodeCounter) {
         data: {
           id: `n${nodeCounter}`,
           label: `${component}`,
-          info: {
+          asto: {
             description: '',
             concept: 'model'
           }

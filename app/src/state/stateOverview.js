@@ -1,6 +1,6 @@
 // prints the total number of nodes along with their concept type and module
 
-module.exports = function overview (cy) {
+module.exports = function stateOverview (cy) {
   let result = ''
 
   const totalNodes = cy.elements().nodes().length

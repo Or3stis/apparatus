@@ -3,7 +3,7 @@
 const printMessageText = require('../helpers/printMessageText.js')
 const addEdge = require('../core/addEdge.js')
 
-module.exports = function addComponent (cy, srcNode, trgNode) {
+module.exports = function addStateComponent (cy, srcNode, trgNode) {
   let srcNodeId = srcNode.id
   let trgNodeId = trgNode.id
   let srcNodeCpt = srcNode.info.concept
