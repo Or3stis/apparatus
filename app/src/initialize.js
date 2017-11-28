@@ -123,7 +123,7 @@ module.exports = function initialize (cy, phase) {
   })
   // right click on edge to edit
   // only available in state diagrams
-  if (phase === 'state' || phase === 'grcGraph') {
+  if (phase === 'state') {
     cy.on('cxttap', 'edge', selection => {
       editEdge.formEdge(selection.target[0])
     })
