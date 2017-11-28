@@ -17,6 +17,11 @@ const stateOverview = require('./state/stateOverview.js')
 const addStateComponent = require('./state/addStateComponent.js')
 const addStateEdge = require('./state/addStateEdge.js')
 
+// require generic diagram modules
+const grcGraphOverview = require('./grcGraph/grcGraphOverview.js')
+const addGrcGraphComponent = require('./grcGraph/addGrcGraphComponent.js')
+const addGrcGraphEdge = require('./grcGraph/addGrcGraphEdge.js')
+
 // helper function to add specific nodes for each phase
 const addComponents = (cy, event, nodeCounter, phase) => {
   if (phase === 'design') {
@@ -25,6 +30,8 @@ const addComponents = (cy, event, nodeCounter, phase) => {
     addImpComponent(cy, event, nodeCounter)
   } else if (phase === 'state') {
     addStateComponent(cy, event, nodeCounter)
+  } else if (phase === 'grcGraph') {
+    addGrcGraphComponent(cy, event, nodeCounter)
   }
 }
 
@@ -36,6 +43,8 @@ const addEdge = (cy, srcNode, trgNode, phase) => {
     addImpEdge(cy, srcNode, trgNode)
   } else if (phase === 'state') {
     addStateEdge(cy, srcNode, trgNode)
+  } else if (phase === 'grcGraph') {
+    addGrcGraphEdge(cy, srcNode, trgNode)
   }
 }
 
@@ -56,6 +65,8 @@ const overviewHelper = (cy, phase) => {
     impOverview(cy)
   } else if (phase === 'state') {
     stateOverview(cy)
+  } else if (phase === 'grcGraph') {
+    grcGraphOverview(cy)
   }
 }
 

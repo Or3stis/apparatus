@@ -3,6 +3,7 @@
 const designUI = require('./phaseUI/dgnUI.js')
 const implementationUI = require('./phaseUI/impUI.js')
 const stateUI = require('./phaseUI/stateUI.js')
+const grcGraphUI = require('./phaseUI/grcGraphUI.js')
 
 module.exports = function homeMenu () {
   // get the graph container
@@ -35,10 +36,18 @@ module.exports = function homeMenu () {
   buttonState.type = 'button'
   buttonState.textContent = 'state diagram'
 
+  // create generic graphs button
+  const buttonGrcGraphs = document.createElement('button')
+  buttonGrcGraphs.id = 'grcGraphs-id'
+  buttonGrcGraphs.className = 'startButtons'
+  buttonGrcGraphs.type = 'button'
+  buttonGrcGraphs.textContent = 'generic graph creator'
+
   // append buttons to the wrapper
   wrapper.appendChild(buttonDgn)
   wrapper.appendChild(buttonImp)
   wrapper.appendChild(buttonState)
+  wrapper.appendChild(buttonGrcGraphs)
 
   graph.appendChild(wrapper)
 
@@ -58,6 +67,11 @@ module.exports = function homeMenu () {
     graph.removeChild(wrapper)
     graph.removeChild(ack)
     stateUI()
+  })
+  buttonGrcGraphs.addEventListener('click', () => {
+    graph.removeChild(wrapper)
+    graph.removeChild(ack)
+    grcGraphUI()
   })
 
   const ack = document.createElement('ack')
