@@ -61,13 +61,13 @@ const warning =
 
 module.exports = function dgnState2ImpState (cy, nodeCounter) {
   printMessageHTML(userInput)
-  printMessageText(warning)
 
   const buttonYes = document.getElementById('yes-button')
   buttonYes.addEventListener('click', () => {
     transform(cy)
     save(cy)
     printMessageText('transformation successful')
+    printMessageText(warning)
   })
   const buttonNo = document.getElementById('no-button')
   buttonNo.addEventListener('click', () => {
