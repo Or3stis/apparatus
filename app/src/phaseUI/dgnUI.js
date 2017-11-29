@@ -143,13 +143,18 @@ module.exports = function designUI () {
   </svg>
 </button> -->
 
-<form>
+  <button class="button-icon" id="home-button-id" title="home">
+    <svg width="24" height="24">
+      <use xlink:href="icons/home.svg#home" class="icon"></use>
+    </svg>
+  </button>
+<!-- <form>
   <button class="button-icon" id="home-button-id" type="submit" formaction="index.html" title="home">
     <svg width="24" height="24">
       <use xlink:href="icons/home.svg#home" class="icon"></use>
     </svg>
   </button>
-</form>
+</form> -->
 
 <!-- <button class="button-icon" id="test-button" title="test">
   <svg width="24" height="24">

@@ -85,6 +85,11 @@ module.exports = function buttons (
     save(cy)
     printMessageText('graph saved\n👍')
   })
+  // navigates the user to the index.js
+  const buttonHome = document.getElementById('home-button-id')
+  buttonHome.addEventListener('click', () => {
+    watcher.closeNotification(cy)
+  })
 
   const totalNodes = document.getElementById('legend-id')
   totalNodes.addEventListener('mouseover', event => {
