@@ -70,7 +70,7 @@ const transform = (cy, nodeCounter) => {
   })
 }
 
-const userInput = `the current model will <strong>brake</strong>\n\ndo you want to continue? <button id='yes-button' class='startButtons' style='color: var(--main-tx-color); background-color: var(--main-bg-color); width: 45px; height: 25px;'>yes</button> <button id='no-button' class='startButtons' style='color: var(--main-tx-color); background-color: var(--main-bg-color); width: 45px; height: 25px;'>no</button>`
+const userInput = `the current model will <strong>break</strong>\n\ndo you want to continue? <button id='yes-button' class='startButtons' style='color: var(--main-tx-color); background-color: var(--main-bg-color); width: 45px; height: 25px;'>yes</button> <button id='no-button' class='startButtons' style='color: var(--main-tx-color); background-color: var(--main-bg-color); width: 45px; height: 25px;'>no</button>`
 
 const warning =
   'to access the new implementation phase model you will need to manually load it'
