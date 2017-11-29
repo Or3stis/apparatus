@@ -17,10 +17,6 @@ const transform = cy => {
     } else if (node.data().asto.concept === 'application') {
       delete node.data().asto.version
       delete node.data().asto.update
-    } else if (node.data().asto.concept === 'unidentified node') {
-      delete node.data().asto.service
-      delete node.data().asto.input
-      delete node.data().asto.output
     } else if (node.data().asto.concept === 'information') {
       delete node.data().asto.location
     } else if (node.data().asto.concept === 'micronet') {

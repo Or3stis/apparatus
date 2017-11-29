@@ -28,7 +28,6 @@ module.exports = function designUI () {
     <li><a>application</a></li>
     <li><a>information</a></li>
     <li><a>micronet</a></li>
-    <li><a>unidentified node</a></li>
     <li><a>net</a></li>
     <li><a>actor</a></li>
     <li><a>asset</a></li>
@@ -61,7 +60,6 @@ module.exports = function designUI () {
     <li><a>application</a></li>
     <li><a>information</a></li>
     <li><a>micronet</a></li>
-    <li><a>unidentified node</a></li>
     <li><a>net</a></li>
     <li><a>actor</a></li>
     <li><a>asset</a></li>

@@ -35,7 +35,6 @@ module.exports = function overview (cy) {
   let micronetNode = 0
   let applicationNode = 0
   let netNode = 0
-  let unidentifiedNode = 0
   let informationNode = 0
   let assetNode = 0
   let threatNode = 0
@@ -59,8 +58,6 @@ module.exports = function overview (cy) {
       micronetNode += 1
     } else if (nodeConcept === 'net') {
       netNode += 1
-    } else if (nodeConcept === 'unidentified node') {
-      unidentifiedNode += 1
     } else if (nodeConcept === 'asset') {
       assetNode += 1
     } else if (nodeConcept === 'threat') {
@@ -84,7 +81,6 @@ module.exports = function overview (cy) {
   result = `${result}• micronet nodes: ${micronetNode}\n`
   result = `${result}• net nodes: ${netNode}\n`
   result = `${result}• information nodes: ${informationNode}\n`
-  result = `${result}• unidentified nodes: ${unidentifiedNode}\n`
   result = `${result}• asset nodes: ${assetNode}\n`
   result = `${result}• threat nodes: ${threatNode}\n`
   result = `${result}• vulnerability nodes: ${vulnNode}\n`

@@ -45,23 +45,6 @@ module.exports = function addDgnComponent (cy, event, nodeCounter) {
         }
       })
       break
-    case 'unidentified node':
-      cy.add({
-        group: 'nodes',
-        data: {
-          id: `n${nodeCounter}`,
-          label: `${component}`,
-          asto: {
-            description: '',
-            concept: 'unidentified node'
-          }
-        },
-        renderedPosition: {
-          x: posX,
-          y: posY
-        }
-      })
-      break
     case 'micronet':
       cy.add({
         group: 'nodes',

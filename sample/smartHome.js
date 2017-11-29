@@ -263,10 +263,17 @@ graphModel.elements = [
   }, {
     data: {
       id: 'n26',
-      label: 'unidentified node',
+      label: 'device',
       asto: {
         description: 'server',
-        concept: 'unidentified node'
+        aspect: 'physical',
+        layer: 'application',
+        type: 'Ubuntu server',
+        service: 'processing',
+        input: 'dataDigital',
+        output: 'dataDigital',
+        update: 'action',
+        concept: 'device'
       }
     }
   }, {

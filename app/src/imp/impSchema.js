@@ -6,7 +6,6 @@ impMetamodel.network = [
   'network connection',
   'micronet',
   'net',
-  'unidentified node',
   'information',
   'application'
 ]
@@ -23,6 +22,7 @@ impMetamodel.social = ['actor']
 // allowed concept connections
 impMetamodel.deviceArray = [
   'micronet',
+  'net',
   'vulnerability',
   'network connection',
   'information',
@@ -47,8 +47,7 @@ impMetamodel.micronetArray = [
   'constraint',
   'vulnerability'
 ]
-impMetamodel.netArray = ['micronet', 'unidentified node', 'threat']
-impMetamodel.undentifiedNodeArray = ['net', 'actor', 'malicious actor']
+impMetamodel.netArray = ['micronet', 'device', 'threat']
 impMetamodel.informationArray = [
   'asset',
   'device',
@@ -60,7 +59,6 @@ impMetamodel.actorArray = [
   'asset',
   'network connection',
   'device',
-  'unidentified node',
   'information',
   'application'
 ]

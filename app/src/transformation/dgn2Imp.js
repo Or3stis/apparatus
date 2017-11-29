@@ -23,10 +23,6 @@ const transform = (cy, nodeCounter) => {
       node.data().asto.update = ''
     } else if (node.data().asto.concept === 'information') {
       node.data().asto.location = ''
-    } else if (node.data().asto.concept === 'unidentified node') {
-      node.data().asto.service = ''
-      node.data().asto.input = ''
-      node.data().asto.output = ''
     }
   })
   // add network connections between devices

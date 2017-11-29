@@ -9,7 +9,6 @@ module.exports = function moduleValidation (cy) {
   const applicationArray = dgnMetamodel.applicationArray
   const micronetArray = dgnMetamodel.micronetArray
   const netArray = dgnMetamodel.netArray
-  const undentifiedNodeArray = dgnMetamodel.undentifiedNodeArray
   const informationArray = dgnMetamodel.informationArray
   const actorArray = dgnMetamodel.actorArray
   const maliciousActorArray = dgnMetamodel.maliciousActorArray
@@ -53,7 +52,6 @@ module.exports = function moduleValidation (cy) {
   componentValidation(cy, 'application', applicationArray)
   componentValidation(cy, 'micronet', micronetArray)
   componentValidation(cy, 'net', netArray)
-  componentValidation(cy, 'undentified node', undentifiedNodeArray)
   componentValidation(cy, 'information', informationArray)
   componentValidation(cy, 'actor', actorArray)
   componentValidation(cy, 'malicious actor', maliciousActorArray)

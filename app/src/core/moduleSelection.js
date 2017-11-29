@@ -8,7 +8,6 @@ module.exports = function moduleSelection (cy, input) {
     'network connection',
     'micronet',
     'net',
-    'unidentified node',
     'information',
     'application',
     'thing'
