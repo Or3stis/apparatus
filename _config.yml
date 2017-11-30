@@ -1,6 +1,1 @@
-remote_theme: nielsenramon/chalk
-
-name: Chalk
-paginate: 1
-url: https://or3stis.github.io/apparatus/
-blog_theme: dark
+theme: jekyll-theme-cayman
