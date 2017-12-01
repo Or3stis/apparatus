@@ -198,14 +198,6 @@ input::-webkit-input-placeholder {
   overflow: auto;
 }
 
-/*warning to save file on exit*/
-#home-button-id:hover:after {
-  content: 'save first';
-}
-#home-button-id:hover span {
-  display: none;
-}
-
 /*action bar icons*/
 .icon {
   fill: var(--main-tx-color);
