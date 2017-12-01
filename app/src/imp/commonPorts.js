@@ -2,11 +2,16 @@
 // used by the pcapImport.js
 
 const commonPorts = {
+  7: 'Echo',
+  19: 'Chargen',
   20: 'FTP Data',
   21: 'FTP Control',
   22: 'SSH',
   23: 'TELNET',
   25: 'SMTP',
+  42: 'WINS Replication',
+  43: 'Whois',
+  49: 'TACAS',
   53: 'DNS',
   67: 'bootp server',
   68: 'bootp server',
