@@ -1,5 +1,5 @@
 // watch the graph for changes
-// const { dialog } = require('electron').remote
+const { dialog } = require('electron').remote
 
 let changeToken = false
 
@@ -33,24 +33,23 @@ const edges = (graphEdges, cy) => {
 
 // checks whether there have been changes in the model before navigating to the index.js
 const closeNotification = () => {
-  // if (changeToken === true) {
-  //   dialog.showMessageBox(
-  //     {
-  //       message: 'There are unsaved changes in the model. Do you want to procced?',
-  //       buttons: ['No', 'Yes']
-  //     },
-  //     response => {
-  //       // is the response is Yes navigate to the index.html
-  //       if (response === 1) {
-  //         window.location.href = `file://${__dirname}/../index.html`
-  //       }
-  //     }
-  //   )
-  //   // when there no changes in the model navigate to index.html without prompting
-  // } else {
-    // window.location.href = `file://${__dirname}/../index.html`
-  // }
-  window.location.href = `file://${__dirname}/../index.html`
+  if (changeToken === true) {
+    dialog.showMessageBox(
+      {
+        message: 'Do you want to navigate to the home  menu?',
+        buttons: ['No', 'Yes']
+      },
+      response => {
+        // is the response is Yes navigate to the index.html
+        if (response === 1) {
+          window.location.href = `file://${__dirname}/../index.html`
+        }
+      }
+    )
+    // when there no changes in the model navigate to index.html without prompting
+  } else {
+    window.location.href = `file://${__dirname}/../index.html`
+  }
 }
 
 module.exports = {
