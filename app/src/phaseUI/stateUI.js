@@ -67,12 +67,6 @@ module.exports = function stateUI () {
     </ul>
   </div>
 
-  <!-- <button class="button-icon" id="model-validate-button" title="model validation">
-    <svg width="24" height="24">
-      <use xlink:href="icons/check.svg#check" class="icon"></use>
-    </svg>
-  </button> -->
-
   <button class="button-icon" id="expose-button" title="expose">
     <svg width="24" height="24">
       <use xlink:href="icons/explore.svg#explore" class="icon"></use>
@@ -102,13 +96,6 @@ module.exports = function stateUI () {
       <use xlink:href="icons/home.svg#home" class="icon"></use>
     </svg>
   </button>
-<!-- <form>
-  <button class="button-icon" id="home-button-id" type="submit" formaction="index.html" title="home">
-    <svg width="24" height="24">
-      <use xlink:href="icons/home.svg#home" class="icon"></use>
-    </svg>
-  </button>
-</form> -->
 
   <!-- <button class="button-icon" id="test-button" title="test">
     <svg width="24" height="24">
