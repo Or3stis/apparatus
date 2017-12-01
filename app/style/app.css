@@ -55,7 +55,8 @@ body {
   height: 97vh;
   display: grid;
   grid-template-columns: 50px 1fr 165px;
-  grid-template-areas: 'action-bar graph sidebar' 'action-bar graph sidebar'
+  grid-template-areas:
+    'action-bar graph sidebar' 'action-bar graph sidebar'
     'action-bar graph sidebar';
 }
 
