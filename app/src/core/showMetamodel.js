@@ -1,5 +1,6 @@
 // shows the current phase's metamodel in a separate window
 
+// TODO cannot restore focus on a minimized window
 const remote = require('electron').remote
 const BrowserWindow = remote.BrowserWindow
 
@@ -18,7 +19,12 @@ module.exports = function showMetamodel (phase) {
   const createWindow = url => {
     let win = new BrowserWindow({ width: 900, height: 700, show: false })
     win.loadURL(`${finalPath}/${url}`)
+
     win.on('ready-to-show', win.show)
+
+    win.on('closed', () => {
+      win = null
+    })
   }
 
   // if an actice metamodel exists
