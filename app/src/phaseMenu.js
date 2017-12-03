@@ -25,11 +25,14 @@ const debugGraph = (cy, phase) => {
 // the element is removed on selection
 module.exports = function phaseMenu (phase) {
   const graph = document.getElementById('graph-container')
+
+  // creates a wrapper for the buttons
   const wrapper = document.createElement('wrapper')
   wrapper.id = 'wrapper-id'
   wrapper.className = 'wrapper'
   wrapper.textContent = 'select'
 
+  // creates button for new graph
   const buttonNew = document.createElement('button')
   buttonNew.id = 'new-id'
   buttonNew.className = 'startButtons'
@@ -37,6 +40,7 @@ module.exports = function phaseMenu (phase) {
   buttonNew.value = 'new'
   buttonNew.textContent = 'new graph'
 
+  // creates button to load existing graph
   const buttonLoad = document.createElement('button')
   buttonLoad.id = 'load-id'
   buttonLoad.className = 'startButtons'
@@ -44,6 +48,7 @@ module.exports = function phaseMenu (phase) {
   buttonLoad.value = 'load'
   buttonLoad.textContent = 'load graph'
 
+  // creates button to load the debug graph
   const buttonDebug = document.createElement('button')
   buttonDebug.id = 'debug-id'
   buttonDebug.className = 'startButtons'
@@ -76,6 +81,7 @@ module.exports = function phaseMenu (phase) {
 
   graph.appendChild(wrapper)
 
+  // removes the wrapper once an option is clicked
   buttonNew.addEventListener('click', () => {
     graph.removeChild(wrapper)
     newGraph(cy, phase)
