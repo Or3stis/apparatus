@@ -9,22 +9,34 @@ const impMeta = 'metamodels/imp-model.png'
 
 module.exports = function showMetamodel (phase) {
   // create the path to the metamodels
-  const metamodePath = __dirname.split('/')
-  metamodePath.pop() // removes the core directory
-  metamodePath.pop() // removes the src directory
+  const metamodelPath = __dirname.split('/')
+  metamodelPath.pop() // removes the core directory
+  metamodelPath.pop() // removes the src directory
+  const finalPath = `file://${metamodelPath.join('/')}`
 
   // creates the window for the metamodel
   const createWindow = url => {
     let win = new BrowserWindow({ width: 900, height: 700, show: false })
-    win.loadURL(`file://${metamodePath.join('/')}/${url}`)
-    win.on('ready-to-show', () => {
-      win.show()
-    })
+    win.loadURL(`${finalPath}/${url}`)
+    win.on('ready-to-show', win.show)
   }
+
+  // if an actice metamodel exists
+  const metamodelIsActive = url => {
+    let isWindowActive = false
+    const activeWins = BrowserWindow.getAllWindows()
+    Object.values(activeWins).map(activeWin => {
+      if (activeWin.getURL() === `${finalPath}/${url}`) {
+        isWindowActive = true
+      }
+    })
+    if (isWindowActive === false) createWindow(url)
+  }
+
   // checks for the phase to show the correct metamodel
   if (phase === 'design') {
-    createWindow(dgnMeta)
+    metamodelIsActive(dgnMeta)
   } else if (phase === 'implementation') {
-    createWindow(impMeta)
+    metamodelIsActive(impMeta)
   }
 }
