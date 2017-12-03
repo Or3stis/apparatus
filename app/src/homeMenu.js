@@ -60,9 +60,11 @@ module.exports = function homeMenu () {
     stateUI()
   })
 
+  const ackMessage =
+    '<span style="position: absolute; bottom: 10px; right: 50%;">❮❯ with ♥︎ by <strong>or3stis</strong></span>'
+
   const ack = document.createElement('ack')
   ack.id = 'ack-id'
-  ack.innerHTML =
-    '<span style="position: absolute; bottom: 10px; right: 50%;">❮❯ with ♥︎ by <strong>or3stis</strong></span>'
+  ack.innerHTML = ackMessage
   graph.appendChild(ack)
 }
