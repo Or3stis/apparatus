@@ -29,9 +29,7 @@ module.exports = function expose (cy) {
         node.renderedPosition().x
       }px; top: ${
         node.renderedPosition().y
-      }px;'><div class="container-node-info" style='margin: 0;'><span>${
-        nodeInfo
-      }</span></div></div>`
+      }px;'><div class="container-node-info" style='margin: 0;'><span>${nodeInfo}</span></div></div>`
 
       graph.appendChild(container)
     })

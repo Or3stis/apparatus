@@ -26,9 +26,7 @@ const nodeMenu = (cy, selection, selectedNode) => {
 
     nodeMenu.id = 'nodeMenu-id'
 
-    nodeMenu.innerHTML = `<div class="dropdown" style='display: block; position: absolute; top:${
-      posY
-    }px; left: ${posX}px;'>
+    nodeMenu.innerHTML = `<div class="dropdown" style='display: block; position: absolute; top:${posY}px; left: ${posX}px;'>
       <ul class="dropdown-menu" style='display:block;'>
         <li><a>edit node</a></li>
         <li><a>show neighbors</a></li>
@@ -69,9 +67,7 @@ const stageMenu = (cy, selection) => {
 
     stageMenu.id = 'stageMenu-id'
 
-    stageMenu.innerHTML = `<div class="dropdown" style='display: block; position: absolute; top:${
-      posY
-    }px; left: ${posX}px;'>
+    stageMenu.innerHTML = `<div class="dropdown" style='display: block; position: absolute; top:${posY}px; left: ${posX}px;'>
       <ul class="dropdown-menu" style='display:block;'>
         <li><a>center graph</a></li>
         <li><a>restore node</a></li>
