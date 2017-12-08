@@ -6,7 +6,7 @@ const { dialog } = require('electron').remote
 
 const config = require('../../settings/config.js')
 const printMsgTxt = require('../helpers/printMsgTxt.js')
-const printMessageHTML = require('../helpers/printMessageHTML.js')
+const printMsgHTML = require('../helpers/printMsgHTML.js')
 
 // request vulnerability information from cve
 const requestVulnData = (filename, nodesKeywords) => {
@@ -37,7 +37,7 @@ const requestVulnData = (filename, nodesKeywords) => {
           // })
 
           // displays the total amount of vulnerabilities
-          printMessageHTML(
+          printMsgHTML(
             `${vuln} vulnerabilities found: <strong>${
               totalVuln.length
             }</strong>`

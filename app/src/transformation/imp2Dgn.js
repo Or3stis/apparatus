@@ -2,7 +2,7 @@
 
 const save = require('../helpers/save.js')
 const printMsgTxt = require('../helpers/printMsgTxt.js')
-const printMessageHTML = require('../helpers/printMessageHTML.js')
+const printMsgHTML = require('../helpers/printMsgHTML.js')
 
 const transform = cy => {
   let neighbors = []
@@ -56,7 +56,7 @@ const warning =
   'to access the new design phase model you will need to manually load it'
 
 module.exports = function dgnState2ImpState (cy, nodeCounter) {
-  printMessageHTML(userInput)
+  printMsgHTML(userInput)
 
   const buttonYes = document.getElementById('yes-button')
   buttonYes.addEventListener('click', () => {
