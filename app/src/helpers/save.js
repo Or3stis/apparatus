@@ -1,5 +1,6 @@
 // helper function to save graphs
 
+const printMessageText = require('./printMessageText.js')
 const jsonfile = require('jsonfile')
 const { dialog } = require('electron').remote
 
@@ -26,6 +27,7 @@ module.exports = function save (cy) {
           const titleBar = document.getElementById('title-bar-id')
           titleBar.innerHTML = titleBar.innerHTML.replace(' •', ' ')
         }
+        printMessageText('graph saved\n👍')
       })
     }
   )

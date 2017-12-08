@@ -14,7 +14,6 @@ const vulnVerification = require('./imp/vulnVerification.js')
 
 const save = require('./helpers/save.js')
 const watcher = require('./helpers/watcher.js')
-const printMessageText = require('./helpers/printMessageText.js')
 
 const buttonHelpers = require('./buttonHelpers.js')
 
@@ -83,7 +82,6 @@ module.exports = function buttons (
   const buttonSave = document.getElementById('save-button')
   buttonSave.addEventListener('click', () => {
     save(cy)
-    printMessageText('graph saved\n👍')
   })
   // navigates the user to the index.js
   const buttonHome = document.getElementById('home-button-id')
