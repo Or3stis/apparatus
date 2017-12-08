@@ -33,47 +33,47 @@ module.exports = function phaseMenu (phase) {
   wrapper.textContent = 'select'
 
   // creates button for new graph
-  const buttonNew = document.createElement('button')
-  buttonNew.id = 'new-id'
-  buttonNew.className = 'startButtons'
-  buttonNew.type = 'button'
-  buttonNew.value = 'new'
-  buttonNew.textContent = 'new graph'
+  const btnNew = document.createElement('button')
+  btnNew.id = 'new-id'
+  btnNew.className = 'startButtons'
+  btnNew.type = 'button'
+  btnNew.value = 'new'
+  btnNew.textContent = 'new graph'
 
   // creates button to load existing graph
-  const buttonLoad = document.createElement('button')
-  buttonLoad.id = 'load-id'
-  buttonLoad.className = 'startButtons'
-  buttonLoad.type = 'button'
-  buttonLoad.value = 'load'
-  buttonLoad.textContent = 'load graph'
+  const btnLoad = document.createElement('button')
+  btnLoad.id = 'load-id'
+  btnLoad.className = 'startButtons'
+  btnLoad.type = 'button'
+  btnLoad.value = 'load'
+  btnLoad.textContent = 'load graph'
 
   // creates button to load the debug graph
-  const buttonDebug = document.createElement('button')
-  buttonDebug.id = 'debug-id'
-  buttonDebug.className = 'startButtons'
-  buttonDebug.type = 'button'
-  buttonDebug.value = 'debug'
-  buttonDebug.textContent = 'debug app'
+  const btnDebug = document.createElement('button')
+  btnDebug.id = 'debug-id'
+  btnDebug.className = 'startButtons'
+  btnDebug.type = 'button'
+  btnDebug.value = 'debug'
+  btnDebug.textContent = 'debug app'
 
-  wrapper.appendChild(buttonNew)
-  wrapper.appendChild(buttonLoad)
-  wrapper.appendChild(buttonDebug)
+  wrapper.appendChild(btnNew)
+  wrapper.appendChild(btnLoad)
+  wrapper.appendChild(btnDebug)
 
   // loads the pcapImport module during the implementation phase
   if (phase === 'implementation') {
-    const buttonImport = document.createElement('button')
-    buttonImport.id = 'import-id'
-    buttonImport.className = 'startButtons'
-    buttonImport.type = 'button'
-    buttonImport.value = 'import'
-    buttonImport.innerHTML =
+    const btnImport = document.createElement('button')
+    btnImport.id = 'import-id'
+    btnImport.className = 'startButtons'
+    btnImport.type = 'button'
+    btnImport.value = 'import'
+    btnImport.innerHTML =
       'import .pcapng file <small style="color: #d19a66;">beta</small>'
-    // buttonImport.textContent = 'import pcang file'
+    // btnImport.textContent = 'import pcang file'
 
-    wrapper.appendChild(buttonImport)
+    wrapper.appendChild(btnImport)
 
-    buttonImport.addEventListener('click', () => {
+    btnImport.addEventListener('click', () => {
       graph.removeChild(wrapper)
       pcapImport(cy, phase)
     })
@@ -82,15 +82,15 @@ module.exports = function phaseMenu (phase) {
   graph.appendChild(wrapper)
 
   // removes the wrapper once an option is clicked
-  buttonNew.addEventListener('click', () => {
+  btnNew.addEventListener('click', () => {
     graph.removeChild(wrapper)
     newGraph(cy, phase)
   })
-  buttonLoad.addEventListener('click', () => {
+  btnLoad.addEventListener('click', () => {
     graph.removeChild(wrapper)
     load(cy, phase)
   })
-  buttonDebug.addEventListener('click', () => {
+  btnDebug.addEventListener('click', () => {
     graph.removeChild(wrapper)
     debugGraph(cy, phase)
   })

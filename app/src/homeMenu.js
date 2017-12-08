@@ -15,46 +15,46 @@ module.exports = function homeMenu () {
   wrapper.textContent = 'select phase'
 
   // create the design phase button
-  const buttonDgn = document.createElement('button')
-  buttonDgn.id = 'dgn-id'
-  buttonDgn.className = 'startButtons'
-  buttonDgn.type = 'button'
-  buttonDgn.textContent = 'design phase'
+  const btnDgn = document.createElement('button')
+  btnDgn.id = 'dgn-id'
+  btnDgn.className = 'startButtons'
+  btnDgn.type = 'button'
+  btnDgn.textContent = 'design phase'
 
   // create the implementation phase button
-  const buttonImp = document.createElement('button')
-  buttonImp.id = 'imp-id'
-  buttonImp.className = 'startButtons'
-  buttonImp.type = 'button'
-  buttonImp.textContent = 'implementation phase'
+  const btnImp = document.createElement('button')
+  btnImp.id = 'imp-id'
+  btnImp.className = 'startButtons'
+  btnImp.type = 'button'
+  btnImp.textContent = 'implementation phase'
 
   // create the state transition phase button
-  const buttonState = document.createElement('button')
-  buttonState.id = 'state-id'
-  buttonState.className = 'startButtons'
-  buttonState.type = 'button'
-  buttonState.textContent = 'state diagram'
+  const btnState = document.createElement('button')
+  btnState.id = 'state-id'
+  btnState.className = 'startButtons'
+  btnState.type = 'button'
+  btnState.textContent = 'state diagram'
 
   // append buttons to the wrapper
-  wrapper.appendChild(buttonDgn)
-  wrapper.appendChild(buttonImp)
-  wrapper.appendChild(buttonState)
+  wrapper.appendChild(btnDgn)
+  wrapper.appendChild(btnImp)
+  wrapper.appendChild(btnState)
 
   graph.appendChild(wrapper)
 
   // add events listeners to the buttons, each event listener loads a
   // specific UI and then removes the wrapper
-  buttonDgn.addEventListener('click', () => {
+  btnDgn.addEventListener('click', () => {
     graph.removeChild(wrapper)
     graph.removeChild(ack)
     designUI()
   })
-  buttonImp.addEventListener('click', () => {
+  btnImp.addEventListener('click', () => {
     graph.removeChild(wrapper)
     graph.removeChild(ack)
     implementationUI()
   })
-  buttonState.addEventListener('click', () => {
+  btnState.addEventListener('click', () => {
     graph.removeChild(wrapper)
     graph.removeChild(ack)
     stateUI()
