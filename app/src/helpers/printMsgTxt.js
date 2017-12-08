@@ -1,6 +1,6 @@
 // helper to print text-only formatted text
 
-module.exports = function printMessageText (toPrint) {
+module.exports = function printMsgTxt (toPrint) {
   const htmlElement = document.getElementById('message-area-id')
 
   // create message element

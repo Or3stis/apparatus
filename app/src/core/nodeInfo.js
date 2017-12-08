@@ -1,6 +1,6 @@
 // shows info of node in the div 'info-for-nodes'
 
-const printMessageText = require('./printMessageText.js')
+const printMsgTxt = require('./printMsgTxt.js')
 
 module.exports = function nodeInfo (node) {
   let nodeInfo = ''
@@ -13,5 +13,5 @@ module.exports = function nodeInfo (node) {
     // adds the values of the object to the string
     nodeInfo += `${nodeData[i]}\n`
   })
-  printMessageText(nodeInfo)
+  printMsgTxt(nodeInfo)
 }

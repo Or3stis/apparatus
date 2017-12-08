@@ -5,7 +5,7 @@ const fs = require('fs')
 const { dialog } = require('electron').remote
 
 const config = require('../../settings/config.js')
-const printMessageText = require('../helpers/printMessageText.js')
+const printMsgTxt = require('../helpers/printMsgTxt.js')
 const printMessageHTML = require('../helpers/printMessageHTML.js')
 
 // request vulnerability information from cve
@@ -45,7 +45,7 @@ const requestVulnData = (filename, nodesKeywords) => {
         })
       })
       .on('error', err => {
-        printMessageText(err.message)
+        printMsgTxt(err.message)
       })
   })
 }
@@ -104,13 +104,13 @@ const findVuln = cy => {
   // check whether the nodesKeywords is empty before sending the request to
   // a vulnerability database
   if (nodesKeywords.length === 0) {
-    printMessageText('no vulnerabilities were found')
+    printMsgTxt('no vulnerabilities were found')
   } else {
     getUniqueKeywords(nodesKeywords)
     saveFile(nodesKeywords) // runs the requestVulnData()
 
-    printMessageText(`sending request to ${config.cveSearchUrl}`)
-    printMessageText(`☛ keywords used:\n\n${keywordsPrint}`)
+    printMsgTxt(`sending request to ${config.cveSearchUrl}`)
+    printMsgTxt(`☛ keywords used:\n\n${keywordsPrint}`)
   }
 }
 

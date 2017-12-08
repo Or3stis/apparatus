@@ -1,7 +1,7 @@
 // applies tranformation rules from design phase to implementation phase
 
 const save = require('../helpers/save.js')
-const printMessageText = require('../helpers/printMessageText.js')
+const printMsgTxt = require('../helpers/printMsgTxt.js')
 const printMessageHTML = require('../helpers/printMessageHTML.js')
 
 const transform = (cy, nodeCounter) => {
@@ -78,8 +78,8 @@ module.exports = function dgnState2ImpState (cy, nodeCounter) {
   buttonYes.addEventListener('click', () => {
     transform(cy, nodeCounter)
     save(cy)
-    printMessageText('transformation successful')
-    printMessageText(warning)
+    printMsgTxt('transformation successful')
+    printMsgTxt(warning)
   })
   const buttonNo = document.getElementById('no-button')
   buttonNo.addEventListener('click', () => {

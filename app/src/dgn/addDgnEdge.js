@@ -1,6 +1,6 @@
 // adds design phase edge types based on the source and target nodes
 
-const printMessageText = require('../helpers/printMessageText.js')
+const printMsgTxt = require('../helpers/printMsgTxt.js')
 const addEdge = require('../core/addEdge.js')
 
 module.exports = function addComponent (cy, srcNode, trgNode) {
@@ -80,6 +80,6 @@ module.exports = function addComponent (cy, srcNode, trgNode) {
       addEdge(cy, srcNodeId, trgNodeId, 'requires')
       break
     default:
-      printMessageText(`${srcNodeCpt} → ${trgNodeCpt}\nnot allowed 😔`)
+      printMsgTxt(`${srcNodeCpt} → ${trgNodeCpt}\nnot allowed 😔`)
   }
 }
