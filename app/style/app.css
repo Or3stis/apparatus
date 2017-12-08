@@ -142,7 +142,7 @@ body {
   position: fixed;
   background-color: var(--main-bg-color);
 }
-#console-id {
+#cmd-id {
   height: 20px;
   background-color: var(--main-bg-color);
   border: none;

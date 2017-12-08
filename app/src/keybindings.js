@@ -49,7 +49,7 @@ module.exports = function (
   // adds the url of the github wiki
   const wikiURLBtn = `click to view <button id='url-button' class='startBtns' style='color: var(--main-tx-color); background-color: var(--main-bg-color); width: 40px; height: 25px;'>wiki</button>`
 
-  const consoleId = document.getElementById('console-id')
+  const consoleId = document.getElementById('cmd-id')
   const labelId = document.getElementById('input-label-id')
   // indicate focus on the console by making the > blue
   consoleId.addEventListener('focus', e => {
@@ -65,8 +65,8 @@ module.exports = function (
 
   // console commands
   const commands = () => {
-    const input = document.getElementById('console-id').value
-    document.getElementById('console-id').value = ''
+    const input = document.getElementById('cmd-id').value
+    document.getElementById('cmd-id').value = ''
 
     // declare input of console commmands
     switch (input) {
