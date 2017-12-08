@@ -49,19 +49,19 @@ module.exports = function (
   // adds the url of the github wiki
   const wikiURLBtn = `click to view <button id='url-button' class='startBtns' style='color: var(--main-tx-color); background-color: var(--main-bg-color); width: 40px; height: 25px;'>wiki</button>`
 
-  const consoleId = document.getElementById('cmd-id')
+  const cmdID = document.getElementById('cmd-id')
   const labelId = document.getElementById('input-label-id')
   // indicate focus on the console by making the > blue
-  consoleId.addEventListener('focus', e => {
+  cmdID.addEventListener('focus', e => {
     labelId.style.color = config.blue
   })
   // indicate loss of focus on the console by making the > default color
-  consoleId.addEventListener('blur', () => {
+  cmdID.addEventListener('blur', () => {
     labelId.style.color = config.text
   })
 
   // removes the focus from the console when tapping on the graph container
-  cy.on('tap', selection => consoleId.blur())
+  cy.on('tap', selection => cmdID.blur())
 
   // console commands
   const commands = () => {
@@ -117,7 +117,7 @@ module.exports = function (
 
     // focus on the app console
     if (key === true && event.code === 'KeyL') {
-      consoleId.focus()
+      cmdID.focus()
     }
     // add an edge specific to each phase
     if (key === true && event.code === 'KeyE') {
@@ -148,7 +148,7 @@ module.exports = function (
       save(cy)
     }
     // listens for the ENTER key when focus is on the console
-    if (document.activeElement === consoleId && event.code === 'Enter') {
+    if (document.activeElement === cmdID && event.code === 'Enter') {
       commands()
     }
   })
