@@ -47,7 +47,7 @@ module.exports = function (
 • search for attribures: <b>keyword</b>`
 
   // adds the url of the github wiki
-  const wikiURLButton = `click to view <button id='url-button' class='startBtns' style='color: var(--main-tx-color); background-color: var(--main-bg-color); width: 40px; height: 25px;'>wiki</button>`
+  const wikiURLBtn = `click to view <button id='url-button' class='startBtns' style='color: var(--main-tx-color); background-color: var(--main-bg-color); width: 40px; height: 25px;'>wiki</button>`
 
   const consoleId = document.getElementById('console-id')
   const labelId = document.getElementById('input-label-id')
@@ -76,7 +76,7 @@ module.exports = function (
           ? printMessageHTML(helpMenuMacOS)
           : printMessageHTML(helpMenu)
 
-        printMessageHTML(wikiURLButton)
+        printMessageHTML(wikiURLBtn)
         // opens the wiki page with the default browser
         document.getElementById('url-button').addEventListener('click', () => {
           require('electron').shell.openExternal(config.wikiUrl)
