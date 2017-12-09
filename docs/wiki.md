@@ -9,7 +9,7 @@ If you have a question that is not answered in the wiki, please make a pull requ
 1. [How to use ASTo](https://or3stis.github.io/apparatus/wiki#how-to-use-asto)
 1. [Color themes](https://or3stis.github.io/apparatus/wiki#color-themes)
 1. [Importing graphs from pcang files](https://or3stis.github.io/apparatus/wiki#generate-graphs-from-pcapng-files-experimental-feature)
-1. [Performing security analysis](https://or3stis.github.io/apparatus/wiki#performing security analysis)
+1. [Performing security analysis](https://or3stis.github.io/apparatus/wiki#performing-security-analysis)
 1. [The architecture of ASTo](https://or3stis.github.io/apparatus/wiki#the-architecture-of-asto)
 
 ## What is Apparatus?
