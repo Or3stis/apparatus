@@ -5,12 +5,11 @@ $header-bg-color: #2b2e3b;
 $header-bg-color-secondary: #2b2e3b;
 
 $section-headings-color: #21515a;
+
+$code-bg-color: #dce6f0;
 @import "{{ site.theme }}";
 body {
   background-color: #f5f5f5;
-}
-code {
-  background-color: #dce6f0;
 }
 .main-content {
   background-color: #f6f8f8;
