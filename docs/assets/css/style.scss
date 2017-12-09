@@ -3,6 +3,16 @@
 
 @import "{{ site.theme }}";
 
-body {
-  background-color: #fafafa;
+h1, h2, h3, h4, h5, h6 {
+  color: #21515a:
+}
+.page-header {
+  background-image: linear-gradient(120deg, #2b2e3b, #2b2e3b);
+  color: #74b1be;
+}
+.main-content {
+  background-color: ##f6f8f8;
+}
+.btn {
+  color: #74b1be;
 }
