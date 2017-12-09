@@ -30,7 +30,7 @@ ASTo supports a light and a dark color theme. The colors themes are based on Ato
 
 ## Experimental features
 
-ASTo can generate graph files from network captures files (.pcapng). This is part of an ongoing process to automate certain parts of the plebeian and time-consuming task of graph creation. The `pcapng` import feature is only available from the implementation phase menu. It uses `tcpdump` to create a `txt` with the current timestamp and then uses the `txt` to create the `js` file of the graph. The `txt` file is created for debugging purposes and will be deprecated in later commits. The generated files are stored in the `graphs/implementation` directory. If you want to know more about how this feature works, visit the [wiki](https://github.com/Or3stis/apparatus/wiki#generate-graphs-from-pcapng-files-experimental-feature).
+ASTo can generate graph files from network captures files (.pcapng). This is part of an ongoing process to automate certain parts of the plebeian and time-consuming task of graph creation. The `pcapng` import feature is only available from the implementation phase menu. It uses `tcpdump` to create a `txt` with the current timestamp and then uses the `txt` to create the `js` file of the graph. The `txt` file is created for debugging purposes and will be deprecated in later commits. The generated files are stored in the `graphs/implementation` directory. If you want to know more about how this feature works, visit the [wiki](https://or3stis.github.io/apparatus/wiki#generate-graphs-from-pcapng-files-experimental-feature).
 
 Tcpdump is installed by default on Unix based systems. If `tcpdump` is not installed in your system, the tool will display an error message.
 
@@ -70,9 +70,9 @@ You will find some example graphs in the `graphs` folder.
 
 If you want to contribute that's great 😃. Check the [contributing](https://github.com/Or3stis/apparatus/blob/master/CONTRIBUTING.md) guide. The application is being developed on Mac. That means that new commits might introduce breaking changes in other platforms. Especially commits that involve access to the file system. If something is not working, don't hesitate to create an [issue](https://github.com/Or3stis/apparatus/issues).
 
-If you want to find out how the app works check the [wiki](https://github.com/Or3stis/apparatus/wiki).
+If you want to find out how the app works check the [wiki](https://or3stis.github.io/apparatus/wiki).
 
-You can check the project's planned features in the [roadmap](https://github.com/Or3stis/apparatus/wiki/Roadmap).
+You can check the project's planned features in the [roadmap](https://or3stis.github.io/apparatus/roadmap).
 
 ## Thanks
 
