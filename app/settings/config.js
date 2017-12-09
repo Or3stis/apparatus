@@ -25,7 +25,7 @@ config.setColors = color => {
     config.darkBackground = '#eaeaeb'
     config.black = '#a0a1a7'
     config.gray = '#abb2bf'
-    config.blue = '#3399cd'
+    config.blue = '#4078f2'
     config.red = '#e45649'
     config.orange = '#cf8772'
     config.green = '#50a14f'
