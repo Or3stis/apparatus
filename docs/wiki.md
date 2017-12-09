@@ -9,11 +9,8 @@ If you have a question that is not answered in the wiki, please make a pull requ
 1. [How to use ASTo](https://or3stis.github.io/apparatus/wiki#how-to-use-asto)
 1. [Color themes](https://or3stis.github.io/apparatus/wiki#color-themes)
 1. [Importing graphs from pcang files](https://or3stis.github.io/apparatus/wiki#generate-graphs-from-pcapng-files-experimental-feature)
-1. [Doing security analysis](https://or3stis.github.io/apparatus/wiki#doing-security-analysis)
+1. [Performing security analysis](https://or3stis.github.io/apparatus/wiki#performing security analysis)
 1. [The architecture of ASTo](https://or3stis.github.io/apparatus/wiki#the-architecture-of-asto)
-1. [The src directory](https://or3stis.github.io/apparatus/wiki#the-src-directory)
-1. [The graphs directory](https://or3stis.github.io/apparatus/wiki#the-graphs-directory)
-1. [The style directory](https://or3stis.github.io/apparatus/wiki#the-style-directory)
 
 ## What is Apparatus?
 
@@ -38,18 +35,6 @@ The Apparatus Framework provides a modeling language and analysis procedures for
 Each phase has different concepts and rules on how those concepts interact with each other. The concepts of each phase are defined via UML class diagrams that in turn define the metamodels of Apparatus. The metamodels are translated into schemas that ASTo uses to validate modules. To access each phases metamodel, you can type `metamodel` in the ASTo's command console (bottom right corner, cmd/ctrl + l).
 
 The Apparatus Framework uses a graph-based front-end representation of models. We leverage powerful graph based algorithms for a variety of analysis tasks.
-
-<!-- Figure 1. Design phase metamodel
-![](https://raw.githubusercontent.com/Or3stis/apparatus/master/metamodels/dgn-model.png)
-
-Figure 2. Design State phase metamodel
-![](https://raw.githubusercontent.com/Or3stis/apparatus/master/metamodels/dgn-state-model.png)
-
-Figure 3. Implementation phase metamodel
-![](https://raw.githubusercontent.com/Or3stis/apparatus/master/metamodels/imp-model.png)
-
-Figure 4. Implementation State phase metamodel
-![](https://raw.githubusercontent.com/Or3stis/apparatus/master/metamodels/imp-state-model.png) -->
 
 Some of the features of ASTo have not been published yet, but I will try to add them as documentation here.
 

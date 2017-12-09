@@ -6,7 +6,9 @@ $header-bg-color-secondary: #2b2e3b;
 
 $section-headings-color: #21515a;
 
-$code-bg-color: #dce6f0;
+$body-text-color: #383a42;
+$code-text-color: #383a42;
+$code-bg-color: #eaeaeb;
 @import "{{ site.theme }}";
 body {
   background-color: #f5f5f5;
