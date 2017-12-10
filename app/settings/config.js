@@ -43,7 +43,7 @@ config.setColors(config.colorTheme)
 // urls
 
 // url for the ASTo wiki
-config.wikiUrl = 'https://or3stis.github.io/apparatus/wiki'
+config.docsURL = 'https://or3stis.github.io/apparatus/docs'
 // url for searching vulnerabilities
 config.cveSearchUrl = 'http://cve.circl.lu/api/search/'
 
