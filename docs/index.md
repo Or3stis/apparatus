@@ -1,3 +1,7 @@
+---
+title: 'Apparatus Framework'
+---
+
 # ASTo - Apparatus Software Tool
 
 ## An IoT network security analysis and visualization tool
