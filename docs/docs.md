@@ -1,3 +1,6 @@
+---
+title: "Docs"
+---
 # Under development 🚧
 
 If you have a question that is not answered in the wiki, please make a pull request (or be patient and hope it will be answered in the future).
