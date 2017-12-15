@@ -2,12 +2,12 @@
 
 const rmElement = require('../helpers/rmElement.js')
 
-let buttonToken = false
+let btnToken = false
 module.exports = function expose (cy) {
-  // when button is pressed
-  const exposeButton = document.getElementById('expose-button')
+  const exposeBtn = document.getElementById('expose-button')
 
-  if (buttonToken === false) {
+  // when button is pressed
+  if (btnToken === false) {
     const graph = document.getElementById('window-id')
 
     cy.nodes().map(node => {
@@ -35,8 +35,8 @@ module.exports = function expose (cy) {
     })
 
     // show active expose with colored button
-    exposeButton.setAttribute('class', 'active-button')
-    buttonToken = true
+    exposeBtn.setAttribute('class', 'active-button')
+    btnToken = true
   } else {
     // removes the exposed containers
     cy.nodes().map(node => {
@@ -44,7 +44,7 @@ module.exports = function expose (cy) {
     })
 
     // restores the original button color
-    exposeButton.setAttribute('class', 'button-icon')
-    buttonToken = false
+    exposeBtn.setAttribute('class', 'button-icon')
+    btnToken = false
   }
 }
