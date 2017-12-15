@@ -138,7 +138,7 @@ module.exports = function buttons (
   // buttons specific to each phase
   if (phase === 'design') {
     // verify threats
-    const buttonThreatVefiry = document.getElementById('threat-verify-button')
+    const buttonThreatVefiry = document.getElementById('threat-ver-btn')
     buttonThreatVefiry.addEventListener('click', () => {
       threatVerification(cy) // core module
     })
@@ -159,7 +159,7 @@ module.exports = function buttons (
     })
   } else if (phase === 'implementation') {
     // verify threats
-    const buttonThreatVefiry = document.getElementById('threat-verify-button')
+    const buttonThreatVefiry = document.getElementById('threat-ver-btn')
     buttonThreatVefiry.addEventListener('click', () => {
       threatVerification(cy) // core module
     })

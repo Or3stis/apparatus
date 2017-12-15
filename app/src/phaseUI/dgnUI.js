@@ -101,7 +101,7 @@ module.exports = function designUI () {
   </ul>
 </div>
 
-<button class="btn-icon" id="threat-verify-button" title="threat verification">
+<button class="btn-icon" id="threat-ver-btn" title="threat verification">
   <svg width="24" height="24">
     <use xlink:href="icons/security.svg#security" class="icon"></use>
   </svg>
