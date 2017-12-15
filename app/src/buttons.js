@@ -63,7 +63,7 @@ module.exports = function buttons (
   })
 
   // applies the selected layout to the graph, uses the layout.js module
-  const buttonLayout = document.getElementById('layout-button')
+  const buttonLayout = document.getElementById('layout-btn')
   buttonLayout.addEventListener('click', e => {
     layout(cy, e.target.textContent)
   })
