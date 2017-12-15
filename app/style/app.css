@@ -196,7 +196,7 @@ input::-webkit-input-placeholder {
 .icon:hover {
   fill: var(--blue-color);
 }
-.button-icon {
+.btn-icon {
   background-color: var(--main-dark-bg-color);
   margin: 2px;
   color: var(--main-tx-color);
@@ -204,11 +204,11 @@ input::-webkit-input-placeholder {
   border-color: var(--main-dark-bg-color);
 }
 /*flash color when clicked*/
-.button-icon:active,
+.btn-icon:active,
 .icon:active {
   fill: var(--main-tx-color);
 }
-.button-icon:focus {
+.btn-icon:focus {
   fill: var(--blue-color);
 }
 /*used by expose.js*/
