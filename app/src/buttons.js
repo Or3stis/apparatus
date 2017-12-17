@@ -43,8 +43,8 @@ module.exports = function buttons (
   })
 
   // add edges specific to each edge
-  const buttonAddEdge = document.getElementById('add-edge')
-  buttonAddEdge.addEventListener('click', () => {
+  const btnAddEdge = document.getElementById('add-edge')
+  btnAddEdge.addEventListener('click', () => {
     buttonHelpers.addEdge(cy, srcNode.out, trgNode.out, phase)
     cy.edges().addClass('label-edges')
   })
@@ -54,8 +54,8 @@ module.exports = function buttons (
   select.addEventListener('click', e => nodeSelection(cy, e.target.textContent))
 
   // bind the delete Button
-  const buttonDelete = document.getElementById('delete')
-  buttonDelete.addEventListener('click', () => {
+  const btnDelete = document.getElementById('delete')
+  btnDelete.addEventListener('click', () => {
     deleteRestoreConcepts.deleteConcept(cy, selectedNode.out, selectedEdge.out)
 
     // watch for changes in the nodes of the graph
@@ -63,29 +63,29 @@ module.exports = function buttons (
   })
 
   // applies the selected layout to the graph, uses the layout.js module
-  const buttonLayout = document.getElementById('layout-btn')
-  buttonLayout.addEventListener('click', e => {
+  const btnLayout = document.getElementById('layout-btn')
+  btnLayout.addEventListener('click', e => {
     layout(cy, e.target.textContent)
   })
 
   // binds the model overview button
-  const exposeButton = document.getElementById('expose-btn')
-  exposeButton.addEventListener('click', () => {
+  const btnExpose = document.getElementById('expose-btn')
+  btnExpose.addEventListener('click', () => {
     expose(cy)
   })
 
   // find patterns using the findPattern.js module
-  const buttonPattern = document.getElementById('pattern-button')
-  buttonPattern.addEventListener('click', () => patterns(cy))
+  const btnPattern = document.getElementById('pattern-button')
+  btnPattern.addEventListener('click', () => patterns(cy))
 
   // save the graph using the save.js module
-  const buttonSave = document.getElementById('save-button')
-  buttonSave.addEventListener('click', () => {
+  const btnSave = document.getElementById('save-button')
+  btnSave.addEventListener('click', () => {
     save(cy)
   })
   // navigates the user to the index.js
-  const buttonHome = document.getElementById('home-button-id')
-  buttonHome.addEventListener('click', () => {
+  const btnHome = document.getElementById('home-button-id')
+  btnHome.addEventListener('click', () => {
     watcher.closeNotification(cy)
   })
 
@@ -105,31 +105,31 @@ module.exports = function buttons (
   //   })
 
   // bind label buttons
-  const hideLabelsButton = document.getElementById('hide-label')
-  hideLabelsButton.addEventListener('click', () => {
+  const hideLabelsBtn = document.getElementById('hide-label')
+  hideLabelsBtn.addEventListener('click', () => {
     cy.nodes().removeClass('label-nodes')
     cy.nodes().removeClass('label-id')
     cy.nodes().removeClass('label-dsc')
     cy.edges().removeClass('label-edges')
   })
-  const showLabelsEdgeButton = document.getElementById('show-label-edge')
-  showLabelsEdgeButton.addEventListener('click', () => {
+  const showLabelsEdgeBtn = document.getElementById('show-label-edge')
+  showLabelsEdgeBtn.addEventListener('click', () => {
     cy.edges().addClass('label-edges')
   })
-  const showLabelNodeButton = document.getElementById('show-label-node')
-  showLabelNodeButton.addEventListener('click', () => {
+  const showLabelNodeBtn = document.getElementById('show-label-node')
+  showLabelNodeBtn.addEventListener('click', () => {
     cy.nodes().removeClass('label-id')
     cy.nodes().removeClass('label-dsc')
     cy.nodes().addClass('label-nodes')
   })
-  const showIdNodeButton = document.getElementById('show-node-id')
-  showIdNodeButton.addEventListener('click', () => {
+  const showIdNodeBtn = document.getElementById('show-node-id')
+  showIdNodeBtn.addEventListener('click', () => {
     cy.nodes().removeClass('label-nodes')
     cy.nodes().removeClass('label-dsc')
     cy.nodes().addClass('label-id')
   })
-  const showDiscNodeButton = document.getElementById('show-node-disc')
-  showDiscNodeButton.addEventListener('click', () => {
+  const showDiscNodeBtn = document.getElementById('show-node-disc')
+  showDiscNodeBtn.addEventListener('click', () => {
     cy.nodes().removeClass('label-nodes')
     cy.nodes().removeClass('label-id')
     cy.nodes().addClass('label-dsc')
@@ -138,13 +138,13 @@ module.exports = function buttons (
   // buttons specific to each phase
   if (phase === 'design') {
     // verify threats
-    const buttonThreatVefiry = document.getElementById('threat-ver-btn')
-    buttonThreatVefiry.addEventListener('click', () => {
+    const btnThreatVer = document.getElementById('threat-ver-btn')
+    btnThreatVer.addEventListener('click', () => {
       threatVerification(cy) // core module
     })
     // model transformation
-    const buttonTransform = document.getElementById('transform-button')
-    buttonTransform.addEventListener('click', () => {
+    const btnTransform = document.getElementById('transform-button')
+    btnTransform.addEventListener('click', () => {
       transformDgn2Imp(cy, nodeCounter)
     })
     // module selection
@@ -153,34 +153,34 @@ module.exports = function buttons (
       moduleSelection(cy, e.target.textContent) // global module
     })
     // phases model validation button
-    const buttonModelValidate = document.getElementById('model-val-btn')
-    buttonModelValidate.addEventListener('click', () => {
+    const btnModelVal = document.getElementById('model-val-btn')
+    btnModelVal.addEventListener('click', () => {
       buttonHelpers.validateHelper(cy, phase)
     })
   } else if (phase === 'implementation') {
     // verify threats
-    const buttonThreatVefiry = document.getElementById('threat-ver-btn')
-    buttonThreatVefiry.addEventListener('click', () => {
+    const btnThreatVer = document.getElementById('threat-ver-btn')
+    btnThreatVer.addEventListener('click', () => {
       threatVerification(cy) // core module
     })
     // model transformation
-    const buttonTransform = document.getElementById('transform-button')
-    buttonTransform.addEventListener('click', () => {
+    const btnTransform = document.getElementById('transform-button')
+    btnTransform.addEventListener('click', () => {
       transformImp2Dgn(cy)
     })
     // verify vulnerabilities
-    const buttonVulnVefiry = document.getElementById('vuln-verify-button')
-    buttonVulnVefiry.addEventListener('click', () => {
+    const btnVulnVer = document.getElementById('vuln-verify-button')
+    btnVulnVer.addEventListener('click', () => {
       vulnVerification(cy)
     })
     // find vulnerabilities
-    const buttonFindVuln = document.getElementById('find-vuln-button')
-    buttonFindVuln.addEventListener('click', () => {
+    const btnFindVuln = document.getElementById('find-vuln-button')
+    btnFindVuln.addEventListener('click', () => {
       findVulns(cy)
     })
     // phases model validation button
-    const buttonModelValidate = document.getElementById('model-val-btn')
-    buttonModelValidate.addEventListener('click', () => {
+    const btnModelVal = document.getElementById('model-val-btn')
+    btnModelVal.addEventListener('click', () => {
       buttonHelpers.validateHelper(cy, phase)
     })
     // module selection
