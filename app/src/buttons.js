@@ -75,7 +75,7 @@ module.exports = function buttons (
   })
 
   // find patterns using the findPattern.js module
-  const btnPattern = document.getElementById('pattern-button')
+  const btnPattern = document.getElementById('pattern-btn')
   btnPattern.addEventListener('click', () => patterns(cy))
 
   // save the graph using the save.js module
