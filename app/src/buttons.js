@@ -69,7 +69,7 @@ module.exports = function buttons (
   })
 
   // binds the model overview button
-  const exposeButton = document.getElementById('expose-button')
+  const exposeButton = document.getElementById('expose-btn')
   exposeButton.addEventListener('click', () => {
     expose(cy)
   })
@@ -153,7 +153,7 @@ module.exports = function buttons (
       moduleSelection(cy, e.target.textContent) // global module
     })
     // phases model validation button
-    const buttonModelValidate = document.getElementById('model-validate-button')
+    const buttonModelValidate = document.getElementById('model-val-btn')
     buttonModelValidate.addEventListener('click', () => {
       buttonHelpers.validateHelper(cy, phase)
     })
@@ -179,7 +179,7 @@ module.exports = function buttons (
       findVulns(cy)
     })
     // phases model validation button
-    const buttonModelValidate = document.getElementById('model-validate-button')
+    const buttonModelValidate = document.getElementById('model-val-btn')
     buttonModelValidate.addEventListener('click', () => {
       buttonHelpers.validateHelper(cy, phase)
     })

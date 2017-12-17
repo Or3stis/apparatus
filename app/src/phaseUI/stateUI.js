@@ -67,7 +67,7 @@ module.exports = function stateUI () {
     </ul>
   </div>
 
-  <button class="btn-icon" id="expose-button" title="expose">
+  <button class="btn-icon" id="expose-btn" title="expose">
     <svg width="24" height="24">
       <use xlink:href="icons/explore.svg#explore" class="icon"></use>
     </svg>

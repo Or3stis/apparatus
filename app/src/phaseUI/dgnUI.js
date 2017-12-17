@@ -107,13 +107,13 @@ module.exports = function designUI () {
   </svg>
 </button>
 
-<button class="btn-icon" id="model-validate-button" title="model validation">
+<button class="btn-icon" id="model-val-btn" title="model validation">
   <svg width="24" height="24">
     <use xlink:href="icons/check.svg#check" class="icon"></use>
   </svg>
 </button>
 
-<button class="btn-icon" id="expose-button" title="expose">
+<button class="btn-icon" id="expose-btn" title="expose">
   <svg width="24" height="24">
     <use xlink:href="icons/explore.svg#explore" class="icon"></use>
   </svg>

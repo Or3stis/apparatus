@@ -4,7 +4,7 @@ const rmElement = require('../helpers/rmElement.js')
 
 let btnToken = false
 module.exports = function expose (cy) {
-  const exposeBtn = document.getElementById('expose-button')
+  const exposeBtn = document.getElementById('expose-btn')
 
   // when button is pressed
   if (btnToken === false) {
