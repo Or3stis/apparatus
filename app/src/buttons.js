@@ -79,12 +79,12 @@ module.exports = function buttons (
   btnPattern.addEventListener('click', () => patterns(cy))
 
   // save the graph using the save.js module
-  const btnSave = document.getElementById('save-button')
+  const btnSave = document.getElementById('save-btn')
   btnSave.addEventListener('click', () => {
     save(cy)
   })
   // navigates the user to the index.js
-  const btnHome = document.getElementById('home-button-id')
+  const btnHome = document.getElementById('home-btn')
   btnHome.addEventListener('click', () => {
     watcher.closeNotification(cy)
   })
@@ -143,7 +143,7 @@ module.exports = function buttons (
       threatVerification(cy) // core module
     })
     // model transformation
-    const btnTransform = document.getElementById('transform-button')
+    const btnTransform = document.getElementById('transform-btn')
     btnTransform.addEventListener('click', () => {
       transformDgn2Imp(cy, nodeCounter)
     })
@@ -164,17 +164,17 @@ module.exports = function buttons (
       threatVerification(cy) // core module
     })
     // model transformation
-    const btnTransform = document.getElementById('transform-button')
+    const btnTransform = document.getElementById('transform-btn')
     btnTransform.addEventListener('click', () => {
       transformImp2Dgn(cy)
     })
     // verify vulnerabilities
-    const btnVulnVer = document.getElementById('vuln-verify-button')
+    const btnVulnVer = document.getElementById('vuln-ver-btn')
     btnVulnVer.addEventListener('click', () => {
       vulnVerification(cy)
     })
     // find vulnerabilities
-    const btnFindVuln = document.getElementById('find-vuln-button')
+    const btnFindVuln = document.getElementById('find-vuln-btn')
     btnFindVuln.addEventListener('click', () => {
       findVulns(cy)
     })

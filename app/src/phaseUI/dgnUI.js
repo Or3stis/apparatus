@@ -125,13 +125,13 @@ module.exports = function designUI () {
   </svg>
 </button>
 
-<button class="btn-icon" id="transform-button">
+<button class="btn-icon" id="transform-btn">
   <svg width="24" height="24">
     <use xlink:href="icons/swap.svg#swap" class="icon"></use>
   </svg>
 </button>
 
-<button class="btn-icon" id="save-button">
+<button class="btn-icon" id="save-btn">
   <svg width="24" height="24">
     <use xlink:href="icons/save.svg#save" class="icon"></use>
   </svg>
@@ -143,7 +143,7 @@ module.exports = function designUI () {
   </svg>
 </button> -->
 
-  <button class="btn-icon" id="home-button-id" title="home">
+  <button class="btn-icon" id="home-btn" title="home">
     <svg width="24" height="24">
       <use xlink:href="icons/home.svg#home" class="icon"></use>
     </svg>
@@ -156,11 +156,11 @@ module.exports = function designUI () {
 </button> -->
 
 <div class="label-wrapper" id="label-wrapper-id">
-  <button class="label-button" id="hide-label" title="hide labels">1</button>
-  <button class="label-button" id="show-label-edge" title="show edge labels">2</button>
-  <button class="label-button" id="show-label-node" title="show node labels">3</button>
-  <button class="label-button" id="show-node-id" title="show nodes id">4</button>
-  <button class="label-button" id="show-node-disc" title="show node description">5</button>
+  <button class="label-btn" id="hide-label" title="hide labels">1</button>
+  <button class="label-btn" id="show-label-edge" title="show edge labels">2</button>
+  <button class="label-btn" id="show-label-node" title="show node labels">3</button>
+  <button class="label-btn" id="show-node-id" title="show nodes id">4</button>
+  <button class="label-btn" id="show-node-disc" title="show node description">5</button>
 </div>
 
 </div>`

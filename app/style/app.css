@@ -263,7 +263,7 @@ input::-webkit-input-placeholder {
   width: 40px;
   position: fixed;
 }
-.label-button {
+.label-btn {
   background-color: var(--main-dark-bg-color);
   margin: 0;
   margin-left: 10px;
@@ -275,12 +275,12 @@ input::-webkit-input-placeholder {
   border-color: var(--main-tx-color);
   font-size: 10px;
 }
-.label-button:hover {
+.label-btn:hover {
   border-color: var(--blue-color);
   color: var(--blue-color);
 }
 /*flash color when clicked*/
-.label-button:active {
+.label-btn:active {
   border-color: var(--main-tx-color);
   color: var(--main-tx-color);
 }
