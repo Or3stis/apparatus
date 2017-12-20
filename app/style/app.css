@@ -35,9 +35,9 @@ body {
 }
 
 /*remove outlines*/
-*:focus {
+/* *:focus {
   outline: none;
-}
+} */
 
 .title-bar {
   position: relative;
@@ -121,6 +121,7 @@ body {
 }
 .input-form:focus {
   border-color: rgba(97, 175, 239, 0.6);
+  outline: none;
 }
 .submit-form {
   background-color: var(--main-bg-color);
@@ -130,12 +131,15 @@ body {
   border-radius: 10px;
   border-color: var(--main-bg-color);
 }
+.submit-form:focus {
+  outline: none;
+}
 
 /*command console*/
 .cmd-wrapperr {
   width: 90%;
   height: 22px;
-  padding: 4px;
+  margin: 4px;
   display: flex;
   flex: 1 1 22px;
   bottom: 0;
@@ -149,6 +153,9 @@ body {
   color: var(--main-tx-color);
   font-size: 12px;
   font-family: monaco, consolas, mono;
+}
+#cmd-id:focus {
+  outline: none;
 }
 #input-label-id {
   top: 3px;
@@ -210,6 +217,7 @@ input::-webkit-input-placeholder {
 }
 .btn-icon:focus {
   fill: var(--blue-color);
+  outline: none;
 }
 /*used by expose.js*/
 .active-button {
@@ -218,6 +226,7 @@ input::-webkit-input-placeholder {
   color: var(--main-tx-color);
   border: 1px solid;
   border-color: var(--main-dark-bg-color);
+  outline: none;
 }
 
 /*dropdown buttons*/
@@ -284,6 +293,9 @@ input::-webkit-input-placeholder {
   border-color: var(--main-tx-color);
   color: var(--main-tx-color);
 }
+.label-btn:focus {
+  outline: none;
+}
 
 /*load menu*/
 .wrapper {
@@ -313,6 +325,9 @@ input::-webkit-input-placeholder {
 .startBtns:hover {
   border-color: var(--blue-color);
   color: var(--blue-color);
+}
+.startBtns:focus {
+  outline: none;
 }
 
 ::-webkit-scrollbar {
