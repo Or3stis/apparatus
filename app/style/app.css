@@ -311,7 +311,7 @@ input::-webkit-input-placeholder {
   text-align: center;
   box-shadow: 3px 2px 11px 7px rgba(33, 37, 43, 0.7);
 }
-.startBtns {
+.menu-btn {
   background-color: var(--main-dark-bg-color);
   margin: 5px;
   color: var(--main-tx-color);
@@ -322,11 +322,11 @@ input::-webkit-input-placeholder {
   border-color: var(--main-dark-bg-color);
   font-size: 14px;
 }
-.startBtns:hover {
+.menu-btn:hover {
   border-color: var(--blue-color);
   color: var(--blue-color);
 }
-.startBtns:focus {
+.menu-btn:focus {
   outline: none;
 }
 

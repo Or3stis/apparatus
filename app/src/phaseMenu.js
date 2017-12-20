@@ -35,7 +35,7 @@ module.exports = function phaseMenu (phase) {
   // creates button for new graph
   const btnNew = document.createElement('button')
   btnNew.id = 'new-id'
-  btnNew.className = 'startBtns'
+  btnNew.className = 'menu-btn'
   btnNew.type = 'button'
   btnNew.value = 'new'
   btnNew.textContent = 'new graph'
@@ -43,7 +43,7 @@ module.exports = function phaseMenu (phase) {
   // creates button to load existing graph
   const btnLoad = document.createElement('button')
   btnLoad.id = 'load-id'
-  btnLoad.className = 'startBtns'
+  btnLoad.className = 'menu-btn'
   btnLoad.type = 'button'
   btnLoad.value = 'load'
   btnLoad.textContent = 'load graph'
@@ -51,7 +51,7 @@ module.exports = function phaseMenu (phase) {
   // creates button to load the debug graph
   const btnDebug = document.createElement('button')
   btnDebug.id = 'debug-id'
-  btnDebug.className = 'startBtns'
+  btnDebug.className = 'menu-btn'
   btnDebug.type = 'button'
   btnDebug.value = 'debug'
   btnDebug.textContent = 'debug app'
@@ -64,7 +64,7 @@ module.exports = function phaseMenu (phase) {
   if (phase === 'implementation') {
     const btnImport = document.createElement('button')
     btnImport.id = 'import-id'
-    btnImport.className = 'startBtns'
+    btnImport.className = 'menu-btn'
     btnImport.type = 'button'
     btnImport.value = 'import'
     btnImport.innerHTML =

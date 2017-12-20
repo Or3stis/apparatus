@@ -17,21 +17,21 @@ module.exports = function homeMenu () {
   // create the design phase button
   const btnDgn = document.createElement('button')
   btnDgn.id = 'dgn-id'
-  btnDgn.className = 'startBtns'
+  btnDgn.className = 'menu-btn'
   btnDgn.type = 'button'
   btnDgn.textContent = 'design phase'
 
   // create the implementation phase button
   const btnImp = document.createElement('button')
   btnImp.id = 'imp-id'
-  btnImp.className = 'startBtns'
+  btnImp.className = 'menu-btn'
   btnImp.type = 'button'
   btnImp.textContent = 'implementation phase'
 
   // create the state transition phase button
   const btnState = document.createElement('button')
   btnState.id = 'state-id'
-  btnState.className = 'startBtns'
+  btnState.className = 'menu-btn'
   btnState.type = 'button'
   btnState.textContent = 'state diagram'
 
