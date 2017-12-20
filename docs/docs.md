@@ -1,5 +1,5 @@
 ---
-title: "Apparatus Documentations"
+title: "Apparatus Documentation"
 ---
 # Under development 🚧
 
