@@ -27,9 +27,9 @@ module.exports = function implementationUI () {
       <li><a>device</a></li>
       <li><a>network connection</a></li>
       <li><a>application</a></li>
+      <li><a>information</a></li>
       <li><a>micronet</a></li>
       <li><a>net</a></li>
-      <li><a>information</a></li>
       <li><a>actor</a></li>
       <li><a>asset</a></li>
       <li><a>threat</a></li>
@@ -62,9 +62,9 @@ module.exports = function implementationUI () {
       <li><a>device</a></li>
       <li><a>network connection</a></li>
       <li><a>application</a></li>
+      <li><a>information</a></li>
       <li><a>micronet</a></li>
       <li><a>net</a></li>
-      <li><a>information</a></li>
       <li><a>actor</a></li>
       <li><a>asset</a></li>
       <li><a>threat</a></li>
