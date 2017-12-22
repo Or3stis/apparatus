@@ -150,8 +150,6 @@ module.exports = function initialize (cy, phase) {
     document.getElementById('container-node-id').style.display = 'none'
   })
 
-  // load the buttons for each phase
-
   // declaration of global buttons
   buttons(
     cy,
@@ -173,5 +171,7 @@ module.exports = function initialize (cy, phase) {
     phase,
     graphNodes
   )
-  printTotalNodes(cy) // initial node count
+
+  // initial node count
+  printTotalNodes(cy)
 }
