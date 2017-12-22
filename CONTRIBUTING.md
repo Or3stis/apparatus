@@ -18,7 +18,7 @@ I would be more than happy to help anyone with the necessary changes.
 If ASTo generates enough interest from the community I would consider moving it to plugin based application. The core application will provide the basic logic of the app while different modeling languages and frameworks will function as plugins. The plugins would be responsible for imposing the languages rules and analysis functions.
 
 1. Make a fork. Play around with code.
-2. Read the apparatus [wiki](https://github.com/Or3stis/apparatus/wiki).
+2. Read the apparatus [docs](https://or3stis.github.io/apparatus/docs).
 3. Experiment.
 4. If you have any issues I would love to help.
 
