@@ -7,6 +7,7 @@ const showMetamodel = require('./core/showMetamodel.js')
 const deleteRestoreConcepts = require('./core/deleteRestoreConcepts.js')
 
 const printMsgHTML = require('./helpers/printMsgHTML.js')
+// const printMsgTxt = require('./helpers/printMsgTxt.js')
 const save = require('./helpers/save.js')
 const theme = require('./helpers/theme.js')
 const watcher = require('./helpers/watcher.js')
@@ -109,18 +110,18 @@ module.exports = function (
 
   // declare keydown listeners
   document.addEventListener('keydown', event => {
-    let key = ''
+    let metaKey = ''
     // checks the platform to assign the correct meta key
     process.platform === 'darwin'
-      ? (key = event.metaKey)
-      : (key = event.ctrlKey)
+      ? (metaKey = event.metaKey)
+      : (metaKey = event.ctrlKey)
 
     // focus on the app console
-    if (key === true && event.code === 'KeyL') {
+    if (metaKey === true && event.code === 'KeyL') {
       cmdID.focus()
     }
     // add an edge specific to each phase
-    if (key === true && event.code === 'KeyE') {
+    if (metaKey === true && event.code === 'KeyE') {
       // checks for undefined selections
       if (Object.keys(srcNode.out).length !== 0) {
         buttonHelpers.addEdge(cy, srcNode.out, trgNode.out, phase)
@@ -128,7 +129,7 @@ module.exports = function (
       }
     }
     // delete nodes or edges with meta + Backspace
-    if (key === true && event.code === 'Backspace') {
+    if (metaKey === true && event.code === 'Backspace') {
       deleteRestoreConcepts.deleteConcept(
         cy,
         selectedNode.out,
@@ -138,18 +139,26 @@ module.exports = function (
       watcher.nodes(graphNodes, cy)
     }
     // restore nodes with meta + z
-    if (key === true && event.code === 'KeyZ') {
+    if (metaKey === true && event.code === 'KeyZ') {
       deleteRestoreConcepts.restoreNode(cy)
 
       watcher.nodes(graphNodes, cy)
     }
     // save graph on meta + s
-    if (event.shiftKey === true && key === true && event.code === 'KeyS') {
+    if (event.shiftKey === true && metaKey === true && event.code === 'KeyS') {
       save(cy)
     }
     // listens for the ENTER key when focus is on the console
     if (document.activeElement === cmdID && event.code === 'Enter') {
       commands()
+    }
+    // developer mode message when a user wants to reload the app, meta + r
+    if (metaKey === true && event.code === 'KeyR') {
+      printMsgHTML(
+        '<strong>Window reload</strong> is disabled in default mode.'
+      )
+      printMsgHTML('Start the app in <strong>develper mode</strong> it.')
+      printMsgHTML('<strong>npm run dev</strong>')
     }
   })
 }
