@@ -1,5 +1,5 @@
 const config = require('../settings/config.js')
-const {Menu} = require('electron')
+const { Menu } = require('electron')
 const electron = require('electron')
 const app = electron.app
 
@@ -7,44 +7,43 @@ const template = [
   {
     label: 'Edit',
     submenu: [
-      {role: 'undo'},
-      {role: 'redo'},
-      {type: 'separator'},
-      {role: 'cut'},
-      {role: 'copy'},
-      {role: 'paste'},
-      {role: 'pasteandmatchstyle'},
-      {role: 'delete'},
-      {role: 'selectall'}
+      { role: 'undo' },
+      { role: 'redo' },
+      { type: 'separator' },
+      { role: 'cut' },
+      { role: 'copy' },
+      { role: 'paste' },
+      // { role: 'pasteandmatchstyle' },
+      { role: 'delete' },
+      { role: 'selectall' }
     ]
   },
   {
     label: 'View',
     submenu: [
-      {role: 'reload'},
-      {role: 'forcereload'},
-      {role: 'toggledevtools'},
+      { role: 'reload' },
+      { role: 'forcereload' },
+      { role: 'toggledevtools' },
       // {type: 'separator'},
       // {role: 'resetzoom'},
       // {role: 'zoomin'},
       // {role: 'zoomout'},
-      {type: 'separator'},
-      {role: 'togglefullscreen'}
+      { type: 'separator' },
+      { role: 'togglefullscreen' }
     ]
   },
   {
     role: 'window',
-    submenu: [
-      {role: 'minimize'},
-      {role: 'close'}
-    ]
+    submenu: [{ role: 'minimize' }, { role: 'close' }]
   },
   {
     role: 'help',
     submenu: [
       {
         label: 'Apparatus documentation',
-        click () { require('electron').shell.openExternal(config.docsURL) }
+        click () {
+          require('electron').shell.openExternal(config.docsURL)
+        }
       }
     ]
   }
@@ -54,37 +53,34 @@ if (process.platform === 'darwin') {
   template.unshift({
     label: app.getName(),
     submenu: [
-      {role: 'about'},
-      {type: 'separator'},
-      {role: 'services', submenu: []},
-      {type: 'separator'},
-      {role: 'hide'},
-      {role: 'hideothers'},
-      {role: 'unhide'},
-      {type: 'separator'},
-      {role: 'quit'}
+      { role: 'about' },
+      { type: 'separator' },
+      { role: 'services', submenu: [] },
+      { type: 'separator' },
+      { role: 'hide' },
+      { role: 'hideothers' },
+      { role: 'unhide' },
+      { type: 'separator' },
+      { role: 'quit' }
     ]
   })
 
   // Edit menu
   template[1].submenu.push(
-    {type: 'separator'},
+    { type: 'separator' },
     {
       label: 'Speech',
-      submenu: [
-        {role: 'startspeaking'},
-        {role: 'stopspeaking'}
-      ]
+      submenu: [{ role: 'startspeaking' }, { role: 'stopspeaking' }]
     }
   )
 
   // Window menu
   template[3].submenu = [
-    {role: 'close'},
-    {role: 'minimize'},
+    { role: 'close' },
+    { role: 'minimize' },
     // {role: 'zoom'},
-    {type: 'separator'},
-    {role: 'front'}
+    { type: 'separator' },
+    { role: 'front' }
   ]
 }
 
