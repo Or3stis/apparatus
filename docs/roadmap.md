@@ -89,9 +89,9 @@ Improvements on the functionality of the tool.
 - [ ] security assistant
 - [x] add dynamic color themes
 - [x] add expose option to graphs to show the information on all the nodes
-- [ ] add a menu bar
-- [ ] add a developer option on `npm start` that will allow refresh, hot reloading and other developer features
-- [ ] disallow page refresh (cmd + r) on non-developer mode
+- [x] add a menu bar
+- [x] add a developer option on `npm start` that will allow refresh, hot reloading and other developer features
+- [x] disallow page refresh (cmd + r) on non-developer mode
 
 ## beta release
 
