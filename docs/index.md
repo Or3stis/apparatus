@@ -53,8 +53,10 @@ git clone https://github.com/Or3stis/apparatus.git
 cd apparatus
 # Install dependencies
 npm install
-# to run the app
+# to run the app in the default mode
 npm start
+# to run the app in developer mode
+npm run dev
 ```
 
 Because the app is still in prototype stage, it is best to keep up to date with the most recent commits. To do so, before starting the app, type:
