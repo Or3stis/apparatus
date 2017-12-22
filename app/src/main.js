@@ -1,9 +1,19 @@
 const electron = require('electron')
-const config = require('../settings/config.js')
 // Module to control application life.
 const app = electron.app
 // Module to create native browser window.
 const BrowserWindow = electron.BrowserWindow
+
+const config = require('../settings/config.js')
+const appMenu = require('./appMenu.js')
+
+// check if the app is running on developer mode
+const mode = process.argv[2]
+if (mode === '-dev') {
+  console.log('ASTo in developer mode')
+} else {
+  console.log('ASTo in default mode')
+}
 
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
@@ -37,6 +47,8 @@ function createWindow () {
   mainWindow.once('ready-to-show', () => {
     mainWindow.show()
   })
+
+  appMenu(mode)
 }
 
 // This method will be called when Electron has finished

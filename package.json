@@ -5,6 +5,7 @@
   "main": "main.js",
   "scripts": {
     "lint": "prettier --no-semi --single-quote --write 'app/src/**/*.js' && standard 'app/src/**/*.js' --fix",
+    "dev": "electron app/src/main.js -dev",
     "start": "electron app/src/main.js"
   },
   "repository": {
