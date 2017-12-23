@@ -1,7 +1,6 @@
 // initializes the application and links it with the GUI
 
 // require core modules
-// const nodeInfo = require('./src/core/nodeInfo.js')
 const printTotalNodes = require('./core/printTotalNodes.js')
 const hoverNodeInfo = require('./core/hoverNodeInfo.js')
 const editMenu = require('./core/editMenu.js')
