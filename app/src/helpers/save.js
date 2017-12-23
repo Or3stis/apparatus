@@ -1,7 +1,7 @@
 // helper function to save graphs
 
 const printMsgTxt = require('./printMsgTxt.js')
-const jsonfile = require('jsonfile')
+const jsonfileWrite = require('jsonfile').writeFile
 const { dialog } = require('electron').remote
 
 // saves graph
@@ -19,7 +19,7 @@ module.exports = function save (cy) {
       ]
     },
     fileToSave => {
-      jsonfile.writeFile(fileToSave, fullgraph, err => {
+      jsonfileWrite(fileToSave, fullgraph, err => {
         if (err) {
           console.error(err.message)
         } else {
