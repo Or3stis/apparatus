@@ -92,6 +92,8 @@ Improvements on the functionality of the tool.
 - [✓] add a menu bar
 - [✓] add a developer option on `npm start` that will allow refresh, hot reloading and other developer features
 - [✓] disallow page refresh (cmd + r) on non-developer mode
+- [ ] identify and highlight insecure patterns
+- [ ] configurable insecure patterns
 
 ## beta release
 
