@@ -5,9 +5,9 @@ title: "Apparatus Documentation"
 
 If you have a question that is not answered in the wiki, please make a pull request (or be patient and hope it will be answered in the future).
 
-# Welcome to the apparatus wiki 🎉!
+# Welcome to the apparatus docs 🎉!
 
-1. [What is Apparatus?](httphttps://or3stis.github.io/apparatus/wikiwiki#what-is-apparatus)
+1. [What is Apparatus?](https://or3stis.github.io/apparatus/wikiwiki#what-is-apparatus)
 1. [The Apparatus Framework](https://or3stis.github.io/apparatus/wiki#the-apparatus-framework)
 1. [How to use ASTo](https://or3stis.github.io/apparatus/wiki#how-to-use-asto)
 1. [Color themes](https://or3stis.github.io/apparatus/wiki#color-themes)
