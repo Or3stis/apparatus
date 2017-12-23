@@ -7,13 +7,13 @@ If you have a question that is not answered in the wiki, please make a pull requ
 
 # Welcome to the apparatus docs 🎉!
 
-1. [What is Apparatus?](https://or3stis.github.io/apparatus/wikiwiki#what-is-apparatus)
-1. [The Apparatus Framework](https://or3stis.github.io/apparatus/wiki#the-apparatus-framework)
-1. [How to use ASTo](https://or3stis.github.io/apparatus/wiki#how-to-use-asto)
-1. [Color themes](https://or3stis.github.io/apparatus/wiki#color-themes)
-1. [Importing graphs from pcang files](https://or3stis.github.io/apparatus/wiki#generate-graphs-from-pcapng-files-experimental-feature)
-1. [Performing security analysis](https://or3stis.github.io/apparatus/wiki#performing-security-analysis)
-1. [The architecture of ASTo](https://or3stis.github.io/apparatus/wiki#the-architecture-of-asto)
+1. [What is Apparatus?](https://or3stis.github.io/apparatus/docs#what-is-apparatus)
+1. [The Apparatus Framework](https://or3stis.github.io/apparatus/docs#the-apparatus-framework)
+1. [How to use ASTo](https://or3stis.github.io/apparatus/docs#how-to-use-asto)
+1. [Color themes](https://or3stis.github.io/apparatus/docs#color-themes)
+1. [Importing graphs from pcang files](https://or3stis.github.io/apparatus/docs#generate-graphs-from-pcapng-files-experimental-feature)
+1. [Performing security analysis](https://or3stis.github.io/apparatus/docs#performing-security-analysis)
+1. [The architecture of ASTo](https://or3stis.github.io/apparatus/docs#the-architecture-of-asto)
 
 ## What is Apparatus?
 
@@ -189,7 +189,7 @@ let cy = cytoscape({
 
 In the fourth line the `system.elements` extension points to the elements object in the rendered graph. That value must be consistent in both the `/src/helpers/cyOptions.js` and the loaded graph file. In your graphs, the `.elements` object stores all the information about the graph (nodes, edges, etc.)
 
-In the style field, we import the stylistic choices of our graph. To make ASTo more modular, the graphs style configuration is stored in the [config](https://or3stis.github.io/apparatus/wiki#the-config-directory) directory. A cool feature of the tool (and of course cytoscape.js) is when a graph instance is stored, we also store its style choices. If you want you to share the graph with your friends, there is nothing stopping you (besides changing the style field to `graphStyle.style`.
+In the style field, we import the stylistic choices of our graph. To make ASTo more modular, the graphs style configuration is stored in the [config](https://or3stis.github.io/apparatus/docs#the-config-directory) directory. A cool feature of the tool (and of course cytoscape.js) is when a graph instance is stored, we also store its style choices. If you want you to share the graph with your friends, there is nothing stopping you (besides changing the style field to `graphStyle.style`.
 
 ## The `/settings` directory
 
