@@ -1,4 +1,4 @@
-// core modules, shared between all phases
+// bind functions to buttons in the UI
 
 const nodeSelection = require('./core/nodeSelection.js')
 const layout = require('./core/layout.js')
@@ -53,7 +53,7 @@ module.exports = function buttons (
   const select = document.getElementById('selection-id')
   select.addEventListener('click', e => nodeSelection(cy, e.target.textContent))
 
-  // bind the delete Button
+  // binds the delete Button
   const btnDelete = document.getElementById('delete')
   btnDelete.addEventListener('click', () => {
     deleteRestoreConcepts.deleteConcept(cy, selectedNode.out, selectedEdge.out)
@@ -83,7 +83,7 @@ module.exports = function buttons (
   btnSave.addEventListener('click', () => {
     save(cy)
   })
-  // navigates the user to the index.js
+  // navigates the user to the home UI
   const btnHome = document.getElementById('home-btn')
   btnHome.addEventListener('click', () => {
     watcher.closeNotification(cy)
@@ -140,7 +140,7 @@ module.exports = function buttons (
     // verify threats
     const btnThreatVer = document.getElementById('threat-ver-btn')
     btnThreatVer.addEventListener('click', () => {
-      threatVerification(cy) // core module
+      threatVerification(cy)
     })
     // model transformation
     const btnTransform = document.getElementById('transform-btn')
@@ -150,7 +150,7 @@ module.exports = function buttons (
     // module selection
     const group = document.getElementById('module-group')
     group.addEventListener('click', e => {
-      moduleSelection(cy, e.target.textContent) // global module
+      moduleSelection(cy, e.target.textContent)
     })
     // phases model validation button
     const btnModelVal = document.getElementById('model-val-btn')
@@ -161,7 +161,7 @@ module.exports = function buttons (
     // verify threats
     const btnThreatVer = document.getElementById('threat-ver-btn')
     btnThreatVer.addEventListener('click', () => {
-      threatVerification(cy) // core module
+      threatVerification(cy)
     })
     // model transformation
     const btnTransform = document.getElementById('transform-btn')
@@ -186,7 +186,7 @@ module.exports = function buttons (
     // module selection
     const group = document.getElementById('module-group')
     group.addEventListener('click', e => {
-      moduleSelection(cy, e.target.textContent) // core module
+      moduleSelection(cy, e.target.textContent)
     })
   }
 }

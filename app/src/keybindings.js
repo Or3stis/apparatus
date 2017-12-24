@@ -1,4 +1,4 @@
-// keybindings
+// keybindings and command propmpt options
 
 const config = require('../settings/config.js')
 

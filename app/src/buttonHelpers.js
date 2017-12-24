@@ -1,4 +1,4 @@
-// assigns specific functions to each
+// helper module to assign specific functions to buttons depending on the phase
 
 // require design modules
 const dgnModelValidation = require('./dgn/dgnModelValidation.js')
