@@ -87,7 +87,7 @@ if (process.platform === 'darwin') {
 let menu = Menu.buildFromTemplate(template)
 
 module.exports = function appMenu (mode) {
-  if (mode !== '-dev') {
+  if (mode !== 'development') {
     // enable the reload option in Views menu
     menu.items[2].submenu.items[0].visible = false
     menu.items[2].submenu.items[0].enabled = false

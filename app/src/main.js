@@ -8,8 +8,8 @@ const config = require('../settings/config.js')
 const appMenu = require('./appMenu.js')
 
 // check if the app is running on developer mode
-const mode = process.argv[2]
-if (mode === '-dev') {
+const mode = process.env.NODE_ENV
+if (mode === 'development') {
   console.log('ASTo in developer mode')
 } else {
   console.log('ASTo in default mode')
