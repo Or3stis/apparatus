@@ -1,7 +1,7 @@
 {
-  "name": "apparatus",
+  "name": "5G-SAT",
   "version": "0.3.0",
-  "description": "an IoT network security analysis and visualization tool",
+  "description": "A graphical security analysis tool for 5G systems",
   "main": "main.js",
   "scripts": {
     "lint": "prettier --no-semi --single-quote --write 'app/src/**/*.js' && standard 'app/src/**/*.js' --fix",
@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Or3stis/apparatus"
+    "url": "git+https://github.com/CapriTechLimited/5G-SAT"
   },
   "keywords": [
     "Electron",
@@ -19,9 +19,9 @@
   "author": "or3stis",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Or3stis/apparatus/issues"
+    "url": "https://github.com/CapriTechLimited/5G-SAT/issues"
   },
-  "homepage": "https://github.com/Or3stis/apparatus/#readme",
+  "homepage": "https://github.com/CapriTechLimited/5G-SAT/#readme",
   "dependencies": {
     "cytoscape": "^3.2.4",
     "electron": "^1.8.1",
