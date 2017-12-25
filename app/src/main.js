@@ -7,14 +7,6 @@ const BrowserWindow = electron.BrowserWindow
 const config = require('../settings/config.js')
 const appMenu = require('./appMenu.js')
 
-// check if the app is running on developer mode
-const mode = process.env.NODE_ENV
-if (mode === 'development') {
-  console.log('ASTo in developer mode')
-} else {
-  console.log('ASTo in default mode')
-}
-
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
 let mainWindow
@@ -48,7 +40,8 @@ function createWindow () {
     mainWindow.show()
   })
 
-  appMenu(mode)
+  // create the application's menu
+  appMenu()
 }
 
 // This method will be called when Electron has finished
