@@ -19,8 +19,7 @@
 
 body {
   background-color: var(--main-bg-color);
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue',
-    sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', 'Ubuntu', sans-serif;
   color: var(--main-tx-color);
   height: 100%;
   width: 100%;
@@ -33,11 +32,6 @@ body {
   -webkit-user-select: none;
   overflow: hidden;
 }
-
-/*remove outlines*/
-/* *:focus {
-  outline: none;
-} */
 
 .title-bar {
   position: relative;
@@ -55,26 +49,20 @@ body {
   height: 97vh;
   display: grid;
   grid-template-columns: 50px 1fr 165px;
-  grid-template-areas:
-    'action-bar graph sidebar' 'action-bar graph sidebar'
-    'action-bar graph sidebar';
+  grid-template-areas: 'action-bar graph sidebar' 'action-bar graph sidebar' 'action-bar graph sidebar';
 }
-
 .action-bar {
   display: none;
   grid-area: action-bar;
   background-color: var(--main-dark-bg-color);
 }
-
 .components {
   margin: 5px;
 }
-
 .graph {
   background-size: cover;
   grid-area: graph;
 }
-
 .sidebar {
   margin-top: 10px;
   font-size: 12px;
@@ -96,6 +84,7 @@ body {
   align-items: flex-start;
   align-content: flex-start;
 }
+
 /*data in message-area is shown as a bubble*/
 .bubble {
   position: relative;
@@ -111,7 +100,6 @@ body {
 .bubble:hover {
   background-color: var(--black-color);
 }
-
 .input-form {
   background-color: var(--main-bg-color);
   border: 1px solid;
@@ -211,14 +199,14 @@ input::-webkit-input-placeholder {
   border-color: var(--main-dark-bg-color);
 }
 /*flash color when clicked*/
-.btn-icon:active,
-.icon:active {
+.btn-icon:active, .icon:active {
   fill: var(--main-tx-color);
 }
 .btn-icon:focus {
   fill: var(--blue-color);
   outline: none;
 }
+
 /*used by expose.js*/
 .active-button {
   background-color: var(--blue-color);
@@ -288,6 +276,7 @@ input::-webkit-input-placeholder {
   border-color: var(--blue-color);
   color: var(--blue-color);
 }
+
 /*flash color when clicked*/
 .label-btn:active {
   border-color: var(--main-tx-color);
@@ -330,6 +319,7 @@ input::-webkit-input-placeholder {
   outline: none;
 }
 
+/* scroll bar styling */
 ::-webkit-scrollbar {
   width: 7px;
   height: 2px;
