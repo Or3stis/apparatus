@@ -11,6 +11,8 @@ const save = require('./helpers/save.js')
 const theme = require('./helpers/theme.js')
 const watcher = require('./helpers/watcher.js')
 
+const insecurePatterns = require('./imp/insecurePatterns.js')
+
 const buttonHelpers = require('./buttonHelpers.js')
 
 module.exports = function (
@@ -81,6 +83,9 @@ module.exports = function (
         document.getElementById('url-button').addEventListener('click', () => {
           require('electron').shell.openExternal(config.docsURL)
         })
+        break
+      case 'insecure':
+        insecurePatterns(cy)
         break
       case 'validate':
         buttonHelpers.validateHelper(cy, phase)
