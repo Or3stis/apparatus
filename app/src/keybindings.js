@@ -85,7 +85,9 @@ module.exports = function (
         })
         break
       case 'insecure':
-        insecurePatterns(cy)
+        if (phase === 'implementation') {
+          insecurePatterns(cy)
+        }
         break
       case 'validate':
         buttonHelpers.validateHelper(cy, phase)
