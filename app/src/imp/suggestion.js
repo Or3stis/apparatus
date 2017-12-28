@@ -22,7 +22,20 @@ module.exports = function suggestion (cy) {
       printMsgTxt(
         `${
           node.data().id
-        }: devices in the physical layer require physical security`
+        }: devices in the perception layer require physical security.`
+      )
+    }
+
+    if (
+      node.data().asto.concept === 'network connection' &&
+      node.data().asto.description === 'wireless'
+    ) {
+      node.removeClass('faded')
+      node.addClass('attention')
+      printMsgTxt(
+        `${
+          node.data().id
+        }: wireless connections are subject to information disclosure attacks. Use encrypted protocols.`
       )
     }
   })
