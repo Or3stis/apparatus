@@ -11,7 +11,7 @@ const save = require('./helpers/save.js')
 const theme = require('./helpers/theme.js')
 const watcher = require('./helpers/watcher.js')
 
-const insecurePatterns = require('./imp/insecurePatterns.js')
+const suggestion = require('./imp/suggestion.js')
 
 const buttonHelpers = require('./buttonHelpers.js')
 
@@ -84,9 +84,9 @@ module.exports = function (
           require('electron').shell.openExternal(config.docsURL)
         })
         break
-      case 'insecure':
+      case 'suggestion':
         if (phase === 'implementation') {
-          insecurePatterns(cy)
+          suggestion(cy)
         }
         break
       case 'validate':

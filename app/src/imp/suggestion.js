@@ -1,11 +1,15 @@
 // identifies insecure patterns in the models
 const printMsgTxt = require('../helpers/printMsgTxt.js')
 
-// const patternList = {
-//   perception: 'physical security'
+// const suggestionList = {
+//   s0: {
+//     concept: 'device',
+//     layer: 'perception',
+//     output: 'devices in the physical layer require physical security'
+//   }
 // }
 
-module.exports = function insecurePatterns (cy) {
+module.exports = function suggestion (cy) {
   cy.elements().addClass('faded')
 
   cy.nodes().map(node => {
@@ -15,7 +19,11 @@ module.exports = function insecurePatterns (cy) {
     ) {
       node.removeClass('faded')
       node.addClass('attention')
-      printMsgTxt('physical security')
+      printMsgTxt(
+        `${
+          node.data().id
+        }: devices in the physical layer require physical security`
+      )
     }
   })
 }
