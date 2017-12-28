@@ -1,6 +1,7 @@
-// identifies insecure patterns in the models
+// displays security suggestion depending on information found in the model
 const printMsgTxt = require('../helpers/printMsgTxt.js')
 
+// contains the attribute/connection patterns and the suggestions
 const list = {
   s0: {
     concept: 'device',
@@ -16,16 +17,19 @@ const list = {
 }
 
 module.exports = function suggestion (cy) {
+  // fade out all the nodes
   cy.elements().addClass('faded')
 
   cy.nodes().map(node => {
     let nd = node.data().asto
+
+    // s0 suggestion
     if (nd.concept === list.s0.concept && nd.layer === list.s0.layer) {
       node.removeClass('faded')
       node.addClass('attention')
       printMsgTxt(`${node.data().id}: ${list.s0.suggestion}`)
     }
-
+    // s1 suggestion
     if (
       nd.concept === list.s1.concept &&
       nd.description === list.s1.description
