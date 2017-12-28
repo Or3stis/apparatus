@@ -34,6 +34,7 @@ module.exports = function (
 • change color theme: <b>toggle</b>
 • clear sidebar: <b>clear</b>
 • model validation: <b>validate</b>
+• security suggestions: <b>suggestion</b>
 • search for attribures: <b>keyword</b>`
 
   // help menu for Linux and Windows
@@ -46,6 +47,7 @@ module.exports = function (
 • change color theme: <b>toggle</b>
 • clear sidebar: <b>clear</b>
 • model validation: <b>validate</b>
+• security suggestions: <b>suggestion</b>
 • search for attribures: <b>keyword</b>`
 
   // adds the url of ASTo docs
