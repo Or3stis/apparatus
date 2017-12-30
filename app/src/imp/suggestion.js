@@ -21,18 +21,18 @@ module.exports = function suggestion (cy) {
   cy.elements().addClass('faded')
 
   cy.nodes().map(node => {
-    let nd = node.data().asto
+    let nodeData = node.data().asto
 
     // s0 suggestion
-    if (nd.concept === list.s0.concept && nd.layer === list.s0.layer) {
+    if (nodeData.concept === list.s0.concept && nodeData.layer === list.s0.layer) {
       node.removeClass('faded')
       node.addClass('attention')
       printMsgTxt(`${node.data().id}: ${list.s0.suggestion}`)
     }
     // s1 suggestion
     if (
-      nd.concept === list.s1.concept &&
-      nd.description === list.s1.description
+      nodeData.concept === list.s1.concept &&
+      nodeData.description === list.s1.description
     ) {
       node.removeClass('faded')
       node.addClass('attention')
