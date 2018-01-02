@@ -20,14 +20,19 @@ module.exports = function suggestion (cy) {
   // fade out all the nodes
   cy.elements().addClass('faded')
 
+  let s0nodes = []
+  let s1nodes = []
   cy.nodes().map(node => {
     let nodeData = node.data().asto
 
     // s0 suggestion
-    if (nodeData.concept === list.s0.concept && nodeData.layer === list.s0.layer) {
+    if (
+      nodeData.concept === list.s0.concept &&
+      nodeData.layer === list.s0.layer
+    ) {
       node.removeClass('faded')
       node.addClass('attention')
-      printMsgTxt(`${node.data().id}: ${list.s0.suggestion}`)
+      s0nodes.push(node.data().id)
     }
     // s1 suggestion
     if (
@@ -36,7 +41,11 @@ module.exports = function suggestion (cy) {
     ) {
       node.removeClass('faded')
       node.addClass('attention')
-      printMsgTxt(`${node.data().id}: ${list.s1.suggestion}`)
+      s1nodes.push(node.data().id)
     }
   })
+  // s0 suggestion
+  printMsgTxt(`${s0nodes}: ${list.s0.suggestion}`)
+  // s1 suggestion
+  printMsgTxt(`${s1nodes}: ${list.s1.suggestion}`)
 }
