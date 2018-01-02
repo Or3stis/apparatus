@@ -24,6 +24,7 @@ module.exports = function suggestion (cy) {
   let s1nodes = []
   cy.nodes().map(node => {
     let nodeData = node.data().asto
+    let nodeID = node.data().id
 
     // s0 suggestion
     if (
@@ -32,7 +33,7 @@ module.exports = function suggestion (cy) {
     ) {
       node.removeClass('faded')
       node.addClass('attention')
-      s0nodes.push(node.data().id)
+      s0nodes.push(nodeID)
     }
     // s1 suggestion
     if (
@@ -41,7 +42,7 @@ module.exports = function suggestion (cy) {
     ) {
       node.removeClass('faded')
       node.addClass('attention')
-      s1nodes.push(node.data().id)
+      s1nodes.push(nodeID)
     }
   })
   // s0 suggestion
