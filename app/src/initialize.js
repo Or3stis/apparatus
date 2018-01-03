@@ -33,10 +33,12 @@ module.exports = function initialize (cy, phase) {
   // stores the initial state of the nodes in the graph
   const graphNodes = cy.nodes()
   // counter variable to create unique sequential node ids in addComponents.js
-  let nodeCounter = ''
+  let nodeCounterID = ''
   cy.nodes().map(node => {
-    nodeCounter = node.data().id
+    nodeCounterID = node.data().id
   })
+  // turn the counter into an number and remove the 'n'
+  const nodeCounter = Number(nodeCounterID.replace('n', ''))
 
   // cy.on performs actions on intrection with the graph
   // actions when tapping on node
