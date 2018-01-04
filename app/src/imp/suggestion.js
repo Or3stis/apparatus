@@ -13,6 +13,12 @@ const list = {
     description: 'wireless',
     suggestion:
       'wireless connections are subject to information disclosure attacks. Use encrypted protocols.'
+  },
+  s2: {
+    concept: 'device',
+    update: 'false',
+    suggestion:
+      'treat devices that cannot be updated as compromised.'
   }
 }
 
@@ -22,6 +28,7 @@ module.exports = function suggestion (cy) {
 
   let s0nodes = []
   let s1nodes = []
+  let s2nodes = []
   cy.nodes().map(node => {
     let nodeData = node.data().asto
     let nodeID = node.data().id
@@ -44,9 +51,20 @@ module.exports = function suggestion (cy) {
       node.addClass('attention')
       s1nodes.push(nodeID)
     }
+    // s2 suggestion
+    if (
+      nodeData.concept === list.s2.concept &&
+      nodeData.update === list.s2.update
+    ) {
+      node.removeClass('faded')
+      node.addClass('attention')
+      s2nodes.push(nodeID)
+    }
   })
   // s0 suggestion
-  printMsgTxt(`${s0nodes}: ${list.s0.suggestion}`)
+  if (s0nodes.length !== 0) printMsgTxt(`${s0nodes}: ${list.s0.suggestion}`)
   // s1 suggestion
-  printMsgTxt(`${s1nodes}: ${list.s1.suggestion}`)
+  if (s1nodes.length !== 0) printMsgTxt(`${s1nodes}: ${list.s1.suggestion}`)
+  // s2 suggestion
+  if (s2nodes.length !== 0) printMsgTxt(`${s2nodes}: ${list.s2.suggestion}`)
 }
