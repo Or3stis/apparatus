@@ -19,6 +19,12 @@ const list = {
     update: 'false',
     suggestion:
       'treat devices that cannot be updated as compromised.'
+  },
+  s3: {
+    concept: 'application',
+    update: 'false',
+    suggestion:
+      'treat applications that cannot be updated as compromised.'
   }
 }
 
@@ -29,6 +35,7 @@ module.exports = function suggestion (cy) {
   let s0nodes = []
   let s1nodes = []
   let s2nodes = []
+  let s3nodes = []
   cy.nodes().map(node => {
     let nodeData = node.data().asto
     let nodeID = node.data().id
@@ -60,6 +67,15 @@ module.exports = function suggestion (cy) {
       node.addClass('attention')
       s2nodes.push(nodeID)
     }
+    // s3 suggestion
+    if (
+      nodeData.concept === list.s3.concept &&
+      nodeData.update === list.s3.update
+    ) {
+      node.removeClass('faded')
+      node.addClass('attention')
+      s3nodes.push(nodeID)
+    }
   })
   // s0 suggestion
   if (s0nodes.length !== 0) printMsgTxt(`${s0nodes}: ${list.s0.suggestion}`)
@@ -67,4 +83,6 @@ module.exports = function suggestion (cy) {
   if (s1nodes.length !== 0) printMsgTxt(`${s1nodes}: ${list.s1.suggestion}`)
   // s2 suggestion
   if (s2nodes.length !== 0) printMsgTxt(`${s2nodes}: ${list.s2.suggestion}`)
+  // s3 suggestion
+  if (s3nodes.length !== 0) printMsgTxt(`${s3nodes}: ${list.s3.suggestion}`)
 }
