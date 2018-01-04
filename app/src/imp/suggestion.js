@@ -17,14 +17,12 @@ const list = {
   s2: {
     concept: 'device',
     update: 'false',
-    suggestion:
-      'treat devices that cannot be updated as compromised.'
+    suggestion: 'treat devices that cannot be updated as compromised.'
   },
   s3: {
     concept: 'application',
     update: 'false',
-    suggestion:
-      'treat applications that cannot be updated as compromised.'
+    suggestion: 'treat applications that cannot be updated as compromised.'
   }
 }
 
@@ -32,51 +30,50 @@ module.exports = function suggestion (cy) {
   // fade out all the nodes
   cy.elements().addClass('faded')
 
+  // arrays to store the insecure node of each suggestion
   let s0nodes = []
   let s1nodes = []
   let s2nodes = []
   let s3nodes = []
+
+  // compares the suggestion data with the ones on the graph
+  // @node: node instance in the graph
+  // @concept: node concept in the suggestion array
+  // @graphAttribute: attribute in the graph that will be compared
+  // @attribute: attribute in the suggestion array
+  // @nodeArray: array that will store the insecure nodes
+  const compare = (node, concept, graphAttribute, attribute, nodeArray) => {
+    // compare the graph nodes will the suggestions
+    if (node.data().asto.concept === concept && graphAttribute === attribute) {
+      // apply css rules in the graph
+      node.removeClass('faded')
+      node.addClass('attention')
+
+      // push ID of the insecure ndoes in the array
+      nodeArray.push(node.data().id)
+    }
+  }
+
   cy.nodes().map(node => {
     let nodeData = node.data().asto
-    let nodeID = node.data().id
 
     // s0 suggestion
-    if (
-      nodeData.concept === list.s0.concept &&
-      nodeData.layer === list.s0.layer
-    ) {
-      node.removeClass('faded')
-      node.addClass('attention')
-      s0nodes.push(nodeID)
-    }
+    compare(node, list.s0.concept, nodeData.layer, list.s0.layer, s0nodes)
     // s1 suggestion
-    if (
-      nodeData.concept === list.s1.concept &&
-      nodeData.description === list.s1.description
-    ) {
-      node.removeClass('faded')
-      node.addClass('attention')
-      s1nodes.push(nodeID)
-    }
+    compare(
+      node,
+      list.s1.concept,
+      nodeData.description,
+      list.s1.description,
+      s1nodes
+    )
     // s2 suggestion
-    if (
-      nodeData.concept === list.s2.concept &&
-      nodeData.update === list.s2.update
-    ) {
-      node.removeClass('faded')
-      node.addClass('attention')
-      s2nodes.push(nodeID)
-    }
+    compare(node, list.s2.concept, nodeData.update, list.s2.update, s2nodes)
     // s3 suggestion
-    if (
-      nodeData.concept === list.s3.concept &&
-      nodeData.update === list.s3.update
-    ) {
-      node.removeClass('faded')
-      node.addClass('attention')
-      s3nodes.push(nodeID)
-    }
+    compare(node, list.s3.concept, nodeData.update, list.s3.update, s3nodes)
   })
+
+  // display the suggestions
   // s0 suggestion
   if (s0nodes.length !== 0) printMsgTxt(`${s0nodes}: ${list.s0.suggestion}`)
   // s1 suggestion
