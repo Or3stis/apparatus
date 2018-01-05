@@ -45,10 +45,10 @@ const compare = (node, concept, graphAttribute, attribute, nodeArray) => {
 }
 
 // displays the insecure nodes and the suggestion
-const showResults = (nodes, suggestion) => {
+const showResults = (nodeArray, suggestion) => {
   // only show the suggestion if the node array is not empty
-  if (nodes.length !== 0) {
-    printMsgTxt(`${nodes}: ${suggestion}`)
+  if (nodeArray.length !== 0) {
+    printMsgTxt(`${nodeArray}: ${suggestion}`)
   }
 }
 
