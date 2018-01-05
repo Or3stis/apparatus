@@ -26,6 +26,32 @@ const list = {
   }
 }
 
+// compares the suggestion data with the ones on the graph
+// @node: node instance in the graph
+// @concept: node concept in the suggestion array
+// @graphAttribute: attribute in the graph that will be compared
+// @attribute: attribute in the suggestion array
+// @nodeArray: array that will store the insecure nodes
+const compare = (node, concept, graphAttribute, attribute, nodeArray) => {
+  // compare the graph nodes will the suggestions
+  if (node.data().asto.concept === concept && graphAttribute === attribute) {
+    // apply css rules in the graph
+    node.removeClass('faded')
+    node.addClass('attention')
+
+    // push ID of the insecure ndoes in the array
+    nodeArray.push(node.data().id)
+  }
+}
+
+// displays the insecure nodes and the suggestion
+const showResults = (nodes, suggestion) => {
+  // only show the suggestion if the node array is not empty
+  if (nodes.length !== 0) {
+    printMsgTxt(`${nodes}: ${suggestion}`)
+  }
+}
+
 module.exports = function suggestion (cy) {
   // fade out all the nodes
   cy.elements().addClass('faded')
@@ -35,24 +61,6 @@ module.exports = function suggestion (cy) {
   let s1nodes = []
   let s2nodes = []
   let s3nodes = []
-
-  // compares the suggestion data with the ones on the graph
-  // @node: node instance in the graph
-  // @concept: node concept in the suggestion array
-  // @graphAttribute: attribute in the graph that will be compared
-  // @attribute: attribute in the suggestion array
-  // @nodeArray: array that will store the insecure nodes
-  const compare = (node, concept, graphAttribute, attribute, nodeArray) => {
-    // compare the graph nodes will the suggestions
-    if (node.data().asto.concept === concept && graphAttribute === attribute) {
-      // apply css rules in the graph
-      node.removeClass('faded')
-      node.addClass('attention')
-
-      // push ID of the insecure ndoes in the array
-      nodeArray.push(node.data().id)
-    }
-  }
 
   cy.nodes().map(node => {
     let nodeData = node.data().asto
@@ -75,11 +83,11 @@ module.exports = function suggestion (cy) {
 
   // display the suggestions
   // s0 suggestion
-  if (s0nodes.length !== 0) printMsgTxt(`${s0nodes}: ${list.s0.suggestion}`)
+  showResults(s0nodes, list.s0.suggestion)
   // s1 suggestion
-  if (s1nodes.length !== 0) printMsgTxt(`${s1nodes}: ${list.s1.suggestion}`)
+  showResults(s1nodes, list.s1.suggestion)
   // s2 suggestion
-  if (s2nodes.length !== 0) printMsgTxt(`${s2nodes}: ${list.s2.suggestion}`)
+  showResults(s2nodes, list.s2.suggestion)
   // s3 suggestion
-  if (s3nodes.length !== 0) printMsgTxt(`${s3nodes}: ${list.s3.suggestion}`)
+  showResults(s3nodes, list.s3.suggestion)
 }
