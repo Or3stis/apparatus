@@ -38,6 +38,7 @@ const compare = (node, concept, graphAttribute, attribute, nodeArray) => {
     // apply css rules in the graph
     node.removeClass('faded')
     node.addClass('attention')
+    node.addClass('label-id')
 
     // push ID of the insecure ndoes in the array
     nodeArray.push(node.data().id)
