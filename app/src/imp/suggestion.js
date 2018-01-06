@@ -1,28 +1,28 @@
 // displays security suggestion depending on information found in the model
-const printMsgTxt = require('../helpers/printMsgTxt.js')
+const printMsgHTML = require('../helpers/printMsgHTML.js')
 
 // contains the attribute/connection patterns and the suggestions
 const list = {
   s0: {
     concept: 'device',
     layer: 'perception',
-    suggestion: 'devices in the perception layer require physical security.'
+    suggestion: 'Devices in the perception layer require physical security.'
   },
   s1: {
     concept: 'network connection',
     description: 'wireless',
     suggestion:
-      'wireless connections are subject to information disclosure attacks. Use encrypted protocols.'
+      'Wireless connections are subject to information disclosure attacks. Use encrypted protocols.'
   },
   s2: {
     concept: 'device',
     update: 'false',
-    suggestion: 'treat devices that cannot be updated as compromised.'
+    suggestion: 'Treat devices that cannot be updated as compromised.'
   },
   s3: {
     concept: 'application',
     update: 'false',
-    suggestion: 'treat applications that cannot be updated as compromised.'
+    suggestion: 'Treat applications that cannot be updated as compromised.'
   }
 }
 
@@ -49,7 +49,9 @@ const compare = (node, concept, graphAttribute, attribute, nodeArray) => {
 const showResults = (nodeArray, suggestion) => {
   // only show the suggestion if the node array is not empty
   if (nodeArray.length !== 0) {
-    printMsgTxt(`${nodeArray}: ${suggestion}`)
+    printMsgHTML(
+      `Nodes ID: <strong>${nodeArray}</strong> <br><br>${suggestion}`
+    )
   }
 }
 
