@@ -30,12 +30,12 @@ module.exports = function (
 • delete element: ⌘⌫
 • restore node: ⌘Z
 • save as: ⇧⌘S
-• view phase metamodel: <b>:metamodel</b>
-• change color theme: <b>:toggle</b>
-• clear sidebar: <b>:clear</b>
-• model validation: <b>:validate</b>
-• security suggestions: <b>:suggestion</b>
-• search for attribures: <b>:keyword</b>`
+• view phase metamodel <b>:metamodel</b>
+• change color theme <b>:toggle</b>
+• clear sidebar <b>:clear</b>
+• model validation <b>:validate</b>
+• security suggestions <b>:suggestion</b>
+• search for attribures <b>:keyword</b>`
 
   // help menu for Linux and Windows
   const helpMenu = `• focus on console: ctrl+L
@@ -43,12 +43,12 @@ module.exports = function (
 • delete element: ctrl+backspace
 • restore node: ctrl+Z
 • save as: shift+ctrl+S
-• view phase metamodel: <b>:metamodel</b>
-• change color theme: <b>:toggle</b>
-• clear sidebar: <b>:clear</b>
-• model validation: <b>:validate</b>
-• security suggestions: <b>:suggestion</b>
-• search for attribures: <b>:keyword</b>`
+• view phase metamodel <b>:metamodel</b>
+• change color theme <b>:toggle</b>
+• clear sidebar <b>:clear</b>
+• model validation <b>:validate</b>
+• security suggestions <b>:suggestion</b>
+• search for attribures <b>:keyword</b>`
 
   // adds the url of ASTo docs
   const docsURLBtn = `click to view <button id='url-button' class='menu-btn' style='color: var(--main-tx-color); background-color: var(--main-bg-color); width: 45px; height: 25px;'>docs</button>`
