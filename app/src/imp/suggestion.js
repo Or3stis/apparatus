@@ -26,13 +26,13 @@ const list = {
   }
 }
 
-// compares the suggestion data with the ones on the graph
+// find nodes of interest based on the data of the list
 // @node: node instance in the graph
 // @concept: node concept in the suggestion array
 // @graphAttribute: attribute in the graph that will be compared
 // @attribute: attribute in the suggestion array
 // @nodeArray: array that will store the insecure nodes
-const compare = (node, concept, graphAttribute, attribute, nodeArray) => {
+const findNodes = (node, concept, graphAttribute, attribute, nodeArray) => {
   // compare the graph nodes will the suggestions
   if (node.data().asto.concept === concept && graphAttribute === attribute) {
     // apply css rules in the graph
@@ -69,9 +69,9 @@ module.exports = function suggestion (cy) {
     let nodeData = node.data().asto
 
     // s0 suggestion
-    compare(node, list.s0.concept, nodeData.layer, list.s0.layer, s0nodes)
+    findNodes(node, list.s0.concept, nodeData.layer, list.s0.layer, s0nodes)
     // s1 suggestion
-    compare(
+    findNodes(
       node,
       list.s1.concept,
       nodeData.description,
@@ -79,9 +79,9 @@ module.exports = function suggestion (cy) {
       s1nodes
     )
     // s2 suggestion
-    compare(node, list.s2.concept, nodeData.update, list.s2.update, s2nodes)
+    findNodes(node, list.s2.concept, nodeData.update, list.s2.update, s2nodes)
     // s3 suggestion
-    compare(node, list.s3.concept, nodeData.update, list.s3.update, s3nodes)
+    findNodes(node, list.s3.concept, nodeData.update, list.s3.update, s3nodes)
   })
 
   // display the suggestions on the message area
