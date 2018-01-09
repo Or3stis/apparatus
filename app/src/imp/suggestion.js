@@ -45,7 +45,7 @@ const compare = (node, concept, graphAttribute, attribute, nodeArray) => {
   }
 }
 
-// displays the insecure nodes and the suggestion
+// displays the nodes of interest and the suggestion
 const showResults = (nodeArray, suggestion) => {
   // only show the suggestion if the node array is not empty
   if (nodeArray.length !== 0) {
@@ -59,7 +59,7 @@ module.exports = function suggestion (cy) {
   // fade out all the nodes
   cy.elements().addClass('faded')
 
-  // arrays to store the insecure node of each suggestion
+  // arrays to store the nodes of interest of each suggestion
   let s0nodes = []
   let s1nodes = []
   let s2nodes = []
