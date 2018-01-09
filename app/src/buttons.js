@@ -97,13 +97,6 @@ module.exports = function buttons (
     document.getElementById('container-node-id').style.display = 'none'
   })
 
-  // loads a graph
-  // const loadGraph = (cy) => {
-  //   const buttonLoad = document.getElementById('load-button')
-  //   buttonLoad.addEventListener('click', () => {
-  //     load(cy)
-  //   })
-
   // bind label buttons
   const hideLabelsBtn = document.getElementById('hide-label')
   hideLabelsBtn.addEventListener('click', () => {
@@ -112,22 +105,26 @@ module.exports = function buttons (
     cy.nodes().removeClass('label-dsc')
     cy.edges().removeClass('label-edges')
   })
+
   const showLabelsEdgeBtn = document.getElementById('show-label-edge')
   showLabelsEdgeBtn.addEventListener('click', () => {
     cy.edges().addClass('label-edges')
   })
+
   const showLabelNodeBtn = document.getElementById('show-label-node')
   showLabelNodeBtn.addEventListener('click', () => {
     cy.nodes().removeClass('label-id')
     cy.nodes().removeClass('label-dsc')
     cy.nodes().addClass('label-nodes')
   })
+
   const showIdNodeBtn = document.getElementById('show-node-id')
   showIdNodeBtn.addEventListener('click', () => {
     cy.nodes().removeClass('label-nodes')
     cy.nodes().removeClass('label-dsc')
     cy.nodes().addClass('label-id')
   })
+
   const showDiscNodeBtn = document.getElementById('show-node-disc')
   showDiscNodeBtn.addEventListener('click', () => {
     cy.nodes().removeClass('label-nodes')
@@ -135,23 +132,26 @@ module.exports = function buttons (
     cy.nodes().addClass('label-dsc')
   })
 
-  // buttons specific to each phase
+  // buttons bound to each phase
   if (phase === 'design') {
     // verify threats
     const btnThreatVer = document.getElementById('threat-ver-btn')
     btnThreatVer.addEventListener('click', () => {
       threatVerification(cy)
     })
+
     // model transformation
     const btnTransform = document.getElementById('transform-btn')
     btnTransform.addEventListener('click', () => {
       transformDgn2Imp(cy, nodeCounter)
     })
+
     // module selection
     const group = document.getElementById('module-group')
     group.addEventListener('click', e => {
       moduleSelection(cy, e.target.textContent)
     })
+
     // phases model validation button
     const btnModelVal = document.getElementById('model-val-btn')
     btnModelVal.addEventListener('click', () => {
@@ -163,26 +163,31 @@ module.exports = function buttons (
     btnThreatVer.addEventListener('click', () => {
       threatVerification(cy)
     })
+
     // model transformation
     const btnTransform = document.getElementById('transform-btn')
     btnTransform.addEventListener('click', () => {
       transformImp2Dgn(cy)
     })
+
     // verify vulnerabilities
     const btnVulnVer = document.getElementById('vuln-ver-btn')
     btnVulnVer.addEventListener('click', () => {
       vulnVerification(cy)
     })
+
     // find vulnerabilities
     const btnFindVuln = document.getElementById('find-vuln-btn')
     btnFindVuln.addEventListener('click', () => {
       findVulns(cy)
     })
+
     // phases model validation button
     const btnModelVal = document.getElementById('model-val-btn')
     btnModelVal.addEventListener('click', () => {
       buttonHelpers.validateHelper(cy, phase)
     })
+
     // module selection
     const group = document.getElementById('module-group')
     group.addEventListener('click', e => {

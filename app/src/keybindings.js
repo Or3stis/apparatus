@@ -2,17 +2,21 @@
 
 const config = require('../settings/config.js')
 
+// require core modules
 const searchAttribute = require('./core/searchAttribute.js')
 const showMetamodel = require('./core/showMetamodel.js')
 const deleteRestoreConcepts = require('./core/deleteRestoreConcepts.js')
 
+// require helper modules
 const printMsgHTML = require('./helpers/printMsgHTML.js')
 const save = require('./helpers/save.js')
 const theme = require('./helpers/theme.js')
 const watcher = require('./helpers/watcher.js')
 
+// require implementation modules
 const suggestion = require('./imp/suggestion.js')
 
+// require helpers for the buttons
 const buttonHelpers = require('./buttonHelpers.js')
 
 module.exports = function (

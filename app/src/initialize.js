@@ -8,6 +8,7 @@ const editEdge = require('./core/editEdge.js')
 
 // require helper functions
 const rmElement = require('./helpers/rmElement.js')
+
 // require buttons and keybindings
 const buttons = require('./buttons.js')
 const keybindings = require('./keybindings.js')

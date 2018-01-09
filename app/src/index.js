@@ -4,7 +4,8 @@ const homeMenu = require('./homeMenu.js')
 const theme = require('./helpers/theme.js')
 const config = require('../settings/config.js')
 
-// makes the initial color render
+// set the first color paint theme
 theme.setTheme(config.colorTheme)
-// loads up the menu screen
+
+// load up the menu screen
 homeMenu()
