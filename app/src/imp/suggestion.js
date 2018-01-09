@@ -40,7 +40,7 @@ const compare = (node, concept, graphAttribute, attribute, nodeArray) => {
     node.addClass('attention')
     node.addClass('label-id')
 
-    // push ID of the insecure ndoes in the array
+    // push ID of the insecure nodes in the array
     nodeArray.push(node.data().id)
   }
 }
@@ -84,13 +84,9 @@ module.exports = function suggestion (cy) {
     compare(node, list.s3.concept, nodeData.update, list.s3.update, s3nodes)
   })
 
-  // display the suggestions
-  // s0 suggestion
-  showResults(s0nodes, list.s0.suggestion)
-  // s1 suggestion
-  showResults(s1nodes, list.s1.suggestion)
-  // s2 suggestion
-  showResults(s2nodes, list.s2.suggestion)
-  // s3 suggestion
-  showResults(s3nodes, list.s3.suggestion)
+  // display the suggestions on the message area
+  showResults(s0nodes, list.s0.suggestion) // s0 suggestion
+  showResults(s1nodes, list.s1.suggestion) // s1 suggestion
+  showResults(s2nodes, list.s2.suggestion) // s2 suggestion
+  showResults(s3nodes, list.s3.suggestion) // s3 suggestion
 }
