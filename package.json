@@ -6,6 +6,7 @@
   "scripts": {
     "lint": "prettier --no-semi --single-quote --write 'app/src/**/*.js' && standard 'app/src/**/*.js' --fix",
     "dev": "NODE_ENV=development electron app/src/main.js",
+    "dev_win": "set NODE_ENV=development&&electron app/src/main.js",
     "start": "electron app/src/main.js"
   },
   "repository": {
