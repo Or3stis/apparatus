@@ -1,6 +1,9 @@
 // displays security suggestion depending on information found in the model
 const printMsgHTML = require('../helpers/printMsgHTML.js')
 
+// button to show the ID of the nodes
+const showIDBtn = `<button id='id-button' class='menu-btn' style='color: var(--main-tx-color); background-color: var(--main-bg-color); width: 120px; height: 25px;'>show nodes ID</button>`
+
 // contains the attribute/connection patterns and the suggestions
 const list = {
   s0: {
@@ -88,4 +91,13 @@ module.exports = function suggestion (cy) {
   showResults(s1nodes, list.s1.suggestion) // s1 suggestion
   showResults(s2nodes, list.s2.suggestion) // s2 suggestion
   showResults(s3nodes, list.s3.suggestion) // s3 suggestion
+
+  // render the show ID button
+  printMsgHTML(showIDBtn)
+  const showIdNodeBtn = document.getElementById('id-button')
+  showIdNodeBtn.addEventListener('click', () => {
+    cy.nodes().removeClass('label-nodes')
+    cy.nodes().removeClass('label-dsc')
+    cy.nodes().addClass('label-id')
+  })
 }
