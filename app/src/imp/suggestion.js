@@ -14,12 +14,14 @@ const list = {
   s1: {
     concept: 'device',
     layer: 'gateway',
-    suggestion: 'Devices in the gateway layer are usually external facing nodes.'
+    suggestion:
+      'Devices in the gateway layer are usually external facing nodes.'
   },
   s2: {
     concept: 'device',
     layer: 'application',
-    suggestion: 'Devices in the application layer usually are provided by third parties. Their security posture must taken into consideration.'
+    suggestion:
+      'Devices in the application layer usually are provided by third parties. Their security posture must taken into consideration.'
   },
   s3: {
     concept: 'device',
@@ -61,9 +63,7 @@ const findNodes = (node, concept, graphAttribute, attribute, nodeArray) => {
 const showResults = (nodeArray, suggestion) => {
   // only show the suggestion if the node array is not empty
   if (nodeArray.length !== 0) {
-    printMsgHTML(
-      `Nodes: <strong>${nodeArray}</strong> <br><br>${suggestion}`
-    )
+    printMsgHTML(`Nodes: <strong>${nodeArray}</strong> <br><br>${suggestion}`)
   }
 }
 
@@ -91,7 +91,13 @@ module.exports = function suggestion (cy) {
     // s3 suggestion
     findNodes(node, list.s3.concept, nodeData.update, list.s3.update, s3nodes)
     // s4 suggestion
-    findNodes(node, list.s4.concept, nodeData.description, list.s4.description, s4nodes)
+    findNodes(
+      node,
+      list.s4.concept,
+      nodeData.description,
+      list.s4.description,
+      s4nodes
+    )
     // s5 suggestion
     findNodes(node, list.s5.concept, nodeData.update, list.s5.update, s5nodes)
   })
