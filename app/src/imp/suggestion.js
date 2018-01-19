@@ -12,15 +12,15 @@ const list = {
     suggestion: 'Devices in the perception layer require physical security.'
   },
   s1: {
+    concept: 'device',
+    update: 'false',
+    suggestion: 'Treat devices that cannot be updated as compromised.'
+  },
+  s2: {
     concept: 'network connection',
     description: 'wireless',
     suggestion:
       'Wireless connections are subject to information disclosure attacks. Use encrypted protocols.'
-  },
-  s2: {
-    concept: 'device',
-    update: 'false',
-    suggestion: 'Treat devices that cannot be updated as compromised.'
   },
   s3: {
     concept: 'application',
@@ -52,7 +52,7 @@ const showResults = (nodeArray, suggestion) => {
   // only show the suggestion if the node array is not empty
   if (nodeArray.length !== 0) {
     printMsgHTML(
-      `Nodes ID: <strong>${nodeArray}</strong> <br><br>${suggestion}`
+      `Nodes: <strong>${nodeArray}</strong> <br><br>${suggestion}`
     )
   }
 }
@@ -76,12 +76,12 @@ module.exports = function suggestion (cy) {
     findNodes(
       node,
       list.s1.concept,
-      nodeData.description,
-      list.s1.description,
+      nodeData.update,
+      list.s1.update,
       s1nodes
     )
     // s2 suggestion
-    findNodes(node, list.s2.concept, nodeData.update, list.s2.update, s2nodes)
+    findNodes(node, list.s2.concept, nodeData.description, list.s2.description, s2nodes)
     // s3 suggestion
     findNodes(node, list.s3.concept, nodeData.update, list.s3.update, s3nodes)
   })
