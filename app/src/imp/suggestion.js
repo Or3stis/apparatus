@@ -13,16 +13,26 @@ const list = {
   },
   s1: {
     concept: 'device',
+    layer: 'gateway',
+    suggestion: 'Devices in the gateway layer are usually external facing nodes.'
+  },
+  s2: {
+    concept: 'device',
+    layer: 'application',
+    suggestion: 'Devices in the application layer usually are provided by third parties. Their security posture must taken into consideration.'
+  },
+  s3: {
+    concept: 'device',
     update: 'false',
     suggestion: 'Treat devices that cannot be updated as compromised.'
   },
-  s2: {
+  s4: {
     concept: 'network connection',
     description: 'wireless',
     suggestion:
       'Wireless connections are subject to information disclosure attacks. Use encrypted protocols.'
   },
-  s3: {
+  s5: {
     concept: 'application',
     update: 'false',
     suggestion: 'Treat applications that cannot be updated as compromised.'
@@ -66,6 +76,8 @@ module.exports = function suggestion (cy) {
   let s1nodes = []
   let s2nodes = []
   let s3nodes = []
+  let s4nodes = []
+  let s5nodes = []
 
   cy.nodes().map(node => {
     let nodeData = node.data().asto
@@ -73,17 +85,15 @@ module.exports = function suggestion (cy) {
     // s0 suggestion
     findNodes(node, list.s0.concept, nodeData.layer, list.s0.layer, s0nodes)
     // s1 suggestion
-    findNodes(
-      node,
-      list.s1.concept,
-      nodeData.update,
-      list.s1.update,
-      s1nodes
-    )
+    findNodes(node, list.s1.concept, nodeData.layer, list.s1.layer, s1nodes)
     // s2 suggestion
-    findNodes(node, list.s2.concept, nodeData.description, list.s2.description, s2nodes)
+    findNodes(node, list.s2.concept, nodeData.layer, list.s2.layer, s2nodes)
     // s3 suggestion
     findNodes(node, list.s3.concept, nodeData.update, list.s3.update, s3nodes)
+    // s4 suggestion
+    findNodes(node, list.s4.concept, nodeData.description, list.s4.description, s4nodes)
+    // s5 suggestion
+    findNodes(node, list.s5.concept, nodeData.update, list.s5.update, s5nodes)
   })
 
   // display the suggestions on the message area
@@ -91,6 +101,8 @@ module.exports = function suggestion (cy) {
   showResults(s1nodes, list.s1.suggestion) // s1 suggestion
   showResults(s2nodes, list.s2.suggestion) // s2 suggestion
   showResults(s3nodes, list.s3.suggestion) // s3 suggestion
+  showResults(s4nodes, list.s4.suggestion) // s4 suggestion
+  showResults(s5nodes, list.s5.suggestion) // s5 suggestion
 
   // render the show ID button
   printMsgHTML(showIDBtn)
