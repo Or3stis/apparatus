@@ -109,7 +109,7 @@ body {
   color: var(--main-tx-color);
 }
 .input-form:focus {
-  border-color: rgba(97, 175, 239, 0.6);
+  border-color: var(--blue-color);
   outline: none;
 }
 .submit-form {
