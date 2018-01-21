@@ -169,7 +169,7 @@ module.exports = function (
       printMsgHTML(
         '<strong>Window reload</strong> is disabled in default mode.'
       )
-      printMsgHTML('Start the app in <strong>develper mode</strong> it.')
+      printMsgHTML('Start the app in <strong>develper mode</strong>.')
       printMsgHTML('<strong>npm run dev</strong>')
     }
   })
