@@ -27,9 +27,9 @@ body {
   padding: 0;
   font-size: 15px;
   /* Smoother startup */
-  -webkit-animation: fadein 0.3s;
+  animation: fadein 0.3s;
   /*disable text selection*/
-  -webkit-user-select: none;
+  user-select: none;
   overflow: hidden;
 }
 
@@ -69,7 +69,7 @@ body {
   display: none;
   grid-area: sidebar;
   overflow: auto;
-  -webkit-user-select: text;
+  user-select: text;
 }
 .sidebar-wrapper {
   display: flex;
@@ -95,11 +95,12 @@ body {
   margin-bottom: 5px;
   padding: 4px;
   border-radius: 10px;
-  -webkit-animation: fadein 0.4s;
+  animation: fadein 0.4s;
 }
 .bubble:hover {
   background-color: var(--black-color);
 }
+
 .input-form {
   background-color: var(--main-bg-color);
   border: 1px solid;
@@ -325,7 +326,7 @@ input::-webkit-input-placeholder {
   height: 2px;
 }
 ::-webkit-scrollbar-track {
-  -webkit-box-shadow: none;
+  box-shadow: none;
   border-radius: 6px;
 }
 ::-webkit-scrollbar-thumb {
