@@ -15,7 +15,7 @@ const list = {
     concept: 'device',
     layer: 'gateway',
     suggestion:
-      'Devices in the gateway layer are usually external facing nodes.'
+      'Devices in the gateway layer are usually external facing nodes. Malicious actors can target them with network attacks.'
   },
   s2: {
     concept: 'device',
