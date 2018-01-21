@@ -21,7 +21,7 @@ const list = {
     concept: 'device',
     layer: 'application',
     suggestion:
-      'Devices in the application layer usually are provided by third parties. Their security posture must taken into consideration.'
+      'Devices in the application layer are usually provided by third parties. The security configuration of thrird party devices must be taken into consideration since it affects the security posture of the overall system.'
   },
   s3: {
     concept: 'device',
