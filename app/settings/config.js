@@ -40,6 +40,9 @@ config.colorTheme = 'dark'
 // first theme paint
 config.setColors(config.colorTheme)
 
+// number of maximum bubbles in the message area
+config.maxNumberOfBubbles = 15
+
 // urls
 
 // url for the ASTo wiki

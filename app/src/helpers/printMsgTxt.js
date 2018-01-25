@@ -1,4 +1,5 @@
 // helper to print text-only formatted text
+const checkBubbles = require('./checkBubbles.js')
 
 module.exports = function printMsgTxt (toPrint) {
   const htmlElement = document.getElementById('message-area-id')
@@ -11,4 +12,7 @@ module.exports = function printMsgTxt (toPrint) {
   htmlElement.appendChild(span)
 
   htmlElement.lastChild.scrollIntoView(false)
+
+  // checks the number of bubbles
+  checkBubbles()
 }
