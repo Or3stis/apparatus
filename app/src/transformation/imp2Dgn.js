@@ -1,4 +1,4 @@
-// applies tranformation rules from implementation to design phase
+// applies transformation rules from implementation to design phase
 
 const save = require('../helpers/save.js')
 const printMsgTxt = require('../helpers/printMsgTxt.js')
@@ -58,6 +58,7 @@ const warning =
 module.exports = function dgnState2ImpState (cy, nodeCounter) {
   printMsgHTML(userInput)
 
+  // create a `yes` button that will perform the transformation
   const buttonYes = document.getElementById('yes-button')
   buttonYes.addEventListener('click', () => {
     transform(cy)
@@ -65,6 +66,7 @@ module.exports = function dgnState2ImpState (cy, nodeCounter) {
     printMsgTxt('transformation successful')
     printMsgTxt(warning)
   })
+  // create a `no` button that will clear the message bubble
   const buttonNo = document.getElementById('no-button')
   buttonNo.addEventListener('click', () => {
     document.getElementById('message-area-id').textContent = ''
