@@ -5,20 +5,20 @@ const checkBubbles = require('./checkBubbles.js')
 let idCnt = 0
 
 module.exports = function printMsgTxt (toPrint) {
-  const htmlElement = document.getElementById('message-area-id')
+  const msgArea = document.getElementById('message-area-id')
 
   // create bubble element
   const span = document.createElement('span')
+  span.className = 'bubble'
   idCnt += 1
   span.id = `bubble-txt-${idCnt}`
-  span.className = 'bubble'
 
   // add content to the bubble
   const result = document.createTextNode(toPrint)
   span.appendChild(result)
-  htmlElement.appendChild(span)
+  msgArea.appendChild(span)
 
-  htmlElement.lastChild.scrollIntoView(false)
+  msgArea.lastChild.scrollIntoView(false)
 
   // checks the number of bubbles
   checkBubbles()

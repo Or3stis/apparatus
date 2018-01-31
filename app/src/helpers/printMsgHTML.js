@@ -6,19 +6,19 @@ const checkBubbles = require('./checkBubbles.js')
 let idCnt = 0
 
 module.exports = function printMsgHTML (toPrint) {
-  const htmlElement = document.getElementById('message-area-id')
+  const msgArea = document.getElementById('message-area-id')
 
   // create message element
   const span = document.createElement('span')
+  span.className = 'bubble'
   idCnt += 1
   span.id = `bubble-html-${idCnt}`
-  span.className = 'bubble'
 
   // add content to the bubble
   span.innerHTML = toPrint
-  htmlElement.appendChild(span)
+  msgArea.appendChild(span)
 
-  htmlElement.lastChild.scrollIntoView(false)
+  msgArea.lastChild.scrollIntoView(false)
 
   // checks the number of bubbles
   checkBubbles()
