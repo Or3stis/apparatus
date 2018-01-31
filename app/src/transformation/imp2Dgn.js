@@ -1,4 +1,4 @@
-// applies tranformation rules from implementation to design phase
+// applies transformation rules from implementation to design phase
 
 const save = require('../helpers/save.js')
 const printMsgTxt = require('../helpers/printMsgTxt.js')
@@ -50,7 +50,7 @@ const transform = cy => {
   })
 }
 
-const userInput = `the current model will <strong>break</strong>\n\ndo you want to continue? <button id='yes-button' class='menu-btn' style='color: var(--main-tx-color); background-color: var(--main-bg-color); width: 45px; height: 25px;'>yes</button> <button id='no-button' class='menu-btn' style='color: var(--main-tx-color); background-color: var(--main-bg-color); width: 45px; height: 25px;'>no</button>`
+const userInput = `the current model will <strong>will not work</strong>\n\ndo you want to continue? <button id='yes-button' class='menu-btn' style='color: var(--main-tx-color); background-color: var(--main-bg-color); width: 45px; height: 25px;'>yes</button> <button id='no-button' class='menu-btn' style='color: var(--main-tx-color); background-color: var(--main-bg-color); width: 45px; height: 25px;'>no</button>`
 
 const warning =
   'to access the new design phase model you will need to manually load it'
@@ -58,6 +58,7 @@ const warning =
 module.exports = function dgnState2ImpState (cy, nodeCounter) {
   printMsgHTML(userInput)
 
+  // create a `yes` button that will perform the transformation
   const buttonYes = document.getElementById('yes-button')
   buttonYes.addEventListener('click', () => {
     transform(cy)
@@ -65,6 +66,7 @@ module.exports = function dgnState2ImpState (cy, nodeCounter) {
     printMsgTxt('transformation successful')
     printMsgTxt(warning)
   })
+  // create a `no` button that will clear the message bubble
   const buttonNo = document.getElementById('no-button')
   buttonNo.addEventListener('click', () => {
     document.getElementById('message-area-id').textContent = ''
