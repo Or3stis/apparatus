@@ -1,6 +1,6 @@
 // checks if threats are mitigated by constraints
 
-const printMsgTxt = require('../helpers/printMsgTxt.js')
+const bubbleTxt = require('../helpers/bubbleTxt.js')
 
 module.exports = function threatVerification (cy) {
   let threatArray = []
@@ -38,9 +38,9 @@ module.exports = function threatVerification (cy) {
   })
   result = `${result}\n • Threats total: ${threatArray.length}\n`
   result = `${result} • Mitigated total: ${mitigatedThreats}\n`
-  printMsgTxt(result)
+  bubbleTxt(result)
 
   if (threatArray.length <= mitigatedThreats) {
-    printMsgTxt('all threats mitigated 🎉')
+    bubbleTxt('all threats mitigated 🎉')
   }
 }

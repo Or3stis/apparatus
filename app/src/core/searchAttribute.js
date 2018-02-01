@@ -1,6 +1,6 @@
 // highlights the nodes that have the search term
 
-const printMsgTxt = require('../helpers/printMsgTxt.js')
+const bubbleTxt = require('../helpers/bubbleTxt.js')
 
 module.exports = function flag (cy, term) {
   let searchNodes = ''
@@ -19,5 +19,5 @@ module.exports = function flag (cy, term) {
       }
     })
   })
-  printMsgTxt(searchNodes)
+  bubbleTxt(searchNodes)
 }

@@ -1,7 +1,7 @@
 // checks if the model is correct
 
 const dgnMetamodel = require('./dgnSchema.js')
-const printMsgTxt = require('../helpers/printMsgTxt.js')
+const bubbleTxt = require('../helpers/bubbleTxt.js')
 
 module.exports = function moduleValidation (cy) {
   // valid component connections
@@ -44,7 +44,7 @@ module.exports = function moduleValidation (cy) {
     // if string not empty, show concepts with wrong connections
     if (result !== '') {
       result = `• ${component} has wrong connections`
-      printMsgTxt(result)
+      bubbleTxt(result)
     }
   }
 
@@ -61,6 +61,6 @@ module.exports = function moduleValidation (cy) {
 
   // if string is empty, the model is correct
   if (result === '') {
-    printMsgTxt('model instance is valid\n👍')
+    bubbleTxt('model instance is valid\n👍')
   }
 }

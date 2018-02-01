@@ -8,7 +8,7 @@ const showMetamodel = require('./core/showMetamodel.js')
 const deleteRestoreConcepts = require('./core/deleteRestoreConcepts.js')
 
 // require helper modules
-const printMsgHTML = require('./helpers/printMsgHTML.js')
+const bubbleHTML = require('./helpers/bubbleHTML.js')
 const save = require('./helpers/save.js')
 const theme = require('./helpers/theme.js')
 const watcher = require('./helpers/watcher.js')
@@ -81,10 +81,10 @@ module.exports = function (
       case 'help':
         // checks the platform to display the corrent help menu
         process.platform === 'darwin'
-          ? printMsgHTML(helpMenuMacOS)
-          : printMsgHTML(helpMenu)
+          ? bubbleHTML(helpMenuMacOS)
+          : bubbleHTML(helpMenu)
 
-        printMsgHTML(docsURLBtn)
+        bubbleHTML(docsURLBtn)
         // opens the wiki page with the default browser
         document.getElementById('url-button').addEventListener('click', () => {
           require('electron').shell.openExternal(settings.docsURL)
@@ -166,11 +166,9 @@ module.exports = function (
     }
     // developer mode message when a user wants to reload the app, meta + r
     if (metaKey === true && event.code === 'KeyR') {
-      printMsgHTML(
-        '<strong>Window reload</strong> is disabled in default mode.'
-      )
-      printMsgHTML('Start the app in <strong>develper mode</strong>.')
-      printMsgHTML('<strong>npm run dev</strong>')
+      bubbleHTML('<strong>Window reload</strong> is disabled in default mode.')
+      bubbleHTML('Start the app in <strong>develper mode</strong>.')
+      bubbleHTML('<strong>npm run dev</strong>')
     }
   })
 }

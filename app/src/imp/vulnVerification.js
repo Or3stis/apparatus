@@ -1,6 +1,6 @@
 // checks if the vulnerabilities are mitigated
 
-const printMsgTxt = require('../helpers/printMsgTxt.js')
+const bubbleTxt = require('../helpers/bubbleTxt.js')
 
 module.exports = function vulnVerification (cy) {
   let vulnArray = []
@@ -39,9 +39,9 @@ module.exports = function vulnVerification (cy) {
 
   result = `${result}\n • Vulnerabilities total: ${vulnArray.length}\n`
   result = `${result} • Mitigated total: ${mitigatedVulns}\n`
-  printMsgTxt(result)
+  bubbleTxt(result)
 
   if (vulnArray.length <= mitigatedVulns) {
-    printMsgTxt('all vulnerabilities mitigated 🎉')
+    bubbleTxt('all vulnerabilities mitigated 🎉')
   }
 }

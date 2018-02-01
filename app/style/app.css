@@ -97,8 +97,23 @@ body {
   border-radius: 10px;
   animation: fadein 0.4s;
 }
-.bubble:hover {
+.bubble-btn {
+  width: 95%;
+  height: 6px;
+  position: absolute;
+  top: 0px;
+  border: none;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
   background-color: var(--black-color);
+  display: none;
+  outline: none;
+}
+.bubble:hover .bubble-btn {
+  display: block;
+}
+.bubble-btn:active {
+  background-color: var(--main-bg-color);
 }
 
 .input-form {

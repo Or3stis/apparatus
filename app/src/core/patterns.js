@@ -1,6 +1,6 @@
 // highlights attribute patterns of nodes
 
-const printMsgTxt = require('../helpers/printMsgTxt.js')
+const bubbleTxt = require('../helpers/bubbleTxt.js')
 const rmElement = require('../helpers/rmElement.js')
 
 module.exports = function patterns (cy) {
@@ -25,7 +25,7 @@ module.exports = function patterns (cy) {
       })
     })
 
-    printMsgTxt(flaggedNodes)
+    bubbleTxt(flaggedNodes)
   }
 
   const htmlElement = document.getElementById('message-area-id')

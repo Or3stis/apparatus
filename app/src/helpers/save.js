@@ -1,6 +1,6 @@
 // helper function to save graphs
 
-const printMsgTxt = require('./printMsgTxt.js')
+const bubbleTxt = require('./bubbleTxt.js')
 const jsonfileWrite = require('jsonfile').writeFile
 const { dialog } = require('electron').remote
 
@@ -27,7 +27,7 @@ module.exports = function save (cy) {
           const titleBar = document.getElementById('title-bar-id')
           titleBar.innerHTML = titleBar.innerHTML.replace(' •', ' ')
         }
-        printMsgTxt('graph saved\n👍')
+        bubbleTxt('graph saved\n👍')
       })
     }
   )

@@ -37,7 +37,7 @@ const requestVulnData = (filename, nodesKeywords) => {
           // })
 
           // displays the total amount of vulnerabilities
-          printMsgHTML(
+          bubbleHTML(
             `${vuln} vulnerabilities found: <strong>${
               totalVuln.length
             }</strong>`
@@ -45,7 +45,7 @@ const requestVulnData = (filename, nodesKeywords) => {
         })
       })
       .on('error', err => {
-        printMsgTxt(err.message)
+        bubbleTxt(err.message)
       })
   })
 }
@@ -104,13 +104,18 @@ const findVuln = cy => {
   // check whether the nodesKeywords is empty before sending the request to
   // a vulnerability database
   if (nodesKeywords.length === 0) {
-    printMsgTxt('no vulnerabilities were found')
+    bubbleTxt('no vulnerabilities were found')
   } else {
     getUniqueKeywords(nodesKeywords)
     saveFile(nodesKeywords) // runs the requestVulnData()
 
+<<<<<<< HEAD
+    bubbleTxt(`sending request to ${config.cveSearchUrl}`)
+    bubbleTxt(`☛ keywords used:\n\n${keywordsPrint}`)
+=======
     printMsgTxt(`sending request to ${settings.cveSearchUrl}`)
     printMsgTxt(`☛ keywords used:\n\n${keywordsPrint}`)
+>>>>>>> origin/master
   }
 }
 
