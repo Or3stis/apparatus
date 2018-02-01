@@ -1,5 +1,5 @@
 // displays security suggestion depending on information found in the model
-const printMsgHTML = require('../helpers/printMsgHTML.js')
+const bubbleHTML = require('../helpers/bubbleHTML.js')
 
 // button to show the ID of the nodes
 const showIDBtn = `<button id='id-button' class='menu-btn' style='color: var(--main-tx-color); background-color: var(--main-bg-color); width: 120px; height: 25px;'>show nodes ID</button>`
@@ -63,7 +63,7 @@ const findNodes = (node, concept, graphAttribute, attribute, nodeArray) => {
 const showResults = (nodeArray, suggestion) => {
   // only show the suggestion if the node array is not empty
   if (nodeArray.length !== 0) {
-    printMsgHTML(`Nodes: <strong>${nodeArray}</strong> <br><br>${suggestion}`)
+    bubbleHTML(`Nodes: <strong>${nodeArray}</strong> <br><br>${suggestion}`)
   }
 }
 
@@ -111,7 +111,7 @@ module.exports = function suggestion (cy) {
   showResults(s5nodes, list.s5.suggestion) // s5 suggestion
 
   // render the show ID button
-  printMsgHTML(showIDBtn)
+  bubbleHTML(showIDBtn)
   const showIdNodeBtn = document.getElementById('id-button')
   showIdNodeBtn.addEventListener('click', () => {
     cy.nodes().removeClass('label-nodes')

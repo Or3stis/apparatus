@@ -1,6 +1,6 @@
 // add implementation phase edges
 
-const printMsgTxt = require('../helpers/printMsgTxt.js')
+const bubbleTxt = require('../helpers/bubbleTxt.js')
 const addEdge = require('../core/addEdge.js')
 
 module.exports = function addComponent (cy, srcNode, trgNode) {
@@ -110,6 +110,6 @@ module.exports = function addComponent (cy, srcNode, trgNode) {
       addEdge(cy, srcNodeId, trgNodeId, 'is')
       break
     default:
-      printMsgTxt(`${srcNodeCpt} → ${trgNodeCpt}\nnot allowed 😔`)
+      bubbleTxt(`${srcNodeCpt} → ${trgNodeCpt}\nnot allowed 😔`)
   }
 }
