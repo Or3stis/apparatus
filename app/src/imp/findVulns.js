@@ -5,8 +5,8 @@ const fs = require('fs')
 const { dialog } = require('electron').remote
 
 const settings = require('../../settings/settings.js')
-const printMsgTxt = require('../helpers/printMsgTxt.js')
-const printMsgHTML = require('../helpers/printMsgHTML.js')
+const bubbleTxt = require('../helpers/bubbleTxt.js')
+const bubbleHTML = require('../helpers/bubbleHTML.js')
 
 // request vulnerability information from cve
 const requestVulnData = (filename, nodesKeywords) => {
@@ -109,13 +109,8 @@ const findVuln = cy => {
     getUniqueKeywords(nodesKeywords)
     saveFile(nodesKeywords) // runs the requestVulnData()
 
-<<<<<<< HEAD
-    bubbleTxt(`sending request to ${config.cveSearchUrl}`)
+    bubbleTxt(`sending request to ${settings.cveSearchUrl}`)
     bubbleTxt(`☛ keywords used:\n\n${keywordsPrint}`)
-=======
-    printMsgTxt(`sending request to ${settings.cveSearchUrl}`)
-    printMsgTxt(`☛ keywords used:\n\n${keywordsPrint}`)
->>>>>>> origin/master
   }
 }
 
