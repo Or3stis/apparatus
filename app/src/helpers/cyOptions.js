@@ -1,13 +1,13 @@
 // helper to create cytoscape graphs based on specific options
 
 const cytoscape = require('cytoscape')
-const config = require('../../settings/config.js')
+const settings = require('../../settings/settings.js')
 const graphStyle = require('../../settings/graphStyle.js')
 
 module.exports = function cyOptions (cy, file) {
   const model = require(file)
   // sets the color values of the graph
-  graphStyle.setStyle(config.colorTheme)
+  graphStyle.setStyle(settings.colorTheme)
 
   // initializes the cytoscape gpraph
   cy.out = cytoscape({

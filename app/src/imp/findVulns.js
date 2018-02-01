@@ -4,7 +4,7 @@ const http = require('http')
 const fs = require('fs')
 const { dialog } = require('electron').remote
 
-const config = require('../../settings/config.js')
+const settings = require('../../settings/settings.js')
 const printMsgTxt = require('../helpers/printMsgTxt.js')
 const printMsgHTML = require('../helpers/printMsgHTML.js')
 
@@ -14,7 +14,7 @@ const requestVulnData = (filename, nodesKeywords) => {
   let totalVuln = []
   nodesKeywords.map(vuln => {
     http
-      .get(`${config.cveSearchUrl}${vuln}`, resp => {
+      .get(`${settings.cveSearchUrl}${vuln}`, resp => {
         let data = ''
         // add each received chunk of data
         resp.on('data', chunk => {
@@ -109,7 +109,7 @@ const findVuln = cy => {
     getUniqueKeywords(nodesKeywords)
     saveFile(nodesKeywords) // runs the requestVulnData()
 
-    printMsgTxt(`sending request to ${config.cveSearchUrl}`)
+    printMsgTxt(`sending request to ${settings.cveSearchUrl}`)
     printMsgTxt(`☛ keywords used:\n\n${keywordsPrint}`)
   }
 }

@@ -1,12 +1,12 @@
 // CSS style for the graphs
 
-const config = require(`./config.js`)
+const settings = require(`./settings.js`)
 
 const graphStyle = {}
 
 graphStyle.setStyle = color => {
   // set the graph's color values based on the app theme
-  config.setColors(color)
+  settings.setColors(color)
 
   // graph style rules
   graphStyle.style = [
@@ -14,7 +14,7 @@ graphStyle.setStyle = color => {
       selector: 'node',
       style: {
         shape: 'ellipse',
-        'background-color': config.text,
+        'background-color': settings.text,
         'text-wrap': 'wrap',
         'text-max-width': '100px'
       }
@@ -23,7 +23,7 @@ graphStyle.setStyle = color => {
       selector: 'edge',
       style: {
         'curve-style': 'bezier',
-        'line-color': config.text,
+        'line-color': settings.text,
         width: 2
       }
     },
@@ -37,26 +37,26 @@ graphStyle.setStyle = color => {
     {
       selector: '.selection',
       style: {
-        'background-color': config.blue,
-        'line-color': config.blue
+        'background-color': settings.blue,
+        'line-color': settings.blue
       }
     },
     {
       selector: '.old-selection',
       style: {
-        'background-color': config.orange
+        'background-color': settings.orange
       }
     },
     {
       selector: '.attention',
       style: {
-        'background-color': config.yellow
+        'background-color': settings.yellow
       }
     },
     {
       selector: '.protect',
       style: {
-        'background-color': config.cyan
+        'background-color': settings.cyan
       }
     },
     {
@@ -64,9 +64,9 @@ graphStyle.setStyle = color => {
       style: {
         label: 'data(label)',
         'text-valign': 'center',
-        color: config.text,
+        color: settings.text,
         'text-outline-width': 2,
-        'text-outline-color': config.background
+        'text-outline-color': settings.background
       }
     },
     {
@@ -74,10 +74,10 @@ graphStyle.setStyle = color => {
       style: {
         label: 'data(label)',
         'target-arrow-shape': 'triangle',
-        'target-arrow-color': config.text,
-        color: config.text,
+        'target-arrow-color': settings.text,
+        color: settings.text,
         'text-outline-width': 2,
-        'text-outline-color': config.background
+        'text-outline-color': settings.background
       }
     },
     {
@@ -85,9 +85,9 @@ graphStyle.setStyle = color => {
       style: {
         label: 'data(id)',
         'text-valign': 'center',
-        color: config.text,
+        color: settings.text,
         'text-outline-width': 2,
-        'text-outline-color': config.background
+        'text-outline-color': settings.background
       }
     },
     {
@@ -95,9 +95,9 @@ graphStyle.setStyle = color => {
       style: {
         label: 'data(asto.description)',
         'text-valign': 'center',
-        color: config.text,
+        color: settings.text,
         'text-outline-width': 2,
-        'text-outline-color': config.background
+        'text-outline-color': settings.background
       }
     }
   ]
