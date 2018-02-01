@@ -1,4 +1,4 @@
-const config = require('../settings/config.js')
+const settings = require('../settings/settings.js')
 const { Menu } = require('electron')
 const electron = require('electron')
 const app = electron.app
@@ -42,7 +42,7 @@ const template = [
       {
         label: 'Apparatus documentation',
         click () {
-          require('electron').shell.openExternal(config.docsURL)
+          require('electron').shell.openExternal(settings.docsURL)
         }
       }
     ]

@@ -4,7 +4,7 @@ const app = electron.app
 // Module to create native browser window.
 const BrowserWindow = electron.BrowserWindow
 
-const config = require('../settings/config.js')
+const settings = require('../settings/settings.js')
 const appMenu = require('./appMenu.js')
 
 // Keep a global reference of the window object, if you don't, the window will
@@ -16,7 +16,7 @@ let mainWindow
 function createWindow () {
   // Create the browser window.
   mainWindow = new BrowserWindow({
-    backgroundColor: config.background,
+    backgroundColor: settings.background,
     width: 1200,
     height: 745,
     minWidth: 800,

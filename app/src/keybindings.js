@@ -1,6 +1,6 @@
 // keybindings and command propmpt options
 
-const config = require('../settings/config.js')
+const settings = require('../settings/settings.js')
 
 // require core modules
 const searchAttribute = require('./core/searchAttribute.js')
@@ -61,11 +61,11 @@ module.exports = function (
   const labelId = document.getElementById('input-label-id')
   // indicate focus on the console by making the > blue
   cmdID.addEventListener('focus', e => {
-    labelId.style.color = config.blue
+    labelId.style.color = settings.blue
   })
   // indicate loss of focus on the console by making the > default color
   cmdID.addEventListener('blur', () => {
-    labelId.style.color = config.text
+    labelId.style.color = settings.text
   })
 
   // removes the focus from the console when tapping on the graph container
@@ -87,7 +87,7 @@ module.exports = function (
         bubbleHTML(docsURLBtn)
         // opens the wiki page with the default browser
         document.getElementById('url-button').addEventListener('click', () => {
-          require('electron').shell.openExternal(config.docsURL)
+          require('electron').shell.openExternal(settings.docsURL)
         })
         break
       case ':suggestion':
@@ -102,12 +102,12 @@ module.exports = function (
         showMetamodel(phase)
         break
       case ':toggle':
-        if (config.colorTheme === 'dark') {
+        if (settings.colorTheme === 'dark') {
           theme.setThemeGraph(cy, 'light')
-          config.colorTheme = 'light'
+          settings.colorTheme = 'light'
         } else {
           theme.setThemeGraph(cy, 'dark')
-          config.colorTheme = 'dark'
+          settings.colorTheme = 'dark'
         }
         break
       case ':clear':
