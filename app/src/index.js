@@ -2,10 +2,10 @@
 
 const homeMenu = require('./homeMenu.js')
 const theme = require('./helpers/theme.js')
-const config = require('../settings/config.js')
+const settings = require('../settings/settings.js')
 
 // set the first color paint theme
-theme.setTheme(config.colorTheme)
+theme.setTheme(settings.colorTheme)
 
 // load up the menu screen
 homeMenu()

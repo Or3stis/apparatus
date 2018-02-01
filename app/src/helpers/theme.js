@@ -1,27 +1,27 @@
 // module to change color themes between light and dark
-// used the color values from settings/config.js
+// used the color values from settings/settings.js
 
-const config = require('../../settings/config.js')
+const settings = require('../../settings/settings.js')
 const graphStyle = require('../../settings/graphStyle.js')
 
 // changes only the UI color values
 const setTheme = color => {
   // update color variables
-  config.setColors(color)
+  settings.setColors(color)
 
   // update CSS root values
-  document.documentElement.style.setProperty('--main-tx-color', config.text)
+  document.documentElement.style.setProperty('--main-tx-color', settings.text)
   document.documentElement.style.setProperty(
     '--main-bg-color',
-    config.background
+    settings.background
   )
   document.documentElement.style.setProperty(
     '--main-dark-bg-color',
-    config.darkBackground
+    settings.darkBackground
   )
-  document.documentElement.style.setProperty('--blue-color', config.blue)
-  document.documentElement.style.setProperty('--black-color', config.black)
-  document.documentElement.style.setProperty('--gray-color', config.gray)
+  document.documentElement.style.setProperty('--blue-color', settings.blue)
+  document.documentElement.style.setProperty('--black-color', settings.black)
+  document.documentElement.style.setProperty('--gray-color', settings.gray)
 }
 
 // changes the UI and graph colors
