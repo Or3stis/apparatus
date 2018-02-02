@@ -59,8 +59,6 @@ module.exports = function patterns (cy) {
     rmElement('message-area-id', 'form-id')
 
     searchPattern(pattern)
-    // return false to prevent the default form behavior
-    return false
   }
 
   // focus on the user input form
