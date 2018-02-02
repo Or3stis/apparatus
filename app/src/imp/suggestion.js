@@ -1,9 +1,6 @@
 // displays security suggestion depending on information found in the model
 const bubbleHTML = require('../helpers/bubbleHTML.js')
 
-// button to show the ID of the nodes
-const showIDBtn = `<button id='id-button' class='menu-btn' style='color: var(--main-tx-color); background-color: var(--main-bg-color); width: 120px; height: 25px;'>show nodes ID</button>`
-
 // contains the attribute/connection patterns and the suggestions
 const list = {
   s0: {
@@ -110,8 +107,13 @@ module.exports = function suggestion (cy) {
   showResults(s4nodes, list.s4.suggestion) // s4 suggestion
   showResults(s5nodes, list.s5.suggestion) // s5 suggestion
 
-  // render the show ID button
+  // button to show the ID of the nodes
+  const showIDBtn = `<button id='id-button' class='menu-btn' style='color: var(--main-tx-color); background-color: var(--main-bg-color); width: 120px; height: 25px;'>show nodes ID</button>`
+
+  // render the showID button
   bubbleHTML(showIDBtn)
+
+  // attach event listener to button
   const showIdNodeBtn = document.getElementById('id-button')
   showIdNodeBtn.addEventListener('click', () => {
     cy.nodes().removeClass('label-nodes')
