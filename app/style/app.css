@@ -112,6 +112,9 @@ body {
 .bubble:hover .bubble-btn {
   display: block;
 }
+.bubble-btn:hover {
+  background-color: var(--blue-color);
+}
 .bubble-btn:active {
   background-color: var(--main-bg-color);
 }
