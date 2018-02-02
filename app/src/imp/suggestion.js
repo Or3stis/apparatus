@@ -5,40 +5,46 @@ const bubbleHTML = require('../helpers/bubbleHTML.js')
 const list = {
   s0: {
     concept: 'device',
-    layer: 'perception',
+    attribute: 'layer',
+    attributeValue: 'perception',
     suggestion: 'Devices in the perception layer require physical security.',
     nodes: []
   },
   s1: {
     concept: 'device',
-    layer: 'gateway',
+    attribute: 'layer',
+    attributeValue: 'gateway',
     suggestion:
       'Devices in the gateway layer are usually external facing nodes. Malicious actors can target them with network attacks.',
     nodes: []
   },
   s2: {
     concept: 'device',
-    layer: 'application',
+    attribute: 'layer',
+    attributeValue: 'application',
     suggestion:
       'Devices in the application layer are usually provided by third parties. The security configuration of thrird party devices must be taken into consideration since it affects the security posture of the overall system.',
     nodes: []
   },
   s3: {
     concept: 'device',
-    update: 'false',
+    attribute: 'update',
+    attributeValue: 'false',
     suggestion: 'Treat devices that cannot be updated as compromised.',
     nodes: []
   },
   s4: {
     concept: 'network connection',
-    description: 'wireless',
+    attribute: 'description',
+    attributeValue: 'wireless',
     suggestion:
       'Wireless connections are subject to information disclosure attacks. Use encrypted protocols.',
     nodes: []
   },
   s5: {
     concept: 'application',
-    update: 'false',
+    attribute: 'update',
+    attributeValue: 'false',
     suggestion: 'Treat applications that cannot be updated as compromised.',
     nodes: []
   }
@@ -47,12 +53,20 @@ const list = {
 // find nodes of interest based on the data of the list
 // @node: node instance in the graph
 // @concept: node concept in the suggestion array
-// @graphAttribute: attribute in the graph that will be compared
-// @attribute: attribute in the suggestion array
+// @attribute: attribute in the graph that will be compared
+// @attributeVallue: attribute value in the suggestion array
 // @nodeArray: array that will store the insecure nodes
-const findNodes = (node, concept, graphAttribute, attribute, nodeArray) => {
-  // compare the graph nodes will the suggestions
-  if (node.data().asto.concept === concept && graphAttribute === attribute) {
+const findNodes = (
+  node,
+  concept,
+  attribute,
+  attributeValue,
+  nodeArray
+) => {
+  if (
+    node.data().asto.concept === concept &&
+    node.data().asto[attribute] === attributeValue
+  ) {
     // apply css rules in the graph
     node.removeClass('faded')
     node.addClass('attention')
@@ -74,57 +88,17 @@ module.exports = function suggestion (cy) {
   // fade out all the nodes
   cy.elements().addClass('faded')
 
+  // parses the graph to compare nodes with the suggestion list
   cy.nodes().map(node => {
-    let nodeData = node.data().asto
-
-    // s0 suggestion
-    findNodes(
-      node,
-      list.s0.concept,
-      nodeData.layer,
-      list.s0.layer,
-      list.s0.nodes
-    )
-    // s1 suggestion
-    findNodes(
-      node,
-      list.s1.concept,
-      nodeData.layer,
-      list.s1.layer,
-      list.s1.nodes
-    )
-    // s2 suggestion
-    findNodes(
-      node,
-      list.s2.concept,
-      nodeData.layer,
-      list.s2.layer,
-      list.s2.nodes
-    )
-    // s3 suggestion
-    findNodes(
-      node,
-      list.s3.concept,
-      nodeData.update,
-      list.s3.update,
-      list.s3.nodes
-    )
-    // s4 suggestion
-    findNodes(
-      node,
-      list.s4.concept,
-      nodeData.description,
-      list.s4.description,
-      list.s4.nodes
-    )
-    // s5 suggestion
-    findNodes(
-      node,
-      list.s5.concept,
-      nodeData.update,
-      list.s5.update,
-      list.s5.nodes
-    )
+    Object.keys(list).map(key => {
+      findNodes(
+        node,
+        list[key].concept,
+        list[key].attribute,
+        list[key].attributeValue,
+        list[key].nodes
+      )
+    })
   })
 
   // display the suggestions on the message area
