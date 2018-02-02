@@ -21,7 +21,6 @@ const setTheme = color => {
   )
   document.documentElement.style.setProperty('--blue-color', settings.blue)
   document.documentElement.style.setProperty('--black-color', settings.black)
-  document.documentElement.style.setProperty('--gray-color', settings.gray)
 }
 
 // changes the UI and graph colors
