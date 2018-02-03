@@ -88,4 +88,20 @@ impMetamodel.vulnerabilityArray = [
   'application'
 ]
 
+// concepts and allowed connections pairs
+impMetamodel.pairs = {
+  device: impMetamodel.deviceArray,
+  application: impMetamodel.applicationArray,
+  micronet: impMetamodel.micronetArray,
+  net: impMetamodel.netArray,
+  information: impMetamodel.informationArray,
+  actor: impMetamodel.actorArray,
+  'malicious actor': impMetamodel.maliciousActorArray,
+  asset: impMetamodel.assetArray,
+  constraint: impMetamodel.constraintArray,
+  threat: impMetamodel.threatArray,
+  mechanism: impMetamodel.mechanismArray,
+  vulnerability: impMetamodel.vulnerabilityArray
+}
+
 module.exports = impMetamodel
