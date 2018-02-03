@@ -4,18 +4,6 @@ const dgnMetamodel = require('./dgnSchema.js')
 const bubbleTxt = require('../helpers/bubbleTxt.js')
 
 module.exports = function moduleValidation (cy) {
-  // valid component connections
-  const deviceArray = dgnMetamodel.deviceArray
-  const applicationArray = dgnMetamodel.applicationArray
-  const micronetArray = dgnMetamodel.micronetArray
-  const netArray = dgnMetamodel.netArray
-  const informationArray = dgnMetamodel.informationArray
-  const actorArray = dgnMetamodel.actorArray
-  const maliciousActorArray = dgnMetamodel.maliciousActorArray
-  const assetArray = dgnMetamodel.assetArray
-  const constraintArray = dgnMetamodel.constraintArray
-  const threatArray = dgnMetamodel.threatArray
-
   // decleration of arrays
   let result = '' // posted on the nodeInfo div
   let arrWrong = [] // stores wrong connection of nodes
@@ -48,16 +36,10 @@ module.exports = function moduleValidation (cy) {
     }
   }
 
-  componentValidation(cy, 'device', deviceArray)
-  componentValidation(cy, 'application', applicationArray)
-  componentValidation(cy, 'micronet', micronetArray)
-  componentValidation(cy, 'net', netArray)
-  componentValidation(cy, 'information', informationArray)
-  componentValidation(cy, 'actor', actorArray)
-  componentValidation(cy, 'malicious actor', maliciousActorArray)
-  componentValidation(cy, 'asset', assetArray)
-  componentValidation(cy, 'constraint', constraintArray)
-  componentValidation(cy, 'threat', threatArray)
+  // checkes the validity of the model using the rules of the schema
+  Object.keys(dgnMetamodel.pairs).map(key => {
+    componentValidation(cy, key, dgnMetamodel.pairs[key])
+  })
 
   // if string is empty, the model is correct
   if (result === '') {

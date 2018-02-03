@@ -41,4 +41,18 @@ dgnMetamodel.assetArray = [
 dgnMetamodel.constraintArray = ['threat', 'micronet']
 dgnMetamodel.threatArray = ['asset', 'malicious actor', 'constraint', 'net']
 
+// concepts and allowed connections pairs
+dgnMetamodel.pairs = {
+  device: dgnMetamodel.deviceArray,
+  application: dgnMetamodel.applicationArray,
+  micronet: dgnMetamodel.micronetArray,
+  net: dgnMetamodel.netArray,
+  information: dgnMetamodel.informationArray,
+  actor: dgnMetamodel.actorArray,
+  'malicious actor': dgnMetamodel.maliciousActorArray,
+  asset: dgnMetamodel.assetArray,
+  constraint: dgnMetamodel.constraintArray,
+  threat: dgnMetamodel.threatArray
+}
+
 module.exports = dgnMetamodel
