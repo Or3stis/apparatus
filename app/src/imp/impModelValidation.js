@@ -4,21 +4,6 @@ const impMetamodel = require('./impSchema.js')
 const bubbleTxt = require('../helpers/bubbleTxt.js')
 
 module.exports = function moduleValidation (cy) {
-  // valid component connections
-  const deviceArray = impMetamodel.deviceArray
-  const networkArray = impMetamodel.networkArray
-  const applicationArray = impMetamodel.applicationArray
-  const micronetArray = impMetamodel.micronetArray
-  const netArray = impMetamodel.netArray
-  const informationArray = impMetamodel.informationArray
-  const actorArray = impMetamodel.actorArray
-  const maliciousActorArray = impMetamodel.maliciousActorArray
-  const assetArray = impMetamodel.assetArray
-  const constraintArray = impMetamodel.constraintArray
-  const mechanismArray = impMetamodel.mechanismArray
-  const threatArray = impMetamodel.threatArray
-  const vulnerabilityArray = impMetamodel.vulnerabilityArray
-
   let result = '' // posted on the nodeInfo div
   let arrWrong = [] // stores wrong connection of nodes
 
@@ -51,19 +36,10 @@ module.exports = function moduleValidation (cy) {
     }
   }
 
-  componentValidation(cy, 'device', deviceArray)
-  componentValidation(cy, 'network connection', networkArray)
-  componentValidation(cy, 'application', applicationArray)
-  componentValidation(cy, 'micronet', micronetArray)
-  componentValidation(cy, 'net', netArray)
-  componentValidation(cy, 'information', informationArray)
-  componentValidation(cy, 'actor', actorArray)
-  componentValidation(cy, 'malicious actor', maliciousActorArray)
-  componentValidation(cy, 'asset', assetArray)
-  componentValidation(cy, 'constraint', constraintArray)
-  componentValidation(cy, 'mechanism', mechanismArray)
-  componentValidation(cy, 'threat', threatArray)
-  componentValidation(cy, 'vulnerability', vulnerabilityArray)
+  // checkes the validity of the model using the rules of the schema
+  Object.keys(impMetamodel.pairs).map(key => {
+    componentValidation(cy, key, impMetamodel.pairs[key])
+  })
 
   // if string is empty, the model is correct
   if (result === '') {
