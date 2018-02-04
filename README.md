@@ -80,5 +80,4 @@ You can check the project's planned features in the [roadmap](https://or3stis.gi
 
 A shoutout to [@NOMNUDS](https://github.com/NOMNUDS) and [@nickarg](https://github.com/nickarg) who provide the much-needed feedback on Windows.
 
-
-#### License [MIT](LICENSE.md)
+### License [MIT](LICENSE.md)
