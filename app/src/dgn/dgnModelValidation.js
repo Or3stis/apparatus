@@ -37,8 +37,8 @@ module.exports = function moduleValidation (cy) {
   }
 
   // checkes the validity of the model using the rules of the schema
-  Object.keys(dgnMetamodel.pairs).map(key => {
-    componentValidation(cy, key, dgnMetamodel.pairs[key])
+  Object.keys(dgnMetamodel.pairs).map(concept => {
+    componentValidation(cy, concept, dgnMetamodel.pairs[concept])
   })
 
   // if string is empty, the model is correct
