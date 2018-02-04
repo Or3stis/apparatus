@@ -7,10 +7,10 @@ title: 'Apparatus Framework'
 ## An IoT network security analysis and visualization tool
 
 [![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](http://standardjs.com/)
-[![styled with prettier](https://img.shields.io/badge/styled_with-prettier-ff69b4.svg)](https://github.com/prettier/prettier) ![](https://travis-ci.org/Or3stis/apparatus.svg?branch=master)
-<!-- [![dependencies Status](https://david-dm.org/or3stis/apparatus.svg)](https://david-dm.org/or3stis/apparatus) -->
+[![styled with prettier](https://img.shields.io/badge/styled_with-prettier-ff69b4.svg)](https://github.com/prettier/prettier)
+![travis build](https://travis-ci.org/Or3stis/apparatus.svg?branch=master)
 [![devDependencies Status](https://david-dm.org/or3stis/apparatus/dev-status.svg)](https://david-dm.org/or3stis/apparatus?type=dev)
-
+<!-- [![dependencies Status](https://david-dm.org/or3stis/apparatus.svg)](https://david-dm.org/or3stis/apparatus) -->
 
 ASTo is security analysis tool for IoT networks. It is developed to support the Apparatus security framework. ASTo is based on
 [electron](http://electron.atom.io/) and
@@ -20,13 +20,13 @@ The application is in alpha stage. The focus now is to improve the core function
 
 Some screenshots
 
-![](https://raw.githubusercontent.com/Or3stis/apparatus/master/assets/screenShot1.png)
+![asto home](https://raw.githubusercontent.com/Or3stis/apparatus/master/assets/screenShot1.png)
 
-![](https://raw.githubusercontent.com/Or3stis/apparatus/master/assets/screenShot2.png)
+![asto UI 1](https://raw.githubusercontent.com/Or3stis/apparatus/master/assets/screenShot2.png)
 
-![](https://raw.githubusercontent.com/Or3stis/apparatus/master/assets/screenShot3.png)
+![asto UI 2](https://raw.githubusercontent.com/Or3stis/apparatus/master/assets/screenShot3.png)
 
-![](https://raw.githubusercontent.com/Or3stis/apparatus/master/assets/screenShot4.png)
+![asto UI 2](https://raw.githubusercontent.com/Or3stis/apparatus/master/assets/screenShot4.png)
 
 ## Color themes
 
@@ -84,5 +84,4 @@ You can check the project's planned features in the [roadmap](https://or3stis.gi
 
 A shoutout to [@NOMNUDS](https://github.com/NOMNUDS) and [@nickarg](https://github.com/nickarg) who provide the much-needed feedback on Windows.
 
-
-#### License [MIT](LICENSE.md)
+### License [MIT](LICENSE.md)
