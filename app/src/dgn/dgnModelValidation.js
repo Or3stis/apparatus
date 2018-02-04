@@ -4,8 +4,7 @@ const dgnMetamodel = require('./dgnSchema.js')
 const bubbleTxt = require('../helpers/bubbleTxt.js')
 
 module.exports = function moduleValidation (cy) {
-  // decleration of arrays
-  let result = '' // posted on the nodeInfo div
+  let validationResult = ''
   let arrWrong = [] // stores wrong connection of nodes
 
   function componentValidation (cy, component, componentArray) {
@@ -27,22 +26,22 @@ module.exports = function moduleValidation (cy) {
       }
     })
 
-    result = `${arrWrong}`
+    validationResult = `${arrWrong}`
 
     // if string not empty, show concepts with wrong connections
-    if (result !== '') {
-      result = `• ${component} has wrong connections`
-      bubbleTxt(result)
+    if (validationResult !== '') {
+      validationResult = `• ${component} has wrong connections`
+      bubbleTxt(validationResult)
     }
   }
 
   // checkes the validity of the model using the rules of the schema
-  Object.keys(dgnMetamodel.pairs).map(key => {
-    componentValidation(cy, key, dgnMetamodel.pairs[key])
+  Object.keys(dgnMetamodel.pairs).map(concept => {
+    componentValidation(cy, concept, dgnMetamodel.pairs[concept])
   })
 
   // if string is empty, the model is correct
-  if (result === '') {
+  if (validationResult === '') {
     bubbleTxt('model instance is valid\n👍')
   }
 }
