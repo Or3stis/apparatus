@@ -37,8 +37,8 @@ module.exports = function moduleValidation (cy) {
   }
 
   // checkes the validity of the model using the rules of the schema
-  Object.keys(impMetamodel.pairs).map(key => {
-    componentValidation(cy, key, impMetamodel.pairs[key])
+  Object.keys(impMetamodel.pairs).map(concept => {
+    componentValidation(cy, concept, impMetamodel.pairs[concept])
   })
 
   // if string is empty, the model is correct
