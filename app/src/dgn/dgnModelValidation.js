@@ -1,6 +1,6 @@
 // checks if the model is correct
 
-const dgnMetamodel = require('./dgnSchema.js')
+const dgnSchema = require('./dgnSchema.js')
 const bubbleTxt = require('../helpers/bubbleTxt.js')
 
 module.exports = function moduleValidation (cy) {
@@ -36,8 +36,8 @@ module.exports = function moduleValidation (cy) {
   }
 
   // checkes the validity of the model using the rules of the schema
-  Object.keys(dgnMetamodel.pairs).map(concept => {
-    componentValidation(cy, concept, dgnMetamodel.pairs[concept])
+  Object.keys(dgnSchema.pairs).map(concept => {
+    componentValidation(cy, concept, dgnSchema.pairs[concept])
   })
 
   // if string is empty, the model is correct
