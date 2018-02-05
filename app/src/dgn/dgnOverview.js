@@ -3,24 +3,27 @@
 const dgnMetamodel = require('./dgnSchema.js')
 
 module.exports = function overview (cy) {
-  const networkArray = dgnMetamodel.network
-  const securityArray = dgnMetamodel.security
-  const socialArray = dgnMetamodel.social
-
   // initialize the output of the module
   let output = ''
 
-  // object to store the number of each node in the graph
-  const graphNodes = {
+  // stores the node of module nodes
+  const moduleNodes = {
     network: {
+      schema: dgnMetamodel.network,
       numberOfNodes: 0
     },
     security: {
+      schema: dgnMetamodel.security,
       numberOfNodes: 0
     },
     social: {
+      schema: dgnMetamodel.social,
       numberOfNodes: 0
-    },
+    }
+  }
+
+  // stores the number of each node
+  const graphNodes = {
     device: {
       numberOfNodes: 0
     },
@@ -48,7 +51,7 @@ module.exports = function overview (cy) {
     actor: {
       numberOfNodes: 0
     },
-    maliciousActor: {
+    'malicious actor': {
       numberOfNodes: 0
     }
   }
@@ -59,49 +62,32 @@ module.exports = function overview (cy) {
   // count the number of nodes
   cy.nodes().map(node => {
     const nodeConcept = node.data().asto.concept
-    // count the network nodes
-    if (networkArray.includes(nodeConcept) === true) {
-      graphNodes.network.numberOfNodes += 1
-      if (nodeConcept === 'device') {
-        graphNodes.device.numberOfNodes += 1
-      } else if (nodeConcept === 'application') {
-        graphNodes.application.numberOfNodes += 1
-      } else if (nodeConcept === 'micronet') {
-        graphNodes.micronet.numberOfNodes += 1
-      } else if (nodeConcept === 'net') {
-        graphNodes.net.numberOfNodes += 1
-      } else if (nodeConcept === 'information') {
-        graphNodes.information.numberOfNodes += 1
+    // count the module nodes
+    Object.keys(moduleNodes).map(module => {
+      if (moduleNodes[module].schema.includes(nodeConcept) === true) {
+        moduleNodes[module].numberOfNodes += 1
       }
-      // count the security nodes
-    } else if (securityArray.includes(nodeConcept) === true) {
-      graphNodes.security.numberOfNodes += 1
-      if (nodeConcept === 'asset') {
-        graphNodes.asset.numberOfNodes += 1
-      } else if (nodeConcept === 'threat') {
-        graphNodes.threat.numberOfNodes += 1
-      } else if (nodeConcept === 'constraint') {
-        graphNodes.constraint.numberOfNodes += 1
-      } else if (nodeConcept === 'malicious actor') {
-        graphNodes.maliciousActor.numberOfNodes += 1
+    })
+    // count the concept nodes
+    Object.keys(graphNodes).map(concept => {
+      if (nodeConcept === concept) {
+        graphNodes[concept].numberOfNodes += 1
       }
-      // count the social node
-    } else if (socialArray.includes(nodeConcept) === true) {
-      graphNodes.social.numberOfNodes += 1
-      if (nodeConcept === 'actor') {
-        graphNodes.actor.numberOfNodes += 1
-      }
-    }
+    })
   })
 
-  // construct the output final output
-  const conOutput = (node, numberOfNodes) => {
-    output = `${output}• ${node} nodes: ${numberOfNodes}\n`
+  // compose the output by parsing the objects
+  const composeOutput = (node, numberOfNodes) => {
+    output += `• ${node} nodes: ${numberOfNodes}\n`
   }
 
-  // loop the object to make the output
+  // loop the objects to compose the output
+  Object.keys(moduleNodes).map(module => {
+    composeOutput(module, moduleNodes[module].numberOfNodes)
+  })
+  output += `\n`
   Object.keys(graphNodes).map(node => {
-    conOutput(node, graphNodes[node].numberOfNodes)
+    composeOutput(node, graphNodes[node].numberOfNodes)
   })
 
   // show output in the graph container
