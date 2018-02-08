@@ -1,4 +1,4 @@
-// prints the total number of nodes along with their concept type and module
+// shows the total number of nodes along with their concept type and module
 
 const dgnMetamodel = require('./dgnSchema.js')
 
@@ -85,6 +85,7 @@ module.exports = function overview (cy) {
   Object.keys(moduleNodes).map(module => {
     composeOutput(module, moduleNodes[module].numberOfNodes)
   })
+  // new line between modules and concepts
   output += `\n`
   Object.keys(graphNodes).map(node => {
     composeOutput(node, graphNodes[node].numberOfNodes)
