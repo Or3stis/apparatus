@@ -92,10 +92,12 @@ Improvements on the functionality of the tool.
 - [✓] add a menu bar
 - [✓] add a developer option on `npm start` that will allow refresh, hot reloading and other developer features
 - [✓] disallow page refresh (cmd + r) on non-developer mode
-- [ ] identify and highlight insecure patterns
+- [✓] identify and highlight insecure patterns
 - [ ] configurable insecure patterns
 - [ ] create a new file to save when starting a new model
 - [ ] autosave the changes to current working file, but confirm the location first
+- [ ] toggle button for light/dark theme
+- [ ] window for settings
 
 ## beta release
 
