@@ -1,10 +1,10 @@
-// prints the total number of nodes along with their concept type and module
+// shows the total number of nodes along with their concept type and module
 
 module.exports = function stateOverview (cy) {
-  let result = ''
+  let output = ''
 
   const totalNodes = cy.elements().nodes().length
-  result = `• total nodes: ${totalNodes}\n`
+  output = `• total nodes: ${totalNodes}\n\n`
 
   let modelNode = 0
 
@@ -14,12 +14,12 @@ module.exports = function stateOverview (cy) {
       modelNode += 1
     }
   })
-  result = `${result}• model nodes: ${modelNode}\n`
+  output = `${output}• model nodes: ${modelNode}`
 
-  // show result in the graph container
+  // show output in the graph container
   const containerNode = document.getElementById('container-node-id')
   const containerNodeInfo = document.getElementById('container-node-info-id')
   // appends info to the div
   containerNode.style.display = 'block'
-  containerNodeInfo.textContent = result
+  containerNodeInfo.textContent = output
 }
