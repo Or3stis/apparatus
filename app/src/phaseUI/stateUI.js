@@ -104,12 +104,15 @@ module.exports = function stateUI () {
   </button> -->
 
   <div class="label-wrapper" id="label-wrapper-id">
-    <button class="label-btn" id="hide-label" title="hide labels">1</button>
-    <button class="label-btn" id="show-label-edge" title="show edge labels">2</button>
-    <button class="label-btn" id="show-label-node" title="show node labels">3</button>
-    <button class="label-btn" id="show-node-id" title="show nodes id">4</button>
-    <button class="label-btn" id="show-node-disc" title="show node description">5</button>
+  <button class="label-btn" id="hide-label" title="hide labels">1</button>
+  <button class="label-btn" id="show-label-edge" title="show edge labels">2</button>
+  <button class="label-btn" id="show-label-node" title="show node labels">3</button>
+  <button class="label-btn" id="show-node-id" title="show nodes id">4</button>
+  <button class="label-btn" id="show-node-disc" title="show node description">5</button>
   </div>
+
+  <input type="checkbox" id="theme-btn" class="tgl"/>
+  <label for="theme-btn" class="tgl-lbl"></label>
 
 </div>`
 

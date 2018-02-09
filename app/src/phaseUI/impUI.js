@@ -180,6 +180,9 @@ module.exports = function implementationUI () {
     <button class="label-btn" id="show-node-disc" title="show node description">5</button>
   </div>
 
+  <input type="checkbox" id="theme-btn" class="tgl"/>
+  <label for="theme-btn" class="tgl-lbl"></label>
+
 </div>`
 
   // links the implementationUI with the rest of the app

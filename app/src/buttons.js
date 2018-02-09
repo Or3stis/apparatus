@@ -1,4 +1,5 @@
 // bind functions to buttons in the UI
+const settings = require('../settings/settings.js')
 
 const nodeSelection = require('./core/nodeSelection.js')
 const layout = require('./core/layout.js')
@@ -14,6 +15,7 @@ const vulnVerification = require('./imp/vulnVerification.js')
 
 const save = require('./helpers/save.js')
 const watcher = require('./helpers/watcher.js')
+const theme = require('./helpers/theme.js')
 
 const buttonHelpers = require('./buttonHelpers.js')
 
@@ -87,6 +89,17 @@ module.exports = function buttons (
   const btnHome = document.getElementById('home-btn')
   btnHome.addEventListener('click', () => {
     watcher.closeNotification(cy)
+  })
+  // toggles the theme
+  const bntToggle = document.getElementById('theme-btn')
+  bntToggle.addEventListener('click', () => {
+    if (settings.colorTheme === 'dark') {
+      theme.setThemeGraph(cy, 'light')
+      settings.colorTheme = 'light'
+    } else {
+      theme.setThemeGraph(cy, 'dark')
+      settings.colorTheme = 'dark'
+    }
   })
 
   const totalNodes = document.getElementById('legend-id')
