@@ -288,6 +288,7 @@ input::-webkit-input-placeholder {
   margin: 0;
   list-style: none;
   padding: 0;
+  border-radius: 10px;
   overflow: auto;
   z-index: 10;
 }
