@@ -9,6 +9,7 @@ const deleteRestoreConcepts = require('./core/deleteRestoreConcepts.js')
 const patterns = require('./core/patterns.js')
 const printTotalNodes = require('./core/printTotalNodes.js')
 const expose = require('./core/expose.js')
+const labels = require('./core/labels.js')
 
 const findVulns = require('./imp/findVulns.js')
 const vulnVerification = require('./imp/vulnVerification.js')
@@ -90,6 +91,11 @@ module.exports = function buttons (
   btnHome.addEventListener('click', () => {
     watcher.closeNotification(cy)
   })
+  // change the labels on the elements of the graph
+  const labelsBtn = document.getElementById('labels-btn')
+  labelsBtn.addEventListener('click', e => {
+    labels(cy, e.target.textContent)
+  })
   // toggles the theme
   const bntToggle = document.getElementById('theme-btn')
   bntToggle.addEventListener('click', () => {
@@ -108,41 +114,6 @@ module.exports = function buttons (
   })
   totalNodes.addEventListener('mouseout', event => {
     document.getElementById('container-node-id').style.display = 'none'
-  })
-
-  // bind label buttons
-  const hideLabelsBtn = document.getElementById('hide-label')
-  hideLabelsBtn.addEventListener('click', () => {
-    cy.nodes().removeClass('label-nodes')
-    cy.nodes().removeClass('label-id')
-    cy.nodes().removeClass('label-dsc')
-    cy.edges().removeClass('label-edges')
-  })
-
-  const showLabelsEdgeBtn = document.getElementById('show-label-edge')
-  showLabelsEdgeBtn.addEventListener('click', () => {
-    cy.edges().addClass('label-edges')
-  })
-
-  const showLabelNodeBtn = document.getElementById('show-label-node')
-  showLabelNodeBtn.addEventListener('click', () => {
-    cy.nodes().removeClass('label-id')
-    cy.nodes().removeClass('label-dsc')
-    cy.nodes().addClass('label-nodes')
-  })
-
-  const showIdNodeBtn = document.getElementById('show-node-id')
-  showIdNodeBtn.addEventListener('click', () => {
-    cy.nodes().removeClass('label-nodes')
-    cy.nodes().removeClass('label-dsc')
-    cy.nodes().addClass('label-id')
-  })
-
-  const showDiscNodeBtn = document.getElementById('show-node-disc')
-  showDiscNodeBtn.addEventListener('click', () => {
-    cy.nodes().removeClass('label-nodes')
-    cy.nodes().removeClass('label-id')
-    cy.nodes().addClass('label-dsc')
   })
 
   // buttons bound to each phase

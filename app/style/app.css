@@ -308,39 +308,6 @@ input::-webkit-input-placeholder {
   background-color: var(--main-tx-color);
 }
 
-/*label button components*/
-.label-wrapper {
-  bottom: 5px;
-  margin: 0 auto;
-  width: 40px;
-  position: fixed;
-}
-.label-btn {
-  background-color: var(--main-dark-bg-color);
-  margin: 0;
-  margin-left: 10px;
-  color: var(--main-tx-color);
-  width: 20px;
-  height: 20px;
-  border: 1px solid;
-  border-radius: 10px;
-  border-color: var(--main-tx-color);
-  font-size: 10px;
-}
-.label-btn:hover {
-  border-color: var(--blue-color);
-  color: var(--blue-color);
-}
-
-/*flash color when clicked*/
-.label-btn:active {
-  border-color: var(--main-tx-color);
-  color: var(--main-tx-color);
-}
-.label-btn:focus {
-  outline: none;
-}
-
 /*load menu*/
 .wrapper {
   position: absolute;
