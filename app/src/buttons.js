@@ -1,4 +1,5 @@
 // bind functions to buttons in the UI
+const settings = require('../settings/settings.js')
 
 const nodeSelection = require('./core/nodeSelection.js')
 const layout = require('./core/layout.js')
@@ -8,12 +9,14 @@ const deleteRestoreConcepts = require('./core/deleteRestoreConcepts.js')
 const patterns = require('./core/patterns.js')
 const printTotalNodes = require('./core/printTotalNodes.js')
 const expose = require('./core/expose.js')
+const labels = require('./core/labels.js')
 
 const findVulns = require('./imp/findVulns.js')
 const vulnVerification = require('./imp/vulnVerification.js')
 
 const save = require('./helpers/save.js')
 const watcher = require('./helpers/watcher.js')
+const theme = require('./helpers/theme.js')
 
 const buttonHelpers = require('./buttonHelpers.js')
 
@@ -88,6 +91,22 @@ module.exports = function buttons (
   btnHome.addEventListener('click', () => {
     watcher.closeNotification(cy)
   })
+  // change the labels on the elements of the graph
+  const labelsBtn = document.getElementById('labels-btn')
+  labelsBtn.addEventListener('click', e => {
+    labels(cy, e.target.textContent)
+  })
+  // toggles the theme
+  const bntToggle = document.getElementById('theme-btn')
+  bntToggle.addEventListener('click', () => {
+    if (settings.colorTheme === 'dark') {
+      theme.setThemeGraph(cy, 'light')
+      settings.colorTheme = 'light'
+    } else {
+      theme.setThemeGraph(cy, 'dark')
+      settings.colorTheme = 'dark'
+    }
+  })
 
   const totalNodes = document.getElementById('legend-id')
   totalNodes.addEventListener('mouseover', event => {
@@ -95,41 +114,6 @@ module.exports = function buttons (
   })
   totalNodes.addEventListener('mouseout', event => {
     document.getElementById('container-node-id').style.display = 'none'
-  })
-
-  // bind label buttons
-  const hideLabelsBtn = document.getElementById('hide-label')
-  hideLabelsBtn.addEventListener('click', () => {
-    cy.nodes().removeClass('label-nodes')
-    cy.nodes().removeClass('label-id')
-    cy.nodes().removeClass('label-dsc')
-    cy.edges().removeClass('label-edges')
-  })
-
-  const showLabelsEdgeBtn = document.getElementById('show-label-edge')
-  showLabelsEdgeBtn.addEventListener('click', () => {
-    cy.edges().addClass('label-edges')
-  })
-
-  const showLabelNodeBtn = document.getElementById('show-label-node')
-  showLabelNodeBtn.addEventListener('click', () => {
-    cy.nodes().removeClass('label-id')
-    cy.nodes().removeClass('label-dsc')
-    cy.nodes().addClass('label-nodes')
-  })
-
-  const showIdNodeBtn = document.getElementById('show-node-id')
-  showIdNodeBtn.addEventListener('click', () => {
-    cy.nodes().removeClass('label-nodes')
-    cy.nodes().removeClass('label-dsc')
-    cy.nodes().addClass('label-id')
-  })
-
-  const showDiscNodeBtn = document.getElementById('show-node-disc')
-  showDiscNodeBtn.addEventListener('click', () => {
-    cy.nodes().removeClass('label-nodes')
-    cy.nodes().removeClass('label-id')
-    cy.nodes().addClass('label-dsc')
   })
 
   // buttons bound to each phase

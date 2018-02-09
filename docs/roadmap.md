@@ -96,7 +96,7 @@ Improvements on the functionality of the tool.
 - [ ] configurable insecure patterns
 - [ ] create a new file to save when starting a new model
 - [ ] autosave the changes to current working file, but confirm the location first
-- [ ] toggle button for light/dark theme
+- [✓] toggle button for light/dark theme
 - [ ] window for settings
 
 ## beta release

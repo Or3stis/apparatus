@@ -101,6 +101,21 @@ module.exports = function designUI () {
   </ul>
 </div>
 
+<div class="dropdown" id="labels-btn">
+  <button class="btn-icon dropbtn" title="label options">
+    <svg width="24" height="24">
+      <use xlink:href="icons/label.svg#label" class="icon"></use>
+    </svg>
+  </button>
+  <ul class="dropdown-menu">
+    <li><a>hide all labels</a></li>
+    <li><a>show edge labels</a></li>
+    <li><a>show node concepts</a></li>
+    <li><a>show node IDs</a></li>
+    <li><a>show node descriptions</a></li>
+  </ul>
+</div>
+
 <button class="btn-icon" id="threat-ver-btn" title="threat verification">
   <svg width="24" height="24">
     <use xlink:href="icons/security.svg#security" class="icon"></use>
@@ -143,11 +158,11 @@ module.exports = function designUI () {
   </svg>
 </button> -->
 
-  <button class="btn-icon" id="home-btn" title="home">
-    <svg width="24" height="24">
-      <use xlink:href="icons/home.svg#home" class="icon"></use>
-    </svg>
-  </button>
+<button class="btn-icon" id="home-btn" title="home">
+  <svg width="24" height="24">
+    <use xlink:href="icons/home.svg#home" class="icon"></use>
+  </svg>
+</button>
 
 <!-- <button class="btn-icon" id="test-button" title="test">
   <svg width="24" height="24">
@@ -155,14 +170,9 @@ module.exports = function designUI () {
   </svg>
 </button> -->
 
-<div class="label-wrapper" id="label-wrapper-id">
-  <button class="label-btn" id="hide-label" title="hide labels">1</button>
-  <button class="label-btn" id="show-label-edge" title="show edge labels">2</button>
-  <button class="label-btn" id="show-label-node" title="show node labels">3</button>
-  <button class="label-btn" id="show-node-id" title="show nodes id">4</button>
-  <button class="label-btn" id="show-node-disc" title="show node description">5</button>
-</div>
-
+<div class="tgl-wrapper">
+  <input type="checkbox" id="theme-btn" class="tgl"/>
+  <label for="theme-btn" class="tgl-lbl"></label>
 </div>`
 
   // links the design UI with the rest of the app

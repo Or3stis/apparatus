@@ -1,8 +1,8 @@
 /*atom dark color theme*/
 :root {
   --main-tx-color: #abb2bf;
-  --main-bg-color: #282c34;
-  --main-dark-bg-color: #21252b;
+  --main-bg-color: #1b2836;
+  --main-dark-bg-color: #141d26;
   --blue-color: #61afef;
   --black-color: #3b4251;
 }
@@ -232,8 +232,49 @@ input::-webkit-input-placeholder {
   color: var(--main-tx-color);
   border: 1px solid;
   border-color: var(--main-dark-bg-color);
+  border-radius: 10px;
   outline: none;
 }
+
+/* toggle theme button */
+.tgl-wrapper {
+  position: fixed;
+  bottom: 10px;
+}
+.tgl-lbl {
+  position: relative;
+  display: block;
+  height: 10px;
+  width: 38px;
+  background: var(--black-color);
+  border-radius: 100px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.tgl-lbl:after {
+  position: absolute;
+  left: -2px;
+  top: -3px;
+  display: block;
+  width: 16px;
+  height: 16px;
+  border-radius: 100px;
+  background: var(--main-tx-color);
+  /* box-shadow: 3px 2px 11px 7px rgba(33, 37, 43, 0.7); */
+  content: '';
+  transition: all 0.3s ease;
+}
+.tgl-lbl:active:after {
+  transform: scale(1.15, 0.85);
+}
+.tgl:checked ~ label {
+  background: var(--main-tx-color);
+}
+.tgl:checked ~ label:after {
+  left: 22px;
+  background: var(--black-color);
+}
+.tgl { display: none; }
 
 /*dropdown buttons*/
 .dropdown {
@@ -247,6 +288,7 @@ input::-webkit-input-placeholder {
   margin: 0;
   list-style: none;
   padding: 0;
+  border-radius: 10px;
   overflow: auto;
   z-index: 10;
 }
@@ -271,39 +313,6 @@ input::-webkit-input-placeholder {
   background-color: var(--main-tx-color);
 }
 
-/*label button components*/
-.label-wrapper {
-  bottom: 5px;
-  margin: 0 auto;
-  width: 40px;
-  position: fixed;
-}
-.label-btn {
-  background-color: var(--main-dark-bg-color);
-  margin: 0;
-  margin-left: 10px;
-  color: var(--main-tx-color);
-  width: 20px;
-  height: 20px;
-  border: 1px solid;
-  border-radius: 10px;
-  border-color: var(--main-tx-color);
-  font-size: 10px;
-}
-.label-btn:hover {
-  border-color: var(--blue-color);
-  color: var(--blue-color);
-}
-
-/*flash color when clicked*/
-.label-btn:active {
-  border-color: var(--main-tx-color);
-  color: var(--main-tx-color);
-}
-.label-btn:focus {
-  outline: none;
-}
-
 /*load menu*/
 .wrapper {
   position: absolute;
@@ -316,7 +325,7 @@ input::-webkit-input-placeholder {
   z-index: 2;
   right: 50%;
   text-align: center;
-  box-shadow: 3px 2px 11px 7px rgba(33, 37, 43, 0.7);
+  box-shadow: 3px 2px 11px 7px rgba(20, 29, 38, 0.7);
 }
 .menu-btn {
   background-color: var(--main-dark-bg-color);
@@ -350,3 +359,4 @@ input::-webkit-input-placeholder {
   border-radius: 6px;
   background-color: rgba(171, 178, 191, 0.3);
 }
+

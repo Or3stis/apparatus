@@ -67,6 +67,21 @@ module.exports = function stateUI () {
     </ul>
   </div>
 
+  <div class="dropdown" id="labels-btn">
+  <button class="btn-icon dropbtn" title="label options">
+    <svg width="24" height="24">
+      <use xlink:href="icons/label.svg#label" class="icon"></use>
+    </svg>
+  </button>
+  <ul class="dropdown-menu">
+    <li><a>hide all labels</a></li>
+    <li><a>show edge labels</a></li>
+    <li><a>show node concepts</a></li>
+    <li><a>show node IDs</a></li>
+    <li><a>show node descriptions</a></li>
+  </ul>
+  </div>
+
   <button class="btn-icon" id="expose-btn" title="expose">
     <svg width="24" height="24">
       <use xlink:href="icons/explore.svg#explore" class="icon"></use>
@@ -103,15 +118,10 @@ module.exports = function stateUI () {
     </svg>
   </button> -->
 
-  <div class="label-wrapper" id="label-wrapper-id">
-    <button class="label-btn" id="hide-label" title="hide labels">1</button>
-    <button class="label-btn" id="show-label-edge" title="show edge labels">2</button>
-    <button class="label-btn" id="show-label-node" title="show node labels">3</button>
-    <button class="label-btn" id="show-node-id" title="show nodes id">4</button>
-    <button class="label-btn" id="show-node-disc" title="show node description">5</button>
-  </div>
-
-</div>`
+  <div class="tgl-wrapper">
+    <input type="checkbox" id="theme-btn" class="tgl"/>
+    <label for="theme-btn" class="tgl-lbl"></label>
+  </div>`
 
   // links the design-state UI with the rest of the app
   phaseMenu('state')
