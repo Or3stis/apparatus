@@ -80,7 +80,7 @@ module.exports = function stateUI () {
     <li><a>show node IDs</a></li>
     <li><a>show node descriptions</a></li>
   </ul>
-</div>
+  </div>
 
   <button class="btn-icon" id="expose-btn" title="expose">
     <svg width="24" height="24">
@@ -118,10 +118,10 @@ module.exports = function stateUI () {
     </svg>
   </button> -->
 
-  <input type="checkbox" id="theme-btn" class="tgl"/>
-  <label for="theme-btn" class="tgl-lbl"></label>
-
-</div>`
+  <div class="tgl-wrapper">
+    <input type="checkbox" id="theme-btn" class="tgl"/>
+    <label for="theme-btn" class="tgl-lbl"></label>
+  </div>`
 
   // links the design-state UI with the rest of the app
   phaseMenu('state')

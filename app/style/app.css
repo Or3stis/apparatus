@@ -237,6 +237,10 @@ input::-webkit-input-placeholder {
 }
 
 /* toggle theme button */
+.tgl-wrapper {
+  position: fixed;
+  bottom: 10px;
+}
 .tgl-lbl {
   position: relative;
   display: block;

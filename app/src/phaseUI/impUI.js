@@ -187,10 +187,10 @@ module.exports = function implementationUI () {
     </svg>
   </button> -->
 
-  <input type="checkbox" id="theme-btn" class="tgl"/>
-  <label for="theme-btn" class="tgl-lbl"></label>
-
-</div>`
+  <div class="tgl-wrapper">
+    <input type="checkbox" id="theme-btn" class="tgl"/>
+    <label for="theme-btn" class="tgl-lbl"></label>
+  </div>`
 
   // links the implementationUI with the rest of the app
   phaseMenu('implementation')
