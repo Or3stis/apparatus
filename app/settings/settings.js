@@ -7,8 +7,8 @@ settings.setColors = color => {
   // Atom's dark color theme
   if (color === 'dark') {
     settings.text = '#abb2bf'
-    settings.background = '#282c34'
-    settings.darkBackground = '#21252b'
+    settings.background = '#1b2836'
+    settings.darkBackground = '#141d26'
     settings.black = '#3b4251'
     settings.gray = '#abb2bf'
     settings.blue = '#61afef'
