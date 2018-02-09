@@ -232,6 +232,7 @@ input::-webkit-input-placeholder {
   color: var(--main-tx-color);
   border: 1px solid;
   border-color: var(--main-dark-bg-color);
+  border-radius: 10px;
   outline: none;
 }
 
