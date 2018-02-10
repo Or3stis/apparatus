@@ -1,11 +1,12 @@
 ---
 title: "Apparatus Documentation"
 ---
+
 # Under development 🚧
 
 If you have a question that is not answered in the wiki, please make a pull request (or be patient and hope it will be answered in the future).
 
-# Welcome to the apparatus docs 🎉!
+## Welcome to the apparatus docs 🎉
 
 1. [What is Apparatus?](https://or3stis.github.io/apparatus/docs#what-is-apparatus)
 1. [The Apparatus Framework](https://or3stis.github.io/apparatus/docs#the-apparatus-framework)
@@ -15,11 +16,9 @@ If you have a question that is not answered in the wiki, please make a pull requ
 1. [Performing security analysis](https://or3stis.github.io/apparatus/docs#performing-security-analysis)
 1. [The architecture of ASTo](https://or3stis.github.io/apparatus/docs#the-architecture-of-asto)
 
-## What is Apparatus?
+## The Apparatus Framework
 
 Apparatus is a security framework to facilitate security analysis in IoT systems. To make the usage of the Apparatus framework easier the ASTo app was created (ASTo stands for Apparatus Software Tool).
-
-## The Apparatus Framework
 
 A requirement to use ASTo is familiarity with the Apparatus framework. If you have the time and patience, the best way to understand the framework is to read some research papers that were written about it. However, you can always read this wiki.
 
@@ -53,32 +52,33 @@ ASTo supports a light and a dark color theme. The colors themes are based on Ato
 
 ASTo follows a traditional three-column architecture.
 
-1.  First column - Buttons
-1.  Second column - Graph container
-1.  Third column - Message area and command console
+1. First column - Buttons
+1. Second column - Graph container
+1. Third column - Message area and command console
 
 #### First Column - Buttons
 
 Buttons offer certain functions to manipulate the graph and perform analysis. Several buttons, such as the _Overview_ button or the _Show neighbor_ button are shared between the different modeling phases, each phase has certain unique buttons.
 
-1.  **add component** button: the ➕ icon is used to add new nodes to the graph. If you hover over the button you will be presented with a list of the node option in the current modeling phase you are in. Each newly created node will be added to the top left of the graph container (I am having some issues with the smart placement of nodes). If the node is _not_ created, there are probably some issues with the new node's id and the ids of the existing nodes in the graph. Each node must have a unique id in order to be added to the graph. The `addComponent.js` and `initialize.js` modules try to create a new id, but bugs may occur. If that happens, feel free to file an issue.
-1.  **add connection:** button: the next button is used to add edges between nodes. To add an edge you need to click on the _source_ node first, then on the _target_ node and then click the _connection_ button. The first clicked node is highlighted to blue. When you click on the second node, the color of your first selection is turned to orange and the newly selected node is turned blue. As a reminder _blue_ node ➞ _target_ and _orange_ node ➞ _source_. Once the _connection_ button is clicked, an edge with the corresponding relationship will be created. If the modeling language doesn't allow the connection between the nodes, an error will be displayed on the results bar.   
-_keyBinding_: macOs: `cmd + e`, Linux/Windows: `ctrl + e`
-1.  **delete component** button: you can delete nodes and edges by selecting the element and clicking the ➖ icon.   
-_keyBinding_: macOs: `cmd + backspace`, Linux/Windows: `ctrl + backspace`.
+1. **add component** button: the ➕ icon is used to add new nodes to the graph. If you hover over the button you will be presented with a list of the node option in the current modeling phase you are in. Each newly created node will be added to the top left of the graph container (I am having some issues with the smart placement of nodes). If the node is _not_ created, there are probably some issues with the new node's id and the ids of the existing nodes in the graph. Each node must have a unique id in order to be added to the graph. The `addComponent.js` and `initialize.js` modules try to create a new id, but bugs may occur. If that happens, feel free to file an issue.
+1. **add connection:** button: the next button is used to add edges between nodes. To add an edge you need to click on the _source_ node first, then on the _target_ node and then click the _connection_ button. The first clicked node is highlighted to blue. When you click on the second node, the color of your first selection is turned to orange and the newly selected node is turned blue. As a reminder _blue_ node ➞ _target_ and _orange_ node ➞ _source_. Once the _connection_ button is clicked, an edge with the corresponding relationship will be created. If the modeling language doesn't allow the connection between the nodes, an error will be displayed on the results bar.
+   _keyBinding_: macOs: `cmd + e`, Linux/Windows: `ctrl + e`
+1. **delete component** button: you can delete nodes and edges by selecting the element and clicking the ➖ icon.
+   _keyBinding_: macOs: `cmd + backspace`, Linux/Windows: `ctrl + backspace`.
 1. **select component** button: you can highlight the selected class of nodes. All the other nodes in the graphs will be faded. Moreover, you can see the total number of the highlighted nodes in the bottom left corner of the graph.
 1. **select module** button: the Apparatus Framework groups concepts that share a similar thematic context. For example, concepts that are used to express networking constructs such as _network connections_ or _devices_ belong to the _network module_. All the nodes that are part of the selected module are highlighted and their total number is shown in the bottom left corner of the graph.
 1. **layout options** button: is used to apply different layout algorithms to on the graph. The layout algorithms are located in `/src/core/layout.js`.
 1. **threat validation** button: checks whether the identified threats are mitigated by constraint.
 1. **model validation** button: is used to validate a model according to the metamodel of the phase. This function is useful for checking the correctiveness of imported models, since the add edge function disallows wrong connections.
-1.  **transform model** button: transform the current model to a model of the other engineering phase.
-1. **save model** button: once pressed it will display a native save dialog. You can select the location of the saved file as well as its name. The file will be saved with `.json` extension.    
-_keyBinding_: macOs: `cmd + shift + s`, Linux/Windows: `ctrl + shift + s`.
+1. **transform model** button: transform the current model to a model of the other engineering phase.
+1. **save model** button: once pressed it will display a native save dialog. You can select the location of the saved file as well as its name. The file will be saved with `.json` extension.
+   _keyBinding_: macOs: `cmd + shift + s`, Linux/Windows: `ctrl + shift + s`.
 1. **home** button: once click it navigate you back to home menu (phase selection).
 
 Only available during the implementation phase:
+
 1. **vulnerability validation** button: checks whether vulnerabilities are mitigated by a mechanism.
-1.  **vulnerability identification** button:
+1. **vulnerability identification** button:
 
 To **edit a node**, you can right click on it and a form will be created. When adding a node components, the attributes of the node concept based on the modeling language will be added as well. However, the values of the attributes will be empty.
 
@@ -96,13 +96,14 @@ This feature is still experimental and has few issues.
 
 ### Using the console
 
-ASTo has a command line console available on the bottom right corner of the app. The console was implemented to enable a text based interface to the models. You gain focus on the console by pressing the keybinding <meta> + l. If you type `help`, it will display a list of keywords that can be used.
+ASTo has a command line console available on the bottom right corner of the app. The console was implemented to enable a text based interface to the models. You gain focus on the console by pressing the keybinding `cmd + l` for macOs and `ctrl + l` for Windows/Linux. If you type `help`, it will display a list of keywords that can be used.
 
 The most important feature of the console is the search function. You can type any keyword that is included in the model, and the corresponding nodes will be highlighted. For example, if you type `device`, all the nodes that have the keyword 'device' will be highlighted. You can search both the attributes of the nodes and their key values.
 
 ### Design phase (model the idea of a system)
 
 Types of Analysis
+
 * identify threats
 * identify assets
 * identify constraints
@@ -114,6 +115,7 @@ Types of Analysis
 ### Implementation phase (model the implemented system)
 
 Types of Analysis
+
 * identify threats
 * identify vulnerabilities
 * identify assets
@@ -128,6 +130,7 @@ Types of Analysis
 ### State diagrams (model the different states of a system)
 
 Types of Analysis
+
 * model different configurations of a system based on detected events
 * model different configurations of the system based on the security mechanisms
 * identified events can be used as alerts in system monitoring applications
@@ -141,8 +144,8 @@ As with any Electron application, the first file that is being executed is the `
 Each phase has its own `.js` file where its graphical interface is dynamically generated. The files are stored in the `app/src/phaseUi` directory.
 
 1. Design phase -> `dgnUI.js`
-3. Implementation phase -> `impUI.js`
-4. State diagrams -> `stateUI.js`
+2. Implementation phase -> `impUI.js`
+3. State diagrams -> `stateUI.js`
 
 ## The `app/src` directory
 
@@ -156,16 +159,16 @@ Inside the `initialize.js`, you will spot a `test` button. Most of the time, the
 
 The other function of the `/src/initialize.js` is to define the behavior of the app when the user interacts with the graph. There 6 types of direct interactions (or tapping) with the graph.
 
-1.  clicking on a node.
-1.  right-clicking on a node.
-1.  clicking on an edge.
-1.  right-clicking on an edge (only during in state diagrams).
-1.  clicking on the stage (background).
-1.  right-clicking on the stage (background).
+1. clicking on a node.
+1. right-clicking on a node.
+1. clicking on an edge.
+1. right-clicking on an edge (only during in state diagrams).
+1. clicking on the stage (background).
+1. right-clicking on the stage (background).
 
 To capture those events, we use the [cytoscape.js](http://js.cytoscape.org) `.on` method with the `tap` argument. In the ASTo's code, you will see:
 
-```
+```javascript
 cy.on('tap', 'node', selection => {
   // do stuff when tapping on node
 }
@@ -178,7 +181,8 @@ Another thing you will notice is that there are some unique modules in each engi
 ASTo can render graphs that stored as `.js` or `.json` files.
 
 If you check the `/src/helpers/cyOptions.js` file, you will the following code (it declares some information about the Cytoscape instant):
-```
+
+```javascript
 let cy = cytoscape({
   container: document.getElementById('graph-container'),
   autounselectify: true,
