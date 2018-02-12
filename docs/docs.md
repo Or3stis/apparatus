@@ -95,9 +95,11 @@ This feature is still experimental and has few issues.
 
 ### Using the console
 
-ASTo has a command line console available on the bottom right corner of the app. The console was implemented to enable a text based interface to the models. You gain focus on the console by pressing the keybinding `cmd + l` for macOs and `ctrl + l` for Windows/Linux. If you type `help`, it will display a list of keywords that can be used.
+ASTo has a command line console available on the bottom right corner of the app. You gain focus on the console by pressing the keybinding `cmd + l` for macOs and `ctrl + l` for Windows/Linux. If you type `help`, it will display a list of console options.
 
-The most important feature of the console is the search function. You can type any keyword that is included in the model, and the corresponding nodes will be highlighted. For example, if you type `device`, all the nodes that have the keyword 'device' will be highlighted. You can search both the attributes of the nodes and their key values.
+The console can be used to search for specific objects in the graph or perform operations. Raw text is used as search input. For example, if you type `device`, ASTo will highlight all the nodes in the graph that have the word `device` as an attribute.
+
+All console commands must be preceded with a `:`. For example, typing `:suggestions` will perform the security suggestion functions. On the other hand, typing `suggestions` (with the `:`) will perform a search operation with the keyword `suggestion`.
 
 ### Design phase (model the idea of a system)
 
