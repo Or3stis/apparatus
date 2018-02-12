@@ -14,6 +14,19 @@ ASTo is security analysis tool for IoT networks. It is developed to support the 
 
 The application is in alpha stage. The focus now is to improve the core functionality of the application along with the introduction of additional features, in order to reach beta stage.
 
+## Features
+
+1. Graph based visualization of IoT systems.
+1. Model IoT system in design and implementation engineering phases.
+1. Automatic model tranformation between the two engineering phases.
+1. Create IoT system state diagrams.
+1. Automate implementation phase model generation using pcap-ng files.
+1. Perform model-based vulnerability identification through CVE databases.
+1. Generate automated model-based security suggestions.
+1. Attribute-based pattern identification.
+1. Search through graphs using a variety of options (concepts, modules, attribute).
+1. Togglable Light and Dark theme.
+
 Some screenshots
 
 ![asto home](https://raw.githubusercontent.com/Or3stis/apparatus/master/assets/screenShot1.png)
