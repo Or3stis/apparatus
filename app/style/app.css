@@ -45,9 +45,11 @@ body {
 .window {
   position: relative;
   height: 97vh;
+  margin-right: auto;
+  margin-left: auto;
   display: grid;
+  grid-template-areas: 'action-bar graph sidebar';
   grid-template-columns: 50px 1fr 165px;
-  grid-template-areas: 'action-bar graph sidebar' 'action-bar graph sidebar' 'action-bar graph sidebar';
 }
 .action-bar {
   display: none;
