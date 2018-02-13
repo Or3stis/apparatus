@@ -18,17 +18,16 @@
 
 body {
   background-color: var(--main-bg-color);
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', 'Ubuntu', sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue',
+    'Ubuntu', sans-serif;
   color: var(--main-tx-color);
   height: 100%;
   width: 100%;
   margin: 0;
   padding: 0;
   font-size: 15px;
-  /* Smoother startup */
-  animation: fadein 0.3s;
-  /*disable text selection*/
-  user-select: none;
+  animation: fadein 0.3s; /* Smoother startup */
+  user-select: none; /*disable text selection*/
   overflow: hidden;
 }
 
@@ -84,7 +83,7 @@ body {
   align-content: flex-start;
 }
 
-/*data in message-area is shown as a bubble*/
+/*data in message-area is shown as bubbles*/
 .bubble {
   position: relative;
   background-color: var(--main-dark-bg-color);
@@ -217,7 +216,8 @@ input::-webkit-input-placeholder {
   border-color: var(--main-dark-bg-color);
 }
 /*flash color when clicked*/
-.btn-icon:active, .icon:active {
+.btn-icon:active,
+.icon:active {
   fill: var(--main-tx-color);
 }
 .btn-icon:focus {
@@ -225,7 +225,7 @@ input::-webkit-input-placeholder {
   outline: none;
 }
 
-/*used by expose.js*/
+/*used by expose.js to display all node information*/
 .active-button {
   background-color: var(--blue-color);
   margin: 2px;
@@ -236,7 +236,7 @@ input::-webkit-input-placeholder {
   outline: none;
 }
 
-/* toggle theme button */
+/*toggle theme button*/
 .tgl-wrapper {
   position: fixed;
   bottom: 10px;
@@ -260,7 +260,6 @@ input::-webkit-input-placeholder {
   height: 16px;
   border-radius: 100px;
   background: var(--main-tx-color);
-  /* box-shadow: 3px 2px 11px 7px rgba(33, 37, 43, 0.7); */
   content: '';
   transition: all 0.3s ease;
 }
@@ -274,7 +273,9 @@ input::-webkit-input-placeholder {
   left: 22px;
   background: var(--black-color);
 }
-.tgl { display: none; }
+.tgl {
+  display: none;
+}
 
 /*dropdown buttons*/
 .dropdown {
@@ -359,4 +360,3 @@ input::-webkit-input-placeholder {
   border-radius: 6px;
   background-color: rgba(171, 178, 191, 0.3);
 }
-
