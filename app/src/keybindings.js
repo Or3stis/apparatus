@@ -1,4 +1,4 @@
-// keybindings and command propmpt options
+// keybindings and command prompt options
 
 const settings = require('../settings/settings.js')
 
@@ -39,7 +39,7 @@ module.exports = function (
 • clear sidebar <b>:clear</b>
 • model validation <b>:validate</b>
 • security suggestions <b>:suggestion</b>
-• search for attribures <b>:keyword</b>`
+• search for attributes <b>:keyword</b>`
 
   // help menu for Linux and Windows
   const helpMenu = `• focus on console: ctrl+L
@@ -52,7 +52,7 @@ module.exports = function (
 • clear sidebar <b>:clear</b>
 • model validation <b>:validate</b>
 • security suggestions <b>:suggestion</b>
-• search for attribures <b>:keyword</b>`
+• search for attributes <b>:keyword</b>`
 
   // adds the url of ASTo docs
   const docsURLBtn = `click to view <button id='url-button' class='menu-btn' style='color: var(--main-tx-color); background-color: var(--main-bg-color); width: 45px; height: 25px;'>docs</button>`
@@ -76,10 +76,10 @@ module.exports = function (
     const input = document.getElementById('cmd-id').value
     document.getElementById('cmd-id').value = ''
 
-    // declare input of console commmands
+    // declare input of console commands
     switch (input) {
       case 'help':
-        // checks the platform to display the corrent help menu
+        // checks the platform to display the help menu
         process.platform === 'darwin'
           ? bubbleHTML(helpMenuMacOS)
           : bubbleHTML(helpMenu)
@@ -167,7 +167,7 @@ module.exports = function (
     // developer mode message when a user wants to reload the app, meta + r
     if (metaKey === true && event.code === 'KeyR') {
       bubbleHTML('<strong>Window reload</strong> is disabled in default mode.')
-      bubbleHTML('Start the app in <strong>develper mode</strong>.')
+      bubbleHTML('Start the app in <strong>developer mode</strong>.')
       bubbleHTML('<strong>npm run dev</strong>')
     }
   })

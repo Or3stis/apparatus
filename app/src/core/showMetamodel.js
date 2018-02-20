@@ -27,7 +27,7 @@ module.exports = function showMetamodel (phase) {
     })
   }
 
-  // if an actice metamodel exists
+  // if an active metamodel exists
   const metamodelIsActive = url => {
     let isWindowActive = false
     const activeWins = BrowserWindow.getAllWindows()

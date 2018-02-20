@@ -21,7 +21,7 @@ const suggestionList = {
     attribute: 'layer',
     attributeValue: 'application',
     suggestion:
-      'Devices in the application layer are usually provided by third parties. The security configuration of thrird party devices must be taken into consideration since it affects the security posture of the overall system.',
+      'Devices in the application layer are usually provided by third parties. The security configuration of third party devices must be taken into consideration since it affects the security posture of the overall system.',
     nodes: []
   },
   s3: {

@@ -1,4 +1,4 @@
-// expose the attribures of the nodes
+// expose the attributes of the nodes
 
 const rmElement = require('../helpers/rmElement.js')
 
