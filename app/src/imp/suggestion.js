@@ -6,7 +6,7 @@ const bubbleHTML = require('../helpers/bubbleHTML.js')
 // @node: node instance in the graph
 // @concept: node concept in the suggestion array
 // @attribute: attribute in the graph that will be compared
-// @attributeVallue: attribute value in the suggestion array
+// @attributeValue: attribute value in the suggestion array
 // @nodeArray: array that will store the insecure nodes
 const findNodes = (node, concept, attribute, attributeValue, nodeArray) => {
   if (

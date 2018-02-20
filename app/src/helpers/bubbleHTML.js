@@ -2,7 +2,7 @@
 
 const checkBubbles = require('./checkBubbles.js')
 
-// id couter for the bubbles
+// id counter for the bubbles
 let idCnt = 0
 
 module.exports = function bubbleHTML (toPrint) {

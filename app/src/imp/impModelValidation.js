@@ -13,15 +13,15 @@ module.exports = function moduleValidation (cy) {
       if (node.data().asto.concept === component) {
         // stores the neighboring nodes of the component
         const neighborNodes = node.neighborhood().add(node)
-        const neigborObject = neighborNodes.data().asto.concept
+        const neighborObject = neighborNodes.data().asto.concept
 
-        Object.keys(neigborObject).map(() => {
+        Object.keys(neighborObject).map(() => {
           // every neighbor node is added to the array arrWrong
-          arrWrong.push(neigborObject)
+          arrWrong.push(neighborObject)
 
           // if the neighbor is a valid connection it is removed from the array
-          if (componentArray.includes(neigborObject) === true) {
-            arrWrong.pop(neigborObject)
+          if (componentArray.includes(neighborObject) === true) {
+            arrWrong.pop(neighborObject)
           }
         })
       }

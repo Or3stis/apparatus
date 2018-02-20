@@ -1,6 +1,6 @@
 // creates models from pcap-ng files
 
-// TODO code is incompehensible, make it better
+// TODO code is difficult to read, make it better
 const { dialog } = require('electron').remote
 const fs = require('fs')
 const child = require('child_process')
@@ -58,7 +58,7 @@ const removeServices = allConnections => {
 
     // attempt to remove the duplicate connections
     // some connections have the same nodes but in opposite directions
-    // src -> trg to trg -> src, this cause the srcipt to render them twice
+    // src -> trg to trg -> src, this cause the script to render them twice
     if (counter % 2 === 1) {
       uniqueLine.push(`${srcIP} ${trgIP} ${element[2]}`)
     } else if (counter % 2 === 0) {
