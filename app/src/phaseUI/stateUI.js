@@ -1,5 +1,3 @@
-'use strict'
-
 const phaseMenu = require('../../src/phaseMenu.js')
 
 module.exports = function stateUI () {
