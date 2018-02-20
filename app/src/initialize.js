@@ -41,7 +41,7 @@ module.exports = function initialize (cy, phase) {
   // turn the counter into an number and remove the 'n'
   const nodeCounter = Number(nodeCounterID.replace('n', ''))
 
-  // cy.on performs actions on intrection with the graph
+  // cy.on performs actions on interactions with the graph
   // actions when tapping on node
   cy.on('tap', 'node', selection => {
     // removes previous selections classes
@@ -107,7 +107,7 @@ module.exports = function initialize (cy, phase) {
       oldSelectedNode.out = {}
       selectedEdge.out = {}
 
-      printTotalNodes(cy) // show nubmer of nodes
+      printTotalNodes(cy) // show number of nodes
 
       rmElement('message-area-id', 'form-id') // remove the edit node element
       rmElement('window-id', 'nodeMenu-id') // remove node menu element

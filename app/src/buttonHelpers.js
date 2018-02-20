@@ -6,7 +6,7 @@ const dgnOverview = require('./dgn/dgnOverview.js')
 const addDgnComponent = require('./dgn/addDgnComponent.js')
 const addDgnEdge = require('./dgn/addDgnEdge.js')
 
-// reguire implementation modules
+// require implementation modules
 const impModelValidation = require('./imp/impModelValidation.js')
 const impOverview = require('./imp/impOverview.js')
 const addImpComponent = require('./imp/addImpComponent.js')
