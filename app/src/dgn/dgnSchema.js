@@ -27,7 +27,6 @@ dgnMetamodel.deviceArray = [
 dgnMetamodel.applicationArray = ['device', 'information', 'asset', 'actor']
 dgnMetamodel.micronetArray = ['device', 'net', 'micronet']
 dgnMetamodel.netArray = ['micronet', 'threat', 'device']
-dgnMetamodel.undentifiedNodeArray = ['net', 'actor', 'malicious actor']
 dgnMetamodel.informationArray = ['asset', 'application', 'device', 'actor']
 dgnMetamodel.actorArray = ['device', 'application', 'information']
 dgnMetamodel.maliciousActorArray = dgnMetamodel.actorArray.concat('threat')
