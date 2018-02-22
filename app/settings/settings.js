@@ -1,4 +1,4 @@
-// settingsuration values of the app
+// settings of ASTo
 
 const settings = {}
 
