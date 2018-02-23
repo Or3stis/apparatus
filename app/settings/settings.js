@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 // settings of ASTo
-=======
-// setting of the app
->>>>>>> b87ce65b4d20b388a5d3f947c2b64280131236e8
 
 const settings = {}
 
