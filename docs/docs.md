@@ -11,7 +11,7 @@ If you have a question that is not answered in the wiki, please make a pull requ
 1. [The Apparatus Framework](https://or3stis.github.io/apparatus/docs#the-apparatus-framework)
 1. [How to use ASTo](https://or3stis.github.io/apparatus/docs#how-to-use-asto)
 1. [Color themes](https://or3stis.github.io/apparatus/docs#color-themes)
-1. [Importing graphs from pcang files](https://or3stis.github.io/apparatus/docs#generate-graphs-from-pcapng-files-experimental-feature)
+1. [Importing graphs from pcapng files](https://or3stis.github.io/apparatus/docs#generate-graphs-from-pcapng-files-experimental-feature)
 1. [Performing security analysis](https://or3stis.github.io/apparatus/docs#performing-security-analysis)
 1. [The architecture of ASTo](https://or3stis.github.io/apparatus/docs#the-architecture-of-asto)
 
@@ -68,7 +68,7 @@ Buttons offer certain functions to manipulate the graph and perform analysis. Se
 1. **select module** button: the Apparatus Framework groups concepts that share a similar thematic context. For example, concepts that are used to express networking constructs such as _network connections_ or _devices_ belong to the _network module_. All the nodes that are part of the selected module are highlighted and their total number is shown in the bottom left corner of the graph.
 1. **layout options** button: is used to apply different layout algorithms to on the graph. The layout algorithms are located in `/src/core/layout.js`.
 1. **threat validation** button: checks whether the identified threats are mitigated by constraint.
-1. **model validation** button: is used to validate a model according to the metamodel of the phase. This function is useful for checking the correctiveness of imported models, since the add edge function disallows wrong connections.
+1. **model validation** button: is used to validate a model according to the metamodel of the phase. This function is useful for checking if imported models are valid, since the add edge function disallows wrong connections.
 1. **transform model** button: transform the current model to a model of the other engineering phase.
 1. **save model** button: once pressed it will display a native save dialog. You can select the location of the saved file as well as its name. The file will be saved with `.json` extension.
    _keyBinding_: macOs: `cmd + shift + s`, Linux/Windows: `ctrl + shift + s`.

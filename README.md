@@ -18,7 +18,7 @@ The application is in alpha stage. The focus now is to improve the core function
 
 1. Graph based visualization of IoT systems.
 1. Model IoT system in design and implementation engineering phases.
-1. Automatic model tranformation between the two engineering phases.
+1. Automatic model transformation between the two engineering phases.
 1. Create IoT system state diagrams.
 1. Automate implementation phase model generation using pcap-ng files.
 1. Perform model-based vulnerability identification through CVE databases.

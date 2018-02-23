@@ -148,7 +148,7 @@ module.exports = function layout (cy, selection) {
     startAngle: 3 / 2 * Math.PI, // where nodes start in radians
     sweep: undefined, // how many radians should be between the first and last
     clockwise: true, // whether the layout should go clockwise (true)
-    equidistant: true, // whether levels have an equal radial distance betwen them, may cause bounding box overflow
+    equidistant: true, // whether levels have an equal radial distance between them, may cause bounding box overflow
     minNodeSpacing: 90, // min spacing between outside of nodes
     boundingBox: undefined, // constrain layout bounds;
     avoidOverlap: true, // prevents node overlap
@@ -161,7 +161,6 @@ module.exports = function layout (cy, selection) {
       return node.degree()
     },
     levelWidth: nodes => {
-      // the letiation of concentric values in each level
       return nodes.maxDegree() / 2
     },
     animate: false, // whether to transition the node positions
