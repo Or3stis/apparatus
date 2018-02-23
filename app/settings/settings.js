@@ -1,4 +1,4 @@
-// settingsuration values of the app
+// setting of the app
 
 const settings = {}
 
