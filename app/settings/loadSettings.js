@@ -1,5 +1,8 @@
+// allows modification of the settings by the user
+
 const settings = require('./settings')
 
+// dark theme color values
 const darkText = document.getElementById('dark-text')
 darkText.value = settings.text
 const darkBackground = document.getElementById('dark-background')
@@ -23,6 +26,7 @@ darkMagenta.value = settings.magenta
 const darkCyan = document.getElementById('dark-cyan')
 darkCyan.value = settings.cyan
 
+// light theme color values
 const lightText = document.getElementById('light-text')
 lightText.value = settings.text
 const lightBackground = document.getElementById('light-background')
