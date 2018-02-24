@@ -8,7 +8,7 @@ darkText.value = settings.darkText
 const darkBackground = document.getElementById('dark-background')
 darkBackground.value = settings.darkBgrd
 const darkDarkBackground = document.getElementById('dark-dark-background')
-darkDarkBackground.value = settings.darkDarkBgnd
+darkDarkBackground.value = settings.darkDarkBgrd
 const darkBlack = document.getElementById('dark-black')
 darkBlack.value = settings.darkBlack
 const darkGray = document.getElementById('dark-gray')
@@ -63,3 +63,9 @@ numberBubbles.value = settings.maxNumberOfBubbles
 
 const cveUrl = document.getElementById('cve-url')
 cveUrl.value = settings.cveSearchUrl
+
+// capture the save event
+const saveBtn = document.getElementById('settings-save')
+saveBtn.addEventListener('click', () => {
+  console.log(defaultColor.value)
+})
