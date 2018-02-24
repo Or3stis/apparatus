@@ -1,4 +1,5 @@
 // keybindings and command prompt options
+const setWin = require('../settings/settingsWindow.js')
 
 const settings = require('../settings/settings.js')
 
@@ -114,6 +115,9 @@ module.exports = function (
         document.getElementById('message-area-id').textContent = ''
         break
       case '':
+        break
+      case ':set':
+        setWin()
         break
       default:
         searchAttribute(cy, input)
