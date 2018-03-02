@@ -29,3 +29,52 @@ body {
   user-select: none; /*disable text selection*/
   overflow: hidden;
 }
+
+.wrapper {
+  height: 100%;
+  width: 100%;
+  overflow: auto;
+}
+
+.color-wrapper {
+  height: 600px;
+  width: 250px;
+  float: left;
+}
+.color-wrapper label {
+  float: left;
+  text-align: right;
+  margin-right: 15px;
+  width: 141px;
+}
+.color-wrapper input {
+  width: 70px;
+}
+.dark-color-wrapper {
+  width: 100%;
+  margin: 10px;
+}
+.light-color-wrapper {
+  width: 100%;
+  margin: 10px;
+}
+.options-wrapper {
+  height: 200px;
+  width: 310px;
+  float: right;
+}
+.options-wrapper label {
+  float: left;
+  text-align: right;
+  margin-right: 15px;
+  width: 170px;
+}
+.options-wrapper input {
+  width: 110px;
+}
+
+.btns-wrapper {
+  right: 0;
+  position: absolute;
+  bottom: 0;
+}
