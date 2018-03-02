@@ -4,7 +4,7 @@
   "description": "an IoT network security analysis and visualization tool",
   "main": "main.js",
   "scripts": {
-    "lint": "prettier --no-semi --single-quote --write 'app/src/**/*.js' && standard 'app/src/**/*.js' --fix",
+    "lint": "prettier --no-semi --single-quote --write 'app/**/*.js' && standard 'app/**/*.js' --fix",
     "dev": "cross-env NODE_ENV=development electron app/src/main.js",
     "start": "electron app/src/main.js"
   },
