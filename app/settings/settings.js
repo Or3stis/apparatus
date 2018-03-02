@@ -44,7 +44,7 @@ settings.setColors = color => {
     settings.yellow = settings.darkYellow
     settings.magenta = settings.darkMagenta
     settings.cyan = settings.darkCyan
-  // light color theme
+    // light color theme
   } else if (color === 'light') {
     settings.text = settings.lightText
     settings.background = settings.lightBgrd

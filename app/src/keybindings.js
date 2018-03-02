@@ -1,5 +1,5 @@
 // keybindings and command prompt options
-const setWin = require('../settings/settingsWindow.js')
+const setWin = require('../settings/createSettingsWindow.js')
 
 const settings = require('../settings/settings.js')
 
