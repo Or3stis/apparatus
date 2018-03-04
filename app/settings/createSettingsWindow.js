@@ -2,7 +2,6 @@
 
 const remote = require('electron').remote
 const BrowserWindow = remote.BrowserWindow
-// const settings = require('../../settings/settings.js')
 
 module.exports = function settingsWindow () {
   const settingsURL = `file://${__dirname}/settings.html`

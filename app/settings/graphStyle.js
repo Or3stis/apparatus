@@ -1,6 +1,6 @@
 // CSS style for the graphs
 
-const settings = require(`./settings.js`)
+const settings = require(`./userSettings.js`)
 
 const graphStyle = {}
 

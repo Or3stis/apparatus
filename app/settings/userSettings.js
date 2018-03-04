@@ -13,7 +13,7 @@ settings.darkOrange = '#cf8772'
 settings.darkGreen = '#98c379'
 settings.darkYellow = '#d19a66'
 settings.darkMagenta = '#c678dd'
-settings.darkCyan = '[object HTMLInputElement]'
+settings.darkCyan = '#56b6c2'
 // light color theme
 settings.lightText = '#383a42'
 settings.lightBgrd = '#fafafa'

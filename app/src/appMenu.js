@@ -1,4 +1,4 @@
-const settings = require('../settings/settings.js')
+const settings = require('../settings/userSettings.js')
 const { Menu } = require('electron')
 const electron = require('electron')
 const app = electron.app

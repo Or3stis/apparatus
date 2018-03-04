@@ -1,7 +1,8 @@
 // allows modification of the settings by the user
-
+const remote = require('electron').remote
 const fs = require('fs')
-const settings = require('./settings.js')
+
+const settings = require('./userSettings.js')
 
 // dark theme color values
 const darkText = document.getElementById('dark-text')
@@ -151,6 +152,29 @@ module.exports = settings
 `
 
   fs.writeFile('./app/settings/userSettings.js', toWrite, err => {
-    if (err) console.log(err)
+    if (err) throw err
   })
+})
+
+// capture the cancel event
+const cancelBtn = document.getElementById('settings-cancel')
+cancelBtn.addEventListener('click', () => {
+  const win = remote.getCurrentWindow()
+  win.close()
+})
+
+// capture the settings restore event
+const restoreBtn = document.getElementById('settings-restore')
+restoreBtn.addEventListener('click', () => {
+  // TODO uncomment when electron supports node.js < 8.5
+  // fs.copyFile('./app/settings/defaultSettings.js', './app/settings/userSettings.js', (err) => {
+  //   if (err) throw err
+  // })
+  fs
+    .createReadStream('./app/settings/defaultSettings.js')
+    .pipe(fs.createWriteStream('./app/settings/userSettings.js'))
+
+  // close window
+  const win = remote.getCurrentWindow()
+  win.close()
 })

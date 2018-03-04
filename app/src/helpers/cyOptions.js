@@ -1,7 +1,7 @@
 // helper to create cytoscape graphs based on specific options
 
 const cytoscape = require('cytoscape')
-const settings = require('../../settings/settings.js')
+const settings = require('../../settings/userSettings.js')
 const graphStyle = require('../../settings/graphStyle.js')
 
 module.exports = function cyOptions (cy, file) {

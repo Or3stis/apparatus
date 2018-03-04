@@ -1,7 +1,7 @@
 // keybindings and command prompt options
 const setWin = require('../settings/createSettingsWindow.js')
 
-const settings = require('../settings/settings.js')
+const settings = require('../settings/userSettings.js')
 
 // require core modules
 const searchAttribute = require('./core/searchAttribute.js')

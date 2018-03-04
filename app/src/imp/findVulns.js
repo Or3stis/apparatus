@@ -4,7 +4,7 @@ const http = require('http')
 const fs = require('fs')
 const { dialog } = require('electron').remote
 
-const settings = require('../../settings/settings.js')
+const settings = require('../../settings/userSettings.js')
 const bubbleTxt = require('../helpers/bubbleTxt.js')
 const bubbleHTML = require('../helpers/bubbleHTML.js')
 
