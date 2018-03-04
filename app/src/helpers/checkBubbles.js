@@ -1,6 +1,6 @@
 // keeps the number of message bubbles to the a specified number
 
-const settings = require('../../settings/settings.js')
+const settings = require('../../settings/userSettings.js')
 
 module.exports = function checkBubbles () {
   const messageArea = document.getElementById('message-area-id')

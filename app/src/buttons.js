@@ -1,5 +1,5 @@
 // bind functions to buttons in the UI
-const settings = require('../settings/settings.js')
+const settings = require('../settings/userSettings.js')
 
 const nodeSelection = require('./core/nodeSelection.js')
 const layout = require('./core/layout.js')

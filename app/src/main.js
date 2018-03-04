@@ -4,7 +4,7 @@ const app = electron.app
 // Module to create native browser window.
 const BrowserWindow = electron.BrowserWindow
 
-const settings = require('../settings/settings.js')
+const settings = require('../settings/userSettings.js')
 const appMenu = require('./appMenu.js')
 
 // Keep a global reference of the window object, if you don't, the window will
