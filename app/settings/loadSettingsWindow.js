@@ -154,6 +154,10 @@ module.exports = settings
   fs.writeFile('./app/settings/userSettings.js', toWrite, err => {
     if (err) throw err
   })
+
+  // close the window
+  const win = remote.getCurrentWindow()
+  win.close()
 })
 
 // capture the cancel event
