@@ -166,7 +166,7 @@ module.exports = function (
     if (metaKey === true && event.keyCode === 188) {
       settingsWindow()
     }
-    // save graph on meta + s
+    // save graph on shift + meta + s
     if (event.shiftKey === true && metaKey === true && event.code === 'KeyS') {
       save(cy)
     }
