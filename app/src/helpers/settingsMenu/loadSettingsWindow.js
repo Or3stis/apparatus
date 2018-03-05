@@ -2,7 +2,7 @@
 const remote = require('electron').remote
 const fs = require('fs')
 
-const settings = require('./userSettings.js')
+const settings = require('../../../settings/userSettings.js')
 
 // dark theme color values
 const darkText = document.getElementById('dark-text')

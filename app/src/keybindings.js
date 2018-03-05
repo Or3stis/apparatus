@@ -1,5 +1,4 @@
 // keybindings and command prompt options
-const setWin = require('../settings/createSettingsWindow.js')
 
 const settings = require('../settings/userSettings.js')
 
@@ -13,6 +12,7 @@ const bubbleHTML = require('./helpers/bubbleHTML.js')
 const save = require('./helpers/save.js')
 const theme = require('./helpers/theme.js')
 const watcher = require('./helpers/watcher.js')
+const settingsWindow = require('./helpers/settingsMenu/createSettingsWindow.js')
 
 // require implementation modules
 const suggestion = require('./imp/suggestion.js')
@@ -117,7 +117,7 @@ module.exports = function (
       case '':
         break
       case ':set':
-        setWin()
+        settingsWindow()
         break
       default:
         searchAttribute(cy, input)
