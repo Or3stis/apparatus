@@ -2,7 +2,7 @@
 const remote = require('electron').remote
 const fs = require('fs')
 
-const settings = require('./userSettings.js')
+const settings = require('../../../settings/userSettings.js')
 
 // dark theme color values
 const darkText = document.getElementById('dark-text')
@@ -154,6 +154,10 @@ module.exports = settings
   fs.writeFile('./app/settings/userSettings.js', toWrite, err => {
     if (err) throw err
   })
+
+  // close the window
+  const win = remote.getCurrentWindow()
+  win.close()
 })
 
 // capture the cancel event

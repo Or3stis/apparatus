@@ -1,5 +1,4 @@
 // keybindings and command prompt options
-const setWin = require('../settings/createSettingsWindow.js')
 
 const settings = require('../settings/userSettings.js')
 
@@ -13,6 +12,7 @@ const bubbleHTML = require('./helpers/bubbleHTML.js')
 const save = require('./helpers/save.js')
 const theme = require('./helpers/theme.js')
 const watcher = require('./helpers/watcher.js')
+const settingsWindow = require('./helpers/settingsMenu/createSettingsWindow.js')
 
 // require implementation modules
 const suggestion = require('./imp/suggestion.js')
@@ -40,6 +40,7 @@ module.exports = function (
 • clear sidebar <b>:clear</b>
 • model validation <b>:validate</b>
 • security suggestions <b>:suggestion</b>
+• configure settings <b>:settings</b>
 • search for attributes <b>:keyword</b>`
 
   // help menu for Linux and Windows
@@ -53,6 +54,7 @@ module.exports = function (
 • clear sidebar <b>:clear</b>
 • model validation <b>:validate</b>
 • security suggestions <b>:suggestion</b>
+• configure settings <b>:settings</b>
 • search for attributes <b>:keyword</b>`
 
   // adds the url of ASTo docs
@@ -116,8 +118,8 @@ module.exports = function (
         break
       case '':
         break
-      case ':set':
-        setWin()
+      case ':settings':
+        settingsWindow()
         break
       default:
         searchAttribute(cy, input)
@@ -160,7 +162,11 @@ module.exports = function (
 
       watcher.nodes(graphNodes, cy)
     }
-    // save graph on meta + s
+    // open settings on meta + ,
+    if (metaKey === true && event.keyCode === 188) {
+      settingsWindow()
+    }
+    // save graph on shift + meta + s
     if (event.shiftKey === true && metaKey === true && event.code === 'KeyS') {
       save(cy)
     }
