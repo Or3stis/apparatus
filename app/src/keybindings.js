@@ -40,6 +40,7 @@ module.exports = function (
 • clear sidebar <b>:clear</b>
 • model validation <b>:validate</b>
 • security suggestions <b>:suggestion</b>
+• configure settings <b>:settings</b>
 • search for attributes <b>:keyword</b>`
 
   // help menu for Linux and Windows
@@ -53,6 +54,7 @@ module.exports = function (
 • clear sidebar <b>:clear</b>
 • model validation <b>:validate</b>
 • security suggestions <b>:suggestion</b>
+• configure settings <b>:settings</b>
 • search for attributes <b>:keyword</b>`
 
   // adds the url of ASTo docs
@@ -116,7 +118,7 @@ module.exports = function (
         break
       case '':
         break
-      case ':set':
+      case ':settings':
         settingsWindow()
         break
       default:
@@ -159,6 +161,10 @@ module.exports = function (
       deleteRestoreConcepts.restoreNode(cy)
 
       watcher.nodes(graphNodes, cy)
+    }
+    // open settings on meta + ,
+    if (metaKey === true && event.keyCode === 188) {
+      settingsWindow()
     }
     // save graph on meta + s
     if (event.shiftKey === true && metaKey === true && event.code === 'KeyS') {
