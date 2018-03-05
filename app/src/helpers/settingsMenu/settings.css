@@ -24,7 +24,7 @@ body {
   width: 100%;
   margin: 0;
   padding: 0;
-  font-size: 15px;
+  font-size: 12px;
   animation: fadein 0.3s; /* Smoother startup */
   user-select: none; /*disable text selection*/
   overflow: hidden;
@@ -34,18 +34,19 @@ body {
   height: 100%;
   width: 100%;
   overflow: auto;
+  margin: 10px;
 }
 
 .color-wrapper {
-  height: 600px;
-  width: 250px;
+  height: 100%;
+  width: 230px;
   float: left;
 }
 .color-wrapper label {
   float: left;
   text-align: right;
-  margin-right: 15px;
-  width: 141px;
+  margin-right: 12px;
+  width: 110px;
 }
 .color-wrapper input {
   width: 70px;
@@ -60,7 +61,7 @@ body {
 }
 .options-wrapper {
   height: 200px;
-  width: 310px;
+  width: 340px;
   float: right;
 }
 .options-wrapper label {
@@ -70,11 +71,12 @@ body {
   width: 170px;
 }
 .options-wrapper input {
-  width: 110px;
+  width: 120px;
 }
 
 .btns-wrapper {
   right: 0;
   position: absolute;
   bottom: 0;
+  margin: 10px;
 }
