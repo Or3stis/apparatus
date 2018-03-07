@@ -38,9 +38,11 @@ body {
 }
 
 .color-wrapper {
-  height: 100%;
-  width: 230px;
-  float: left;
+  height: 90%;
+  position: absolute;
+  left: 0%;
+  width: 35%;
+  /* float: left; */
 }
 .color-wrapper label {
   float: left;
@@ -60,7 +62,10 @@ body {
   margin: 10px;
 }
 .options-wrapper {
+  position: absolute;
   height: 200px;
+  right: 0%;
+  top: 30%;
   width: 340px;
   float: right;
 }
