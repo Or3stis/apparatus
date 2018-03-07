@@ -85,7 +85,7 @@ settings.darkOrange = '${darkOrange.value}'
 settings.darkGreen = '${darkGreen.value}'
 settings.darkYellow = '${darkYellow.value}'
 settings.darkMagenta = '${darkMagenta.value}'
-settings.darkCyan = '${darkCyan}'
+settings.darkCyan = '${darkCyan.value}'
 // light color theme
 settings.lightText = '${lightText.value}'
 settings.lightBgrd = '${lightBackground.value}'
