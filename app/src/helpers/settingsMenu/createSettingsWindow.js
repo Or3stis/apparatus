@@ -7,7 +7,7 @@ module.exports = function settingsWindow () {
   const settingsURL = `file://${__dirname}/settings.html`
   // create window
   const createWindow = url => {
-    let win = new BrowserWindow({ width: 570, height: 600, show: false })
+    let win = new BrowserWindow({ width: 570, height: 700, show: false })
     win.loadURL(url)
     win.on('ready-to-show', win.show)
 

@@ -30,6 +30,11 @@ body {
   overflow: hidden;
 }
 
+h1 {
+  font-size: 12px;
+  text-align: center;
+}
+
 .wrapper {
   height: 100%;
   width: 100%;
@@ -42,16 +47,26 @@ body {
   position: absolute;
   left: 0%;
   width: 35%;
-  /* float: left; */
 }
 .color-wrapper label {
   float: left;
   text-align: right;
+  margin-bottom: 5px;
   margin-right: 12px;
   width: 110px;
 }
 .color-wrapper input {
   width: 70px;
+  background-color: var(--main-dark-bg-color);
+  border: 1px solid;
+  border-radius: 5px;
+  margin-bottom: 5px;
+  border-color: var(--main-tx-color);
+  color: var(--main-tx-color);
+}
+.color-wrapper input:focus {
+  border-color: var(--blue-color);
+  outline: none;
 }
 .dark-color-wrapper {
   width: 100%;
@@ -73,10 +88,21 @@ body {
   float: left;
   text-align: right;
   margin-right: 15px;
+  margin-bottom: 5px;
   width: 170px;
 }
 .options-wrapper input {
   width: 120px;
+  background-color: var(--main-dark-bg-color);
+  border: 1px solid;
+  border-radius: 5px;
+  margin-bottom: 5px;
+  border-color: var(--main-tx-color);
+  color: var(--main-tx-color);
+}
+.options-wrapper input:focus {
+  border-color: var(--blue-color);
+  outline: none;
 }
 
 .btns-wrapper {
@@ -84,4 +110,25 @@ body {
   position: absolute;
   bottom: 0;
   margin: 10px;
+}
+.btn {
+  background-color: var(--main-dark-bg-color);
+  margin: 4px;
+  color: var(--main-tx-color);
+  width: 60px;
+  height: 22px;
+  border-radius: 10px;
+  border: 1px solid;
+  border-color: var(--main-dark-bg-color);
+  font-size: 12px;
+}
+.btn:hover {
+  border-color: var(--blue-color);
+  color: var(--blue-color);
+}
+.btn:focus {
+  outline: none;
+}
+.btn:active {
+  background-color: var(--main-bg-color);
 }
