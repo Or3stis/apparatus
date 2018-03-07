@@ -85,7 +85,7 @@ settings.darkOrange = '${darkOrange.value}'
 settings.darkGreen = '${darkGreen.value}'
 settings.darkYellow = '${darkYellow.value}'
 settings.darkMagenta = '${darkMagenta.value}'
-settings.darkCyan = '${darkCyan}'
+settings.darkCyan = '${darkCyan.value}'
 // light color theme
 settings.lightText = '${lightText.value}'
 settings.lightBgrd = '${lightBackground.value}'
@@ -134,19 +134,19 @@ settings.setColors = color => {
 }
 
 // default color theme
-settings.colorTheme = 'dark'
+settings.colorTheme = '${defaultColor.value}'
 // first theme paint
 settings.setColors(settings.colorTheme)
 
 // number of maximum bubbles in the message area
-settings.maxNumberOfBubbles = 15
+settings.maxNumberOfBubbles = ${numberBubbles.value}
 
 // urls
 
 // url for the ASTo wiki
 settings.docsURL = 'https://or3stis.github.io/apparatus/docs'
 // url for searching vulnerabilities
-settings.cveSearchUrl = 'http://cve.circl.lu/api/search/'
+settings.cveSearchUrl = '${cveUrl.value}'
 
 module.exports = settings
 `

@@ -1,7 +1,7 @@
 <html lang="en">
 
 <head>
-  <title>ASTo settings page</title>
+  <title>Under development 🚧</title>
   <meta charset="UTF-8">
   <meta name="viewport" content="user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
 
@@ -11,80 +11,82 @@
 <body>
   <div class="wrapper">
     <div class="color-wrapper">
-      <div>color theme</div>
       <div class="dark-color-wrapper">
-        <div>dark color theme</div>
+        <h1>dark color theme</h1>
         <label>text</label>
-        <input id="dark-text" type="text" />
+        <input id="dark-text" type="color" />
         <label>background</label>
-        <input id="dark-background" type="text" maxlength="7" />
+        <input id="dark-background" type="color" />
         <label>dark background</label>
-        <input id="dark-dark-background" type="text" maxlength="7" />
+        <input id="dark-dark-background" type="color" />
         <label>black</label>
-        <input id="dark-black" type="text" maxlength="7" />
+        <input id="dark-black" type="color" />
         <label>gray</label>
-        <input id="dark-gray" type="text" maxlength="7" />
+        <input id="dark-gray" type="color" />
         <label>blue</label>
-        <input id="dark-blue" type="text" maxlength="7" />
+        <input id="dark-blue" type="color" />
         <label>red</label>
-        <input id="dark-red" type="text" maxlength="7" />
+        <input id="dark-red" type="color" />
         <label>orange</label>
-        <input id="dark-orange" type="text" maxlength="7" />
+        <input id="dark-orange" type="color" />
         <label>green</label>
-        <input id="dark-green" type="text" maxlength="7" />
+        <input id="dark-green" type="color" />
         <label>yellow</label>
-        <input id="dark-yellow" type="text" maxlength="7" />
+        <input id="dark-yellow" type="color" />
         <label>magenta</label>
-        <input id="dark-magenta" type="text" maxlength="7" />
+        <input id="dark-magenta" type="color" />
         <label>cyan</label>
-        <input id="dark-cyan" type="text" maxlength="7" />
+        <input id="dark-cyan" type="color" />
       </div>
       <div class="light-color-wrapper">
-        <div>light color theme</div>
+        <h1>light color theme</h1>
         <label>text</label>
-        <input id="light-text" type="text" />
+        <input id="light-text" type="color" />
         <label>background</label>
-        <input id="light-background" type="text" maxlength="7" />
-        <label>light background</label>
-        <input id="light-dark-background" type="text" maxlength="7" />
+        <input id="light-background" type="color" />
+        <label>dark background</label>
+        <input id="light-dark-background" type="color" />
         <label>black</label>
-        <input id="light-black" type="text" maxlength="7" />
+        <input id="light-black" type="color" />
         <label>gray</label>
-        <input id="light-gray" type="text" maxlength="7" />
+        <input id="light-gray" type="color" />
         <label>blue</label>
-        <input id="light-blue" type="text" maxlength="7" />
+        <input id="light-blue" type="color" />
         <label>red</label>
-        <input id="light-red" type="text" maxlength="7" />
+        <input id="light-red" type="color" />
         <label>orange</label>
-        <input id="light-orange" type="text" maxlength="7" />
+        <input id="light-orange" type="color" />
         <label>green</label>
-        <input id="light-green" type="text" maxlength="7" />
+        <input id="light-green" type="color" />
         <label>yellow</label>
-        <input id="light-yellow" type="text" maxlength="7" />
+        <input id="light-yellow" type="color" />
         <label>magenta</label>
-        <input id="light-magenta" type="text" maxlength="7" />
+        <input id="light-magenta" type="color" />
         <label>cyan</label>
-        <input id="light-cyan" type="text" maxlength="7" />
+        <input id="light-cyan" type="color" />
       </div>
     </div>
     <div class="options-wrapper">
       <div>
         <label>default color theme</label>
-        <input id="default-color" type="text" maxlength="5" />
+        <select id="default-color">
+            <option value="dark">dark</option>
+            <option value="light">light</option>
+        </select>
       </div>
       <div>
         <label>max message bubbles</label>
-        <input id="number-bubbles" type="text" maxlength="2" />
+        <input id="number-bubbles" type="number" min="1" max="60"/>
       </div>
       <div>
         <label>CVE search url</label>
-        <input id="cve-url" type="text" />
+        <input id="cve-url" type="url" />
       </div>
     </div>
     <div class="btns-wrapper">
-      <button id="settings-save">Save</button>
-      <button id="settings-cancel">Cancel</button>
-      <button id="settings-restore">Restore</button>
+      <button class="btn" id="settings-save">Save</button>
+      <button class="btn" id="settings-cancel">Cancel</button>
+      <button class="btn" id="settings-restore">Restore</button>
     </div>
   </div>
   <script type="text/javascript" src="loadSettingsWindow.js"></script>
