@@ -130,3 +130,21 @@ h1 {
 .btn:active {
   background-color: var(--main-bg-color);
 }
+
+#default-color {
+  background-color: var(--main-dark-bg-color);
+  border: 1px solid;
+  border-radius: 5px;
+  margin-bottom: 5px;
+  border-color: var(--main-tx-color);
+  color: var(--main-tx-color);
+}
+#default-color:focus {
+  outline: none;
+}
+#number-bubbles {
+  width: 40px;
+}
+input[type=number]::-webkit-inner-spin-button {
+  opacity: 1;
+}
