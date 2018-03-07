@@ -44,7 +44,7 @@
         <input id="light-text" type="color" />
         <label>background</label>
         <input id="light-background" type="color" />
-        <label>light background</label>
+        <label>dark background</label>
         <input id="light-dark-background" type="color" />
         <label>black</label>
         <input id="light-black" type="color" />
@@ -69,15 +69,18 @@
     <div class="options-wrapper">
       <div>
         <label>default color theme</label>
-        <input id="default-color" type="text" maxlength="5" />
+        <select id="default-color">
+            <option value="dark">dark</option>
+            <option value="light">light</option>
+        </select>
       </div>
       <div>
         <label>max message bubbles</label>
-        <input id="number-bubbles" type="text" maxlength="2" />
+        <input id="number-bubbles" type="number" min="1" max="60"/>
       </div>
       <div>
         <label>CVE search url</label>
-        <input id="cve-url" type="text" />
+        <input id="cve-url" type="url" />
       </div>
     </div>
     <div class="btns-wrapper">
