@@ -162,12 +162,6 @@ module.exports = function designUI () {
   </svg>
 </button>
 
-<!-- <button class="btn-icon" id="test-button" title="test">
-  <svg width="24" height="24">
-    <use xlink:href="icons/bug.svg#bug" class="icon"></use>
-  </svg>
-</button> -->
-
 <div class="tgl-wrapper">
   <input type="checkbox" id="theme-btn" class="tgl"/>
   <label for="theme-btn" class="tgl-lbl"></label>
