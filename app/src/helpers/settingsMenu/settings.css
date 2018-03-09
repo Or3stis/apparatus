@@ -55,11 +55,12 @@ h1 {
   width: 110px;
 }
 .color-wrapper input {
-  width: 70px;
+  width: 65px;
+  height: 19px;
+  padding: 0;
   background-color: var(--main-dark-bg-color);
-  border: 1px solid;
   border-radius: 5px;
-  border-color: var(--main-tx-color);
+  border-color: var(--black-color);
   color: var(--main-tx-color);
 }
 .color-wrapper input:focus {
@@ -103,7 +104,7 @@ h1 {
   outline: none;
 }
 
-.btns-wrapper {
+.buttons-wrapper {
   right: 0;
   position: absolute;
   bottom: 0;
@@ -145,6 +146,6 @@ h1 {
 #number-bubbles {
   width: 40px;
 }
-input[type=number]::-webkit-inner-spin-button {
+input[type='number']::-webkit-inner-spin-button {
   opacity: 1;
 }
