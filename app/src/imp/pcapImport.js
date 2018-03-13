@@ -103,7 +103,7 @@ const createDevices = uniqueDevicesServices => {
       id: '${idCounter}',
       label: 'device',
       asto: {
-        description: 'ip ${deviceIp}',
+        description: 'IP ${deviceIp}',
         layer: '',
         type: '',
         service: '',
@@ -137,7 +137,9 @@ const createDevicesApplications = devices => {
       label: 'application',
       asto: {
         description: 'port ${service}',
-        version: 'port ${service}',
+        version: '',
+        input: 'dataDigital',
+        output: 'dataDigital',
         update: '',
         concept: 'application'
       }
@@ -150,7 +152,6 @@ const createDevicesApplications = devices => {
       id: 'e${deviceIdCounter}${idCounter}',
       source: '${deviceIdCounter}',
       target: '${idCounter}',
-      update: '',
       label: 'has'
     }
   },`
