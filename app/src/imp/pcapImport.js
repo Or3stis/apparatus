@@ -152,7 +152,7 @@ const createDevicesApplications = devices => {
       id: 'e${deviceIdCounter}${idCounter}',
       source: '${deviceIdCounter}',
       target: '${idCounter}',
-      label: 'has'
+      label: 'runs'
     }
   },`
         idCounter += 1
