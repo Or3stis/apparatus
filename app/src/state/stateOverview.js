@@ -1,5 +1,8 @@
-// shows the total number of nodes along with their concept type and module
-
+/**
+ * shows the total number of nodes along with their concept type and module
+ *
+ * @param {Object} cy cytoscape instance
+ */
 module.exports = function stateOverview (cy) {
   let output = ''
 
@@ -8,6 +11,7 @@ module.exports = function stateOverview (cy) {
 
   let modelNode = 0
 
+  /** counts the model nodes */
   cy.nodes().map(node => {
     const nodeConcept = node.data().asto.concept
     if (nodeConcept === 'model') {
