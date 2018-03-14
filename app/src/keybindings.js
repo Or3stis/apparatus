@@ -20,6 +20,17 @@ const suggestion = require('./imp/suggestion.js')
 // require helpers for the buttons
 const buttonHelpers = require('./buttonHelpers.js')
 
+/**
+ * instantiation of keybinding
+ *
+ * @param {Object} cy cytoscape instance
+ * @param {Object} selectedNode selected node
+ * @param {Object} selectedEdge selected edge
+ * @param {Object} srcNode source node
+ * @param {Object} trgNode target node
+ * @param {string} phase engineering analysis phase
+ * @param {Object} graphNodes initial state of the graph
+ */
 module.exports = function (
   cy,
   selectedNode,
@@ -74,7 +85,7 @@ module.exports = function (
   // removes the focus from the console when tapping on the graph container
   cy.on('tap', selection => cmdID.blur())
 
-  // console commands
+  /** instantiation of console commands */
   const commands = () => {
     const input = document.getElementById('cmd-id').value
     document.getElementById('cmd-id').value = ''

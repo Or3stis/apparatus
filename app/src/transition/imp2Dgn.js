@@ -1,10 +1,15 @@
-// applies transformation rules from implementation to design phase
+// applies transition rules from implementation to design phase
 
 const save = require('../helpers/save.js')
 const bubbleTxt = require('../helpers/bubbleTxt.js')
 const bubbleHTML = require('../helpers/bubbleHTML.js')
 
-const transform = cy => {
+/**
+ * applies implementation to design transition rules
+ *
+ * @param {Object} cy cytoscape instance
+ */
+const transition = cy => {
   let neighbors = []
   cy.nodes().map(node => {
     if (node.data().asto.concept === 'device') {
@@ -30,6 +35,10 @@ const transform = cy => {
       node.remove()
     }
   })
+  /**
+   * removes the edges of the network connections
+   * adds news edges between the devices
+   */
   neighbors.map(node => {
     // remove the edges
     node[1].remove()
@@ -55,15 +64,21 @@ const userInput = `the current model will <strong>will not work</strong>\n\ndo y
 const warning =
   'to access the new design phase model you will need to manually load it'
 
+/**
+ * uses the transition rules and saves the graph
+ *
+ * @param {Object} cy cytoscape instance
+ * @param {number} nodeCounter id counter of nodes
+ */
 module.exports = function dgnState2ImpState (cy, nodeCounter) {
   bubbleHTML(userInput)
 
-  // create a `yes` button that will perform the transformation
+  // create a `yes` button that will perform the transition
   const buttonYes = document.getElementById('yes-button')
   buttonYes.addEventListener('click', () => {
-    transform(cy)
+    transition(cy)
     save(cy)
-    bubbleTxt('transformation successful')
+    bubbleTxt('model transition successful')
     bubbleTxt(warning)
   })
   // create a `no` button that will clear the message bubble

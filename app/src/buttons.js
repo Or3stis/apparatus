@@ -1,4 +1,4 @@
-// bind functions to buttons in the UI
+// binds functions to buttons in the UI
 const settings = require('../settings/userSettings.js')
 
 const nodeSelection = require('./core/nodeSelection.js')
@@ -22,7 +22,18 @@ const buttonHelpers = require('./buttonHelpers.js')
 
 const transformDgn2Imp = require('./transformation/dgn2Imp.js')
 const transformImp2Dgn = require('./transformation/imp2Dgn.js')
-
+/**
+ * binds functions to buttons in the UI
+ *
+ * @param {Object} cy cytoscape instance
+ * @param {Object} selectedNode selected node
+ * @param {Object} selectedEdge selected edge
+ * @param {Object} srcNode source node
+ * @param {Object} trgNode target node
+ * @param {number} nodeCounter id counter of nodes
+ * @param {string} phase engineering analysis phase
+ * @param {Object} graphNodes initial state of the graph
+ */
 module.exports = function buttons (
   cy,
   selectedNode,

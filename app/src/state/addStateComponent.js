@@ -1,6 +1,11 @@
-// add state diagram nodes in the graph
-
-// TODO needs refactoring
+/**
+ * add state diagram nodes in the graph
+ * @todo needs refactoring
+ *
+ * @param {Object} cy cytoscape instance
+ * @param {Object} event captured event
+ * @param {number} nodeCounter id counter for the nodes
+ */
 module.exports = function addStateComponent (cy, event, nodeCounter) {
   // get mouse position on click
   // display new node on the left of the menu

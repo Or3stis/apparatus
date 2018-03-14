@@ -10,19 +10,32 @@ const testGraph = '../../../sample/smartHome.js'
 
 let cy = {}
 
-// loads the empty template
+/**
+ * loads the empty template
+ *
+ * @param {Object} cy cytoscpace instance
+ * @param {string} phase engineering analysis phase
+ */
 const newGraph = (cy, phase) => {
   cyOptions(cy, template)
   initialize(cy.out, phase)
 }
-// loads the debugging graph
+/**
+ * loads the debugging graph
+ *
+ * @param {Object} cy cytoscpace instance
+ * @param {string} phase engineering analysis phase
+ */
 const debugGraph = (cy, phase) => {
   cyOptions(cy, testGraph)
   initialize(cy.out, phase)
 }
 
-// creates the option menu on startup
-// the element is removed on selection
+/**
+ * creates the option menu on startup the element is removed on selection
+ *
+ * @param {string} phase engineering analysis phase
+ */
 module.exports = function phaseMenu (phase) {
   const graph = document.getElementById('graph-container')
 
@@ -79,6 +92,7 @@ module.exports = function phaseMenu (phase) {
     })
   }
 
+  // appends the buttons to the graph container
   graph.appendChild(wrapper)
 
   // removes the wrapper once an option is clicked
