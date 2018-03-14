@@ -17,7 +17,14 @@ const stateOverview = require('./state/stateOverview.js')
 const addStateComponent = require('./state/addStateComponent.js')
 const addStateEdge = require('./state/addStateEdge.js')
 
-// helper function to add specific nodes for each phase
+/**
+ * helper function to add specific nodes for each phase
+ *
+ * @param {Object} cy cytoscape instance
+ * @param {Object} event captured event
+ * @param {number} nodeCounter id counter of nodes
+ * @param {string} phase engineering analysis phase
+ */
 const addComponents = (cy, event, nodeCounter, phase) => {
   if (phase === 'design') {
     addDgnComponent(cy, event, nodeCounter)
@@ -28,7 +35,14 @@ const addComponents = (cy, event, nodeCounter, phase) => {
   }
 }
 
-// helper to export function to add specific edges for each phase
+/**
+ * helper to export function to add specific edges for each phase
+ *
+ * @param {Object} cy cytoscape instance
+ * @param {Object} srcNode source node
+ * @param {Object} trgNode target node
+ * @param {string} phase engineering analysis phase
+ */
 const addEdge = (cy, srcNode, trgNode, phase) => {
   if (phase === 'design') {
     addDgnEdge(cy, srcNode, trgNode)
@@ -39,7 +53,12 @@ const addEdge = (cy, srcNode, trgNode, phase) => {
   }
 }
 
-// helper to export function to validate the model of each phase
+/**
+ * helper to export function to validate the model of each phase
+ *
+ * @param {Object} cy cytoscape instance
+ * @param {string} phase engineering analysis phase
+ */
 const validateHelper = (cy, phase) => {
   if (phase === 'design') {
     dgnModelValidation(cy)
@@ -48,7 +67,12 @@ const validateHelper = (cy, phase) => {
   }
 }
 
-// helper to export function for the overview of the model of each phase
+/**
+ * helper to export function for the overview of the model of each phase
+ *
+ * @param {Object} cy cytoscape instance
+ * @param {string} phase engineering analysis phase
+ */
 const overviewHelper = (cy, phase) => {
   if (phase === 'design') {
     dgnOverview(cy)
