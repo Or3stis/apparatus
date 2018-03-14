@@ -4,6 +4,7 @@ const designUI = require('./phaseUI/dgnUI.js')
 const implementationUI = require('./phaseUI/impUI.js')
 const stateUI = require('./phaseUI/stateUI.js')
 
+/** creates the home menu of the app */
 module.exports = function homeMenu () {
   // get the graph container
   const graph = document.getElementById('graph-container')

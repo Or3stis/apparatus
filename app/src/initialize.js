@@ -12,7 +12,12 @@ const rmElement = require('./helpers/rmElement.js')
 // require buttons and keybindings
 const buttons = require('./buttons.js')
 const keybindings = require('./keybindings.js')
-
+/**
+ * initializes the application
+ *
+ * @param {Object} cy cytoscape instance
+ * @param {string} phase engineering analysis phase
+ */
 module.exports = function initialize (cy, phase) {
   // initial label render
   cy.nodes().addClass('label-nodes')
