@@ -1,18 +1,18 @@
-// contains the attribute/connection patterns and the suggestion.js
+// contains the attribute/connection patterns and the insights.js
 
-const suggestionList = {
+const insightList = {
   s0: {
     concept: 'device',
     attribute: 'layer',
     attributeValue: 'perception',
-    suggestion: 'Devices in the perception layer require physical security.',
+    insight: 'Devices in the perception layer require physical security.',
     nodes: []
   },
   s1: {
     concept: 'device',
     attribute: 'layer',
     attributeValue: 'gateway',
-    suggestion:
+    insight:
       'Devices in the gateway layer are usually external facing nodes. Malicious actors can target them with network attacks.',
     nodes: []
   },
@@ -20,7 +20,7 @@ const suggestionList = {
     concept: 'device',
     attribute: 'layer',
     attributeValue: 'application',
-    suggestion:
+    insight:
       'Devices in the application layer are usually provided by third parties. The security configuration of third party devices must be taken into consideration since it affects the security posture of the overall system.',
     nodes: []
   },
@@ -28,14 +28,14 @@ const suggestionList = {
     concept: 'device',
     attribute: 'update',
     attributeValue: 'false',
-    suggestion: 'Treat devices that cannot be updated as compromised.',
+    insight: 'Treat devices that cannot be updated as compromised.',
     nodes: []
   },
   s4: {
     concept: 'network connection',
     attribute: 'description',
     attributeValue: 'wireless',
-    suggestion:
+    insight:
       'Wireless connections are subject to information disclosure attacks. Use encrypted protocols.',
     nodes: []
   },
@@ -43,9 +43,9 @@ const suggestionList = {
     concept: 'application',
     attribute: 'update',
     attributeValue: 'false',
-    suggestion: 'Treat applications that cannot be updated as compromised.',
+    insight: 'Treat applications that cannot be updated as compromised.',
     nodes: []
   }
 }
 
-module.exports = suggestionList
+module.exports = insightList

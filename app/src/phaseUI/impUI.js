@@ -1,5 +1,6 @@
 const phaseMenu = require('../../src/phaseMenu.js')
 
+/** loads the implementation phase UI */
 module.exports = function implementationUI () {
   // shows design phase on the title
   const title = document.getElementById('title-bar-id')
