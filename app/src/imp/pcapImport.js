@@ -20,6 +20,12 @@ let connection = []
 let deviceNodes = []
 // stores all the connections (even duplicates src -> trg to trg -> src)
 let allConnections = []
+
+/**
+ * stores the connections of the nodes in Sets
+ *
+ * @param {string} txtData data from the network text file
+ */
 const storeConnections = txtData => {
   let srcNodes = []
   // store the target concepts
@@ -42,6 +48,12 @@ const storeConnections = txtData => {
 // stores the information to create network connections
 // each row format -> srcNode tgtNode protocol
 let uniqueConnections = []
+
+/**
+ * removes the services (ports) for the devices
+ *
+ * @param {Set} allConnections all connections (even duplicates)
+ */
 const removeServices = allConnections => {
   let counter = 0
   let uniqueLine = []
@@ -74,6 +86,12 @@ const removeServices = allConnections => {
 let uniqueDevicesServices = {}
 // to store the unique devices IP
 let uniqueDevices = []
+
+/**
+ * stores only the unique connections
+ *
+ * @param {Object} devices nodes
+ */
 const storeUniqueDevicesServices = devices => {
   Object.keys(devices).map(key => {
     let nodeInformation = devices[key].split('.')
@@ -95,6 +113,11 @@ const storeUniqueDevicesServices = devices => {
 // unified counter to create the nodes
 let idCounter = 0
 
+/**
+ * creates the devices nodes in the graph
+ *
+ * @param {Object} uniqueDevicesServices
+ */
 const createDevices = uniqueDevicesServices => {
   Object.keys(uniqueDevicesServices).map(deviceIp => {
     nodeContentJs += `
@@ -118,6 +141,12 @@ const createDevices = uniqueDevicesServices => {
   })
 }
 
+/**
+ * creates the application nodes in the graph
+ * and connects to the devices
+ *
+ * @param {Object} devices nodes
+ */
 const createDevicesApplications = devices => {
   let deviceIdCounter = 0 // device concepts start from 0
 
@@ -162,7 +191,12 @@ const createDevicesApplications = devices => {
   })
 }
 
-// creates network connections and adds edges between them and the devices
+/**
+ * creates network connections and adds edges between them and the devices
+ *
+ * @param {Object} devices nodes
+ * @param {Array} connections
+ */
 const createConnections = (devices, connections) => {
   // creates the edges and the network connection nodes concept
   connections.map(row => {
@@ -215,8 +249,15 @@ const createConnections = (devices, connections) => {
   })
 }
 
-// writes the data from the read function
-// the data are read from the txt created in readFile function
+/**
+ * writes the data from the read function
+ * the data are read from the txt created in readFile function
+ *
+ * @param {Object} cy cytoscape instance
+ * @param {string} filename
+ * @param {Object} devices nodes
+ * @param {Array} connections
+ */
 const writeGraph = (cy, filename, devices, connections) => {
   storeUniqueDevicesServices(devices)
   createDevices(uniqueDevicesServices)
@@ -244,7 +285,12 @@ const writeGraph = (cy, filename, devices, connections) => {
   })
 }
 
-// reads the .txt file that was created by the tcpdump command
+/**
+ * reads the .txt file that was created by the tcpdump command
+ *
+ * @param {Object} cy cytoscape instance
+ * @param {string} filename
+ */
 const readTxtFile = (cy, filename) => {
   fs.readFile(`${filename}`, (err, data) => {
     if (err) throw err
@@ -263,6 +309,13 @@ const readTxtFile = (cy, filename) => {
   })
 }
 
+/**
+ * exports the module
+ * checks if tcpdump is installed
+ *
+ * @param {Object} cy cytoscape instance
+ * @param {string} phase engineering phase
+ */
 module.exports = function pcapImport (cy, phase) {
   // checks if tcpdump is installed, returns a boolean
   const testTcpdump = child.spawnSync('type', ['tcpdump']).status === 0

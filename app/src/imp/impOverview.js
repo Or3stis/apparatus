@@ -1,7 +1,10 @@
-// shows the total number of nodes along with their concept type and module
-
 const impMetamodel = require('./impSchema.js')
 
+/**
+ * shows the total number of nodes, their concept type and module
+ *
+ * @param {Object} cy cytoscape instance
+ */
 module.exports = function overview (cy) {
   // initialize the output of the module
   let output = ''

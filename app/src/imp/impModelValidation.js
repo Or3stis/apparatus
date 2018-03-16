@@ -1,8 +1,11 @@
-// checks if an implementation phase model is complaint with the metamodel
-
 const impSchema = require('./impSchema.js')
 const bubbleTxt = require('../helpers/bubbleTxt.js')
 
+/**
+ * checks if an implementation phase model is complaint with the metamodel
+ *
+ * @param {Object} cy cytoscape instance
+ */
 module.exports = function moduleValidation (cy) {
   let validationResult = ''
   let arrWrong = [] // stores wrong connection of nodes
@@ -36,7 +39,7 @@ module.exports = function moduleValidation (cy) {
     }
   }
 
-  // checkes the validity of the model using the rules of the schema
+  // checks the validity of the model using the rules of the schema
   Object.keys(impSchema.pairs).map(concept => {
     componentValidation(cy, concept, impSchema.pairs[concept])
   })

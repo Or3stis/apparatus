@@ -1,6 +1,11 @@
-// add implementation phase components in the graph
-
-// TODO needs refactoring
+/**
+ * adds implementation phase components in the graph
+ * @todo needs refactoring
+ *
+ * @param {Object} cy cytoscape instance
+ * @param {Object} event captured mouse event
+ * @param {number} nodeCounter id counter for nodes
+ */
 module.exports = function addImpComponent (cy, event, nodeCounter) {
   // get mouse position on click
   // display new node on the left of the menu
