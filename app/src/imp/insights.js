@@ -1,13 +1,16 @@
-// displays security suggestion depending on information found in the model
-const list = require('./suggestionList')
+// displays security insight depending on information found in the model
+const list = require('./insightsList')
 const bubbleHTML = require('../helpers/bubbleHTML.js')
 
-// find nodes of interest based on the data of the list
-// @node: node instance in the graph
-// @concept: node concept in the suggestion array
-// @attribute: attribute in the graph that will be compared
-// @attributeValue: attribute value in the suggestion array
-// @nodeArray: array that will store the insecure nodes
+/**
+ * find nodes of interest based on the data of the list
+ *
+ * @param {Object} node node instance in the graph
+ * @param {string} concept node concept in the insight array
+ * @param {string} attribute attribute in the graph that will be compared
+ * @param {string} attributeValue attribute value in the insight array
+ * @param {Array} nodeArray array that stores the insecure nodes
+ */
 const findNodes = (node, concept, attribute, attributeValue, nodeArray) => {
   if (
     node.data().asto.concept === concept &&
@@ -22,19 +25,29 @@ const findNodes = (node, concept, attribute, attributeValue, nodeArray) => {
   }
 }
 
-// displays the nodes of interest and the suggestion
-const showResults = (nodeArray, suggestion) => {
-  // only show the suggestion if the node array is not empty
+/**
+ * displays the nodes of interest and the insight
+ *
+ * @param {Array} nodeArray array that stores the insecure nodes
+ * @param {string} insight security insight based on the insightsList
+ */
+const showResults = (nodeArray, insight) => {
+  // only show the insight if the node array is not empty
   if (nodeArray.length !== 0) {
-    bubbleHTML(`Nodes: <strong>${nodeArray}</strong> <br><br>${suggestion}`)
+    bubbleHTML(`Nodes: <strong>${nodeArray}</strong> <br><br>${insight}`)
   }
 }
 
-module.exports = function suggestion (cy) {
+/**
+ * brings attention the insecure nodes
+ *
+ * @param {Object} cy cytoscape instance
+ */
+module.exports = function insights (cy) {
   // fade out all the nodes
   cy.elements().addClass('faded')
 
-  // parses the graph to compare nodes with the suggestion list
+  // parses the graph to compare nodes with the insight list
   cy.nodes().map(node => {
     Object.keys(list).map(key => {
       findNodes(
@@ -47,9 +60,9 @@ module.exports = function suggestion (cy) {
     })
   })
 
-  // display the suggestions on the message area
+  // display the insights on the message area
   Object.keys(list).map(key => {
-    showResults(list[key].nodes, list[key].suggestion)
+    showResults(list[key].nodes, list[key].insight)
   })
 
   // button to show the ID of the nodes

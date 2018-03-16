@@ -15,7 +15,7 @@ const watcher = require('./helpers/watcher.js')
 const settingsWindow = require('./helpers/settingsMenu/createSettingsWindow.js')
 
 // require implementation modules
-const suggestion = require('./imp/suggestion.js')
+const insights = require('./imp/insights.js')
 
 // require helpers for the buttons
 const buttonHelpers = require('./buttonHelpers.js')
@@ -50,7 +50,7 @@ module.exports = function (
 • change color theme <b>:toggle</b>
 • clear sidebar <b>:clear</b>
 • model validation <b>:validate</b>
-• security suggestions <b>:suggestion</b>
+• security insights <b>:insight</b>
 • configure settings <b>:settings</b>
 • search for attributes <b>:keyword</b>`
 
@@ -64,7 +64,7 @@ module.exports = function (
 • change color theme <b>:toggle</b>
 • clear sidebar <b>:clear</b>
 • model validation <b>:validate</b>
-• security suggestions <b>:suggestion</b>
+• security insights <b>:insights</b>
 • configure settings <b>:settings</b>
 • search for attributes <b>:keyword</b>`
 
@@ -104,9 +104,9 @@ module.exports = function (
           require('electron').shell.openExternal(settings.docsURL)
         })
         break
-      case ':suggestion':
+      case ':insights':
         if (phase === 'implementation') {
-          suggestion(cy)
+          insights(cy)
         }
         break
       case ':validate':
