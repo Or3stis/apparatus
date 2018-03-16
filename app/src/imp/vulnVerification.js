@@ -1,7 +1,11 @@
 // checks if the vulnerabilities are mitigated
 
 const bubbleTxt = require('../helpers/bubbleTxt.js')
-
+/**
+ * checks if the vulnerabilities are mitigated
+ *
+ * @param {Object} cy cytoscape instance
+ */
 module.exports = function vulnVerification (cy) {
   let vulnArray = []
   let result = ''
