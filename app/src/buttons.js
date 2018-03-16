@@ -20,8 +20,8 @@ const theme = require('./helpers/theme.js')
 
 const buttonHelpers = require('./buttonHelpers.js')
 
-const transformDgn2Imp = require('./transformation/dgn2Imp.js')
-const transformImp2Dgn = require('./transformation/imp2Dgn.js')
+const transformDgn2Imp = require('./transition/dgn2Imp.js')
+const transformImp2Dgn = require('./transition/imp2Dgn.js')
 /**
  * binds functions to buttons in the UI
  *
