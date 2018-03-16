@@ -8,7 +8,12 @@ const settings = require('../../settings/userSettings.js')
 const bubbleTxt = require('../helpers/bubbleTxt.js')
 const bubbleHTML = require('../helpers/bubbleHTML.js')
 
-// request vulnerability information from cve
+/**
+ *  request vulnerability information from cve
+ *
+ * @param {string} filename
+ * @param {Array} nodesKeywords keywords to be send to the database
+ */
 const requestVulnData = (filename, nodesKeywords) => {
   // stores the CVE list
   let totalVuln = []
@@ -50,7 +55,11 @@ const requestVulnData = (filename, nodesKeywords) => {
   })
 }
 
-// saves the vulnerabilities in a json file
+/**
+ * saves the vulnerabilities in a json file
+ *
+ * @param {Array} nodesKeywords keywords to be send to the database
+ */
 const saveFile = nodesKeywords => {
   dialog.showSaveDialog(
     { filters: [{ name: 'javascript', extensions: ['json'] }] },
@@ -60,8 +69,12 @@ const saveFile = nodesKeywords => {
   )
 }
 
-// highlights the vulnerable nodes and fills the nodesKeywords array
 let nodesKeywords = []
+/**
+ * highlights the vulnerable nodes and fills the nodesKeywords array
+ *
+ * @param {Object} cy cytoscape instance
+ */
 const findVulnNodes = cy => {
   // fades out the graph elements
   cy.elements().addClass('faded')
@@ -85,8 +98,12 @@ const findVulnNodes = cy => {
   })
 }
 
-// removes duplicate keywords
 let keywordsPrint = ''
+/**
+ * removes duplicate keywords
+ *
+ * @param {Array} nodesKeywords keywords to be send to the database
+ */
 const getUniqueKeywords = nodesKeywords => {
   const uniqueKeywords = [...new Set(nodesKeywords)]
 
@@ -96,8 +113,11 @@ const getUniqueKeywords = nodesKeywords => {
   })
 }
 
-// sends a request to a CVE database using keywords
-// only checks vulnerabilities for the concepts of device and application
+/**
+ * sends a request to a CVE database with the keywords
+ *
+ * @param {Object} cy cytoscape instance
+ */
 const findVuln = cy => {
   findVulnNodes(cy)
 

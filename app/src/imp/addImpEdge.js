@@ -1,8 +1,13 @@
-// add implementation phase edges
-
 const bubbleTxt = require('../helpers/bubbleTxt.js')
 const addEdge = require('../core/addEdge.js')
 
+/**
+ * add implementation phase edges
+ *
+ * @param {Object} cy cytoscape instance
+ * @param {Object} srcNode source node
+ * @param {Object} trgNode target node
+ */
 module.exports = function addComponent (cy, srcNode, trgNode) {
   let srcNodeId = srcNode.id
   let trgNodeId = trgNode.id
