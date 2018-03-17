@@ -22,7 +22,7 @@ The application is in alpha stage. The focus now is to improve the core function
 1. Create IoT system state diagrams.
 1. Automate implementation phase model generation using pcap-ng files.
 1. Perform model-based vulnerability identification through CVE databases.
-1. Generate automated model-based security suggestions.
+1. Generate automated model-based security insights.
 1. Attribute-based pattern identification.
 1. Search through graphs using a variety of options (concepts, modules, attribute).
 1. Togglable Light and Dark theme.
@@ -43,7 +43,7 @@ ASTo has a command line console available on the bottom right corner of the app.
 
 The console can be used to search for specific objects in the graph or perform operations. Raw text is used as search input. For example, if you type `device`, ASTo will highlight all the nodes in the graph that have the word `device` as an attribute.
 
-All console commands must be preceded with a `:`. For example, typing `:suggestions` will perform the security suggestion functions. On the other hand, typing `suggestions` (with the `:`) will perform a search operation with the keyword `suggestion`.
+All console commands must be preceded with a `:`. For example, typing `:insights` will perform the security insights functions. On the other hand, typing `insights` (with the `:`) will perform a search operation with the keyword `insights`.
 
 ## Color themes
 
