@@ -45,7 +45,7 @@ To aid the speed of development any action can either be performed by pressing a
 
 ## Color themes
 
-ASTo supports a light and a dark color theme. The colors themes are based on Atom's [One Dark](https://github.com/atom/one-dark-syntax) and [One Light](https://github.com/atom/one-light-syntax). You can switch between the themes by typing `:toggle` in ASTo's console (bottom right corner, cmd/ctrl + l). To make the change persistent between startups you need to modify the `settings.colorTheme` variable in the `./settings/userSettings.js` file. The value can either be `dark` or `light`.
+ASTo supports a light and a dark color theme. The colors themes are based on Atom's [One Dark](https://github.com/atom/one-dark-syntax) and [One Light](https://github.com/atom/one-light-syntax). You can switch between the themes by typing `:toggle` in ASTo's console (bottom right corner, cmd/ctrl + l).
 
 ### ASTo's layout
 
