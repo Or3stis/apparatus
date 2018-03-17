@@ -68,6 +68,7 @@ cveUrl.value = settings.cveSearchUrl
 
 // capture the save event
 const saveBtn = document.getElementById('settings-save')
+
 saveBtn.addEventListener('click', () => {
   // console.log(defaultColor.value)
   const toWrite = `// settings of ASTo
@@ -162,6 +163,7 @@ module.exports = settings
 
 // capture the cancel event
 const cancelBtn = document.getElementById('settings-cancel')
+
 cancelBtn.addEventListener('click', () => {
   const win = remote.getCurrentWindow()
   win.close()
@@ -169,6 +171,7 @@ cancelBtn.addEventListener('click', () => {
 
 // capture the settings restore event
 const restoreBtn = document.getElementById('settings-restore')
+
 restoreBtn.addEventListener('click', () => {
   // TODO uncomment when electron supports node.js < 8.5
   // fs.copyFile('./app/settings/defaultSettings.js', './app/settings/userSettings.js', (err) => {

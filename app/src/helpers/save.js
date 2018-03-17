@@ -4,10 +4,14 @@ const bubbleTxt = require('./bubbleTxt.js')
 const jsonfileWrite = require('jsonfile').writeFile
 const { dialog } = require('electron').remote
 
-// saves graph
+/**
+ * saves graph
+ *
+ * @param {Object} cy cytoscape instance
+ */
 module.exports = function save (cy) {
   // parses graph and stores it as an object
-  const fullgraph = cy.json()
+  const fullGraph = cy.json()
 
   dialog.showSaveDialog(
     {
@@ -19,7 +23,7 @@ module.exports = function save (cy) {
       ]
     },
     fileToSave => {
-      jsonfileWrite(fileToSave, fullgraph, err => {
+      jsonfileWrite(fileToSave, fullGraph, err => {
         if (err) {
           console.error(err.message)
         } else {
