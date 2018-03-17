@@ -3,6 +3,12 @@ const { dialog } = require('electron').remote
 
 let changeToken = false
 
+/**
+ * watch the graphs nodes for changes
+ *
+ * @param {Object} graphNodes nodes of the graph
+ * @param {Object} cy cytoscpe instance
+ */
 const nodes = (graphNodes, cy) => {
   const titleBar = document.getElementById('title-bar-id')
 
@@ -32,7 +38,7 @@ const nodes = (graphNodes, cy) => {
 //   }
 // }
 
-// checks whether there have been changes in the model before navigating to the index.js
+/** checks for changes in the model before navigating to the index.js */
 const closeNotification = () => {
   if (changeToken === true) {
     dialog.showMessageBox(

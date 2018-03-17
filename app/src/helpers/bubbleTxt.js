@@ -1,9 +1,13 @@
-// helper to print text-only formatted text as a message bubble
 const checkBubbles = require('./checkBubbles.js')
 
 // counter for the bubbles id
 let idCnt = 0
 
+/**
+ * helper to print text-only formatted text as a message bubble
+ *
+ * @param {string} toPrint message to print in the bubble
+ */
 module.exports = function bubbleTxt (toPrint) {
   const msgArea = document.getElementById('message-area-id')
 

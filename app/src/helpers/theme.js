@@ -4,7 +4,11 @@
 const settings = require('../../settings/userSettings.js')
 const graphStyle = require('../../settings/graphStyle.js')
 
-// changes only the UI color values
+/**
+ * changes only the UI color values
+ *
+ * @param {string} color light or dark
+ */
 const setTheme = color => {
   // update color variables
   settings.setColors(color)
@@ -23,7 +27,12 @@ const setTheme = color => {
   document.documentElement.style.setProperty('--black-color', settings.black)
 }
 
-// changes the UI and graph colors
+/**
+ * changes the UI and graph colors
+ *
+ * @param {Object} cy cytoscape instance
+ * @param {string} color light or dark
+ */
 const setThemeGraph = (cy, color) => {
   // changes the UI theme
   setTheme(color)
