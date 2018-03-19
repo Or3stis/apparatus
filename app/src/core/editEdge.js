@@ -2,7 +2,11 @@
 
 const rmElement = require('../helpers/rmElement.js')
 
-// create the form
+/**
+ * creates a form to edit the edge
+ *
+ * @param {Object} selectedEdge selected edge
+ */
 const createForm = selectedEdge => {
   const htmlElement = document.getElementById('message-area-id')
   const form = document.createElement('form')
@@ -51,7 +55,11 @@ const createForm = selectedEdge => {
   document.getElementById('label-form').focus()
 }
 
-// create the form element
+/**
+ * add/remove the form element
+ *
+ * @param {Object} selectedEdge selected edge
+ */
 const formEdge = selectedEdge => {
   const form = document.getElementById('form-id')
   if (form !== null) {

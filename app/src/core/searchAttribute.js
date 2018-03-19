@@ -1,7 +1,11 @@
-// highlights the nodes that have the search term
-
 const bubbleTxt = require('../helpers/bubbleTxt.js')
 
+/**
+ * highlights the nodes that have the search term
+ *
+ * @param {Object} cy cytoscape instance
+ * @param {string} term attribute to be searched
+ */
 module.exports = function flag (cy, term) {
   let searchNodes = ''
 

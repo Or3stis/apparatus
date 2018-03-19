@@ -1,8 +1,12 @@
-// expose the attributes of the nodes
-
 const rmElement = require('../helpers/rmElement.js')
 
 let btnToken = false
+
+/**
+ * expose the attributes of the nodes
+ *
+ * @param {Object} cy cytoscape instance
+ */
 module.exports = function expose (cy) {
   const exposeBtn = document.getElementById('expose-btn')
 

@@ -1,5 +1,3 @@
-// shows the current phase's metamodel in a separate window
-
 // TODO cannot restore focus on a minimized window
 const remote = require('electron').remote
 const BrowserWindow = remote.BrowserWindow
@@ -8,6 +6,11 @@ const BrowserWindow = remote.BrowserWindow
 const dgnMeta = 'metamodels/dgn-model.png'
 const impMeta = 'metamodels/imp-model.png'
 
+/**
+ * shows the current phase's metamodel in a separate window
+ *
+ * @param {string} phase engineering phase
+ */
 module.exports = function showMetamodel (phase) {
   // create the path to the metamodels
   const metamodelPath = __dirname.split('/')

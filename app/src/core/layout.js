@@ -1,6 +1,11 @@
 // source: http://js.cytoscape.org/#layouts/cose
 
-// changes the layout of the graph
+/**
+ * changes the layout of the graph
+ *
+ * @param {Object} cy cytoscape instance
+ * @param {string} selection user selection
+ */
 module.exports = function layout (cy, selection) {
   // cose layout
   const coseLayout = cy.layout({

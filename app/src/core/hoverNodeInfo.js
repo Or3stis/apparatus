@@ -1,5 +1,8 @@
-// helper function to  highlight the attributes of nodes on hover
-
+/**
+ * helper function to  highlight the attributes of nodes on hover
+ *
+ * @param {Object} node node instance
+ */
 module.exports = function nodeInfo (node) {
   const containerNode = document.getElementById('container-node-id')
   const containerNodeInfo = document.getElementById('container-node-info-id')

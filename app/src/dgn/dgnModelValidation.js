@@ -1,12 +1,22 @@
-// checks if the model is correct
-
 const dgnSchema = require('./dgnSchema.js')
 const bubbleTxt = require('../helpers/bubbleTxt.js')
 
+/**
+ * checks if the model is correct
+ *
+ * @param {Object} cy cytoscape instance
+ */
 module.exports = function moduleValidation (cy) {
   let validationResult = ''
   let arrWrong = [] // stores wrong connection of nodes
 
+  /**
+   * validates the components of the graph
+   *
+   * @param {Object} cy cytoscape instance
+   * @param {String} component metamodel's concept
+   * @param {Array} componentArray allowed connected components
+   */
   function componentValidation (cy, component, componentArray) {
     cy.nodes().map(node => {
       // checks if node is the desired component

@@ -1,5 +1,9 @@
-// highlights all the nodes of a specific module
-
+/**
+ * highlights all the nodes of a specific module
+ *
+ * @param {Object} cy cytoscape instance
+ * @param {any} input user input
+ */
 module.exports = function moduleSelection (cy, input) {
   // grouping of the module components
   let groupArray = []
