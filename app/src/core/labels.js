@@ -1,5 +1,9 @@
-// changes the labels on the elements of the graph
-
+/**
+ * changes the labels on the elements of the graph
+ *
+ * @param {Object} cy cytoscape instance
+ * @param {string} selection user selection
+ */
 module.exports = function labels (cy, selection) {
   switch (selection) {
     case 'hide all labels':

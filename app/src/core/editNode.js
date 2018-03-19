@@ -2,7 +2,11 @@
 
 const rmElement = require('../helpers/rmElement.js')
 
-// create the form
+/**
+ * creates a form to edit the node
+ *
+ * @param {Object} selectedNode selected node
+ */
 const createForm = selectedNode => {
   const htmlElement = document.getElementById('message-area-id')
   const form = document.createElement('form')
@@ -61,7 +65,11 @@ const createForm = selectedNode => {
   document.getElementById('description').focus()
 }
 
-// create the form element
+/**
+ * add/remove the form element
+ *
+ * @param {Object} selectedNode selected node
+ */
 const formNode = selectedNode => {
   const form = document.getElementById('form-id')
   if (form !== null) {

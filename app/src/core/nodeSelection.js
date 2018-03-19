@@ -1,5 +1,9 @@
-// highlights all the nodes of a specific concept
-
+/**
+ * highlights all the nodes of a specific concept
+ *
+ * @param {Object} cy cytoscape instance
+ * @param {string} classification user input
+ */
 module.exports = function nodeSelection (cy, classification) {
   cy.elements().addClass('faded')
 
