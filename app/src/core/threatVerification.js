@@ -1,7 +1,10 @@
-// checks if threats are mitigated by constraints
-
 const bubbleTxt = require('../helpers/bubbleTxt.js')
 
+/**
+ * checks if threats are mitigated by constraints
+ *
+ * @param {Object} cy cytoscape instance
+ */
 module.exports = function threatVerification (cy) {
   let threatArray = []
   let result = ''
