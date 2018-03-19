@@ -7,13 +7,24 @@ const rmElement = require('../helpers/rmElement.js')
 
 let posY = ''
 let posX = ''
-// get mouse position on click
+
+/**
+ * get mouse position on click
+ *
+ * @param {Object} selection position of the selected element
+ */
 const mousePosition = selection => {
   posX = selection.renderedPosition.x
   posY = selection.renderedPosition.y
 }
 
-// creates the node menu element
+/**
+ * creates the node menu element
+ *
+ * @param {Object} cy cytoscape instance
+ * @param {Object} selection position of the selected element
+ * @param {Object} selectedNode selected node
+ */
 const nodeMenu = (cy, selection, selectedNode) => {
   const graph = document.getElementById('window-id')
 
@@ -54,7 +65,12 @@ const nodeMenu = (cy, selection, selectedNode) => {
   }
 }
 
-// creates the stage menu element
+/**
+ * creates the stage menu element
+ *
+ * @param {Object} cy cytoscape instance
+ * @param {any} selection position of the selected element
+ */
 const stageMenu = (cy, selection) => {
   const graph = document.getElementById('window-id')
 

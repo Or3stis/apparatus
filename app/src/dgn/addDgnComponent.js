@@ -1,6 +1,11 @@
-// add components in the graph
-
-// TODO not DRY
+/**
+ * adds implementation phase components in the graph
+ * @todo needs refactoring
+ *
+ * @param {Object} cy cytoscape instance
+ * @param {Object} event captured mouse event
+ * @param {number} nodeCounter id counter for nodes
+ */
 module.exports = function addDgnComponent (cy, event, nodeCounter) {
   // get mouse position on click
   // display new node on the left of the menu
