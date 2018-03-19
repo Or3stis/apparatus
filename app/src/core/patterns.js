@@ -1,8 +1,11 @@
-// highlights attribute patterns of nodes
-
 const bubbleTxt = require('../helpers/bubbleTxt.js')
 const rmElement = require('../helpers/rmElement.js')
 
+/**
+ * highlights attribute patterns of nodes
+ *
+ * @param {Object} cy cytoscape
+ */
 module.exports = function patterns (cy) {
   // search pattern
   const searchPattern = pattern => {
