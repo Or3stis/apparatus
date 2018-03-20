@@ -3,8 +3,8 @@
 const settings = {}
 
 settings.darkText = '#abb2bf'
-settings.darkBgrd = '#1b2836'
-settings.darkDarkBgrd = '#141d26'
+settings.darkBgrd = '#282c34'
+settings.darkDarkBgrd = '#21252b'
 settings.darkBlack = '#3b4251'
 settings.darkGray = '#abb2bf'
 settings.darkBlue = '#61afef'
@@ -20,13 +20,13 @@ settings.lightBgrd = '#fafafa'
 settings.lightDarkBgrd = '#eaeaeb'
 settings.lightBlack = '#a0a1a7'
 settings.lightGray = '#abb2bf'
-settings.lightBlue = '#4078f2'
+settings.lightBlue = '#79a6f6'
 settings.lightRed = '#e45649'
 settings.lightOrange = '#cf8772'
 settings.lightGreen = '#50a14f'
 settings.lightYellow = '#986901'
 settings.lightMagenta = '#a381ff'
-settings.lightCyan = '#0184bc'
+settings.lightCyan = '#12a3b4'
 
 // graph color values
 settings.setColors = color => {
