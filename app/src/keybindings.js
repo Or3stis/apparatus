@@ -41,32 +41,32 @@ module.exports = function (
   graphNodes
 ) {
   // help menu for macOs
-  const helpMenuMacOS = `• focus on console: ⌘L
-• add Edge: ⌘E
-• delete element: ⌘⌫
-• restore node: ⌘Z
-• save as: ⇧⌘S
+  const helpMenuMacOS = `• focus on console: <b>⌘L</b>
+• add Edge: <b>⌘E</b>
+• delete element: <b>⌘⌫</b>
+• restore node: <b>⌘Z</b>
+• save as: <b>⇧⌘S</b>
 • view phase metamodel <b>:metamodel</b>
 • change color theme <b>:toggle</b>
 • clear sidebar <b>:clear</b>
 • model validation <b>:validate</b>
 • security insights <b>:insight</b>
 • configure settings <b>:settings</b>
-• search for attributes <b>:keyword</b>`
+• search for attributes <b><keyword></b>`
 
   // help menu for Linux and Windows
-  const helpMenu = `• focus on console: ctrl+L
-• add Edge: ctrl+E
-• delete element: ctrl+backspace
-• restore node: ctrl+Z
-• save as: shift+ctrl+S
+  const helpMenu = `• focus on console: <b>ctrl+L</b>
+• add Edge: <b>ctrl+E</b>
+• delete element: <b>ctrl+backspace</b>
+• restore node: <b>ctrl+Z</b>
+• save as: <b>shift+ctrl+S</b>
 • view phase metamodel <b>:metamodel</b>
 • change color theme <b>:toggle</b>
 • clear sidebar <b>:clear</b>
 • model validation <b>:validate</b>
 • security insights <b>:insights</b>
 • configure settings <b>:settings</b>
-• search for attributes <b>:keyword</b>`
+• search for attributes <b><keyword></b>`
 
   // adds the url of ASTo docs
   const docsURLBtn = `click to view <button id='url-button' class='menu-btn' style='color: var(--main-tx-color); background-color: var(--main-bg-color); width: 45px; height: 25px;'>docs</button>`
