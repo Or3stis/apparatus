@@ -1,44 +1,31 @@
 // design phase concept schema
 
-const dgnMetamodel = {}
-
-// metamodel group concepts
-dgnMetamodel.network = [
-  'micronet',
-  'net',
-  'information',
-  'device',
-  'application'
-]
-dgnMetamodel.security = ['asset', 'threat', 'constraint', 'malicious actor']
-dgnMetamodel.social = ['actor']
-
-// allowed concepts connections
-dgnMetamodel.deviceArray = [
-  'micronet',
-  'net',
-  'information',
-  'actor',
-  'malicious actor',
-  'asset',
-  'device',
-  'application'
-]
-dgnMetamodel.applicationArray = ['device', 'information', 'asset', 'actor']
-dgnMetamodel.micronetArray = ['device', 'net', 'micronet']
-dgnMetamodel.netArray = ['micronet', 'threat', 'device']
-dgnMetamodel.informationArray = ['asset', 'application', 'device', 'actor']
-dgnMetamodel.actorArray = ['device', 'application', 'information']
-dgnMetamodel.maliciousActorArray = dgnMetamodel.actorArray.concat('threat')
-dgnMetamodel.assetArray = [
-  'information',
-  'application',
-  'threat',
-  'actor',
-  'device'
-]
-dgnMetamodel.constraintArray = ['threat', 'micronet']
-dgnMetamodel.threatArray = ['asset', 'malicious actor', 'constraint', 'net']
+const dgnMetamodel = {
+  // metamodel group concepts
+  network: ['micronet', 'net', 'information', 'device', 'application'],
+  security: ['asset', 'threat', 'constraint', 'malicious actor'],
+  social: ['actor'],
+  // allowed concepts connections
+  deviceArray: [
+    'micronet',
+    'net',
+    'information',
+    'actor',
+    'malicious actor',
+    'asset',
+    'device',
+    'application'
+  ],
+  applicationArray: ['device', 'information', 'asset', 'actor'],
+  micronetArray: ['device', 'net', 'micronet'],
+  netArray: ['micronet', 'threat', 'device'],
+  informationArray: ['asset', 'application', 'device', 'actor'],
+  actorArray: ['device', 'application', 'information'],
+  maliciousActorArray: ['device', 'application', 'information', 'threat'],
+  assetArray: ['information', 'application', 'threat', 'actor', 'device'],
+  constraintArray: ['threat', 'micronet'],
+  threatArray: ['asset', 'malicious actor', 'constraint', 'net']
+}
 
 // concepts and allowed connections pairs
 dgnMetamodel.pairs = {
