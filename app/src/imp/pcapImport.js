@@ -147,7 +147,7 @@ const createDevices = uniqueDevicesServices => {
  *
  * @param {Object} devicesServices
  */
-const createDevicesApplications = (devicesServices) => {
+const createDevicesApplications = devicesServices => {
   let deviceIdCounter = 0 // device concepts start from 0
 
   Object.keys(devicesServices).map(i => {
