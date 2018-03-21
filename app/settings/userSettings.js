@@ -20,7 +20,7 @@ const settings = {
   lightDarkBgrd: '#eaeaeb',
   lightBlack: '#a0a1a7',
   lightGray: '#abb2bf',
-  lightBlue: '#79a6f6',
+  lightBlue: '#4078f2',
   lightRed: '#e45649',
   lightOrange: '#cf8772',
   lightGreen: '#50a14f',
@@ -60,7 +60,7 @@ const settings = {
     }
   },
   // default color theme
-  colorTheme: 'light',
+  colorTheme: 'dark',
   // number of maximum bubbles in the message area
   maxNumberOfBubbles: 16,
   // url for the ASTo wiki
