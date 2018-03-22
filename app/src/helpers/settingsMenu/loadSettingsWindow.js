@@ -72,82 +72,75 @@ const saveBtn = document.getElementById('settings-save')
 saveBtn.addEventListener('click', () => {
   // console.log(defaultColor.value)
   const toWrite = `// settings of ASTo
+// settings of ASTo
 
-const settings = {}
-
-settings.darkText = '${darkText.value}'
-settings.darkBgrd = '${darkBackground.value}'
-settings.darkDarkBgrd = '${darkDarkBackground.value}'
-settings.darkBlack = '${darkBlack.value}'
-settings.darkGray = '${darkGray.value}'
-settings.darkBlue = '${darkBlue.value}'
-settings.darkRed = '${darkRed.value}'
-settings.darkOrange = '${darkOrange.value}'
-settings.darkGreen = '${darkGreen.value}'
-settings.darkYellow = '${darkYellow.value}'
-settings.darkMagenta = '${darkMagenta.value}'
-settings.darkCyan = '${darkCyan.value}'
-// light color theme
-settings.lightText = '${lightText.value}'
-settings.lightBgrd = '${lightBackground.value}'
-settings.lightDarkBgrd = '${lightDarkBackground.value}'
-settings.lightBlack = '${lightBlack.value}'
-settings.lightGray = '${lightGray.value}'
-settings.lightBlue = '${lightBlue.value}'
-settings.lightRed = '${lightRed.value}'
-settings.lightOrange = '${lightOrange.value}'
-settings.lightGreen = '${lightGreen.value}'
-settings.lightYellow = '${lightYellow.value}'
-settings.lightMagenta = '${lightMagenta.value}'
-settings.lightCyan = '${lightCyan.value}'
-
-// graph color values
-settings.setColors = color => {
-  // dark color theme
-  if (color === 'dark') {
-    settings.text = settings.darkText
-    settings.background = settings.darkBgrd
-    settings.darkBackground = settings.darkDarkBgrd
-    settings.black = settings.darkBlack
-    settings.gray = settings.darkGray
-    settings.blue = settings.darkBlue
-    settings.red = settings.darkRed
-    settings.orange = settings.darkOrange
-    settings.green = settings.darkGreen
-    settings.yellow = settings.darkYellow
-    settings.magenta = settings.darkMagenta
-    settings.cyan = settings.darkCyan
-    // light color theme
-  } else if (color === 'light') {
-    settings.text = settings.lightText
-    settings.background = settings.lightBgrd
-    settings.darkBackground = settings.lightDarkBgrd
-    settings.black = settings.lightBlack
-    settings.gray = settings.lightGray
-    settings.blue = settings.lightBlue
-    settings.red = settings.lightRed
-    settings.orange = settings.lightOrange
-    settings.green = settings.lightGreen
-    settings.yellow = settings.lightYellow
-    settings.magenta = settings.lightMagenta
-    settings.cyan = settings.lightCyan
-  }
+const settings = {
+  darkText: '${darkText.value}',
+  darkBgrd: '${darkBackground.value}',
+  darkDarkBgrd: '${darkDarkBackground.value}',
+  darkBlack: '${darkBlack.value}',
+  darkGray: '${darkGray.value}',
+  darkBlue: '${darkBlue.value}',
+  darkRed: '${darkRed.value}',
+  darkOrange: '${darkOrange.value}',
+  darkGreen: '${darkGreen.value}',
+  darkYellow: '${darkYellow.value}',
+  darkMagenta: '${darkMagenta.value}',
+  darkCyan: '${darkCyan.value}',
+  // light color theme
+  lightText: '${lightText.value}',
+  lightBgrd: '${lightBackground.value}',
+  lightDarkBgrd: '${lightDarkBackground.value}',
+  lightBlack: '${lightBlack.value}',
+  lightGray: '${lightGray.value}',
+  lightBlue: '${lightBlue.value}',
+  lightRed: '${lightRed.value}',
+  lightOrange: '${lightOrange.value}',
+  lightGreen: '${lightGreen.value}',
+  lightYellow: '${lightYellow.value}',
+  lightMagenta: '${lightMagenta.value}',
+  lightCyan: '${lightCyan.value}',
+  // graph color values
+  setColors: color => {
+    // dark color theme
+    if (color === 'dark') {
+      settings.text = settings.darkText
+      settings.background = settings.darkBgrd
+      settings.darkBackground = settings.darkDarkBgrd
+      settings.black = settings.darkBlack
+      settings.gray = settings.darkGray
+      settings.blue = settings.darkBlue
+      settings.red = settings.darkRed
+      settings.orange = settings.darkOrange
+      settings.green = settings.darkGreen
+      settings.yellow = settings.darkYellow
+      settings.magenta = settings.darkMagenta
+      settings.cyan = settings.darkCyan
+      // light color theme
+    } else if (color === 'light') {
+      settings.text = settings.lightText
+      settings.background = settings.lightBgrd
+      settings.darkBackground = settings.lightDarkBgrd
+      settings.black = settings.lightBlack
+      settings.gray = settings.lightGray
+      settings.blue = settings.lightBlue
+      settings.red = settings.lightRed
+      settings.orange = settings.lightOrange
+      settings.green = settings.lightGreen
+      settings.yellow = settings.lightYellow
+      settings.magenta = settings.lightMagenta
+      settings.cyan = settings.lightCyan
+    }
+  },
+  // default color theme
+  colorTheme: '${defaultColor.value}',
+  // number of maximum bubbles in the message area
+  maxNumberOfBubbles: ${numberBubbles.value},
+  // url for the ASTo wiki
+  docsURL: 'https://or3stis.github.io/apparatus/docs',
+  // url for searching vulnerabilities
+  cveSearchUrl: '${cveUrl.value}'
 }
-
-// default color theme
-settings.colorTheme = '${defaultColor.value}'
-// first theme paint
-settings.setColors(settings.colorTheme)
-
-// number of maximum bubbles in the message area
-settings.maxNumberOfBubbles = ${numberBubbles.value}
-
-// urls
-
-// url for the ASTo wiki
-settings.docsURL = 'https://or3stis.github.io/apparatus/docs'
-// url for searching vulnerabilities
-settings.cveSearchUrl = '${cveUrl.value}'
 
 module.exports = settings
 `

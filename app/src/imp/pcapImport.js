@@ -145,13 +145,13 @@ const createDevices = uniqueDevicesServices => {
  * creates the application nodes in the graph
  * and connects to the devices
  *
- * @param {Object} devices nodes
+ * @param {Object} devicesServices
  */
-const createDevicesApplications = devices => {
+const createDevicesApplications = devicesServices => {
   let deviceIdCounter = 0 // device concepts start from 0
 
-  Object.keys(uniqueDevicesServices).map(i => {
-    let services = uniqueDevicesServices[i].split(' ')
+  Object.keys(devicesServices).map(i => {
+    let services = devicesServices[i].split(' ')
     services.map(service => {
       if (service !== 'undefined') {
         // checks if port service is known
@@ -261,7 +261,7 @@ const createConnections = (devices, connections) => {
 const writeGraph = (cy, filename, devices, connections) => {
   storeUniqueDevicesServices(devices)
   createDevices(uniqueDevicesServices)
-  createDevicesApplications(devices)
+  createDevicesApplications(uniqueDevicesServices)
   createConnections(uniqueDevices, connections)
 
   // creates the first line of the file
