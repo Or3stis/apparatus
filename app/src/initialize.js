@@ -1,4 +1,5 @@
 // initializes the application and links it with the GUI
+const ipc = require('electron').ipcRenderer
 
 // require core modules
 const printTotalNodes = require('./core/printTotalNodes.js')
@@ -8,6 +9,7 @@ const editEdge = require('./core/editEdge.js')
 
 // require helper functions
 const rmElement = require('./helpers/rmElement.js')
+const bubbleTxt = require('./helpers/bubbleTxt.js')
 
 // require buttons and keybindings
 const buttons = require('./buttons.js')
@@ -186,4 +188,13 @@ module.exports = function initialize (cy, phase) {
 
   // initial node count
   printTotalNodes(cy)
+
+  // listening for changes in the app settings
+  ipc.on('change-settings', (event, message) => {
+    if (message === 'restore' || message === 'save') {
+      bubbleTxt(
+        'You will need to refresh the app for the color changes to be applied'
+      )
+    }
+  })
 }

@@ -1,4 +1,5 @@
 const electron = require('electron')
+const ipc = require('electron').ipcMain
 // Module to control application life.
 const app = electron.app
 // Module to create native browser window.
@@ -40,6 +41,10 @@ function createWindow () {
     mainWindow.show()
   })
 
+  // capture events from the open windows
+  ipc.on('window-settings', (event, message) => {
+    mainWindow.send('change-settings', message)
+  })
   // create the application's menu
   appMenu()
 }

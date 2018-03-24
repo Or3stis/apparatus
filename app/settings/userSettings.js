@@ -61,7 +61,7 @@ const settings = {
   // default color theme
   colorTheme: 'dark',
   // number of maximum bubbles in the message area
-  maxNumberOfBubbles: 16,
+  maxNumberOfBubbles: 15,
   // url for the ASTo wiki
   docsURL: 'https://or3stis.github.io/apparatus/docs',
   // url for searching vulnerabilities
