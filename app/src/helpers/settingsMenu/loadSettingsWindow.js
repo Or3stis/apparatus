@@ -1,5 +1,6 @@
 // allows modification of the settings by the user
 const remote = require('electron').remote
+const ipc = require('electron').ipcRenderer
 const fs = require('fs')
 
 const settings = require('../../../settings/userSettings.js')
@@ -151,6 +152,7 @@ module.exports = settings
 
   // close the window
   const win = remote.getCurrentWindow()
+  ipc.send('window-settings', 'save')
   win.close()
 })
 
@@ -159,6 +161,7 @@ const cancelBtn = document.getElementById('settings-cancel')
 
 cancelBtn.addEventListener('click', () => {
   const win = remote.getCurrentWindow()
+  ipc.send('window-settings', 'cancel')
   win.close()
 })
 
@@ -176,5 +179,6 @@ restoreBtn.addEventListener('click', () => {
 
   // close window
   const win = remote.getCurrentWindow()
+  ipc.send('window-settings', 'restore')
   win.close()
 })

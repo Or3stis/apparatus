@@ -6,7 +6,12 @@ module.exports = function settingsWindow () {
   const settingsURL = `file://${__dirname}/settings.html`
   // create window
   const createWindow = url => {
-    let win = new BrowserWindow({ width: 570, height: 700, show: false })
+    let win = new BrowserWindow({
+      backgroundColor: '#282c34',
+      width: 570,
+      height: 700,
+      show: false
+    })
     win.loadURL(url)
     win.on('ready-to-show', win.show)
 
@@ -15,7 +20,11 @@ module.exports = function settingsWindow () {
     })
   }
 
-  // if an window is open
+  /**
+   * check if the settings window is open
+   *
+   * @param {string} url
+   */
   const windowIsOpen = url => {
     let isWindowActive = false
     const activeWins = BrowserWindow.getAllWindows()

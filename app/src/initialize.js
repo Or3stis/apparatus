@@ -1,4 +1,5 @@
 // initializes the application and links it with the GUI
+const ipc = require('electron').ipcRenderer
 
 // require core modules
 const printTotalNodes = require('./core/printTotalNodes.js')
@@ -8,6 +9,7 @@ const editEdge = require('./core/editEdge.js')
 
 // require helper functions
 const rmElement = require('./helpers/rmElement.js')
+const bubbleTxt = require('./helpers/bubbleTxt.js')
 
 // require buttons and keybindings
 const buttons = require('./buttons.js')
@@ -24,17 +26,22 @@ module.exports = function initialize (cy, phase) {
   cy.edges().addClass('label-edges')
 
   // global variables, used in cy.on
-  let selectedNode = {}
-  let oldSelectedNode = {}
-  let selectedEdge = {}
-  let srcNode = {}
-  let trgNode = {}
   // initialize export variables to prevent undefined errors
-  selectedNode.out = {}
-  oldSelectedNode.out = {}
-  selectedEdge.out = {}
-  srcNode.out = {}
-  trgNode.out = {}
+  let selectedNode = {
+    out: {}
+  }
+  let oldSelectedNode = {
+    out: {}
+  }
+  let selectedEdge = {
+    out: {}
+  }
+  let srcNode = {
+    out: {}
+  }
+  let trgNode = {
+    out: {}
+  }
 
   // stores the initial state of the nodes in the graph
   const graphNodes = cy.nodes()
@@ -181,4 +188,13 @@ module.exports = function initialize (cy, phase) {
 
   // initial node count
   printTotalNodes(cy)
+
+  // listening for changes in the app settings
+  ipc.on('change-settings', (event, message) => {
+    if (message === 'restore' || message === 'save') {
+      bubbleTxt(
+        'You will need to refresh the app for the color changes to be applied'
+      )
+    }
+  })
 }

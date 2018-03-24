@@ -1,10 +1,11 @@
 const electron = require('electron')
+const ipc = require('electron').ipcMain
 // Module to control application life.
 const app = electron.app
 // Module to create native browser window.
 const BrowserWindow = electron.BrowserWindow
 
-const settings = require('../settings/userSettings.js')
+// const settings = require('../settings/userSettings.js')
 const appMenu = require('./appMenu.js')
 
 // Keep a global reference of the window object, if you don't, the window will
@@ -16,7 +17,7 @@ let mainWindow
 function createWindow () {
   // Create the browser window.
   mainWindow = new BrowserWindow({
-    backgroundColor: settings.background,
+    backgroundColor: '#282c34',
     width: 1200,
     height: 745,
     minWidth: 800,
@@ -40,6 +41,10 @@ function createWindow () {
     mainWindow.show()
   })
 
+  // capture events from the open windows
+  ipc.on('window-settings', (event, message) => {
+    mainWindow.send('change-settings', message)
+  })
   // create the application's menu
   appMenu()
 }
