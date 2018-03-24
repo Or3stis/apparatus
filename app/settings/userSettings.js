@@ -1,5 +1,4 @@
 // settings of ASTo
-// settings of ASTo
 
 const settings = {
   darkText: '#abb2bf',
