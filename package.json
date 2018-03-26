@@ -2,11 +2,13 @@
   "name": "apparatus",
   "version": "0.3.0",
   "description": "an IoT network security analysis and visualization tool",
-  "main": "main.js",
+  "main": "./app/src/main.js",
   "scripts": {
-    "lint": "prettier --no-semi --single-quote --write 'app/**/*.js' && standard 'app/**/*.js' --fix",
-    "dev": "cross-env NODE_ENV=development electron app/src/main.js",
-    "start": "electron app/src/main.js"
+    "lint": "prettier --no-semi --single-quote --write './app/**/*.js' && standard './app/**/*.js' --fix",
+    "dev": "cross-env NODE_ENV=development electron ./app/src/main.js",
+    "postinstall": "install-app-deps",
+    "start": "electron ./app/src/main.js",
+    "dist": "build"
   },
   "repository": {
     "type": "git",
@@ -22,13 +24,41 @@
   "bugs": {
     "url": "https://github.com/Or3stis/apparatus/issues"
   },
+  "build": {
+    "appId": "org.or3stis.asto",
+    "dmg": {
+      "contents": [
+        {
+          "x": 110,
+          "y": 150
+        },
+        {
+          "x": 240,
+          "y": 150,
+          "type": "link",
+          "path": "/Applications"
+        }
+      ]
+    },
+    "linux": {
+      "target": [
+        "AppImage",
+        "deb"
+      ]
+    },
+    "win": {
+      "target": "squirrel",
+      "icon": "build/icon.png"
+    }
+  },
   "homepage": "https://github.com/Or3stis/apparatus/#readme",
   "dependencies": {
     "cytoscape": "^3.2.11",
-    "electron": "^1.8.4",
     "jsonfile": "^4.0.0"
   },
   "devDependencies": {
+    "electron": "^1.8.4",
+    "electron-builder": "^20.6.2",
     "cross-env": "^5.1.4",
     "prettier": "^1.11.1",
     "standard": "^11.0.1"
