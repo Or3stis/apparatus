@@ -57,9 +57,9 @@
     "jsonfile": "^4.0.0"
   },
   "devDependencies": {
-    "electron": "^1.8.4",
-    "electron-builder": "^20.6.2",
     "cross-env": "^5.1.4",
+    "electron": "^1.8.4",
+    "electron-builder": "^20.8.1",
     "prettier": "^1.11.1",
     "standard": "^11.0.1"
   }
