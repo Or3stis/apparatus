@@ -47,7 +47,7 @@ All console commands must be preceded with a `:`. For example, typing `:insights
 
 ## Color themes
 
-ASTo supports a light and a dark color theme. The colors themes are based on Atom's [One Dark](https://github.com/atom/one-dark-syntax) and [One Light](https://github.com/atom/one-light-syntax). You can switch between the themes by typing `:toggle` in ASTo's console (bottom right corner, cmd/ctrl + l).
+ASTo supports a light and a dark color theme. The colors themes are based on Atom's [One Dark](https://github.com/atom/one-dark-syntax) and [One Light](https://github.com/atom/one-light-syntax).  To switch between themes use the toggle button on the bottom left corner.
 
 \- _Note in performance_. If you render a graph with more than a thousand nodes, depending on your hardware, you might detect some performance issues. The reason is that the default label rendering of nodes and edges in ASTo is quite expensive. Rendering label on nodes and edges along with directional arrows is expensive. To improve performance you can hide the labels and the directional arrows by pressing the `label` button.
 
@@ -60,7 +60,7 @@ To clone and run this repository you'll need [Git](https://git-scm.com) and [Nod
 ```bash
 # Clone this repository
 git clone https://github.com/Or3stis/apparatus.git
-# Go into the repository
+# Navigate into the repository
 cd apparatus
 # Install dependencies
 npm install
@@ -68,6 +68,8 @@ npm install
 npm start
 # to run the app in developer mode
 npm run dev
+# to build the app
+npm run dist
 ```
 
 Because the app is still in prototype stage, it is best to keep up to date with the most recent commits. To do so, before starting the app, type:
@@ -81,7 +83,7 @@ git pull
 
 Once the app starts, the first window (home screen) will ask you to choose which modeling phase would you like to perform analysis in. After you select a phase, you will be presented with three choices. The first is to create a new graph. The second choice is to load an existing graph. The third option is the debug app, which loads a default graph used for debugging purposes.
 
-You will find some example graphs in the `graphs` folder.
+You will find some example graphs in the `sample` folder.
 
 ## Instructions
 
