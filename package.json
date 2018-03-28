@@ -26,19 +26,8 @@
   },
   "build": {
     "appId": "org.or3stis.asto",
-    "dmg": {
-      "contents": [
-        {
-          "x": 110,
-          "y": 150
-        },
-        {
-          "x": 240,
-          "y": 150,
-          "type": "link",
-          "path": "/Applications"
-        }
-      ]
+    "mac": {
+     "target": "dmg"
     },
     "linux": {
       "target": [
@@ -47,7 +36,6 @@
       ]
     },
     "win": {
-      "target": "squirrel",
       "icon": "build/icon.png"
     }
   },
