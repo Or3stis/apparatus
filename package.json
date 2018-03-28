@@ -27,7 +27,7 @@
   "build": {
     "appId": "org.or3stis.asto",
     "mac": {
-     "target": "dmg"
+      "target": "dmg"
     },
     "linux": {
       "target": [
@@ -45,9 +45,9 @@
     "jsonfile": "^4.0.0"
   },
   "devDependencies": {
-    "electron": "^1.8.4",
-    "electron-builder": "^20.6.2",
     "cross-env": "^5.1.4",
+    "electron": "^1.8.4",
+    "electron-builder": "^20.8.2",
     "prettier": "^1.11.1",
     "standard": "^11.0.1"
   }
