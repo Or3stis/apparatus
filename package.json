@@ -26,19 +26,8 @@
   },
   "build": {
     "appId": "org.or3stis.asto",
-    "dmg": {
-      "contents": [
-        {
-          "x": 110,
-          "y": 150
-        },
-        {
-          "x": 240,
-          "y": 150,
-          "type": "link",
-          "path": "/Applications"
-        }
-      ]
+    "mac": {
+      "target": "dmg"
     },
     "linux": {
       "target": [
@@ -47,7 +36,6 @@
       ]
     },
     "win": {
-      "target": "squirrel",
       "icon": "build/icon.png"
     }
   },
@@ -59,7 +47,7 @@
   "devDependencies": {
     "cross-env": "^5.1.4",
     "electron": "^1.8.4",
-    "electron-builder": "^20.8.1",
+    "electron-builder": "^20.8.2",
     "prettier": "^1.11.1",
     "standard": "^11.0.1"
   }
