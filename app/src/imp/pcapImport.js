@@ -330,7 +330,7 @@ module.exports = function pcapImport (cy, phase) {
     dialog.showOpenDialog(
       {
         properties: [...dialogOptions],
-        filters: [{ name: 'pcap', extensions: ['pcapng'] }]
+        filters: [{ name: 'pcap', extensions: ['pcapng', 'pcap'] }]
       },
       pcapngFiles => {
         if (pcapngFiles === undefined) return
