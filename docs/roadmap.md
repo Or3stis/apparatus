@@ -86,7 +86,6 @@ Improvements on the functionality of the tool.
 - [✓] detect changes in the model to prompt for save
 - [✓] generate report
 - [✓] add model transformation rules
-- [ ] security assistant
 - [✓] add dynamic color themes
 - [✓] add expose option to graphs to show the information on all the nodes
 - [✓] add a menu bar
@@ -101,7 +100,7 @@ Improvements on the functionality of the tool.
 
 ## beta release
 
-- [ ] configure electron-compile
-- [ ] design an app icon
+- [ ] configure electron-builder
+- [✓] design an app icon
 - [ ] autocompletion in the console
 - [ ] build step to produce binaries
