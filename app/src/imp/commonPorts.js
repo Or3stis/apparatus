@@ -143,6 +143,7 @@ const commonPorts = {
   3690: 'Subversion',
   4333: 'mSQL',
   4444: 'Blaster (malicious)',
+  4664: 'Google Desktop',
   5000: 'UPnP',
   5357: 'wsdapi',
   5432: 'PostgreSQL',
@@ -213,7 +214,11 @@ const commonPorts = {
   6920: 'BitTorrent',
   6921: 'BitTorrent',
   8080: 'HTTP Proxy',
-  8118: 'Privoxy'
+  8118: 'Privoxy',
+  8866: 'Bagle.B (malicious)',
+  9898: 'Dabber (malicious)',
+  9988: 'Rbot/Spybot (malicious)',
+  12345: 'NetBus (malicious)'
 }
 
 module.exports = commonPorts
