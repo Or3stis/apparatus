@@ -218,7 +218,11 @@ const commonPorts = {
   8866: 'Bagle.B (malicious)',
   9898: 'Dabber (malicious)',
   9988: 'Rbot/Spybot (malicious)',
-  12345: 'NetBus (malicious)'
+  12345: 'NetBus (malicious)',
+  63321: 'NSDP',
+  63322: 'NSDP',
+  63323: 'NSDP',
+  63324: 'NSDP'
 }
 
 module.exports = commonPorts
