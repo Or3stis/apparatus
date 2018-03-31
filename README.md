@@ -49,10 +49,6 @@ All console commands must be preceded with a `:`. For example, typing `:insights
 
 ASTo supports a light and a dark color theme. The colors themes are based on Atom's [One Dark](https://github.com/atom/one-dark-syntax) and [One Light](https://github.com/atom/one-light-syntax). To switch between themes use the toggle button on the bottom left corner.
 
-\- _Note in performance_. If you render a graph with more than a thousand nodes, depending on your hardware, you might detect some performance issues. The reason is that the default label rendering of nodes and edges in ASTo is quite expensive. Rendering label on nodes and edges along with directional arrows is expensive. To improve performance you can hide the labels and the directional arrows by pressing the `label` button.
-
-You can find more information about Cytoscape's performance optimizations in this [link](http://js.cytoscape.org/#performance).
-
 ## To Use
 
 To clone and run this repository you'll need [Git](https://git-scm.com) and [Node.js](https://nodejs.org/en/download/) installed on your computer. To download and install the app, type the following in your terminal:
@@ -85,7 +81,11 @@ Once the app starts, the first window (home screen) will ask you to choose which
 
 You will find some example graphs in the `sample` folder.
 
-## Instructions
+\- _Note in performance_. If you render a graph with more than a thousand nodes, depending on your hardware, you might detect some performance issues. The reason is that the default label rendering of nodes and edges in ASTo is quite expensive. Rendering label on nodes and edges along with directional arrows is expensive. To improve performance you can hide the labels and the directional arrows by pressing the `label` button.
+
+You can find more information about Cytoscape's performance optimizations in this [link](http://js.cytoscape.org/#performance).
+
+## Contributing
 
 If you want to contribute that's great 😃. Check the [contributing](https://github.com/Or3stis/apparatus/blob/master/CONTRIBUTING.md) guide. The application is being developed on Mac. That means that new commits might introduce breaking changes in other platforms. Especially commits that involve access to the file system. If something is not working, don't hesitate to create an [issue](https://github.com/Or3stis/apparatus/issues).
 
