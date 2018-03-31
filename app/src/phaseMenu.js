@@ -80,9 +80,7 @@ module.exports = function phaseMenu (phase) {
     btnImport.className = 'menu-btn'
     btnImport.type = 'button'
     btnImport.value = 'import'
-    btnImport.innerHTML =
-      'import .pcapng file <small style="color: #d19a66;">beta</small>'
-    // btnImport.textContent = 'import pcang file'
+    btnImport.textContent = 'import pcapng file'
 
     wrapper.appendChild(btnImport)
 
