@@ -28,8 +28,9 @@ module.exports = function threatVerification (cy) {
     neighbor.map(type => {
       if (type.data().hasOwnProperty('info') === true) {
         if (type.data().info.concept === 'constraint') {
-          result = `${result} • Threat ${threat.data()
-            .id} mitigated by Constraint ${type.data().id}\n`
+          result = `${result} • Threat ${
+            threat.data().id
+          } mitigated by Constraint ${type.data().id}\n`
           mitigatedThreats += 1
         }
       }
