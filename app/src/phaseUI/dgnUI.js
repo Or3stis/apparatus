@@ -25,7 +25,7 @@ module.exports = function designUI () {
   </button>
   <ul class="dropdown-menu">
     <li><a>service provider</a></li>
-    <li><a>infrastrure provider</a></li>
+    <li><a>infrastructure provider</a></li>
     <li><a>cescm</a></li>
     <li><a>vim</a></li>
     <li><a>main dc</a></li>
@@ -61,7 +61,7 @@ module.exports = function designUI () {
   </button>
   <ul class="dropdown-menu">
     <li><a>service provider</a></li>
-    <li><a>infrastrure provider</a></li>
+    <li><a>infrastructure provider</a></li>
     <li><a>cescm</a></li>
     <li><a>vim</a></li>
     <li><a>main dc</a></li>
