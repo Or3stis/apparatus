@@ -13,7 +13,7 @@ module.exports = function addDgnComponent (cy, event, nodeCounter) {
   let component = event.target.textContent
 
   switch (component) {
-    case 'cesm':
+    case 'cescm':
       cy.add({
         group: 'nodes',
         data: {
@@ -21,7 +21,7 @@ module.exports = function addDgnComponent (cy, event, nodeCounter) {
           label: `${component}`,
           info: {
             description: '',
-            concept: 'cesm'
+            concept: 'cescm'
           }
         },
         renderedPosition: {
@@ -65,6 +65,6 @@ module.exports = function addDgnComponent (cy, event, nodeCounter) {
       })
       break
     default:
-      console.error('error in addDgnComponent.js')
+      console.error('error in addDgnStateComponent.js')
   }
 }

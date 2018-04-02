@@ -3,8 +3,8 @@
 const dgnStateMetamodel = {}
 
 // allowed concepts connections
-dgnStateMetamodel.modelArray = ['model', 'cesm', 'event']
-dgnStateMetamodel.cesmArray = ['model', 'event']
-dgnStateMetamodel.eventArray = ['cesm', 'model']
+dgnStateMetamodel.modelArray = ['model', 'cescm', 'event']
+dgnStateMetamodel.cescmArray = ['model', 'event']
+dgnStateMetamodel.eventArray = ['cescm', 'model']
 
 module.exports = dgnStateMetamodel

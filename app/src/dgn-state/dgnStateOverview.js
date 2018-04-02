@@ -9,21 +9,21 @@ module.exports = function overview (cy) {
   const totalNodes = cy.elements().nodes().length
   result = `• total nodes: ${totalNodes}\n`
 
-  let cesmNode = 0
+  let cescmNode = 0
   let modelNode = 0
   let eventNode = 0
 
   cy.nodes().map(node => {
     const nodeConcept = node.data().info.concept
-    if (nodeConcept === 'cesm') {
-      cesmNode += 1
+    if (nodeConcept === 'cescm') {
+      cescmNode += 1
     } else if (nodeConcept === 'model') {
       modelNode += 1
     } else if (nodeConcept === 'event') {
       eventNode += 1
     }
   })
-  result = `${result}\n• cesm nodes: ${cesmNode}\n`
+  result = `${result}\n• cescm nodes: ${cescmNode}\n`
   result = `${result}• model nodes: ${modelNode}\n`
   result = `${result}• event nodes: ${eventNode}\n`
 

@@ -9,7 +9,7 @@ module.exports = function moduleValidation (cy) {
   // valid component connections
   const serviceProvArray = dgnMetamodel.serviceProvArray
   const infrastructureProvArray = dgnMetamodel.infrastructureProvArray
-  const cesmArray = dgnMetamodel.cesmArray
+  const cescmArray = dgnMetamodel.cescmArray
   const vimArray = dgnMetamodel.vimArray
   const mainDcArray = dgnMetamodel.mainDcArray
   const lightDcArray = dgnMetamodel.lightDcArray
@@ -22,7 +22,7 @@ module.exports = function moduleValidation (cy) {
   const threatArray = dgnMetamodel.threatArray
   const maliciousActorArray = dgnMetamodel.maliciousActorArray
 
-  // decleration of arrays
+  // declaration of arrays
   let result = '' // posted on the nodeInfo div
   let arrWrong = [] // stores wrong connection of nodes
 
@@ -32,14 +32,14 @@ module.exports = function moduleValidation (cy) {
       if (node.data().info.concept === component) {
         // stores the neighboring nodes of the component
         const neighborNodes = node.neighborhood().add(node)
-        const neigborObject = neighborNodes.data().info.concept
+        const neighborObject = neighborNodes.data().info.concept
 
-        Object.keys(neigborObject).map(() => {
+        Object.keys(neighborObject).map(() => {
           // every neighbor node is added to the array arrWrong
-          arrWrong.push(neigborObject)
+          arrWrong.push(neighborObject)
           // if the neighbor is a valid connection it is removed from the array
-          if (componentArray.includes(neigborObject) === true) {
-            arrWrong.pop(neigborObject)
+          if (componentArray.includes(neighborObject) === true) {
+            arrWrong.pop(neighborObject)
           }
         })
       }
@@ -55,8 +55,8 @@ module.exports = function moduleValidation (cy) {
   }
 
   componentValidation(cy, 'service provider', serviceProvArray)
-  componentValidation(cy, 'infrastrure provider', infrastructureProvArray)
-  componentValidation(cy, 'cesm', cesmArray)
+  componentValidation(cy, 'infrastructure provider', infrastructureProvArray)
+  componentValidation(cy, 'cescm', cescmArray)
   componentValidation(cy, 'vim', vimArray)
   componentValidation(cy, 'main dc', mainDcArray)
   componentValidation(cy, 'light dc', lightDcArray)

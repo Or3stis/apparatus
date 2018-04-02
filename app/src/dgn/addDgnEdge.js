@@ -14,7 +14,7 @@ module.exports = function addComponent (cy, srcNode, trgNode) {
     case srcNodeCpt === 'service provider' && trgNodeCpt === 'vnf':
       addEdge(cy, srcNodeId, trgNodeId, 'uses')
       break
-    case srcNodeCpt === 'service provider' && trgNodeCpt === 'cesm':
+    case srcNodeCpt === 'service provider' && trgNodeCpt === 'cescm':
       addEdge(cy, srcNodeId, trgNodeId, 'uses')
       break
     case srcNodeCpt === 'service provider' && trgNodeCpt === 'light dc':
@@ -26,25 +26,25 @@ module.exports = function addComponent (cy, srcNode, trgNode) {
     case srcNodeCpt === 'service provider' && trgNodeCpt === 'process':
       addEdge(cy, srcNodeId, trgNodeId, 'uses')
       break
-    case srcNodeCpt === 'infrastrure provider' && trgNodeCpt === 'vnf':
+    case srcNodeCpt === 'infrastructure provider' && trgNodeCpt === 'vnf':
       addEdge(cy, srcNodeId, trgNodeId, 'provides')
       break
-    case srcNodeCpt === 'infrastrure provider' && trgNodeCpt === 'main dc':
+    case srcNodeCpt === 'infrastructure provider' && trgNodeCpt === 'main dc':
       addEdge(cy, srcNodeId, trgNodeId, 'owns')
       break
-    case srcNodeCpt === 'infrastrure provider' && trgNodeCpt === 'cesm':
+    case srcNodeCpt === 'infrastructure provider' && trgNodeCpt === 'cescm':
       addEdge(cy, srcNodeId, trgNodeId, 'owns')
       break
-    case srcNodeCpt === 'infrastrure provider' && trgNodeCpt === 'vim':
+    case srcNodeCpt === 'infrastructure provider' && trgNodeCpt === 'vim':
       addEdge(cy, srcNodeId, trgNodeId, 'owns')
       break
-    case srcNodeCpt === 'infrastrure provider' && trgNodeCpt === 'light dc':
+    case srcNodeCpt === 'infrastructure provider' && trgNodeCpt === 'light dc':
       addEdge(cy, srcNodeId, trgNodeId, 'owns')
       break
-    case srcNodeCpt === 'cesm' && trgNodeCpt === 'vim':
+    case srcNodeCpt === 'cescm' && trgNodeCpt === 'vim':
       addEdge(cy, srcNodeId, trgNodeId, 'uses')
       break
-    case srcNodeCpt === 'cesm' && trgNodeCpt === 'main dc':
+    case srcNodeCpt === 'cescm' && trgNodeCpt === 'main dc':
       addEdge(cy, srcNodeId, trgNodeId, 'manages')
       break
     case srcNodeCpt === 'vim' && trgNodeCpt === 'main dc':

@@ -30,7 +30,7 @@ module.exports = function addDgnComponent (cy, event, nodeCounter) {
         }
       })
       break
-    case 'infrastrure provider':
+    case 'infrastructure provider':
       cy.add({
         group: 'nodes',
         data: {
@@ -39,7 +39,7 @@ module.exports = function addDgnComponent (cy, event, nodeCounter) {
           info: {
             description: '',
             purpose: '',
-            concept: 'infrastrure provider'
+            concept: 'infrastructure provider'
           }
         },
         renderedPosition: {
@@ -48,7 +48,7 @@ module.exports = function addDgnComponent (cy, event, nodeCounter) {
         }
       })
       break
-    case 'cesm':
+    case 'cescm':
       cy.add({
         group: 'nodes',
         data: {
@@ -56,7 +56,7 @@ module.exports = function addDgnComponent (cy, event, nodeCounter) {
           label: `${component}`,
           info: {
             description: '',
-            concept: 'cesm'
+            concept: 'cescm'
           }
         },
         renderedPosition: {

@@ -11,7 +11,7 @@ module.exports = function addComponent (cy, srcNode, trgNode) {
   let trgNodeCpt = trgNode.info.concept
 
   switch (true) {
-    case srcNodeCpt === 'cesm' && trgNodeCpt === 'model':
+    case srcNodeCpt === 'cescm' && trgNodeCpt === 'model':
       addEdge(cy, srcNodeId, trgNodeId, 'belongs')
       break
     case srcNodeCpt === 'model' && trgNodeCpt === 'model':
@@ -20,7 +20,7 @@ module.exports = function addComponent (cy, srcNode, trgNode) {
     case srcNodeCpt === 'event' && trgNodeCpt === 'model':
       addEdge(cy, srcNodeId, trgNodeId, 'affects')
       break
-    case srcNodeCpt === 'cesm' && trgNodeCpt === 'event':
+    case srcNodeCpt === 'cescm' && trgNodeCpt === 'event':
       addEdge(cy, srcNodeId, trgNodeId, 'detects')
       break
     default:

@@ -2,53 +2,52 @@
 
 const dgnMetamodel = {}
 
-// metamodel group concepts
-dgnMetamodel.network = ['micronet', 'net', 'information', 'thing']
-dgnMetamodel.security = ['asset', 'threat', 'constraint', 'malicious actor']
-dgnMetamodel.social = ['actor']
-dgnMetamodel.sensing = ['sensor']
-
 // allowed concepts connections
 dgnMetamodel.serviceProvArray = [
   'vnf',
-  'cesm',
+  'cescm',
   'light dc',
   'storage',
   'process'
 ]
 dgnMetamodel.infrastructureProvArray = ['vnf', 'main dc', 'light dc', 'vim']
-dgnMetamodel.cesmArray = [
+dgnMetamodel.cescmArray = [
   'service provider',
-  'infrastrure provider',
+  'infrastructure provider',
   'vim',
   'main dc'
 ]
-dgnMetamodel.vimArray = ['infrastrure provider', 'cesm', 'main dc', 'light dc']
+dgnMetamodel.vimArray = [
+  'infrastructure provider',
+  'cescm',
+  'main dc',
+  'light dc'
+]
 dgnMetamodel.mainDcArray = [
-  'infrastrure provider',
+  'infrastructure provider',
   'vnf',
   'storage',
   'process',
   'light dc',
   'vnf',
   'vim',
-  'cesm',
+  'cescm',
   'constraint'
 ]
 dgnMetamodel.lightDcArray = [
-  'infrastrure provider',
+  'infrastructure provider',
   'service provider',
   'storage',
   'process',
   'main dc',
   'vnf',
   'vim',
-  'cesm',
+  'cescm',
   'constraint'
 ]
 dgnMetamodel.vnfArray = [
   'service provider',
-  'infrastrure provider',
+  'infrastructure provider',
   'light dc',
   'main dc',
   'constraint',
