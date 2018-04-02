@@ -19,18 +19,23 @@ module.exports = function initialize (cy, phase) {
   cy.nodes().addClass('label-nodes')
   cy.edges().addClass('label-edges')
 
-  // global variables, used in cy.on
-  let selectedNode = {}
-  let oldSelectedNode = {}
-  let selectedEdge = {}
-  let srcNode = {}
-  let trgNode = {}
+ // global variables, used in cy.on
   // initialize export variables to prevent undefined errors
-  selectedNode.out = {}
-  oldSelectedNode.out = {}
-  selectedEdge.out = {}
-  srcNode.out = {}
-  trgNode.out = {}
+  let selectedNode = {
+    out: {}
+  }
+  let oldSelectedNode = {
+    out: {}
+  }
+  let selectedEdge = {
+    out: {}
+  }
+  let srcNode = {
+    out: {}
+  }
+  let trgNode = {
+    out: {}
+  }
 
   // counter variable to create unique sequential node ids in addComponents.js
   const initialCount = cy.nodes().length
