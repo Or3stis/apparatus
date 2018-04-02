@@ -6,7 +6,7 @@ const printChatText = require('./printChatText.js')
 
 module.exports = function save (cy) {
   // parses graph and stores it as an object
-  const fullgraph = cy.json()
+  const fullGraph = cy.json()
 
   dialog.showSaveDialog(
     {
@@ -18,7 +18,7 @@ module.exports = function save (cy) {
       ]
     },
     fileToSave => {
-      jsonfile.writeFile(fileToSave, fullgraph, err => {
+      jsonfile.writeFile(fileToSave, fullGraph, err => {
         if (err) {
           console.error(err.message)
         } else {

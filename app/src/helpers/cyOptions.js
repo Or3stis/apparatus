@@ -9,7 +9,7 @@ module.exports = function cyOptions (cy, file) {
   // sets the color values of the graph
   graphStyle.setStyle(config.colorTheme)
 
-  // initializes the cytoscape gpraph
+  // initializes the cytoscape graph
   cy.out = cytoscape({
     container: document.getElementById('graph-container'),
     autounselectify: true,
