@@ -25,7 +25,7 @@ module.exports = function designStateUI () {
     </button>
     <ul class="dropdown-menu">
       <li><a>model</a></li>
-      <li><a>cesm</a></li>
+      <li><a>cescm</a></li>
       <li><a>event</a></li>
     </ul>
   </div>
@@ -50,7 +50,7 @@ module.exports = function designStateUI () {
     </button>
     <ul class="dropdown-menu">
       <li><a>model</a></li>
-      <li><a>cesm</a></li>
+      <li><a>cescm</a></li>
       <li><a>event</a></li>
     </ul>
   </div>

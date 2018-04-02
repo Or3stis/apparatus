@@ -13,10 +13,6 @@ const save = require('./helpers/save.js')
 
 const phaseHelpers = require('./buttonHelpers.js')
 
-// const dgnState2ImpState = require('./tranformation/dgnState2ImpState.js')
-// const printChatText = require('./helpers/printChatText.js')
-// const load = require('../helpers/load.js')
-
 module.exports = function buttons (
   cy,
   selectedNode,
@@ -127,8 +123,8 @@ module.exports = function buttons (
   // phase only buttons
   if (phase === 'design') {
     // verify threats
-    const buttonThreatVefiry = document.getElementById('threat-verify-button')
-    buttonThreatVefiry.addEventListener('click', () => {
+    const buttonThreatVerify = document.getElementById('threat-verify-button')
+    buttonThreatVerify.addEventListener('click', () => {
       threatVerification(cy) // global module
     })
 
