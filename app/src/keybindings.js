@@ -31,7 +31,7 @@ module.exports = function (
 • clear sidebar: <b>clear</b>
 • model overview: <b>overview</b>
 • model validation: <b>validate</b>
-• search for attribures: <b>keyword</b>`
+• search for attributes: <b>keyword</b>`
 
   // help menu for Linux and Windows
   const helpMenu = `• focus on console: ctrl+L
@@ -44,7 +44,7 @@ module.exports = function (
 • clear sidebar: <b>clear</b>
 • model overview: <b>overview</b>
 • model validation: <b>validate</b>
-• search for attribures: <b>keyword</b>`
+• search for attributes: <b>keyword</b>`
 
   // adds the url of the github wiki
   const wikiURLButton = `click to view <button id='url-button' class='startButtons' style='color: var(--main-tx-color); background-color: var(--main-bg-color); width: 40px; height: 25px;'>wiki</button>`
@@ -69,7 +69,7 @@ module.exports = function (
 
     switch (input) {
       case 'help':
-        // checks the platform to display the corrent help menu
+        // checks the platform to display the help menu
         process.platform === 'darwin'
           ? printChatHTML(helpMenuMacOS)
           : printChatHTML(helpMenu)

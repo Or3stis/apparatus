@@ -7,7 +7,7 @@ module.exports = function homeMenu () {
   // get the graph container
   const graph = document.getElementById('graph-container')
 
-  // creater wrapper for the phase buttons
+  // create wrapper for the phase buttons
   const wrapper = document.createElement('wrapper')
   wrapper.id = 'wrapper-id'
   wrapper.className = 'wrapper'
