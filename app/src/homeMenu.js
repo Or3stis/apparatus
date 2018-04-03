@@ -16,56 +16,56 @@ module.exports = function homeMenu () {
   wrapper.textContent = 'select phase'
 
   // create the design phase button
-  const btnDgn = document.createElement('button')
-  btnDgn.id = 'dgn-id'
-  btnDgn.className = 'menu-btn'
-  btnDgn.type = 'button'
-  btnDgn.textContent = 'design phase'
+  const buttonDgn = document.createElement('button')
+  buttonDgn.id = 'dgn-id'
+  buttonDgn.className = 'menu-btn'
+  buttonDgn.type = 'button'
+  buttonDgn.textContent = 'design phase'
 
   // create the implementation phase button
-  const btnImp = document.createElement('button')
-  btnImp.id = 'imp-id'
-  btnImp.className = 'menu-btn'
-  btnImp.type = 'button'
-  btnImp.textContent = 'implementation phase'
+  const buttonImp = document.createElement('button')
+  buttonImp.id = 'imp-id'
+  buttonImp.className = 'menu-btn'
+  buttonImp.type = 'button'
+  buttonImp.textContent = 'implementation phase'
 
   // create the state transition phase button
-  const btnState = document.createElement('button')
-  btnState.id = 'state-id'
-  btnState.className = 'menu-btn'
-  btnState.type = 'button'
-  btnState.textContent = 'state diagram'
+  const buttonState = document.createElement('button')
+  buttonState.id = 'state-id'
+  buttonState.className = 'menu-btn'
+  buttonState.type = 'button'
+  buttonState.textContent = 'state diagram'
 
   // append buttons to the wrapper
-  wrapper.appendChild(btnDgn)
-  wrapper.appendChild(btnImp)
-  wrapper.appendChild(btnState)
+  wrapper.appendChild(buttonDgn)
+  wrapper.appendChild(buttonImp)
+  wrapper.appendChild(buttonState)
 
   graph.appendChild(wrapper)
 
   // add events listeners to the buttons, each event listener loads a
   // specific UI and then removes the wrapper
-  btnDgn.addEventListener('click', () => {
+  buttonDgn.addEventListener('click', () => {
     graph.removeChild(wrapper)
-    graph.removeChild(ack)
+    graph.removeChild(acknowledgment)
     designUI()
   })
-  btnImp.addEventListener('click', () => {
+  buttonImp.addEventListener('click', () => {
     graph.removeChild(wrapper)
-    graph.removeChild(ack)
+    graph.removeChild(acknowledgment)
     implementationUI()
   })
-  btnState.addEventListener('click', () => {
+  buttonState.addEventListener('click', () => {
     graph.removeChild(wrapper)
-    graph.removeChild(ack)
+    graph.removeChild(acknowledgment)
     stateUI()
   })
 
-  const ackMessage =
+  const acknowledgmentMessage =
     '<span style="position: absolute; bottom: 10px; right: 50%;">❮❯ with ♥︎ by <strong>or3stis</strong></span>'
 
-  const ack = document.createElement('ack')
-  ack.id = 'ack-id'
-  ack.innerHTML = ackMessage
-  graph.appendChild(ack)
+  const acknowledgment = document.createElement('acknowledgment')
+  acknowledgment.id = 'acknowledgment-id'
+  acknowledgment.innerHTML = acknowledgmentMessage
+  graph.appendChild(acknowledgment)
 }

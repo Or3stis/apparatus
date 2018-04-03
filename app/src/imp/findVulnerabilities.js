@@ -14,12 +14,12 @@ const bubbleHTML = require('../helpers/bubbleHTML.js')
  * @param {string} filename
  * @param {Array} nodesKeywords keywords to be send to the database
  */
-const requestVulnData = (filename, nodesKeywords) => {
+const requestVulnerableData = (filename, nodesKeywords) => {
   // stores the CVE list
-  let totalVuln = []
-  nodesKeywords.map(vuln => {
+  let totalVulnerabilities = []
+  nodesKeywords.map(vulnerability => {
     http
-      .get(`${settings.cveSearchUrl}${vuln}`, resp => {
+      .get(`${settings.cveSearchUrl}${vulnerability}`, resp => {
         let data = ''
         // add each received chunk of data
         resp.on('data', chunk => {
@@ -34,7 +34,7 @@ const requestVulnData = (filename, nodesKeywords) => {
           // this works for single keywords
           Object.values(JSON.parse(data)).map(key => {
             // array with the CVE ids
-            key.map(info => totalVuln.push(info.id))
+            key.map(info => totalVulnerabilities.push(info.id))
           })
           // this works for double keywords -> vendor/product
           // JSON.parse(data).map((key) => {
@@ -43,8 +43,8 @@ const requestVulnData = (filename, nodesKeywords) => {
 
           // displays the total amount of vulnerabilities
           bubbleHTML(
-            `${vuln} vulnerabilities found: <strong>${
-              totalVuln.length
+            `${vulnerability} vulnerabilities found: <strong>${
+              totalVulnerabilities.length
             }</strong>`
           )
         })
@@ -64,7 +64,7 @@ const saveFile = nodesKeywords => {
   dialog.showSaveDialog(
     { filters: [{ name: 'javascript', extensions: ['json'] }] },
     filename => {
-      requestVulnData(filename, nodesKeywords)
+      requestVulnerableData(filename, nodesKeywords)
     }
   )
 }
@@ -75,7 +75,7 @@ let nodesKeywords = []
  *
  * @param {Object} cy cytoscape instance
  */
-const findVulnNodes = cy => {
+const findVulnerableNodes = cy => {
   // fades out the graph elements
   cy.elements().addClass('faded')
 
@@ -118,8 +118,8 @@ const getUniqueKeywords = nodesKeywords => {
  *
  * @param {Object} cy cytoscape instance
  */
-const findVuln = cy => {
-  findVulnNodes(cy)
+const findVulnerabilities = cy => {
+  findVulnerableNodes(cy)
 
   // check whether the nodesKeywords is empty before sending the request to
   // a vulnerability database
@@ -127,7 +127,7 @@ const findVuln = cy => {
     bubbleTxt('no vulnerabilities were found')
   } else {
     getUniqueKeywords(nodesKeywords)
-    saveFile(nodesKeywords) // runs the requestVulnData()
+    saveFile(nodesKeywords) // runs the requestVulnerableData()
 
     bubbleTxt(`sending request to ${settings.cveSearchUrl}`)
     bubbleTxt(`☛ keywords used:\n\n${keywordsPrint}`)
@@ -135,4 +135,4 @@ const findVuln = cy => {
 }
 
 // only checks vulnerabilities for the concepts of device and application
-module.exports = findVuln
+module.exports = findVulnerabilities

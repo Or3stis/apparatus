@@ -89,7 +89,7 @@ Improvements on the functionality of the tool.
 - [✓] add dynamic color themes
 - [✓] add expose option to graphs to show the information on all the nodes
 - [✓] add a menu bar
-- [✓] add a developer option on `npm start` that will allow refresh, hot reloading and other developer features
+- [✓] add a developer option on `npm run` that will allow refresh, hot reloading and other developer features
 - [✓] disallow page refresh (cmd + r) on non-developer mode
 - [✓] identify and highlight insecure patterns
 - [ ] configurable insecure patterns
@@ -97,10 +97,11 @@ Improvements on the functionality of the tool.
 - [ ] autosave the changes to current working file, but confirm the location first
 - [✓] toggle button for light/dark theme
 - [ ] window for settings
+- [ ] interactive metamodel window
 
 ## beta release
 
 - [ ] configure electron-builder
 - [✓] design an app icon
 - [ ] autocompletion in the console
-- [ ] build step to produce binaries
+- [ ] build step to produce binaries for windows and linux

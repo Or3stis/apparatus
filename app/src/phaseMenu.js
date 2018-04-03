@@ -13,7 +13,7 @@ let cy = {}
 /**
  * loads the empty template
  *
- * @param {Object} cy cytoscpace instance
+ * @param {Object} cy cytoscape instance
  * @param {string} phase engineering analysis phase
  */
 const newGraph = (cy, phase) => {
@@ -23,7 +23,7 @@ const newGraph = (cy, phase) => {
 /**
  * loads the debugging graph
  *
- * @param {Object} cy cytoscpace instance
+ * @param {Object} cy cytoscape instance
  * @param {string} phase engineering analysis phase
  */
 const debugGraph = (cy, phase) => {
