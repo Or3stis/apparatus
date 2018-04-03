@@ -11,7 +11,7 @@ const printTotalNodes = require('./core/printTotalNodes.js')
 const expose = require('./core/expose.js')
 const labels = require('./core/labels.js')
 
-const findVulns = require('./imp/findVulns.js')
+const findVulnerabilities = require('./imp/findVulnerabilities.js')
 const vulnVerification = require('./imp/vulnVerification.js')
 
 const save = require('./helpers/save.js')
@@ -154,8 +154,8 @@ module.exports = function buttons (
     })
   } else if (phase === 'implementation') {
     // verify threats
-    const btnThreatVer = document.getElementById('threat-ver-btn')
-    btnThreatVer.addEventListener('click', () => {
+    const btnThreatVerify = document.getElementById('threat-ver-btn')
+    btnThreatVerify.addEventListener('click', () => {
       threatVerification(cy)
     })
 
@@ -172,9 +172,9 @@ module.exports = function buttons (
     })
 
     // find vulnerabilities
-    const btnFindVuln = document.getElementById('find-vuln-btn')
-    btnFindVuln.addEventListener('click', () => {
-      findVulns(cy)
+    const btnFindVulnerabilities = document.getElementById('find-vuln-btn')
+    btnFindVulnerabilities.addEventListener('click', () => {
+      findVulnerabilities(cy)
     })
 
     // phases model validation button
