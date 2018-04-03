@@ -139,7 +139,7 @@ module.exports = function designUI () {
   </svg>
 </button>
 
-<button class="btn-icon" id="transform-btn">
+<button class="btn-icon" id="transition-btn">
   <svg width="24" height="24">
     <use xlink:href="icons/swap.svg#swap" class="icon"></use>
   </svg>
