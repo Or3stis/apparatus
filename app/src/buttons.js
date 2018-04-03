@@ -12,7 +12,7 @@ const expose = require('./core/expose.js')
 const labels = require('./core/labels.js')
 
 const findVulnerabilities = require('./imp/findVulnerabilities.js')
-const vulnVerification = require('./imp/vulnVerification.js')
+const vulnerabilityVerification = require('./imp/vulnerabilityVerification.js')
 
 const save = require('./helpers/save.js')
 const watcher = require('./helpers/watcher.js')
@@ -166,9 +166,9 @@ module.exports = function buttons (
     })
 
     // verify vulnerabilities
-    const btnVulnVer = document.getElementById('vuln-ver-btn')
-    btnVulnVer.addEventListener('click', () => {
-      vulnVerification(cy)
+    const btnVulnerabilityVerification = document.getElementById('vuln-ver-btn')
+    btnVulnerabilityVerification.addEventListener('click', () => {
+      vulnerabilityVerification(cy)
     })
 
     // find vulnerabilities
