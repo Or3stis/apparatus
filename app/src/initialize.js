@@ -14,6 +14,7 @@ const bubbleTxt = require('./helpers/bubbleTxt.js')
 // require buttons and keybindings
 const buttons = require('./buttons.js')
 const keybindings = require('./keybindings.js')
+
 /**
  * initializes the application
  *

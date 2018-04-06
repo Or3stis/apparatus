@@ -149,7 +149,7 @@ module.exports = function buttons (
       moduleSelection(cy, e.target.textContent)
     })
 
-    // phases model validation button
+    // design phase model validation button
     const buttonModelValidation = document.getElementById('model-val-btn')
     buttonModelValidation.addEventListener('click', () => {
       buttonHelpers.validateHelper(cy, phase)
@@ -181,7 +181,7 @@ module.exports = function buttons (
       findVulnerabilities(cy)
     })
 
-    // phases model validation button
+    // implementation phase model validation button
     const buttonModelValidation = document.getElementById('model-val-btn')
     buttonModelValidation.addEventListener('click', () => {
       buttonHelpers.validateHelper(cy, phase)
