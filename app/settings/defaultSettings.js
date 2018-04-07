@@ -19,7 +19,7 @@ const settings = {
   lightDarkBgrd: '#eaeaeb',
   lightBlack: '#a0a1a7',
   lightGray: '#abb2bf',
-  lightBlue: '#4078f2',
+  lightBlue: '#45a1ff',
   lightRed: '#e45649',
   lightOrange: '#cf8772',
   lightGreen: '#50a14f',
