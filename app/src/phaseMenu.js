@@ -43,7 +43,6 @@ module.exports = function phaseMenu (phase) {
   const wrapper = document.createElement('wrapper')
   wrapper.id = 'wrapper-id'
   wrapper.className = 'wrapper'
-  wrapper.textContent = 'select'
 
   // creates button for new graph
   const btnNew = document.createElement('button')

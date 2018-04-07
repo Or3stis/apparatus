@@ -13,7 +13,6 @@ module.exports = function homeMenu () {
   const wrapper = document.createElement('wrapper')
   wrapper.id = 'wrapper-id'
   wrapper.className = 'wrapper'
-  wrapper.textContent = 'select phase'
 
   // create the design phase button
   const buttonDgn = document.createElement('button')
