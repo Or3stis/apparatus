@@ -43,7 +43,7 @@ ASTo has a command line console available on the bottom right corner of the app.
 
 The console can be used to search for specific objects in the graph or perform operations. Raw text is used as search input. For example, if you type `device`, ASTo will highlight all the nodes in the graph that have the word `device` as an attribute.
 
-All console commands must be preceded with a `:`. For example, typing `:insights` will perform the security insights functions. On the other hand, typing `insights` (with the `:`) will perform a search operation with the keyword `insights`.
+All console commands must be preceded with a `:`. For example, typing `:insights` will perform the security insights functions. On the other hand, typing `insights` (without the `:`) will perform a search operation on the graph elements with the keyword `insights`.
 
 ## Color themes
 
@@ -60,11 +60,16 @@ git clone https://github.com/Or3stis/apparatus.git
 cd apparatus
 # Install dependencies
 npm install
-# to run the app in the default mode
+```
+
+Different mode operations of the app.
+
+```bash
+# To run the app in the default mode
 npm start
-# to run the app in developer mode
+# To run the app in developer mode
 npm run dev
-# to build the app
+# To build the app into binary
 npm run dist
 ```
 
