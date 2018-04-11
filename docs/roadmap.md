@@ -101,7 +101,8 @@ Improvements on the functionality of the tool.
 
 ## beta release
 
-- [ ] configure electron-builder
+- [✓] configure electron-builder
 - [✓] design an app icon
+- [ ] configure auto-update with electron-builder
 - [ ] autocompletion in the console
 - [ ] build step to produce binaries for windows and linux
