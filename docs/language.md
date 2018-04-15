@@ -4,13 +4,17 @@ title: "Apparatus modeling language"
 
 # Under development 🚧
 
+1. [Apparatus modeling language](https://or3stis.github.io/apparatus/language#apparatus modeling language)
+1. [Apparatus Design phase modeling](https://or3stis.github.io/apparatus/language#apparatus_desing_phase_modeling)
+1. [Apparatus Implementation phase modeling](https://or3stis.github.io/apparatus/language#apparatus_implementation_phase_modeling)
+
 # Apparatus modeling language
 
 The modeling language is composed of two metamodels. The first metamodel provides concepts and constraints to model an IoT system during the design phase. The second metamodel provides concepts and constraints to model IoT systems during the implementation phase. The distinction is made due to the different requirements and different information engineers have about a system during each phase. During the design phase, an engineer models the idea of the system without being restricted by the hardware or software specifications. For example during the design phase, an engineer may require a system component that will function as an Intrusion Detection (IDS) system. The engineer may not know at the design time whether the IDS will be a hardware device or a software application. During the implementation phase whether the IDS will be a hardware device or a software application is necessary since it affects both the topology of the network and its security requirements.
 
 Each phase offers different types of security analysis. During the design phase,an engineer can model the threats and the vulnerabilities of the system. Design phase security analysis cannot be used to express specific vulnerabilities of the system or security mechanisms that aim to mitigate them. Both the vulnerability and the security mechanism are concepts of an implemented system since they represent specific weaknesses or improvements on the hardware or software components of a system.
 
-## Design phase modeling
+## Apparatus Design phase modeling
 
 The design phase metamodel provides a set of rules that design phase IoT models must adhere to. The metamodel is defined via a UML class diagram. Each UML class defines a concept that either describes an component of the system or behavior that impacts that system. Concepts are composed by a set of attributes that capture specific information of the model. Each concept, unless otherwise noted has the property _description_ which describes the component of the IoT system. The design phase metamodel has the following concepts:
 
