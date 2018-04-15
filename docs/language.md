@@ -5,7 +5,7 @@ title: "Apparatus modeling language"
 # Under development 🚧
 
 1. [Apparatus modeling language](https://or3stis.github.io/apparatus/language#apparatus-modeling-language)
-1. [Apparatus Design phase modeling](https://or3stis.github.io/apparatus/language#apparatus-desing_phase-modeling)
+1. [Apparatus Design phase modeling](https://or3stis.github.io/apparatus/language#apparatus-desing-phase-modeling)
 1. [Apparatus Implementation phase modeling](https://or3stis.github.io/apparatus/language#apparatus-implementation-phase-modeling)
 
 # Apparatus modeling language
