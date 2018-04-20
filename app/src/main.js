@@ -17,7 +17,6 @@ function createWindow () {
   // Create the browser window.
   mainWindow = new BrowserWindow({
     backgroundColor: '#282c34',
-    // backgroundColor: settings.darkBackground,
     width: 1200,
     height: 745,
     minWidth: 800,
