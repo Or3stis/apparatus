@@ -40,6 +40,7 @@ function createWindow () {
 
   mainWindow.once('ready-to-show', () => {
     mainWindow.show()
+    mainWindow.focus()
   })
 
   // capture events from the open windows

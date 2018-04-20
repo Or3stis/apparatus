@@ -13,7 +13,11 @@ module.exports = function settingsWindow () {
       show: false
     })
     win.loadURL(url)
-    win.on('ready-to-show', win.show)
+
+    win.on('ready-to-show', () => {
+      win.show()
+      win.focus()
+    })
 
     win.on('closed', () => {
       win = null

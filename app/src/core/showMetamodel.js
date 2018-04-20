@@ -23,7 +23,10 @@ module.exports = function showMetamodel (phase) {
     let win = new BrowserWindow({ width: 900, height: 700, show: false })
     win.loadURL(`${finalPath}/${url}`)
 
-    win.on('ready-to-show', win.show)
+    win.on('ready-to-show', () => {
+      win.show()
+      win.focus()
+    })
 
     win.on('closed', () => {
       win = null
