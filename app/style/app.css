@@ -366,6 +366,5 @@ input::-webkit-input-placeholder {
 @media (max-width: 1200px) {
   .graph {
     width: calc(97vw - 190px);
-    /* grid-template-columns: 50px 1fr 165px; */
   }
 }
