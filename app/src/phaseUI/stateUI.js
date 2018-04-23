@@ -29,7 +29,7 @@ module.exports = function stateUI () {
 
   <button class="btn-icon" id="add-edge" title="connection">
     <svg width="24" height="24">
-      <use xlink:href="icons/gesture.svg#gesture" class="icon"></use>
+      <use xlink:href="icons/add-edge.svg#add-edge" class="icon"></use>
     </svg>
   </button>
 
