@@ -53,7 +53,7 @@ module.exports = function stateUI () {
   <div class="dropdown" id="layout-btn">
     <button class="btn-icon dropbtn" title="layout options">
       <svg width="24" height="24">
-        <use xlink:href="icons/group.svg#group" class="icon"></use>
+        <use xlink:href="icons/layout.svg#layout" class="icon"></use>
       </svg>
     </button>
     <ul class="dropdown-menu">
