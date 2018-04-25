@@ -103,6 +103,7 @@ Improvements on the functionality of the tool.
 
 - [✓] configure electron-builder
 - [✓] design an app icon
+- [ ] fix the settings options on the app
 - [ ] configure auto-update with electron-builder
 - [ ] fix the settings options on the binary
 - [ ] autocompletion in the console
