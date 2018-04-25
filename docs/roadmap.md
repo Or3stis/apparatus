@@ -79,7 +79,7 @@ Improvements on the functionality of the tool.
 ## alpha release
 
 - [✓] move to a single page architecture
-- [ ] fix resize issues
+- [✓] fix resize issues
 - [✓] use electron dialog when prompting for module operations
 - [✓] move core to core functions and core buttons
 - [✓] improve the import pcapng module
@@ -103,6 +103,7 @@ Improvements on the functionality of the tool.
 
 - [✓] configure electron-builder
 - [✓] design an app icon
+- [ ] fix the settings options on the app
 - [ ] configure auto-update with electron-builder
 - [ ] autocompletion in the console
 - [ ] build step to produce binaries for windows and linux
