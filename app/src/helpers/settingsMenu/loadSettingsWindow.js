@@ -169,13 +169,13 @@ cancelBtn.addEventListener('click', () => {
 const restoreBtn = document.getElementById('settings-restore')
 
 restoreBtn.addEventListener('click', () => {
-  // TODO uncomment when electron supports node.js < 8.5
-  // fs.copyFile('./app/settings/defaultSettings.js', './app/settings/userSettings.js', (err) => {
-  //   if (err) throw err
-  // })
-  fs
-    .createReadStream('./app/settings/defaultSettings.js')
-    .pipe(fs.createWriteStream('./app/settings/userSettings.js'))
+  fs.copyFile(
+    './app/settings/defaultSettings.js',
+    './app/settings/userSettings.js',
+    err => {
+      if (err) throw err
+    }
+  )
 
   // close window
   const win = remote.getCurrentWindow()
