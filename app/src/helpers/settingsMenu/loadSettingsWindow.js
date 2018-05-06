@@ -3,7 +3,19 @@ const remote = require('electron').remote
 const ipc = require('electron').ipcRenderer
 const fs = require('fs')
 
+const theme = require('../theme.js')
 const settings = require('../../../settings/userSettings.js')
+
+/* consistent color theme with the main window */
+const applyColorTheme = () => {
+  if (settings.colorTheme === 'dark') {
+    theme.setTheme('dark')
+  } else if (settings.colorTheme === 'light') {
+    theme.setTheme('light')
+  }
+}
+
+applyColorTheme()
 
 // dark theme color values
 const darkText = document.getElementById('dark-text')
