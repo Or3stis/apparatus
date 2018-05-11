@@ -25,6 +25,8 @@ const findNodes = (node, concept, attribute, attributeValue, nodeArray) => {
   }
 }
 
+/* counts number of empty insights */
+let emptyInsightCounter = 0
 /**
  * displays the nodes of interest and the insight
  *
@@ -35,6 +37,8 @@ const showResults = (nodeArray, insight) => {
   // only show the insight if the node array is not empty
   if (nodeArray.length !== 0) {
     bubbleHTML(`Nodes: <strong>${nodeArray}</strong> <br><br>${insight}`)
+  } else {
+    emptyInsightCounter += 1
   }
 }
 
@@ -44,6 +48,8 @@ const showResults = (nodeArray, insight) => {
  * @param {Object} cy cytoscape instance
  */
 module.exports = function insights (cy) {
+  console.log(Object.keys(list).length)
+  console.log(emptyInsightCounter)
   // fade out all the nodes
   cy.elements().addClass('faded')
 
@@ -65,17 +71,21 @@ module.exports = function insights (cy) {
     showResults(list[key].nodes, list[key].insight)
   })
 
-  // button to show the ID of the nodes
-  const showIDBtn = `<button id='id-button' class='menu-btn' style='color: var(--main-tx-color); background-color: var(--main-bg-color); width: 120px; height: 25px;'>show nodes ID</button>`
+  if (emptyInsightCounter !== Object.keys(list).length) {
+    // button to show the ID of the nodes
+    const showIDBtn = `<button id='id-button' class='menu-btn' style='color: var(--main-tx-color); background-color: var(--main-bg-color); width: 120px; height: 25px;'>show nodes ID</button>`
 
-  // render the showID button
-  bubbleHTML(showIDBtn)
+    // render the showID button
+    bubbleHTML(showIDBtn)
 
-  // attach event listener to button
-  const showIdNodeBtn = document.getElementById('id-button')
-  showIdNodeBtn.addEventListener('click', () => {
-    cy.nodes().removeClass('label-nodes')
-    cy.nodes().removeClass('label-dsc')
-    cy.nodes().addClass('label-id')
-  })
+    // attach event listener to button
+    const showIdNodeBtn = document.getElementById('id-button')
+    showIdNodeBtn.addEventListener('click', () => {
+      cy.nodes().removeClass('label-nodes')
+      cy.nodes().removeClass('label-dsc')
+      cy.nodes().addClass('label-id')
+    })
+  } else {
+    bubbleHTML('No security insights were found.')
+  }
 }
