@@ -1,6 +1,6 @@
 {
   "name": "apparatus",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "an IoT network security analysis and visualization tool",
   "main": "./app/src/main.js",
   "scripts": {
