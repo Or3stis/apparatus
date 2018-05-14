@@ -93,29 +93,23 @@ body {
   white-space: pre-wrap;
   margin-bottom: 5px;
   padding: 4px;
+  padding-top: 16px;
   border-radius: 10px;
   animation: fadein 0.4s;
 }
+
 .bubble-btn {
-  width: 95%;
-  height: 6px;
   position: absolute;
   top: 0px;
+  right: 0;
+  color: var(--main-tx-color);
   border: none;
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
+  border-radius: 10px;
   background-color: var(--black-color);
-  display: none;
   outline: none;
-}
-.bubble:hover .bubble-btn {
-  display: block;
 }
 .bubble-btn:hover {
   background-color: var(--blue-color);
-}
-.bubble-btn:active {
-  background-color: var(--main-bg-color);
 }
 
 .input-form {
