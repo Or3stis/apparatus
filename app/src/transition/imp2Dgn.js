@@ -84,6 +84,6 @@ module.exports = function dgnState2ImpState (cy, nodeCounter) {
   // create a `no` button that will clear the message bubble
   const buttonNo = document.getElementById('no-button')
   buttonNo.addEventListener('click', () => {
-    document.getElementById('message-area-id').textContent = ''
+    document.getElementById('message-area-id').removeChild(buttonNo.parentNode)
   })
 }
