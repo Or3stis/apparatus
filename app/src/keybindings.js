@@ -6,6 +6,7 @@ const settings = require('../settings/userSettings.js')
 const searchAttribute = require('./core/searchAttribute.js')
 const showMetamodel = require('./core/showMetamodel.js')
 const deleteRestoreConcepts = require('./core/deleteRestoreConcepts.js')
+const generateReport = require('./core/generateReport.js')
 
 // require helper modules
 const bubbleHTML = require('./helpers/bubbleHTML.js')
@@ -51,6 +52,7 @@ module.exports = function (
 • clear sidebar <b>:clear</b>
 • model validation <b>:validate</b>
 • security insights <b>:insights</b>
+• generate security report <b>:report</b>
 • configure settings <b>:settings</b>
 • search for attributes <b><keyword></b>`
 
@@ -65,6 +67,7 @@ module.exports = function (
 • clear sidebar <b>:clear</b>
 • model validation <b>:validate</b>
 • security insights <b>:insights</b>
+• generate security report <b>:report</b>
 • configure settings <b>:settings</b>
 • search for attributes <b><keyword></b>`
 
@@ -127,10 +130,13 @@ module.exports = function (
       case ':clear':
         document.getElementById('message-area-id').textContent = ''
         break
-      case '':
+      case ':report':
+        generateReport(cy)
         break
       case ':settings':
         settingsWindow()
+        break
+      case '':
         break
       default:
         searchAttribute(cy, input)
