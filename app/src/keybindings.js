@@ -32,7 +32,7 @@ const buttonHelpers = require('./buttonHelpers.js')
  * @param {string} phase engineering analysis phase
  * @param {Object} graphNodes initial state of the graph
  */
-module.exports = function(
+module.exports = function (
   cy,
   selectedNode,
   selectedEdge,
