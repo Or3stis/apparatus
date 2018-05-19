@@ -1,5 +1,6 @@
-const bubbleTxt = require('../helpers/bubbleTxt.js')
 const { dialog } = require('electron').remote
+const fs = require('fs')
+const bubbleTxt = require('../helpers/bubbleTxt.js')
 
 let threatsArray = []
 let constraintsArray = []
@@ -18,17 +19,24 @@ module.exports = function generateReport (cy) {
     }
   })
 
+  const reportTittle = `# Security Report`
+
+  const dataToWrite = reportTittle
+
+  let dialogOptions = []
+  process.platform === 'darwin'
+    ? (dialogOptions = ['openFile', 'openDirectory'])
+    : (dialogOptions = ['openFile'])
   dialog.showSaveDialog(
     {
-      filters: [
-        {
-          name: 'markdown',
-          extensions: ['md']
-        }
-      ]
+      properties: [...dialogOptions],
+      filters: [{ name: 'markdown', extensions: ['md'] }]
     },
-    fileToSave => {
-      bubbleTxt('security report generated\n👍')
+    filename => {
+      fs.writeFile(`${filename}`, dataToWrite, err => {
+        if (err) throw err
+        bubbleTxt('security report generated\n👍')
+      })
     }
   )
 }
