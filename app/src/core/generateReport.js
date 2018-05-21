@@ -19,9 +19,15 @@ module.exports = function generateReport (cy) {
     }
   })
 
-  const reportTittle = `# Security Report`
+  const reportTittle = `# Security Report\n\n`
+  const numberOfThreats = `Number of threats: ${threatsArray.length}\n`
+  const numberOfTConstraints = `Number of constraints: ${
+    constraintsArray.length
+  }\n`
 
   const dataToWrite = reportTittle
+    .concat(numberOfThreats)
+    .concat(numberOfTConstraints)
 
   let dialogOptions = []
   process.platform === 'darwin'
