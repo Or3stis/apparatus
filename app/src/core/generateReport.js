@@ -4,6 +4,8 @@ const bubbleTxt = require('../helpers/bubbleTxt.js')
 
 let threatsArray = []
 let constraintsArray = []
+let mechanismsArray = []
+let vulnerabilityArray = []
 /**
  * generate security report
  *
@@ -24,10 +26,16 @@ module.exports = function generateReport (cy) {
   const numberOfTConstraints = `Number of constraints: ${
     constraintsArray.length
   }\n`
+  const numberOfMechanisms = `Number of threats: ${mechanismsArray.length}\n`
+  const numberOfVulnerabilities = `Number of threats: ${
+    vulnerabilityArray.length
+  }\n`
 
   const dataToWrite = reportTittle
     .concat(numberOfThreats)
     .concat(numberOfTConstraints)
+    .concat(numberOfMechanisms)
+    .concat(numberOfVulnerabilities)
 
   let dialogOptions = []
   process.platform === 'darwin'
