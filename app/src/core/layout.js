@@ -112,7 +112,7 @@ module.exports = function layout (cy, selection) {
     nodeDimensionsIncludeLabels: false, // Excludes the label when calculating node bounding boxes for the layout algorithm
     spacingFactor: undefined, // Applies a multiplicative factor (>0) to expand or compress the overall area that the nodes take up
     radius: undefined, // the radius of the circle
-    startAngle: 3 / 2 * Math.PI, // where nodes start in radians
+    startAngle: (3 / 2) * Math.PI, // where nodes start in radians
     sweep: undefined, // how many radians should be between the first and last node (defaults to full circle)
     clockwise: true, // whether the layout should go clockwise (true) or counterclockwise/anticlockwise (false)
     sort: undefined, // a sorting function to order the nodes; e.g. function(a, b){ return a.data('weight') - b.data('weight') }
@@ -150,7 +150,7 @@ module.exports = function layout (cy, selection) {
 
     fit: true, // whether to fit the viewport to the graph
     padding: 30, // the padding on fit
-    startAngle: 3 / 2 * Math.PI, // where nodes start in radians
+    startAngle: (3 / 2) * Math.PI, // where nodes start in radians
     sweep: undefined, // how many radians should be between the first and last
     clockwise: true, // whether the layout should go clockwise (true)
     equidistant: true, // whether levels have an equal radial distance between them, may cause bounding box overflow
