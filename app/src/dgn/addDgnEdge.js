@@ -66,7 +66,7 @@ module.exports = function addComponent (cy, srcNode, trgNode) {
       addEdge(cy, srcNodeId, trgNodeId, 'uses')
       break
     case srcNodeCpt === 'constraint' && trgNodeCpt === 'threat':
-      addEdge(cy, srcNodeId, trgNodeId, 'mitigates')
+      addEdge(cy, srcNodeId, trgNodeId, 'protects')
       break
     case srcNodeCpt === 'micronet' && trgNodeCpt === 'micronet':
       addEdge(cy, srcNodeId, trgNodeId, 'connects')

@@ -76,7 +76,7 @@ module.exports = function addComponent (cy, srcNode, trgNode) {
       addEdge(cy, srcNodeId, trgNodeId, 'poses')
       break
     case srcNodeCpt === 'constraint' && trgNodeCpt === 'threat':
-      addEdge(cy, srcNodeId, trgNodeId, 'mitigates')
+      addEdge(cy, srcNodeId, trgNodeId, 'protects')
       break
     case srcNodeCpt === 'constraint' && trgNodeCpt === 'micronet':
       addEdge(cy, srcNodeId, trgNodeId, 'imposes')
@@ -85,7 +85,7 @@ module.exports = function addComponent (cy, srcNode, trgNode) {
       addEdge(cy, srcNodeId, trgNodeId, 'satisfies')
       break
     case srcNodeCpt === 'mechanism' && trgNodeCpt === 'vulnerability':
-      addEdge(cy, srcNodeId, trgNodeId, 'protects')
+      addEdge(cy, srcNodeId, trgNodeId, 'mitigates')
       break
     case srcNodeCpt === 'threat' && trgNodeCpt === 'vulnerability':
       addEdge(cy, srcNodeId, trgNodeId, 'exploits')
