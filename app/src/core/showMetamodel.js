@@ -11,7 +11,7 @@ const impMeta = 'metamodels/imp-model.png'
  *
  * @param {string} phase engineering phase
  */
-module.exports = function showMetamodel (phase) {
+module.exports = async function showMetamodel (phase) {
   // create the path to the metamodels
   const metamodelPath = __dirname.split('/')
   metamodelPath.pop() // removes the core directory
@@ -20,7 +20,14 @@ module.exports = function showMetamodel (phase) {
 
   // creates the window for the metamodel
   const createWindow = url => {
-    let win = new BrowserWindow({ width: 900, height: 700, show: false })
+    let win = new BrowserWindow({
+      width: 900,
+      height: 700,
+      show: false,
+      webPreferences: {
+        nodeIntegration: false
+      }
+    })
     win.loadURL(`${finalPath}/${url}`)
 
     win.on('ready-to-show', () => {
