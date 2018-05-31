@@ -67,7 +67,7 @@ const settings = {
   // url for issue reporting
   issueURL: 'https://github.com/Or3stis/apparatus/issues/new',
   // url for searching vulnerabilities
-  cveSearchUrl: 'http://cve.circl.lu/api/search/'
+  cveSearchUrl: 'https://cve.circl.lu/api/search/'
 }
 
 module.exports = settings
