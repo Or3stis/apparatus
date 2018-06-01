@@ -48,7 +48,7 @@
     "cross-env": "^5.1.6",
     "electron": "^2.0.2",
     "electron-builder": "^20.15.1",
-    "prettier": "^1.13.3",
+    "prettier": "^1.13.4",
     "standard": "^11.0.1"
   }
 }
