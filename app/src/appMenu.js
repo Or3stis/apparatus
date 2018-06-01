@@ -45,7 +45,7 @@ const template = [
           require('electron').shell.openExternal(settings.docsURL)
         }
       },
-      {type: 'separator'},
+      { type: 'separator' },
       {
         label: 'Report Issue',
         click () {
