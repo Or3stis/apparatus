@@ -17,14 +17,14 @@ The application is in alpha stage. The focus now is to improve the core function
 ## Features
 
 1. Graph based visualization of IoT systems.
-1. Model IoT system in design and implementation engineering phases.
-1. Automatic model transformation between the two engineering phases.
-1. Create IoT system state diagrams.
-1. Automate implementation phase model generation using pcap-ng files.
+1. Model IoT systems in design and implementation engineering phases.
+1. Automatic model transition between the two engineering phases.
+1. Model IoT system state.
+1. Automate implementation phase models generation using pcap-ng files.
 1. Perform model-based vulnerability identification through CVE databases.
 1. Generate automated model-based security insights.
 1. Attribute-based pattern identification.
-1. Search through graphs using a variety of options (concepts, modules, attribute).
+1. Search through graphs using a variety of options (concepts, modules, attributes).
 1. Togglable Light and Dark theme.
 
 Some screenshots
@@ -47,7 +47,7 @@ All console commands must be preceded with a `:`. For example, typing `:insights
 
 ## Color themes
 
-ASTo supports a light and a dark color theme. The colors themes are based on Atom's [One Dark](https://github.com/atom/one-dark-syntax) and [One Light](https://github.com/atom/one-light-syntax).  To switch between themes use the toggle button on the bottom left corner.
+ASTo supports a light and a dark color theme. The colors themes are based on Atom's [One Dark](https://github.com/atom/one-dark-syntax) and [One Light](https://github.com/atom/one-light-syntax). To switch between themes use the toggle button on the bottom left corner.
 
 ## To Use
 
