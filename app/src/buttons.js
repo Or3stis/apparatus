@@ -2,7 +2,7 @@
 const remote = require('electron').remote
 
 const userDataPath = remote.app.getPath('userData')
-const settings = require(`${userDataPath}/userSettings.js`)
+const settings = require(`${userDataPath}/settings.js`)
 
 const nodeSelection = require('./core/nodeSelection.js')
 const layout = require('./core/layout.js')

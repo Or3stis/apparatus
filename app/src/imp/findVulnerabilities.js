@@ -5,7 +5,7 @@ const fs = require('fs')
 const { dialog, app } = require('electron').remote
 
 const userDataPath = app.getPath('userData')
-const settings = require(`${userDataPath}/userSettings.js`)
+const settings = require(`${userDataPath}/settings.js`)
 
 const bubbleTxt = require('../helpers/bubbleTxt.js')
 const bubbleHTML = require('../helpers/bubbleHTML.js')

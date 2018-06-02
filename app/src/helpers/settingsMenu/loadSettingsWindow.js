@@ -158,7 +158,7 @@ const settings = {
 module.exports = settings
 `
 
-  fs.writeFile(`${userDataPath}/userSettings.js`, newSettings, err => {
+  fs.writeFile(`${userDataPath}/settings.js`, newSettings, err => {
     if (err) throw err
   })
 
