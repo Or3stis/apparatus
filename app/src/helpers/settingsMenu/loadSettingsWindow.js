@@ -4,7 +4,9 @@ const ipc = require('electron').ipcRenderer
 const fs = require('fs')
 
 const theme = require('../theme.js')
-const settings = require('../../../settings/userSettings.js')
+
+const userDataPath = remote.app.getPath('userData')
+const settings = require(`${userDataPath}/settings.js`)
 
 /* consistent color theme with the main window */
 const applyColorTheme = () => {
@@ -83,9 +85,7 @@ cveUrl.value = settings.cveSearchUrl
 const saveBtn = document.getElementById('settings-save')
 
 saveBtn.addEventListener('click', () => {
-  // console.log(defaultColor.value)
-  const toWrite = `// settings of ASTo
-// settings of ASTo
+  const newSettings = `// settings of ASTo
 
 const settings = {
   darkText: '${darkText.value}',
@@ -158,7 +158,7 @@ const settings = {
 module.exports = settings
 `
 
-  fs.writeFile('./app/settings/userSettings.js', toWrite, err => {
+  fs.writeFile(`${userDataPath}/userSettings.js`, newSettings, err => {
     if (err) throw err
   })
 
@@ -181,13 +181,14 @@ cancelBtn.addEventListener('click', () => {
 const restoreBtn = document.getElementById('settings-restore')
 
 restoreBtn.addEventListener('click', () => {
-  fs.copyFile(
-    './app/settings/defaultSettings.js',
-    './app/settings/userSettings.js',
-    err => {
-      if (err) throw err
-    }
-  )
+  const defaultSettings = require('../../../settings/defaultSettings.js')
+  const defaultSettingsNormalize = JSON.stringify(defaultSettings.settings)
+    .replace(/(?:\\[rn])+/g, '\r\n')
+    .replace(/"/g, '')
+
+  fs.writeFile(`${userDataPath}/settings.js`, defaultSettingsNormalize, err => {
+    if (err) throw err
+  })
 
   // close window
   const win = remote.getCurrentWindow()

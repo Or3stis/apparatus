@@ -1,4 +1,7 @@
-const settings = require('../../settings/userSettings.js')
+const remote = require('electron').remote
+
+const userDataPath = remote.app.getPath('userData')
+const settings = require(`${userDataPath}/userSettings.js`)
 
 /** keeps the number of message bubbles to the a specified number */
 module.exports = function checkBubbles () {

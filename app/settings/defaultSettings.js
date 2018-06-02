@@ -1,4 +1,5 @@
-// settings of ASTo
+// default settings of ASTo
+const settings = `// settings of ASTo
 
 const settings = {
   darkText: '#abb2bf',
@@ -64,10 +65,13 @@ const settings = {
   maxNumberOfBubbles: 15,
   // url for the ASTo wiki
   docsURL: 'https://or3stis.github.io/apparatus/docs',
-  // url for issue reporting
-  issueURL: 'https://github.com/Or3stis/apparatus/issues/new',
   // url for searching vulnerabilities
   cveSearchUrl: 'https://cve.circl.lu/api/search/'
 }
 
 module.exports = settings
+`
+
+module.exports = {
+  settings: settings
+}
