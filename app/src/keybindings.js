@@ -1,6 +1,8 @@
 // keybindings and command prompt options
+const remote = require('electron').remote
 
-const settings = require('../settings/userSettings.js')
+const userDataPath = remote.app.getPath('userData')
+const settings = require(`${userDataPath}/userSettings.js`)
 
 // require core modules
 const searchAttribute = require('./core/searchAttribute.js')

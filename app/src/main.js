@@ -4,6 +4,7 @@ const ipc = require('electron').ipcMain
 const app = electron.app
 // Module to create native browser window.
 const BrowserWindow = electron.BrowserWindow
+const fs = require('fs')
 
 const appMenu = require('./appMenu.js')
 
@@ -66,3 +67,19 @@ app.on('activate', () => {
   // dock icon is clicked and there are no other windows open.
   if (mainWindow === null) createWindow()
 })
+
+// import the default settings of the app
+const defaultSettings = require('../settings/defaultSettings.js')
+// normalize the settings input
+const defaultSettingsNormalize = JSON.stringify(defaultSettings.settings)
+  .replace(/(?:\\[rn])+/g, '\r\n')
+  .replace(/"/g, '')
+
+const userDataPath = app.getPath('userData')
+
+// checks if the local userSettings.js exists
+if (fs.existsSync(`${userDataPath}/settings.js`) !== true) {
+  fs.writeFile(`${userDataPath}/settings.js`, defaultSettingsNormalize, err => {
+    if (err) throw err
+  })
+}

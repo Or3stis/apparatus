@@ -1,5 +1,8 @@
 // binds functions to buttons in the UI
-const settings = require('../settings/userSettings.js')
+const remote = require('electron').remote
+
+const userDataPath = remote.app.getPath('userData')
+const settings = require(`${userDataPath}/userSettings.js`)
 
 const nodeSelection = require('./core/nodeSelection.js')
 const layout = require('./core/layout.js')
@@ -22,6 +25,7 @@ const buttonHelpers = require('./buttonHelpers.js')
 
 const transitionDgn2Imp = require('./transition/dgn2Imp.js')
 const transitionImp2Dgn = require('./transition/imp2Dgn.js')
+
 /**
  * binds functions to buttons in the UI
  *

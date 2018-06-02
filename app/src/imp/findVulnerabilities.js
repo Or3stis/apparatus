@@ -2,9 +2,11 @@
 
 const http = require('http')
 const fs = require('fs')
-const { dialog } = require('electron').remote
+const { dialog, app } = require('electron').remote
 
-const settings = require('../../settings/userSettings.js')
+const userDataPath = app.getPath('userData')
+const settings = require(`${userDataPath}/userSettings.js`)
+
 const bubbleTxt = require('../helpers/bubbleTxt.js')
 const bubbleHTML = require('../helpers/bubbleHTML.js')
 

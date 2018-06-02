@@ -1,8 +1,10 @@
 // module to change color themes between light and dark
-// used the color values from settings/userSettings.js
+const remote = require('electron').remote
 
-const settings = require('../../settings/userSettings.js')
 const graphStyle = require('../../settings/graphStyle.js')
+
+const userDataPath = remote.app.getPath('userData')
+const settings = require(`${userDataPath}/userSettings.js`)
 
 /**
  * changes only the UI color values
