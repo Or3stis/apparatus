@@ -105,6 +105,5 @@ Improvements on the functionality of the tool.
 - [✓] design an app icon
 - [ ] fix the settings options on the app
 - [ ] configure auto-update with electron-builder
-- [ ] fix the settings options on the binary
 - [ ] autocompletion in the console
 - [ ] build step to produce binaries for windows and linux
