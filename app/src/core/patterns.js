@@ -33,7 +33,7 @@ module.exports = function patterns (cy) {
 
   const htmlElement = document.getElementById('message-area-id')
 
-  // create the patter element
+  // create the pattern element
   const form = document.createElement('form')
   form.className = 'bubble'
   form.id = 'form-id'
