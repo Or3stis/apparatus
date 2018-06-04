@@ -77,9 +77,19 @@ const defaultSettingsNormalize = JSON.stringify(defaultSettings.settings)
 
 const userDataPath = app.getPath('userData')
 
-// checks if the local settings.js exists
-if (fs.existsSync(`${userDataPath}/settings.js`) !== true) {
+/** write the settings.js to the OS location */
+const writeSettings = () => {
   fs.writeFile(`${userDataPath}/settings.js`, defaultSettingsNormalize, err => {
     if (err) throw err
   })
+}
+
+// checks if the local settings.js exists
+if (fs.existsSync(`${userDataPath}/settings.js`) !== true) {
+  writeSettings()
+} else if (
+  fs.existsSync(`${userDataPath}/settings.js`) === true &&
+  fs.statSync(`${userDataPath}/settings.js`).size === 0
+) {
+  writeSettings()
 }
