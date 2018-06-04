@@ -72,7 +72,7 @@ app.on('activate', () => {
 const defaultSettings = require('../settings/defaultSettings.js')
 // normalize the settings input
 const defaultSettingsNormalize = JSON.stringify(defaultSettings.settings)
-  .replace(/(?:\\[rn])+/g, '\r\n')
+  .replace(/(?:\\[n])+/g, '\n')
   .replace(/"/g, '')
 
 const userDataPath = app.getPath('userData')

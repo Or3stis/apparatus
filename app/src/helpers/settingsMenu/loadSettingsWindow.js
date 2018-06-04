@@ -183,7 +183,7 @@ const restoreBtn = document.getElementById('settings-restore')
 restoreBtn.addEventListener('click', () => {
   const defaultSettings = require('../../../settings/defaultSettings.js')
   const defaultSettingsNormalize = JSON.stringify(defaultSettings.settings)
-    .replace(/(?:\\[rn])+/g, '\r\n')
+    .replace(/(?:\\[n])+/g, '\n')
     .replace(/"/g, '')
 
   fs.writeFile(`${userDataPath}/settings.js`, defaultSettingsNormalize, err => {
