@@ -117,6 +117,7 @@ body {
   border: 1px solid;
   border-radius: 5px;
   border-color: var(--main-bg-color);
+  width: 145px;
   color: var(--main-tx-color);
 }
 .input-form:focus {
