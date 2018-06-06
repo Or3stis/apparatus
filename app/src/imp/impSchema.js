@@ -64,7 +64,14 @@ const impMetamodel = {
     'application',
     'threat'
   ],
-  assetArray: ['information', 'threat', 'actor', 'device', 'application'],
+  assetArray: [
+    'information',
+    'threat',
+    'actor',
+    'device',
+    'application',
+    'micronet'
+  ],
   constraintArray: ['threat', 'micronet', 'mechanism'],
   mechanismArray: ['vulnerability', 'constraint'],
   threatArray: [

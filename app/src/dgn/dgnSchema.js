@@ -22,7 +22,14 @@ const dgnMetamodel = {
   informationArray: ['asset', 'application', 'device', 'actor'],
   actorArray: ['device', 'application', 'information'],
   maliciousActorArray: ['device', 'application', 'information', 'threat'],
-  assetArray: ['information', 'application', 'threat', 'actor', 'device'],
+  assetArray: [
+    'information',
+    'application',
+    'threat',
+    'actor',
+    'device',
+    'micronet'
+  ],
   constraintArray: ['threat', 'micronet'],
   threatArray: ['asset', 'malicious actor', 'constraint', 'net']
 }

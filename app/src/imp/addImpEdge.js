@@ -114,6 +114,9 @@ module.exports = function addComponent (cy, srcNode, trgNode) {
     case srcNodeCpt === 'asset' && trgNodeCpt === 'information':
       addEdge(cy, srcNodeId, trgNodeId, 'is')
       break
+    case srcNodeCpt === 'asset' && trgNodeCpt === 'micronet':
+      addEdge(cy, srcNodeId, trgNodeId, 'is')
+      break
     default:
       bubbleTxt(`${srcNodeCpt} → ${trgNodeCpt}\nnot allowed 😔`)
   }

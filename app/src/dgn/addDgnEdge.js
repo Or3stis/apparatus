@@ -44,6 +44,9 @@ module.exports = function addComponent (cy, srcNode, trgNode) {
     case srcNodeCpt === 'asset' && trgNodeCpt === 'information':
       addEdge(cy, srcNodeId, trgNodeId, 'is')
       break
+    case srcNodeCpt === 'asset' && trgNodeCpt === 'micronet':
+      addEdge(cy, srcNodeId, trgNodeId, 'is')
+      break
     case srcNodeCpt === 'information' && trgNodeCpt === 'device':
       addEdge(cy, srcNodeId, trgNodeId, 'requires')
       break
