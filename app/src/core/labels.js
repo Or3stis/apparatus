@@ -30,6 +30,8 @@ module.exports = function labels (cy, selection) {
       cy.nodes().removeClass('label-id')
       cy.nodes().addClass('label-dsc')
       break
+    case '':
+      break
     default:
       console.error('error in labels.js')
   }

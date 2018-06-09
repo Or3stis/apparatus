@@ -256,6 +256,8 @@ module.exports = function addImpComponent (cy, event, nodeCounter) {
         }
       })
       break
+    case '':
+      break
     default:
       console.error('error in addImpComponent.js')
   }

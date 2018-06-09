@@ -2,9 +2,9 @@
  * highlights all the nodes of a specific module
  *
  * @param {Object} cy cytoscape instance
- * @param {any} input user input
+ * @param {any} selection user selection
  */
-module.exports = function moduleSelection (cy, input) {
+module.exports = function moduleSelection (cy, selection) {
   // grouping of the module components
   let groupArray = []
   const networkArray = [
@@ -32,7 +32,7 @@ module.exports = function moduleSelection (cy, input) {
     'control sensor'
   ]
 
-  const condition = input
+  const condition = selection
   switch (condition) {
     case 'network':
       groupArray = networkArray
@@ -58,8 +58,10 @@ module.exports = function moduleSelection (cy, input) {
     case 'network-social':
       groupArray = networkArray.concat(socialArray)
       break
-    default:
+    case '':
       groupArray = []
+      break
+    default:
       console.error('error in moduleSelection.js')
   }
 

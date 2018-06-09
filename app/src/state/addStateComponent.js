@@ -33,6 +33,8 @@ module.exports = function addStateComponent (cy, event, nodeCounter) {
         }
       })
       break
+    case '':
+      break
     default:
       console.error('error in addStateComponent.js')
   }

@@ -200,6 +200,8 @@ module.exports = function layout (cy, selection) {
     case 'concentric':
       concentric.run()
       break
+    case '':
+      break
     default:
       console.error('error in layout.js')
   }
