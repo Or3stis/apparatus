@@ -32,8 +32,7 @@ module.exports = function moduleSelection (cy, selection) {
     'control sensor'
   ]
 
-  const condition = selection
-  switch (condition) {
+  switch (selection) {
     case 'network':
       groupArray = networkArray
       break
@@ -79,5 +78,5 @@ module.exports = function moduleSelection (cy, selection) {
   })
 
   const htmlElement = document.getElementById('legend-id')
-  htmlElement.textContent = `${condition} nodes: ${totalNodes}`
+  htmlElement.textContent = `${selection} nodes: ${totalNodes}`
 }

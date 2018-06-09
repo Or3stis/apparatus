@@ -16,13 +16,13 @@ module.exports = function stateUI () {
   const dgnStateComponents = document.getElementById('components-id')
 
   dgnStateComponents.innerHTML = `
-  <div class="dropdown" id="add-component-id">
+  <div class="dropdown">
     <button class="btn-icon dropbtn">
       <svg width="24" height="24">
         <use xlink:href="icons/add-node.svg#add-node" class="icon"></use>
       </svg>
     </button>
-    <ul class="dropdown-menu">
+    <ul class="dropdown-menu" id="add-component-id">
       <li><a>model</a></li>
     </ul>
   </div>
@@ -39,24 +39,24 @@ module.exports = function stateUI () {
     </svg>
   </button>
 
-  <div class="dropdown" id="selection-id">
+  <div class="dropdown">
     <button class="btn-icon dropbtn">
       <svg width="24" height="24">
         <use xlink:href="icons/list.svg#list" class="icon"></use>
       </svg>
     </button>
-    <ul class="dropdown-menu">
+    <ul class="dropdown-menu" id="selection-id">
       <li><a>model</a></li>
     </ul>
   </div>
 
-  <div class="dropdown" id="layout-btn">
+  <div class="dropdown">
     <button class="btn-icon dropbtn" title="layout options">
       <svg width="24" height="24">
         <use xlink:href="icons/layout.svg#layout" class="icon"></use>
       </svg>
     </button>
-    <ul class="dropdown-menu">
+    <ul class="dropdown-menu" id="layout-btn">
       <li><a>cose</a></li>
       <li><a>breadthfirst</a></li>
       <li><a>breadthfirst(circle)</a></li>
@@ -66,13 +66,13 @@ module.exports = function stateUI () {
     </ul>
   </div>
 
-  <div class="dropdown" id="labels-btn">
+  <div class="dropdown">
   <button class="btn-icon dropbtn" title="label options">
     <svg width="24" height="24">
       <use xlink:href="icons/label.svg#label" class="icon"></use>
     </svg>
   </button>
-  <ul class="dropdown-menu">
+  <ul class="dropdown-menu" id="labels-btn">
     <li><a>hide all labels</a></li>
     <li><a>show edge labels</a></li>
     <li><a>show node concepts</a></li>
