@@ -191,6 +191,8 @@ module.exports = function addDgnComponent (cy, event, nodeCounter) {
         }
       })
       break
+    case '':
+      break
     default:
       console.error('error in addDgnComponent.js')
   }
