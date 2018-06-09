@@ -25,7 +25,7 @@ module.exports = function save (cy) {
     fileToSave => {
       jsonfileWrite(fileToSave, fullGraph, err => {
         if (err) {
-          console.error(err.message)
+          dialog.showErrorBox('Error while saving the file', err.message)
         } else {
           // remove the change indicator on save
           const titleBar = document.getElementById('title-bar-id')
