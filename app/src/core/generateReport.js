@@ -49,7 +49,10 @@ module.exports = function generateReport (cy) {
     filename => {
       fs.writeFile(`${filename}`, dataToWrite, err => {
         if (err) {
-          dialog.showErrorBox('There was an error while saving the file', err.message)
+          dialog.showErrorBox(
+            'There was an error while saving the file',
+            err.message
+          )
         }
         bubbleTxt('security report generated\n👍')
       })
