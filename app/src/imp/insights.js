@@ -49,8 +49,6 @@ const showResults = (nodeIDArray, insight) => {
  */
 module.exports = function insights (cy) {
   // fade out all the nodes
-  console.log(emptyInsightCounter)
-  console.log(Object.keys(list).length)
   cy.elements().addClass('faded')
 
   // parses the graph to compare nodes with the insight list
