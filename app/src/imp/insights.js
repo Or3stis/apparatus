@@ -11,7 +11,7 @@ const bubbleHTML = require('../helpers/bubbleHTML.js')
  * @param {string} attributeValue attribute value in the insight array
  * @param {Array} nodeArray array that stores the insecure nodes
  */
-const findNodes = (node, concept, attribute, attributeValue, nodeArray) => {
+const findNodes = (node, concept, attribute, attributeValue, nodeIDArray) => {
   if (
     node.data().asto.concept === concept &&
     node.data().asto[attribute] === attributeValue
@@ -21,7 +21,7 @@ const findNodes = (node, concept, attribute, attributeValue, nodeArray) => {
     node.addClass('attention')
 
     // push ID of the insecure nodes in the array
-    nodeArray.push(node.data().id)
+    nodeIDArray.push(node.data().id)
   }
 }
 
@@ -33,10 +33,10 @@ let emptyInsightCounter = 0
  * @param {Array} nodeArray array that stores the insecure nodes
  * @param {string} insight security insight based on the insightsList
  */
-const showResults = (nodeArray, insight) => {
+const showResults = (nodeIDArray, insight) => {
   // only show the insight if the node array is not empty
-  if (nodeArray.length !== 0) {
-    bubbleHTML(`Nodes: <strong>${nodeArray}</strong> <br><br>${insight}`)
+  if (nodeIDArray.length !== 0) {
+    bubbleHTML(`Nodes: <strong>${nodeIDArray}</strong> <br><br>${insight}`)
   } else {
     emptyInsightCounter += 1
   }
@@ -48,9 +48,9 @@ const showResults = (nodeArray, insight) => {
  * @param {Object} cy cytoscape instance
  */
 module.exports = function insights (cy) {
-  console.log(Object.keys(list).length)
-  console.log(emptyInsightCounter)
   // fade out all the nodes
+  console.log(emptyInsightCounter)
+  console.log(Object.keys(list).length)
   cy.elements().addClass('faded')
 
   // parses the graph to compare nodes with the insight list
@@ -88,4 +88,10 @@ module.exports = function insights (cy) {
   } else {
     bubbleHTML('No security insights were found.')
   }
+
+  // empty stored values to prevent repeating entries on other function calls
+  Object.keys(list).map(key => {
+    list[key].nodes = []
+  })
+  emptyInsightCounter = 0
 }
