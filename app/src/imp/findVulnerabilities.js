@@ -1,6 +1,8 @@
 // finds vulnerabilities from CVE database
+// TODO gather all the globals in the same location
+// TODO refactor use of globals
 
-const http = require('http')
+const https = require('https')
 const fs = require('fs')
 const { dialog, app } = require('electron').remote
 
@@ -10,17 +12,18 @@ const settings = require(`${userDataPath}/settings.js`)
 const bubbleTxt = require('../helpers/bubbleTxt.js')
 const bubbleHTML = require('../helpers/bubbleHTML.js')
 
+let totalVulnerabilities = []
+let vulnerableJSONData = ''
 /**
  *  request vulnerability information from cve
  *
- * @param {string} filename
  * @param {Array} nodesKeywords keywords to be send to the database
  */
-const requestVulnerableData = (filename, nodesKeywords) => {
+const requestVulnerableData = nodesKeywords => {
   // stores the CVE list
-  let totalVulnerabilities = []
+  let keywordCounter = 0
   nodesKeywords.map(vulnerability => {
-    http
+    https
       .get(`${settings.cveSearchUrl}${vulnerability}`, resp => {
         let data = ''
         // add each received chunk of data
@@ -29,10 +32,9 @@ const requestVulnerableData = (filename, nodesKeywords) => {
         })
         // once the whole response has been received
         resp.on('end', () => {
-          // write the results in a json file
-          fs.writeFile(filename, data, err => {
-            if (err) console.error(`Error: ${err.message}`)
-          })
+          // store the data for export
+          vulnerableJSONData += data
+
           // this works for single keywords
           Object.values(JSON.parse(data)).map(key => {
             // array with the CVE ids
@@ -49,6 +51,19 @@ const requestVulnerableData = (filename, nodesKeywords) => {
               totalVulnerabilities.length
             }</strong>`
           )
+
+          // when the requests are finished ask if the file is to saved
+          keywordCounter += 1
+          if (keywordCounter === nodesKeywords.length) {
+            const saveButton = `Do you want to save the file?<button id='saveButton-${buttonCounter}' class='menu-btn' style='color: var(--main-tx-color); background-color: var(--main-bg-color); width: 45px; height: 25px;'>yes?</button>`
+
+            bubbleHTML(saveButton)
+            document
+              .getElementById(`saveButton-${buttonCounter}`)
+              .addEventListener('click', () => {
+                saveFile()
+              })
+          }
         })
       })
       .on('error', err => {
@@ -57,16 +72,15 @@ const requestVulnerableData = (filename, nodesKeywords) => {
   })
 }
 
-/**
- * saves the vulnerabilities in a json file
- *
- * @param {Array} nodesKeywords keywords to be send to the database
- */
-const saveFile = nodesKeywords => {
+/** saves the vulnerabilities in a json file */
+const saveFile = () => {
   dialog.showSaveDialog(
     { filters: [{ name: 'javascript', extensions: ['json'] }] },
     filename => {
-      requestVulnerableData(filename, nodesKeywords)
+      // requestVulnerableData(filename, nodesKeywords)
+      fs.writeFile(filename, vulnerableJSONData, err => {
+        if (err) console.error(`Error: ${err.message}`)
+      })
     }
   )
 }
@@ -115,25 +129,41 @@ const getUniqueKeywords = nodesKeywords => {
   })
 }
 
+let buttonCounter = 0
 /**
  * sends a request to a CVE database with the keywords
  *
  * @param {Object} cy cytoscape instance
+ * @TODO globals need to cleared
  */
 const findVulnerabilities = cy => {
   findVulnerableNodes(cy)
+
+  const permission = `Do you want to send a request to ${
+    settings.cveSearchUrl
+  }<button id='yes-${buttonCounter}' class='menu-btn' style='color: var(--main-tx-color); background-color: var(--main-bg-color); width: 45px; height: 25px;'>yes?</button>`
 
   // check whether the nodesKeywords is empty before sending the request to
   // a vulnerability database
   if (nodesKeywords.length === 0) {
     bubbleTxt('no vulnerabilities were found')
   } else {
-    getUniqueKeywords(nodesKeywords)
-    saveFile(nodesKeywords) // runs the requestVulnerableData()
+    bubbleHTML(permission)
+    document
+      .getElementById(`yes-${buttonCounter}`)
+      .addEventListener('click', () => {
+        getUniqueKeywords(nodesKeywords)
+        bubbleTxt(`sending request to ${settings.cveSearchUrl}`)
+        bubbleTxt(`☛ keywords used:\n\n${keywordsPrint}`)
+        requestVulnerableData(nodesKeywords)
 
-    bubbleTxt(`sending request to ${settings.cveSearchUrl}`)
-    bubbleTxt(`☛ keywords used:\n\n${keywordsPrint}`)
+        nodesKeywords = []
+        totalVulnerabilities = []
+        keywordsPrint = ''
+        vulnerableJSONData = ''
+      })
   }
+  buttonCounter += 1
 }
 
 // only checks vulnerabilities for the concepts of device and application
