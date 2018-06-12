@@ -49,6 +49,7 @@ const commonPorts = {
   411: 'Direct Connect (p2p)',
   412: 'Direct Connect (p2p)',
   443: 'HTTPS (encrypted)',
+  449: 'AiCloud',
   445: 'Microsoft DS',
   464: 'Kerberos',
   465: 'SMTPS (encrypted)',
