@@ -55,7 +55,7 @@ const requestVulnerableData = nodesKeywords => {
           // when the requests are finished ask if the file is to saved
           keywordCounter += 1
           if (keywordCounter === nodesKeywords.length) {
-            const saveButton = `Do you want to save the file?<button id='saveButton-${buttonCounter}' class='menu-btn' style='color: var(--main-tx-color); background-color: var(--main-bg-color); width: 45px; height: 25px;'>yes?</button>`
+            const saveButton = `Do you want to save the file?<button id='saveButton-${buttonCounter}' class='menu-btn' style='color: var(--main-tx-color); background-color: var(--main-bg-color); width: 45px; height: 25px;'>yes</button>`
 
             bubbleHTML(saveButton)
             document
