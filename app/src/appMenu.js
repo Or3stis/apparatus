@@ -1,7 +1,10 @@
-const settings = require('../settings/defaultSettings.js')
-const { Menu } = require('electron')
 const electron = require('electron')
 const app = electron.app
+
+// url for the ASTo wiki
+const docsURL = 'https://or3stis.github.io/apparatus/docs'
+// url for issue reporting
+const issueURL = 'https://github.com/Or3stis/apparatus/issues'
 
 const template = [
   {
@@ -42,14 +45,15 @@ const template = [
       {
         label: 'Apparatus documentation',
         click () {
-          require('electron').shell.openExternal(settings.docsURL)
+          require('electron').shell.openExternal(docsURL)
+          // console.log('tess')
         }
       },
       { type: 'separator' },
       {
         label: 'Report Issue',
         click () {
-          require('electron').shell.openExternal(settings.issueURL)
+          require('electron').shell.openExternal(issueURL)
         }
       }
     ]
@@ -91,7 +95,7 @@ if (process.platform === 'darwin') {
   ]
 }
 
-const menu = Menu.buildFromTemplate(template)
+const menu = electron.Menu.buildFromTemplate(template)
 
 module.exports = function appMenu () {
   // get the environmental variable
@@ -105,5 +109,5 @@ module.exports = function appMenu () {
     menu.items[2].submenu.items[1].visible = false
     menu.items[2].submenu.items[1].enabled = false
   }
-  Menu.setApplicationMenu(menu)
+  electron.Menu.setApplicationMenu(menu)
 }

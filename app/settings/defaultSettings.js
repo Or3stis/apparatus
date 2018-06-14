@@ -66,7 +66,9 @@ const settings = {
   // url for the ASTo wiki
   docsURL: 'https://or3stis.github.io/apparatus/docs',
   // url for searching vulnerabilities
-  cveSearchUrl: 'https://cve.circl.lu/api/search/'
+  cveSearchUrl: 'https://cve.circl.lu/api/search/',
+  // url for issue reporting
+  issueURL: 'https://github.com/Or3stis/apparatus/issues'
 }
 
 module.exports = settings
