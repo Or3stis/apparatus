@@ -186,9 +186,13 @@ restoreBtn.addEventListener('click', () => {
     .replace(/(?:\\[n])+/g, '\n')
     .replace(/"/g, '')
 
-  fs.writeFile(`${userDataPath}/astoSettings.js`, defaultSettingsNormalize, err => {
-    if (err) throw err
-  })
+  fs.writeFile(
+    `${userDataPath}/astoSettings.js`,
+    defaultSettingsNormalize,
+    err => {
+      if (err) throw err
+    }
+  )
 
   // close window
   const win = remote.getCurrentWindow()

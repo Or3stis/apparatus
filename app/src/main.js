@@ -79,9 +79,13 @@ const userDataPath = app.getPath('userData')
 
 /** write the astoSettings.js to the OS location */
 const writeSettings = () => {
-  fs.writeFile(`${userDataPath}/astoSettings.js`, defaultSettingsNormalize, err => {
-    if (err) throw err
-  })
+  fs.writeFile(
+    `${userDataPath}/astoSettings.js`,
+    defaultSettingsNormalize,
+    err => {
+      if (err) throw err
+    }
+  )
 }
 
 // checks if the local astoSettings.js exists
