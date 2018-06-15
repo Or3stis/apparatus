@@ -4,7 +4,7 @@ const remote = require('electron').remote
 const graphStyle = require('../../settings/graphStyle.js')
 
 const userDataPath = remote.app.getPath('userData')
-const settings = require(`${userDataPath}/settings.js`)
+const settings = require(`${userDataPath}/astoSettings.js`)
 
 /**
  * changes only the UI color values
