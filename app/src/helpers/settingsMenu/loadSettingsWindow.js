@@ -6,7 +6,7 @@ const fs = require('fs')
 const theme = require('../theme.js')
 
 const userDataPath = remote.app.getPath('userData')
-const settings = require(`${userDataPath}/settings.js`)
+const settings = require(`${userDataPath}/astoSettings.js`)
 
 /* consistent color theme with the main window */
 const applyColorTheme = () => {
@@ -158,7 +158,7 @@ const settings = {
 module.exports = settings
 `
 
-  fs.writeFile(`${userDataPath}/settings.js`, newSettings, err => {
+  fs.writeFile(`${userDataPath}/astoSettings.js`, newSettings, err => {
     if (err) throw err
   })
 
@@ -186,9 +186,13 @@ restoreBtn.addEventListener('click', () => {
     .replace(/(?:\\[n])+/g, '\n')
     .replace(/"/g, '')
 
-  fs.writeFile(`${userDataPath}/settings.js`, defaultSettingsNormalize, err => {
-    if (err) throw err
-  })
+  fs.writeFile(
+    `${userDataPath}/astoSettings.js`,
+    defaultSettingsNormalize,
+    err => {
+      if (err) throw err
+    }
+  )
 
   // close window
   const win = remote.getCurrentWindow()
