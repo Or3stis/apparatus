@@ -1,11 +1,13 @@
 const { dialog } = require('electron').remote
 const fs = require('fs')
 const bubbleTxt = require('../helpers/bubbleTxt.js')
+const bubbleHTML = require('../helpers/bubbleHTML.js')
 
 let threatsArray = []
 let constraintsArray = []
 let mechanismsArray = []
 let vulnerabilityArray = []
+let buttonCounter = 0
 /**
  * generate security report
  *
@@ -37,25 +39,27 @@ module.exports = function generateReport (cy) {
     .concat(numberOfMechanisms)
     .concat(numberOfVulnerabilities)
 
-  let dialogOptions = []
-  process.platform === 'darwin'
-    ? (dialogOptions = ['openFile', 'openDirectory'])
-    : (dialogOptions = ['openFile'])
-  dialog.showSaveDialog(
-    {
-      properties: [...dialogOptions],
-      filters: [{ name: 'markdown', extensions: ['md'] }]
-    },
-    filename => {
-      fs.writeFile(`${filename}`, dataToWrite, err => {
-        if (err) {
-          dialog.showErrorBox(
-            'There was an error while saving the file',
-            err.message
-          )
-        }
+  const saveFile = () => {
+    dialog.showSaveDialog(
+      { filters: [{ name: 'markdown', extensions: ['md'] }] },
+      filename => {
+        // requestVulnerableData(filename, nodesKeywords)
+        fs.writeFile(filename, dataToWrite, err => {
+          if (err) console.error(`Error: ${err.message}`)
+        })
         bubbleTxt('security report generated\n👍')
-      })
-    }
-  )
+      }
+    )
+  }
+
+  const reportButton = `Do you want to save the security report?<button id='reportButton-${buttonCounter}' class='menu-btn' style='color: var(--main-tx-color); background-color: var(--main-bg-color); width: 45px; height: 25px;'>yes</button>`
+
+  bubbleHTML(reportButton)
+  document
+    .getElementById(`reportButton-${buttonCounter}`)
+    .addEventListener('click', () => {
+      saveFile()
+    })
+
+  buttonCounter += 1
 }
