@@ -16,7 +16,7 @@ module.exports = function addDgnComponent (cy, event, nodeCounter) {
   let component = event.target.textContent
 
   switch (component) {
-    case 'device':
+    case 'service provider':
       cy.add({
         group: 'nodes',
         data: {
@@ -24,7 +24,7 @@ module.exports = function addDgnComponent (cy, event, nodeCounter) {
           label: `${component}`,
           asto: {
             description: '',
-            concept: 'device'
+            concept: 'service provider'
           }
         },
         renderedPosition: {
@@ -33,24 +33,7 @@ module.exports = function addDgnComponent (cy, event, nodeCounter) {
         }
       })
       break
-    case 'application':
-      cy.add({
-        group: 'nodes',
-        data: {
-          id: `n${nodeCounter}`,
-          label: `${component}`,
-          asto: {
-            description: '',
-            concept: 'application'
-          }
-        },
-        renderedPosition: {
-          x: posX,
-          y: posY
-        }
-      })
-      break
-    case 'micronet':
+    case 'infrastructure provider':
       cy.add({
         group: 'nodes',
         data: {
@@ -59,7 +42,7 @@ module.exports = function addDgnComponent (cy, event, nodeCounter) {
           asto: {
             description: '',
             purpose: '',
-            concept: 'micronet'
+            concept: 'infrastructure provider'
           }
         },
         renderedPosition: {
@@ -68,7 +51,7 @@ module.exports = function addDgnComponent (cy, event, nodeCounter) {
         }
       })
       break
-    case 'information':
+    case 'cescm':
       cy.add({
         group: 'nodes',
         data: {
@@ -76,7 +59,7 @@ module.exports = function addDgnComponent (cy, event, nodeCounter) {
           label: `${component}`,
           asto: {
             description: '',
-            concept: 'information'
+            concept: 'cescm'
           }
         },
         renderedPosition: {
@@ -85,7 +68,7 @@ module.exports = function addDgnComponent (cy, event, nodeCounter) {
         }
       })
       break
-    case 'net':
+    case 'vim':
       cy.add({
         group: 'nodes',
         data: {
@@ -93,7 +76,7 @@ module.exports = function addDgnComponent (cy, event, nodeCounter) {
           label: `${component}`,
           asto: {
             description: '',
-            concept: 'net'
+            concept: 'vim'
           }
         },
         renderedPosition: {
@@ -102,7 +85,24 @@ module.exports = function addDgnComponent (cy, event, nodeCounter) {
         }
       })
       break
-    case 'actor':
+    case 'main dc':
+      cy.add({
+        group: 'nodes',
+        data: {
+          id: `n${nodeCounter}`,
+          label: `${component}`,
+          asto: {
+            description: '',
+            concept: 'main dc'
+          }
+        },
+        renderedPosition: {
+          x: posX,
+          y: posY
+        }
+      })
+      break
+    case 'light dc':
       cy.add({
         group: 'nodes',
         data: {
@@ -111,7 +111,7 @@ module.exports = function addDgnComponent (cy, event, nodeCounter) {
           asto: {
             description: '',
             intent: '',
-            concept: 'actor'
+            concept: 'light dc'
           }
         },
         renderedPosition: {
@@ -120,7 +120,7 @@ module.exports = function addDgnComponent (cy, event, nodeCounter) {
         }
       })
       break
-    case 'malicious actor':
+    case 'vnf':
       cy.add({
         group: 'nodes',
         data: {
@@ -128,8 +128,60 @@ module.exports = function addDgnComponent (cy, event, nodeCounter) {
           label: `${component}`,
           asto: {
             description: '',
-            intent: '',
-            concept: 'malicious actor'
+            concept: 'vnf'
+          }
+        },
+        renderedPosition: {
+          x: posX,
+          y: posY
+        }
+      })
+      break
+    case 'storage':
+      cy.add({
+        group: 'nodes',
+        data: {
+          id: `n${nodeCounter}`,
+          label: `${component}`,
+          asto: {
+            description: '',
+            property: '',
+            concept: 'storage'
+          }
+        },
+        renderedPosition: {
+          x: posX,
+          y: posY
+        }
+      })
+      break
+    case 'process':
+      cy.add({
+        group: 'nodes',
+        data: {
+          id: `n${nodeCounter}`,
+          label: `${component}`,
+          asto: {
+            description: '',
+            type: '',
+            concept: 'process'
+          }
+        },
+        renderedPosition: {
+          x: posX,
+          y: posY
+        }
+      })
+      break
+    case 'constraint':
+      cy.add({
+        group: 'nodes',
+        data: {
+          id: `n${nodeCounter}`,
+          label: `${component}`,
+          asto: {
+            description: '',
+            concept: 'constraint'
           }
         },
         renderedPosition: {
@@ -155,7 +207,7 @@ module.exports = function addDgnComponent (cy, event, nodeCounter) {
         }
       })
       break
-    case 'constraint':
+    case 'end user':
       cy.add({
         group: 'nodes',
         data: {
@@ -163,8 +215,7 @@ module.exports = function addDgnComponent (cy, event, nodeCounter) {
           label: `${component}`,
           asto: {
             description: '',
-            property: '',
-            concept: 'constraint'
+            concept: 'end user'
           }
         },
         renderedPosition: {
@@ -181,7 +232,6 @@ module.exports = function addDgnComponent (cy, event, nodeCounter) {
           label: `${component}`,
           asto: {
             description: '',
-            type: '',
             concept: 'threat'
           }
         },
@@ -191,7 +241,22 @@ module.exports = function addDgnComponent (cy, event, nodeCounter) {
         }
       })
       break
-    case '':
+    case 'malicious actor':
+      cy.add({
+        group: 'nodes',
+        data: {
+          id: `n${nodeCounter}`,
+          label: `${component}`,
+          asto: {
+            description: '',
+            concept: 'malicious actor'
+          }
+        },
+        renderedPosition: {
+          x: posX,
+          y: posY
+        }
+      })
       break
     default:
       console.error('error in addDgnComponent.js')

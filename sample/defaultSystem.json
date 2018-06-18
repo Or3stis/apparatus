@@ -1,0 +1,604 @@
+{
+  "elements": {
+    "nodes": [
+      {
+        "data": {
+          "id": "n4",
+          "label": "service provider",
+          "asto": {
+            "description": "First Responder",
+            "concept": "service provider"
+          }
+        },
+        "position": { "x": 792.4684649913326, "y": 460.93633413846874 },
+        "group": "nodes",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "classes": "label-nodes"
+      },
+      {
+        "data": {
+          "id": "n2",
+          "label": "service provider",
+          "asto": {
+            "description": "Second Responder",
+            "concept": "service provider"
+          }
+        },
+        "position": { "x": 670.1916761569076, "y": 562.9318540784026 },
+        "group": "nodes",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "classes": "label-nodes"
+      },
+      {
+        "data": {
+          "id": "n3",
+          "label": "service provider",
+          "asto": {
+            "description": "Content Provider",
+            "concept": "service provider"
+          }
+        },
+        "position": { "x": 732.7726825509295, "y": 304.5466195110011 },
+        "group": "nodes",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "classes": "label-nodes"
+      },
+      {
+        "data": {
+          "id": "n5",
+          "label": "infrastructure provider",
+          "asto": {
+            "description": "",
+            "purpose": "",
+            "concept": "infrastructure provider"
+          }
+        },
+        "position": { "x": 576.9158846748285, "y": 309.1630487304887 },
+        "group": "nodes",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "classes": "label-nodes"
+      },
+      {
+        "data": {
+          "id": "n6",
+          "label": "cescm",
+          "asto": { "description": "", "concept": "cescm" }
+        },
+        "position": { "x": 652.961599204906, "y": 429.20149963230165 },
+        "group": "nodes",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "classes": "label-nodes"
+      },
+      {
+        "data": {
+          "id": "n7",
+          "label": "main dc",
+          "asto": { "description": "", "concept": "main dc" }
+        },
+        "position": { "x": 516.4915063161379, "y": 485.1418931541988 },
+        "group": "nodes",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "classes": "label-nodes"
+      },
+      {
+        "data": {
+          "id": "n8",
+          "label": "light dc",
+          "asto": { "description": "", "intent": "", "concept": "light dc" }
+        },
+        "position": { "x": 393.29239651627023, "y": 513.7201236761587 },
+        "group": "nodes",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "classes": "label-nodes"
+      },
+      {
+        "data": {
+          "id": "n9",
+          "label": "vnf",
+          "asto": { "description": "", "concept": "vnf" }
+        },
+        "position": { "x": 287.5627938998142, "y": 620.3858519102578 },
+        "group": "nodes",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "classes": "label-nodes"
+      },
+      {
+        "data": {
+          "id": "n10",
+          "label": "vnf",
+          "asto": { "description": "", "concept": "vnf" }
+        },
+        "position": { "x": 395.3698689649075, "y": 368.3027547797598 },
+        "group": "nodes",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "classes": "label-nodes"
+      },
+      {
+        "data": {
+          "id": "n11",
+          "label": "vnf",
+          "asto": { "description": "", "concept": "vnf" }
+        },
+        "position": { "x": 258.71860757887794, "y": 461.1893665751651 },
+        "group": "nodes",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "classes": "label-nodes"
+      },
+      {
+        "data": {
+          "id": "n12",
+          "label": "asset",
+          "asto": { "description": "", "concept": "asset" }
+        },
+        "position": { "x": 375.0315520206359, "y": 236.28693047050388 },
+        "group": "nodes",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "classes": "label-nodes"
+      },
+      {
+        "data": {
+          "id": "n13",
+          "label": "asset",
+          "asto": { "description": "", "concept": "asset" }
+        },
+        "position": { "x": 136.6636942796934, "y": 414.0988507470882 },
+        "group": "nodes",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "classes": "label-nodes"
+      },
+      {
+        "data": {
+          "id": "n14",
+          "label": "storage",
+          "asto": { "description": "", "property": "", "concept": "storage" }
+        },
+        "position": { "x": 461.7921153028217, "y": 649.4412369156518 },
+        "group": "nodes",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "classes": "label-nodes"
+      },
+      {
+        "data": {
+          "id": "n15",
+          "label": "asset",
+          "asto": { "description": "", "concept": "asset" }
+        },
+        "position": { "x": 410.1493704266505, "y": 778.6271824264412 },
+        "group": "nodes",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "classes": "label-nodes"
+      },
+      {
+        "data": {
+          "id": "n16",
+          "label": "end user",
+          "asto": { "description": "", "concept": "end user" }
+        },
+        "position": { "x": 580.0091680022306, "y": 730.7220435102014 },
+        "group": "nodes",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "classes": "label-nodes"
+      },
+      {
+        "data": {
+          "id": "n17",
+          "label": "light dc",
+          "asto": { "description": "", "intent": "", "concept": "light dc" }
+        },
+        "position": { "x": 179.31457920840447, "y": 348.4956141650419 },
+        "group": "nodes",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "classes": "label-nodes"
+      },
+      {
+        "data": {
+          "id": "n18",
+          "label": "infrastructure provider",
+          "asto": {
+            "description": "",
+            "purpose": "",
+            "concept": "infrastructure provider"
+          }
+        },
+        "position": { "x": 243.32816576931336, "y": 267.93204941104165 },
+        "group": "nodes",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "classes": "label-nodes"
+      }
+    ],
+    "edges": [
+      {
+        "data": {
+          "id": "en2n6",
+          "source": "n2",
+          "target": "n6",
+          "label": "uses"
+        },
+        "position": {},
+        "group": "edges",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "classes": "label-edges"
+      },
+      {
+        "data": {
+          "id": "en3n6",
+          "source": "n3",
+          "target": "n6",
+          "label": "uses"
+        },
+        "position": {},
+        "group": "edges",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "classes": "label-edges"
+      },
+      {
+        "data": {
+          "id": "en4n6",
+          "source": "n4",
+          "target": "n6",
+          "label": "uses"
+        },
+        "position": {},
+        "group": "edges",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "classes": "label-edges"
+      },
+      {
+        "data": {
+          "id": "en5n6",
+          "source": "n5",
+          "target": "n6",
+          "label": "owns"
+        },
+        "position": {},
+        "group": "edges",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "classes": "label-edges"
+      },
+      {
+        "data": {
+          "id": "en6n7",
+          "source": "n6",
+          "target": "n7",
+          "label": "manages"
+        },
+        "position": {},
+        "group": "edges",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "classes": "label-edges"
+      },
+      {
+        "data": {
+          "id": "en8n7",
+          "source": "n8",
+          "target": "n7",
+          "label": "belongs"
+        },
+        "position": {},
+        "group": "edges",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "classes": "label-edges"
+      },
+      {
+        "data": {
+          "id": "en8n11",
+          "source": "n8",
+          "target": "n11",
+          "label": "has"
+        },
+        "position": {},
+        "group": "edges",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "classes": "label-edges"
+      },
+      {
+        "data": {
+          "id": "en8n10",
+          "source": "n8",
+          "target": "n10",
+          "label": "has"
+        },
+        "position": {},
+        "group": "edges",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "classes": "label-edges"
+      },
+      {
+        "data": {
+          "id": "en8n9",
+          "source": "n8",
+          "target": "n9",
+          "label": "has"
+        },
+        "position": {},
+        "group": "edges",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "classes": "label-edges"
+      },
+      {
+        "data": {
+          "id": "en13n11",
+          "source": "n13",
+          "target": "n11",
+          "label": "is"
+        },
+        "position": {},
+        "group": "edges",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "classes": "label-edges"
+      },
+      {
+        "data": {
+          "id": "en12n10",
+          "source": "n12",
+          "target": "n10",
+          "label": "is"
+        },
+        "position": {},
+        "group": "edges",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "classes": "label-edges"
+      },
+      {
+        "data": {
+          "id": "en8n14",
+          "source": "n8",
+          "target": "n14",
+          "label": "has"
+        },
+        "position": {},
+        "group": "edges",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "classes": "label-edges"
+      },
+      {
+        "data": {
+          "id": "en15n14",
+          "source": "n15",
+          "target": "n14",
+          "label": "is"
+        },
+        "position": {},
+        "group": "edges",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "classes": "label-edges"
+      },
+      {
+        "data": {
+          "id": "en16n14",
+          "source": "n16",
+          "target": "n14",
+          "label": "uses"
+        },
+        "position": {},
+        "group": "edges",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "classes": "label-edges"
+      },
+      {
+        "data": {
+          "id": "en18n17",
+          "source": "n18",
+          "target": "n17",
+          "label": "owns"
+        },
+        "position": {},
+        "group": "edges",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "classes": "label-edges"
+      }
+    ]
+  },
+  "style": [
+    {
+      "selector": "node",
+      "style": {
+        "shape": "ellipse",
+        "background-color": "#383a42",
+        "text-wrap": "wrap",
+        "text-max-width": "100px"
+      }
+    },
+    {
+      "selector": "edge",
+      "style": {
+        "curve-style": "bezier",
+        "line-color": "#383a42",
+        "width": "2px"
+      }
+    },
+    {
+      "selector": ".faded",
+      "style": { "opacity": "0.25", "text-opacity": "0" }
+    },
+    {
+      "selector": ".selection",
+      "style": { "background-color": "#3399cd", "line-color": "#3399cd" }
+    },
+    {
+      "selector": ".old-selection",
+      "style": { "background-color": "#cf8772" }
+    },
+    { "selector": ".attention", "style": { "background-color": "#986901" } },
+    { "selector": ".protect", "style": { "background-color": "#a626a4" } },
+    {
+      "selector": ".label-nodes",
+      "style": {
+        "label": "data(label)",
+        "text-valign": "center",
+        "color": "#383a42",
+        "text-outline-width": "2px",
+        "text-outline-color": "#fafafa"
+      }
+    },
+    {
+      "selector": ".label-edges",
+      "style": {
+        "label": "data(label)",
+        "target-arrow-shape": "triangle",
+        "target-arrow-color": "#383a42",
+        "color": "#383a42",
+        "text-outline-width": "2px",
+        "text-outline-color": "#fafafa"
+      }
+    },
+    {
+      "selector": ".label-id",
+      "style": {
+        "label": "data(id)",
+        "text-valign": "center",
+        "color": "#383a42",
+        "text-outline-width": "2px",
+        "text-outline-color": "#fafafa"
+      }
+    },
+    {
+      "selector": ".label-dsc",
+      "style": {
+        "label": "data(asto.description)",
+        "text-valign": "center",
+        "color": "#383a42",
+        "text-outline-width": "2px",
+        "text-outline-color": "#fafafa"
+      }
+    }
+  ],
+  "zoomingEnabled": true,
+  "userZoomingEnabled": true,
+  "zoom": 0.762683365021483,
+  "minZoom": 1e-50,
+  "maxZoom": 1e50,
+  "panningEnabled": true,
+  "userPanningEnabled": true,
+  "pan": { "x": 53.38487419953999, "y": -20.579895704114506 },
+  "boxSelectionEnabled": true,
+  "renderer": { "name": "canvas" }
+}

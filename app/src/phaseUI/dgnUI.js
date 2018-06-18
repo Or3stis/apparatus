@@ -1,3 +1,5 @@
+// renders the design phase UI
+
 const phaseMenu = require('../../src/phaseMenu.js')
 
 /** loads the design phase UI */
@@ -23,16 +25,20 @@ module.exports = function designUI () {
     </svg>
   </button>
   <ul class="dropdown-menu" id="add-component-id">
-    <li><a>device</a></li>
-    <li><a>application</a></li>
-    <li><a>information</a></li>
-    <li><a>micronet</a></li>
-    <li><a>net</a></li>
-    <li><a>actor</a></li>
+    <li><a>service provider</a></li>
+    <li><a>infrastructure provider</a></li>
+    <li><a>cescm</a></li>
+    <li><a>vim</a></li>
+    <li><a>main dc</a></li>
+    <li><a>light dc</a></li>
+    <li><a>vnf</a></li>
+    <li><a>storage</a></li>
+    <li><a>process</a></li>
+    <li><a>constraint</a></li>
     <li><a>asset</a></li>
+    <li><a>end user</a></li>
     <li><a>threat</a></li>
     <li><a>malicious actor</a></li>
-    <li><a>constraint</a></li>
   </ul>
 </div>
 
@@ -54,17 +60,21 @@ module.exports = function designUI () {
       <use xlink:href="icons/list.svg#list" class="icon"></use>
     </svg>
   </button>
-  <ul class="dropdown-menu" id="selection-id">
-    <li><a>device</a></li>
-    <li><a>application</a></li>
-    <li><a>information</a></li>
-    <li><a>micronet</a></li>
-    <li><a>net</a></li>
-    <li><a>actor</a></li>
+  <ul class="dropdown-menu"  id="selection-id">
+    <li><a>service provider</a></li>
+    <li><a>infrastructure provider</a></li>
+    <li><a>cescm</a></li>
+    <li><a>vim</a></li>
+    <li><a>main dc</a></li>
+    <li><a>light dc</a></li>
+    <li><a>vnf</a></li>
+    <li><a>storage</a></li>
+    <li><a>process</a></li>
+    <li><a>constraint</a></li>
     <li><a>asset</a></li>
+    <li><a>end user</a></li>
     <li><a>threat</a></li>
     <li><a>malicious actor</a></li>
-    <li><a>constraint</a></li>
   </ul>
 </div>
 
@@ -140,10 +150,10 @@ module.exports = function designUI () {
 </button>
 
 <button class="btn-icon" id="transition-btn">
-  <svg width="24" height="24">
-    <use xlink:href="icons/swap.svg#swap" class="icon"></use>
-  </svg>
-</button>
+    <svg width="24" height="24">
+      <use xlink:href="icons/swap.svg#swap" class="icon"></use>
+    </svg>
+  </button>
 
 <button class="btn-icon" id="save-btn">
   <svg width="24" height="24">

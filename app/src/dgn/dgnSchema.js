@@ -1,51 +1,76 @@
 // design phase concept schema
 
 const dgnMetamodel = {
-  // metamodel group concepts
-  network: ['micronet', 'net', 'information', 'device', 'application'],
-  security: ['asset', 'threat', 'constraint', 'malicious actor'],
-  social: ['actor'],
-  // allowed concepts connections
-  deviceArray: [
-    'micronet',
-    'net',
-    'information',
-    'actor',
-    'malicious actor',
+  serviceProvArray: ['vnf', 'cescm', 'light dc', 'storage', 'process'],
+  infrastructureProvArray: ['vnf', 'main dc', 'light dc', 'vim'],
+  cescmArray: ['service provider', 'infrastructure provider', 'vim', 'main dc'],
+  vimArray: ['infrastructure provider', 'cescm', 'main dc', 'light dc'],
+  mainDcArray: [
+    'infrastructure provider',
+    'vnf',
+    'storage',
+    'process',
+    'light dc',
+    'vnf',
+    'vim',
+    'cescm',
+    'constraint'
+  ],
+  lightDcArray: [
+    'infrastructure provider',
+    'service provider',
+    'storage',
+    'process',
+    'main dc',
+    'vnf',
+    'vim',
+    'cescm',
+    'constraint'
+  ],
+  vnfArray: [
+    'service provider',
+    'infrastructure provider',
+    'light dc',
+    'main dc',
+    'constraint',
+    'asset'
+  ],
+  storageArray: [
+    'service provider',
+    'main dc',
+    'light dc',
     'asset',
-    'device',
-    'application'
+    'end user'
   ],
-  applicationArray: ['device', 'information', 'asset', 'actor'],
-  micronetArray: ['device', 'net', 'micronet'],
-  netArray: ['micronet', 'threat', 'device'],
-  informationArray: ['asset', 'application', 'device', 'actor'],
-  actorArray: ['device', 'application', 'information'],
-  maliciousActorArray: ['device', 'application', 'information', 'threat'],
-  assetArray: [
-    'information',
-    'application',
-    'threat',
-    'actor',
-    'device',
-    'micronet'
+  processArray: [
+    'service providers',
+    'main dc',
+    'light dc',
+    'asset',
+    'end user'
   ],
-  constraintArray: ['threat', 'micronet'],
-  threatArray: ['asset', 'malicious actor', 'constraint', 'net']
+  constraintArray: ['main dc', 'light dc', 'vnf', 'threat'],
+  assetArray: ['vnf', 'storage', 'process', 'threat'],
+  endUserArray: ['storage', 'process'],
+  threatArray: ['asset', 'constraint', 'malicious actor'],
+  maliciousActorArray: ['threat']
 }
 
-// concepts and allowed connections pairs
 dgnMetamodel.pairs = {
-  device: dgnMetamodel.deviceArray,
-  application: dgnMetamodel.applicationArray,
-  micronet: dgnMetamodel.micronetArray,
-  net: dgnMetamodel.netArray,
-  information: dgnMetamodel.informationArray,
-  actor: dgnMetamodel.actorArray,
-  'malicious actor': dgnMetamodel.maliciousActorArray,
-  asset: dgnMetamodel.assetArray,
+  'service provider': dgnMetamodel.serviceProvArray,
+  'infrastructure provider': dgnMetamodel.infrastructureProvArray,
+  cesm: dgnMetamodel.cescmArray,
+  vim: dgnMetamodel.vimArray,
+  'main dc': dgnMetamodel.mainDcArray,
+  'light dc': dgnMetamodel.lightDcArray,
+  vnf: dgnMetamodel.vnfArray,
+  storage: dgnMetamodel.storageArray,
+  processArray: dgnMetamodel.processArray,
   constraint: dgnMetamodel.constraintArray,
-  threat: dgnMetamodel.threatArray
+  asset: dgnMetamodel.assetArray,
+  'end user': dgnMetamodel.endUserArray,
+  threat: dgnMetamodel.threatArray,
+  'malicious actor': dgnMetamodel.maliciousActorArray
 }
 
 module.exports = dgnMetamodel

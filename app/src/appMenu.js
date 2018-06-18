@@ -4,7 +4,7 @@ const app = electron.app
 // url for the ASTo wiki
 const docsURL = 'https://or3stis.github.io/apparatus/docs'
 // url for issue reporting
-const issueURL = 'https://github.com/Or3stis/apparatus/issues'
+const issueURL = 'https://github.com/CapriTechLimited/5G-SAT/issues'
 
 const template = [
   {

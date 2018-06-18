@@ -1,6 +1,6 @@
-# ASTo - Apparatus Software Tool
+# 5G-SAT - 5G Security Analysis Tool
 
-## An IoT network security analysis and visualization tool
+## An 5G security analysis and visualization tool
 
 [![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](http://standardjs.com/)
 [![styled with prettier](https://img.shields.io/badge/styled_with-prettier-ff69b4.svg)](https://github.com/prettier/prettier)
@@ -8,42 +8,24 @@
 [![dependencies Status](https://david-dm.org/or3stis/apparatus.svg)](https://david-dm.org/or3stis/apparatus)
 [![devDependencies Status](https://david-dm.org/or3stis/apparatus/dev-status.svg)](https://david-dm.org/or3stis/apparatus?type=dev)
 
-ASTo is security analysis tool for IoT networks. It is developed to support the Apparatus security framework. ASTo is based on
+5G-SAT is security analysis tool for 5G systems. It is a fork of the IoT security analysis tool [ASTo](https://github.com/Or3stis/apparatus). 5G-SAT is based on
 [electron](http://electron.atom.io/) and
 [cytoscape.js](http://js.cytoscape.org/). The icons are provided by Google's [Material Design](https://material.io/icons/).
 
-The application is in alpha stage. The focus now is to improve the core functionality of the application along with the introduction of additional features, in order to reach beta stage.
+Some screenshots..
 
-## Features
+![](https://raw.githubusercontent.com/CapriTechLimited/5G-SAT/master/assets/screenShot1.png)
 
-1. Graph based visualization of IoT systems.
-1. Model IoT systems in design and implementation engineering phases.
-1. Automatic model transition between the two engineering phases.
-1. Model IoT system state.
-1. Automate implementation phase models generation using pcap-ng files.
-1. Perform model-based vulnerability identification through CVE databases.
-1. Generate automated model-based security insights.
-1. Attribute-based pattern identification.
-1. Search through graphs using a variety of options (concepts, modules, attributes).
-1. Togglable Light and Dark theme.
+![](https://raw.githubusercontent.com/CapriTechLimited/5G-SAT/master/assets/screenShot2.png)
 
-Some screenshots
+![](https://raw.githubusercontent.com/CapriTechLimited/5G-SAT/master/assets/screenShot3.png)
 
-![asto home](https://raw.githubusercontent.com/Or3stis/apparatus/master/assets/screenShot1.png)
-
-![asto UI 1](https://raw.githubusercontent.com/Or3stis/apparatus/master/assets/screenShot2.png)
+![](https://raw.githubusercontent.com/CapriTechLimited/5G-SAT/master/assets/screenShot4.png)
 
 ![asto UI 2](https://raw.githubusercontent.com/Or3stis/apparatus/master/assets/screenShot3.png)
 
-![asto UI 2](https://raw.githubusercontent.com/Or3stis/apparatus/master/assets/screenShot4.png)
+5G-SAT supports a light and a dark color theme. The colors themes are based on Atom's [One Dark](https://github.com/atom/one-dark-syntax) and [One Light](https://github.com/atom/one-light-syntax). You can switch between the themes by typing `toggle` in ASTo's console (bottom right corner, cmd/ctrl + l). To make the change persistent between startups you need to modify the `config.colorTheme` variable in the `./app/settings/config.js` file. The value can either be `dark` or `light`.
 
-## Console
-
-ASTo has a command line console available on the bottom right corner of the app. You gain focus on the console by pressing the keybinding `cmd + l` for macOs and `ctrl + l` for Windows/Linux. If you type `help`, it will display a list of console options.
-
-The console can be used to search for specific objects in the graph or perform operations. Raw text is used as search input. For example, if you type `device`, ASTo will highlight all the nodes in the graph that have the word `device` as an attribute.
-
-All console commands must be preceded with a `:`. For example, typing `:insights` will perform the security insights functions. On the other hand, typing `insights` (without the `:`) will perform a search operation on the graph elements with the keyword `insights`.
 
 ## Color themes
 
@@ -55,9 +37,9 @@ To clone and run this repository you'll need [Git](https://git-scm.com) and [Nod
 
 ```bash
 # Clone this repository
-git clone https://github.com/Or3stis/apparatus.git
-# Navigate into the repository
-cd apparatus
+git clone https://github.com/CapriTechLimited/5G-SAT.git
+# Go into the repository
+cd 5G-SAT
 # Install dependencies
 npm install
 ```
@@ -76,7 +58,7 @@ npm run dist
 Because the app is still in prototype stage, it is best to keep up to date with the most recent commits. To do so, before starting the app, type:
 
 ```bash
-# inside the apparatus directory
+# inside the 5G-SAT directory
 
 # update to latest
 git pull
@@ -92,14 +74,11 @@ You can find more information about Cytoscape's performance optimizations in thi
 
 ## Contributing
 
-If you want to contribute that's great 😃. Check the [contributing](https://github.com/Or3stis/apparatus/blob/master/CONTRIBUTING.md) guide. The application is being developed on Mac. That means that new commits might introduce breaking changes in other platforms. Especially commits that involve access to the file system. If something is not working, don't hesitate to create an [issue](https://github.com/Or3stis/apparatus/issues).
+If you want to contribute that's great news 😃. Check the [contributing](https://github.com/CapriTechLimited/5G-SAT/blob/master/CONTRIBUTING.md) guide. The application is being developed on Mac. That means that new commits might introduce breaking changes in other platforms. Especially commits that involve access to the file system. If something is not working, don't hesitate to create an [issue](https://github.com/CapriTechLimited/5G-SAT/issues).
 
-If you want to find out how the app works check the [wiki](https://or3stis.github.io/apparatus/wiki).
+<!-- If you want to find out how the app works check the [wiki](https://github.com/CapriTechLimited/5G-SAT/wiki). -->
 
-You can check the project's planned features in the [roadmap](https://or3stis.github.io/apparatus/roadmap).
+<!-- You can check the project's planned features in the [roadmap](https://github.com/Or3stis/apparatus/wiki/Roadmap). -->
 
-## Thanks
-
-A shoutout to [@NOMNUDS](https://github.com/NOMNUDS) and [@nickarg](https://github.com/nickarg) who provide the much-needed feedback on Windows.
 
 ### License [MIT](LICENSE.md)

@@ -1,42 +1,45 @@
-// shows the total number of nodes along with their concept type and module
-
-const dgnMetamodel = require('./dgnSchema.js')
-
+/**
+ * shows the total number of nodes, their concept type and module
+ *
+ * @param {Object} cy cytoscape instance
+ */
 module.exports = function overview (cy) {
   // initialize the output of the module
   let output = ''
 
-  // stores the node of module nodes
-  const moduleNodes = {
-    network: {
-      schema: dgnMetamodel.network,
-      numberOfNodes: 0
-    },
-    security: {
-      schema: dgnMetamodel.security,
-      numberOfNodes: 0
-    },
-    social: {
-      schema: dgnMetamodel.social,
-      numberOfNodes: 0
-    }
-  }
-
   // stores the number of each node
   const graphNodes = {
-    device: {
+    'service provider': {
       numberOfNodes: 0
     },
-    application: {
+    'infrastructure provider': {
       numberOfNodes: 0
     },
-    micronet: {
+    cescm: {
       numberOfNodes: 0
     },
-    net: {
+    vim: {
       numberOfNodes: 0
     },
-    information: {
+    'main dc': {
+      numberOfNodes: 0
+    },
+    'light dc': {
+      numberOfNodes: 0
+    },
+    'end user': {
+      numberOfNodes: 0
+    },
+    vnf: {
+      numberOfNodes: 0
+    },
+    storage: {
+      numberOfNodes: 0
+    },
+    process: {
+      numberOfNodes: 0
+    },
+    'malicious actor': {
       numberOfNodes: 0
     },
     asset: {
@@ -47,12 +50,6 @@ module.exports = function overview (cy) {
     },
     threat: {
       numberOfNodes: 0
-    },
-    actor: {
-      numberOfNodes: 0
-    },
-    'malicious actor': {
-      numberOfNodes: 0
     }
   }
 
@@ -62,12 +59,6 @@ module.exports = function overview (cy) {
   // count the number of nodes
   cy.nodes().map(node => {
     const nodeConcept = node.data().asto.concept
-    // count the module nodes
-    Object.keys(moduleNodes).map(module => {
-      if (moduleNodes[module].schema.includes(nodeConcept) === true) {
-        moduleNodes[module].numberOfNodes += 1
-      }
-    })
     // count the concept nodes
     Object.keys(graphNodes).map(concept => {
       if (nodeConcept === concept) {
@@ -81,17 +72,13 @@ module.exports = function overview (cy) {
     output += `• ${node} nodes: ${numberOfNodes}\n`
   }
 
-  // loop the objects to compose the output
-  Object.keys(moduleNodes).map(module => {
-    composeOutput(module, moduleNodes[module].numberOfNodes)
-  })
   // new line between modules and concepts
   output += `\n`
   Object.keys(graphNodes).map(node => {
     composeOutput(node, graphNodes[node].numberOfNodes)
   })
 
-  // show output in the graph container
+  // show result in the graph container
   const containerNode = document.getElementById('container-node-id')
   const containerNodeInfo = document.getElementById('container-node-info-id')
   // appends info to the div

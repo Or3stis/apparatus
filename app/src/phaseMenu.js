@@ -6,7 +6,7 @@ const initialize = require('./initialize.js')
 const pcapImport = require('./imp/pcapImport.js')
 
 const template = '../../settings/modelTemplate.js'
-const testGraph = '../../../sample/smartHome.js'
+const testGraph = '../../../sample/5gTest.json'
 
 let cy = {}
 

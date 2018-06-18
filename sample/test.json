@@ -1,0 +1,623 @@
+{
+  "elements": {
+    "nodes": [
+      {
+        "data": {
+          "id": "n1",
+          "label": "service provider",
+          "asto": { "description": "", "concept": "service provider" }
+        },
+        "position": { "x": 861.875, "y": 361.5 },
+        "group": "nodes",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "classes": "label-nodes"
+      },
+      {
+        "data": {
+          "id": "n2",
+          "label": "infrastructure provider",
+          "asto": {
+            "description": "",
+            "purpose": "",
+            "concept": "infrastructure provider"
+          }
+        },
+        "position": { "x": -123.12500000000011, "y": 361.5 },
+        "group": "nodes",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "classes": "label-nodes"
+      },
+      {
+        "data": {
+          "id": "n3",
+          "label": "cescm",
+          "asto": { "description": "", "concept": "cescm" }
+        },
+        "position": { "x": 779.7916666666666, "y": 150.625 },
+        "group": "nodes",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "classes": "label-nodes"
+      },
+      {
+        "data": {
+          "id": "n4",
+          "label": "vim",
+          "asto": { "description": "", "concept": "vim" }
+        },
+        "position": { "x": -82.08333333333326, "y": 150.625 },
+        "group": "nodes",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "classes": "label-nodes"
+      },
+      {
+        "data": {
+          "id": "n5",
+          "label": "main dc",
+          "asto": { "description": "", "concept": "main dc" }
+        },
+        "position": { "x": 779.7916666666666, "y": -60.25 },
+        "group": "nodes",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "classes": "label-nodes"
+      },
+      {
+        "data": {
+          "id": "n6",
+          "label": "light dc",
+          "asto": { "description": "", "intent": "", "concept": "light dc" }
+        },
+        "position": { "x": 205.20833333333337, "y": -60.25 },
+        "group": "nodes",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "classes": "label-nodes"
+      },
+      {
+        "data": {
+          "id": "n7",
+          "label": "vnf",
+          "asto": { "description": "", "concept": "vnf" }
+        },
+        "position": { "x": 492.5, "y": 150.625 },
+        "group": "nodes",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "classes": "label-nodes"
+      },
+      {
+        "data": {
+          "id": "n8",
+          "label": "storage",
+          "asto": { "description": "", "property": "", "concept": "storage" }
+        },
+        "position": { "x": 1067.0833333333333, "y": 150.625 },
+        "group": "nodes",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "classes": "label-nodes"
+      },
+      {
+        "data": {
+          "id": "n9",
+          "label": "process",
+          "asto": { "description": "", "type": "", "concept": "process" }
+        },
+        "position": { "x": 205.20833333333337, "y": 150.625 },
+        "group": "nodes",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "classes": "label-nodes"
+      },
+      {
+        "data": {
+          "id": "n10",
+          "label": "constraint",
+          "asto": { "description": "test", "concept": "constraint" }
+        },
+        "position": { "x": 123.125, "y": 361.5 },
+        "group": "nodes",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "classes": "label-nodes"
+      },
+      {
+        "data": {
+          "id": "n11",
+          "label": "asset",
+          "asto": { "description": "", "concept": "asset" }
+        },
+        "position": { "x": 369.37499999999994, "y": 361.5 },
+        "group": "nodes",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "classes": "label-nodes"
+      },
+      {
+        "data": {
+          "id": "n12",
+          "label": "end user",
+          "asto": { "description": "", "concept": "end user" }
+        },
+        "position": { "x": 615.625, "y": 361.5 },
+        "group": "nodes",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "classes": "label-nodes"
+      },
+      {
+        "data": {
+          "id": "n13",
+          "label": "threat",
+          "asto": { "description": "", "concept": "threat" }
+        },
+        "position": { "x": 205.20833333333337, "y": 572.375 },
+        "group": "nodes",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "classes": "label-nodes"
+      },
+      {
+        "data": {
+          "id": "n14",
+          "label": "malicious actor",
+          "asto": { "description": "", "concept": "malicious actor" }
+        },
+        "position": { "x": 205.20833333333337, "y": 783.25 },
+        "group": "nodes",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "classes": "label-nodes"
+      },
+      {
+        "data": {
+          "id": "n15",
+          "label": "constraint",
+          "asto": { "description": "", "concept": "constraint" }
+        },
+        "position": { "x": 779.7916666666666, "y": 783.25 },
+        "group": "nodes",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "classes": "label-nodes"
+      },
+      {
+        "data": {
+          "id": "n16",
+          "label": "threat",
+          "asto": { "description": "", "concept": "threat" }
+        },
+        "position": { "x": 779.7916666666666, "y": 572.375 },
+        "group": "nodes",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "classes": "label-nodes"
+      },
+      {
+        "data": {
+          "id": "n17",
+          "label": "asset",
+          "asto": { "description": "", "concept": "asset" }
+        },
+        "position": { "x": 1108.125, "y": 361.5 },
+        "group": "nodes",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "classes": "label-nodes"
+      }
+    ],
+    "edges": [
+      {
+        "data": {
+          "id": "en13n11",
+          "source": "n13",
+          "target": "n11",
+          "label": "targets"
+        },
+        "position": {},
+        "group": "edges",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "classes": "label-edges"
+      },
+      {
+        "data": {
+          "id": "en11n9",
+          "source": "n11",
+          "target": "n9",
+          "label": "uses"
+        },
+        "position": {},
+        "group": "edges",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "classes": "label-edges"
+      },
+      {
+        "data": {
+          "id": "en6n7",
+          "source": "n6",
+          "target": "n7",
+          "label": "has"
+        },
+        "position": {},
+        "group": "edges",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "classes": "label-edges"
+      },
+      {
+        "data": {
+          "id": "en5n7",
+          "source": "n5",
+          "target": "n7",
+          "label": "has"
+        },
+        "position": {},
+        "group": "edges",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "classes": "label-edges"
+      },
+      {
+        "data": {
+          "id": "en4n6",
+          "source": "n4",
+          "target": "n6",
+          "label": "manages"
+        },
+        "position": {},
+        "group": "edges",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "classes": "label-edges"
+      },
+      {
+        "data": {
+          "id": "en3n5",
+          "source": "n3",
+          "target": "n5",
+          "label": "manages"
+        },
+        "position": {},
+        "group": "edges",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "classes": "label-edges"
+      },
+      {
+        "data": {
+          "id": "en6n5",
+          "source": "n6",
+          "target": "n5",
+          "label": "belongs"
+        },
+        "position": {},
+        "group": "edges",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "classes": "label-edges"
+      },
+      {
+        "data": {
+          "id": "en2n4",
+          "source": "n2",
+          "target": "n4",
+          "label": "owns"
+        },
+        "position": {},
+        "group": "edges",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "classes": "label-edges"
+      },
+      {
+        "data": {
+          "id": "en1n3",
+          "source": "n1",
+          "target": "n3",
+          "label": "uses"
+        },
+        "position": {},
+        "group": "edges",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "classes": "label-edges"
+      },
+      {
+        "data": {
+          "id": "en10n7",
+          "source": "n10",
+          "target": "n7",
+          "label": "is"
+        },
+        "position": {},
+        "group": "edges",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "classes": "label-edges"
+      },
+      {
+        "data": {
+          "id": "en5n8",
+          "source": "n5",
+          "target": "n8",
+          "label": "has"
+        },
+        "position": {},
+        "group": "edges",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "classes": "label-edges"
+      },
+      {
+        "data": {
+          "id": "en6n9",
+          "source": "n6",
+          "target": "n9",
+          "label": "has"
+        },
+        "position": {},
+        "group": "edges",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "classes": "label-edges"
+      },
+      {
+        "data": {
+          "id": "en12n9",
+          "source": "n12",
+          "target": "n9",
+          "label": "is"
+        },
+        "position": {},
+        "group": "edges",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "classes": "label-edges"
+      },
+      {
+        "data": {
+          "id": "en14n13",
+          "source": "n14",
+          "target": "n13",
+          "label": "poses"
+        },
+        "position": {},
+        "group": "edges",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "classes": "label-edges"
+      },
+      {
+        "data": {
+          "id": "en15n13",
+          "source": "n15",
+          "target": "n13",
+          "label": "mitigates"
+        },
+        "position": {},
+        "group": "edges",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "classes": "label-edges"
+      },
+      {
+        "data": {
+          "id": "en17n8",
+          "source": "n17",
+          "target": "n8",
+          "label": "is"
+        },
+        "position": {},
+        "group": "edges",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "classes": "label-edges"
+      },
+      {
+        "data": {
+          "id": "en16n17",
+          "source": "n16",
+          "target": "n17",
+          "label": "targets"
+        },
+        "position": {},
+        "group": "edges",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "classes": "label-edges"
+      }
+    ]
+  },
+  "style": [
+    {
+      "selector": "node",
+      "style": {
+        "shape": "ellipse",
+        "background-color": "#abb2bf",
+        "text-wrap": "wrap",
+        "text-max-width": "100px"
+      }
+    },
+    {
+      "selector": "edge",
+      "style": {
+        "curve-style": "bezier",
+        "line-color": "#abb2bf",
+        "width": "2px"
+      }
+    },
+    {
+      "selector": ".faded",
+      "style": { "opacity": "0.25", "text-opacity": "0" }
+    },
+    {
+      "selector": ".selection",
+      "style": { "background-color": "#61afef", "line-color": "#61afef" }
+    },
+    {
+      "selector": ".old-selection",
+      "style": { "background-color": "#cf8772" }
+    },
+    { "selector": ".attention", "style": { "background-color": "#d19a66" } },
+    { "selector": ".protect", "style": { "background-color": "#56b6c2" } },
+    {
+      "selector": ".label-nodes",
+      "style": {
+        "label": "data(label)",
+        "text-valign": "center",
+        "color": "#abb2bf",
+        "text-outline-width": "2px",
+        "text-outline-color": "#282c34"
+      }
+    },
+    {
+      "selector": ".label-edges",
+      "style": {
+        "label": "data(label)",
+        "target-arrow-shape": "triangle",
+        "target-arrow-color": "#abb2bf",
+        "color": "#abb2bf",
+        "text-outline-width": "2px",
+        "text-outline-color": "#282c34"
+      }
+    },
+    {
+      "selector": ".label-id",
+      "style": {
+        "label": "data(id)",
+        "text-valign": "center",
+        "color": "#abb2bf",
+        "text-outline-width": "2px",
+        "text-outline-color": "#282c34"
+      }
+    },
+    {
+      "selector": ".label-dsc",
+      "style": {
+        "label": "data(asto.description)",
+        "text-valign": "center",
+        "color": "#abb2bf",
+        "text-outline-width": "2px",
+        "text-outline-color": "#282c34"
+      }
+    }
+  ],
+  "zoomingEnabled": true,
+  "userZoomingEnabled": true,
+  "zoom": 0.7146996329920804,
+  "minZoom": 1e-50,
+  "maxZoom": 1e50,
+  "panningEnabled": true,
+  "userPanningEnabled": true,
+  "pan": { "x": 147.30007726482523, "y": 102.06403322387484 },
+  "boxSelectionEnabled": true,
+  "renderer": { "name": "canvas" }
+}
