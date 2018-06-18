@@ -16,14 +16,14 @@ module.exports = function homeMenu () {
   // create the design phase button
   const buttonDgn = document.createElement('button')
   buttonDgn.id = 'dgn-id'
-  buttonDgn.className = 'startButtons'
+  buttonDgn.className = 'menu-btn'
   buttonDgn.type = 'button'
   buttonDgn.textContent = 'design phase'
 
   // create the design state phase button
   const buttonDgnState = document.createElement('button')
   buttonDgnState.id = 'dgn-state-id'
-  buttonDgnState.className = 'startButtons'
+  buttonDgnState.className = 'menu-btn'
   buttonDgnState.type = 'button'
   buttonDgnState.textContent = 'design state phase'
 

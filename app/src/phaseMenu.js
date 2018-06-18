@@ -31,21 +31,21 @@ module.exports = function phaseMenu (phase) {
 
   const buttonNew = document.createElement('button')
   buttonNew.id = 'new-id'
-  buttonNew.className = 'startButtons'
+  buttonNew.className = 'menu-btn'
   buttonNew.type = 'button'
   buttonNew.value = 'new'
   buttonNew.textContent = 'new graph'
 
   const buttonLoad = document.createElement('button')
   buttonLoad.id = 'load-id'
-  buttonLoad.className = 'startButtons'
+  buttonLoad.className = 'menu-btn'
   buttonLoad.type = 'button'
   buttonLoad.value = 'load'
   buttonLoad.textContent = 'load graph'
 
   const buttonDebug = document.createElement('button')
   buttonDebug.id = 'debug-id'
-  buttonDebug.className = 'startButtons'
+  buttonDebug.className = 'menu-btn'
   buttonDebug.type = 'button'
   buttonDebug.value = 'debug'
   buttonDebug.textContent = 'debug app'

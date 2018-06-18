@@ -1,11 +1,10 @@
-'use strict'
-
 const phaseMenu = require('../../src/phaseMenu.js')
 
-module.exports = function designStateUI () {
+/** loads the state phase UI */
+module.exports = function stateUI () {
   // shows design phase on the title
   const title = document.getElementById('title-bar-id')
-  title.innerHTML = `design state phase`
+  title.innerHTML = `state diagram`
 
   // show sidebars
   const actionBar = document.getElementById('action-bar-id')
@@ -17,51 +16,47 @@ module.exports = function designStateUI () {
   const dgnStateComponents = document.getElementById('components-id')
 
   dgnStateComponents.innerHTML = `
-  <div class="dropdown" id="add-component-id">
-    <button class="button-icon dropbtn">
+  <div class="dropdown">
+    <button class="btn-icon dropbtn">
       <svg width="24" height="24">
         <use xlink:href="icons/add-node.svg#add-node" class="icon"></use>
       </svg>
     </button>
-    <ul class="dropdown-menu">
+    <ul class="dropdown-menu" id="add-component-id">
       <li><a>model</a></li>
-      <li><a>cescm</a></li>
-      <li><a>event</a></li>
     </ul>
   </div>
 
-  <button class="button-icon" id="add-edge" title="connection">
+  <button class="btn-icon" id="add-edge" title="connection">
     <svg width="24" height="24">
-      <use xlink:href="icons/gesture.svg#gesture" class="icon"></use>
+      <use xlink:href="icons/add-edge.svg#add-edge" class="icon"></use>
     </svg>
   </button>
 
-  <button class="button-icon" id="delete" title="remove">
+  <button class="btn-icon" id="delete" title="remove">
     <svg width="24" height="24">
       <use xlink:href="icons/remove.svg#remove" class="icon"></use>
     </svg>
   </button>
 
-  <div class="dropdown" id="selection-id">
-    <button class="button-icon dropbtn">
+  <div class="dropdown">
+    <button class="btn-icon dropbtn">
       <svg width="24" height="24">
         <use xlink:href="icons/list.svg#list" class="icon"></use>
       </svg>
     </button>
-    <ul class="dropdown-menu">
+    <ul class="dropdown-menu" id="selection-id">
       <li><a>model</a></li>
-      <li><a>cescm</a></li>
-      <li><a>event</a></li>
     </ul>
   </div>
 
-  <div class="dropdown" id="layout-button">
-    <button class="button-icon dropbtn" title="layout options">
+  <div class="dropdown">
+    <button class="btn-icon dropbtn" title="layout options">
       <svg width="24" height="24">
-        <use xlink:href="icons/group.svg#group" class="icon"></use>
+        <use xlink:href="icons/layout.svg#layout" class="icon"></use>
       </svg>
     </button>
-    <ul class="dropdown-menu">
+    <ul class="dropdown-menu" id="layout-btn">
       <li><a>cose</a></li>
       <li><a>breadthfirst</a></li>
       <li><a>breadthfirst(circle)</a></li>
@@ -71,60 +66,56 @@ module.exports = function designStateUI () {
     </ul>
   </div>
 
-  <button class="button-icon" id="model-validate-button" title="model validation">
+  <div class="dropdown">
+  <button class="btn-icon dropbtn" title="label options">
     <svg width="24" height="24">
-      <use xlink:href="icons/check.svg#check" class="icon"></use>
+      <use xlink:href="icons/label.svg#label" class="icon"></use>
     </svg>
   </button>
+  <ul class="dropdown-menu" id="labels-btn">
+    <li><a>hide all labels</a></li>
+    <li><a>show edge labels</a></li>
+    <li><a>show node concepts</a></li>
+    <li><a>show node IDs</a></li>
+    <li><a>show node descriptions</a></li>
+  </ul>
+  </div>
 
-  <button class="button-icon" id="overview-button" title="overview">
+  <button class="btn-icon" id="expose-btn" title="expose">
     <svg width="24" height="24">
       <use xlink:href="icons/explore.svg#explore" class="icon"></use>
     </svg>
   </button>
 
-  <button class="button-icon" id="pattern-button" title="patterns">
+  <button class="btn-icon" id="pattern-btn" title="patterns">
     <svg width="24" height="24">
       <use xlink:href="icons/search.svg#search" class="icon"></use>
     </svg>
   </button>
 
-  <button class="button-icon" id="save-button">
+  <button class="btn-icon" id="save-btn">
     <svg width="24" height="24">
       <use xlink:href="icons/save.svg#save" class="icon"></use>
     </svg>
   </button>
 
-  <!-- <button class="button-icon" id="load-button">
+  <!-- <button class="btn-icon" id="load-button">
     <svg width="24" height="24">
       <use xlink:href="icons/folder.svg#folder" class="icon"></use>
     </svg>
   </button> -->
 
-  <form>
-    <button class="button-icon" id="home-button-id" type="submit" formaction="index.html" title="home">
-      <svg width="24" height="24">
-        <use xlink:href="icons/home.svg#home" class="icon"></use>
-      </svg>
-    </button>
-  </form>
-
-  <!-- <button class="button-icon" id="test-button" title="test">
+  <button class="btn-icon" id="home-btn" title="home">
     <svg width="24" height="24">
-      <use xlink:href="icons/bug.svg#bug" class="icon"></use>
+      <use xlink:href="icons/home.svg#home" class="icon"></use>
     </svg>
-  </button> -->
+  </button>
 
-  <div class="label-wrapper" id="label-wrapper-id">
-    <button class="label-button" id="hide-label" title="hide labels">1</button>
-    <button class="label-button" id="show-label-edge" title="show edge labels">2</button>
-    <button class="label-button" id="show-label-node" title="show node labels">3</button>
-    <button class="label-button" id="show-node-id" title="show nodes id">4</button>
-    <button class="label-button" id="show-node-disc" title="show node description">5</button>
-  </div>
-
-</div>`
+  <div class="tgl-wrapper">
+    <input type="checkbox" id="theme-btn" class="tgl"/>
+    <label for="theme-btn" class="tgl-lbl"></label>
+  </div>`
 
   // links the design-state UI with the rest of the app
-  phaseMenu('design-state')
+  phaseMenu('state')
 }
