@@ -1,9 +1,14 @@
-// saves graph
+// helper function to save graphs
 
-const jsonfile = require('jsonfile')
+const bubbleTxt = require('./bubbleTxt.js')
+const jsonfileWrite = require('jsonfile').writeFile
 const { dialog } = require('electron').remote
-const printChatText = require('./printChatText.js')
 
+/**
+ * saves graph
+ *
+ * @param {Object} cy cytoscape instance
+ */
 module.exports = function save (cy) {
   // parses graph and stores it as an object
   const fullGraph = cy.json()
@@ -18,12 +23,15 @@ module.exports = function save (cy) {
       ]
     },
     fileToSave => {
-      jsonfile.writeFile(fileToSave, fullGraph, err => {
+      jsonfileWrite(fileToSave, fullGraph, err => {
         if (err) {
-          console.error(err.message)
+          dialog.showErrorBox('Error while saving the file', err.message)
         } else {
-          printChatText('graph saved\n👍')
+          // remove the change indicator on save
+          const titleBar = document.getElementById('title-bar-id')
+          titleBar.innerHTML = titleBar.innerHTML.replace(' •', ' ')
         }
+        bubbleTxt('graph saved\n👍')
       })
     }
   )

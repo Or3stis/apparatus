@@ -1,6 +1,10 @@
-// when button module selection is clicked, corresponing nodes are highlighted
-
-module.exports = function moduleSelection (cy, input) {
+/**
+ * highlights all the nodes of a specific module
+ *
+ * @param {Object} cy cytoscape instance
+ * @param {any} selection user selection
+ */
+module.exports = function moduleSelection (cy, selection) {
   // grouping of the module components
   let groupArray = []
   const networkArray = [
@@ -8,7 +12,6 @@ module.exports = function moduleSelection (cy, input) {
     'network connection',
     'micronet',
     'net',
-    'unidentified node',
     'information',
     'application',
     'thing'
@@ -29,8 +32,7 @@ module.exports = function moduleSelection (cy, input) {
     'control sensor'
   ]
 
-  const condition = input
-  switch (condition) {
+  switch (selection) {
     case 'network':
       groupArray = networkArray
       break
@@ -55,8 +57,10 @@ module.exports = function moduleSelection (cy, input) {
     case 'network-social':
       groupArray = networkArray.concat(socialArray)
       break
-    default:
+    case '':
       groupArray = []
+      break
+    default:
       console.error('error in moduleSelection.js')
   }
 
@@ -66,7 +70,7 @@ module.exports = function moduleSelection (cy, input) {
   // removes the faded class from the selected nodes
   // and adds them to node count
   cy.nodes().map(node => {
-    const nodeConcept = node.data().info.concept
+    const nodeConcept = node.data().asto.concept
     if (groupArray.includes(nodeConcept) === true) {
       node.removeClass('faded')
       totalNodes += 1
@@ -74,5 +78,5 @@ module.exports = function moduleSelection (cy, input) {
   })
 
   const htmlElement = document.getElementById('legend-id')
-  htmlElement.textContent = `${condition} nodes: ${totalNodes}`
+  htmlElement.textContent = `${selection} nodes: ${totalNodes}`
 }

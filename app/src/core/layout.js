@@ -1,6 +1,11 @@
 // source: http://js.cytoscape.org/#layouts/cose
 
-// changes the layout of the graph
+/**
+ * changes the layout of the graph
+ *
+ * @param {Object} cy cytoscape instance
+ * @param {string} selection user selection
+ */
 module.exports = function layout (cy, selection) {
   // cose layout
   const coseLayout = cy.layout({
@@ -18,11 +23,11 @@ module.exports = function layout (cy, selection) {
     // (0 -> only updated on the end)
     refresh: 20,
     fit: true,
-    padding: 30,
+    padding: 10,
     // Constrain layout bounds; { x1, y1, x2, y2 } or { x1, y1, w, h }
     boundingBox: undefined,
     // Excludes the label when calculating node bounding boxes for the layout algorithm
-    nodeDimensionsIncludeLabels: false,
+    nodeDimensionsIncludeLabels: true,
     // Randomize the initial positions of the nodes (true) or use existing positions (false)
     randomize: false,
     // Extra spacing between components in non-compound graphs
@@ -32,7 +37,7 @@ module.exports = function layout (cy, selection) {
       return 400000
     },
     // Node repulsion (overlapping) multiplier
-    nodeOverlap: 10,
+    nodeOverlap: 1,
     // Ideal edge (non nested) length
     idealEdgeLength: edge => {
       return 10
@@ -42,9 +47,9 @@ module.exports = function layout (cy, selection) {
       return 100
     },
     // Nesting factor (multiplier) to compute ideal edge length for nested edges
-    nestingFactor: 5,
+    nestingFactor: 10,
     // Gravity force (constant)
-    gravity: 80,
+    gravity: 10,
     // Maximum number of iterations to perform
     numIter: 1000,
     // Initial temperature (maximum node displacement)
@@ -107,7 +112,7 @@ module.exports = function layout (cy, selection) {
     nodeDimensionsIncludeLabels: false, // Excludes the label when calculating node bounding boxes for the layout algorithm
     spacingFactor: undefined, // Applies a multiplicative factor (>0) to expand or compress the overall area that the nodes take up
     radius: undefined, // the radius of the circle
-    startAngle: 3 / 2 * Math.PI, // where nodes start in radians
+    startAngle: (3 / 2) * Math.PI, // where nodes start in radians
     sweep: undefined, // how many radians should be between the first and last node (defaults to full circle)
     clockwise: true, // whether the layout should go clockwise (true) or counterclockwise/anticlockwise (false)
     sort: undefined, // a sorting function to order the nodes; e.g. function(a, b){ return a.data('weight') - b.data('weight') }
@@ -145,10 +150,10 @@ module.exports = function layout (cy, selection) {
 
     fit: true, // whether to fit the viewport to the graph
     padding: 30, // the padding on fit
-    startAngle: 3 / 2 * Math.PI, // where nodes start in radians
+    startAngle: (3 / 2) * Math.PI, // where nodes start in radians
     sweep: undefined, // how many radians should be between the first and last
     clockwise: true, // whether the layout should go clockwise (true)
-    equidistant: true, // whether levels have an equal radial distance betwen them, may cause bounding box overflow
+    equidistant: true, // whether levels have an equal radial distance between them, may cause bounding box overflow
     minNodeSpacing: 90, // min spacing between outside of nodes
     boundingBox: undefined, // constrain layout bounds;
     avoidOverlap: true, // prevents node overlap
@@ -161,7 +166,6 @@ module.exports = function layout (cy, selection) {
       return node.degree()
     },
     levelWidth: nodes => {
-      // the letiation of concentric values in each level
       return nodes.maxDegree() / 2
     },
     animate: false, // whether to transition the node positions
@@ -195,6 +199,8 @@ module.exports = function layout (cy, selection) {
       break
     case 'concentric':
       concentric.run()
+      break
+    case '':
       break
     default:
       console.error('error in layout.js')

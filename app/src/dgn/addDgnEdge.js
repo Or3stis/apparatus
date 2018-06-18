@@ -1,7 +1,6 @@
-'use strict'
 // adds design phase edge types based on the source and target nodes
 
-const printChatText = require('../helpers/printChatText.js')
+const bubbleTxt = require('../helpers/bubbleTxt.js')
 const addEdge = require('../core/addEdge.js')
 
 module.exports = function addComponent (cy, srcNode, trgNode) {
@@ -108,6 +107,6 @@ module.exports = function addComponent (cy, srcNode, trgNode) {
       addEdge(cy, srcNodeId, trgNodeId, 'poses')
       break
     default:
-      printChatText(`${srcNodeCpt} → ${trgNodeCpt}\nnot allowed 😔`)
+      bubbleTxt(`${srcNodeCpt} → ${trgNodeCpt}\nnot allowed 😔`)
   }
 }

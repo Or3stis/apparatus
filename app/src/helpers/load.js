@@ -1,10 +1,15 @@
-'use strict'
+// helper for loading saved graphs
 
 const { dialog } = require('electron').remote
 const initialize = require('../initialize.js')
 const cyOptions = require('./cyOptions.js')
 
-// loads graphs in js or json format
+/**
+ * loads graphs in js or json format
+ *
+ * @param {Object} cy cytoscape instance
+ * @param {string} phase engineering phase
+ */
 module.exports = function load (cy, phase) {
   // check platform
   let dialogOptions = []

@@ -1,25 +1,32 @@
-// initializes the application
-// and links it with the GUI
-
-// require keybindings
-const keybindings = require('./keybindings.js')
+// initializes the application and links it with the GUI
+const ipc = require('electron').ipcRenderer
 
 // require core modules
 const printTotalNodes = require('./core/printTotalNodes.js')
 const hoverNodeInfo = require('./core/hoverNodeInfo.js')
 const editMenu = require('./core/editMenu.js')
-
-const buttons = require('./buttons.js')
+const editEdge = require('./core/editEdge.js')
 
 // require helper functions
 const rmElement = require('./helpers/rmElement.js')
+const bubbleTxt = require('./helpers/bubbleTxt.js')
 
+// require buttons and keybindings
+const buttons = require('./buttons.js')
+const keybindings = require('./keybindings.js')
+
+/**
+ * initializes the application
+ *
+ * @param {Object} cy cytoscape instance
+ * @param {string} phase engineering analysis phase
+ */
 module.exports = function initialize (cy, phase) {
   // initial label render
   cy.nodes().addClass('label-nodes')
   cy.edges().addClass('label-edges')
 
- // global variables, used in cy.on
+  // global variables, used in cy.on
   // initialize export variables to prevent undefined errors
   let selectedNode = {
     out: {}
@@ -37,13 +44,20 @@ module.exports = function initialize (cy, phase) {
     out: {}
   }
 
+  // stores the initial state of the nodes in the graph
+  const graphNodes = cy.nodes()
   // counter variable to create unique sequential node ids in addComponents.js
-  const initialCount = cy.nodes().length
+  let nodeCounterID = ''
+  cy.nodes().map(node => {
+    nodeCounterID = node.data().id
+  })
+  // turn the counter into an number and remove the 'n'
+  const nodeCounter = Number(nodeCounterID.replace('n', ''))
 
-  // cy.on does stuff when interacting with the graph
+  // cy.on performs actions on interactions with the graph
   // actions when tapping on node
   cy.on('tap', 'node', selection => {
-    // removes previous selections
+    // removes previous selections classes
     cy.elements().removeClass('selection')
     cy.elements().removeClass('attention')
     cy.elements().removeClass('protect')
@@ -59,13 +73,13 @@ module.exports = function initialize (cy, phase) {
     }
 
     srcNode.out = trgNode.out // second selection
-    trgNode.out = selectedNode.out.data()
+    trgNode.out = selectedNode.out.data() // first selection
 
     selectedEdge.out = {} // clear token
 
-    printTotalNodes(cy) // initial node count
+    printTotalNodes(cy) // show number of nodes
 
-    rmElement('info-nodes-id', 'form-id') // remove the edit node element
+    rmElement('message-area-id', 'form-id') // remove the edit node element
     rmElement('window-id', 'nodeMenu-id') // remove node menu element
     rmElement('window-id', 'stageMenu-id') // remove stage menu element
   })
@@ -78,14 +92,15 @@ module.exports = function initialize (cy, phase) {
     cy.nodes().removeClass('old-selection')
     selection.target.addClass('selection')
 
-    selectedNode.out = {} // clear token
-    oldSelectedNode.out = {} // clear token
+    // clear tokens
+    selectedNode.out = {}
+    oldSelectedNode.out = {}
 
     selectedEdge.out = selection.target[0]
 
-    printTotalNodes(cy) // initial node count
+    printTotalNodes(cy) // show number of nodes
 
-    rmElement('info-nodes-id', 'form-id') // remove the edit node element
+    rmElement('message-area-id', 'form-id') // remove the edit node element
     rmElement('window-id', 'nodeMenu-id') // remove node menu element
     rmElement('window-id', 'stageMenu-id') // remove stage menu element
   })
@@ -105,14 +120,14 @@ module.exports = function initialize (cy, phase) {
       oldSelectedNode.out = {}
       selectedEdge.out = {}
 
-      printTotalNodes(cy) // initial node count
+      printTotalNodes(cy) // show number of nodes
 
-      rmElement('info-nodes-id', 'form-id') // remove the edit node element
+      rmElement('message-area-id', 'form-id') // remove the edit node element
       rmElement('window-id', 'nodeMenu-id') // remove node menu element
       rmElement('window-id', 'stageMenu-id') // remove stage menu element
     }
   })
-  // right clicking
+  // right clicking on node
   cy.on('cxttap', 'node', selection => {
     selectedNode.out = selection.target[0]
     editMenu.nodeMenu(cy, selection, selectedNode.out)
@@ -124,6 +139,13 @@ module.exports = function initialize (cy, phase) {
 
     rmElement('window-id', 'stageMenu-id') // remove stage menu element
   })
+  // right click on edge to edit
+  // only available in state diagrams
+  if (phase === 'state') {
+    cy.on('cxttap', 'edge', selection => {
+      editEdge.formEdge(selection.target[0])
+    })
+  }
   // right clicking on stage
   cy.on('cxttap', selection => {
     // checks if only the stage was clicked
@@ -143,13 +165,37 @@ module.exports = function initialize (cy, phase) {
     document.getElementById('container-node-id').style.display = 'none'
   })
 
-  // load the buttons for each phase
-
   // declaration of global buttons
-  buttons(cy, selectedNode, selectedEdge, srcNode, trgNode, initialCount, phase)
-
-  printTotalNodes(cy) // initial node count
-
+  buttons(
+    cy,
+    selectedNode,
+    selectedEdge,
+    srcNode,
+    trgNode,
+    nodeCounter,
+    phase,
+    graphNodes
+  )
   // enable keybindings
-  keybindings(cy, selectedNode, selectedEdge, srcNode, trgNode, phase)
+  keybindings(
+    cy,
+    selectedNode,
+    selectedEdge,
+    srcNode,
+    trgNode,
+    phase,
+    graphNodes
+  )
+
+  // initial node count
+  printTotalNodes(cy)
+
+  // listening for changes in the app settings
+  ipc.on('change-settings', (event, message) => {
+    if (message === 'restore' || message === 'save') {
+      bubbleTxt(
+        'You will need to refresh the app for the color changes to be applied'
+      )
+    }
+  })
 }

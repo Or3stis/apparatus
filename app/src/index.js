@@ -2,10 +2,14 @@
 
 const homeMenu = require('./homeMenu.js')
 const theme = require('./helpers/theme.js')
-const config = require('../settings/config.js')
 
-// makes the initial color render
-theme.setTheme(config.colorTheme)
+const remote = require('electron').remote
 
-// loads up the menu screen
+const userDataPath = remote.app.getPath('userData')
+const settings = require(`${userDataPath}/astoSettings.js`)
+
+// set the first color paint theme
+theme.setTheme(settings.colorTheme)
+
+// load up the menu screen
 homeMenu()

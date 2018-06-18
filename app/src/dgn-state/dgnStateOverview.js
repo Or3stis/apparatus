@@ -1,7 +1,7 @@
 'use strict'
 // prints the total number of nodes along with their concept type and module
 
-const printChatText = require('../helpers/printChatText.js')
+const bubbleTxt = require('../helpers/bubbleTxt.js')
 
 module.exports = function overview (cy) {
   let result = ''
@@ -27,5 +27,5 @@ module.exports = function overview (cy) {
   result = `${result}• model nodes: ${modelNode}\n`
   result = `${result}• event nodes: ${eventNode}\n`
 
-  printChatText(result)
+  bubbleTxt(result)
 }

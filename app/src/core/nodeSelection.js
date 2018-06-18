@@ -1,5 +1,9 @@
-// when button class is clicked the corresponing nodes are highlighted
-
+/**
+ * highlights all the nodes of a specific concept
+ *
+ * @param {Object} cy cytoscape instance
+ * @param {string} classification user input
+ */
 module.exports = function nodeSelection (cy, classification) {
   cy.elements().addClass('faded')
 
@@ -7,7 +11,7 @@ module.exports = function nodeSelection (cy, classification) {
   // removes the faded class from the selected nodes
   // and adds them to node count
   cy.nodes().map(node => {
-    if (node.data().info.concept === classification) {
+    if (node.data().asto.concept === classification) {
       node.removeClass('faded')
       totalNodes += 1
     }

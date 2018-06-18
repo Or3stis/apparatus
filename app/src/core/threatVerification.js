@@ -1,7 +1,10 @@
-// checks if threats are mitigated with constraints
+const bubbleTxt = require('../helpers/bubbleTxt.js')
 
-const printChatText = require('../helpers/printChatText.js')
-
+/**
+ * checks if threats are mitigated by constraints
+ *
+ * @param {Object} cy cytoscape instance
+ */
 module.exports = function threatVerification (cy) {
   let threatArray = []
   let result = ''
@@ -11,12 +14,12 @@ module.exports = function threatVerification (cy) {
 
   // highlights threat and constraint nodes
   cy.nodes().map(node => {
-    if (node.data().info.concept === 'threat') {
+    if (node.data().asto.concept === 'threat') {
       node.removeClass('faded')
       node.addClass('attention')
       threatArray.push(node)
     }
-    if (node.data().info.concept === 'constraint') {
+    if (node.data().asto.concept === 'constraint') {
       node.removeClass('faded')
       node.addClass('protect')
     }
@@ -26,8 +29,8 @@ module.exports = function threatVerification (cy) {
   threatArray.map(threat => {
     const neighbor = threat.neighborhood()
     neighbor.map(type => {
-      if (type.data().hasOwnProperty('info') === true) {
-        if (type.data().info.concept === 'constraint') {
+      if (type.data().hasOwnProperty('asto') === true) {
+        if (type.data().asto.concept === 'constraint') {
           result = `${result} • Threat ${
             threat.data().id
           } mitigated by Constraint ${type.data().id}\n`
@@ -38,9 +41,9 @@ module.exports = function threatVerification (cy) {
   })
   result = `${result}\n • Threats total: ${threatArray.length}\n`
   result = `${result} • Mitigated total: ${mitigatedThreats}\n`
-  printChatText(result)
+  bubbleTxt(result)
 
   if (threatArray.length <= mitigatedThreats) {
-    printChatText('all threats mitigated 🎉')
+    bubbleTxt('all threats mitigated 🎉')
   }
 }

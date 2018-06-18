@@ -3,11 +3,14 @@
     "nodes": [
       {
         "data": {
-          "id": "n1",
+          "id": "n4",
           "label": "service provider",
-          "info": { "description": "", "concept": "service provider" }
+          "asto": {
+            "description": "First Responder",
+            "concept": "service provider"
+          }
         },
-        "position": { "x": 861.875, "y": 361.5 },
+        "position": { "x": 792.4684649913326, "y": 460.93633413846874 },
         "group": "nodes",
         "removed": false,
         "selected": false,
@@ -19,14 +22,13 @@
       {
         "data": {
           "id": "n2",
-          "label": "infrastructure provider",
-          "info": {
-            "description": "",
-            "purpose": "",
-            "concept": "infrastructure provider"
+          "label": "service provider",
+          "asto": {
+            "description": "Second Responder",
+            "concept": "service provider"
           }
         },
-        "position": { "x": -123.12500000000011, "y": 361.5 },
+        "position": { "x": 670.1916761569076, "y": 562.9318540784026 },
         "group": "nodes",
         "removed": false,
         "selected": false,
@@ -38,25 +40,13 @@
       {
         "data": {
           "id": "n3",
-          "label": "cescm",
-          "info": { "description": "", "concept": "cescm" }
+          "label": "service provider",
+          "asto": {
+            "description": "Content Provider",
+            "concept": "service provider"
+          }
         },
-        "position": { "x": 779.7916666666666, "y": 150.625 },
-        "group": "nodes",
-        "removed": false,
-        "selected": false,
-        "selectable": true,
-        "locked": false,
-        "grabbable": true,
-        "classes": "label-nodes"
-      },
-      {
-        "data": {
-          "id": "n4",
-          "label": "vim",
-          "info": { "description": "", "concept": "vim" }
-        },
-        "position": { "x": -82.08333333333326, "y": 150.625 },
+        "position": { "x": 732.7726825509295, "y": 304.5466195110011 },
         "group": "nodes",
         "removed": false,
         "selected": false,
@@ -68,10 +58,14 @@
       {
         "data": {
           "id": "n5",
-          "label": "main dc",
-          "info": { "description": "", "concept": "main dc" }
+          "label": "infrastructure provider",
+          "asto": {
+            "description": "",
+            "purpose": "",
+            "concept": "infrastructure provider"
+          }
         },
-        "position": { "x": 779.7916666666666, "y": -60.25 },
+        "position": { "x": 576.9158846748285, "y": 309.1630487304887 },
         "group": "nodes",
         "removed": false,
         "selected": false,
@@ -83,10 +77,10 @@
       {
         "data": {
           "id": "n6",
-          "label": "light dc",
-          "info": { "description": "", "intent": "", "concept": "light dc" }
+          "label": "cescm",
+          "asto": { "description": "", "concept": "cescm" }
         },
-        "position": { "x": 205.20833333333337, "y": -60.25 },
+        "position": { "x": 652.961599204906, "y": 429.20149963230165 },
         "group": "nodes",
         "removed": false,
         "selected": false,
@@ -98,10 +92,10 @@
       {
         "data": {
           "id": "n7",
-          "label": "vnf",
-          "info": { "description": "", "concept": "vnf" }
+          "label": "main dc",
+          "asto": { "description": "", "concept": "main dc" }
         },
-        "position": { "x": 492.5, "y": 150.625 },
+        "position": { "x": 516.4915063161379, "y": 485.1418931541988 },
         "group": "nodes",
         "removed": false,
         "selected": false,
@@ -113,10 +107,10 @@
       {
         "data": {
           "id": "n8",
-          "label": "storage",
-          "info": { "description": "", "property": "", "concept": "storage" }
+          "label": "light dc",
+          "asto": { "description": "", "intent": "", "concept": "light dc" }
         },
-        "position": { "x": 1067.0833333333333, "y": 150.625 },
+        "position": { "x": 393.29239651627023, "y": 513.7201236761587 },
         "group": "nodes",
         "removed": false,
         "selected": false,
@@ -128,10 +122,10 @@
       {
         "data": {
           "id": "n9",
-          "label": "process",
-          "info": { "description": "", "type": "", "concept": "process" }
+          "label": "vnf",
+          "asto": { "description": "", "concept": "vnf" }
         },
-        "position": { "x": 205.20833333333337, "y": 150.625 },
+        "position": { "x": 287.5627938998142, "y": 620.3858519102578 },
         "group": "nodes",
         "removed": false,
         "selected": false,
@@ -143,10 +137,10 @@
       {
         "data": {
           "id": "n10",
-          "label": "constraint",
-          "info": { "description": "test", "concept": "constraint" }
+          "label": "vnf",
+          "asto": { "description": "", "concept": "vnf" }
         },
-        "position": { "x": 123.125, "y": 361.5 },
+        "position": { "x": 395.3698689649075, "y": 368.3027547797598 },
         "group": "nodes",
         "removed": false,
         "selected": false,
@@ -158,10 +152,10 @@
       {
         "data": {
           "id": "n11",
-          "label": "asset",
-          "info": { "description": "", "concept": "asset" }
+          "label": "vnf",
+          "asto": { "description": "", "concept": "vnf" }
         },
-        "position": { "x": 369.37499999999994, "y": 361.5 },
+        "position": { "x": 258.71860757887794, "y": 461.1893665751651 },
         "group": "nodes",
         "removed": false,
         "selected": false,
@@ -173,10 +167,10 @@
       {
         "data": {
           "id": "n12",
-          "label": "end user",
-          "info": { "description": "", "concept": "end user" }
+          "label": "asset",
+          "asto": { "description": "", "concept": "asset" }
         },
-        "position": { "x": 615.625, "y": 361.5 },
+        "position": { "x": 375.0315520206359, "y": 236.28693047050388 },
         "group": "nodes",
         "removed": false,
         "selected": false,
@@ -188,10 +182,10 @@
       {
         "data": {
           "id": "n13",
-          "label": "threat",
-          "info": { "description": "", "concept": "threat" }
+          "label": "asset",
+          "asto": { "description": "", "concept": "asset" }
         },
-        "position": { "x": 205.20833333333337, "y": 572.375 },
+        "position": { "x": 136.6636942796934, "y": 414.0988507470882 },
         "group": "nodes",
         "removed": false,
         "selected": false,
@@ -203,10 +197,10 @@
       {
         "data": {
           "id": "n14",
-          "label": "malicious actor",
-          "info": { "description": "", "concept": "malicious actor" }
+          "label": "storage",
+          "asto": { "description": "", "property": "", "concept": "storage" }
         },
-        "position": { "x": 205.20833333333337, "y": 783.25 },
+        "position": { "x": 461.7921153028217, "y": 649.4412369156518 },
         "group": "nodes",
         "removed": false,
         "selected": false,
@@ -218,10 +212,10 @@
       {
         "data": {
           "id": "n15",
-          "label": "constraint",
-          "info": { "description": "", "concept": "constraint" }
+          "label": "asset",
+          "asto": { "description": "", "concept": "asset" }
         },
-        "position": { "x": 779.7916666666666, "y": 783.25 },
+        "position": { "x": 410.1493704266505, "y": 778.6271824264412 },
         "group": "nodes",
         "removed": false,
         "selected": false,
@@ -233,10 +227,10 @@
       {
         "data": {
           "id": "n16",
-          "label": "threat",
-          "info": { "description": "", "concept": "threat" }
+          "label": "end user",
+          "asto": { "description": "", "concept": "end user" }
         },
-        "position": { "x": 779.7916666666666, "y": 572.375 },
+        "position": { "x": 580.0091680022306, "y": 730.7220435102014 },
         "group": "nodes",
         "removed": false,
         "selected": false,
@@ -248,10 +242,29 @@
       {
         "data": {
           "id": "n17",
-          "label": "asset",
-          "info": { "description": "", "concept": "asset" }
+          "label": "light dc",
+          "asto": { "description": "", "intent": "", "concept": "light dc" }
         },
-        "position": { "x": 1108.125, "y": 361.5 },
+        "position": { "x": 179.31457920840447, "y": 348.4956141650419 },
+        "group": "nodes",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "classes": "label-nodes"
+      },
+      {
+        "data": {
+          "id": "n18",
+          "label": "infrastructure provider",
+          "asto": {
+            "description": "",
+            "purpose": "",
+            "concept": "infrastructure provider"
+          }
+        },
+        "position": { "x": 243.32816576931336, "y": 267.93204941104165 },
         "group": "nodes",
         "removed": false,
         "selected": false,
@@ -264,25 +277,9 @@
     "edges": [
       {
         "data": {
-          "id": "en13n11",
-          "source": "n13",
-          "target": "n11",
-          "label": "targets"
-        },
-        "position": {},
-        "group": "edges",
-        "removed": false,
-        "selected": false,
-        "selectable": true,
-        "locked": false,
-        "grabbable": true,
-        "classes": "label-edges"
-      },
-      {
-        "data": {
-          "id": "en11n9",
-          "source": "n11",
-          "target": "n9",
+          "id": "en2n6",
+          "source": "n2",
+          "target": "n6",
           "label": "uses"
         },
         "position": {},
@@ -296,26 +293,10 @@
       },
       {
         "data": {
-          "id": "en6n7",
-          "source": "n6",
-          "target": "n7",
-          "label": "has"
-        },
-        "position": {},
-        "group": "edges",
-        "removed": false,
-        "selected": false,
-        "selectable": true,
-        "locked": false,
-        "grabbable": true,
-        "classes": "label-edges"
-      },
-      {
-        "data": {
-          "id": "en5n7",
-          "source": "n5",
-          "target": "n7",
-          "label": "has"
+          "id": "en3n6",
+          "source": "n3",
+          "target": "n6",
+          "label": "uses"
         },
         "position": {},
         "group": "edges",
@@ -331,70 +312,6 @@
           "id": "en4n6",
           "source": "n4",
           "target": "n6",
-          "label": "manages"
-        },
-        "position": {},
-        "group": "edges",
-        "removed": false,
-        "selected": false,
-        "selectable": true,
-        "locked": false,
-        "grabbable": true,
-        "classes": "label-edges"
-      },
-      {
-        "data": {
-          "id": "en3n5",
-          "source": "n3",
-          "target": "n5",
-          "label": "manages"
-        },
-        "position": {},
-        "group": "edges",
-        "removed": false,
-        "selected": false,
-        "selectable": true,
-        "locked": false,
-        "grabbable": true,
-        "classes": "label-edges"
-      },
-      {
-        "data": {
-          "id": "en6n5",
-          "source": "n6",
-          "target": "n5",
-          "label": "belongs"
-        },
-        "position": {},
-        "group": "edges",
-        "removed": false,
-        "selected": false,
-        "selectable": true,
-        "locked": false,
-        "grabbable": true,
-        "classes": "label-edges"
-      },
-      {
-        "data": {
-          "id": "en2n4",
-          "source": "n2",
-          "target": "n4",
-          "label": "owns"
-        },
-        "position": {},
-        "group": "edges",
-        "removed": false,
-        "selected": false,
-        "selectable": true,
-        "locked": false,
-        "grabbable": true,
-        "classes": "label-edges"
-      },
-      {
-        "data": {
-          "id": "en1n3",
-          "source": "n1",
-          "target": "n3",
           "label": "uses"
         },
         "position": {},
@@ -408,26 +325,10 @@
       },
       {
         "data": {
-          "id": "en10n7",
-          "source": "n10",
-          "target": "n7",
-          "label": "is"
-        },
-        "position": {},
-        "group": "edges",
-        "removed": false,
-        "selected": false,
-        "selectable": true,
-        "locked": false,
-        "grabbable": true,
-        "classes": "label-edges"
-      },
-      {
-        "data": {
-          "id": "en5n8",
+          "id": "en5n6",
           "source": "n5",
-          "target": "n8",
-          "label": "has"
+          "target": "n6",
+          "label": "owns"
         },
         "position": {},
         "group": "edges",
@@ -440,8 +341,72 @@
       },
       {
         "data": {
-          "id": "en6n9",
+          "id": "en6n7",
           "source": "n6",
+          "target": "n7",
+          "label": "manages"
+        },
+        "position": {},
+        "group": "edges",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "classes": "label-edges"
+      },
+      {
+        "data": {
+          "id": "en8n7",
+          "source": "n8",
+          "target": "n7",
+          "label": "belongs"
+        },
+        "position": {},
+        "group": "edges",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "classes": "label-edges"
+      },
+      {
+        "data": {
+          "id": "en8n11",
+          "source": "n8",
+          "target": "n11",
+          "label": "has"
+        },
+        "position": {},
+        "group": "edges",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "classes": "label-edges"
+      },
+      {
+        "data": {
+          "id": "en8n10",
+          "source": "n8",
+          "target": "n10",
+          "label": "has"
+        },
+        "position": {},
+        "group": "edges",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "classes": "label-edges"
+      },
+      {
+        "data": {
+          "id": "en8n9",
+          "source": "n8",
           "target": "n9",
           "label": "has"
         },
@@ -456,9 +421,25 @@
       },
       {
         "data": {
-          "id": "en12n9",
+          "id": "en13n11",
+          "source": "n13",
+          "target": "n11",
+          "label": "is"
+        },
+        "position": {},
+        "group": "edges",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "classes": "label-edges"
+      },
+      {
+        "data": {
+          "id": "en12n10",
           "source": "n12",
-          "target": "n9",
+          "target": "n10",
           "label": "is"
         },
         "position": {},
@@ -472,10 +453,10 @@
       },
       {
         "data": {
-          "id": "en14n13",
-          "source": "n14",
-          "target": "n13",
-          "label": "poses"
+          "id": "en8n14",
+          "source": "n8",
+          "target": "n14",
+          "label": "has"
         },
         "position": {},
         "group": "edges",
@@ -488,25 +469,9 @@
       },
       {
         "data": {
-          "id": "en15n13",
+          "id": "en15n14",
           "source": "n15",
-          "target": "n13",
-          "label": "mitigates"
-        },
-        "position": {},
-        "group": "edges",
-        "removed": false,
-        "selected": false,
-        "selectable": true,
-        "locked": false,
-        "grabbable": true,
-        "classes": "label-edges"
-      },
-      {
-        "data": {
-          "id": "en17n8",
-          "source": "n17",
-          "target": "n8",
+          "target": "n14",
           "label": "is"
         },
         "position": {},
@@ -520,10 +485,26 @@
       },
       {
         "data": {
-          "id": "en16n17",
+          "id": "en16n14",
           "source": "n16",
+          "target": "n14",
+          "label": "uses"
+        },
+        "position": {},
+        "group": "edges",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "classes": "label-edges"
+      },
+      {
+        "data": {
+          "id": "en18n17",
+          "source": "n18",
           "target": "n17",
-          "label": "targets"
+          "label": "owns"
         },
         "position": {},
         "group": "edges",
@@ -541,7 +522,7 @@
       "selector": "node",
       "style": {
         "shape": "ellipse",
-        "background-color": "#abb2bf",
+        "background-color": "#383a42",
         "text-wrap": "wrap",
         "text-max-width": "100px"
       }
@@ -550,7 +531,7 @@
       "selector": "edge",
       "style": {
         "curve-style": "bezier",
-        "line-color": "#abb2bf",
+        "line-color": "#383a42",
         "width": "2px"
       }
     },
@@ -560,22 +541,22 @@
     },
     {
       "selector": ".selection",
-      "style": { "background-color": "#61afef", "line-color": "#61afef" }
+      "style": { "background-color": "#3399cd", "line-color": "#3399cd" }
     },
     {
       "selector": ".old-selection",
       "style": { "background-color": "#cf8772" }
     },
-    { "selector": ".attention", "style": { "background-color": "#d19a66" } },
-    { "selector": ".protect", "style": { "background-color": "#56b6c2" } },
+    { "selector": ".attention", "style": { "background-color": "#986901" } },
+    { "selector": ".protect", "style": { "background-color": "#a626a4" } },
     {
       "selector": ".label-nodes",
       "style": {
         "label": "data(label)",
         "text-valign": "center",
-        "color": "#abb2bf",
+        "color": "#383a42",
         "text-outline-width": "2px",
-        "text-outline-color": "#282c34"
+        "text-outline-color": "#fafafa"
       }
     },
     {
@@ -583,10 +564,10 @@
       "style": {
         "label": "data(label)",
         "target-arrow-shape": "triangle",
-        "target-arrow-color": "#abb2bf",
-        "color": "#abb2bf",
+        "target-arrow-color": "#383a42",
+        "color": "#383a42",
         "text-outline-width": "2px",
-        "text-outline-color": "#282c34"
+        "text-outline-color": "#fafafa"
       }
     },
     {
@@ -594,30 +575,30 @@
       "style": {
         "label": "data(id)",
         "text-valign": "center",
-        "color": "#abb2bf",
+        "color": "#383a42",
         "text-outline-width": "2px",
-        "text-outline-color": "#282c34"
+        "text-outline-color": "#fafafa"
       }
     },
     {
       "selector": ".label-dsc",
       "style": {
-        "label": "data(info.description)",
+        "label": "data(asto.description)",
         "text-valign": "center",
-        "color": "#abb2bf",
+        "color": "#383a42",
         "text-outline-width": "2px",
-        "text-outline-color": "#282c34"
+        "text-outline-color": "#fafafa"
       }
     }
   ],
   "zoomingEnabled": true,
   "userZoomingEnabled": true,
-  "zoom": 0.7146996329920804,
+  "zoom": 0.762683365021483,
   "minZoom": 1e-50,
   "maxZoom": 1e50,
   "panningEnabled": true,
   "userPanningEnabled": true,
-  "pan": { "x": 147.30007726482523, "y": 102.06403322387484 },
+  "pan": { "x": 53.38487419953999, "y": -20.579895704114506 },
   "boxSelectionEnabled": true,
   "renderer": { "name": "canvas" }
 }

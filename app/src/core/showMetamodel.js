@@ -1,34 +1,61 @@
-// shows the current phase metamodel in a separate window
+// TODO cannot restore focus on a minimized window
 const remote = require('electron').remote
 const BrowserWindow = remote.BrowserWindow
 
 // metomdels figures
 const dgnMeta = 'metamodels/dgn-model.png'
-const dgnStateMeta = 'metamodels/dgn-state-model.png'
 const impMeta = 'metamodels/imp-model.png'
-const impStateMeta = 'metamodels/imp-state-model.png'
 
-module.exports = function showMetamodel (phase) {
+/**
+ * shows the current phase's metamodel in a separate window
+ *
+ * @param {string} phase engineering phase
+ */
+module.exports = async function showMetamodel (phase) {
   // create the path to the metamodels
-  const metamodePath = __dirname.split('/')
-  metamodePath.pop() // removes the core directory
-  metamodePath.pop() // removes the src directory
+  const metamodelPath = __dirname.split('/')
+  metamodelPath.pop() // removes the core directory
+  metamodelPath.pop() // removes the src directory
+  const finalPath = `file://${metamodelPath.join('/')}`
 
-  let url = ''
-  // checks for the phase
-  if (phase === 'design') {
-    url = dgnMeta
-  } else if (phase === 'design-state') {
-    url = dgnStateMeta
-  } else if (phase === 'implementation') {
-    url = impMeta
-  } else if (phase === 'implementation-state') {
-    url = impStateMeta
+  // creates the window for the metamodel
+  const createWindow = url => {
+    let win = new BrowserWindow({
+      width: 900,
+      height: 700,
+      show: false,
+      webPreferences: {
+        nodeIntegration: false
+      }
+    })
+    win.loadURL(`${finalPath}/${url}`)
+
+    win.on('ready-to-show', () => {
+      win.show()
+      win.focus()
+    })
+
+    win.on('closed', () => {
+      win = null
+    })
   }
-  // creates the window
-  let win = new BrowserWindow({ width: 900, height: 700, show: false })
-  win.loadURL(`file://${metamodePath.join('/')}/${url}`)
-  win.on('ready-to-show', () => {
-    win.show()
-  })
+
+  // if an active metamodel exists
+  const metamodelIsActive = url => {
+    let isWindowActive = false
+    const activeWins = BrowserWindow.getAllWindows()
+    Object.values(activeWins).map(activeWin => {
+      if (activeWin.getURL() === `${finalPath}/${url}`) {
+        isWindowActive = true
+      }
+    })
+    if (isWindowActive === false) createWindow(url)
+  }
+
+  // checks for the phase to show the correct metamodel
+  if (phase === 'design') {
+    metamodelIsActive(dgnMeta)
+  } else if (phase === 'implementation') {
+    metamodelIsActive(impMeta)
+  }
 }

@@ -3,7 +3,7 @@
 // checks if the model is correct
 
 const dgnMetamodel = require('./dgnSchema.js')
-const printChatText = require('../helpers/printChatText.js')
+const bubbleTxt = require('../helpers/bubbleTxt.js')
 
 module.exports = function moduleValidation (cy) {
   // valid component connections
@@ -29,10 +29,10 @@ module.exports = function moduleValidation (cy) {
   function componentValidation (cy, component, componentArray) {
     cy.nodes().map(node => {
       // checks if node is the desired component
-      if (node.data().info.concept === component) {
+      if (node.data().asto.concept === component) {
         // stores the neighboring nodes of the component
         const neighborNodes = node.neighborhood().add(node)
-        const neighborObject = neighborNodes.data().info.concept
+        const neighborObject = neighborNodes.data().asto.concept
 
         Object.keys(neighborObject).map(() => {
           // every neighbor node is added to the array arrWrong
@@ -50,7 +50,7 @@ module.exports = function moduleValidation (cy) {
     // if string not empty, show concepts with wrong connections
     if (result !== '') {
       result = `• ${component} has wrong connections`
-      printChatText(result)
+      bubbleTxt(result)
     }
   }
 
@@ -71,6 +71,6 @@ module.exports = function moduleValidation (cy) {
 
   // if string is empty, the model is correct
   if (result === '') {
-    printChatText('model instance is valid\n👍')
+    bubbleTxt('model instance is valid\n👍')
   }
 }

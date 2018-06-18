@@ -1,9 +1,12 @@
 const electron = require('electron')
-const config = require('../settings/config.js')
+const ipc = require('electron').ipcMain
 // Module to control application life.
 const app = electron.app
 // Module to create native browser window.
 const BrowserWindow = electron.BrowserWindow
+const fs = require('fs')
+
+const appMenu = require('./appMenu.js')
 
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
@@ -14,7 +17,7 @@ let mainWindow
 function createWindow () {
   // Create the browser window.
   mainWindow = new BrowserWindow({
-    backgroundColor: config.background,
+    backgroundColor: '#282c34',
     width: 1200,
     height: 745,
     minWidth: 800,
@@ -36,7 +39,15 @@ function createWindow () {
 
   mainWindow.once('ready-to-show', () => {
     mainWindow.show()
+    mainWindow.focus()
   })
+
+  // capture events from the open windows
+  ipc.on('window-settings', (event, message) => {
+    mainWindow.send('change-settings', message)
+  })
+  // create the application's menu
+  appMenu()
 }
 
 // This method will be called when Electron has finished
@@ -56,3 +67,33 @@ app.on('activate', () => {
   // dock icon is clicked and there are no other windows open.
   if (mainWindow === null) createWindow()
 })
+
+// import the default settings of the app
+const defaultSettings = require('../settings/defaultSettings.js')
+// normalize the settings input
+const defaultSettingsNormalize = JSON.stringify(defaultSettings.settings)
+  .replace(/(?:\\[n])+/g, '\n')
+  .replace(/"/g, '')
+
+const userDataPath = app.getPath('userData')
+
+/** write the astoSettings.js to the OS location */
+const writeSettings = () => {
+  fs.writeFile(
+    `${userDataPath}/astoSettings.js`,
+    defaultSettingsNormalize,
+    err => {
+      if (err) throw err
+    }
+  )
+}
+
+// checks if the local astoSettings.js exists
+if (fs.existsSync(`${userDataPath}/astoSettings.js`) !== true) {
+  writeSettings()
+} else if (
+  fs.existsSync(`${userDataPath}/astoSettings.js`) === true &&
+  fs.statSync(`${userDataPath}/astoSettings.js`).size === 0
+) {
+  writeSettings()
+}

@@ -1,13 +1,21 @@
-// configures the initial option of the cytoscape model
-
 const cytoscape = require('cytoscape')
-const config = require('../../settings/config.js')
+const remote = require('electron').remote
+
+const userDataPath = remote.app.getPath('userData')
+const settings = require(`${userDataPath}/astoSettings.js`)
+
 const graphStyle = require('../../settings/graphStyle.js')
 
+/**
+ * helper to create cytoscape graphs based on specific options
+ *
+ * @param {Object} cy cytoscape instance
+ * @param {string} file file location
+ */
 module.exports = function cyOptions (cy, file) {
   const model = require(file)
   // sets the color values of the graph
-  graphStyle.setStyle(config.colorTheme)
+  graphStyle.setStyle(settings.colorTheme)
 
   // initializes the cytoscape graph
   cy.out = cytoscape({

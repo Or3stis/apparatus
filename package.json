@@ -4,8 +4,11 @@
   "description": "A graphical security analysis tool for 5G systems",
   "main": "main.js",
   "scripts": {
-    "lint": "prettier --no-semi --single-quote --write 'app/src/**/*.js' && standard 'app/src/**/*.js' --fix",
-    "start": "electron app/src/main.js"
+    "lint": "prettier --no-semi --single-quote --write './app/**/*.js' && standard './app/**/*.js' --fix",
+    "dev": "cross-env NODE_ENV=development electron ./app/src/main.js",
+    "postinstall": "install-app-deps",
+    "start": "electron ./app/src/main.js",
+    "dist": "build"
   },
   "repository": {
     "type": "git",

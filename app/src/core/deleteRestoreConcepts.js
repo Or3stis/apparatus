@@ -5,6 +5,14 @@ const printTotalNodes = require('./printTotalNodes.js')
 // holds the deleted nodes
 let deletedNodes = []
 // used as module
+
+/**
+ * delets concepts
+ *
+ * @param {Object} cy cytoscape instance
+ * @param {Object} selectedNode selected node
+ * @param {Object} selectedEdge selected edge
+ */
 const deleteConcept = (cy, selectedNode, selectedEdge) => {
   // removes edges
   if (
@@ -24,7 +32,11 @@ const deleteConcept = (cy, selectedNode, selectedEdge) => {
   printTotalNodes(cy)
 }
 
-// restores deleted nodes from the deleteNodes array
+/**
+ * restores deleted nodes from the deleteNodes array
+ *
+ * @param {Object} cy cytoscape instance
+ */
 const restoreNode = cy => {
   if (deletedNodes.length !== 0) {
     deletedNodes.pop().restore()

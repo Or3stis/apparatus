@@ -1,74 +1,88 @@
-'use strict'
-// prints the total number of nodes along with their concept type and module
-
-const printChatText = require('../helpers/printChatText.js')
-// const dgnMetamodel = require('./dgnSchema.js')
-
+/**
+ * shows the total number of nodes, their concept type and module
+ *
+ * @param {Object} cy cytoscape instance
+ */
 module.exports = function overview (cy) {
-  let result = ''
+  // initialize the output of the module
+  let output = ''
 
-  let serviceProvNode = 0
-  let infrastructureProvNode = 0
-  let cescmNode = 0
-  let vimNode = 0
-  let mainDcNode = 0
-  let lightDcNode = 0
-  let vnfNode = 0
-  let storageNode = 0
-  let processNode = 0
-  let constraintNode = 0
-  let assetNode = 0
-  let endUserNode = 0
-  let threatNode = 0
-  let malActorNode = 0
-
-  cy.nodes().map(node => {
-    const nodeConcept = node.data().info.concept
-    if (nodeConcept === 'service provider') {
-      serviceProvNode += 1
-    } else if (nodeConcept === 'infrastructure provider') {
-      infrastructureProvNode += 1
-    } else if (nodeConcept === 'cescm') {
-      cescmNode += 1
-    } else if (nodeConcept === 'vim') {
-      vimNode += 1
-    } else if (nodeConcept === 'main dc') {
-      mainDcNode += 1
-    } else if (nodeConcept === 'light dc') {
-      lightDcNode += 1
-    } else if (nodeConcept === 'vnf') {
-      vnfNode += 1
-    } else if (nodeConcept === 'storage') {
-      storageNode += 1
-    } else if (nodeConcept === 'process') {
-      processNode += 1
-    } else if (nodeConcept === 'constraint') {
-      constraintNode += 1
-    } else if (nodeConcept === 'asset') {
-      assetNode += 1
-    } else if (nodeConcept === 'end user') {
-      endUserNode += 1
-    } else if (nodeConcept === 'threat') {
-      threatNode += 1
-    } else if (nodeConcept === 'malicious actor') {
-      malActorNode += 1
+  // stores the number of each node
+  const graphNodes = {
+    'service provider': {
+      numberOfNodes: 0
+    },
+    'infrastructure provider': {
+      numberOfNodes: 0
+    },
+    cescm: {
+      numberOfNodes: 0
+    },
+    vim: {
+      numberOfNodes: 0
+    },
+    'main dc': {
+      numberOfNodes: 0
+    },
+    'light dc': {
+      numberOfNodes: 0
+    },
+    'end user': {
+      numberOfNodes: 0
+    },
+    vnf: {
+      numberOfNodes: 0
+    },
+    storage: {
+      numberOfNodes: 0
+    },
+    process: {
+      numberOfNodes: 0
+    },
+    'malicious actor': {
+      numberOfNodes: 0
+    },
+    asset: {
+      numberOfNodes: 0
+    },
+    constraint: {
+      numberOfNodes: 0
+    },
+    threat: {
+      numberOfNodes: 0
     }
+  }
+
+  const totalNodes = cy.elements().nodes().length
+  output = `• total nodes: ${totalNodes}\n\n`
+
+  // count the number of nodes
+  cy.nodes().map(node => {
+    const nodeConcept = node.data().asto.concept
+
+    // count the concept nodes
+    Object.keys(graphNodes).map(concept => {
+      if (nodeConcept === concept) {
+        graphNodes[concept].numberOfNodes += 1
+      }
+    })
   })
 
-  result = `${result}• service provider nodes: ${serviceProvNode}\n`
-  result = `${result}• infrastructure provider nodes: ${infrastructureProvNode}\n`
-  result = `${result}• cescm nodes: ${cescmNode}\n`
-  result = `${result}• vim nodes: ${vimNode}\n`
-  result = `${result}• main dc nodes: ${mainDcNode}\n`
-  result = `${result}• light dc nodes: ${lightDcNode}\n`
-  result = `${result}• vnf nodes: ${vnfNode}\n`
-  result = `${result}• storage nodes: ${storageNode}\n`
-  result = `${result}• process nodes: ${processNode}\n`
-  result = `${result}• constraint nodes: ${constraintNode}\n`
-  result = `${result}• asset nodes: ${assetNode}\n`
-  result = `${result}• end user nodes: ${endUserNode}\n`
-  result = `${result}• threat nodes: ${threatNode}\n`
-  result = `${result}• malicious actor nodes: ${malActorNode}\n`
+  // compose the output by parsing the objects
+  const composeOutput = (node, numberOfNodes) => {
+    output += `• ${node} nodes: ${numberOfNodes}\n`
+  }
 
-  printChatText(result)
+  // new line between modules and concepts
+  output += `\n`
+  Object.keys(graphNodes).map(node => {
+    composeOutput(node, graphNodes[node].numberOfNodes)
+  })
+
+  // show result in the graph container
+  const containerNode = document.getElementById('container-node-id')
+  const containerNodeInfo = document.getElementById('container-node-info-id')
+  // appends info to the div
+  containerNode.style.display = 'block'
+  containerNodeInfo.textContent = output
 }

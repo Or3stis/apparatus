@@ -101,7 +101,7 @@ module.exports = function designUI () {
       <use xlink:href="icons/layout.svg#layout" class="icon"></use>
     </svg>
   </button>
-  <ul class="dropdown-menu" id="layout-button">
+  <ul class="dropdown-menu" id="layout-btn">
     <li><a>cose</a></li>
     <li><a>breadthfirst</a></li>
     <li><a>breadthfirst(circle)</a></li>
@@ -126,13 +126,13 @@ module.exports = function designUI () {
   </ul>
 </div>
 
-<button class="btn-icon" id="threat-verify-button" title="threat verification">
+<button class="btn-icon" id="threat-ver-btn" title="threat verification">
   <svg width="24" height="24">
     <use xlink:href="icons/security.svg#security" class="icon"></use>
   </svg>
 </button>
 
-<button class="btn-icon" id="model-validate-button" title="model validation">
+<button class="btn-icon" id="model-val-btn" title="model validation">
   <svg width="24" height="24">
     <use xlink:href="icons/check.svg#check" class="icon"></use>
   </svg>
@@ -144,13 +144,19 @@ module.exports = function designUI () {
   </svg>
 </button>
 
-<button class="btn-icon" id="pattern-button" title="patterns">
+<button class="btn-icon" id="pattern-btn" title="patterns">
   <svg width="24" height="24">
     <use xlink:href="icons/search.svg#search" class="icon"></use>
   </svg>
 </button>
 
-<button class="btn-icon" id="save-button">
+<button class="btn-icon" id="transition-btn">
+    <svg width="24" height="24">
+      <use xlink:href="icons/swap.svg#swap" class="icon"></use>
+    </svg>
+  </button>
+
+<button class="btn-icon" id="save-btn">
   <svg width="24" height="24">
     <use xlink:href="icons/save.svg#save" class="icon"></use>
   </svg>
@@ -167,12 +173,6 @@ module.exports = function designUI () {
     <use xlink:href="icons/home.svg#home" class="icon"></use>
   </svg>
 </button>
-
-<!-- <button class="btn-icon" id="test-button" title="test">
-  <svg width="24" height="24">
-    <use xlink:href="icons/bug.svg#bug" class="icon"></use>
-  </svg>
-</button> -->
 
 <div class="tgl-wrapper">
   <input type="checkbox" id="theme-btn" class="tgl"/>

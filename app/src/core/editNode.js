@@ -2,9 +2,13 @@
 
 const rmElement = require('../helpers/rmElement.js')
 
-// create the form
+/**
+ * creates a form to edit the node
+ *
+ * @param {Object} selectedNode selected node
+ */
 const createForm = selectedNode => {
-  const htmlElement = document.getElementById('info-nodes-id')
+  const htmlElement = document.getElementById('message-area-id')
   const form = document.createElement('form')
   form.className = 'bubble'
   form.id = 'form-id'
@@ -13,7 +17,7 @@ const createForm = selectedNode => {
   let input = ''
   let inputIds = []
 
-  const nodeData = selectedNode.data().info
+  const nodeData = selectedNode.data().asto
   Object.keys(nodeData).map(key => {
     // won't display the concept attribute
     if (key !== 'concept') {
@@ -49,10 +53,10 @@ const createForm = selectedNode => {
   formId.onsubmit = () => {
     inputIds.map(keyValue => {
       let id = document.getElementById(keyValue)
-      selectedNode.data().info[keyValue] = id.value
+      selectedNode.data().asto[keyValue] = id.value
     })
     // remove elements once the submit is clicked
-    rmElement('info-nodes-id', 'form-id')
+    rmElement('message-area-id', 'form-id')
     // return false to prevent the default form behavior
     return false
   }
@@ -61,11 +65,15 @@ const createForm = selectedNode => {
   document.getElementById('description').focus()
 }
 
-// create the form element
+/**
+ * add/remove the form element
+ *
+ * @param {Object} selectedNode selected node
+ */
 const formNode = selectedNode => {
   const form = document.getElementById('form-id')
   if (form !== null) {
-    rmElement('info-nodes-id', 'form-id')
+    rmElement('message-area-id', 'form-id')
     createForm(selectedNode)
   } else if (form === null) {
     createForm(selectedNode)

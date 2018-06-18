@@ -1,8 +1,11 @@
-// highlights attribute patterns of nodes
-
-const printChatText = require('../helpers/printChatText.js')
+const bubbleTxt = require('../helpers/bubbleTxt.js')
 const rmElement = require('../helpers/rmElement.js')
 
+/**
+ * highlights attribute patterns of nodes
+ *
+ * @param {Object} cy cytoscape
+ */
 module.exports = function patterns (cy) {
   // search pattern
   const searchPattern = pattern => {
@@ -13,7 +16,7 @@ module.exports = function patterns (cy) {
 
     // check all the nodes in graph for the search terms
     cy.nodes().map(node => {
-      const nodeData = node.data().info
+      const nodeData = node.data().asto
       Object.keys(nodeData).map(value => {
         pattern.map(i => {
           if (nodeData[value] === i) {
@@ -25,12 +28,12 @@ module.exports = function patterns (cy) {
       })
     })
 
-    printChatText(flaggedNodes)
+    bubbleTxt(flaggedNodes)
   }
 
-  const htmlElement = document.getElementById('info-nodes-id')
+  const htmlElement = document.getElementById('message-area-id')
 
-  // create the patter element
+  // create the pattern element
   const form = document.createElement('form')
   form.className = 'bubble'
   form.id = 'form-id'
@@ -56,11 +59,9 @@ module.exports = function patterns (cy) {
     let keywords = document.getElementById('pattern-id')
     let pattern = `${keywords.value}`.split(' ')
 
-    rmElement('info-nodes-id', 'form-id')
+    rmElement('message-area-id', 'form-id')
 
     searchPattern(pattern)
-    // return false to prevent the default form behavior
-    return false
   }
 
   // focus on the user input form
