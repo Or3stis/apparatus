@@ -1,31 +1,22 @@
-'use strict'
-
-// checks if the model is correct
-
-const dgnMetamodel = require('./dgnSchema.js')
+const dgnSchema = require('./dgnSchema.js')
 const bubbleTxt = require('../helpers/bubbleTxt.js')
 
+/**
+ * checks if the model is correct
+ *
+ * @param {Object} cy cytoscape instance
+ */
 module.exports = function moduleValidation (cy) {
-  // valid component connections
-  const serviceProvArray = dgnMetamodel.serviceProvArray
-  const infrastructureProvArray = dgnMetamodel.infrastructureProvArray
-  const cescmArray = dgnMetamodel.cescmArray
-  const vimArray = dgnMetamodel.vimArray
-  const mainDcArray = dgnMetamodel.mainDcArray
-  const lightDcArray = dgnMetamodel.lightDcArray
-  const vnfArray = dgnMetamodel.vnfArray
-  const storageArray = dgnMetamodel.storageArray
-  const processArray = dgnMetamodel.processArray
-  const assetArray = dgnMetamodel.assetArray
-  const constraintArray = dgnMetamodel.constraintArray
-  const endUserArray = dgnMetamodel.endUserArray
-  const threatArray = dgnMetamodel.threatArray
-  const maliciousActorArray = dgnMetamodel.maliciousActorArray
-
-  // declaration of arrays
-  let result = '' // posted on the nodeInfo div
+  let validationResult = ''
   let arrWrong = [] // stores wrong connection of nodes
 
+  /**
+   * validates the components of the graph
+   *
+   * @param {Object} cy cytoscape instance
+   * @param {String} component metamodel's concept
+   * @param {Array} componentArray allowed connected components
+   */
   function componentValidation (cy, component, componentArray) {
     cy.nodes().map(node => {
       // checks if node is the desired component
@@ -45,32 +36,22 @@ module.exports = function moduleValidation (cy) {
       }
     })
 
-    result = `${arrWrong}`
+    validationResult = `${arrWrong}`
 
     // if string not empty, show concepts with wrong connections
-    if (result !== '') {
-      result = `• ${component} has wrong connections`
-      bubbleTxt(result)
+    if (validationResult !== '') {
+      validationResult = `• ${component} has wrong connections`
+      bubbleTxt(validationResult)
     }
   }
 
-  componentValidation(cy, 'service provider', serviceProvArray)
-  componentValidation(cy, 'infrastructure provider', infrastructureProvArray)
-  componentValidation(cy, 'cescm', cescmArray)
-  componentValidation(cy, 'vim', vimArray)
-  componentValidation(cy, 'main dc', mainDcArray)
-  componentValidation(cy, 'light dc', lightDcArray)
-  componentValidation(cy, 'vnf', vnfArray)
-  componentValidation(cy, 'storage', storageArray)
-  componentValidation(cy, 'process', processArray)
-  componentValidation(cy, 'constraint', constraintArray)
-  componentValidation(cy, 'asset', assetArray)
-  componentValidation(cy, 'end user', endUserArray)
-  componentValidation(cy, 'threat', threatArray)
-  componentValidation(cy, 'malicious actor', maliciousActorArray)
+  // checks the validity of the model using the rules of the schema
+  Object.keys(dgnSchema.pairs).map(concept => {
+    componentValidation(cy, concept, dgnSchema.pairs[concept])
+  })
 
   // if string is empty, the model is correct
-  if (result === '') {
+  if (validationResult === '') {
     bubbleTxt('model instance is valid\n👍')
   }
 }

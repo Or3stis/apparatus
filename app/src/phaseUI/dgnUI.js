@@ -2,6 +2,7 @@
 
 const phaseMenu = require('../../src/phaseMenu.js')
 
+/** loads the design phase UI */
 module.exports = function designUI () {
   // shows design phase on the title
   const title = document.getElementById('title-bar-id')
@@ -89,8 +90,6 @@ module.exports = function designUI () {
     <li><a>social</a></li>
     <li><a>sensing</a></li>
     <li><a>network-security</a></li>
-    <li><a>network-sensing</a></li>
-    <li><a>security-sensing</a></li>
     <li><a>network-social</a></li>
   </ul>
 </div>

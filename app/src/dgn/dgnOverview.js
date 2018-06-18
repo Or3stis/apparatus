@@ -59,7 +59,6 @@ module.exports = function overview (cy) {
   // count the number of nodes
   cy.nodes().map(node => {
     const nodeConcept = node.data().asto.concept
-
     // count the concept nodes
     Object.keys(graphNodes).map(concept => {
       if (nodeConcept === concept) {

@@ -96,7 +96,7 @@ graphStyle.setStyle = color => {
     {
       selector: '.label-dsc',
       style: {
-        label: 'data(info.description)',
+        label: 'data(asto.description)',
         'text-valign': 'center',
         color: settings.text,
         'text-outline-width': 2,
