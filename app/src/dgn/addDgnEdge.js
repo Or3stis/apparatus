@@ -6,8 +6,8 @@ const addEdge = require('../core/addEdge.js')
 module.exports = function addComponent (cy, srcNode, trgNode) {
   let srcNodeId = srcNode.id
   let trgNodeId = trgNode.id
-  let srcNodeCpt = srcNode.info.concept
-  let trgNodeCpt = trgNode.info.concept
+  let srcNodeCpt = srcNode.asto.concept
+  let trgNodeCpt = trgNode.asto.concept
 
   switch (true) {
     case srcNodeCpt === 'service provider' && trgNodeCpt === 'vnf':
