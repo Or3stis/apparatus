@@ -137,9 +137,9 @@ const getUniqueKeywords = keywords => {
 const findVulnerabilities = cy => {
   findVulnerableNodes(cy)
 
-  const permission = `Do you want to send a request to ${
+  const permission = `Do you want to send a request to <strong>${
     settings.cveSearchUrl
-  }<button id='yes-${buttonIdCounter}' class='menu-btn' style='color: var(--main-tx-color); background-color: var(--main-bg-color); width: 45px; height: 25px;'>yes?</button>`
+  }</strong> <button id='yes-${buttonIdCounter}' class='menu-btn' style='color: var(--main-tx-color); background-color: var(--main-bg-color); width: 45px; height: 25px;'>yes?</button>`
 
   // check whether the keywords is empty before sending
   // the request to a vulnerability database
