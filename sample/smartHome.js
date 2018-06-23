@@ -44,7 +44,7 @@ graphModel.elements = [
         layer: 'perception',
         type: 'Philips in Sight',
         service: 'camera',
-        input: 'dataEnvironemntal',
+        input: 'dataEnvironmental',
         output: 'dataDigital',
         concept: 'device'
       }
