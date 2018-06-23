@@ -19,8 +19,67 @@ const createForm = selectedNode => {
 
   const nodeData = selectedNode.data().asto
   Object.keys(nodeData).map(key => {
-    // won't display the concept attribute
-    if (key !== 'concept') {
+    // device layer attribute
+    // TODO refactor
+    if (key === 'layer') {
+      label = document.createElement('label')
+      label.setAttribute('for', key)
+      label.textContent = 'layer:'
+
+      const layerOptions = ['perception', 'gateway', 'application']
+      const layerList = document.createElement('select')
+      layerList.className = 'input-form'
+      layerList.id = key
+
+      const keyToFind = nodeData[key]
+      const index = layerOptions.indexOf(keyToFind)
+
+      form.appendChild(label)
+      form.appendChild(layerList)
+      layerOptions.map(value => {
+        let option = document.createElement('option')
+        option.value = value
+        option.text = value
+        layerList.appendChild(option)
+      })
+      // set the value the stored selection
+      layerList.selectedIndex = index
+      // store the keys to later render them dynamically
+      inputIds.push(key)
+    } else if (key === 'input') {
+      label = document.createElement('label')
+      label.setAttribute('for', key)
+      label.textContent = 'input:'
+
+      const layerOptions = [
+        'dataDigital',
+        'dataEnvironmental',
+        'command',
+        'action',
+        'notification',
+        'trigger'
+      ]
+      const layerList = document.createElement('select')
+      layerList.className = 'input-form'
+      layerList.id = key
+
+      const keyToFind = nodeData[key]
+      const index = layerOptions.indexOf(keyToFind)
+
+      form.appendChild(label)
+      form.appendChild(layerList)
+      layerOptions.map(value => {
+        let option = document.createElement('option')
+        option.value = value
+        option.text = value
+        layerList.appendChild(option)
+      })
+      // set the value the stored selection
+      layerList.selectedIndex = index
+      // store the keys to later render them dynamically
+      inputIds.push(key)
+    } else if (key !== 'concept') {
+      // won't display the concept attribute
       label = document.createElement('label')
       input = document.createElement('input')
       input.className = 'input-form'
