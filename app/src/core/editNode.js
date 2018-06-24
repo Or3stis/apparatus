@@ -2,6 +2,58 @@
 
 const rmElement = require('../helpers/rmElement.js')
 
+// options of the enumerated selections
+const layerOptions = ['perception', 'gateway', 'application']
+const inOutOptions = [
+  'dataDigital',
+  'dataEnvironmental',
+  'command',
+  'action',
+  'notification',
+  'trigger'
+]
+
+/**
+ * creates dynamic selections for enumerated values
+ *
+ * @param {string} selectionForm form div element (= form)
+ * @param {string} selectionKey iterator of node element
+ * @param {Array} selectionOptions options of the enumerated selections
+ * @param {Object} data node element data (= nodeData)
+ * @param {Array} ids id div element (= inputIds)
+ */
+const selectionLayout = (
+  selectionForm,
+  selectionKey,
+  selectionOptions,
+  data,
+  ids
+) => {
+  const selectionLabel = document.createElement('label')
+  selectionLabel.setAttribute('for', selectionKey)
+  selectionLabel.textContent = 'layer:'
+
+  const selectionList = document.createElement('select')
+  selectionList.className = 'input-form'
+  selectionList.id = selectionKey
+
+  const keyToFind = data[selectionKey]
+  const index = selectionOptions.indexOf(keyToFind)
+
+  selectionForm.appendChild(selectionLabel)
+  selectionForm.appendChild(selectionList)
+  selectionOptions.map(value => {
+    let option = document.createElement('option')
+    option.value = value
+    option.text = value
+    selectionList.appendChild(option)
+  })
+  // set the value the stored selection
+  selectionList.selectedIndex = index
+  // store the keys to later render them dynamically
+  ids.push(selectionKey)
+}
+
 /**
  * creates a form to edit the node
  *
@@ -13,75 +65,20 @@ const createForm = selectedNode => {
   form.className = 'bubble'
   form.id = 'form-id'
 
-  let label = ''
-  let input = ''
   let inputIds = []
 
   const nodeData = selectedNode.data().asto
   Object.keys(nodeData).map(key => {
-    // device layer attribute
-    // TODO refactor
     if (key === 'layer') {
-      label = document.createElement('label')
-      label.setAttribute('for', key)
-      label.textContent = 'layer:'
-
-      const layerOptions = ['perception', 'gateway', 'application']
-      const layerList = document.createElement('select')
-      layerList.className = 'input-form'
-      layerList.id = key
-
-      const keyToFind = nodeData[key]
-      const index = layerOptions.indexOf(keyToFind)
-
-      form.appendChild(label)
-      form.appendChild(layerList)
-      layerOptions.map(value => {
-        let option = document.createElement('option')
-        option.value = value
-        option.text = value
-        layerList.appendChild(option)
-      })
-      // set the value the stored selection
-      layerList.selectedIndex = index
-      // store the keys to later render them dynamically
-      inputIds.push(key)
-    } else if (key === 'input') {
-      label = document.createElement('label')
-      label.setAttribute('for', key)
-      label.textContent = 'input:'
-
-      const layerOptions = [
-        'dataDigital',
-        'dataEnvironmental',
-        'command',
-        'action',
-        'notification',
-        'trigger'
-      ]
-      const layerList = document.createElement('select')
-      layerList.className = 'input-form'
-      layerList.id = key
-
-      const keyToFind = nodeData[key]
-      const index = layerOptions.indexOf(keyToFind)
-
-      form.appendChild(label)
-      form.appendChild(layerList)
-      layerOptions.map(value => {
-        let option = document.createElement('option')
-        option.value = value
-        option.text = value
-        layerList.appendChild(option)
-      })
-      // set the value the stored selection
-      layerList.selectedIndex = index
-      // store the keys to later render them dynamically
-      inputIds.push(key)
+      // device layer attribute
+      selectionLayout(form, key, layerOptions, nodeData, inputIds)
+    } else if (key === 'input' || key === 'output') {
+      // device input/output
+      selectionLayout(form, key, inOutOptions, nodeData, inputIds)
     } else if (key !== 'concept') {
       // won't display the concept attribute
-      label = document.createElement('label')
-      input = document.createElement('input')
+      const label = document.createElement('label')
+      const input = document.createElement('input')
       input.className = 'input-form'
       // create an key-based id
       // to iterate on the submitted attributes
@@ -107,8 +104,8 @@ const createForm = selectedNode => {
   form.appendChild(submit)
   htmlElement.appendChild(form)
 
-  const formId = document.getElementById('form-id')
   // capture the changed values of the node
+  const formId = document.getElementById('form-id')
   formId.onsubmit = () => {
     inputIds.map(keyValue => {
       let id = document.getElementById(keyValue)
