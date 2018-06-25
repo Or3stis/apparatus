@@ -78,7 +78,6 @@ module.exports = function designUI () {
     <li><a>network</a></li>
     <li><a>security</a></li>
     <li><a>social</a></li>
-    <li><a>sensing</a></li>
     <li><a>network-security</a></li>
     <li><a>network-social</a></li>
   </ul>
