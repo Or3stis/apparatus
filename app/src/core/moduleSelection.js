@@ -13,8 +13,7 @@ module.exports = function moduleSelection (cy, selection) {
     'micronet',
     'net',
     'information',
-    'application',
-    'thing'
+    'application'
   ]
   const securityArray = [
     'asset',
@@ -25,12 +24,6 @@ module.exports = function moduleSelection (cy, selection) {
     'malicious actor'
   ]
   const socialArray = ['actor']
-  const sensingArray = [
-    'sensor',
-    'event sensor',
-    'report sensor',
-    'control sensor'
-  ]
 
   switch (selection) {
     case 'network':
@@ -42,17 +35,8 @@ module.exports = function moduleSelection (cy, selection) {
     case 'social':
       groupArray = socialArray
       break
-    case 'sensing':
-      groupArray = sensingArray
-      break
     case 'network-security':
       groupArray = networkArray.concat(securityArray)
-      break
-    case 'network-sensing':
-      groupArray = networkArray.concat(sensingArray)
-      break
-    case 'security-sensing':
-      groupArray = securityArray.concat(sensingArray)
       break
     case 'network-social':
       groupArray = networkArray.concat(socialArray)

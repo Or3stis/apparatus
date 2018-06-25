@@ -33,7 +33,7 @@ const insightList = {
   },
   s4: {
     concept: 'network connection',
-    attribute: 'description',
+    attribute: 'medium',
     attributeValue: 'wireless',
     insight:
       'Wireless connections are subject to information disclosure attacks. Use encrypted protocols.',

@@ -54,8 +54,9 @@ graphModel.elements = [
       id: 'n4',
       label: 'network connection',
       asto: {
-        description: 'wireless',
-        listOfProtocols: 'HTTP, TELNET, SHH',
+        description: 'HTTP, SSH, Telnet',
+        medium: 'wireless',
+        listOfProtocols: 'TCP',
         concept: 'network connection'
       }
     }
@@ -64,8 +65,8 @@ graphModel.elements = [
       id: 'n5',
       label: 'network connection',
       asto: {
-        description: 'wireless',
-        listOfProtocols: 'HTTP, TELNET, SHH',
+        description: 'HTTP, SSH, Telnet',
+        medium: 'wireless',
         concept: 'network connection'
       }
     }
@@ -115,7 +116,7 @@ graphModel.elements = [
       label: 'threat',
       asto: {
         description: 'direct browsing',
-        type: 'spoofing',
+        category: 'spoofing',
         concept: 'threat'
       }
     }
@@ -191,7 +192,7 @@ graphModel.elements = [
       label: 'threat',
       asto: {
         description: 'password credentials',
-        type: 'informationDisclosure',
+        category: 'informationDisclosure',
         concept: 'threat'
       }
     }
@@ -229,7 +230,7 @@ graphModel.elements = [
       label: 'threat',
       asto: {
         description: 'physical tampering',
-        type: 'integrity',
+        category: 'integrity',
         concept: 'threat'
       }
     }

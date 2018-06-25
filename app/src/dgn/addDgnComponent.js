@@ -181,7 +181,7 @@ module.exports = function addDgnComponent (cy, event, nodeCounter) {
           label: `${component}`,
           asto: {
             description: '',
-            type: '',
+            category: '',
             concept: 'threat'
           }
         },
