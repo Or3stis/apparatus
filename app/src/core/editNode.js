@@ -4,13 +4,31 @@ const rmElement = require('../helpers/rmElement.js')
 
 // options of the enumerated selections
 const layerOptions = ['perception', 'gateway', 'application']
-const inOutOptions = [
+const ioOptions = [
   'dataDigital',
   'dataEnvironmental',
   'command',
   'action',
   'notification',
   'trigger'
+]
+const updateOptions = ['automatic', 'action', 'false']
+const stateOptions = ['static', 'dynamic']
+const threatOptions = [
+  'spoofing',
+  'tampering',
+  'repudiation',
+  'informationDisclosure',
+  'denialOfService',
+  'elevationOfPrivilege'
+]
+const propertyOptions = [
+  'authentication',
+  'integrity',
+  'authorization',
+  'confidentiality',
+  'availability',
+  'non repudiation'
 ]
 
 /**
@@ -31,7 +49,7 @@ const selectionLayout = (
 ) => {
   const selectionLabel = document.createElement('label')
   selectionLabel.setAttribute('for', selectionKey)
-  selectionLabel.textContent = 'layer:'
+  selectionLabel.textContent = `${selectionKey}: `
 
   const selectionList = document.createElement('select')
   selectionList.className = 'input-form'
@@ -74,7 +92,19 @@ const createForm = selectedNode => {
       selectionLayout(form, key, layerOptions, nodeData, inputIds)
     } else if (key === 'input' || key === 'output') {
       // device input/output
-      selectionLayout(form, key, inOutOptions, nodeData, inputIds)
+      selectionLayout(form, key, ioOptions, nodeData, inputIds)
+    } else if (key === 'update') {
+      // device update
+      selectionLayout(form, key, updateOptions, nodeData, inputIds)
+    } else if (key === 'state') {
+      // micronet state
+      selectionLayout(form, key, stateOptions, nodeData, inputIds)
+    } else if (key === 'category') {
+      // threat category
+      selectionLayout(form, key, threatOptions, nodeData, inputIds)
+    } else if (key === 'property') {
+      // constraint property
+      selectionLayout(form, key, propertyOptions, nodeData, inputIds)
     } else if (key !== 'concept') {
       // won't display the concept attribute
       const label = document.createElement('label')
@@ -88,7 +118,7 @@ const createForm = selectedNode => {
       input.value = nodeData[key]
 
       label.setAttribute('for', key)
-      label.textContent = `${key}: `
+      label.textContent = `${key}:`
       form.appendChild(label)
       form.appendChild(input)
       // store the keys to later render them dynamically

@@ -229,7 +229,7 @@ module.exports = function addImpComponent (cy, event, nodeCounter) {
           label: `${component}`,
           asto: {
             description: '',
-            type: '',
+            category: '',
             concept: 'threat'
           }
         },

@@ -114,7 +114,7 @@ graphModel.elements = [
       label: 'threat',
       asto: {
         description: 'direct browsing',
-        type: 'spoofing',
+        category: 'spoofing',
         concept: 'threat'
       }
     }

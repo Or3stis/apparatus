@@ -115,7 +115,7 @@ graphModel.elements = [
       label: 'threat',
       asto: {
         description: 'direct browsing',
-        type: 'spoofing',
+        category: 'spoofing',
         concept: 'threat'
       }
     }
@@ -191,7 +191,7 @@ graphModel.elements = [
       label: 'threat',
       asto: {
         description: 'password credentials',
-        type: 'informationDisclosure',
+        category: 'informationDisclosure',
         concept: 'threat'
       }
     }
@@ -229,7 +229,7 @@ graphModel.elements = [
       label: 'threat',
       asto: {
         description: 'physical tampering',
-        type: 'integrity',
+        category: 'integrity',
         concept: 'threat'
       }
     }
