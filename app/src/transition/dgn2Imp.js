@@ -46,6 +46,7 @@ const transition = (cy, nodeCounter) => {
           label: 'network connection',
           asto: {
             description: '',
+            medium: '',
             listOfProtocols: '',
             concept: 'network connection'
           }

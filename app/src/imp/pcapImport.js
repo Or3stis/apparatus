@@ -209,6 +209,7 @@ const createConnections = (devices, connections) => {
       label: 'network connection',
       asto: {
         description: '${element[2]}',
+        medium: ' ',
         listOfProtocols: '${element[2]}',
         concept: 'network connection'
       }

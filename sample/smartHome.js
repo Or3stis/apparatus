@@ -54,8 +54,9 @@ graphModel.elements = [
       id: 'n4',
       label: 'network connection',
       asto: {
-        description: 'wireless',
-        listOfProtocols: 'HTTP, TELNET, SHH',
+        description: 'HTTP, SSH, Telnet',
+        medium: 'wireless',
+        listOfProtocols: 'TCP',
         concept: 'network connection'
       }
     }
@@ -64,8 +65,8 @@ graphModel.elements = [
       id: 'n5',
       label: 'network connection',
       asto: {
-        description: 'wireless',
-        listOfProtocols: 'HTTP, TELNET, SHH',
+        description: 'HTTP, SSH, Telnet',
+        medium: 'wireless',
         concept: 'network connection'
       }
     }

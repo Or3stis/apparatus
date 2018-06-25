@@ -30,6 +30,7 @@ const propertyOptions = [
   'availability',
   'non repudiation'
 ]
+const mediumOptions = ['wireless', 'wired']
 
 /**
  * creates dynamic selections for enumerated values
@@ -91,11 +92,14 @@ const createForm = selectedNode => {
       // device layer attribute
       selectionLayout(form, key, layerOptions, nodeData, inputIds)
     } else if (key === 'input' || key === 'output') {
-      // device input/output
+      // device/application input/output
       selectionLayout(form, key, ioOptions, nodeData, inputIds)
     } else if (key === 'update') {
-      // device update
+      // device/application update
       selectionLayout(form, key, updateOptions, nodeData, inputIds)
+    } else if (key === 'mediume') {
+      // constraint property
+      selectionLayout(form, key, mediumOptions, nodeData, inputIds)
     } else if (key === 'state') {
       // micronet state
       selectionLayout(form, key, stateOptions, nodeData, inputIds)
