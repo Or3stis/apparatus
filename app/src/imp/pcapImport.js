@@ -45,7 +45,7 @@ const storeConnections = txtData => {
   allConnections = [...new Set(connection)]
 }
 
-// stores the information to create network connections
+// stores the information to create connections
 // each row format -> srcNode tgtNode protocol
 let uniqueConnections = []
 
@@ -192,26 +192,26 @@ const createDevicesApplications = devicesServices => {
 }
 
 /**
- * creates network connections and adds edges between them and the devices
+ * creates connections and adds edges between them and the devices
  *
  * @param {Object} devices nodes
  * @param {Array} connections
  */
 const createConnections = (devices, connections) => {
-  // creates the edges and the network connection nodes concept
+  // creates the edges and the connection nodes concept
   connections.map(row => {
     let element = row.split(' ')
 
-    // creates the network connection nodes
+    // creates the connection nodes
     nodeContentJs += ` {
     data: {
       id: '${idCounter}',
-      label: 'network connection',
+      label: 'connection',
       asto: {
         description: '${element[2]}',
         medium: ' ',
         listOfProtocols: '${element[2]}',
-        concept: 'network connection'
+        concept: 'connection'
       }
     }
   },`
@@ -230,7 +230,7 @@ const createConnections = (devices, connections) => {
       }
     })
 
-    // creates edges between devices and network connections
+    // creates edges between devices and connections
     edgeContentJs += ` {
     data: {
       id: 'e${srcId}${idCounter}',

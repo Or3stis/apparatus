@@ -52,21 +52,21 @@ graphModel.elements = [
   }, {
     data: {
       id: '4',
-      label: 'network connection',
+      label: 'connection',
       asto: {
         description: 'HTTP, SSH, Telnet',
         medium: 'wireless',
-        concept: 'network connection'
+        concept: 'connection'
       }
     }
   }, {
     data: {
       id: '5',
-      label: 'network connection',
+      label: 'connection',
       asto: {
         description: 'HTTP, SSH, Telnet',
         medium: 'wireless',
-        concept: 'network connection'
+        concept: 'connection'
       }
     }
   }, {

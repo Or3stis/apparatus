@@ -9,7 +9,7 @@ module.exports = function moduleSelection (cy, selection) {
   let groupArray = []
   const networkArray = [
     'device',
-    'network connection',
+    'connection',
     'micronet',
     'net',
     'information',

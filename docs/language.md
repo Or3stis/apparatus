@@ -57,9 +57,9 @@ The refined concepts of the implementation phase are the: _(1) Device_; _(2) App
   * _input:_ what is required in order for the node to perform its role or operation. It takes an enumerated value as an input that is dataEnvironmental, dataDigital, command, action, notification, trigger;
   * _output:_ is the result of the Device operation or role. It may take the same values as the _input_ property;
   * _update:_ how the software on the Device is being updated. The updates can be automatic, require a specific action or false.
-* **Network Connection:** the type of network communication protocol used between the Devices. The properties of the network connection are:
+* **Connection:** the type of network communication protocol used between the Devices. The properties of the connection are:
   * _description:_ the type of connection, it can either be _wireless_, signifying a connection using a wireless protocol or _cable_, signifying a connection using a wired medium. It takes an enumerated value as an input;
-  * _listOfProtocols:_ is a list of the supported network protocols by the network connection. It takes an array of string values as an input, each value in the array represents a supported network protocol.
+  * _listOfProtocols:_ is a list of the supported network protocols by the connection. It takes an array of string values as an input, each value in the array represents a supported network protocol.
 * **Application:** implementation phase concept refines the design phase concept of Application with additional attributes. The properties of the Application are:
   * _version:_ the software's version type number. For example, if the Application represents the iOS operating system, the version would be the iOS release version, such as v10.2.3.
   * _update:_ how the Application is being updated. The updates can be automatic, require a specific action or false.

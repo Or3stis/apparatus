@@ -98,7 +98,7 @@ const createForm = selectedNode => {
       // device/application update
       selectionLayout(form, key, updateOptions, nodeData, inputIds)
     } else if (key === 'medium') {
-      // network connection medium
+      // connection medium
       selectionLayout(form, key, mediumOptions, nodeData, inputIds)
     } else if (key === 'state') {
       // micronet state
