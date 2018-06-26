@@ -21,7 +21,7 @@ module.exports = function addComponent (cy, srcNode, trgNode) {
     case srcNodeCpt === 'micronet' && trgNodeCpt === 'net':
       addEdge(cy, srcNodeId, trgNodeId, 'requests')
       break
-    case srcNodeCpt === 'device' && trgNodeCpt === 'network connection':
+    case srcNodeCpt === 'device' && trgNodeCpt === 'connection':
       addEdge(cy, srcNodeId, trgNodeId, 'connects')
       break
     case srcNodeCpt === 'device' && trgNodeCpt === 'micronet':
@@ -39,7 +39,7 @@ module.exports = function addComponent (cy, srcNode, trgNode) {
     case srcNodeCpt === 'net' && trgNodeCpt === 'threat':
       addEdge(cy, srcNodeId, trgNodeId, 'poses')
       break
-    case srcNodeCpt === 'network connection' && trgNodeCpt === 'information':
+    case srcNodeCpt === 'connection' && trgNodeCpt === 'information':
       addEdge(cy, srcNodeId, trgNodeId, 'has')
       break
     case srcNodeCpt === 'information' && trgNodeCpt === 'device':
@@ -99,7 +99,7 @@ module.exports = function addComponent (cy, srcNode, trgNode) {
     case srcNodeCpt === 'vulnerability' && trgNodeCpt === 'device':
       addEdge(cy, srcNodeId, trgNodeId, 'affects')
       break
-    case srcNodeCpt === 'vulnerability' && trgNodeCpt === 'network connection':
+    case srcNodeCpt === 'vulnerability' && trgNodeCpt === 'connection':
       addEdge(cy, srcNodeId, trgNodeId, 'affects')
       break
     case srcNodeCpt === 'vulnerability' && trgNodeCpt === 'application':

@@ -4,7 +4,7 @@ const impMetamodel = {
   // metamodel group concepts
   network: [
     'device',
-    'network connection',
+    'connection',
     'micronet',
     'net',
     'information',
@@ -24,7 +24,7 @@ const impMetamodel = {
     'micronet',
     'net',
     'vulnerability',
-    'network connection',
+    'connection',
     'information',
     'actor',
     'asset',
@@ -39,26 +39,13 @@ const impMetamodel = {
     'actor',
     'malicious actor'
   ],
-  networkArray: ['device', 'actor', 'information'],
+  connectionArray: ['device', 'actor', 'information'],
   micronetArray: ['device', 'net', 'micronet', 'constraint', 'vulnerability'],
   netArray: ['micronet', 'device', 'threat'],
-  informationArray: [
-    'asset',
-    'device',
-    'network connection',
-    'actor',
-    'application'
-  ],
-  actorArray: [
-    'asset',
-    'network connection',
-    'device',
-    'information',
-    'application'
-  ],
+  informationArray: ['asset', 'device', 'connection', 'actor', 'application'],
+  actorArray: ['asset', 'device', 'information', 'application'],
   maliciousActorArray: [
     'asset',
-    'network connection',
     'device',
     'information',
     'application',
@@ -86,7 +73,7 @@ const impMetamodel = {
     'micronet',
     'mechanism',
     'device',
-    'network connection',
+    'connection',
     'application'
   ]
 }
@@ -95,6 +82,7 @@ const impMetamodel = {
 impMetamodel.pairs = {
   device: impMetamodel.deviceArray,
   application: impMetamodel.applicationArray,
+  connection: impMetamodel.connectionArray,
   micronet: impMetamodel.micronetArray,
   net: impMetamodel.netArray,
   information: impMetamodel.informationArray,

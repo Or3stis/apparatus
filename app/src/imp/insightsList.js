@@ -32,7 +32,7 @@ const insightList = {
     nodes: []
   },
   s4: {
-    concept: 'network connection',
+    concept: 'connection',
     attribute: 'medium',
     attributeValue: 'wireless',
     insight:

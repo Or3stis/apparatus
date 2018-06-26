@@ -26,7 +26,7 @@ const transition = cy => {
       delete node.data().asto.location
     } else if (node.data().asto.concept === 'micronet') {
       delete node.data().asto.state
-    } else if (node.data().asto.concept === 'network connection') {
+    } else if (node.data().asto.concept === 'connection') {
       neighbors.push(node.neighborhood().add(node.data()))
       node.remove()
     } else if (node.data().asto.concept === 'vulnerability') {
@@ -36,14 +36,14 @@ const transition = cy => {
     }
   })
   /**
-   * removes the edges of the network connections
+   * removes the edges of the connections
    * adds news edges between the devices
    */
   neighbors.map(node => {
     // remove the edges
     node[1].remove()
     node[3].remove()
-    // store the source and target of the devices connected by the network connection
+    // store the source and target of the devices connected by the connection
     const source = node[0].data().id
     const target = node[2].data().id
     // create the edges for connection device 2 device

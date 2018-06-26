@@ -24,7 +24,7 @@ module.exports = function implementationUI () {
     </button>
     <ul class="dropdown-menu" id="add-component-id">
       <li><a>device</a></li>
-      <li><a>network connection</a></li>
+      <li><a>connection</a></li>
       <li><a>application</a></li>
       <li><a>information</a></li>
       <li><a>micronet</a></li>
@@ -59,7 +59,7 @@ module.exports = function implementationUI () {
     </button>
     <ul class="dropdown-menu" id="selection-id">
       <li><a>device</a></li>
-      <li><a>network connection</a></li>
+      <li><a>connection</a></li>
       <li><a>application</a></li>
       <li><a>information</a></li>
       <li><a>micronet</a></li>

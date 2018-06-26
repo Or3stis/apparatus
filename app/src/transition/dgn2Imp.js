@@ -31,35 +31,37 @@ const transition = (cy, nodeCounter) => {
       node.data().asto.location = ''
     }
   })
-  /** add network connections between devices */
+  /** add connections between devices */
   cy.edges().map(edge => {
     if (edge.data().label === 'connects') {
       const source = edge.data().source
       const target = edge.data().target
 
+      // console.log(nodeCounter)
       nodeCounter += 1 // used for the id of the node
-      // add the network connection node
+      // add the connection node
       cy.add({
         group: 'nodes',
         data: {
           id: `n${nodeCounter}`,
-          label: 'network connection',
+          label: 'connection',
           asto: {
             description: '',
             medium: '',
             listOfProtocols: '',
-            concept: 'network connection'
+            concept: 'connection'
           }
         }
       })
 
-      // change the properties of the existing connection to connect the
-      // network connection the first device
+      // change the properties of the existing connection
+      // to link the connection the first device
       edge.data().target = source
       edge.data().source = `n${nodeCounter}`
       edge.data().id = `en${nodeCounter}${source}`
+      console.log(edge.data().id)
 
-      // create an edge to connect the network connection to the other device
+      // create an edge to link the connection to the other device
       cy.add({
         group: 'edges',
         data: {
