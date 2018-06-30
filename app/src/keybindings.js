@@ -10,6 +10,9 @@ const showMetamodel = require('./core/showMetamodel.js')
 const deleteRestoreConcepts = require('./core/deleteRestoreConcepts.js')
 const generateReport = require('./core/generateReport.js')
 
+// require settings urls
+const urls = require('../settings/urls.js')
+
 // require helper modules
 const bubbleHTML = require('./helpers/bubbleHTML.js')
 const save = require('./helpers/save.js')
@@ -106,7 +109,7 @@ module.exports = function (
         bubbleHTML(docsURLBtn)
         // opens the wiki page with the default browser
         document.getElementById('url-button').addEventListener('click', () => {
-          require('electron').shell.openExternal(settings.docsURL)
+          require('electron').shell.openExternal(urls.docsURL)
         })
         break
       case ':insights':

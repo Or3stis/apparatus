@@ -63,12 +63,8 @@ const settings = {
   colorTheme: 'dark',
   // number of maximum bubbles in the message area
   maxNumberOfBubbles: 15,
-  // url for the ASTo wiki
-  docsURL: 'https://or3stis.github.io/apparatus/docs',
   // url for searching vulnerabilities
   cveSearchUrl: 'https://cve.circl.lu/api/search/',
-  // url for issue reporting
-  issueURL: 'https://github.com/Or3stis/apparatus/issues'
 }
 
 module.exports = settings

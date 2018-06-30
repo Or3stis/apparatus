@@ -1,10 +1,7 @@
 const electron = require('electron')
 const app = electron.app
 
-// url for the ASTo wiki
-const docsURL = 'https://or3stis.github.io/apparatus/docs'
-// url for issue reporting
-const issueURL = 'https://github.com/Or3stis/apparatus/issues'
+const urls = require('../settings/urls.js')
 
 const template = [
   {
@@ -45,7 +42,7 @@ const template = [
       {
         label: 'Apparatus documentation',
         click () {
-          require('electron').shell.openExternal(docsURL)
+          require('electron').shell.openExternal(urls.docsURL)
           // console.log('tess')
         }
       },
@@ -53,7 +50,7 @@ const template = [
       {
         label: 'Report Issue',
         click () {
-          require('electron').shell.openExternal(issueURL)
+          require('electron').shell.openExternal(urls.issuesURL)
         }
       }
     ]
