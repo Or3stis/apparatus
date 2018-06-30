@@ -149,8 +149,6 @@ const settings = {
   colorTheme: '${defaultColor.value}',
   // number of maximum bubbles in the message area
   maxNumberOfBubbles: ${numberBubbles.value},
-  // url for the ASTo wiki
-  docsURL: 'https://or3stis.github.io/apparatus/docs',
   // url for searching vulnerabilities
   cveSearchUrl: '${cveUrl.value}'
 }
