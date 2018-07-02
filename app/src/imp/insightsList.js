@@ -45,6 +45,20 @@ const insightList = {
     attributeValue: 'false',
     insight: 'Treat applications that cannot be updated as compromised.',
     nodes: []
+  },
+  s6: {
+    concept: 'device',
+    attribute: 'update',
+    attributeValue: 'action',
+    insight: 'Define a policy to update Devices that require user action.',
+    nodes: []
+  },
+  s7: {
+    concept: 'application',
+    attribute: 'update',
+    attributeValue: 'action',
+    insight: 'Define a policy to update Devices that require user action.',
+    nodes: []
   }
 }
 
