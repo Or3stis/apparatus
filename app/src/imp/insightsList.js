@@ -1,6 +1,6 @@
 // contains the attribute/connection patterns and the insights.js
 
-const insightList = {
+const insightsList = {
   s0: {
     concept: 'device',
     attribute: 'layer',
@@ -62,4 +62,4 @@ const insightList = {
   }
 }
 
-module.exports = insightList
+module.exports = insightsList
