@@ -57,7 +57,7 @@ const insightList = {
     concept: 'application',
     attribute: 'update',
     attributeValue: 'action',
-    insight: 'Define a policy to update Devices that require user action.',
+    insight: 'Define a policy to update Applications that require user action.',
     nodes: []
   }
 }
