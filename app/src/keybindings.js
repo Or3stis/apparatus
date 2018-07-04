@@ -199,10 +199,8 @@ module.exports = function (
     // developer mode message when a user wants to reload the app, meta + r
     if (process.env.NODE_ENV !== 'development') {
       if (metaKey === true && event.code === 'KeyR') {
-        bubbleHTML(
-          '<strong>Window reload</strong> is disabled in default mode.'
-        )
-        bubbleHTML('Start the app in <strong>developer mode</strong>.')
+        bubbleHTML('<strong>Window reload</strong> is disabled in default mode')
+        bubbleHTML('to start the app in <strong>developer mode</strong> type')
         bubbleHTML('<strong>npm run dev</strong>')
       }
     }
