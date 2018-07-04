@@ -27,6 +27,7 @@ const impMetamodel = {
     'connection',
     'information',
     'actor',
+    'malicious actor',
     'asset',
     'device',
     'application'
@@ -44,21 +45,8 @@ const impMetamodel = {
   netArray: ['micronet', 'device', 'threat'],
   informationArray: ['asset', 'device', 'connection', 'actor', 'application'],
   actorArray: ['asset', 'device', 'information', 'application'],
-  maliciousActorArray: [
-    'asset',
-    'device',
-    'information',
-    'application',
-    'threat'
-  ],
-  assetArray: [
-    'information',
-    'threat',
-    'actor',
-    'device',
-    'application',
-    'micronet'
-  ],
+  maliciousActorArray: ['device', 'information', 'application', 'threat'],
+  assetArray: ['information', 'threat', 'device', 'application', 'micronet'],
   constraintArray: ['threat', 'micronet', 'mechanism'],
   mechanismArray: ['vulnerability', 'constraint'],
   threatArray: [
