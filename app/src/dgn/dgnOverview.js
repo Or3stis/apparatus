@@ -57,7 +57,7 @@ module.exports = function overview (cy) {
   }
 
   const totalNodes = cy.elements().nodes().length
-  output = `• total nodes: ${totalNodes}\n\n`
+  output = `• total: ${totalNodes}\n\n`
 
   // count the number of nodes
   cy.nodes().map(node => {
@@ -78,7 +78,7 @@ module.exports = function overview (cy) {
 
   // compose the output by parsing the objects
   const composeOutput = (node, numberOfNodes) => {
-    output += `• ${node} nodes: ${numberOfNodes}\n`
+    output += `• ${node}: ${numberOfNodes}\n`
   }
 
   // loop the objects to compose the output

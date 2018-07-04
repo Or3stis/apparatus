@@ -1,4 +1,4 @@
-/** export ursl */
+/** export urls */
 
 const urls = {
   // url for the ASTo wiki

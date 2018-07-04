@@ -7,7 +7,7 @@ module.exports = function stateOverview (cy) {
   let output = ''
 
   const totalNodes = cy.elements().nodes().length
-  output = `• total nodes: ${totalNodes}\n\n`
+  output = `• total: ${totalNodes}\n\n`
 
   let modelNode = 0
 
@@ -18,7 +18,7 @@ module.exports = function stateOverview (cy) {
       modelNode += 1
     }
   })
-  output = `${output}• model nodes: ${modelNode}`
+  output = `${output}• model: ${modelNode}`
 
   // show output in the graph container
   const containerNode = document.getElementById('container-node-id')
