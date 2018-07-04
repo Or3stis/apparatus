@@ -40,7 +40,7 @@ module.exports = function moduleValidation (cy) {
 
     // if string not empty, show concepts with wrong connections
     if (validationResult !== '') {
-      validationResult = `• ${component} has wrong connections`
+      validationResult = `• ${component} has incorrect connections`
       bubbleTxt(validationResult)
     }
   }

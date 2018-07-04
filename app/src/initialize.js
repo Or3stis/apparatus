@@ -193,9 +193,7 @@ module.exports = function initialize (cy, phase) {
   // listening for changes in the app settings
   ipc.on('change-settings', (event, message) => {
     if (message === 'restore' || message === 'save') {
-      bubbleTxt(
-        'You will need to refresh the app for the color changes to be applied'
-      )
+      bubbleTxt('app refresh is required for the changes to take effect')
     }
   })
 }
