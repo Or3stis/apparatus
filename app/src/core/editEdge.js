@@ -3,7 +3,7 @@
 const rmElement = require('../helpers/rmElement.js')
 
 /**
- * creates a form to edit the edge
+ * creates a bubble form to edit an edge
  *
  * @param {Object} selectedEdge selected edge
  */
@@ -70,6 +70,4 @@ const formEdge = selectedEdge => {
   }
 }
 
-module.exports = {
-  formEdge
-}
+module.exports = formEdge

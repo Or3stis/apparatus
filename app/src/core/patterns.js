@@ -37,12 +37,15 @@ module.exports = function patterns (cy) {
   const form = document.createElement('form')
   form.className = 'bubble'
   form.id = 'form-id'
+
   let label = document.createElement('label')
+  label.textContent = `keywords (spaces): `
+
   let input = document.createElement('input')
   input.className = 'input-form'
   input.id = 'pattern-id'
   input.type = 'text'
-  label.textContent = `keywords (spaces): `
+
   form.appendChild(label)
   form.appendChild(input)
 
@@ -51,6 +54,7 @@ module.exports = function patterns (cy) {
   submit.className = 'submit-form'
   submit.type = 'submit'
   submit.value = 'Submit'
+
   form.appendChild(submit)
   htmlElement.appendChild(form)
 
