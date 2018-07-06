@@ -7,7 +7,7 @@ let deletedNodes = []
 // used as module
 
 /**
- * delets concepts
+ * deletes concepts
  *
  * @param {Object} cy cytoscape instance
  * @param {Object} selectedNode selected node

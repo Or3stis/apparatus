@@ -11,24 +11,24 @@ let posX = ''
 /**
  * get mouse position on click
  *
- * @param {Object} selection position of the selected element
+ * @param {Object} position of the selected element
  */
-const mousePosition = selection => {
-  posX = selection.renderedPosition.x
-  posY = selection.renderedPosition.y
+const mousePosition = position => {
+  posX = position.renderedPosition.x
+  posY = position.renderedPosition.y
 }
 
 /**
  * creates the node menu element
  *
  * @param {Object} cy cytoscape instance
- * @param {Object} selection position of the selected element
+ * @param {Object} position position of the selected element
  * @param {Object} selectedNode selected node
  */
-const nodeMenu = (cy, selection, selectedNode) => {
+const nodeMenu = (cy, position, selectedNode) => {
   const graph = document.getElementById('window-id')
 
-  mousePosition(selection)
+  mousePosition(position)
 
   // checks to see if the menu has been created
   const nodeMenuExists = document.getElementById('nodeMenu-id')
@@ -69,12 +69,12 @@ const nodeMenu = (cy, selection, selectedNode) => {
  * creates the stage menu element
  *
  * @param {Object} cy cytoscape instance
- * @param {any} selection position of the selected element
+ * @param {any} position position of the selected element
  */
-const stageMenu = (cy, selection) => {
+const stageMenu = (cy, position) => {
   const graph = document.getElementById('window-id')
 
-  mousePosition(selection)
+  mousePosition(position)
 
   // checks to see if the menu has been created
   const stageMenuExists = document.getElementById('stageMenu-id')
