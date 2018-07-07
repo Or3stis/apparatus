@@ -2,60 +2,60 @@
 
 const dgnMetamodel = require('./dgnSchema.js')
 
+// initialize the output of the module
+let output = ''
+
+// stores the node of module nodes
+const moduleNodes = {
+  network: {
+    schema: dgnMetamodel.network,
+    numberOfNodes: 0
+  },
+  security: {
+    schema: dgnMetamodel.security,
+    numberOfNodes: 0
+  },
+  social: {
+    schema: dgnMetamodel.social,
+    numberOfNodes: 0
+  }
+}
+
+// stores the number of each node
+const graphNodes = {
+  device: {
+    numberOfNodes: 0
+  },
+  application: {
+    numberOfNodes: 0
+  },
+  micronet: {
+    numberOfNodes: 0
+  },
+  net: {
+    numberOfNodes: 0
+  },
+  information: {
+    numberOfNodes: 0
+  },
+  asset: {
+    numberOfNodes: 0
+  },
+  constraint: {
+    numberOfNodes: 0
+  },
+  threat: {
+    numberOfNodes: 0
+  },
+  actor: {
+    numberOfNodes: 0
+  },
+  'malicious actor': {
+    numberOfNodes: 0
+  }
+}
+
 module.exports = function overview (cy) {
-  // initialize the output of the module
-  let output = ''
-
-  // stores the node of module nodes
-  const moduleNodes = {
-    network: {
-      schema: dgnMetamodel.network,
-      numberOfNodes: 0
-    },
-    security: {
-      schema: dgnMetamodel.security,
-      numberOfNodes: 0
-    },
-    social: {
-      schema: dgnMetamodel.social,
-      numberOfNodes: 0
-    }
-  }
-
-  // stores the number of each node
-  const graphNodes = {
-    device: {
-      numberOfNodes: 0
-    },
-    application: {
-      numberOfNodes: 0
-    },
-    micronet: {
-      numberOfNodes: 0
-    },
-    net: {
-      numberOfNodes: 0
-    },
-    information: {
-      numberOfNodes: 0
-    },
-    asset: {
-      numberOfNodes: 0
-    },
-    constraint: {
-      numberOfNodes: 0
-    },
-    threat: {
-      numberOfNodes: 0
-    },
-    actor: {
-      numberOfNodes: 0
-    },
-    'malicious actor': {
-      numberOfNodes: 0
-    }
-  }
-
   const totalNodes = cy.elements().nodes().length
   output = `• total: ${totalNodes}\n\n`
 

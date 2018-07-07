@@ -1,73 +1,73 @@
 const impMetamodel = require('./impSchema.js')
 
+// initialize the output of the module
+let output = ''
+
+// stores the node of module nodes
+const moduleNodes = {
+  network: {
+    schema: impMetamodel.network,
+    numberOfNodes: 0
+  },
+  security: {
+    schema: impMetamodel.security,
+    numberOfNodes: 0
+  },
+  social: {
+    schema: impMetamodel.social,
+    numberOfNodes: 0
+  }
+}
+
+// stores the number of each node
+const graphNodes = {
+  device: {
+    numberOfNodes: 0
+  },
+  connection: {
+    numberOfNodes: 0
+  },
+  application: {
+    numberOfNodes: 0
+  },
+  micronet: {
+    numberOfNodes: 0
+  },
+  net: {
+    numberOfNodes: 0
+  },
+  information: {
+    numberOfNodes: 0
+  },
+  asset: {
+    numberOfNodes: 0
+  },
+  constraint: {
+    numberOfNodes: 0
+  },
+  threat: {
+    numberOfNodes: 0
+  },
+  actor: {
+    numberOfNodes: 0
+  },
+  'malicious actor': {
+    numberOfNodes: 0
+  },
+  vulnerability: {
+    numberOfNodes: 0
+  },
+  mechanism: {
+    numberOfNodes: 0
+  }
+}
+
 /**
  * shows the total number of nodes, their concept type and module
  *
  * @param {Object} cy cytoscape instance
  */
 module.exports = function overview (cy) {
-  // initialize the output of the module
-  let output = ''
-
-  // stores the node of module nodes
-  const moduleNodes = {
-    network: {
-      schema: impMetamodel.network,
-      numberOfNodes: 0
-    },
-    security: {
-      schema: impMetamodel.security,
-      numberOfNodes: 0
-    },
-    social: {
-      schema: impMetamodel.social,
-      numberOfNodes: 0
-    }
-  }
-
-  // stores the number of each node
-  const graphNodes = {
-    device: {
-      numberOfNodes: 0
-    },
-    connection: {
-      numberOfNodes: 0
-    },
-    application: {
-      numberOfNodes: 0
-    },
-    micronet: {
-      numberOfNodes: 0
-    },
-    net: {
-      numberOfNodes: 0
-    },
-    information: {
-      numberOfNodes: 0
-    },
-    asset: {
-      numberOfNodes: 0
-    },
-    constraint: {
-      numberOfNodes: 0
-    },
-    threat: {
-      numberOfNodes: 0
-    },
-    actor: {
-      numberOfNodes: 0
-    },
-    'malicious actor': {
-      numberOfNodes: 0
-    },
-    vulnerability: {
-      numberOfNodes: 0
-    },
-    mechanism: {
-      numberOfNodes: 0
-    }
-  }
-
   const totalNodes = cy.elements().nodes().length
   output = `• total: ${totalNodes}\n\n`
 
