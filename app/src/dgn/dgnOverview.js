@@ -57,7 +57,7 @@ const graphNodes = {
 
 module.exports = function overview (cy) {
   const totalNodes = cy.elements().nodes().length
-  output = `• total: ${totalNodes}\n\n`
+  output = `• nodes: ${totalNodes}\n\n`
 
   // count the number of nodes
   cy.nodes().map(node => {

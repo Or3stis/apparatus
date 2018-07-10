@@ -7,7 +7,7 @@ module.exports = function stateOverview (cy) {
   let output = ''
 
   const totalNodes = cy.elements().nodes().length
-  output = `• total: ${totalNodes}\n\n`
+  output = `• nodes: ${totalNodes}\n\n`
 
   let modelNode = 0
 

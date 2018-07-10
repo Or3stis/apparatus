@@ -7,5 +7,5 @@ module.exports = function printTotalNodes (cy) {
   const numberNodes = cy.elements().nodes().length
   const htmlElement = document.getElementById('legend-id')
 
-  htmlElement.textContent = `total nodes: ${numberNodes}`
+  htmlElement.textContent = `nodes: ${numberNodes}`
 }

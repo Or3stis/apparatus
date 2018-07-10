@@ -62,5 +62,5 @@ module.exports = function moduleSelection (cy, selection) {
   })
 
   const htmlElement = document.getElementById('legend-id')
-  htmlElement.textContent = `${selection} nodes: ${totalNodes}`
+  htmlElement.textContent = `${selection}: ${totalNodes}`
 }

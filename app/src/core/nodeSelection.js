@@ -18,5 +18,5 @@ module.exports = function nodeSelection (cy, classification) {
   })
 
   const currentDiv = document.getElementById('legend-id')
-  currentDiv.textContent = `${classification} nodes: ${totalNodes}`
+  currentDiv.textContent = `${classification}: ${totalNodes}`
 }
