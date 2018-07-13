@@ -57,7 +57,7 @@ const requestVulnerableData = keywords => {
           // when the requests are finished ask if the file is to saved
           keywordCounter += 1
           if (keywordCounter === keywords.length) {
-            const saveButton = `Do you want to save the file?<button id='saveButton-${buttonIdCounter}' class='menu-btn' style='color: var(--main-tx-color); background-color: var(--main-bg-color); width: 45px; height: 25px;'>yes</button>`
+            const saveButton = `Do you want to save the file?<button id='saveButton-${buttonIdCounter}' class='menu-button' style='color: var(--main-tx-color); background-color: var(--main-bg-color); width: 45px; height: 25px;'>yes</button>`
 
             bubbleHTML(saveButton)
             document
@@ -139,7 +139,7 @@ const findVulnerabilities = cy => {
 
   const permission = `Do you want to send a request to <strong>${
     settings.cveSearchUrl
-  }</strong> <button id='yes-${buttonIdCounter}' class='menu-btn' style='color: var(--main-tx-color); background-color: var(--main-bg-color); width: 45px; height: 25px;'>yes?</button>`
+  }</strong> <button id='yes-${buttonIdCounter}' class='menu-button' style='color: var(--main-tx-color); background-color: var(--main-bg-color); width: 45px; height: 25px;'>yes?</button>`
 
   // check whether the keywords is empty before sending
   // the request to a vulnerability database

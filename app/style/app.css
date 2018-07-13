@@ -98,7 +98,7 @@ body {
   animation: fadein 0.4s;
 }
 
-.bubble-btn {
+.bubble-button {
   position: absolute;
   top: 0px;
   right: 0;
@@ -108,7 +108,7 @@ body {
   background-color: var(--black-color);
   outline: none;
 }
-.bubble-btn:hover {
+.bubble-button:hover {
   background-color: var(--blue-color);
 }
 
@@ -204,7 +204,7 @@ input::-webkit-input-placeholder {
 .icon:hover {
   fill: var(--blue-color);
 }
-.btn-icon {
+.icon-button {
   background-color: var(--main-dark-bg-color);
   margin: 2px;
   color: var(--main-tx-color);
@@ -212,11 +212,11 @@ input::-webkit-input-placeholder {
   border-color: var(--main-dark-bg-color);
 }
 /*flash color when clicked*/
-.btn-icon:active,
+.icon-button:active,
 .icon:active {
   fill: var(--main-tx-color);
 }
-.btn-icon:focus {
+.icon-button:focus {
   fill: var(--blue-color);
   outline: none;
 }
@@ -233,11 +233,11 @@ input::-webkit-input-placeholder {
 }
 
 /*toggle theme button*/
-.tgl-wrapper {
+.toggle-wrapper {
   position: fixed;
   bottom: 10px;
 }
-.tgl-lbl {
+.toggle-label {
   position: relative;
   display: block;
   height: 10px;
@@ -247,7 +247,7 @@ input::-webkit-input-placeholder {
   cursor: pointer;
   transition: all 0.3s ease;
 }
-.tgl-lbl:after {
+.toggle-label:after {
   position: absolute;
   left: -2px;
   top: -3px;
@@ -259,17 +259,17 @@ input::-webkit-input-placeholder {
   content: "";
   transition: all 0.3s ease;
 }
-.tgl-lbl:active:after {
+.toggle-label:active:after {
   transform: scale(1.15, 0.85);
 }
-.tgl:checked ~ label {
+.toggle:checked ~ label {
   background: var(--main-tx-color);
 }
-.tgl:checked ~ label:after {
+.toggle:checked ~ label:after {
   left: 22px;
   background: var(--black-color);
 }
-.tgl {
+.toggle {
   display: none;
 }
 
@@ -311,7 +311,7 @@ input::-webkit-input-placeholder {
 }
 
 /*load menu*/
-.wrapper {
+.menu-wrapper {
   position: absolute;
   width: 150px;
   border-radius: 10px;
@@ -324,7 +324,7 @@ input::-webkit-input-placeholder {
   text-align: center;
   box-shadow: 3px 2px 11px 7px rgba(20, 29, 38, 0.7);
 }
-.menu-btn {
+.menu-button {
   background-color: var(--main-dark-bg-color);
   margin: 5px;
   color: var(--main-tx-color);
@@ -335,11 +335,11 @@ input::-webkit-input-placeholder {
   border-color: var(--main-dark-bg-color);
   font-size: 14px;
 }
-.menu-btn:hover {
+.menu-button:hover {
   border-color: var(--blue-color);
   color: var(--blue-color);
 }
-.menu-btn:focus {
+.menu-button:focus {
   outline: none;
 }
 

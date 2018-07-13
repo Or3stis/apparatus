@@ -40,14 +40,14 @@ module.exports = function phaseMenu (phase) {
   const graph = document.getElementById('graph-container')
 
   // creates a wrapper for the buttons
-  const wrapper = document.createElement('wrapper')
-  wrapper.id = 'wrapper-id'
-  wrapper.className = 'wrapper'
+  const wrapper = document.createElement('menu-wrapper')
+  wrapper.id = 'menu-wrapper-id'
+  wrapper.className = 'menu-wrapper'
 
   // creates button for new graph
   const btnNew = document.createElement('button')
   btnNew.id = 'new-id'
-  btnNew.className = 'menu-btn'
+  btnNew.className = 'menu-button'
   btnNew.type = 'button'
   btnNew.value = 'new'
   btnNew.textContent = 'new graph'
@@ -55,7 +55,7 @@ module.exports = function phaseMenu (phase) {
   // creates button to load existing graph
   const btnLoad = document.createElement('button')
   btnLoad.id = 'load-id'
-  btnLoad.className = 'menu-btn'
+  btnLoad.className = 'menu-button'
   btnLoad.type = 'button'
   btnLoad.value = 'load'
   btnLoad.textContent = 'load graph'
@@ -63,7 +63,7 @@ module.exports = function phaseMenu (phase) {
   // creates button to load the debug graph
   const btnDebug = document.createElement('button')
   btnDebug.id = 'debug-id'
-  btnDebug.className = 'menu-btn'
+  btnDebug.className = 'menu-button'
   btnDebug.type = 'button'
   btnDebug.value = 'debug'
   btnDebug.textContent = 'debug app'
@@ -76,7 +76,7 @@ module.exports = function phaseMenu (phase) {
   if (phase === 'implementation') {
     const btnImport = document.createElement('button')
     btnImport.id = 'import-id'
-    btnImport.className = 'menu-btn'
+    btnImport.className = 'menu-button'
     btnImport.type = 'button'
     btnImport.value = 'import'
     btnImport.textContent = 'import pcapng file'

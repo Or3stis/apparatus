@@ -17,7 +17,7 @@ module.exports = function implementationUI () {
 
   dgnComponents.innerHTML = `
   <div class="dropdown">
-    <button class="btn-icon dropbtn">
+    <button class="icon-button dropbtn">
       <svg width="24" height="24">
         <use xlink:href="icons/add-node.svg#add-node" class="icon"></use>
      </svg>
@@ -39,20 +39,20 @@ module.exports = function implementationUI () {
     </ul>
   </div>
 
-  <button class="btn-icon" id="add-edge" title="connection">
+  <button class="icon-button" id="add-edge" title="connection">
     <svg width="24" height="24">
       <use xlink:href="icons/add-edge.svg#add-edge" class="icon"></use>
     </svg>
   </button>
 
-  <button class="btn-icon" id="delete" title="remove">
+  <button class="icon-button" id="delete" title="remove">
     <svg width="24" height="24">
       <use xlink:href="icons/remove.svg#remove" class="icon"></use>
     </svg>
   </button>
 
   <div class="dropdown">
-    <button class="btn-icon dropbtn">
+    <button class="icon-button dropbtn">
       <svg width="24" height="24">
         <use xlink:href="icons/list.svg#list" class="icon"></use>
       </svg>
@@ -75,7 +75,7 @@ module.exports = function implementationUI () {
   </div>
 
   <div class="dropdown">
-    <button class="btn-icon dropbtn">
+    <button class="icon-button dropbtn">
       <svg width="24" height="24">
         <use xlink:href="icons/module.svg#module" class="icon"></use>
       </svg>
@@ -90,7 +90,7 @@ module.exports = function implementationUI () {
   </div>
 
   <div class="dropdown">
-    <button class="btn-icon dropbtn" title="layout options">
+    <button class="icon-button dropbtn" title="layout options">
       <svg width="24" height="24">
         <use xlink:href="icons/layout.svg#layout" class="icon"></use>
       </svg>
@@ -106,7 +106,7 @@ module.exports = function implementationUI () {
   </div>
 
   <div class="dropdown">
-    <button class="btn-icon dropbtn" title="label options">
+    <button class="icon-button dropbtn" title="label options">
       <svg width="24" height="24">
         <use xlink:href="icons/label.svg#label" class="icon"></use>
       </svg>
@@ -120,69 +120,69 @@ module.exports = function implementationUI () {
     </ul>
   </div>
 
-  <button class="btn-icon" id="threat-ver-btn" title="threat verification">
+  <button class="icon-button" id="threat-ver-btn" title="threat verification">
     <svg width="24" height="24">
       <use xlink:href="icons/security.svg#security" class="icon"></use>
     </svg>
   </button>
 
-  <button class="btn-icon" id="vuln-ver-btn" title="vulnerability verification">
+  <button class="icon-button" id="vuln-ver-btn" title="vulnerability verification">
     <svg width="24" height="24">
       <use xlink:href="icons/lock_open.svg#lock_open" class="icon"></use>
     </svg>
   </button>
 
-  <button class="btn-icon" id="find-vuln-btn" title="search vulnerabilities">
+  <button class="icon-button" id="find-vuln-btn" title="search vulnerabilities">
     <svg width="24" height="24">
       <use xlink:href="icons/eye.svg#eye" class="icon"></use>
     </svg>
   </button>
 
-  <button class="btn-icon" id="model-val-btn" title="model validation">
+  <button class="icon-button" id="model-val-btn" title="model validation">
     <svg width="24" height="24">
       <use xlink:href="icons/check.svg#check" class="icon"></use>
     </svg>
   </button>
 
-  <button class="btn-icon" id="expose-btn" title="expose">
+  <button class="icon-button" id="expose-btn" title="expose">
     <svg width="24" height="24">
       <use xlink:href="icons/explore.svg#explore" class="icon"></use>
     </svg>
   </button>
 
-  <button class="btn-icon" id="pattern-btn" title="patterns">
+  <button class="icon-button" id="pattern-btn" title="patterns">
     <svg width="24" height="24">
       <use xlink:href="icons/search.svg#search" class="icon"></use>
     </svg>
   </button>
 
-  <button class="btn-icon" id="transition-btn">
+  <button class="icon-button" id="transition-btn">
     <svg width="24" height="24">
       <use xlink:href="icons/swap.svg#swap" class="icon"></use>
     </svg>
   </button>
 
-  <button class="btn-icon" id="save-btn">
+  <button class="icon-button" id="save-btn">
     <svg width="24" height="24">
       <use xlink:href="icons/save.svg#save" class="icon"></use>
     </svg>
   </button>
 
-  <!-- <button class="btn-icon" id="load-button">
+  <!-- <button class="icon-button" id="load-button">
     <svg width="24" height="24">
       <use xlink:href="icons/folder.svg#folder" class="icon"></use>
     </svg>
   </button> -->
 
-  <button class="btn-icon" id="home-btn" title="home">
+  <button class="icon-button" id="home-btn" title="home">
     <svg width="24" height="24">
       <use xlink:href="icons/home.svg#home" class="icon"></use>
     </svg>
   </button>
 
-  <div class="tgl-wrapper">
-    <input type="checkbox" id="theme-btn" class="tgl"/>
-    <label for="theme-btn" class="tgl-lbl"></label>
+  <div class="toggle-wrapper">
+    <input type="checkbox" id="theme-btn" class="toggle"/>
+    <label for="theme-btn" class="toggle-label"></label>
   </div>`
 
   // links the implementationUI with the rest of the app

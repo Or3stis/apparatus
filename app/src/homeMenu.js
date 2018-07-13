@@ -10,28 +10,28 @@ module.exports = function homeMenu () {
   const graph = document.getElementById('graph-container')
 
   // create wrapper for the phase buttons
-  const wrapper = document.createElement('wrapper')
-  wrapper.id = 'wrapper-id'
-  wrapper.className = 'wrapper'
+  const wrapper = document.createElement('menu-wrapper')
+  wrapper.id = 'menu-wrapper-id'
+  wrapper.className = 'menu-wrapper'
 
   // create the design phase button
   const buttonDgn = document.createElement('button')
   buttonDgn.id = 'dgn-id'
-  buttonDgn.className = 'menu-btn'
+  buttonDgn.className = 'menu-button'
   buttonDgn.type = 'button'
   buttonDgn.textContent = 'design phase'
 
   // create the implementation phase button
   const buttonImp = document.createElement('button')
   buttonImp.id = 'imp-id'
-  buttonImp.className = 'menu-btn'
+  buttonImp.className = 'menu-button'
   buttonImp.type = 'button'
   buttonImp.textContent = 'implementation phase'
 
   // create the state transition phase button
   const buttonState = document.createElement('button')
   buttonState.id = 'state-id'
-  buttonState.className = 'menu-btn'
+  buttonState.className = 'menu-button'
   buttonState.type = 'button'
   buttonState.textContent = 'state diagram'
 

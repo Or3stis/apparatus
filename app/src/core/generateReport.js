@@ -52,7 +52,7 @@ module.exports = function generateReport (cy) {
     )
   }
 
-  const reportButton = `Do you want to save the security report?<button id='reportButton-${buttonCounter}' class='menu-btn' style='color: var(--main-tx-color); background-color: var(--main-bg-color); width: 45px; height: 25px;'>yes</button>`
+  const reportButton = `Do you want to save the security report?<button id='reportButton-${buttonCounter}' class='menu-button' style='color: var(--main-tx-color); background-color: var(--main-bg-color); width: 45px; height: 25px;'>yes</button>`
 
   bubbleHTML(reportButton)
   document

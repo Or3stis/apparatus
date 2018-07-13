@@ -17,7 +17,7 @@ module.exports = function stateUI () {
 
   dgnStateComponents.innerHTML = `
   <div class="dropdown">
-    <button class="btn-icon dropbtn">
+    <button class="icon-button dropbtn">
       <svg width="24" height="24">
         <use xlink:href="icons/add-node.svg#add-node" class="icon"></use>
       </svg>
@@ -27,20 +27,20 @@ module.exports = function stateUI () {
     </ul>
   </div>
 
-  <button class="btn-icon" id="add-edge" title="connection">
+  <button class="icon-button" id="add-edge" title="connection">
     <svg width="24" height="24">
       <use xlink:href="icons/add-edge.svg#add-edge" class="icon"></use>
     </svg>
   </button>
 
-  <button class="btn-icon" id="delete" title="remove">
+  <button class="icon-button" id="delete" title="remove">
     <svg width="24" height="24">
       <use xlink:href="icons/remove.svg#remove" class="icon"></use>
     </svg>
   </button>
 
   <div class="dropdown">
-    <button class="btn-icon dropbtn">
+    <button class="icon-button dropbtn">
       <svg width="24" height="24">
         <use xlink:href="icons/list.svg#list" class="icon"></use>
       </svg>
@@ -51,7 +51,7 @@ module.exports = function stateUI () {
   </div>
 
   <div class="dropdown">
-    <button class="btn-icon dropbtn" title="layout options">
+    <button class="icon-button dropbtn" title="layout options">
       <svg width="24" height="24">
         <use xlink:href="icons/layout.svg#layout" class="icon"></use>
       </svg>
@@ -67,7 +67,7 @@ module.exports = function stateUI () {
   </div>
 
   <div class="dropdown">
-  <button class="btn-icon dropbtn" title="label options">
+  <button class="icon-button dropbtn" title="label options">
     <svg width="24" height="24">
       <use xlink:href="icons/label.svg#label" class="icon"></use>
     </svg>
@@ -81,39 +81,39 @@ module.exports = function stateUI () {
   </ul>
   </div>
 
-  <button class="btn-icon" id="expose-btn" title="expose">
+  <button class="icon-button" id="expose-btn" title="expose">
     <svg width="24" height="24">
       <use xlink:href="icons/explore.svg#explore" class="icon"></use>
     </svg>
   </button>
 
-  <button class="btn-icon" id="pattern-btn" title="patterns">
+  <button class="icon-button" id="pattern-btn" title="patterns">
     <svg width="24" height="24">
       <use xlink:href="icons/search.svg#search" class="icon"></use>
     </svg>
   </button>
 
-  <button class="btn-icon" id="save-btn">
+  <button class="icon-button" id="save-btn">
     <svg width="24" height="24">
       <use xlink:href="icons/save.svg#save" class="icon"></use>
     </svg>
   </button>
 
-  <!-- <button class="btn-icon" id="load-button">
+  <!-- <button class="icon-button" id="load-button">
     <svg width="24" height="24">
       <use xlink:href="icons/folder.svg#folder" class="icon"></use>
     </svg>
   </button> -->
 
-  <button class="btn-icon" id="home-btn" title="home">
+  <button class="icon-button" id="home-btn" title="home">
     <svg width="24" height="24">
       <use xlink:href="icons/home.svg#home" class="icon"></use>
     </svg>
   </button>
 
-  <div class="tgl-wrapper">
-    <input type="checkbox" id="theme-btn" class="tgl"/>
-    <label for="theme-btn" class="tgl-lbl"></label>
+  <div class="toggle-wrapper">
+    <input type="checkbox" id="theme-btn" class="toggle"/>
+    <label for="theme-btn" class="toggle-label"></label>
   </div>`
 
   // links the design-state UI with the rest of the app
