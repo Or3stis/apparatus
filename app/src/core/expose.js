@@ -48,7 +48,7 @@ module.exports = function expose (cy) {
     })
 
     // restores the original button color
-    exposeBtn.setAttribute('class', 'btn-icon')
+    exposeBtn.setAttribute('class', 'icon-button')
     btnToken = false
   }
 }

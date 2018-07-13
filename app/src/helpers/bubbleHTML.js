@@ -25,7 +25,7 @@ module.exports = function bubbleHTML (toPrint) {
 
     // create the close button
     const bubbleBtn = document.createElement('button')
-    bubbleBtn.className = 'bubble-btn'
+    bubbleBtn.className = 'bubble-button'
     bubbleBtn.textContent = '✖︎'
     bubbleBtn.id = `bubbleBtn-${idCnt}`
     bubble.appendChild(bubbleBtn)

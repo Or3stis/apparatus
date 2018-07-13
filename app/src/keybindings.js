@@ -77,7 +77,7 @@ module.exports = function (
 • search for attributes <b><keyword></b>`
 
   // adds the url of ASTo docs
-  const docsURLBtn = `click to view <button id='url-button' class='menu-btn' style='color: var(--main-tx-color); background-color: var(--main-bg-color); width: 45px; height: 25px;'>docs</button>`
+  const docsURLBtn = `click to view <button id='url-button' class='menu-button' style='color: var(--main-tx-color); background-color: var(--main-bg-color); width: 45px; height: 25px;'>docs</button>`
 
   const cmdID = document.getElementById('cmd-id')
   const labelId = document.getElementById('input-label-id')
