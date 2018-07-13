@@ -18,7 +18,7 @@
 
 body {
   background-color: var(--main-bg-color);
-  font-family: system-ui, 'Helvetica Neue', sans-serif;
+  font-family: system-ui, "Helvetica Neue", sans-serif;
   color: var(--main-tx-color);
   height: 100%;
   width: 100%;
@@ -47,7 +47,7 @@ body {
   margin-right: auto;
   margin-left: auto;
   display: grid;
-  grid-template-areas: 'action-bar graph sidebar';
+  grid-template-areas: "action-bar graph sidebar";
   grid-template-columns: 50px 1fr 165px;
 }
 .action-bar {
@@ -256,7 +256,7 @@ input::-webkit-input-placeholder {
   height: 16px;
   border-radius: 100px;
   background: var(--main-tx-color);
-  content: '';
+  content: "";
   transition: all 0.3s ease;
 }
 .tgl-lbl:active:after {
