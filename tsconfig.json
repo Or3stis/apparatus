@@ -1,0 +1,10 @@
+{
+  "compilerOptions": {
+      "outDir": "./build",
+      "allowJs": true,
+      "target": "es2018"
+  },
+  "include": [
+      "./app/src/**/*"
+  ]
+}

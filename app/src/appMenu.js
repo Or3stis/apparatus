@@ -1,7 +1,7 @@
 const electron = require('electron')
 const app = electron.app
 
-const urls = require('../settings/urls.js')
+const urls = require('./settings/urls.js')
 
 const template = [
   {

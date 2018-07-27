@@ -66,6 +66,7 @@
     "electron": "^2.0.5",
     "electron-builder": "^20.26.0",
     "prettier": "^1.13.7",
-    "standard": "^11.0.1"
+    "standard": "^11.0.1",
+    "typescript": "^2.9.2"
   }
 }

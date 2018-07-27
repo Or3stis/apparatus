@@ -4,7 +4,7 @@ const remote = require('electron').remote
 const userDataPath = remote.app.getPath('userData')
 const settings = require(`${userDataPath}/astoSettings.js`)
 
-const graphStyle = require('../../settings/graphStyle.js')
+const graphStyle = require('../settings/graphStyle.js')
 
 /**
  * helper to create cytoscape graphs based on specific options

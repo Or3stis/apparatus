@@ -69,7 +69,7 @@ app.on('activate', () => {
 })
 
 // import the default settings of the app
-const defaultSettings = require('../settings/defaultSettings.js')
+const defaultSettings = require('./settings/defaultSettings.js')
 // normalize the settings input
 const defaultSettingsNormalize = JSON.stringify(defaultSettings.settings)
   .replace(/(?:\\[n])+/g, '\n')

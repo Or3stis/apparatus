@@ -11,7 +11,7 @@ const deleteRestoreConcepts = require('./core/deleteRestoreConcepts.js')
 const generateReport = require('./core/generateReport.js')
 
 // require settings urls
-const urls = require('../settings/urls.js')
+const urls = require('./settings/urls.js')
 
 // require helper modules
 const bubbleHTML = require('./helpers/bubbleHTML.js')
