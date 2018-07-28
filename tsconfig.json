@@ -1,6 +1,9 @@
 {
   "compilerOptions": {
-      "outDir": "./build",
+      "outDir": "./app/build",
+      "module": "commonjs",
+      "moduleResolution": "node",
+      "removeComments": true,
       "allowJs": true,
       "target": "es2018"
   },
