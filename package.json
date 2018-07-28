@@ -4,9 +4,9 @@
   "description": "an IoT network security analysis and visualization tool",
   "main": "./app/src/main.js",
   "scripts": {
-    "start": "electron ./app/src/main.js",
-    "dev": "cross-env NODE_ENV=development electron ./app/src/main.js",
-    "lint": "prettier --no-semi --single-quote --write './app/**/*.js' && standard './app/**/*.js' --fix",
+    "start": "electron .",
+    "dev": "cross-env NODE_ENV=development electron .",
+    "lint": "prettier --no-semi --single-quote --write './app/src/**/*.js' && standard './app/src/**/*.js' --fix",
     "postinstall": "electron-builder install-app-deps",
     "dist": "build"
   },
