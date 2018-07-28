@@ -1,6 +1,5 @@
 /**
  * add state diagram nodes in the graph
- * @todo needs refactoring
  *
  * @param {Object} cy cytoscape instance
  * @param {Object} event captured event
