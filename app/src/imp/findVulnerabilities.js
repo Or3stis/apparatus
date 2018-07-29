@@ -1,7 +1,7 @@
 // finds vulnerabilities from CVE database
 
-const https = require('https')
-const fs = require('fs')
+const { get } = require('https')
+const { writeFile } = require('fs')
 const { dialog, app } = require('electron').remote
 
 const userDataPath = app.getPath('userData')
@@ -25,52 +25,50 @@ const requestVulnerableData = keywords => {
   // stores the CVE list
   let keywordCounter = 0
   keywords.map(vulnerability => {
-    https
-      .get(`${settings.cveSearchUrl}${vulnerability}`, resp => {
-        let data = ''
-        // add each received chunk of data
-        resp.on('data', chunk => {
-          data += chunk
-        })
-        // once the whole response has been received
-        resp.on('end', () => {
-          // store the data for export
-          vulnerableJSONData += data
-
-          // this works for single keywords
-          Object.values(JSON.parse(data)).map(key => {
-            // array with the CVE ids
-            key.map(info => vulnerabilities.push(info.id))
-          })
-          // this works for double keywords -> vendor/product
-          // JSON.parse(data).map((key) => {
-          // console.log(key)
-          // })
-
-          // displays the total amount of vulnerabilities
-          bubbleHTML(
-            `${vulnerability} vulnerabilities found: <strong>${
-              vulnerabilities.length
-            }</strong>`
-          )
-
-          // when the requests are finished ask if the file is to saved
-          keywordCounter += 1
-          if (keywordCounter === keywords.length) {
-            const saveButton = `Do you want to save the file?<button id='saveButton-${buttonIdCounter}' class='menu-button' style='color: var(--main-tx-color); background-color: var(--main-bg-color); width: 45px; height: 25px;'>yes</button>`
-
-            bubbleHTML(saveButton)
-            document
-              .getElementById(`saveButton-${buttonIdCounter}`)
-              .addEventListener('click', () => {
-                saveFile()
-              })
-          }
-        })
+    get(`${settings.cveSearchUrl}${vulnerability}`, resp => {
+      let data = ''
+      // add each received chunk of data
+      resp.on('data', chunk => {
+        data += chunk
       })
-      .on('error', err => {
-        bubbleTxt(err.message)
+      // once the whole response has been received
+      resp.on('end', () => {
+        // store the data for export
+        vulnerableJSONData += data
+
+        // this works for single keywords
+        Object.values(JSON.parse(data)).map(key => {
+          // array with the CVE ids
+          key.map(info => vulnerabilities.push(info.id))
+        })
+        // this works for double keywords -> vendor/product
+        // JSON.parse(data).map((key) => {
+        // console.log(key)
+        // })
+
+        // displays the total amount of vulnerabilities
+        bubbleHTML(
+          `${vulnerability} vulnerabilities found: <strong>${
+            vulnerabilities.length
+          }</strong>`
+        )
+
+        // when the requests are finished ask if the file is to saved
+        keywordCounter += 1
+        if (keywordCounter === keywords.length) {
+          const saveButton = `Do you want to save the file?<button id='saveButton-${buttonIdCounter}' class='menu-button' style='color: var(--main-tx-color); background-color: var(--main-bg-color); width: 45px; height: 25px;'>yes</button>`
+
+          bubbleHTML(saveButton)
+          document
+            .getElementById(`saveButton-${buttonIdCounter}`)
+            .addEventListener('click', () => {
+              saveFile()
+            })
+        }
       })
+    }).on('error', err => {
+      bubbleTxt(err.message)
+    })
   })
 }
 
@@ -80,7 +78,7 @@ const saveFile = () => {
     { filters: [{ name: 'javascript', extensions: ['json'] }] },
     filename => {
       // requestVulnerableData(filename, keywords)
-      fs.writeFile(filename, vulnerableJSONData, err => {
+      writeFile(filename, vulnerableJSONData, err => {
         if (err) console.error(`Error: ${err.message}`)
       })
     }

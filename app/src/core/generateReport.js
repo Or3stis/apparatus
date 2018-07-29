@@ -1,5 +1,5 @@
 const { dialog } = require('electron').remote
-const fs = require('fs')
+const { writeFile } = require('fs')
 const bubbleTxt = require('../helpers/bubbleTxt.js')
 const bubbleHTML = require('../helpers/bubbleHTML.js')
 
@@ -44,7 +44,7 @@ module.exports = function generateReport (cy) {
       { filters: [{ name: 'markdown', extensions: ['md'] }] },
       filename => {
         // requestVulnerableData(filename, nodesKeywords)
-        fs.writeFile(filename, dataToWrite, err => {
+        writeFile(filename, dataToWrite, err => {
           if (err) console.error(`Error: ${err.message}`)
         })
         bubbleTxt('security report generated\n👍')

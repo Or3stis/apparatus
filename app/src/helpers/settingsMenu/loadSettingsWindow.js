@@ -1,7 +1,7 @@
 // allows modification of the settings by the user
 const remote = require('electron').remote
 const ipc = require('electron').ipcRenderer
-const fs = require('fs')
+const { writeFile } = require('fs')
 
 const theme = require('../theme.js')
 
@@ -156,7 +156,7 @@ const settings = {
 module.exports = settings
 `
 
-  fs.writeFile(`${userDataPath}/astoSettings.js`, newSettings, err => {
+  writeFile(`${userDataPath}/astoSettings.js`, newSettings, err => {
     if (err) throw err
   })
 
@@ -184,7 +184,7 @@ restoreBtn.addEventListener('click', () => {
     .replace(/(?:\\[n])+/g, '\n')
     .replace(/"/g, '')
 
-  fs.writeFile(
+  writeFile(
     `${userDataPath}/astoSettings.js`,
     defaultSettingsNormalize,
     err => {

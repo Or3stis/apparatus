@@ -4,9 +4,9 @@ const addEdge = require('../core/addEdge.js')
 /**
  * add implementation phase edges
  *
- * @param {Object} cy cytoscape instance
- * @param {Object} srcNode source node
- * @param {Object} trgNode target node
+ * @param {object} cy cytoscape instance
+ * @param {string} srcNode source node
+ * @param {string} trgNode target node
  */
 module.exports = function addComponent (cy, srcNode, trgNode) {
   let srcNodeId = srcNode.id
