@@ -4,7 +4,7 @@ const ipc = require('electron').ipcMain
 const app = electron.app
 // Module to create native browser window.
 const BrowserWindow = electron.BrowserWindow
-const fs = require('fs')
+const { writeFile, existsSync, statSync } = require('fs')
 
 const appMenu = require('./appMenu.js')
 
@@ -79,7 +79,7 @@ const userDataPath = app.getPath('userData')
 
 /** write the astoSettings.js to the OS location */
 const writeSettings = () => {
-  fs.writeFile(
+  writeFile(
     `${userDataPath}/astoSettings.js`,
     defaultSettingsNormalize,
     err => {
@@ -89,11 +89,11 @@ const writeSettings = () => {
 }
 
 // checks if the local astoSettings.js exists
-if (fs.existsSync(`${userDataPath}/astoSettings.js`) !== true) {
+if (existsSync(`${userDataPath}/astoSettings.js`) !== true) {
   writeSettings()
 } else if (
-  fs.existsSync(`${userDataPath}/astoSettings.js`) === true &&
-  fs.statSync(`${userDataPath}/astoSettings.js`).size === 0
+  existsSync(`${userDataPath}/astoSettings.js`) === true &&
+  statSync(`${userDataPath}/astoSettings.js`).size === 0
 ) {
   writeSettings()
 }
