@@ -5,7 +5,11 @@
       "moduleResolution": "node",
       "removeComments": true,
       "allowJs": true,
-      "target": "es2018"
+      "noImplicitAny": true,
+      "target": "esnext",
+      "lib": [
+          "esnext"
+      ]
   },
   "include": [
       "./app/src/**/*"
