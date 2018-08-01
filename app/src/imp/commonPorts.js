@@ -220,6 +220,7 @@ const commonPorts = {
   9898: 'Dabber (malicious)',
   9988: 'Rbot/Spybot (malicious)',
   12345: 'NetBus (malicious)',
+  62078: 'iPhone sync',
   63321: 'NSDP',
   63322: 'NSDP',
   63323: 'NSDP',
