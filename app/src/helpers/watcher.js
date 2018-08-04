@@ -10,31 +10,31 @@ let changeToken = false
  * @param {Object} cy cytoscpe instance
  */
 const nodes = (graphNodes, cy) => {
-  const titleBar = document.getElementById('title-bar-id')
+  const titleFilePath = document.getElementById('title-file-path-id')
 
   if (graphNodes.same(cy.nodes()) === false && changeToken === false) {
-    titleBar.innerHTML += `<span style='color: var(--blue-color);'> •</span>`
+    titleFilePath.innerHTML += `<span style='color: var(--blue-color);'> •</span>`
     changeToken = true
   } else if (graphNodes.same(cy.nodes()) === true && changeToken === true) {
-    titleBar.innerHTML = titleBar.innerHTML.replace(' •', ' ')
+    titleFilePath.innerHTML = titleFilePath.innerHTML.replace(' •', ' ')
     changeToken = false
   }
 }
 
 // watcher for changes in the edges
 // const edges = (graphEdges, cy) => {
-//   const titleBar = document.getElementById('title-bar-id')
+//   const titleFilePath = document.getElementById('title-file-path-id')
 //
 //   if (
 //     graphEdges.same(cy.edges()) === false &&
-//     titleBar.innerText !== `${titleBar.innerHTML} *`
+//     titleFilePath.innerText !== `${titleFilePath.innerHTML} *`
 //   ) {
-//     // add the files location to the title bar
-//     titleBar.innerHTML += ` *`
+//     // add the files path to the title bar
+//     titleFilePath.innerHTML += ` *`
 //   } else if (graphEdges.same(cy.edges()) === false) {
-//     titleBar.innerHTML = titleBar.innerHTML
+//     titleFilePath.innerHTML = titleFilePath.innerHTML
 //   } else {
-//     titleBar.innerHTML = titleBar.innerHTML.replace(' *', ' ')
+//     titleFilePath.innerHTML = titleFilePath.innerHTML.replace(' *', ' ')
 //   }
 // }
 
