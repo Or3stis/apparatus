@@ -3,8 +3,8 @@ const phaseMenu = require('../../src/phaseMenu.js')
 /** loads the design phase UI */
 module.exports = function designUI () {
   // shows design phase on the title
-  const title = document.getElementById('title-bar-id')
-  title.innerHTML = `design phase`
+  const title = document.getElementById('title-phase-id')
+  title.textContent = `design phase`
 
   // show sidebars
   const actionBar = document.getElementById('action-bar-id')

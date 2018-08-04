@@ -4,6 +4,13 @@ const bubbleTxt = require('./bubbleTxt.js')
 const jsonfileWrite = require('jsonfile').writeFile
 const { dialog } = require('electron').remote
 
+const updateTittle = (file) => {
+  const titleFilePath = document.getElementById('title-file-path-id')
+  titleFilePath.textContent = ` ~/${file}`
+  // remove the change indicator on save
+  // titleBar.innerHTML = titleBar.innerHTML.replace(' •', ' ')
+}
+
 /**
  * saves graph
  *
@@ -28,8 +35,10 @@ module.exports = function save (cy) {
           dialog.showErrorBox('Error while saving the file', err.message)
         } else {
           // remove the change indicator on save
-          const titleBar = document.getElementById('title-bar-id')
-          titleBar.innerHTML = titleBar.innerHTML.replace(' •', ' ')
+          // const titleBar = document.getElementById('title-phase-id')
+          // titleBar.innerHTML = titleBar.innerHTML.replace(' •', ' ')
+          updateTittle(fileToSave)
+          // console.log(fileToSave)
         }
         bubbleTxt('graph saved\n👍')
       })
