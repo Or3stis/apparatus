@@ -99,14 +99,16 @@ const findVulnerableNodes = cy => {
   cy.nodes().map(node => {
     if (node.data().asto.concept === 'device') {
       // check the 'type' attribute for vulnerabilities
-      if (node.data().asto.type !== '') keywords.push(node.data().asto.type)
-
+      if (node.data().asto.type !== '') {
+        keywords.push(node.data().asto.type)
+      }
       node.removeClass('faded')
       node.addClass('attention')
     } else if (node.data().asto.concept === 'application') {
       // check the 'version' attribute for vulnerabilities
-      if (node.data().asto.version !== '') keywords.push(node.data.asto.version)
-
+      if (node.data().asto.version !== '') {
+        keywords.push(node.data().asto.version)
+      }
       node.removeClass('faded')
       node.addClass('attention')
     }
