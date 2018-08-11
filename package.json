@@ -24,6 +24,10 @@
   "bugs": {
     "url": "https://github.com/Or3stis/apparatus/issues"
   },
+  "homepage": "https://github.com/Or3stis/apparatus/#readme",
+  "engines": {
+		"node": ">=10.6.0"
+	},
   "build": {
     "productName": "ASTo",
     "appId": "org.or3stis.asto",
@@ -56,7 +60,6 @@
       "icon": "build/icon.png"
     }
   },
-  "homepage": "https://github.com/Or3stis/apparatus/#readme",
   "dependencies": {
     "cytoscape": "^3.2.15",
     "jsonfile": "^4.0.0"
