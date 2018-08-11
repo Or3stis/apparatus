@@ -8,10 +8,11 @@ let constraintsArray = []
 let mechanismsArray = []
 let vulnerabilityArray = []
 let buttonCounter = 0
+
 /**
  * generate security report
  *
- * @param {Object} cy cytoscape instance
+ * @param {object} cy cytoscape instance
  */
 module.exports = function generateReport (cy) {
   cy.nodes().map(node => {
@@ -24,16 +25,20 @@ module.exports = function generateReport (cy) {
   })
 
   const reportTittle = `# Security Report\n\n`
+  const numberOfComponents = `Number of components: ${
+    cy.elements().nodes().length
+  }\n`
   const numberOfThreats = `Number of threats: ${threatsArray.length}\n`
+  const numberOfVulnerabilities = `Number of Vulnerabilities: ${
+    vulnerabilityArray.length
+  }\n`
   const numberOfTConstraints = `Number of constraints: ${
     constraintsArray.length
   }\n`
-  const numberOfMechanisms = `Number of threats: ${mechanismsArray.length}\n`
-  const numberOfVulnerabilities = `Number of threats: ${
-    vulnerabilityArray.length
-  }\n`
+  const numberOfMechanisms = `Number of mechanisms: ${mechanismsArray.length}\n`
 
   const dataToWrite = reportTittle
+    .concat(numberOfComponents)
     .concat(numberOfThreats)
     .concat(numberOfTConstraints)
     .concat(numberOfMechanisms)
@@ -43,7 +48,6 @@ module.exports = function generateReport (cy) {
     dialog.showSaveDialog(
       { filters: [{ name: 'markdown', extensions: ['md'] }] },
       filename => {
-        // requestVulnerableData(filename, nodesKeywords)
         writeFile(filename, dataToWrite, err => {
           if (err) console.error(`Error: ${err.message}`)
         })
