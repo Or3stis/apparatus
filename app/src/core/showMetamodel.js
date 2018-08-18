@@ -1,4 +1,3 @@
-// TODO cannot restore focus on a minimized window
 const remote = require('electron').remote
 const BrowserWindow = remote.BrowserWindow
 
@@ -41,9 +40,14 @@ const metamodelIsActive = url => {
   Object.values(activeWins).map(activeWin => {
     if (activeWin.getURL() === `${finalPath}/${url}`) {
       isWindowActive = true
+      if (activeWin.isMinimized() === true) {
+        activeWin.restore()
+      }
     }
   })
-  if (isWindowActive === false) createWindow(url)
+  if (isWindowActive === false) {
+    createWindow(url)
+  }
 }
 
 /**
