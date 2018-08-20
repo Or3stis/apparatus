@@ -7,7 +7,7 @@ const bubbleHTML = require('../helpers/bubbleHTML.js')
 /**
  * applies transition rules from design to implementation phase
  *
- * @param {Object} cy cytoscape instance
+ * @param {object} cy cytoscape instance
  * @param {number} nodeCounter id counter of nodes
  */
 const transition = (cy, nodeCounter) => {
@@ -31,13 +31,13 @@ const transition = (cy, nodeCounter) => {
       node.data().asto.location = ''
     }
   })
+
   /** add connections between devices */
   cy.edges().map(edge => {
     if (edge.data().label === 'connects') {
       const source = edge.data().source
       const target = edge.data().target
 
-      // console.log(nodeCounter)
       nodeCounter += 1 // used for the id of the node
       // add the connection node
       cy.add({
@@ -83,7 +83,7 @@ const warning =
 /**
  * uses the transition rules and saves the graph
  *
- * @param {Object} cy cytoscape instance
+ * @param {object} cy cytoscape instance
  * @param {number} nodeCounter id counter of nodes
  */
 module.exports = function dgnState2ImpState (cy, nodeCounter) {
