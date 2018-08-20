@@ -109,7 +109,8 @@ module.exports = function (
         bubbleHTML(docsURLBtn)
         // opens the wiki page with the default browser
         document.getElementById('url-button').addEventListener('click', () => {
-          require('electron').shell.openExternal(urls.docsURL)
+          remote.shell.openExternal(urls.docsURL)
+          // require('electron').shell.openExternal(urls.docsURL)
         })
         break
       case ':insights':

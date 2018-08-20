@@ -42,15 +42,14 @@ const template = [
       {
         label: 'Apparatus documentation',
         click () {
-          require('electron').shell.openExternal(urls.docsURL)
-          // console.log('tess')
+          electron.shell.openExternal(urls.docsURL)
         }
       },
       { type: 'separator' },
       {
         label: 'Report Issue',
         click () {
-          require('electron').shell.openExternal(urls.issuesURL)
+          electron.shell.openExternal(urls.issuesURL)
         }
       }
     ]
