@@ -29,13 +29,13 @@ const buttonHelpers = require('./buttonHelpers.js')
 /**
  * instantiation of keybinding
  *
- * @param {Object} cy cytoscape instance
- * @param {Object} selectedNode selected node
- * @param {Object} selectedEdge selected edge
- * @param {Object} srcNode source node
- * @param {Object} trgNode target node
+ * @param {object} cy cytoscape instance
+ * @param {object} selectedNode user selected node
+ * @param {object} selectedEdge user selected edge
+ * @param {object} srcNode source node
+ * @param {object} trgNode target node
  * @param {string} phase engineering analysis phase
- * @param {Object} graphNodes initial state of the graph
+ * @param {object} graphNodes initial state of the graph
  */
 module.exports = function (
   cy,
@@ -110,7 +110,6 @@ module.exports = function (
         // opens the wiki page with the default browser
         document.getElementById('url-button').addEventListener('click', () => {
           remote.shell.openExternal(urls.docsURL)
-          // require('electron').shell.openExternal(urls.docsURL)
         })
         break
       case ':insights':
