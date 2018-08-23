@@ -99,6 +99,7 @@ module.exports = function (
     document.getElementById('cmd-id').value = ''
 
     // declare input of console commands
+    // console commands, except the `help` command use the `:` as prefix
     switch (input) {
       case 'help':
         // checks the platform to display the help menu
@@ -148,7 +149,7 @@ module.exports = function (
     }
   }
 
-  // declare keydown listeners
+  // declare keyboard listeners on keydown
   document.addEventListener('keydown', event => {
     let metaKey = ''
     // checks the platform to assign the correct meta key
