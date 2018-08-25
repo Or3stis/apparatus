@@ -1,11 +1,11 @@
 // allows modification of the settings by the user
-const remote = require('electron').remote
-const ipc = require('electron').ipcRenderer
+const { app, getCurrentWindow } = require('electron').remote
+const {send} = require('electron').ipcRenderer
 const { writeFile } = require('fs')
 
 const theme = require('../theme.js')
 
-const userDataPath = remote.app.getPath('userData')
+const userDataPath = app.getPath('userData')
 const settings = require(`${userDataPath}/astoSettings.js`)
 
 /* consistent color theme with the main window */
@@ -161,8 +161,8 @@ module.exports = settings
   })
 
   // close the window
-  const win = remote.getCurrentWindow()
-  ipc.send('window-settings', 'save')
+  const win = getCurrentWindow()
+  send('window-settings', 'save')
   win.close()
 })
 
@@ -170,8 +170,8 @@ module.exports = settings
 const cancelBtn = document.getElementById('settings-cancel')
 
 cancelBtn.addEventListener('click', () => {
-  const win = remote.getCurrentWindow()
-  ipc.send('window-settings', 'cancel')
+  const win = getCurrentWindow()
+  send('window-settings', 'cancel')
   win.close()
 })
 
@@ -179,7 +179,8 @@ cancelBtn.addEventListener('click', () => {
 const restoreBtn = document.getElementById('settings-restore')
 
 restoreBtn.addEventListener('click', () => {
-  const defaultSettings = require('../../../settings/defaultSettings.js')
+  console.log(__dirname)
+  const defaultSettings = require('../../settings/defaultSettings.js')
   const defaultSettingsNormalize = JSON.stringify(defaultSettings.settings)
     .replace(/(?:\\[n])+/g, '\n')
     .replace(/"/g, '')
@@ -193,7 +194,7 @@ restoreBtn.addEventListener('click', () => {
   )
 
   // close window
-  const win = remote.getCurrentWindow()
-  ipc.send('window-settings', 'restore')
+  const win = getCurrentWindow()
+  send('window-settings', 'restore')
   win.close()
 })

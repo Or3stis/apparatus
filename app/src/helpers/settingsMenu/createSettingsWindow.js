@@ -1,10 +1,9 @@
-const remote = require('electron').remote
-const BrowserWindow = remote.BrowserWindow
+const { BrowserWindow } = require('electron').remote
 
 /** creates the settings window */
 module.exports = function settingsWindow () {
   const settingsURL = `file://${__dirname}/settings.html`
-  // create window
+
   const createWindow = url => {
     let win = new BrowserWindow({
       backgroundColor: '#282c34',
@@ -25,7 +24,7 @@ module.exports = function settingsWindow () {
   }
 
   /**
-   * check if the settings window is open
+   * check if the settings window is open before creating a new one
    *
    * @param {string} url
    */
