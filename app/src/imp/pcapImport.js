@@ -1,8 +1,8 @@
 // creates models from pcap-ng files
 
-// TODO code is difficult to read, make it better
+// TODO code is difficult to read, refactor it
 const { dialog } = require('electron').remote
-const fs = require('fs')
+const { writeFile, readFile, unlink } = require('fs')
 const child = require('child_process')
 
 const commonPorts = require('./commonPorts.js')
@@ -90,7 +90,7 @@ let uniqueDevices = []
 /**
  * stores only the unique connections
  *
- * @param {Object} devices nodes
+ * @param {object} devices nodes
  */
 const storeUniqueDevicesServices = devices => {
   Object.keys(devices).map(key => {
@@ -116,7 +116,7 @@ let idCounter = 0
 /**
  * creates the devices nodes in the graph
  *
- * @param {Object} uniqueDevicesServices
+ * @param {object} uniqueDevicesServices
  */
 const createDevices = uniqueDevicesServices => {
   Object.keys(uniqueDevicesServices).map(deviceIp => {
@@ -145,7 +145,7 @@ const createDevices = uniqueDevicesServices => {
  * creates the application nodes in the graph
  * and connects to the devices
  *
- * @param {Object} devicesServices
+ * @param {object} devicesServices
  */
 const createDevicesApplications = devicesServices => {
   let deviceIdCounter = 0 // device concepts start from 0
@@ -194,8 +194,8 @@ const createDevicesApplications = devicesServices => {
 /**
  * creates connections and adds edges between them and the devices
  *
- * @param {Object} devices nodes
- * @param {Array} connections
+ * @param {object} devices nodes
+ * @param {array} connections
  */
 const createConnections = (devices, connections) => {
   // creates the edges and the connection nodes concept
@@ -254,10 +254,10 @@ const createConnections = (devices, connections) => {
  * writes the data from the read function
  * the data are read from the txt created in readFile function
  *
- * @param {Object} cy cytoscape instance
+ * @param {object} cy cytoscape instance
  * @param {string} filename
- * @param {Object} devices nodes
- * @param {Array} connections
+ * @param {object} devices nodes
+ * @param {array} connections
  */
 const writeGraph = (cy, filename, devices, connections) => {
   storeUniqueDevicesServices(devices)
@@ -277,7 +277,7 @@ const writeGraph = (cy, filename, devices, connections) => {
     .concat(fileEnd)
 
   // writes the graph on file
-  fs.writeFile(`${filename}.js`, toWrite, err => {
+  writeFile(`${filename}.js`, toWrite, err => {
     if (err) throw err
 
     // loads the created graph on the tool
@@ -289,11 +289,11 @@ const writeGraph = (cy, filename, devices, connections) => {
 /**
  * reads the .txt file that was created by the tcpdump command
  *
- * @param {Object} cy cytoscape instance
+ * @param {object} cy cytoscape instance
  * @param {string} filename
  */
 const readTxtFile = (cy, filename) => {
-  fs.readFile(`${filename}`, (err, data) => {
+  readFile(`${filename}`, (err, data) => {
     if (err) throw err
 
     const txtData = data.toString().split('\n')
@@ -305,7 +305,7 @@ const readTxtFile = (cy, filename) => {
     writeGraph(cy, filename, deviceNodes, uniqueConnections)
   })
   // deletes the text file
-  fs.unlink(`${filename}`, err => {
+  unlink(`${filename}`, err => {
     if (err) throw err
   })
 }
@@ -314,7 +314,7 @@ const readTxtFile = (cy, filename) => {
  * exports the module
  * checks if tcpdump is installed
  *
- * @param {Object} cy cytoscape instance
+ * @param {object} cy cytoscape instance
  * @param {string} phase engineering phase
  */
 module.exports = function pcapImport (cy, phase) {
