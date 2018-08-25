@@ -1,9 +1,9 @@
 // module to change color themes between light and dark
-const remote = require('electron').remote
+const { app } = require('electron').remote
 
 const graphStyle = require('../settings/graphStyle.js')
 
-const userDataPath = remote.app.getPath('userData')
+const userDataPath = app.getPath('userData')
 const settings = require(`${userDataPath}/astoSettings.js`)
 
 /**

@@ -1,5 +1,4 @@
-const remote = require('electron').remote
-const BrowserWindow = remote.BrowserWindow
+const { BrowserWindow } = require('electron').remote
 
 // metamodels' figure location
 const dgnMeta = 'metamodels/dgn-model.png'
