@@ -1,6 +1,6 @@
 // allows modification of the settings by the user
 const { app, getCurrentWindow } = require('electron').remote
-const {send} = require('electron').ipcRenderer
+const { send } = require('electron').ipcRenderer
 const { writeFile } = require('fs')
 
 const theme = require('../theme.js')
