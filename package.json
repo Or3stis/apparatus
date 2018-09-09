@@ -62,7 +62,7 @@
   },
   "dependencies": {
     "cytoscape": "^3.2.16",
-    "jsonfile": "^4.0.0"
+    "jsonfile": "^5.0.0"
   },
   "devDependencies": {
     "cross-env": "^5.2.0",
