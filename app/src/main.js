@@ -14,7 +14,7 @@ let mainWindow
 
 // mainWindow.webContents.on('crashed', function () { })
 
-function createWindow () {
+const createWindow = () => {
   // Create the browser window.
   mainWindow = new BrowserWindow({
     backgroundColor: '#282c34',
