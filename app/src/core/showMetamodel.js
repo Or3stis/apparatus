@@ -52,7 +52,7 @@ const metamodelIsActive = url => {
 /**
  * shows the current phase's metamodel in a separate window
  *
- * @param {string} phase engineering phase
+ * @param {string} phase engineering phase (design, implementation, state)
  */
 module.exports = async function showMetamodel (phase) {
   // checks for the phase to show the correct metamodel

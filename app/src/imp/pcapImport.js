@@ -315,7 +315,7 @@ const readTxtFile = (cy, filename) => {
  * checks if tcpdump is installed
  *
  * @param {object} cy cytoscape instance
- * @param {string} phase engineering phase
+ * @param {string} phase engineering phase (design, implementation, state)
  */
 module.exports = function pcapImport (cy, phase) {
   // checks if tcpdump is installed, returns a boolean

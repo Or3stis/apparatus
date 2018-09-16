@@ -8,7 +8,7 @@ const cyOptions = require('./cyOptions.js')
  * loads graphs in js or json format
  *
  * @param {object} cy cytoscape instance
- * @param {string} phase engineering phase
+ * @param {string} phase engineering phase (design, implementation, state)
  */
 module.exports = function load (cy, phase) {
   // check platform
