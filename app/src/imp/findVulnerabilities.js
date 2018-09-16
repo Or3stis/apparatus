@@ -88,7 +88,7 @@ const saveFile = () => {
 /**
  * highlights the vulnerable nodes and fills the keywords array
  *
- * @param {Object} cy cytoscape instance
+ * @param {object} cy cytoscape instance
  */
 const findVulnerableNodes = cy => {
   // fades out the graph elements
@@ -118,7 +118,7 @@ const findVulnerableNodes = cy => {
 /**
  * removes duplicate keywords
  *
- * @param {Array} keywords keywords to be send to the database
+ * @param {array} keywords keywords to be send to the database
  */
 const getUniqueKeywords = keywords => {
   const uniqueKeywords = [...new Set(keywords)]
@@ -132,7 +132,7 @@ const getUniqueKeywords = keywords => {
 /**
  * sends a request to a CVE database with the keywords
  *
- * @param {Object} cy cytoscape instance
+ * @param {object} cy cytoscape instance
  */
 const findVulnerabilities = cy => {
   findVulnerableNodes(cy)

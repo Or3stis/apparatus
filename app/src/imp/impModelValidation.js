@@ -7,9 +7,9 @@ let arrWrong = [] // stores wrong connection of nodes
 /**
  * validates the components of the graph
  *
- * @param {Object} cy cytoscape instance
- * @param {String} component metamodel's concept
- * @param {Array} componentArray allowed connected components
+ * @param {object} cy cytoscape instance
+ * @param {string} component metamodel's concept
+ * @param {array} componentArray allowed connected components
  */
 const componentValidation = (cy, component, componentArray) => {
   cy.nodes().map(node => {
@@ -43,7 +43,7 @@ const componentValidation = (cy, component, componentArray) => {
 /**
  * checks if an implementation phase model is complaint with the metamodel
  *
- * @param {Object} cy cytoscape instance
+ * @param {object} cy cytoscape instance
  */
 module.exports = function moduleValidation (cy) {
   // checks the validity of the model using the rules of the schema

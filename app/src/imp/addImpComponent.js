@@ -1,8 +1,8 @@
 /**
  * adds implementation phase components in the graph
  *
- * @param {Object} cy cytoscape instance
- * @param {Object} event captured mouse event
+ * @param {object} cy cytoscape instance
+ * @param {object} event captured mouse event
  * @param {number} nodeCounter id counter for nodes
  */
 module.exports = function addImpComponent (cy, event, nodeCounter) {
