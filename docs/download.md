@@ -6,7 +6,7 @@ title: "Download ASTo"
 
 The Alpha release only supports precompiled binaries for macOS.
 
-<a href="https://github.com/Or3stis/apparatus/releases/tag/v0.1.3-alpha" class="btn download">Download ASTo for macOS</a>
+<a href="https://github.com/Or3stis/apparatus/releases/tag/v.0.1.6-alpha" class="btn download">Download ASTo for macOS</a>
 
 # Support for other platforms
 
