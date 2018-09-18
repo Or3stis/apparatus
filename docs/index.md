@@ -12,13 +12,13 @@ ASTo is security analysis tool for IoT networks. It is developed to support the 
 [electron](http://electron.atom.io/) and
 [cytoscape.js](http://js.cytoscape.org/). The icons are provided by Google's [Material Design](https://material.io/icons/).
 
-The application is in alpha stage. The focus now is to improve the core functionality of the application along with the introduction of additional features, in order to reach beta stage.
+The application is in alpha stage. The focus now is to improve the core functionality of the application along with the introduction of additional features, to reach beta stage.
 
 ## Features
 
-1. Graph based visualization of IoT systems.
+1. Graph-based visualization of IoT systems.
 1. Model IoT systems in design and implementation engineering phases.
-1. Automatic model transition between the two engineering phases.
+1. An automatic model transition between the two engineering phases.
 1. Model IoT system state.
 1. Automate implementation phase models generation using pcap-ng files.
 1. Perform model-based vulnerability identification through CVE databases.
@@ -78,21 +78,21 @@ Because the app is still in prototype stage, it is best to keep up to date with 
 ```bash
 # inside the apparatus directory
 
-# update to latest
+# update to the latest
 git pull
 ```
 
-Once the app starts, the first window (home screen) will ask you to choose which modeling phase would you like to perform analysis in. After you select a phase, you will be presented with three choices. The first is to create a new graph. The second choice is to load an existing graph. The third option is the debug app, which loads a default graph used for debugging purposes.
+Once the app starts, the first window (home screen) will ask you to choose which modeling phase would you like to use. After you select a phase, you will be presented with three choices. The first is to create a new graph. The second choice is to load an existing graph. The third option is the debug app, which loads a default graph used for debugging purposes.
 
 You will find some example graphs in the `sample` folder.
 
-\- _Note in performance_. If you render a graph with more than a thousand nodes, depending on your hardware, you might detect some performance issues. The reason is that the default label rendering of nodes and edges in ASTo is quite expensive. Rendering label on nodes and edges along with directional arrows is expensive. To improve performance you can hide the labels and the directional arrows by pressing the `label` button.
+\- _Note in performance_. If you render a graph with more than a thousand nodes, depending on your hardware, you might detect some performance issues. The reason is that the default label rendering of nodes and edges in ASTo is quite expensive. Rendering label on nodes and edges along with directional arrows is CPU expensive. To improve performance, you can hide the labels and the directional arrows by pressing the `label` button.
 
 You can find more information about Cytoscape's performance optimizations in this [link](http://js.cytoscape.org/#performance).
 
 ## Contributing
 
-If you want to contribute that's great 😃. Check the [contributing](https://github.com/Or3stis/apparatus/blob/master/CONTRIBUTING.md) guide. The application is being developed on Mac. That means that new commits might introduce breaking changes in other platforms. Especially commits that involve access to the file system. If something is not working, don't hesitate to create an [issue](https://github.com/Or3stis/apparatus/issues).
+If you want to contribute to the project,  that's great 😃. Check the [contributing](https://github.com/Or3stis/apparatus/blob/master/CONTRIBUTING.md) guide. The application is being developed on macOs. That means that new commits might introduce breaking changes in other platforms. Especially commits that involve access to the file system. If something is not working, don't hesitate to create an [issue](https://github.com/Or3stis/apparatus/issues).
 
 If you want to find out how the app works check the [wiki](https://or3stis.github.io/apparatus/wiki).
 
