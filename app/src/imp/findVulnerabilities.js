@@ -25,7 +25,7 @@ const requestVulnerableData = keywords => {
   // stores the CVE list
   let keywordCounter = 0
   keywords.map(vulnerability => {
-    get(`${settings.cveSearchUrl}${vulnerability}`, resp => {
+    get(`${settings.cveSearchURL}${vulnerability}`, resp => {
       let data = ''
       // add each received chunk of data
       resp.on('data', chunk => {

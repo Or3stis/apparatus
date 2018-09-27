@@ -4,14 +4,19 @@ const { BrowserWindow } = require('electron').remote
 module.exports = function settingsWindow () {
   const settingsURL = `file://${__dirname}/settings.html`
 
-  const createWindow = url => {
+  /**
+   * creates a new window for the settings
+   *
+   * @param {string} URL
+   */
+  const createWindow = URL => {
     let win = new BrowserWindow({
       backgroundColor: '#282c34',
       width: 570,
       height: 700,
       show: false
     })
-    win.loadURL(url)
+    win.loadURL(URL)
 
     win.on('ready-to-show', () => {
       win.show()
@@ -26,17 +31,17 @@ module.exports = function settingsWindow () {
   /**
    * check if the settings window is open before creating a new one
    *
-   * @param {string} url
+   * @param {string} URL
    */
-  const windowIsOpen = url => {
+  const windowIsOpen = URL => {
     let isWindowActive = false
     const activeWins = BrowserWindow.getAllWindows()
     Object.values(activeWins).map(activeWin => {
-      if (activeWin.getURL() === url) {
+      if (activeWin.getURL() === URL) {
         isWindowActive = true
       }
     })
-    if (isWindowActive === false) createWindow(url)
+    if (isWindowActive === false) createWindow(URL)
   }
   windowIsOpen(settingsURL)
 }

@@ -11,7 +11,7 @@ metamodelPath.pop() // removes the src directory
 const finalPath = `file://${metamodelPath.join('/')}`
 
 // creates the window for the metamodel
-const createWindow = url => {
+const createWindow = URL => {
   let win = new BrowserWindow({
     width: 900,
     height: 700,
@@ -20,7 +20,7 @@ const createWindow = url => {
       nodeIntegration: false
     }
   })
-  win.loadURL(`${finalPath}/${url}`)
+  win.loadURL(`${finalPath}/${URL}`)
 
   win.on('ready-to-show', () => {
     win.show()
@@ -33,11 +33,11 @@ const createWindow = url => {
 }
 
 // check if an active metamodel exists
-const metamodelIsActive = url => {
+const metamodelIsActive = URL => {
   let isWindowActive = false
   const activeWins = BrowserWindow.getAllWindows()
   Object.values(activeWins).map(activeWin => {
-    if (activeWin.getURL() === `${finalPath}/${url}`) {
+    if (activeWin.getURL() === `${finalPath}/${URL}`) {
       isWindowActive = true
       if (activeWin.isMinimized() === true) {
         activeWin.restore()
@@ -45,7 +45,7 @@ const metamodelIsActive = url => {
     }
   })
   if (isWindowActive === false) {
-    createWindow(url)
+    createWindow(URL)
   }
 }
 

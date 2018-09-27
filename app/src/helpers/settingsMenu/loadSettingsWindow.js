@@ -78,8 +78,8 @@ defaultColor.value = settings.colorTheme
 const numberBubbles = document.getElementById('number-bubbles')
 numberBubbles.value = settings.maxNumberOfBubbles
 
-const cveUrl = document.getElementById('cve-url')
-cveUrl.value = settings.cveSearchUrl
+const cveURL = document.getElementById('cve-url')
+cveURL.value = settings.cveSearchUrl
 
 // capture the save event
 const saveBtn = document.getElementById('settings-save')
@@ -150,7 +150,7 @@ const settings = {
   // number of maximum bubbles in the message area
   maxNumberOfBubbles: ${numberBubbles.value},
   // url for searching vulnerabilities
-  cveSearchUrl: '${cveUrl.value}'
+  cveSearchUrl: '${cveURL.value}'
 }
 
 module.exports = settings

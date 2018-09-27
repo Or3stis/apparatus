@@ -1,7 +1,7 @@
 const electron = require('electron')
 const app = electron.app
 
-const urls = require('./settings/urls.js')
+const URLs = require('./settings/urls.js')
 
 const template = [
   {
@@ -42,14 +42,14 @@ const template = [
       {
         label: 'Apparatus documentation',
         click () {
-          electron.shell.openExternal(urls.docsURL)
+          electron.shell.openExternal(URLs.docsURL)
         }
       },
       { type: 'separator' },
       {
         label: 'Report Issue',
         click () {
-          electron.shell.openExternal(urls.issuesURL)
+          electron.shell.openExternal(URLs.issuesURL)
         }
       }
     ]
