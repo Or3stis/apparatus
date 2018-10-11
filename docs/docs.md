@@ -4,7 +4,7 @@ title: "Apparatus Documentation"
 
 # Under development 🚧
 
-If you have a question that is not answered in the wiki, please make a pull request (or be patient and hope it will be explained in the future).
+If you have a question that is not answered in the wiki, please make a pull request.
 
 ## Welcome to the apparatus docs 🎉
 
@@ -140,7 +140,7 @@ Types of Analysis
 
 ASTo was designed with modularity and extendability in mind. Each module performs a specific function.
 
-As with any Electron application, the first file that is being executed is the `main.js`. The `main.js` renders the `index.html` which is used as the home page of the app, so we can navigate to the different development phases.
+As with any Electron application, the first file that is being executed is the `main.js`. The `main.js` renders the `index.html` which is used as the home page of the app so that we can navigate to the different development phases.
 
 Each phase has its own `.js` file where its graphical interface is dynamically generated. The files are stored in the `app/src/phaseUi` directory.
 
@@ -194,4 +194,4 @@ let cy = cytoscape({
 
 In the fourth line the `system.elements` extension points to the elements object in the rendered graph. That value must be consistent in both the `/src/helpers/cyOptions.js` and the loaded graph file. In your graphs, the `.elements` object stores all the information about the graph (nodes, edges, etc.)
 
-In the style field, we import the stylistic choices of our graph. To make ASTo more modular, the configuration style of graphs is stored in the [settings](https://or3stis.github.io/apparatus/docs#the-settings-directory) directory. A cool feature of the tool (and of course cytoscape.js) is when a graph instance is stored, we also store its style choices. If you want you to share the graph with your friends, nothing is stopping you (besides changing the style field to `graphStyle.style`.
+In the style field, we import the stylistic choices of our graph. To make ASTo more modular, the configuration style of graphs is stored in the [settings](https://or3stis.github.io/apparatus/docs#the-settings-directory) directory. A nice feature of the tool (and of course cytoscape.js) is when a graph instance is stored, we also store its style choices. If you want you to share the graph with your friends, nothing is stopping you (besides changing the style field to `graphStyle.style`.
