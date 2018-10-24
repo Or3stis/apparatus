@@ -98,6 +98,7 @@ Improvements on the functionality of the tool.
 - [✓] toggle button for light/dark theme
 - [✓] window for settings
 - [ ] interactive metamodel window
+- [ ] covert application to typescript and bundle with webpack
 
 ## beta release
 
