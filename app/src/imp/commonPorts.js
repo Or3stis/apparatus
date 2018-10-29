@@ -73,6 +73,7 @@ const commonPorts = {
   639: 'MSDP (PIM)',
   646: 'LDP (MPLS)',
   691: 'MS Exchange',
+  853: 'DNS over TLS',
   860: 'iSCSI',
   873: 'rsync',
   902: 'VMware Server',
