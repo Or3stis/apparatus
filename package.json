@@ -61,14 +61,14 @@
     }
   },
   "dependencies": {
-    "cytoscape": "^3.2.19",
+    "cytoscape": "^3.2.20",
     "jsonfile": "^5.0.0"
   },
   "devDependencies": {
     "cross-env": "^5.2.0",
-    "electron": "^3.0.6",
-    "electron-builder": "^20.29.0",
-    "prettier": "^1.14.3",
+    "electron": "^3.0.8",
+    "electron-builder": "^20.31.2",
+    "prettier": "^1.15.1",
     "standard": "^12.0.1"
   }
 }
