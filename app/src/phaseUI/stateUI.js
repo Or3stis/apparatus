@@ -14,12 +14,13 @@ module.exports = function stateUI () {
 
   // binds the design phase buttons on the UI
   const dgnStateComponents = document.getElementById('components-id')
+  const iconsPath = '../static/icons'
 
   dgnStateComponents.innerHTML = `
   <div class="dropdown">
     <button class="icon-button dropbtn">
       <svg width="24" height="24">
-        <use xlink:href="icons/add-node.svg#add-node" class="icon"></use>
+        <use xlink:href="${iconsPath}/add-node.svg#add-node" class="icon"></use>
       </svg>
     </button>
     <ul class="dropdown-menu" id="add-component-id">
@@ -29,20 +30,20 @@ module.exports = function stateUI () {
 
   <button class="icon-button" id="add-edge" title="connection">
     <svg width="24" height="24">
-      <use xlink:href="icons/add-edge.svg#add-edge" class="icon"></use>
+      <use xlink:href="${iconsPath}/add-edge.svg#add-edge" class="icon"></use>
     </svg>
   </button>
 
   <button class="icon-button" id="delete" title="remove">
     <svg width="24" height="24">
-      <use xlink:href="icons/remove.svg#remove" class="icon"></use>
+      <use xlink:href="${iconsPath}/remove.svg#remove" class="icon"></use>
     </svg>
   </button>
 
   <div class="dropdown">
     <button class="icon-button dropbtn">
       <svg width="24" height="24">
-        <use xlink:href="icons/list.svg#list" class="icon"></use>
+        <use xlink:href="${iconsPath}/list.svg#list" class="icon"></use>
       </svg>
     </button>
     <ul class="dropdown-menu" id="selection-id">
@@ -53,7 +54,7 @@ module.exports = function stateUI () {
   <div class="dropdown">
     <button class="icon-button dropbtn" title="layout options">
       <svg width="24" height="24">
-        <use xlink:href="icons/layout.svg#layout" class="icon"></use>
+        <use xlink:href="${iconsPath}/layout.svg#layout" class="icon"></use>
       </svg>
     </button>
     <ul class="dropdown-menu" id="layout-btn">
@@ -69,7 +70,7 @@ module.exports = function stateUI () {
   <div class="dropdown">
   <button class="icon-button dropbtn" title="label options">
     <svg width="24" height="24">
-      <use xlink:href="icons/label.svg#label" class="icon"></use>
+      <use xlink:href="${iconsPath}/label.svg#label" class="icon"></use>
     </svg>
   </button>
   <ul class="dropdown-menu" id="labels-btn">
@@ -83,31 +84,31 @@ module.exports = function stateUI () {
 
   <button class="icon-button" id="expose-btn" title="expose">
     <svg width="24" height="24">
-      <use xlink:href="icons/explore.svg#explore" class="icon"></use>
+      <use xlink:href="${iconsPath}/explore.svg#explore" class="icon"></use>
     </svg>
   </button>
 
   <button class="icon-button" id="pattern-btn" title="patterns">
     <svg width="24" height="24">
-      <use xlink:href="icons/search.svg#search" class="icon"></use>
+      <use xlink:href="${iconsPath}/search.svg#search" class="icon"></use>
     </svg>
   </button>
 
   <button class="icon-button" id="save-btn">
     <svg width="24" height="24">
-      <use xlink:href="icons/save.svg#save" class="icon"></use>
+      <use xlink:href="${iconsPath}/save.svg#save" class="icon"></use>
     </svg>
   </button>
 
   <!-- <button class="icon-button" id="load-button">
     <svg width="24" height="24">
-      <use xlink:href="icons/folder.svg#folder" class="icon"></use>
+      <use xlink:href="${iconsPath}/folder.svg#folder" class="icon"></use>
     </svg>
   </button> -->
 
   <button class="icon-button" id="home-btn" title="home">
     <svg width="24" height="24">
-      <use xlink:href="icons/home.svg#home" class="icon"></use>
+      <use xlink:href="${iconsPath}/home.svg#home" class="icon"></use>
     </svg>
   </button>
 
