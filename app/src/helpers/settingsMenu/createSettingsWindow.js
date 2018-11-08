@@ -2,7 +2,8 @@ const { BrowserWindow } = require('electron').remote
 
 /** creates the settings window */
 module.exports = function settingsWindow () {
-  const settingsURL = `file://${__dirname}/settings.html`
+  const settingsURL = `file:///Users/orestis/programs/electron/apparatus/app/static/settings.html`
+  // const settingsURL = `file://${__dirname}/../../static/settings.html`
 
   /**
    * creates a new window for the settings
@@ -27,6 +28,8 @@ module.exports = function settingsWindow () {
       win = null
     })
   }
+
+  console.log(__dirname)
 
   /**
    * check if the settings window is open before creating a new one
