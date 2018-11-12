@@ -8,7 +8,8 @@
     "dev": "cross-env NODE_ENV=development electron .",
     "lint": "prettier --no-semi --single-quote --write './app/src/**/*.js' && standard './app/src/**/*.js' --fix",
     "postinstall": "electron-builder install-app-deps",
-    "dist": "build"
+    "dist": "build",
+    "web": "webpack --config webpack.config.js"
   },
   "repository": {
     "type": "git",
@@ -67,8 +68,10 @@
   "devDependencies": {
     "cross-env": "^5.2.0",
     "electron": "^3.0.8",
-    "electron-builder": "^20.31.2",
-    "prettier": "^1.15.1",
-    "standard": "^12.0.1"
+    "electron-builder": "^20.34.0",
+    "prettier": "^1.15.2",
+    "standard": "^12.0.1",
+    "webpack": "^4.25.1",
+    "webpack-cli": "^3.1.2"
   }
 }
