@@ -5,6 +5,7 @@
   "main": "./app/main.js",
   "scripts": {
     "tsc-build": "tsc --build ./app/tsconfig.json",
+    "tsc-lint": "tslint -c tslint.json './app/src/**/*.ts'",
     "start": "electron .",
     "dev": "cross-env NODE_ENV=development electron .",
     "lint": "prettier --no-semi --single-quote --write './app/src/**/*.js' && standard './app/src/**/*.js' --fix",
