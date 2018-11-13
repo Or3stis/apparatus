@@ -1,11 +1,11 @@
 // creates the home page menu, used to access the phases
 
-import * as designUI from './phaseUI/dgnUI.js';
-import * as implementationUI from './phaseUI/impUI.js';
-import * as stateUI from './phaseUI/stateUI.js';
+const designUI = require('./phaseUI/dgnUI.js')
+const implementationUI = require('./phaseUI/impUI.js')
+const stateUI = require('./phaseUI/stateUI.js')
 
 /** creates the home menu of the app */
-export function homeMenu() {
+module.exports = function homeMenu () {
   // get the graph container
   const graph = document.getElementById('graph-container')
 
