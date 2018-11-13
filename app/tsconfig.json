@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+      "outDir": "./output",
+      "module": "esnext",
+      "moduleResolution": "node",
+      "allowJs": true,
+      "target": "es6"
+  },
+  "include": [
+      "./src/**/*"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}

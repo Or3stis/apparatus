@@ -6,7 +6,7 @@ const app = electron.app
 const BrowserWindow = electron.BrowserWindow
 const { writeFile, existsSync, statSync } = require('fs')
 
-const appMenu = require('./src/appMenu.js')
+const appMenu = require('./output/appMenu.js')
 
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
@@ -69,7 +69,7 @@ app.on('activate', () => {
 })
 
 // import the default settings of the app
-const defaultSettings = require('./src/settings/defaultSettings.js')
+const defaultSettings = require('./output/settings/defaultSettings.js')
 // normalize the settings input
 const defaultSettingsNormalize = JSON.stringify(defaultSettings.settings)
   .replace(/(?:\\[n])+/g, '\n')

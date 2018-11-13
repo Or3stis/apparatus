@@ -3,7 +3,7 @@ const { app, getCurrentWindow } = require('electron').remote
 const { send } = require('electron').ipcRenderer
 const { writeFile } = require('fs')
 
-const theme = require('../src/helpers/theme.js')
+const theme = require('../output/helpers/theme.js')
 
 const userDataPath = app.getPath('userData')
 const settings = require(`${userDataPath}/astoSettings.js`)
