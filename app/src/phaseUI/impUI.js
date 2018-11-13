@@ -1,4 +1,4 @@
-const phaseMenu = require('../../src/phaseMenu.js')
+const phaseMenu = require('../../output/phaseMenu.js')
 
 /** loads the implementation phase UI */
 module.exports = function implementationUI () {
