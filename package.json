@@ -63,6 +63,7 @@
     }
   },
   "dependencies": {
+    "@types/cytoscape": "^3.2.8",
     "cytoscape": "^3.2.20",
     "jsonfile": "^5.0.0"
   },
