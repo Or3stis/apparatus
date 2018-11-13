@@ -1,4 +1,4 @@
-const phaseMenu = require('../../output/phaseMenu.js')
+const phaseMenu = require('../../src/phaseMenu.js')
 
 /** loads the state phase UI */
 module.exports = function stateUI () {
