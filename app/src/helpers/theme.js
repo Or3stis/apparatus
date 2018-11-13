@@ -1,13 +1,17 @@
 // module to change color themes between light and dark
 const { app } = require('electron').remote
 
-import * as graphStyle from '../settings/graphStyle'
+const graphStyle = require('../settings/graphStyle.js')
 
 const userDataPath = app.getPath('userData')
 const settings = require(`${userDataPath}/astoSettings.js`)
 
-/** changes only the UI color values */
-const setTheme = (color: string) => {
+/**
+ * changes only the UI color values
+ *
+ * @param {string} color light or dark
+ */
+const setTheme = color => {
   // update color variables
   settings.setColors(color)
 
@@ -15,18 +19,23 @@ const setTheme = (color: string) => {
   document.documentElement.style.setProperty('--main-tx-color', settings.text)
   document.documentElement.style.setProperty(
     '--main-bg-color',
-    settings.background,
+    settings.background
   )
   document.documentElement.style.setProperty(
     '--main-dark-bg-color',
-    settings.darkBackground,
+    settings.darkBackground
   )
   document.documentElement.style.setProperty('--blue-color', settings.blue)
   document.documentElement.style.setProperty('--black-color', settings.black)
 }
 
-/** changes the UI and graph colors */
-const setThemeGraph = (cy: any, color: string) => {
+/**
+ * changes the UI and graph colors
+ *
+ * @param {Object} cy cytoscape instance
+ * @param {string} color light or dark
+ */
+const setThemeGraph = (cy, color) => {
   // changes the UI theme
   setTheme(color)
 
@@ -35,7 +44,7 @@ const setThemeGraph = (cy: any, color: string) => {
   cy.style(graphStyle.style)
 }
 
-export {
+module.exports = {
   setTheme,
-  setThemeGraph,
+  setThemeGraph
 }
