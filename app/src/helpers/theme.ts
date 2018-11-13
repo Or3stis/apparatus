@@ -6,11 +6,7 @@ import * as graphStyle from '../settings/graphStyle'
 const userDataPath = app.getPath('userData')
 const settings = require(`${userDataPath}/astoSettings.js`)
 
-/**
- * changes only the UI color values
- *
- * @param {string} color light or dark
- */
+/** changes only the UI color values */
 const setTheme = (color: string) => {
   // update color variables
   settings.setColors(color)
