@@ -1,48 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <title>ASTo</title>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0"
+    />
 
-<head>
-  <title>ASTo</title>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'none'; img-src 'self' https: data:; media-src 'none'; child-src 'self'; object-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; connect-src 'self' https:; font-src 'self';"
+    />
 
-  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src 'self' https: data:; media-src 'none'; child-src 'self'; object-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; connect-src 'self' https:; font-src 'self';">
+    <link rel="stylesheet" href="./style/app.css" />
+  </head>
 
-  <link rel="stylesheet" href="./style/app.css">
-</head>
-
-<body>
-  <div class="title-bar">
-    <span id="title-phase-id">home</span>
-    <span id="title-file-path-id"> ~/</span>
-  </div>
-
-  <div class="window" id="window-id">
-
-    <div class="action-bar" id="action-bar-id">
-      <div class="components" id="components-id"></div>
+  <body>
+    <div class="title-bar">
+      <span id="title-phase-id">home</span>
+      <span id="title-file-path-id"> ~/</span>
     </div>
 
-    <div class="graph" id="graph-container">
-      <div class="container-node" id="container-node-id">
-        <div class="container-node-info" id="container-node-info-id"></div>
+    <div class="window" id="window-id">
+      <div class="action-bar" id="action-bar-id">
+        <div class="components" id="components-id"></div>
       </div>
-    </div>
-    <div class="legend" id="legend-id"></div>
 
-    <div class="sidebar" id="sidebar-id">
-      <div class="sidebar-wrapper" id="sidebar-wrapper-id">
-        <div class="message-area" id="message-area-id"></div>
-        <div class="cmd-wrapper">
-          <label id="input-label-id">&#10095;</label>
-          <input type="text" placeholder="cmd/ctrl + l or help" maxlength="25" id="cmd-id" />
+      <div class="graph" id="graph-container">
+        <div class="container-node" id="container-node-id">
+          <div class="container-node-info" id="container-node-info-id"></div>
+        </div>
+      </div>
+      <div class="legend" id="legend-id"></div>
+
+      <div class="sidebar" id="sidebar-id">
+        <div class="sidebar-wrapper" id="sidebar-wrapper-id">
+          <div class="message-area" id="message-area-id"></div>
+          <div class="cmd-wrapper">
+            <label id="input-label-id">&#10095;</label>
+            <input
+              type="text"
+              placeholder="cmd/ctrl + l or help"
+              maxlength="25"
+              id="cmd-id"
+            />
+          </div>
         </div>
       </div>
     </div>
 
-  </div>
-
-  <script type="text/javascript" src="../src/index.js"></script>
-</body>
-
+    <script type="text/javascript" src="../src/index.js"></script>
+  </body>
 </html>

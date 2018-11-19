@@ -1,98 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <title>Under development &#x1F6A7;</title>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0"
+    />
 
-<head>
-  <title>Under development &#x1F6A7;</title>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'none'; img-src 'self' https: data:; media-src 'none'; child-src 'self'; object-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; connect-src 'self' https:; font-src 'self';"
+    />
 
-  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src 'self' https: data:; media-src 'none'; child-src 'self'; object-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; connect-src 'self' https:; font-src 'self';">
+    <link rel="stylesheet" href="../static/style/settings.css" />
+  </head>
 
-  <link rel="stylesheet" href="../static/style/settings.css">
-</head>
-
-<body>
-  <div class="wrapper">
-    <div class="color-wrapper">
-      <div class="dark-color-wrapper">
-        <h1>dark color theme</h1>
-        <label>text</label>
-        <input id="dark-text" type="color" />
-        <label>background</label>
-        <input id="dark-background" type="color" />
-        <label>dark background</label>
-        <input id="dark-dark-background" type="color" />
-        <label>black</label>
-        <input id="dark-black" type="color" />
-        <label>gray</label>
-        <input id="dark-gray" type="color" />
-        <label>blue</label>
-        <input id="dark-blue" type="color" />
-        <label>red</label>
-        <input id="dark-red" type="color" />
-        <label>orange</label>
-        <input id="dark-orange" type="color" />
-        <label>green</label>
-        <input id="dark-green" type="color" />
-        <label>yellow</label>
-        <input id="dark-yellow" type="color" />
-        <label>magenta</label>
-        <input id="dark-magenta" type="color" />
-        <label>cyan</label>
-        <input id="dark-cyan" type="color" />
+  <body>
+    <div class="wrapper">
+      <div class="color-wrapper">
+        <div class="dark-color-wrapper">
+          <h1>dark color theme</h1>
+          <label>text</label> <input id="dark-text" type="color" />
+          <label>background</label> <input id="dark-background" type="color" />
+          <label>dark background</label>
+          <input id="dark-dark-background" type="color" /> <label>black</label>
+          <input id="dark-black" type="color" /> <label>gray</label>
+          <input id="dark-gray" type="color" /> <label>blue</label>
+          <input id="dark-blue" type="color" /> <label>red</label>
+          <input id="dark-red" type="color" /> <label>orange</label>
+          <input id="dark-orange" type="color" /> <label>green</label>
+          <input id="dark-green" type="color" /> <label>yellow</label>
+          <input id="dark-yellow" type="color" /> <label>magenta</label>
+          <input id="dark-magenta" type="color" /> <label>cyan</label>
+          <input id="dark-cyan" type="color" />
+        </div>
+        <div class="light-color-wrapper">
+          <h1>light color theme</h1>
+          <label>text</label> <input id="light-text" type="color" />
+          <label>background</label>
+          <input id="light-background" type="color" />
+          <label>dark background</label>
+          <input id="light-dark-background" type="color" />
+          <label>black</label> <input id="light-black" type="color" />
+          <label>gray</label> <input id="light-gray" type="color" />
+          <label>blue</label> <input id="light-blue" type="color" />
+          <label>red</label> <input id="light-red" type="color" />
+          <label>orange</label> <input id="light-orange" type="color" />
+          <label>green</label> <input id="light-green" type="color" />
+          <label>yellow</label> <input id="light-yellow" type="color" />
+          <label>magenta</label> <input id="light-magenta" type="color" />
+          <label>cyan</label> <input id="light-cyan" type="color" />
+        </div>
       </div>
-      <div class="light-color-wrapper">
-        <h1>light color theme</h1>
-        <label>text</label>
-        <input id="light-text" type="color" />
-        <label>background</label>
-        <input id="light-background" type="color" />
-        <label>dark background</label>
-        <input id="light-dark-background" type="color" />
-        <label>black</label>
-        <input id="light-black" type="color" />
-        <label>gray</label>
-        <input id="light-gray" type="color" />
-        <label>blue</label>
-        <input id="light-blue" type="color" />
-        <label>red</label>
-        <input id="light-red" type="color" />
-        <label>orange</label>
-        <input id="light-orange" type="color" />
-        <label>green</label>
-        <input id="light-green" type="color" />
-        <label>yellow</label>
-        <input id="light-yellow" type="color" />
-        <label>magenta</label>
-        <input id="light-magenta" type="color" />
-        <label>cyan</label>
-        <input id="light-cyan" type="color" />
+      <div class="options-wrapper">
+        <div>
+          <label>default color theme</label>
+          <select id="default-color">
+            <option value="dark">dark</option>
+            <option value="light">light</option>
+          </select>
+        </div>
+        <div>
+          <label>max message bubbles</label>
+          <input id="number-bubbles" type="number" min="1" max="60" />
+        </div>
+        <div>
+          <label>CVE search URL</label> <input id="cve-url" type="url" />
+        </div>
       </div>
-    </div>
-    <div class="options-wrapper">
-      <div>
-        <label>default color theme</label>
-        <select id="default-color">
-          <option value="dark">dark</option>
-          <option value="light">light</option>
-        </select>
-      </div>
-      <div>
-        <label>max message bubbles</label>
-        <input id="number-bubbles" type="number" min="1" max="60" />
-      </div>
-      <div>
-        <label>CVE search URL</label>
-        <input id="cve-url" type="url" />
+      <div class="buttons-wrapper">
+        <button class="btn" id="settings-save">Save</button>
+        <button class="btn" id="settings-cancel">Cancel</button>
+        <button class="btn" id="settings-restore">Restore</button>
       </div>
     </div>
-    <div class="buttons-wrapper">
-      <button class="btn" id="settings-save">Save</button>
-      <button class="btn" id="settings-cancel">Cancel</button>
-      <button class="btn" id="settings-restore">Restore</button>
-    </div>
-  </div>
-  <script type="text/javascript" src="../src/helpers/settingsMenu/loadSettingsWindow.js"></script>
-</body>
-
+    <script
+      type="text/javascript"
+      src="../src/helpers/settingsMenu/loadSettingsWindow.js"
+    ></script>
+  </body>
 </html>
