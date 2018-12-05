@@ -61,7 +61,7 @@
     }
   },
   "dependencies": {
-    "cytoscape": "^3.2.21",
+    "cytoscape": "^3.3.0",
     "jsonfile": "^5.0.0"
   },
   "devDependencies": {
