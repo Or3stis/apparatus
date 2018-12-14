@@ -65,8 +65,6 @@ npm install
 Different mode operations of the app.
 
 ```bash
-# To compile the app
-npm run tsc-build
 # To run the app in the default mode
 npm start
 # To run the app in developer mode
