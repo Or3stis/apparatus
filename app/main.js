@@ -8,6 +8,36 @@ const { writeFile, existsSync, statSync } = require('fs')
 
 const appMenu = require('./src/appMenu.js')
 
+// import the default settings of the app
+const defaultSettings = require('./src/settings/defaultSettings.js')
+// normalize the settings input
+const defaultSettingsNormalize = JSON.stringify(defaultSettings.settings)
+  .replace(/(?:\\[n])+/g, '\n')
+  .replace(/"/g, '')
+
+const userDataPath = app.getPath('userData')
+
+/** write the astoSettings.js to the OS location */
+const writeSettings = () => {
+  writeFile(
+    `${userDataPath}/astoSettings.js`,
+    defaultSettingsNormalize,
+    err => {
+      if (err) throw err
+    }
+  )
+}
+
+// checks if the local astoSettings.js exists
+if (existsSync(`${userDataPath}/astoSettings.js`) !== true) {
+  writeSettings()
+} else if (
+  existsSync(`${userDataPath}/astoSettings.js`) === true &&
+  statSync(`${userDataPath}/astoSettings.js`).size === 0
+) {
+  writeSettings()
+}
+
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
 let mainWindow
@@ -68,32 +98,32 @@ app.on('activate', () => {
   if (mainWindow === null) createWindow()
 })
 
-// import the default settings of the app
-const defaultSettings = require('./src/settings/defaultSettings.js')
-// normalize the settings input
-const defaultSettingsNormalize = JSON.stringify(defaultSettings.settings)
-  .replace(/(?:\\[n])+/g, '\n')
-  .replace(/"/g, '')
+// // import the default settings of the app
+// const defaultSettings = require('./src/settings/defaultSettings.js')
+// // normalize the settings input
+// const defaultSettingsNormalize = JSON.stringify(defaultSettings.settings)
+//   .replace(/(?:\\[n])+/g, '\n')
+//   .replace(/"/g, '')
 
-const userDataPath = app.getPath('userData')
+// const userDataPath = app.getPath('userData')
 
-/** write the astoSettings.js to the OS location */
-const writeSettings = () => {
-  writeFile(
-    `${userDataPath}/astoSettings.js`,
-    defaultSettingsNormalize,
-    err => {
-      if (err) throw err
-    }
-  )
-}
+// /** write the astoSettings.js to the OS location */
+// const writeSettings = () => {
+//   writeFile(
+//     `${userDataPath}/astoSettings.js`,
+//     defaultSettingsNormalize,
+//     err => {
+//       if (err) throw err
+//     }
+//   )
+// }
 
-// checks if the local astoSettings.js exists
-if (existsSync(`${userDataPath}/astoSettings.js`) !== true) {
-  writeSettings()
-} else if (
-  existsSync(`${userDataPath}/astoSettings.js`) === true &&
-  statSync(`${userDataPath}/astoSettings.js`).size === 0
-) {
-  writeSettings()
-}
+// // checks if the local astoSettings.js exists
+// if (existsSync(`${userDataPath}/astoSettings.js`) !== true) {
+//   writeSettings()
+// } else if (
+//   existsSync(`${userDataPath}/astoSettings.js`) === true &&
+//   statSync(`${userDataPath}/astoSettings.js`).size === 0
+// ) {
+//   writeSettings()
+// }

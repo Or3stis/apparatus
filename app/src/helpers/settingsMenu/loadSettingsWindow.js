@@ -179,8 +179,7 @@ cancelBtn.addEventListener('click', () => {
 const restoreBtn = document.getElementById('settings-restore')
 
 restoreBtn.addEventListener('click', () => {
-  console.log(__dirname)
-  const defaultSettings = require('../../settings/defaultSettings.js')
+  const defaultSettings = require('../src/settings/defaultSettings.js')
   const defaultSettingsNormalize = JSON.stringify(defaultSettings.settings)
     .replace(/(?:\\[n])+/g, '\n')
     .replace(/"/g, '')
