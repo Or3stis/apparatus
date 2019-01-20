@@ -1,4 +1,4 @@
-const { closeNotification } = require('./helpers/watcher.js')
+const { closeNotification } = require('../helpers/watcher.js')
 
 // adds the event listener on the Home button once the button is first
 // rendered. The rest of the buttons are activated after a graph is rendered.

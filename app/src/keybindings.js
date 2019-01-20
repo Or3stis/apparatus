@@ -24,7 +24,7 @@ const settingsWindow = require('./helpers/settingsMenu/createSettingsWindow.js')
 const insights = require('./imp/insights.js')
 
 // require helpers for the buttons
-const buttonHelpers = require('./buttonHelpers.js')
+const buttonHelpers = require('./buttons/buttonHelpers.js')
 
 /**
  * instantiation of keybinding
