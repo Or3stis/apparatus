@@ -103,11 +103,6 @@ module.exports = function buttons (
   buttonSave.addEventListener('click', () => {
     save(cy)
   })
-  // navigates the user to the home UI
-  const buttonHome = document.getElementById('home-btn')
-  buttonHome.addEventListener('click', () => {
-    watcher.closeNotification(cy)
-  })
   // change the labels on the elements of the graph
   const buttonLabels = document.getElementById('labels-btn')
   buttonLabels.addEventListener('click', e => {

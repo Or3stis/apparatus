@@ -168,6 +168,9 @@ module.exports = function designUI () {
   <label for="theme-btn" class="toggle-label"></label>
 </div>`
 
+  // navigates the user to the home UI
+  const buttonsFirstLoad = require('../buttonsFirstLoad.js')
+  buttonsFirstLoad()
   // links the design UI with the rest of the app
   phaseMenu('design')
 }
