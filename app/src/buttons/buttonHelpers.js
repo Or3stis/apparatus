@@ -1,21 +1,21 @@
 // helper module to assign specific functions to buttons depending on the phase
 
 // require design modules
-const dgnModelValidation = require('./dgn/dgnModelValidation.js')
-const dgnOverview = require('./dgn/dgnOverview.js')
-const addDgnComponent = require('./dgn/addDgnComponent.js')
-const addDgnEdge = require('./dgn/addDgnEdge.js')
+const dgnModelValidation = require('../dgn/dgnModelValidation.js')
+const dgnOverview = require('../dgn/dgnOverview.js')
+const addDgnComponent = require('../dgn/addDgnComponent.js')
+const addDgnEdge = require('../dgn/addDgnEdge.js')
 
 // require implementation modules
-const impModelValidation = require('./imp/impModelValidation.js')
-const impOverview = require('./imp/impOverview.js')
-const addImpComponent = require('./imp/addImpComponent.js')
-const addImpEdge = require('./imp/addImpEdge.js')
+const impModelValidation = require('../imp/impModelValidation.js')
+const impOverview = require('../imp/impOverview.js')
+const addImpComponent = require('../imp/addImpComponent.js')
+const addImpEdge = require('../imp/addImpEdge.js')
 
 // require state diagram modules
-const stateOverview = require('./state/stateOverview.js')
-const addStateComponent = require('./state/addStateComponent.js')
-const addStateEdge = require('./state/addStateEdge.js')
+const stateOverview = require('../state/stateOverview.js')
+const addStateComponent = require('../state/addStateComponent.js')
+const addStateEdge = require('../state/addStateEdge.js')
 
 /**
  * helper function to add specific nodes for each phase

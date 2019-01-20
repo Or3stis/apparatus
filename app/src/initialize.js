@@ -12,7 +12,7 @@ const rmElement = require('./helpers/rmElement.js')
 const bubbleTxt = require('./helpers/bubbleTxt.js')
 
 // require buttons and keybindings
-const buttons = require('./buttons.js')
+const buttons = require('./buttons/buttons.js')
 const keybindings = require('./keybindings.js')
 
 /**

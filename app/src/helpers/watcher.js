@@ -60,7 +60,7 @@ const closeNotification = () => {
 }
 
 module.exports = {
-  nodes,
+  nodes: nodes,
   // edges,
-  closeNotification
+  closeNotification: closeNotification
 }

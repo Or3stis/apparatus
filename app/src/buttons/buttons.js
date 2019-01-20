@@ -4,27 +4,27 @@ const remote = require('electron').remote
 const userDataPath = remote.app.getPath('userData')
 const settings = require(`${userDataPath}/astoSettings.js`)
 
-const nodeSelection = require('./core/nodeSelection.js')
-const layout = require('./core/layout.js')
-const moduleSelection = require('./core/moduleSelection.js')
-const threatVerification = require('./core/threatVerification.js')
-const deleteRestoreConcepts = require('./core/deleteRestoreConcepts.js')
-const patterns = require('./core/patterns.js')
-const printTotalNodes = require('./core/printTotalNodes.js')
-const expose = require('./core/expose.js')
-const labels = require('./core/labels.js')
+const nodeSelection = require('../core/nodeSelection.js')
+const layout = require('../core/layout.js')
+const moduleSelection = require('../core/moduleSelection.js')
+const threatVerification = require('../core/threatVerification.js')
+const deleteRestoreConcepts = require('../core/deleteRestoreConcepts.js')
+const patterns = require('../core/patterns.js')
+const printTotalNodes = require('../core/printTotalNodes.js')
+const expose = require('../core/expose.js')
+const labels = require('../core/labels.js')
 
-const findVulnerabilities = require('./imp/findVulnerabilities.js')
-const vulnerabilityVerification = require('./imp/vulnerabilityVerification.js')
+const findVulnerabilities = require('../imp/findVulnerabilities.js')
+const vulnerabilityVerification = require('../imp/vulnerabilityVerification.js')
 
-const save = require('./helpers/save.js')
-const watcher = require('./helpers/watcher.js')
-const theme = require('./helpers/theme.js')
+const save = require('../helpers/save.js')
+const watcher = require('../helpers/watcher.js')
+const theme = require('../helpers/theme.js')
 
 const buttonHelpers = require('./buttonHelpers.js')
 
-const transitionDgn2Imp = require('./transition/dgn2Imp.js')
-const transitionImp2Dgn = require('./transition/imp2Dgn.js')
+const transitionDgn2Imp = require('../transition/dgn2Imp.js')
+const transitionImp2Dgn = require('../transition/imp2Dgn.js')
 
 /**
  * binds functions to buttons in the UI
@@ -102,11 +102,6 @@ module.exports = function buttons (
   const buttonSave = document.getElementById('save-btn')
   buttonSave.addEventListener('click', () => {
     save(cy)
-  })
-  // navigates the user to the home UI
-  const buttonHome = document.getElementById('home-btn')
-  buttonHome.addEventListener('click', () => {
-    watcher.closeNotification(cy)
   })
   // change the labels on the elements of the graph
   const buttonLabels = document.getElementById('labels-btn')

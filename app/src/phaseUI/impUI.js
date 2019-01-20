@@ -186,6 +186,9 @@ module.exports = function implementationUI () {
     <label for="theme-btn" class="toggle-label"></label>
   </div>`
 
+  // navigates the user to the home UI
+  const buttonsFirstLoad = require('../buttons/buttonsFirstLoad.js')
+  buttonsFirstLoad()
   // links the implementationUI with the rest of the app
   phaseMenu('implementation')
 }
