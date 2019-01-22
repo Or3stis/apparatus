@@ -3,7 +3,7 @@ const { app, getCurrentWindow } = require('electron').remote
 const { send } = require('electron').ipcRenderer
 const { writeFile } = require('fs')
 
-const theme = require('../theme.js')
+const theme = require('../src/helpers/theme.js')
 
 const userDataPath = app.getPath('userData')
 const settings = require(`${userDataPath}/astoSettings.js`)
@@ -179,8 +179,7 @@ cancelBtn.addEventListener('click', () => {
 const restoreBtn = document.getElementById('settings-restore')
 
 restoreBtn.addEventListener('click', () => {
-  console.log(__dirname)
-  const defaultSettings = require('../../settings/defaultSettings.js')
+  const defaultSettings = require('../src/settings/defaultSettings.js')
   const defaultSettingsNormalize = JSON.stringify(defaultSettings.settings)
     .replace(/(?:\\[n])+/g, '\n')
     .replace(/"/g, '')

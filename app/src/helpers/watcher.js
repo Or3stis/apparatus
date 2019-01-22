@@ -38,7 +38,7 @@ const nodes = (graphNodes, cy) => {
 //   }
 // }
 
-/** checks for changes in the model before navigating to the index.js */
+/** checks for changes in the model before navigating to the index.html */
 const closeNotification = () => {
   if (changeToken === true) {
     dialog.showMessageBox(
@@ -49,13 +49,13 @@ const closeNotification = () => {
       response => {
         // is the response is Yes navigate to the index.html
         if (response === 1) {
-          window.location.href = `file://${__dirname}/../index.html`
+          window.location.href = `file://${__dirname}/../../static/index.html`
         }
       }
     )
     // when there no changes in the model navigate to index.html without prompting
   } else {
-    window.location.href = `file://${__dirname}/../index.html`
+    window.location.href = `file://${__dirname}/../../static/index.html`
   }
 }
 

@@ -13,6 +13,7 @@ const finalPath = `file://${metamodelPath.join('/')}`
 // creates the window for the metamodel
 const createWindow = URL => {
   let win = new BrowserWindow({
+    backgroundColor: '#282c34',
     width: 900,
     height: 700,
     show: false,

@@ -1,7 +1,7 @@
 // loads the home menu
 
-const homeMenu = require('./homeMenu.js')
-const theme = require('./helpers/theme.js')
+const theme = require('../src/helpers/theme.js')
+const homeMenu = require('../src/homeMenu.js')
 
 const remote = require('electron').remote
 

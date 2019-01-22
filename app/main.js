@@ -6,7 +6,37 @@ const app = electron.app
 const BrowserWindow = electron.BrowserWindow
 const { writeFile, existsSync, statSync } = require('fs')
 
-const appMenu = require('./appMenu.js')
+const appMenu = require('./src/appMenu.js')
+
+// import the default settings of the app
+const defaultSettings = require('./src/settings/defaultSettings.js')
+// normalize the settings input
+const defaultSettingsNormalize = JSON.stringify(defaultSettings.settings)
+  .replace(/(?:\\[n])+/g, '\n')
+  .replace(/"/g, '')
+
+const userDataPath = app.getPath('userData')
+
+/** write the astoSettings.js to the OS location */
+const writeSettings = () => {
+  writeFile(
+    `${userDataPath}/astoSettings.js`,
+    defaultSettingsNormalize,
+    err => {
+      if (err) throw err
+    }
+  )
+}
+
+// checks if the local astoSettings.js exists
+if (existsSync(`${userDataPath}/astoSettings.js`) !== true) {
+  writeSettings()
+} else if (
+  existsSync(`${userDataPath}/astoSettings.js`) === true &&
+  statSync(`${userDataPath}/astoSettings.js`).size === 0
+) {
+  writeSettings()
+}
 
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
@@ -27,7 +57,7 @@ const createWindow = () => {
   })
 
   // and load the index.html of the app.
-  mainWindow.loadURL(`file://${__dirname}/index.html`)
+  mainWindow.loadURL(`file://${__dirname}/static/index.html`)
 
   // Emitted when the window is closed.
   mainWindow.on('closed', () => {
@@ -67,33 +97,3 @@ app.on('activate', () => {
   // dock icon is clicked and there are no other windows open.
   if (mainWindow === null) createWindow()
 })
-
-// import the default settings of the app
-const defaultSettings = require('./settings/defaultSettings.js')
-// normalize the settings input
-const defaultSettingsNormalize = JSON.stringify(defaultSettings.settings)
-  .replace(/(?:\\[n])+/g, '\n')
-  .replace(/"/g, '')
-
-const userDataPath = app.getPath('userData')
-
-/** write the astoSettings.js to the OS location */
-const writeSettings = () => {
-  writeFile(
-    `${userDataPath}/astoSettings.js`,
-    defaultSettingsNormalize,
-    err => {
-      if (err) throw err
-    }
-  )
-}
-
-// checks if the local astoSettings.js exists
-if (existsSync(`${userDataPath}/astoSettings.js`) !== true) {
-  writeSettings()
-} else if (
-  existsSync(`${userDataPath}/astoSettings.js`) === true &&
-  statSync(`${userDataPath}/astoSettings.js`).size === 0
-) {
-  writeSettings()
-}
