@@ -14,7 +14,8 @@ module.exports = function settingsWindow () {
       backgroundColor: '#282c34',
       width: 570,
       height: 700,
-      show: false
+      show: false,
+      nodeIntegration: true
     })
     win.loadURL(URL)
 
@@ -27,8 +28,6 @@ module.exports = function settingsWindow () {
       win = null
     })
   }
-
-  console.log(__dirname)
 
   /**
    * check if the settings window is open before creating a new one
