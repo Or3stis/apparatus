@@ -53,7 +53,8 @@ const createWindow = () => {
     minWidth: 800,
     minHeight: 660,
     titleBarStyle: 'hidden',
-    show: false
+    show: false,
+    nodeIntegration: true
   })
 
   // and load the index.html of the app.
