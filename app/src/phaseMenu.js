@@ -5,7 +5,7 @@ const cyOptions = require('./helpers/cyOptions.js')
 const initialize = require('./initialize.js')
 const pcapImport = require('./imp/pcapImport.js')
 
-const template = '../../settings/modelTemplate.js'
+const template = '../settings/modelTemplate.js'
 const testGraph = '../../../sample/smartHome.js'
 
 let cy = {}

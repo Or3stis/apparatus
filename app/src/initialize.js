@@ -143,7 +143,7 @@ module.exports = function initialize (cy, phase) {
   // only available in state diagrams
   if (phase === 'state') {
     cy.on('cxttap', 'edge', selection => {
-      editEdge.formEdge(selection.target[0])
+      editEdge(selection.target[0])
     })
   }
   // right clicking on stage
