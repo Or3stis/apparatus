@@ -1,5 +1,11 @@
 # ASTo - Apparatus Software Tool
 
+**Archive Notice** - After the completion of my research degree the repository has been archived.
+
+ASTo has made a significant impact to my research. I want to express my gratitude to everyone that helped make it better.
+
+However, this is not the end. **Active development with continue** on [CyberLens's](https://github.com/CyberLens/Disc0very.git) repository. Please report issues and feature requests there.
+
 ## An IoT network security analysis and visualization tool
 
 [![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](http://standardjs.com/)
