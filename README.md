@@ -90,6 +90,12 @@ You will find some example graphs in the `sample` folder.
 
 You can find more information about Cytoscape's performance optimizations in this [link](http://js.cytoscape.org/#performance).
 
+## Privacy Notice
+
+The Software does not collect personal information of any kind.
+
+The only network operation the application performs is when the vulnerability identification process is used. The vulnerability identification makes a network request to 'https://cve.circl.lu/api/search/' (can be changed in the settings), which maintains its own analytics.
+
 ## Contributing
 
 If you want to contribute to the project,  that's great 😃. Check the [contributing](https://github.com/Or3stis/apparatus/blob/master/CONTRIBUTING.md) guide. The application is being developed on macOs. That means that new commits might introduce breaking changes in other platforms. Especially commits that involve access to the file system. If something is not working, don't hesitate to create an [issue](https://github.com/Or3stis/apparatus/issues).
